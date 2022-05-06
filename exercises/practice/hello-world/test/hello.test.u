@@ -1,0 +1,2 @@
+use universal
+test> check (hello === "Hello, World!")
