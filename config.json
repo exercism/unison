@@ -8,12 +8,12 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "TODO: add blurb",
+  "blurb": "Unison is a friendly programming language from the future: statically-typed, functional, and a lot of fun. 😄 Each Unison definition is identified by a hash of its syntax tree. Put another way, Unison code is content addressed",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
-    "indent_size": 4,
-    "highlightjs_language": "TODO: specify highlightjs language"
+    "indent_size": 2,
+    "highlightjs_language": "haskell"
   },
   "files": {
     "solution": [],
@@ -23,9 +23,49 @@
   },
   "exercises": {
     "concept": [],
-    "practice": []
+    "practice": [
+      {
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "151ebc38-659c-4752-b51c-cc7d1d7b1ef4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      }
+    ]
   },
   "concepts": [],
-  "key_features": [],
-  "tags": []
+  "key_features": [
+    {
+      "title": "Content addressed",
+      "content": "A Unison definition is identified by a hash of its syntax tree. Your code is not just mutable text.",
+      "icon": "safe"
+    },
+    {
+      "title": "Immutable",
+      "content": "A Unison codebase is stored in an immutable, append only database.",
+      "icon": "immutable"
+    },
+    {
+      "title": "Functional",
+      "content": "Unison is a statically typed, general purpose functional programming langauge.",
+      "icon": "functional"
+    },
+    {
+      "title": "Distributed systems",
+      "content": "Describe entire distributed systems in one program. Easily communicate across network boundaries.",
+      "icon": "concurrency"
+    },
+    {
+      "title": "Type safe",
+      "content": "Capture effectful computations in Unison's type system with algebraic effects",
+      "icon": "stable"
+    },
+    {
+      "title": "Delightful",
+      "content": "Programming should be joyful. Our tooling and community is here to help.",
+      "icon": "fun"
+    }
+  ],
+  "tags": ["paradigm/functional", "typing/static", "execution_mode/compiled", "platform/windows", "platform/mac", "platform/linux", "runtime/standalone_executable", "runtime/language_specific", "used_for/backends"]
 }
