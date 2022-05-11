@@ -1,2 +1,3 @@
 use universal
-test> check (hello === "Hello, World!")
+hello.test = test.expect (hello === "Hello, World!")
+test> tests = runAll [hello.test]
