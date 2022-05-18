@@ -1,3 +1,6 @@
-use universal
-hello.test = test.expect (hello === "Hello, World!")
+use Universal
+
+hello.test =
+  expected = "Hello, World!"
+  test.expect (hello === expected)
 test> tests = runAll [hello.test]
