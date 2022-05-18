@@ -1,14 +1,11 @@
 # About
 
-<!-- TODO: write document
+Unison is a statically typed, functional, and fun programming language which aims to change how programmers interact with their code.
 
-  This document contains a short introduction to the language.
+Unison is different. 💖
 
-  The introduction should be relatively brief and touch upon what
-  makes the language interesting (and possibly unique). The goal
-  is to help students decide if they want to join this track.
+Unlike many programming languages, your Unison codebase is not stored as a mutable set of text files. Instead, __each Unison definition is identified by a hash of its syntax tree.__ Put another way, Unison code is content-addressed.
 
-  The contents of this document are displayed on the track page,
-  provided the student has not joined the track.
+This change has far-reaching consequences. It simplifies distributed programming, eliminates builds and dependency conflicts, supports structured refactoring, and enables better tools when working with code.
 
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+You can read more about the [big idea behind the Unison programming language](https://www.unison-lang.org/learn/the-big-idea/) or take a look at [a brief language tour](https://www.unison-lang.org/learn/tour/) for additional information.
