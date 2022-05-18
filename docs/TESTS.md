@@ -78,7 +78,7 @@
     tests      : [Result]
   ```
 
-  Now let's view the test expectation, so we know what we should accomplish. We could just open the `test.u` file to see the test expectation in a text editor, but let's `view` the source code of the test __within the UCM__. Enter `view hello.test` in the UCM to see the source code of the test.
+  Now let's view the test expectation, so we know what we should accomplish. We could just open the `test.u` file to see the test expectation in a text editor, but let's `view` the source code of the test *within the UCM*. Enter `view hello.test` in the UCM to see the source code of the test.
 
   Say we want to make this test pass. Here's what we'll do:
 
