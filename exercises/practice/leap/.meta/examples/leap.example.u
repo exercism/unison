@@ -1,0 +1,5 @@
+leap : Nat -> Boolean
+leap year =
+  isFactor a b =
+    (Nat.mod a b) === 0
+  (isFactor year 4 && (not (isFactor year 100 ) || isFactor year 400 ))
