@@ -1,1 +1,5 @@
-TODO: add snippet
+helloWorld : '{IO, Exception} ()
+helloWorld = 'let
+  use Text ++
+  name = !console.getLine
+  printLine ("Hello " ++ name)

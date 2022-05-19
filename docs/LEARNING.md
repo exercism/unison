@@ -1,13 +1,9 @@
 # Learning
 
-<!-- TODO: write document
+The [official Unison language documentation](https://www.unison-lang.org/learn/fundamentals/values-and-functions/terms/) is an excellent place to start learning. It details fundamental Unison concepts, like functions, data types, and algebraic effects.
 
-  This document should link to learning resources.
+For reference material, the [Unison language reference](https://www.unison-lang.org/learn/language-reference/top-level-declaration/) contains granular details about Unison features. They're listed in the website sidebar.
 
-  Feel free to link to any good learning resources you know, whether they
-  be websites, blogs, books, videos or courses.
+You may want to familiarize yourself with [Unison Share](https://share.unison-lang.org/), Unison's repository for public libraries and projects. The documentation for the standard library, [`base`](https://share.unison-lang.org/latest/namespaces/unison/base), contains helpful usage information.
 
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/learning`.
-
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+👋 If you're ever stuck, we're happy to help. The #beginner-friendly channel in [the official Unison slack](http://unison-lang.org/slack) is filled with friendly people.
