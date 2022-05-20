@@ -1,0 +1,15 @@
+abbreviate : Text -> Text
+abbreviate text =
+  words : [Text]
+  words = Text.split ?\s text
+  splitWords : [Text]
+  splitWords = List.flatMap handleNonWhitespacePunctuation words
+  firstLetters = List.map (w -> Text.take 1 w) splitWords |> Text.join ""
+  List.map toUpper (toCharList firstLetters) |> fromCharList
+
+handleNonWhitespacePunctuation : Text -> [Text]
+handleNonWhitespacePunctuation word =
+  chars = toCharList word
+  removePunctuation = List.map (c -> if (isLetter c) || (c === ?\') then c else ?\s ) chars
+  splitWords = fromCharList removePunctuation
+  Text.split ?\s splitWords
