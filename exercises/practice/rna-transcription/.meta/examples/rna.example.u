@@ -1,0 +1,15 @@
+toRNA : Text -> Optional Text
+toRNA dna =
+  use List
+
+  checkRnaMapping : Char -> Optional Char
+  checkRnaMapping dnaChar =
+    Map.get dnaChar (Map.fromList [(?C, ?G), (?G, ?C), (?T, ?A), (?A, ?U)])
+
+  buildRnaStrand : Optional Text -> Char -> Optional Text
+  buildRnaStrand rnaStrand dnaChar =
+    optionalRnaChar : Optional Char
+    optionalRnaChar = checkRnaMapping dnaChar
+    Optional.flatMap (rnaChar -> Optional.map (strand -> strand Text.++ (Char.toText rnaChar)) rnaStrand ) optionalRnaChar
+
+  List.foldLeft buildRnaStrand (Some "") (toCharList dna)

@@ -1,0 +1,2 @@
+toRNA : Text -> Optional String
+toRNA dna = todo "implement toRNA"
