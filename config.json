@@ -47,6 +47,22 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "rna-transcription",
+        "name": "RNA Transcription",
+        "uuid": "0b4e2dbd-7a5e-4a3d-b13d-9138518d9a63",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "sum-of-multiples",
+        "name": "Sum Of Multiples",
+        "uuid": "0fbe5e82-b563-4360-8957-e3a543eb3184",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
