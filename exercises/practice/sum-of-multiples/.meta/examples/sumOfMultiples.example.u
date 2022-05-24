@@ -1,0 +1,17 @@
+sumOfMultiples : [Nat] -> Nat -> Nat
+sumOfMultiples factors upperBound =
+
+  isDivisibleBy : Nat -> Nat -> Boolean
+  isDivisibleBy a b =
+    use Nat
+    if b === 0 then false else (mod a b) === 0
+
+  isMultiple : Nat -> Boolean
+  isMultiple n =
+    List.any (factor -> isDivisibleBy n factor ) factors
+
+  multiples: [Nat]
+  multiples =
+    List.range 1 upperBound |> List.filter isMultiple
+
+  Nat.sum multiples
