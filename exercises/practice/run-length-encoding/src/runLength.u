@@ -1,0 +1,48 @@
+encode : Text -> Text
+encode input =
+
+  charList = toCharList input
+
+  encodeGroup : [Char] -> [Char]
+  encodeGroup xs =
+    size = List.size xs
+    if (size > 1) then
+      (List.head xs) |> Optional.fold '[] (letter -> (Nat.toText size) ++ (Char.toText letter) |> toCharList)
+    else xs
+  encodedCharList = splitByEquals charList |> List.flatMap encodeGroup
+  fromCharList encodedCharList
+
+splitByEquals : [a] -> [[a]]
+splitByEquals xs =
+  match xs with
+    [] -> []
+    x +: xss ->
+      fs = List.takeWhile (char -> char === x) xs
+
+      nextList = List.drop (List.size fs) xs
+      fs +: (splitByEquals nextList)
+
+
+decode : Text -> Text
+decode input =
+
+  nextChar : (Nat, [Char]) ->  Char -> (Nat, [Char])
+  nextChar tuple nextChar =
+    (n, xs) = tuple
+    if (isDigit nextChar) then
+      optionalNat : Optional Nat
+      optionalNat = toBase36Digit nextChar
+      nextNat = n * 10 + (Optional.getOrElse 0 optionalNat)
+      (nextNat, xs) else
+      if n === 0 then (0, nextChar +: xs) else (0, (List.fill n nextChar) ++ xs)
+
+  charList = List.foldLeft (nextChar) (0,[]) (toCharList input) |> at2
+  fromCharList (List.reverse charList )
+---
+encode : Text -> Text
+encode input =
+  todo "implement encode"
+
+decode : Text -> Text
+decode input =
+  todo "implement decode"

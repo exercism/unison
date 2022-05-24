@@ -1,4 +1,4 @@
-# Testing transcript for hello exercise
+# Testing transcript
 
 ```ucm
 .> load ./src/rna.u
