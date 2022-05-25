@@ -1,3 +1,2 @@
-allYourBase : Int -> [Int] -> Int -> Optional [Nat]
-allYourBase inputBase inputDigits outputBase = todo "implement allYourBase"
-
+rebase : Int -> [Int] -> Int -> Optional [Int]
+rebase inputBase inputDigits outputBase = todo "implement rebase"

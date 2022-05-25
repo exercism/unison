@@ -1,50 +1,50 @@
 [
   {
-    "test_code": "allYourBase.test.ex1 = let\n\ttest.label \"single bit one to decimal\" <| test.expect (rebase +2 [+1] +10 === Some [1])",
+    "test_code": "allYourBase.test.ex1 = let\n\ttest.label \"single bit one to decimal\" <| test.expect (rebase +2 [+1] +10 === Some [+1])",
     "name": "allYourBase.test.ex1"
   },
   {
-    "test_code": "allYourBase.test.ex2 = let\n\ttest.label \"binary to single decimal\" <| test.expect (rebase +2 [+1,+0,+1] +10 === Some [5])",
+    "test_code": "allYourBase.test.ex2 = let\n\ttest.label \"binary to single decimal\" <| test.expect (rebase +2 [+1,+0,+1] +10 === Some [+5])",
     "name": "allYourBase.test.ex2"
   },
   {
-    "test_code": "allYourBase.test.ex3 = let\n\ttest.label \"single decimal to binary\" <| test.expect (rebase +10 [+5] +2 === Some [1,0,1])",
+    "test_code": "allYourBase.test.ex3 = let\n\ttest.label \"single decimal to binary\" <| test.expect (rebase +10 [+5] +2 === Some [+1,+0,+1])",
     "name": "allYourBase.test.ex3"
   },
   {
-    "test_code": "allYourBase.test.ex4 = let\n\ttest.label \"binary to multiple decimal\" <| test.expect (rebase +2 [+1,+0,+1,+0,+1,+0] +10 === Some [4,2])",
+    "test_code": "allYourBase.test.ex4 = let\n\ttest.label \"binary to multiple decimal\" <| test.expect (rebase +2 [+1,+0,+1,+0,+1,+0] +10 === Some [+4,+2])",
     "name": "allYourBase.test.ex4"
   },
   {
-    "test_code": "allYourBase.test.ex5 = let\n\ttest.label \"decimal to binary\" <| test.expect (rebase +10 [+4,+2] +2 === Some [1,0,1,0,1,0])",
+    "test_code": "allYourBase.test.ex5 = let\n\ttest.label \"decimal to binary\" <| test.expect (rebase +10 [+4,+2] +2 === Some [+1,+0,+1,+0,+1,+0])",
     "name": "allYourBase.test.ex5"
   },
   {
-    "test_code": "allYourBase.test.ex6 = let\n\ttest.label \"trinary to hexadecimal\" <| test.expect rebase +3 [+1,+1,+2,+0] +16 === Some [2,10])",
+    "test_code": "allYourBase.test.ex6 = let\n\ttest.label \"trinary to hexadecimal\" <| test.expect rebase +3 [+1,+1,+2,+0] +16 === Some [+2,+10])",
     "name": "allYourBase.test.ex6"
   },
   {
-    "test_code": "allYourBase.test.ex7 = let\n\ttest.label \"hexadecimal to trinary\" <| test.expect (rebase +16 [+2,+10] +3 === Some [1,1,2,0])",
+    "test_code": "allYourBase.test.ex7 = let\n\ttest.label \"hexadecimal to trinary\" <| test.expect (rebase +16 [+2,+10] +3 === Some [+1,+1,+2,+0])",
     "name": "allYourBase.test.ex7"
   },
   {
-    "test_code": "allYourBase.test.ex8 = let\n\ttest.label \"15-bit integer\" <| test.expect (rebase +97 [+3,+46,+60] +73 === Some [6,10,45])",
+    "test_code": "allYourBase.test.ex8 = let\n\ttest.label \"15-bit integer\" <| test.expect (rebase +97 [+3,+46,+60] +73 === Some [+6,+10,+45])",
     "name": "allYourBase.test.ex8"
   },
   {
-    "test_code": "allYourBase.test.ex9 = let\n\ttest.label \"empty list\" <| test.expect (rebase +2 [] +10 === Some [0])",
+    "test_code": "allYourBase.test.ex9 = let\n\ttest.label \"empty list\" <| test.expect (rebase +2 [] +10 === Some [+0])",
     "name": "allYourBase.test.ex9"
   },
   {
-    "test_code": "allYourBase.test.ex10 = let\n\ttest.label \"single zero\" <| test.expect (rebase +10 [+0] +2 === Some [0])",
+    "test_code": "allYourBase.test.ex10 = let\n\ttest.label \"single zero\" <| test.expect (rebase +10 [+0] +2 === Some [+0])",
     "name": "allYourBase.test.ex10"
   },
   {
-    "test_code": "allYourBase.test.ex11 = let\n\ttest.label \"multiple zeros\" <| test.expect (rebase +10 [+0,+0,+0] +2 === Some [0])",
+    "test_code": "allYourBase.test.ex11 = let\n\ttest.label \"multiple zeros\" <| test.expect (rebase +10 [+0,+0,+0] +2 === Some [+0])",
     "name": "allYourBase.test.ex11"
   },
   {
-    "test_code": "allYourBase.test.ex12 = let\n\ttest.label \"leading zeros\" <| test.expect (rebase +7 [+0,+6,+0] +10 === Some [4,2])",
+    "test_code": "allYourBase.test.ex12 = let\n\ttest.label \"leading zeros\" <| test.expect (rebase +7 [+0,+6,+0] +10 === Some [+4,+2])",
     "name": "allYourBase.test.ex12"
   },
   {

@@ -1,3 +1,26 @@
-allYourBase : Int -> [Int] -> Int -> Optional [Nat]
-allYourBase inputBase inputDigits outputBase = todo "implement allYourBase"
+rebase : Int -> [Int] -> Int -> Optional [Int]
+rebase inputBase inputDigits outputBase =
+  if (inputBase < +2 || (outputBase < +2)) then
+    None
+  else
+    if inputDigits === [] then Some [+0] else let
+      match fromDigits +0 inputBase inputDigits with
+        None -> None
+        Some x | x === +0 -> Some [+0]
+        Some x -> Some (toDigits outputBase x [])
 
+fromDigits : Int -> Int -> [Int] -> Optional Int
+fromDigits acc base digits =
+  match digits with
+    head +: tail ->
+      if (head >= +0) && (head < base) then
+        fromDigits (acc * base + head) base tail
+      else
+        None
+    [] -> Some acc
+
+toDigits : Int -> Int -> [Int] -> [Int]
+toDigits base x acc =
+  match x with
+    +0 -> acc
+    _ -> toDigits base (x / base) ((Int.mod x base) +: acc)
