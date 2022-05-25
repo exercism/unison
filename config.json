@@ -21,6 +21,9 @@
     "example": [],
     "exemplar": []
   },
+  "test_runner": {
+    "average_run_time": 2.9
+  },
   "exercises": {
     "concept": [],
     "practice": [
