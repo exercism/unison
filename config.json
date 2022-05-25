@@ -4,7 +4,7 @@
   "active": false,
   "status": {
     "concept_exercises": false,
-    "test_runner": false,
+    "test_runner": true,
     "representer": false,
     "analyzer": false
   },
@@ -20,6 +20,9 @@
     "test": [],
     "example": [],
     "exemplar": []
+  },
+  "test_runner": {
+    "average_run_time": 2.9
   },
   "exercises": {
     "concept": [],
