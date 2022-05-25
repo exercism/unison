@@ -1,0 +1,3 @@
+allYourBase : Int -> [Int] -> Int -> Optional [Nat]
+allYourBase inputBase inputDigits outputBase = todo "implement allYourBase"
+
