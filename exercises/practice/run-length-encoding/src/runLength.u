@@ -1,0 +1,7 @@
+encode : Text -> Text
+encode input =
+  todo "implement encode"
+
+decode : Text -> Text
+decode input =
+  todo "implement decode"
