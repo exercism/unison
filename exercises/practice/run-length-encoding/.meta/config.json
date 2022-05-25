@@ -3,7 +3,7 @@
   "files": {
     "solution": ["src/runLength.u"],
     "test": ["test/runLength.test.u"],
-    "example": [".meta/runLength.example.u"]
+    "example": [".meta/examples/runLength.example.u"]
   },
   "blurb": "Implement run-length encoding and decoding.",
   "source": "Wikipedia",
