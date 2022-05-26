@@ -1,0 +1,86 @@
+allYourBase.test.ex1 = let
+	test.label "single bit one to decimal" <| test.expect (rebase +2 [+1] +10 === Some [+1])
+
+allYourBase.test.ex2 = let
+	test.label "binary to single decimal" <| test.expect (rebase +2 [+1,+0,+1] +10 === Some [+5])
+
+allYourBase.test.ex3 = let
+	test.label "single decimal to binary" <| test.expect (rebase +10 [+5] +2 === Some [+1,+0,+1])
+
+allYourBase.test.ex4 = let
+	test.label "binary to multiple decimal" <| test.expect (rebase +2 [+1,+0,+1,+0,+1,+0] +10 === Some [+4,+2])
+
+allYourBase.test.ex5 = let
+	test.label "decimal to binary" <| test.expect (rebase +10 [+4,+2] +2 === Some [+1,+0,+1,+0,+1,+0])
+
+allYourBase.test.ex6 = let
+	test.label "trinary to hexadecimal" <| test.expect (rebase +3 [+1,+1,+2,+0] +16 === Some [+2,+10])
+
+allYourBase.test.ex7 = let
+	test.label "hexadecimal to trinary" <| test.expect (rebase +16 [+2,+10] +3 === Some [+1,+1,+2,+0])
+
+allYourBase.test.ex8 = let
+	test.label "15-bit integer" <| test.expect (rebase +97 [+3,+46,+60] +73 === Some [+6,+10,+45])
+
+allYourBase.test.ex9 = let
+	test.label "empty list" <| test.expect (rebase +2 [] +10 === Some [+0])
+
+allYourBase.test.ex10 = let
+	test.label "single zero" <| test.expect (rebase +10 [+0] +2 === Some [+0])
+
+allYourBase.test.ex11 = let
+	test.label "multiple zeros" <| test.expect (rebase +10 [+0,+0,+0] +2 === Some [+0])
+
+allYourBase.test.ex12 = let
+	test.label "leading zeros" <| test.expect (rebase +7 [+0,+6,+0] +10 === Some [+4,+2])
+
+allYourBase.test.ex13 = let
+	test.label "input base is one" <| test.expect (rebase +1 [+0] +10 === None)
+
+allYourBase.test.ex14 = let
+	test.label "input base is zero" <| test.expect (rebase +0 [] +10 === None)
+
+allYourBase.test.ex15 = let
+	test.label "input base is negative" <| test.expect (rebase -2 [+1] +10 === None)
+
+allYourBase.test.ex16 = let
+	test.label "negative digit" <| test.expect (rebase +2 [+1,-1,+1,+0,+1,+0] +10 === None)
+
+allYourBase.test.ex17 = let
+	test.label "invalid positive digit" <| test.expect (rebase +2 [+1,+2,+1,+0,+1,+0] +10 === None)
+
+allYourBase.test.ex18 = let
+	test.label "output base is one" <| test.expect (rebase +2 [+1,+0,+1,+0,+1,+0] +1 === None)
+
+allYourBase.test.ex19 = let
+	test.label "output base is zero" <| test.expect (rebase +10 [+7] +0 === None)
+
+allYourBase.test.ex20 = let
+	test.label "output base is negative" <| test.expect (rebase +2 [+1] -7 === None)
+
+allYourBase.test.ex21 = let
+	test.label "both bases are negative" <| test.expect (rebase -2 [+1] -7 === None)
+
+test> tests = runAll [
+	allYourBase.test.ex1,
+	allYourBase.test.ex2,
+	allYourBase.test.ex3,
+	allYourBase.test.ex4,
+	allYourBase.test.ex5,
+	allYourBase.test.ex6,
+	allYourBase.test.ex7,
+	allYourBase.test.ex8,
+	allYourBase.test.ex9,
+	allYourBase.test.ex10,
+	allYourBase.test.ex11,
+	allYourBase.test.ex12,
+	allYourBase.test.ex13,
+	allYourBase.test.ex14,
+	allYourBase.test.ex15,
+	allYourBase.test.ex16,
+	allYourBase.test.ex17,
+	allYourBase.test.ex18,
+	allYourBase.test.ex19,
+	allYourBase.test.ex20,
+	allYourBase.test.ex21
+]
