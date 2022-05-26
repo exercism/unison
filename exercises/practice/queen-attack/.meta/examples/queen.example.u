@@ -1,0 +1,16 @@
+create : (Nat,Nat) -> {Abort} (Nat,Nat)
+create coordinates =
+  (x,y) = coordinates
+  if x >= 8 || (y >= 8) then abort else coordinates
+
+canAttack  : (Nat,Nat) -> (Nat,Nat) -> {Abort} Boolean
+canAttack whiteQueen blackQueen =
+    (whiteX, whiteY) = create whiteQueen
+    (blackX, blackY) = create blackQueen
+    canAttackHoriz = whiteX === blackX
+    canAttackVert = whiteY === blackY
+    deltaRow = Nat.diff whiteX blackX
+    deltaCol = Nat.diff whiteY blackY
+    canAttackDiag = deltaRow === deltaCol
+
+    canAttackHoriz || canAttackVert || canAttackDiag
