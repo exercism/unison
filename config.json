@@ -44,6 +44,22 @@
         "difficulty": 7
       },
       {
+        "slug": "collatz-conjecture",
+        "name": "Collatz Conjecture",
+        "uuid": "5be182a1-5f3a-4b93-aac4-1619508b6052",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "uuid": "4122377f-1ddc-4733-98c1-bd52e67de95d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "151ebc38-659c-4752-b51c-cc7d1d7b1ef4",
