@@ -36,6 +36,14 @@
         "difficulty": 1
       },
       {
+        "slug": "crypto-square",
+        "name": "Crypto Square",
+        "uuid": "0099a6d9-881a-458e-930e-506242e62d1c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "151ebc38-659c-4752-b51c-cc7d1d7b1ef4",
