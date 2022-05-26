@@ -1,0 +1,10 @@
+steps : Nat -> Optional Nat
+steps = cases
+  n | n <= 0 -> None
+  n -> collatzHelper 0 n
+
+collatzHelper : Nat -> Nat -> Optional Nat
+collatzHelper t = cases
+  n | n == 1 -> Some t
+  n | Nat.isEven n -> collatzHelper (t + 1) (n / 2)
+  n -> collatzHelper (t + 1) (n * 3 + 1)
