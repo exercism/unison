@@ -1,0 +1,63 @@
+ciphertext: Text -> Text
+ciphertext inputText =
+  plaintext = toPlainText inputText
+  square = squareSize plaintext
+  transposed _ =
+    chunk square plaintext |>
+    padMatrix ?\s |>
+    List.transpose
+  result _ = List.map fromCharList !transposed |> Text.join " "
+  Abort.toDefaultValue! "" result
+
+toPlainText : Text -> [Char]
+toPlainText input =
+  toCharList input |> List.filter isAlphaNum |> List.map toLower
+
+squareSize : [Char] -> Nat
+squareSize charList =
+  totalSize = List.size charList
+  floatSquare = toFloat totalSize |> sqrt |> ceiling
+  unsafeToInt floatSquare |> abs
+
+chunk : Nat -> [a] -> [[a]]
+chunk chunkSize list =
+  use List +:
+  go acc current =
+    match current with
+      [] -> acc
+      ls | size ls <= chunkSize -> acc :+ ls
+      ls -> let
+        nextGroup = List.take chunkSize current
+        next =  acc :+ nextGroup
+        go next (List.drop chunkSize current)
+  go [] list
+
+padMatrix : a -> [[a]] -> [[a]]
+padMatrix elem matrix =
+  maxLength = List.map (row -> List.size row) matrix |> List.head |> Optional.getOrElse 0
+  List.map (row -> let
+    rowSize = List.size row
+    if rowSize < maxLength then
+      toPad = maxLength - rowSize
+      padRight elem toPad row
+    else row
+    ) matrix
+
+padRight : a -> Nat -> [a] -> [a]
+padRight elem num list =
+  padding = List.fill num elem
+  list ++ padding
+
+List.transpose : [[a]] -> {Abort} [[a]]
+List.transpose matrix =
+  newHeight = (List.head matrix) |> getOrElse [] |> List.size
+  maxHeight = List.map (row -> List.size row) matrix |> List.head |> Optional.getOrElse 0
+  newWidth = List.size matrix
+  columnIndex = List.range 0 maxHeight
+  rowIndex = List.range 0 newWidth
+
+  List.map (c -> let
+    List.map (r -> let
+      List.at! r matrix |> List.at! c
+    ) rowIndex
+  ) columnIndex
