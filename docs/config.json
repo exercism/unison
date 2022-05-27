@@ -1,0 +1,32 @@
+{
+  "docs": [
+    {
+      "uuid": "b2599ce7-29b3-46ce-aa89-6b2f63a6f28f",
+      "slug": "installation",
+      "path": "docs/INSTALLATION.md",
+      "title": "Installing Unison locally",
+      "blurb": "Learn how to install Unison locally to solve Exercism's exercises on your own machine"
+    },
+    {
+      "uuid": "abf9d752-25a7-4f11-9632-40dd2e9e5fe2",
+      "slug": "learning",
+      "path": "docs/LEARNING.md",
+      "title": "How to learn Unison",
+      "blurb": "An overview of how to get started from scratch with Unison"
+    },
+    {
+      "uuid": "2c834128-af42-44ab-8bd1-e84b92b28084",
+      "slug": "tests",
+      "path": "docs/TESTS.md",
+      "title": "Testing on the Unison track",
+      "blurb": "Learn how to test your Unison exercises on Exercism"
+    },
+    {
+      "uuid": "49e073fd-72c5-41a6-a5a6-131641fdac8d",
+      "slug": "resources",
+      "path": "docs/RESOURCES.md",
+      "title": "Useful Unison resources",
+      "blurb": "A collection of useful resources to help you master Unison"
+    }
+  ]
+}
