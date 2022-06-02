@@ -1,0 +1,3 @@
+findFewestCoins : [Nat] -> Nat -> Optional [Nat]
+findFewestCoins inputCoins target =
+  todo "implement findFewestCoins"

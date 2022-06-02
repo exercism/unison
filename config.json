@@ -44,6 +44,14 @@
         "difficulty": 7
       },
       {
+        "slug": "change",
+        "name": "Change",
+        "uuid": "0325c948-8f14-4bc5-8f75-8759c024e24b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "5be182a1-5f3a-4b93-aac4-1619508b6052",
