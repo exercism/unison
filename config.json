@@ -27,8 +27,8 @@
   "exercises": {
     "concept": [
       {
-        "slug": "counter",
-        "name": "Counter",
+        "slug": "usher",
+        "name": "Usher",
         "uuid": "5cb7e7e2-e5f1-418c-bd42-d56ead658e16",
         "practices": [],
         "concepts": ["ability-handlers"],
