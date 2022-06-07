@@ -31,6 +31,10 @@ To call a function, use its name followed by its arguments separated only by spa
 
 ```
 maximum = getMax 1 10
+
+> maximum
+  ⧩
+  10
 ```
 
 When calling a function, Unison will try to treat whatever comes to the immediate right as its argument, which might not always create the desired order of function evaluation.
@@ -39,6 +43,10 @@ Say we want to get the value `1` from the following expression
 
 ```
 shouldBe1 = getMax 1 10 - 10
+
+> shouldBe1
+  ⧩
+  0
 ```
 
 As written, `shouldBe1` evaluates to `0` because the implied function application order is `getMax 1 10`, which is `10` and then `10 - 10`, which is `0`.
@@ -47,6 +55,20 @@ You can use parentheses to regroup the expression into the desired order of oper
 
 ```
 shouldBe1 = getMax 1 (10 - 10)
+
+shouldBe1
+  ⧩
+  1
+```
+
+## Watch expressions
+
+Unison provides a way to quickly evaluate code called a "watch expression". A watch expression starts with a `>` symbol and is followed by the expression to evaluate. Watch expressions can be written in any `.u` suffixed file. Upon saving the file you should see what the expression evaluates to in the Unison Codebase Manager (UCM) console. Where possible in these docs, we'll try to show an expression with its expected output after evaluating it in a watch expression.
+
+```
+> helloThere
+  ⧩
+  "Hello, World!"
 ```
 
 ## Multi line functions
