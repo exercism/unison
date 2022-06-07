@@ -8,7 +8,7 @@
 	"test_code": "test.expect (preparationTimeInMinutes 5 === 10)"
 },
 {
-  "name": "asagna.test.ex3",
+  "name": "lasagna.test.ex3",
 	"test_code": "test.expect (elapsedTimeInMinutes 3 20 === 26)"
 }
 ]
