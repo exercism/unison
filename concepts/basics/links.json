@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.unison-lang.org/learn/tour/",
+    "description": "Tour of the Unison language and codebase manager"
+  },
+  {
+    "url": "https://www.unison-lang.org/learn/fundamentals/values-and-functions/terms/",
+    "description": "Introduction to Unison terms"
+  },
+  {
+    "url": "https://www.unison-lang.org/learn/fundamentals/values-and-functions/functions/",
+    "description": "Introduction to Unison function definition"
+  }
+]

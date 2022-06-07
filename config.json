@@ -25,7 +25,18 @@
     "average_run_time": 2.9
   },
   "exercises": {
-    "concept": [],
+    "concept": [
+      {
+        "slug": "lasagna",
+        "name": "Lasagna",
+        "uuid": "73724654-8ed6-477e-9d2f-7c7e77a6d3f2",
+        "practices": [],
+        "prerequisites": [],
+        "concepts": ["basics"],
+        "difficulty": 1,
+        "status": "wip"
+      }
+    ],
     "practice": [
       {
         "slug": "acronym",
@@ -117,7 +128,13 @@
       }
     ]
   },
-  "concepts": [],
+  "concepts": [
+    {
+      "uuid": "24332ec2-07b2-49e5-aa58-4829d31dc44a",
+      "slug": "basics",
+      "name": "Basics"
+    }
+  ],
   "key_features": [
     {
       "title": "Content addressed",
