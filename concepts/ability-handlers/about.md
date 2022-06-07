@@ -14,7 +14,7 @@ A handler for the the `KeyValue` ability above will need to say what should happ
 
 ## The parts of a handler
 
-Here's a handler that allows interaction with a KeyValue store backed by an in memory `Map`:
+Let's look at a handler that enables interaction with a KeyValue store backed by an in-memory `Map`:
 
 ```
 KeyValue.run : '{KeyValue k v} r -> r
