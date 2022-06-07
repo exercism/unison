@@ -1,17 +1,3 @@
-use Nat
-
-expectedMinutesInOven : Nat
-expectedMinutesInOven = 40
-
-preparationTimeInMinutes : Nat -> Nat
-preparationTimeInMinutes layers =
-  2 * layers
-
-elapsedTimeInMinutes : Nat -> Nat -> Nat
-elapsedTimeInMinutes layers passedAlready =
-  passedAlready + preparationTimeInMinutes layers
-
----
 expectedMinutesInOven : Nat
 expectedMinutesInOven = todo "implement expectedMinutesInOven"
 
