@@ -1,5 +1,5 @@
 {
-  "blurb": "You can write your own ability handlers in Unison, providing different behavior to a given effect",
+  "blurb": "You can write your own ability handlers in Unison, providing behavior to a given computational effect",
   "authors": [
     "rlmark"
   ],
