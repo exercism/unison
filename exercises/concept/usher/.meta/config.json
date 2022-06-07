@@ -1,0 +1,10 @@
+{
+  "blurb": "Get started writing your own ability handlers by writing a counter",
+  "authors": ["rlmark", "pchuisano"],
+  "icon": "movie-goer",
+  "files": {
+    "solution": ["src/counter.u"],
+    "test": ["test/counter.test.u"],
+    "exemplar": [".meta/examples/counter.example.u"]
+  }
+}
