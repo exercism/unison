@@ -1,0 +1,29 @@
+message : Text -> Text
+message logLine =
+  Text.split ?: logLine |>
+    List.last |>
+    Optional.map Text.trim |>
+    Optional.getOrElse "not found"
+
+logLevel : Text -> Text
+logLevel logLine =
+
+  trimLower : Text -> Text
+  trimLower upper =
+    toCharList upper |>
+    List.map toLower |>
+    List.drop 1 |>
+    List.dropLast |>
+    fromCharList
+
+  Text.split ?: logLine |>
+    List.head |>
+    Optional.map trimLower |>
+    Optional.getOrElse "not found"
+
+reformat : Text -> Text
+reformat logLine =
+  msg = message logLine
+  level = logLevel logLine
+  parens = "(" ++ level ++ ")"
+  msg ++ " " ++ parens
