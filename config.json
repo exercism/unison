@@ -25,7 +25,17 @@
     "average_run_time": 2.9
   },
   "exercises": {
-    "concept": [],
+    "concept": [
+      {
+        "slug": "counter",
+        "name": "Counter",
+        "uuid": "5cb7e7e2-e5f1-418c-bd42-d56ead658e16",
+        "practices": [],
+        "concepts": ["ability-handlers"],
+        "prerequisites": [],
+        "difficulty": 2
+      }
+    ],
     "practice": [
       {
         "slug": "acronym",
@@ -117,7 +127,13 @@
       }
     ]
   },
-  "concepts": [],
+  "concepts": [
+    {
+      "uuid": "7791a83f-d824-49fb-9aad-38dd25f7144b",
+      "slug": "ability-handlers",
+      "name": "Ability Handlers"
+    }
+  ],
   "key_features": [
     {
       "title": "Content addressed",
