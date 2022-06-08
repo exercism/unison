@@ -1,5 +1,5 @@
 {
-  "authors": [],
+  "authors": ["rlmark"],
   "files": {
     "solution": ["src/simpleLinkedList.u"],
     "test": ["test/simpleLinkedList.test.u"],
