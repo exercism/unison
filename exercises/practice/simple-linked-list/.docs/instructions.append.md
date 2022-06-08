@@ -3,12 +3,13 @@
 To complete this exercise, you need to create the data type `LinkedList`,
 and implement the following functions:
 
-- `head`
-- `fromList`
-- `isNil`
 - `new`
 - `cons`
 - `nil`
+- `fromList`
+- `head`
+- `tail`
+- `isNil`
 - `reverseLinkedList`
 - `toList`
 
