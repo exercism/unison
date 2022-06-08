@@ -4,3 +4,5 @@ bin/configlet
 bin/configlet.exe
 .unisonHistory
 **/testLoader.output.md
+*.u.bak
+results.json
