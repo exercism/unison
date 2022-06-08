@@ -84,6 +84,14 @@
         "difficulty": 1
       },
       {
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "uuid": "eccd26dc-6826-4d9e-868a-e1d640e57d3b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "0b4e2dbd-7a5e-4a3d-b13d-9138518d9a63",
