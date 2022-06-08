@@ -28,8 +28,3 @@
     "test_code": "linkedList.test.ex7 =\n\tnilTest = isNil nil\n\tconsTest = not <| isNil (new 1)\n\tlabel \"isNil should return appropriate boolean\" <| expect (nilTest && consTest)"
   }
 ]
-
-
-
-
-
