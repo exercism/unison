@@ -25,20 +25,7 @@
     "average_run_time": 2.9
   },
   "exercises": {
-<<<<<<< HEAD
-    "concept": [],
-=======
     "concept": [
-      {
-        "slug": "lasagna",
-        "name": "Lasagna",
-        "uuid": "73724654-8ed6-477e-9d2f-7c7e77a6d3f2",
-        "practices": [],
-        "prerequisites": [],
-        "concepts": ["basics"],
-        "difficulty": 1,
-        "status": "wip"
-      },
       {
         "slug": "log-levels",
         "name": "Log Levels",
@@ -50,7 +37,6 @@
         "status": "wip"
       }
     ],
->>>>>>> 9082726 (adding text values concept and log-levels concept exercise)
     "practice": [
       {
         "slug": "acronym",
