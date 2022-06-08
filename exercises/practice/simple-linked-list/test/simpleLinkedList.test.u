@@ -37,36 +37,3 @@ linkedList.test.ex7 =
   label "isNil should return appropriate boolean" <| expect (nilTest && consTest)
 
 test> tests = test.run ex1 ++ test.run ex2 ++ (runs 10 ex3) ++ test.run ex4 ++ test.run ex5 ++ (runs 10 ex6) ++ test.run ex7
-
-
-
----
-linkedList.test.ex1 _ =
-  listNats = !(listOf nat)
-  linkedList = LinkedList.fromList listNats
-  label "toList and fromList should be symmetrical" <| expect (LinkedList.toList linkedList === listNats)
-
-linkedList.test.ex2 =
-  consTest = LinkedList.head (Cons 1 Nil) === Some 1
-  nilTest = LinkedList.head Nil === None
-  label "head should return optional element" <| expect (consTest && nilTest)
-
-linkedList.test.ex3 =
-  l1 = LinkedList.Cons 1 Nil
-  l2 = LinkedList.Cons 2 l1
-  manyTest = LinkedList.tail l2 === l1
-  consTest = LinkedList.tail l1 === Nil
-  nilTest = LinkedList.head Nil === None
-  label "tail should drop the first element" <| expect (consTest && nilTest && manyTest)
-
-linkedList.test.ex4 _ =
-  listNats = !(listOf nat)
-  linkedList = LinkedList.fromList listNats
-  label "reversing a list twice should be original list" <| expect (reverseLinkedList linkedList |> reverseLinkedList === linkedList)
-
-linkedList.test.ex5 =
-  nilTest = LinkedList.isNil Nil
-  consTest = not <| LinkedList.isNil (Cons 1 Nil)
-  label "isNil should return appropriate boolean" <| expect (nilTest && consTest)
-
-test> tests = (runs 10 ex1) ++ test.run ex2 ++ test.run ex3 ++ (runs 10 ex4) ++ test.run ex5
