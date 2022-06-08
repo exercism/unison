@@ -1,0 +1,35 @@
+[
+  {
+    "name": "linkedList.test.ex1",
+    "test_code":"linkedList.test.ex1 = \n\tlabel \"isNil applied to nil should be true\" <| expect (isNil nil && (not (isNil (new 1))))"
+  },
+  {
+    "name": "linkedList.test.ex2",
+    "test_code":"linkedList.test.ex2 =\n\tlabel \"calling cons with nil is the same as calling new\" <| expect (cons 1 nil === new 1)"
+  },
+  {
+    "name": "linkedList.test.ex3",
+    "test_code":"linkedList.test.ex3 _ =\n\tlistNats = !(listOf nat)\n\tlinkedList = fromList listNats\n\tlabel \"toList and fromList should be symmetrical\" <| expect (toList linkedList === listNats)"
+  },
+  {
+    "name": "linkedList.test.ex4",
+    "test_code": "linkedList.test.ex4 =\n\tconsTest = head (new 1) === Some 1\n\tnilTest = head nil === None\n\tlabel \"head should return optional element\" <| expect (consTest && nilTest)"
+  },
+  {
+    "name": "linkedList.test.ex5",
+    "test_code": "linkedList.test.ex5 =\n\tl1 = new 1\n\tl2 = cons 2 l1\n\tmanyTest = tail l2 === l1\n\tconsTest = tail l1 === nil\n\tnilTest = head nil === None\n\tlabel \"tail should drop the first element\" <| expect (consTest && nilTest && manyTest)"
+  },
+  {
+    "name": "linkedList.test.ex6",
+    "test_code": "linkedList.test.ex6 _ =\n\tlistNats = !(listOf nat)\n\tlinkedList = fromList listNats\n\tlabel \"reversing a list twice should be original list\" <| expect (reverseLinkedList linkedList |> reverseLinkedList === linkedList)"
+  },
+  {
+    "name": "linkedList.test.ex7",
+    "test_code": "linkedList.test.ex7 =\n\tnilTest = isNil nil\n\tconsTest = not <| isNil (new 1)\n\tlabel \"isNil should return appropriate boolean\" <| expect (nilTest && consTest)"
+  }
+]
+
+
+
+
+
