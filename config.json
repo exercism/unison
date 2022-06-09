@@ -16,10 +16,15 @@
     "highlightjs_language": "haskell"
   },
   "files": {
-    "solution": [],
-    "test": [],
-    "example": [],
-    "exemplar": []
+    "solution": [
+      "src/%{camel_slug}.u"
+    ],
+    "test": [
+      "test/%{camel_slug}.test.u"
+    ],
+    "example": [
+      ".meta/examples/%{camel_slug}.example.u"
+    ]
   },
   "test_runner": {
     "average_run_time": 2.9
@@ -114,6 +119,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "996061d4-9b39-4a69-8002-d45dbb84d32f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "run-length-encoding",
