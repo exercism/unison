@@ -41,6 +41,14 @@
         "difficulty": 1
       },
       {
+        "slug": "allergies",
+        "name": "Allergies",
+        "uuid": "46b0292a-0e22-4e4d-9934-7c166d86a919",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "crypto-square",
         "name": "Crypto Square",
         "uuid": "0099a6d9-881a-458e-930e-506242e62d1c",

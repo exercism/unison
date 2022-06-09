@@ -1,0 +1,42 @@
+allergicTo : Text -> Nat -> Boolean
+allergicTo input score =
+  maybeVal : Optional Nat
+  maybeVal = Map.get input allergiesMap
+  result = Optional.map (n -> Nat.and n score) maybeVal |> Optional.map (n -> not (n === 0))
+  Optional.getOrElse false result
+
+list : Nat -> [Text]
+list score =
+  List.filter (cases (a, s) -> allergicTo a score) allergies |> List.map at1
+
+eggs = ("eggs", 1)
+peanuts = ("peanuts", 2)
+shellfish = ("shellfish", 4)
+strawberries = ("strawberries", 8)
+tomatoes = ("tomatoes", 16)
+chocolate = ("chocolate", 32)
+pollen = ("pollen", 64)
+cats = ("cats", 128)
+
+allergies = [
+  eggs,
+  peanuts,
+  shellfish,
+  strawberries,
+  tomatoes,
+  chocolate,
+  pollen,
+  cats
+]
+
+allergiesMap = Map.fromList allergies
+
+
+---
+allergicTo : Text -> Nat -> Boolean
+allergicTo allergen score =
+  todo "implement allergicTo"
+
+list : Nat -> [Text]
+list score =
+  todo "implement list"
