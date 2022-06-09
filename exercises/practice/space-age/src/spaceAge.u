@@ -1,0 +1,3 @@
+age : Text -> Nat -> Optional Float
+age planet earthAgeSeconds =
+  todo "implement age"

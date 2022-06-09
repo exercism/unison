@@ -1,0 +1,38 @@
+spaceAge.test.ex1 = let
+	test.label "age on Earth" <| test.expect (age "Earth" 1000000000 === Some (31.69))
+
+spaceAge.test.ex2 = let
+	test.label "age on Mercury" <| test.expect (age "Mercury" 2134835688 === Some (280.88))
+
+spaceAge.test.ex3 = let
+	test.label "age on Venus" <| test.expect (age "Venus" 189839836 === Some (9.78))
+
+spaceAge.test.ex4 = let
+	test.label "age on Mars" <| test.expect (age "Mars" 2129871239 === Some (35.88))
+
+spaceAge.test.ex5 = let
+	test.label "age on Jupiter" <| test.expect (age "Jupiter" 901876382 === Some (2.41))
+
+spaceAge.test.ex6 = let
+	test.label "age on Saturn" <| test.expect (age "Saturn" 2000000000 === Some (2.15))
+
+spaceAge.test.ex7 = let
+	test.label "age on Uranus" <| test.expect (age "Uranus" 1210123456 === Some (0.46))
+
+spaceAge.test.ex8 = let
+	test.label "age on Neptune" <| test.expect (age "Neptune" 1821023456 === Some (0.35))
+
+spaceAge.test.ex9 = let
+	test.label "invalid planet causes error" <| test.expect (age "Sun" 680804807 === None)
+
+test> tests = runAll [
+	spaceAge.test.ex1,
+	spaceAge.test.ex2,
+	spaceAge.test.ex3,
+	spaceAge.test.ex4,
+	spaceAge.test.ex5,
+	spaceAge.test.ex6,
+	spaceAge.test.ex7,
+	spaceAge.test.ex8,
+	spaceAge.test.ex9
+]
