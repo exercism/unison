@@ -49,6 +49,14 @@
         "difficulty": 4
       },
       {
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "00540531-9d65-4daf-aaf6-fa2f6d47331d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "crypto-square",
         "name": "Crypto Square",
         "uuid": "0099a6d9-881a-458e-930e-506242e62d1c",
@@ -71,6 +79,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "4549e619-87dd-4ba3-b89c-6f3359a25d7c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
       },
       {
         "slug": "all-your-base",
@@ -119,6 +135,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
+      },
+      {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "06c1d4b6-1262-474b-80b4-6e779fa11743",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       },
       {
         "slug": "sum-of-multiples",

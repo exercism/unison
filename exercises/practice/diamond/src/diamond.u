@@ -1,0 +1,3 @@
+rows : Char -> [Text]
+rows letter =
+  todo "implement rows"
