@@ -113,6 +113,14 @@
         "difficulty": 4
       },
       {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "06c1d4b6-1262-474b-80b4-6e779fa11743",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum Of Multiples",
         "uuid": "0fbe5e82-b563-4360-8957-e3a543eb3184",
