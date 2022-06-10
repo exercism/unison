@@ -65,6 +65,14 @@
         "difficulty": 1
       },
       {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "4549e619-87dd-4ba3-b89c-6f3359a25d7c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "4122377f-1ddc-4733-98c1-bd52e67de95d",
