@@ -1,0 +1,17 @@
+isArmstrongNumber : Nat -> Boolean
+isArmstrongNumber number =
+  digitList = loop number []
+  result = List.foldLeft (acc digit ->  acc + (Nat.pow digit (List.size digitList))) 0 digitList
+  result === number
+
+divMod : Nat -> Nat -> (Nat, Nat)
+divMod a b =
+  m = Nat.mod a b
+  div = a / b
+  (div, m)
+
+loop : Nat -> [Nat] -> [Nat]
+loop current acc =
+  (tens, remainder) = divMod current 10
+  if tens === 0 then (remainder +: acc) else
+    loop tens (remainder +: acc)
