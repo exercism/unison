@@ -35,7 +35,7 @@
       {
         "slug": "acronym",
         "name": "Acronym",
-        "uuid": "c4fdcad4-595a-4930-aeef-c73fe6f1b00d",
+        "uuid": "da98b0d1-7b2d-4a0a-8493-c431b4409b40",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
@@ -43,7 +43,7 @@
       {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
-        "uuid": "da98b0d1-7b2d-4a0a-8493-c431b4409b40",
+        "uuid": "00540531-9d65-4daf-aaf6-fa2f6d47331d",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
