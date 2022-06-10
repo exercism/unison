@@ -121,6 +121,14 @@
         "difficulty": 8
       },
       {
+        "slug": "majority-element",
+        "name": "Majority Element",
+        "uuid": "5975f00d-8a77-4240-91c1-1fedb41c2adb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "0b4e2dbd-7a5e-4a3d-b13d-9138518d9a63",
