@@ -1,0 +1,20 @@
+spiralMatrix : Nat -> [[Nat]]
+spiralMatrix n =
+  matrix (spiralIndex (n, n)) (n,n)
+
+spiralIndex : (Nat, Nat) -> (Nat, Nat) -> Nat
+spiralIndex = cases
+  (h, w), (1, j) -> j
+  (h, w), (i, j) -> w + (spiralIndex (w, h - 1) (w - j + 1, i - 1))
+
+
+matrix : ((Nat, Nat) -> Nat) -> (Nat, Nat) -> [[Nat]]
+matrix f tupRowsColums =
+  (rows, columns) = tupRowsColums
+  cols =  List.rangeClosed 1 columns
+  rws = List.rangeClosed 1 rows
+  List.map (c ->
+    List.map (r ->
+      f (c,r)
+    ) cols
+  ) rws
