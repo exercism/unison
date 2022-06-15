@@ -30,7 +30,20 @@
     "average_run_time": 2.9
   },
   "exercises": {
-    "concept": [],
+    "concept": [
+      {
+        "slug": "pacman-rules",
+        "name": "Pacman Rules",
+        "uuid": "0606129a-6262-4fd5-80b9-bdc66ec46f76",
+        "concepts": [
+          "booleans"
+        ],
+        "prerequisites": [
+        ],
+        "status": "wip"
+      }
+
+    ],
     "practice": [
       {
         "slug": "acronym",
@@ -194,7 +207,13 @@
       }
     ]
   },
-  "concepts": [],
+  "concepts": [
+    {
+      "uuid": "15ceedc0-9a50-4749-9a03-7b6b633c757b",
+      "slug": "booleans",
+      "name": "Booleans"
+    }
+  ],
   "key_features": [
     {
       "title": "Content addressed",

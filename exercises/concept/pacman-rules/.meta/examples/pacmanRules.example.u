@@ -1,0 +1,15 @@
+Rules.eatGhost: Boolean -> Boolean -> Boolean
+Rules.eatGhost powerPelletActive touchingGhost =
+  powerPelletActive && touchingGhost
+
+Rules.score: Boolean -> Boolean -> Boolean
+Rules.score powerPelletActive touchingDot =
+  powerPelletActive || touchingDot
+
+Rules.lose : Boolean -> Boolean -> Boolean
+Rules.lose powerPelletActive touchingGhost =
+  not powerPelletActive && touchingGhost
+
+Rules.win : Boolean -> Boolean -> Boolean -> Boolean
+Rules.win eatenAll powerPelletActive touchingGhost =
+  eatenAll && not (lose powerPelletActive touchingGhost)

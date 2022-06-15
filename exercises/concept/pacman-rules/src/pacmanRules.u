@@ -1,0 +1,15 @@
+Rules.eatGhost: Boolean -> Boolean -> Boolean
+Rules.eatGhost powerPelletActive touchingGhost =
+  todo "implement eatGhost"
+
+Rules.score: Boolean -> Boolean -> Boolean
+Rules.score powerPelletActive touchingDot =
+  todo "implement score"
+
+Rules.lose : Boolean -> Boolean -> Boolean
+Rules.lose powerPelletActive touchingGhost =
+  todo "implement lose"
+
+Rules.win : Boolean -> Boolean -> Boolean -> Boolean
+Rules.win eatenAll powerPelletActive touchingGhost =
+  todo "implement Rules.win"
