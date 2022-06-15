@@ -12,7 +12,7 @@
     "name": "nucleotideCount.test.ex3"
   },
   {
-    "test_code": "nucleotideCount.test.ex4 = let\n\ttest.label \"strand with multiple nucleotides\" <| test.expect (nucleotideCounts \"AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC\" === (Some [(\"A\",2)0,(\"C\",1)2,(\"G\",1)7,(\"T\",2)1]))",
+    "test_code": "nucleotideCount.test.ex4 = let\n\ttest.label \"strand with multiple nucleotides\" <| test.expect (nucleotideCounts \"AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC\" === (Some [(\"A\",20),(\"C\",12),(\"G\",17),(\"T\",21)]))",
     "name": "nucleotideCount.test.ex4"
   },
   {
