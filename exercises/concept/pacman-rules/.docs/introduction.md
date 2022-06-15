@@ -7,7 +7,7 @@ trueVariable = true
 falseVariable = false
 ```
 
-We can evaluate strict boolean expressions using the and, represented with `&&`; or, represented with`||`; and not, represented with `not`, operators.
+We can evaluate boolean expressions using the and, represented with `&&`; or, represented with`||`; and not, represented with `not`, operators.
 
 ```haskell
 trueVariable = true && true
