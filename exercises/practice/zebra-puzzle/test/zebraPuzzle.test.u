@@ -1,0 +1,10 @@
+zebraPuzzle.test.ex1 = let
+	test.label "resident who drinks water" <| test.expect (drinksWater  === "Norwegian")
+
+zebraPuzzle.test.ex2 = let
+	test.label "resident who owns zebra" <| test.expect (ownsZebra  === "Japanese")
+
+test> tests = runAll [
+	zebraPuzzle.test.ex1,
+	zebraPuzzle.test.ex2
+]

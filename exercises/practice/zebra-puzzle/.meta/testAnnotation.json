@@ -1,0 +1,10 @@
+[
+  {
+    "test_code": "zebraPuzzle.test.ex1 = let\n\ttest.label \"resident who drinks water\" <| test.expect (drinksWater  === \"Norwegian\")",
+    "name": "zebraPuzzle.test.ex1"
+  },
+  {
+    "test_code": "zebraPuzzle.test.ex2 = let\n\ttest.label \"resident who owns zebra\" <| test.expect (ownsZebra  === \"Japanese\")",
+    "name": "zebraPuzzle.test.ex2"
+  }
+]
