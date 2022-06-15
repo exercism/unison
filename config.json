@@ -145,6 +145,14 @@
         "difficulty": 1
       },
       {
+        "slug": "scale-generator",
+        "name": "Scale Generator",
+        "uuid": "d83fd7ee-2eff-41d5-8a7c-e3893a969150",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "3a377fd7-2f66-4326-94f5-e3e05133c252",

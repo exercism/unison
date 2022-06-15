@@ -1,0 +1,7 @@
+chromatic : Text -> [Text]
+chromatic tonic =
+  todo "implement chromatic"
+
+interval : Text -> Text -> [Text]
+interval tonic intevals =
+  todo "implement interval"
