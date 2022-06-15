@@ -1,0 +1,22 @@
+[
+  {
+    "test_code": "nucleotideCount.test.ex1 = let\n\ttest.label \"empty strand\" <| test.expect (nucleotideCounts \"\" === (Some [(\"A\",0),(\"C\",0),(\"G\",0),(\"T\",0)]))",
+    "name": "nucleotideCount.test.ex1"
+  },
+  {
+    "test_code": "nucleotideCount.test.ex2 = let\n\ttest.label \"can count one nucleotide in single-character input\" <| test.expect (nucleotideCounts \"G\" === (Some [(\"A\",0),(\"C\",0),(\"G\",1),(\"T\",0)]))",
+    "name": "nucleotideCount.test.ex2"
+  },
+  {
+    "test_code": "nucleotideCount.test.ex3 = let\n\ttest.label \"strand with repeated nucleotide\" <| test.expect (nucleotideCounts \"GGGGGGG\" === (Some [(\"A\",0),(\"C\",0),(\"G\",7),(\"T\",0)]))",
+    "name": "nucleotideCount.test.ex3"
+  },
+  {
+    "test_code": "nucleotideCount.test.ex4 = let\n\ttest.label \"strand with multiple nucleotides\" <| test.expect (nucleotideCounts \"AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC\" === (Some [(\"A\",2)0,(\"C\",1)2,(\"G\",1)7,(\"T\",2)1]))",
+    "name": "nucleotideCount.test.ex4"
+  },
+  {
+    "test_code": "nucleotideCount.test.ex5 = let\n\ttest.label \"strand with invalid nucleotides\" <| test.expect (nucleotideCounts \"AGXXACT\" === None)",
+    "name": "nucleotideCount.test.ex5"
+  }
+]
