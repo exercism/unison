@@ -1,8 +1,8 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/runLength.u
+.> load ./runLength.u
 .> add
-.> load ./test/runLength.test.u
+.> load ./runLength.test.u
 .> add
 ```

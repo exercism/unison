@@ -1,8 +1,8 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/allergies.u
+.> load ./allergies.u
 .> add
-.> load ./test/allergies.test.u
+.> load ./allergies.test.u
 .> add
 ```

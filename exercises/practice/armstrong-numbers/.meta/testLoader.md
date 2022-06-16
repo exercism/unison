@@ -1,8 +1,8 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/armstrongNumbers.u
+.> load ./armstrongNumbers.u
 .> add
-.> load ./test/armstrongNumbers.test.u
+.> load ./armstrongNumbers.test.u
 .> add
 ```

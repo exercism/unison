@@ -1,8 +1,8 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/scaleGenerator.u
+.> load ./scaleGenerator.u
 .> add
-.> load ./test/scaleGenerator.test.u
+.> load ./scaleGenerator.test.u
 .> add
 ```

@@ -1,8 +1,8 @@
 # Testing transcript for hello exercise
 
 ```ucm
-.> load ./src/sumOfMultiples.u
+.> load ./sumOfMultiples.u
 .> add
-.> load ./test/sumOfMultiples.test.u
+.> load ./sumOfMultiples.test.u
 .> add
 ```

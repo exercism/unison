@@ -1,8 +1,8 @@
 {
   "authors": ["rlmark"],
   "files": {
-    "solution": ["src/simpleLinkedList.u"],
-    "test": ["test/simpleLinkedList.test.u"],
+    "solution": ["simpleLinkedList.u"],
+    "test": ["simpleLinkedList.test.u"],
     "example": [".meta/examples/simpleLinkedList.example.u"]
   },
   "blurb": "Write a simple linked list implementation that uses Elements and a List.",

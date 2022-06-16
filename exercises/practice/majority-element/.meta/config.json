@@ -7,10 +7,10 @@
   ],
   "files": {
     "solution": [
-      "src/majorityElement.u"
+      "majorityElement.u"
     ],
     "test": [
-      "test/majorityElement.test.u"
+      "majorityElement.test.u"
     ],
     "example": [
       ".meta/examples/majorityElement.example.u"

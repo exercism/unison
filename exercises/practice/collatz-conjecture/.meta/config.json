@@ -1,8 +1,8 @@
 {
   "authors": ["rlmark"],
   "files": {
-    "solution": ["src/collatz.u"],
-    "test": ["test/collatz.test.u"],
+    "solution": ["collatz.u"],
+    "test": ["collatz.test.u"],
     "example": [".meta/examples/collatz.example.u"]
   },
   "blurb": "Calculate the number of steps to reach 1 using the Collatz conjecture.",

@@ -1,8 +1,8 @@
 {
   "authors": ["rlmark"],
   "files": {
-    "solution": ["src/change.u"],
-    "test": ["test/change.test.u"],
+    "solution": ["change.u"],
+    "test": ["change.test.u"],
     "example": [".meta/examples/change.example.u"]
   },
   "blurb": "Correctly determine change to be given using the least number of coins.",

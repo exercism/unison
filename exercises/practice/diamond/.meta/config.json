@@ -2,10 +2,10 @@
   "authors": ["rlmark"],
   "files": {
     "solution": [
-      "src/diamond.u"
+      "diamond.u"
     ],
     "test": [
-      "test/diamond.test.u"
+      "diamond.test.u"
     ],
     "example": [
       ".meta/examples/diamond.example.u"

@@ -2,10 +2,10 @@
   "authors": ["rlmark"],
   "files": {
     "solution": [
-      "src/nucleotideCount.u"
+      "nucleotideCount.u"
     ],
     "test": [
-      "test/nucleotideCount.test.u"
+      "nucleotideCount.test.u"
     ],
     "example": [
       ".meta/examples/nucleotideCount.example.u"

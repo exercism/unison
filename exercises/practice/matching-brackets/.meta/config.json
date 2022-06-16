@@ -1,8 +1,8 @@
 {
   "authors": ["rlmark"],
   "files": {
-    "solution": ["src/matchingBrackets.u"],
-    "test": ["test/matchingBrackets.test.u"],
+    "solution": ["matchingBrackets.u"],
+    "test": ["matchingBrackets.test.u"],
     "example": [".meta/examples/matchingBrackets.example.u"]
   },
   "blurb": "Make sure the brackets and braces all match.",

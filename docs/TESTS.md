@@ -14,37 +14,27 @@
 
   You can practice Unison's programming workflow with the [Unison language tour](https://www.unison-lang.org/learn/tour/).
 
-  ### Useful UCM Commands
-
-  To see a list of available commands for interacting with your codebase, run `help` in the Unison Codebase Manager CLI. The list of UCM commands is also [described on our website](https://www.unison-lang.org/learn/ucm-commands/). Here are a few that might be helpful:
-
-  * [`add`](https://www.unison-lang.org/learn/ucm-commands/#add)
-    * Adds the new definitions from the `.u` file to the codebase.
-  * [`update`](https://www.unison-lang.org/learn/ucm-commands/#update)
-    * Works like `add`, except that if a definition in the file has the same name as an existing definition, the name gets updated to point to the new definition.
-    * If the old definition has any dependents, update will automatically propagate the change if possible, or create a [`todo`](https://www.unison-lang.org/learn/usage-topics/workflow-how-tos/resolve-conflicts/) item for future refactoring.
-  * [`load`](https://www.unison-lang.org/learn/ucm-commands/#load)
-    * Parses, typechecks and evaluates the given `.u` suffixed scratch file. Once typechecked and evaluated, you can add the terms to your codebase.
-  * [`ls`](https://www.unison-lang.org/learn/ucm-commands/#ls)
-    * Lists the contents of a namespace
-  * [`cd`](https://www.unison-lang.org/learn/ucm-commands/#cd)
-    * Navigates into the given namespace, creating the namespace if it does not exist
-  * [`view`](https://www.unison-lang.org/learn/ucm-commands/#view)
-    * View the source code of a given Unison definition
-  * [`ui`](https://www.unison-lang.org/learn/ucm-commands/#ui)
-    * Opens the local codebase UI
-  * `exit`
-    * Closes the UCM
-
   ## Exercism testing setup
 
-  If you're working on an Exercism problem on the command line, most likely you'll be implementing your solution in the `src` directory of the given exercise. The file that contains the tests for each exercise are located in the `test` folder, so you'll want to use the `load` command in the Unison codebase manager CLI to bring the tests into scope and run them. The `load` command takes a file path as its argument. Here's what that might look like for the hello world exercise:
+  ### Quick overview
+
+  1. With the UCM watching the exercise directory, make your changes in the `<myFileName>.u` file
+  2. Save the `<myFileName>.u` file
+  3. If the file typechecks, run the `add` or `update` UCM commands
+    * If the file does not typecheck, make changes to the code in your `<myFileName>.u` file until it compiles
+  4. Run the `load <myFileName>.test.u` command in the UCM cli to bring the tests into scope and run them
+
+  ### Detailed walk through
+
+  If you're working on an Exercism problem on the command line, most likely you'll be implementing your solution in the directory named after the given exercise. For example, if the exercise is `hello-world`, you should open the `ucm` from the command line after having `cd`'ed into `~/exercism/unison/hello-world`. Make your implementation changes in the `hello.u` file, and when you're satisfied with your implementation, enter the `add` or `update` command in the Unison codebase manager CLI (UCM) to add your work from the file into the codebase.
+
+  The file that contains the tests for each exercise is suffixed `.test.u`. You'll want to use the `load` command in the UCM to bring the tests into scope and run them. The `load` command takes a file path as its argument. Here's what that might look like for the hello world exercise:
 
   ```
-  .> load ../test/hello.test.u
+  .> load hello.test.u
   ```
 
-  You should see a message from the UCM about the terms that were brought into scope and the result of running the test:
+  You should see a message from the UCM about the terms that were brought into scope and, importantly, the result of running the test:
 
   ```
 
@@ -59,43 +49,48 @@
 
     6 | test> tests = runAll [hello.test]
 
-    🚫 FAILED  (cached)
+    🚫 FAILED
   ```
 
-  Next you'll want to `add` the tests to the codebase.
-
-
-  ```
-  .> add
-  ```
-
-  You should see a success message:
+  Let's say your tests didn't pass the first time. Switch back to editing your `myExercise.u` file, and upon saving you can `update`
 
   ```
-    ⍟ I've added these definitions:
+  I found and typechecked these definitions in ~/Exercism/unison/hello-world/hello.u. If you do an
+  `add` or `update`, here's how your codebase would change:
 
-    hello.test : Test.Test
-    tests      : [Result]
+    ⍟ These names already exist. You can `update` them to your new definition:
+
+      hello : Text
+
+  .> update
+
+  ⍟ I've updated these names to your new definition:
+
+    hello : Text
   ```
 
-  Now let's view the test expectation, so we know what we should accomplish. We could just open the `test.u` file to see the test expectation in a text editor, but let's `view` the source code of the test *within the UCM*. Enter `view hello.test` in the UCM to see the source code of the test.
+  Next we can re-load our tests to see if anything changed!
 
-  Say we want to make this test pass. Here's what we'll do:
-
-  1. Make our changes in the `src/<myFileName>.u` file
-  2. Save the `src/<myFileName>.u` file
-  3. If the file typechecks, run the `add` or `update` UCM commands
-    * If the file does not typecheck, make changes to the code until it compiles because Unison does not let you save non-compiling code
-  4. Run the `load ../test/hello.test.u` command in the UCM cli again
-
-When the tests pass, you'll see something like:
-
-```
-  Now evaluating any watch expressions (lines starting with
-  `>`)... Ctrl+C cancels.
+  ```
+  .> load hello.test.u
+    Now evaluating any watch expressions (lines starting with `>`)... Ctrl+C cancels.
 
 
     6 | test> tests = runAll [hello.test]
 
     ✅ Passed : Passed 1 tests.
-```
+  ```
+
+  ## Useful UCM Commands
+
+  To see a list of available commands for interacting with your codebase, run `help` in the Unison Codebase Manager CLI. The list of UCM commands is also [described on our website](https://www.unison-lang.org/learn/ucm-commands/). Here are a few that might be helpful:
+
+  * [`add`](https://www.unison-lang.org/learn/ucm-commands/#add): Adds the new definitions from the `.u` file to the codebase.
+  * [`update`](https://www.unison-lang.org/learn/ucm-commands/#update): Works like `add`, except that if a definition in the file has the same name as an existing definition, the name gets updated to point to the new definition.
+    * If the old definition has any dependents, update will automatically propagate the change if possible, or create a [`todo`](https://www.unison-lang.org/learn/usage-topics/workflow-how-tos/resolve-conflicts/) item for future refactoring.
+  * [`load`](https://www.unison-lang.org/learn/ucm-commands/#load): Parses, typechecks and evaluates the given `.u` suffixed scratch file. Once typechecked and evaluated, you can add the terms to your codebase.
+  * [`ls`](https://www.unison-lang.org/learn/ucm-commands/#ls): Lists the contents of a namespace
+  * [`cd`](https://www.unison-lang.org/learn/ucm-commands/#cd): Navigates into the given namespace, creating the namespace if it does not exist
+  * [`view`](https://www.unison-lang.org/learn/ucm-commands/#view): View the source code of a given Unison definition
+  * [`ui`](https://www.unison-lang.org/learn/ucm-commands/#ui): Opens the local codebase UI
+  * `exit`: Closes the UCM

@@ -1,8 +1,8 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/diamond.u
+.> load ./diamond.u
 .> add
-.> load ./test/diamond.test.u
+.> load ./diamond.test.u
 .> add
 ```
