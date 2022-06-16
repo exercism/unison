@@ -1,12 +1,12 @@
 (+-) : Optional Float -> Optional Float -> Boolean
 answer +- expected =
   sameOptStatus = (isSome answer && isSome expected) || (isNone answer && isNone expected )
-  isWithinAllowance = Optional.zip answer expected |> Optional.map (t -> uncurry testAllowance t )  |> Optional.getOrElse true
+  isWithinAllowance = Optional.zip answer expected |> Optional.map (uncurry testAllowance) |> Optional.getOrElse true
   testAllowance exp ans =
     epsilon = 0.01
     upper = exp + epsilon
     lower = exp - epsilon
-    (ans >= lower) && (ans <= upper)
+    (ans > lower) && (ans < upper)
   sameOptStatus && isWithinAllowance
 
 spaceAge.test.ex1 = let
