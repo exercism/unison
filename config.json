@@ -17,10 +17,10 @@
   },
   "files": {
     "solution": [
-      "src/%{camel_slug}.u"
+      "%{camel_slug}.u"
     ],
     "test": [
-      "test/%{camel_slug}.test.u"
+      "%{camel_slug}.test.u"
     ],
     "example": [
       ".meta/examples/%{camel_slug}.example.u"

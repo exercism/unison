@@ -1,8 +1,8 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/allYourBase.u
+.> load ./allYourBase.u
 .> add
-.> load ./test/allYourBase.test.u
+.> load ./allYourBase.test.u
 .> add
 ```

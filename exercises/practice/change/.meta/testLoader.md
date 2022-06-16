@@ -1,8 +1,8 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/change.u
+.> load ./change.u
 .> add
-.> load ./test/change.test.u
+.> load ./change.test.u
 .> add
 ```

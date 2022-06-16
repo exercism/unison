@@ -2,10 +2,10 @@
   "authors": ["rlmark"],
   "files": {
     "solution": [
-      "src/scaleGenerator.u"
+      "scaleGenerator.u"
     ],
     "test": [
-      "test/scaleGenerator.test.u"
+      "scaleGenerator.test.u"
     ],
     "example": [
       ".meta/examples/scaleGenerator.example.u"

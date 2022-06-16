@@ -2,10 +2,10 @@
   "authors": ["rlmark"],
   "files": {
     "solution": [
-      "src/allergies.u"
+      "allergies.u"
     ],
     "test": [
-      "test/allergies.test.u"
+      "allergies.test.u"
     ],
     "example": [
       ".meta/examples/allergies.example.u"
