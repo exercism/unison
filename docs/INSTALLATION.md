@@ -66,7 +66,7 @@ When you want to write Unison code, you'll issue the `ucm` command to start the 
 If you're ever confused about what directory the `ucm` is watching for file changes under, it's printed in the welcome screen upon starting the cli.
 
 ```
-👀 I'm watching for changes to .u files under /Users/myUser/Exercism/unison/myExercise
+👀 I'm watching for changes to .u files under /Users/myUser/exercism/unison/my-exercise
 ```
 
 ## Editor support
