@@ -76,17 +76,11 @@ Zipper.handlerImpl binTree =
     (Branch a l r) = binTree
     go binTree [Top a binTree]
 
-unique type Path a
-  = Left a (Tree a)
-  | Right a (Tree a)
-  | Top a (Tree a)
-
 Zipper.run : Tree a -> '{Zipper Tree a, g} r -> {g} r
 Zipper.run tree zipperFunction =
   result = handle !zipperFunction with handlerImpl tree
   at1 result
 
--- Zipper.runWithTree
 Zipper.runWithTree : Tree a -> '{Zipper Tree a, g } r ->  {g} (r, Tree a)
 Zipper.runWithTree tree zipperFunction =
   handle !zipperFunction with handlerImpl tree
