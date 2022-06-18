@@ -41,7 +41,7 @@ setVal : a -> Tree a -> Tree a
 setVal a = cases
   Branch _ l r -> Branch a l r
 
-Zipper.handlerImpl : Tree a -> Request (Zipper Tree a) r -> (r, Tree a)
+Zipper.handlerImpl : Tree a -> {g} Request (Zipper Tree a) r -> {g} (r, Tree a)
 Zipper.handlerImpl binTree =
   go : Tree a -> [Path a] -> {g} Request (Zipper Tree a) r -> {g} (r, Tree a)
   go tree path = cases
@@ -81,12 +81,12 @@ unique type Path a
   | Right a (Tree a)
   | Top a (Tree a)
 
-Zipper.run : Tree a -> '{Zipper Tree a} r -> r
+Zipper.run : Tree a -> '{Zipper Tree a, g} r -> {g} r
 Zipper.run tree zipperFunction =
   result = handle !zipperFunction with handlerImpl tree
   at1 result
 
 -- Zipper.runWithTree
-Zipper.runWithTree : Tree a -> '{Zipper Tree a} r -> (r, Tree a)
+Zipper.runWithTree : Tree a -> '{Zipper Tree a, g } r ->  {g} (r, Tree a)
 Zipper.runWithTree tree zipperFunction =
   handle !zipperFunction with handlerImpl tree
