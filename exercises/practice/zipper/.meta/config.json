@@ -1,0 +1,15 @@
+{
+  "authors": ["rlmark"],
+  "files": {
+    "solution": [
+      "zipper.u"
+    ],
+    "test": [
+      "zipper.test.u"
+    ],
+    "example": [
+      ".meta/examples/zipper.example.u"
+    ]
+  },
+  "blurb": "Create a zipper for traversing and changing the nodes of a binary tree"
+}
