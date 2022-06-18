@@ -94,6 +94,25 @@ zipper.test.ex10 = let
     focus
   test.label "can move right, set right tree, and up" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
 
+zipper.test.ex11 = let
+  value = 3
+  testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch value None None))
+  nav _ =
+    Zipper.right
+    Zipper.right
+    Zipper.right
+    focus
+  test.label "returns self when no more rights" <| test.expect ( Zipper.run testTree nav === value)
+
+zipper.test.ex12 = let
+  value = 1
+  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))
+  nav _ =
+    Zipper.right
+    Zipper.up
+    Zipper.up
+    focus
+  test.label "returns self when no more parents" <| test.expect ( Zipper.run testTree nav === value)
 
 test> tests = runAll[
   zipper.test.ex1,
@@ -105,5 +124,7 @@ test> tests = runAll[
   zipper.test.ex7,
   zipper.test.ex8,
   zipper.test.ex9,
-  zipper.test.ex10
+  zipper.test.ex10,
+  zipper.test.ex11,
+  zipper.test.ex12
 ]

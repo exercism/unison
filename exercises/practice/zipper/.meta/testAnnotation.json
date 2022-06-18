@@ -38,5 +38,13 @@
   {
     "name": "zipper.test.ex10",
     "test_code": "zipper.test.ex10 = let\n\tvalue = 1\ttestTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\tnewRight = 300\texpectedTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None (Some testTree)))\tnav _ =\t\tZipper.right\t\tZipper.setRight testTree\t\tZipper.up\t\tfocus\ttest.label \"can move right, set right tree, and up\" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))"
+  },
+  {
+    "name": "zipper.test.ex11",
+    "test_code": "zipper.test.ex11 = let\n\tvalue = 3\n\ttestTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch value None None))\n\tnav _ =\n\t\tZipper.right\n\t\tZipper.right\n\t\tZipper.right\n\t\tfocus\n\ttest.label \"returns self when no more rights\" <| test.expect ( Zipper.run testTree nav === value)"
+  },
+  {
+    "name": "zipper.test.ex12",
+    "test_code": "zipper.test.ex12 = let\n\tvalue = 1\n\ttestTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\n\tnav _ =\n\tZipper.right\n\tZipper.up\n\tZipper.up\n\tfocus\n\ttest.label \"returns self when no more parents\" <| test.expect ( Zipper.run testTree nav === value)"
   }
 ]
