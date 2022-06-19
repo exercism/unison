@@ -1,0 +1,29 @@
+structural ability MyStream a where emit : a -> {MyStream a} ()
+
+MyStream.fromList : [a] -> '{MyStream a} ()
+MyStream.fromList list =
+  todo "implement fromList"
+
+MyStream.toList : '{g, MyStream a} r -> '{g} [a]
+MyStream.toList streamFunction =
+  todo "implement toList"
+
+MyStream.toListWithResult : '{g, MyStream a} r -> '{g} ([a], r)
+MyStream.toListWithResult streamFunction =
+  todo "implement toListWithResult"
+
+MyStream.ignore : '{g, MyStream a} r ->{g} r
+MyStream.ignore streamFunction =
+  todo "implement ignore"
+
+MyStream.filter : (a ->{g} Boolean) -> '{g, MyStream a} r -> '{g, MyStream a} r
+MyStream.filter predicate streamFunction =
+  todo "implement filter"
+
+MyStream.map : (a ->{g} b) -> '{g, MyStream a} r -> '{g, MyStream b} r
+MyStream.map f streamFunction =
+  todo "implement map"
+
+MyStream.flatMap : (a ->{e, MyStream b} r) -> '{e, MyStream a} r -> '{e, MyStream b} r
+MyStream.flatMap f streamFunction =
+  todo "implement flatMap"

@@ -185,6 +185,14 @@
         "difficulty": 5
       },
       {
+        "slug": "stream-ops",
+        "name": "Stream Ops",
+        "uuid": "56c6f521-3567-4f35-8f73-c675d14aaa4b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum Of Multiples",
         "uuid": "0fbe5e82-b563-4360-8957-e3a543eb3184",
