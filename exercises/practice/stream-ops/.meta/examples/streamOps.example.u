@@ -1,0 +1,54 @@
+structural ability MyStream a where emit : a -> {MyStream a} ()
+
+MyStream.fromList : [a] -> '{MyStream a} ()
+MyStream.fromList list = 'let
+  List.map MyStream.emit list
+  ()
+
+MyStream.toList : '{g, MyStream a} r -> '{g} [a]
+MyStream.toList streamFunction = 'let
+  at1 !(toListWithResult streamFunction)
+
+MyStream.toListWithResult : '{g, MyStream a} r -> '{g} ([a], r)
+MyStream.toListWithResult streamFunction = 'let
+  go list = cases
+    {pure} -> (list,pure)
+    {MyStream.emit a -> resume } -> handle resume () with go (list List.:+ a )
+  handle !streamFunction with go []
+
+MyStream.ignore : '{g, MyStream a} r ->{g} r
+MyStream.ignore streamFunction =
+  go = cases
+      { r }                -> r
+      {MyStream.emit _ -> k} -> handle !k with go
+  handle !streamFunction with go
+
+MyStream.filter : (a ->{g} Boolean) -> '{g, MyStream a} r -> '{g, MyStream a} r
+MyStream.filter predicate streamFunction = 'let
+  go : base.Request (MyStream a) r  -> {g, MyStream a} r
+  go = cases
+      { r }                -> r
+      {MyStream.emit a -> resume} ->
+        if predicate a then
+          MyStream.emit a
+          handle resume () with go
+        else handle resume () with go
+  handle !streamFunction with go
+
+MyStream.map : (a ->{g} b) -> '{g, MyStream a} r -> '{g, MyStream b} r
+MyStream.map f streamFunction = 'let
+  go = cases
+      { r }                -> r
+      {MyStream.emit a -> resume} ->
+        MyStream.emit (f a)
+        handle resume () with go
+  handle !streamFunction with go
+
+MyStream.flatMap : (a ->{e, MyStream b} r) -> '{e, MyStream a} r -> '{e, MyStream b} r
+MyStream.flatMap f streamFunction = 'let
+  go = cases
+      { r }                -> r
+      {MyStream.emit a -> resume} ->
+        (f a)
+        handle resume () with go
+  handle !streamFunction with go
