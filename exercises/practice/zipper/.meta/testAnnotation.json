@@ -1,0 +1,50 @@
+[
+  {
+    "name": "zipper.test.ex1",
+    "test_code": "zipper.test.ex1 = let\n\ttestTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch 3 None None))\ntest.label \"run should not change tree\" <| test.expect ( Zipper.runWithTree testTree '(base.id) |> at2 === testTree)"
+  },
+  {
+    "name": "zipper.test.ex2",
+    "test_code": "zipper.test.ex2 = let\n\tvalue = 2\ttestTree = Branch 1 (Some (Branch value None None)) (Some (Branch 3 None None))\tnav _ =\t\tZipper.left\t\tfocus\ttest.label \"can focus left\" <| test.expect ( Zipper.run testTree nav === value)"
+  },
+  {
+    "name": "zipper.test.ex3",
+    "test_code": "zipper.test.ex3 = let\n\tvalue = 3\ttestTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch value None None))\tnav _ =\t\tZipper.right\t\tfocus\ttest.label \"can focus right\" <| test.expect ( Zipper.run testTree nav === value)"
+  },
+  {
+    "name": "zipper.test.ex4",
+    "test_code": "zipper.test.ex4 = let\n\tvalue = 4\ttestTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch 3 None (Some (Branch value None None))))\tnav _ =\t\tZipper.right\t\tZipper.right\t\tfocus\ttest.label \"can move twice right\" <| test.expect ( Zipper.run testTree nav === value)"
+  },
+  {
+    "name": "zipper.test.ex5",
+    "test_code": "zipper.test.ex5 = let\n\tvalue = 4\ttestTree = Branch 1 (Some (Branch 3 (Some (Branch value None None)) None )) (Some (Branch 2 None None))\tnav _ =\t\tZipper.left\t\tZipper.left\t\tfocus\ttest.label \"can move twice left\" <| test.expect ( Zipper.run testTree nav === value)"
+  },
+  {
+    "name": "zipper.test.ex6",
+    "test_code": "zipper.test.ex6 = let\n\tvalue = 4\ttestTree = Branch 1 (Some (Branch 3 None (Some (Branch value None None)))) (Some (Branch 2 None None))\tnav _ =\t\tZipper.left\t\tZipper.right\t\tfocus\ttest.label \"can move left and right\" <| test.expect ( Zipper.run testTree nav === value)"
+  },
+  {
+    "name": "zipper.test.ex7",
+    "test_code": "zipper.test.ex7 = let\n\tvalue = 1\ttestTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\tnewLeft = 200\texpectedTree = Branch value (Some (Branch newLeft None None)) (Some (Branch 3 None None))\tnav _ =\t\tZipper.left\t\tZipper.setValue newLeft\t\tZipper.up\t\tfocus\ttest.label \"can move left, set value, and up\" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))"
+  },
+  {
+    "name": "zipper.test.ex8",
+    "test_code": "zipper.test.ex8 = let\n\tvalue = 1\ttestTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\tnewRight = 300\texpectedTree = Branch value (Some (Branch 2 None None)) (Some (Branch newRight None None))\tnav _ =\t\tZipper.right\t\tZipper.setValue newRight\t\tZipper.up\t\tfocus\ttest.label \"can move right, set value, and up\" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))"
+  },
+  {
+    "name": "zipper.test.ex9",
+    "test_code": "zipper.test.ex9 = let\n\tvalue = 1\ttestTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\tnewLeft = 200\texpectedTree = Branch value (Some (Branch 2 (Some testTree) None)) (Some (Branch 3 None None))\tnav _ =\t\tZipper.left\t\tZipper.setLeft testTree\t\tZipper.up\t\tfocus\ttest.label \"can move left, set left tree, and up\" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))"
+  },
+  {
+    "name": "zipper.test.ex10",
+    "test_code": "zipper.test.ex10 = let\n\tvalue = 1\ttestTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\tnewRight = 300\texpectedTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None (Some testTree)))\tnav _ =\t\tZipper.right\t\tZipper.setRight testTree\t\tZipper.up\t\tfocus\ttest.label \"can move right, set right tree, and up\" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))"
+  },
+  {
+    "name": "zipper.test.ex11",
+    "test_code": "zipper.test.ex11 = let\n\tvalue = 3\n\ttestTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch value None None))\n\tnav _ =\n\t\tZipper.right\n\t\tZipper.right\n\t\tZipper.right\n\t\tfocus\n\ttest.label \"returns self when no more rights\" <| test.expect ( Zipper.run testTree nav === value)"
+  },
+  {
+    "name": "zipper.test.ex12",
+    "test_code": "zipper.test.ex12 = let\n\tvalue = 1\n\ttestTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\n\tnav _ =\n\tZipper.right\n\tZipper.up\n\tZipper.up\n\tfocus\n\ttest.label \"returns self when no more parents\" <| test.expect ( Zipper.run testTree nav === value)"
+  }
+]
