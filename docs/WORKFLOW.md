@@ -42,19 +42,19 @@ Move around the UCM with the `cd` command in the CLI. If a namespace doesn't exi
 
 ## Troubleshooting
 
-* When I load the tests, the UCM cannot find my exercise implementation.
+__When I load the tests, the UCM cannot find my exercise implementation.__
 
 Make sure you save your stub file in your text editor and `update` the terms in your codebase before loading the tests.
 
-* I'm running into naming conflicts. I can't have two terms called `tests`.
+__I'm running into naming conflicts. I can't have two terms called `tests`.__
 
 You can have two terms of the same name in different namespaces. If you're completing exercism exercises, it's recommended to create a separate namespace for each exercise so that the tests and stubs are separated from others.
 
-* My tests pass locally but do not pass the test runner.
+__My tests pass locally but do not pass the test runner.__
 
 Sorry about that! First check that your imports don't reference anything other than the standard library, `base`, and the functions that are defined in the `scratch` file under test. If that's the case, please let us know in the `#track-unison` Exercism slack or by filing an issue against [the Unison track repo][unison-track-repo].
 
-If you have any issues, please let us know! 🙂
+__If you have any issues, please let us know! 🙂__
 
 [walk-through-vid]: https://www.youtube.com/watch?v=4UMaaiJnWGY
 [unison-share]: https://share.unison-lang.org/latest/namespaces/unison/base
