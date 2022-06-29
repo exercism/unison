@@ -5,7 +5,7 @@
   1. Make your changes in the `<myFileName>.u` file
   2. Save the `<myFileName>.u` file
   3. If the file typechecks, run the `add` or `update` UCM commands
-    * If the file does not typecheck, make changes to the code in your `<myFileName>.u` file until it compiles
+    * If the file does not typecheck, make changes to the code in your `<myFileName>.u` file until it compiles. Remember to `update` your functions after your changes! 
   4. Run the `load <myFileName>.test.u` command in the UCM cli to bring the tests into scope and run them
 
   ## Walk through

@@ -69,6 +69,8 @@ If you're ever confused about what directory the `ucm` is watching for file chan
 👀 I'm watching for changes to .u files under /Users/myUser/exercism/unison/my-exercise
 ```
 
+[See more workflow tips here!](https://exercism.org/docs/tracks/unison/workflow)
+
 ## Editor support
 
 You can use any text editor to write your `.u` files. A few popular editors with Unison support are listed below:
