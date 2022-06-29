@@ -3,5 +3,5 @@ chromatic tonic =
   todo "implement chromatic"
 
 interval : Text -> Text -> [Text]
-interval tonic intevals =
+interval tonic intervals =
   todo "implement interval"
