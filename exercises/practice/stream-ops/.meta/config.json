@@ -1,0 +1,16 @@
+{
+  "authors": ["rlmark"],
+  "files": {
+    "solution": [
+      "streamOps.u"
+    ],
+    "test": [
+      "streamOps.test.u"
+    ],
+    "example": [
+      ".meta/examples/streamOps.example.u"
+    ]
+  },
+  "blurb": "Implement basic Stream operations with ability handlers.",
+  "icon": "list-ops"
+}

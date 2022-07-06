@@ -1,0 +1,130 @@
+
+zipper.test.ex1 = let
+  testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch 3 None None))
+  test.label "run should not change tree" <| test.expect ( Zipper.runWithTree testTree '(base.id) |> at2 === testTree)
+
+zipper.test.ex2 = let
+  value = 2
+  testTree = Branch 1 (Some (Branch value None None)) (Some (Branch 3 None None))
+  nav _ =
+    Zipper.left
+    focus
+  test.label "can focus left" <| test.expect ( Zipper.run testTree nav  === value)
+
+zipper.test.ex3 = let
+  value = 3
+  testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch value None None))
+  nav _ =
+    Zipper.right
+    focus
+  test.label "can focus right" <| test.expect ( Zipper.run testTree nav  === value)
+
+zipper.test.ex4 = let
+  value = 4
+  testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch 3 None  (Some (Branch value None None))))
+  nav _ =
+    Zipper.right
+    Zipper.right
+    focus
+  test.label "can move twice right" <| test.expect ( Zipper.run testTree nav === value)
+
+zipper.test.ex5 = let
+  value = 4
+  testTree = Branch 1 (Some (Branch 3 (Some (Branch value None None)) None )) (Some (Branch 2 None None))
+  nav _ =
+    Zipper.left
+    Zipper.left
+    focus
+  test.label "can move twice left" <| test.expect ( Zipper.run testTree nav  === value)
+
+zipper.test.ex6 = let
+  value = 4
+  testTree = Branch 1 (Some (Branch 3 None (Some (Branch value None None)))) (Some (Branch 2 None None))
+  nav _ =
+    Zipper.left
+    Zipper.right
+    focus
+  test.label "can move left and right" <| test.expect ( Zipper.run testTree nav  === value)
+
+zipper.test.ex7 = let
+  value = 1
+  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))
+  newLeft = 200
+  expectedTree = Branch value (Some (Branch newLeft None None)) (Some (Branch 3 None None))
+  nav _ =
+    Zipper.left
+    Zipper.setValue newLeft
+    Zipper.up
+    focus
+  test.label "can move left, set value, and up" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
+
+zipper.test.ex8 = let
+  value = 1
+  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))
+  newRight = 300
+  expectedTree = Branch value (Some (Branch 2 None None)) (Some (Branch newRight None None))
+  nav _ =
+    Zipper.right
+    Zipper.setValue newRight
+    Zipper.up
+    focus
+  test.label "can move right, set value, and up" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
+
+zipper.test.ex9 = let
+  value = 1
+  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))
+  newLeft = 200
+  expectedTree = Branch value (Some (Branch 2 (Some testTree) None)) (Some (Branch 3 None None))
+  nav _ =
+    Zipper.left
+    Zipper.setLeft testTree
+    Zipper.up
+    focus
+  test.label "can move left, set left tree, and up" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
+
+zipper.test.ex10 = let
+  value = 1
+  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))
+  newRight = 300
+  expectedTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None (Some testTree)))
+  nav _ =
+    Zipper.right
+    Zipper.setRight testTree
+    Zipper.up
+    focus
+  test.label "can move right, set right tree, and up" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
+
+zipper.test.ex11 = let
+  value = 3
+  testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch value None None))
+  nav _ =
+    Zipper.right
+    Zipper.right
+    Zipper.right
+    focus
+  test.label "returns self when no more rights" <| test.expect ( Zipper.run testTree nav === value)
+
+zipper.test.ex12 = let
+  value = 1
+  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))
+  nav _ =
+    Zipper.right
+    Zipper.up
+    Zipper.up
+    focus
+  test.label "returns self when no more parents" <| test.expect ( Zipper.run testTree nav === value)
+
+test> tests = runAll[
+  zipper.test.ex1,
+  zipper.test.ex2,
+  zipper.test.ex3,
+  zipper.test.ex4,
+  zipper.test.ex5,
+  zipper.test.ex6,
+  zipper.test.ex7,
+  zipper.test.ex8,
+  zipper.test.ex9,
+  zipper.test.ex10,
+  zipper.test.ex11,
+  zipper.test.ex12
+]

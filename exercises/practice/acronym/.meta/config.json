@@ -6,10 +6,10 @@
   "contributors": [],
   "files": {
     "solution": [
-      "src/acronym.u"
+      "acronym.u"
     ],
     "test": [
-      "test/acronym.test.u"
+      "acronym.test.u"
     ],
     "example": [
       ".meta/examples/acronym.example.u"

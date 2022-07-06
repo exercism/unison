@@ -7,10 +7,10 @@
   ],
   "files": {
     "solution": [
-      "src/hello.u"
+      "hello.u"
     ],
     "test": [
-      "test/hello.test.u"
+      "hello.test.u"
     ],
     "example": [
       ".meta/examples/hello.example.u"

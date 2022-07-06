@@ -7,10 +7,10 @@
   ],
   "files": {
     "solution": [
-      "src/leap.u"
+      "leap.u"
     ],
     "test": [
-      "test/leap.test.u"
+      "leap.test.u"
     ],
     "example": [
       ".meta/examples/leap.example.u"

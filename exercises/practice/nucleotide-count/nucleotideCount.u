@@ -1,0 +1,3 @@
+nucleotideCounts : Text -> Optional (Map Text Nat)
+nucleotideCounts nucleotides =
+  todo "implement nucleotideCounts"

@@ -1,0 +1,46 @@
+create : Int -> Int -> Text
+create hour minute =
+  Clock.toText (Clock.fromHourMin hour minute )
+
+unique type Clock = {value : Int}
+
+Clock.fromHourMin : Int -> Int -> Clock
+Clock.fromHourMin h m = fromInt (h * +60 + m)
+
+Clock.fromInt : Int -> Clock
+Clock.fromInt int =
+  Clock (Int.mod int (+24 * +60))
+
+Clock.toText : Clock -> Text
+Clock.toText clock =
+  hour = Int.txt (Clock.asHour clock)
+  min = Clock.asMinutes clock |> Int.txt
+  hour ++ ":" ++ min
+
+Int.txt : Int -> Text
+Int.txt int =
+  if int < +10 then "0" Text.++ (Int.toText int) else Int.toText int
+
+Clock.asMinutes : Clock -> Int
+Clock.asMinutes = cases
+  Clock value -> Int.mod value +60
+
+Clock.asHour : Clock -> Int
+Clock.asHour = cases
+  Clock value -> value Int./ +60
+
+add : Int -> Int -> Int -> Text
+add hour min additionalMinutes =
+  clock = Clock.fromHourMin hour (min + additionalMinutes)
+  Clock.toText clock
+
+subtract : Int -> Int -> Int -> Text
+subtract hours minutes minutesSubtract =
+  clock = Clock.fromHourMin hours (minutes - minutesSubtract)
+  Clock.toText clock
+
+equal : (Int, Int) -> (Int, Int) -> Boolean
+equal clock1 clock2 =
+  (Clock value1) = (uncurry fromHourMin clock1)
+  (Clock value2) = (uncurry fromHourMin clock2)
+  value1 === value2

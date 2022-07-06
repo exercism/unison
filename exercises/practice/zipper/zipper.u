@@ -1,0 +1,55 @@
+structural type Tree a
+  = Branch a (Optional (Tree a)) (Optional (Tree a))
+
+structural ability Zipper t a where
+  setValue : a ->{Zipper t a} ()
+  setLeft : t a ->{Zipper t a} ()
+  setRight : t a ->{Zipper t a} ()
+  left : {Zipper t a} ()
+  right : {Zipper t a} ()
+  up : {Zipper t a} ()
+  focus : {Zipper t a} a
+
+-- Zipper.handlerImpl performs the inner workings of the two following `run` functions.
+Zipper.handlerImpl : Tree a -> Request (Zipper Tree a) r -> (r, Tree a)
+Zipper.handlerImpl binTree =
+  todo "implement the handlerImpl core logic"
+
+-- Zipper.run changes the given tree using the zipper ability, returning whatever type the function which performs the Zipper ability returns
+Zipper.run : Tree a -> '{Zipper Tree a} r -> r
+Zipper.run tree zipperFunction =
+  todo "implement Zipper.run"
+
+-- Zipper.runWithTree
+Zipper.runWithTree : Tree a -> '{Zipper Tree a} r -> (r, Tree a)
+Zipper.runWithTree tree zipperFunction =
+  todo "implement Zipper.runWithTree"
+
+-- Below is an example of how you might use and run your Zipper ability
+
+testTree : Tree Nat
+testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch 3 None None))
+
+changeTree : '{Zipper Tree Nat} Nat
+changeTree _ =
+  Zipper.right
+  setValue 400
+  Zipper.up
+  setValue 500
+  setLeft testTree
+  focus
+
+exampleProgram : (Nat, Tree Nat)
+exampleProgram = runWithTree testTree changeTree
+
+{-
+`exampleProgram` should return a focus of `500` and a tree structure:
+
+```
+     500
+    /   \
+    1   400
+  /   \
+ 2     3
+````
+-}

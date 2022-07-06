@@ -1,0 +1,16 @@
+convert : Nat -> Text
+convert n =
+  isThree = (Nat.mod n 3 === 0)
+  isFive = (Nat.mod n 5 === 0)
+  isSeven = (Nat.mod n 7 === 0)
+
+  raindrop = (isThree || isFive || isSeven)
+
+  addSound : Boolean -> Text -> Text -> Text
+  addSound bool sound string =
+    if bool then (string ++ sound) else string
+
+  if raindrop then
+    List.foldLeft (acc -> cases (bool, sound) -> addSound bool sound acc ) "" [(isThree, "Pling"), (isFive, "Plang"), (isSeven, "Plong")]
+  else
+    toText n

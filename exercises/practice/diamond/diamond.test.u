@@ -1,0 +1,22 @@
+diamond.test.ex1 = let
+	test.label "Degenerate case with a single 'A' row" <| test.expect (rows ?A === ["A"])
+
+diamond.test.ex2 = let
+	test.label "Degenerate case with no row containing 3 distinct groups of spaces" <| test.expect (rows ?B === [" A ","B B"," A "])
+
+diamond.test.ex3 = let
+	test.label "Smallest non-degenerate case with odd diamond side length" <| test.expect (rows ?C === ["  A  "," B B ","C   C"," B B ","  A  "])
+
+diamond.test.ex4 = let
+	test.label "Smallest non-degenerate case with even diamond side length" <| test.expect (rows ?D === ["   A   ","  B B  "," C   C ","D     D"," C   C ","  B B  ","   A   "])
+
+diamond.test.ex5 = let
+	test.label "Largest possible diamond" <| test.expect (rows ?Z === ["                         A                         ","                        B B                        ","                       C   C                       ","                      D     D                      ","                     E       E                     ","                    F         F                    ","                   G           G                   ","                  H             H                  ","                 I               I                 ","                J                 J                ","               K                   K               ","              L                     L              ","             M                       M             ","            N                         N            ","           O                           O           ","          P                             P          ","         Q                               Q         ","        R                                 R        ","       S                                   S       ","      T                                     T      ","     U                                       U     ","    V                                         V    ","   W                                           W   ","  X                                             X  "," Y                                               Y ","Z                                                 Z"," Y                                               Y ","  X                                             X  ","   W                                           W   ","    V                                         V    ","     U                                       U     ","      T                                     T      ","       S                                   S       ","        R                                 R        ","         Q                               Q         ","          P                             P          ","           O                           O           ","            N                         N            ","             M                       M             ","              L                     L              ","               K                   K               ","                J                 J                ","                 I               I                 ","                  H             H                  ","                   G           G                   ","                    F         F                    ","                     E       E                     ","                      D     D                      ","                       C   C                       ","                        B B                        ","                         A                         "])
+
+test> tests = runAll [
+	diamond.test.ex1,
+	diamond.test.ex2,
+	diamond.test.ex3,
+	diamond.test.ex4,
+	diamond.test.ex5
+]

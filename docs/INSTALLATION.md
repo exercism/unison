@@ -61,7 +61,15 @@ Run `ucm` to initialize a Unison codebase in `$HOME/.unison`. This is where Unis
 
 ## Unison workflow
 
-When you want to write Unison code, you'll issue the `ucm` command to start the codebase manager. The UCM will then observe changes to any `.u` suffixed file in the directory where it is called from. For example, you might be implementing functions in a file called `scratch.u` in a directory called `~/Exercism/unison/myExercise/src`. You should `cd` into `~/Exercism/unison/myExercise/src` and run `ucm`. This will ensure that the UCM is watching your `scratch.u` file for changes.
+When you want to write Unison code, you'll issue the `ucm` command to start the codebase manager. The UCM will then observe changes to any `.u` suffixed file in the directory where it is called from. For example, you might be implementing functions in a file called `scratch.u` in a directory called `~/exercism/unison/my-exercise/`. You should `cd` into `~/exercism/unison/my-exercise/` and run `ucm`. This will ensure that the UCM is watching your `scratch.u` file for changes.
+
+If you're ever confused about what directory the `ucm` is watching for file changes under, it's printed in the welcome screen upon starting the cli.
+
+```
+👀 I'm watching for changes to .u files under /Users/myUser/exercism/unison/my-exercise
+```
+
+[See more workflow tips here!](https://exercism.org/docs/tracks/unison/workflow)
 
 ## Editor support
 
