@@ -1,0 +1,210 @@
+clock.test.ex1 = let
+	test.label "Create a new clock with an initial time, on the hour" <| test.expect (create +8 +0 === "08:00")
+
+clock.test.ex2 = let
+	test.label "Create a new clock with an initial time, past the hour" <| test.expect (create +11 +9 === "11:09")
+
+clock.test.ex3 = let
+	test.label "Create a new clock with an initial time, midnight is zero hours" <| test.expect (create +24 +0 === "00:00")
+
+clock.test.ex4 = let
+	test.label "Create a new clock with an initial time, hour rolls over" <| test.expect (create +25 +0 === "01:00")
+
+clock.test.ex5 = let
+	test.label "Create a new clock with an initial time, hour rolls over continuously" <| test.expect (create +100 +0 === "04:00")
+
+clock.test.ex6 = let
+	test.label "Create a new clock with an initial time, sixty minutes is next hour" <| test.expect (create +1 +60 === "02:00")
+
+clock.test.ex7 = let
+	test.label "Create a new clock with an initial time, minutes roll over" <| test.expect (create +0 +160 === "02:40")
+
+clock.test.ex8 = let
+	test.label "Create a new clock with an initial time, minutes roll over continuously" <| test.expect (create +0 +1723 === "04:43")
+
+clock.test.ex9 = let
+	test.label "Create a new clock with an initial time, hour and minutes roll over" <| test.expect (create +25 +160 === "03:40")
+
+clock.test.ex10 = let
+	test.label "Create a new clock with an initial time, hour and minutes roll over continuously" <| test.expect (create +201 +3001 === "11:01")
+
+clock.test.ex11 = let
+	test.label "Create a new clock with an initial time, hour and minutes roll over to exactly midnight" <| test.expect (create +72 +8640 === "00:00")
+
+clock.test.ex12 = let
+	test.label "Create a new clock with an initial time, negative hour" <| test.expect (create -1 +15 === "23:15")
+
+clock.test.ex13 = let
+	test.label "Create a new clock with an initial time, negative hour rolls over" <| test.expect (create -25 +0 === "23:00")
+
+clock.test.ex14 = let
+	test.label "Create a new clock with an initial time, negative hour rolls over continuously" <| test.expect (create -91 +0 === "05:00")
+
+clock.test.ex15 = let
+	test.label "Create a new clock with an initial time, negative minutes" <| test.expect (create +1 -40 === "00:20")
+
+clock.test.ex16 = let
+	test.label "Create a new clock with an initial time, negative minutes roll over" <| test.expect (create +1 -160 === "22:20")
+
+clock.test.ex17 = let
+	test.label "Create a new clock with an initial time, negative minutes roll over continuously" <| test.expect (create +1 -4820 === "16:40")
+
+clock.test.ex18 = let
+	test.label "Create a new clock with an initial time, negative sixty minutes is previous hour" <| test.expect (create +2 -60 === "01:00")
+
+clock.test.ex19 = let
+	test.label "Create a new clock with an initial time, negative hour and minutes both roll over" <| test.expect (create -25 -160 === "20:20")
+
+clock.test.ex20 = let
+	test.label "Create a new clock with an initial time, negative hour and minutes both roll over continuously" <| test.expect (create -121 -5810 === "22:10")
+
+clock.test.ex21 = let
+	test.label "Add minutes, add minutes" <| test.expect (add +10 +0 +3 === "10:03")
+
+clock.test.ex22 = let
+	test.label "Add minutes, add no minutes" <| test.expect (add +6 +41 +0 === "06:41")
+
+clock.test.ex23 = let
+	test.label "Add minutes, add to next hour" <| test.expect (add +0 +45 +40 === "01:25")
+
+clock.test.ex24 = let
+	test.label "Add minutes, add more than one hour" <| test.expect (add +10 +0 +61 === "11:01")
+
+clock.test.ex25 = let
+	test.label "Add minutes, add more than two hours with carry" <| test.expect (add +0 +45 +160 === "03:25")
+
+clock.test.ex26 = let
+	test.label "Add minutes, add across midnight" <| test.expect (add +23 +59 +2 === "00:01")
+
+clock.test.ex27 = let
+	test.label "Add minutes, add more than one day (1500 min = 25 hrs)" <| test.expect (add +5 +32 +1500 === "06:32")
+
+clock.test.ex28 = let
+	test.label "Add minutes, add more than two days" <| test.expect (add +1 +1 +3500 === "11:21")
+
+clock.test.ex29 = let
+	test.label "Subtract minutes, subtract minutes" <| test.expect (subtract +10 +3 +3 === "10:00")
+
+clock.test.ex30 = let
+	test.label "Subtract minutes, subtract to previous hour" <| test.expect (subtract +10 +3 +30 === "09:33")
+
+clock.test.ex31 = let
+	test.label "Subtract minutes, subtract more than an hour" <| test.expect (subtract +10 +3 +70 === "08:53")
+
+clock.test.ex32 = let
+	test.label "Subtract minutes, subtract across midnight" <| test.expect (subtract +0 +3 +4 === "23:59")
+
+clock.test.ex33 = let
+	test.label "Subtract minutes, subtract more than two hours" <| test.expect (subtract +0 +0 +160 === "21:20")
+
+clock.test.ex34 = let
+	test.label "Subtract minutes, subtract more than two hours with borrow" <| test.expect (subtract +6 +15 +160 === "03:35")
+
+clock.test.ex35 = let
+	test.label "Subtract minutes, subtract more than one day (1500 min = 25 hrs)" <| test.expect (subtract +5 +32 +1500 === "04:32")
+
+clock.test.ex36 = let
+	test.label "Subtract minutes, subtract more than two days" <| test.expect (subtract +2 +20 +3000 === "00:20")
+
+clock.test.ex37 = let
+	test.label "Compare two clocks for equality, clocks with same time" <| test.expect (equal (+15, +37) (+15, +37) === true)
+
+clock.test.ex38 = let
+	test.label "Compare two clocks for equality, clocks a minute apart" <| test.expect (equal (+15, +36) (+15, +37) === false)
+
+clock.test.ex39 = let
+	test.label "Compare two clocks for equality, clocks an hour apart" <| test.expect (equal (+14, +37) (+15, +37) === false)
+
+clock.test.ex40 = let
+	test.label "Compare two clocks for equality, clocks with hour overflow" <| test.expect (equal (+10, +37) (+34, +37) === true)
+
+clock.test.ex41 = let
+	test.label "Compare two clocks for equality, clocks with hour overflow by several days" <| test.expect (equal (+3, +11) (+99, +11) === true)
+
+clock.test.ex42 = let
+	test.label "Compare two clocks for equality, clocks with negative hour" <| test.expect (equal (+22, +40) (-2, +40) === true)
+
+clock.test.ex43 = let
+	test.label "Compare two clocks for equality, clocks with negative hour that wraps" <| test.expect (equal (+17, +3) (-31, +3) === true)
+
+clock.test.ex44 = let
+	test.label "Compare two clocks for equality, clocks with negative hour that wraps multiple times" <| test.expect (equal (+13, +49) (-83, +49) === true)
+
+clock.test.ex45 = let
+	test.label "Compare two clocks for equality, clocks with minute overflow" <| test.expect (equal (+0, +1) (+0, +1441) === true)
+
+clock.test.ex46 = let
+	test.label "Compare two clocks for equality, clocks with minute overflow by several days" <| test.expect (equal (+2, +2) (+2, +4322) === true)
+
+clock.test.ex47 = let
+	test.label "Compare two clocks for equality, clocks with negative minute" <| test.expect (equal (+2, +40) (+3, -20) === true)
+
+clock.test.ex48 = let
+	test.label "Compare two clocks for equality, clocks with negative minute that wraps" <| test.expect (equal (+4, +10) (+5, -1490) === true)
+
+clock.test.ex49 = let
+	test.label "Compare two clocks for equality, clocks with negative minute that wraps multiple times" <| test.expect (equal (+6, +15) (+6, -4305) === true)
+
+clock.test.ex50 = let
+	test.label "Compare two clocks for equality, clocks with negative hours and minutes" <| test.expect (equal (+7, +32) (-12, -268) === true)
+
+clock.test.ex51 = let
+	test.label "Compare two clocks for equality, clocks with negative hours and minutes that wrap" <| test.expect (equal (+18, +7) (-54, -11513) === true)
+
+clock.test.ex52 = let
+	test.label "Compare two clocks for equality, full clock and zeroed clock" <| test.expect (equal (+24, +0) (+0, +0) === true)
+
+test> tests = runAll [
+	clock.test.ex1,
+	clock.test.ex2,
+	clock.test.ex3,
+	clock.test.ex4,
+	clock.test.ex5,
+	clock.test.ex6,
+	clock.test.ex7,
+	clock.test.ex8,
+	clock.test.ex9,
+	clock.test.ex10,
+	clock.test.ex11,
+	clock.test.ex12,
+	clock.test.ex13,
+	clock.test.ex14,
+	clock.test.ex15,
+	clock.test.ex16,
+	clock.test.ex17,
+	clock.test.ex18,
+	clock.test.ex19,
+	clock.test.ex20,
+	clock.test.ex21,
+	clock.test.ex22,
+	clock.test.ex23,
+	clock.test.ex24,
+	clock.test.ex25,
+	clock.test.ex26,
+	clock.test.ex27,
+	clock.test.ex28,
+	clock.test.ex29,
+	clock.test.ex30,
+	clock.test.ex31,
+	clock.test.ex32,
+	clock.test.ex33,
+	clock.test.ex34,
+	clock.test.ex35,
+	clock.test.ex36,
+	clock.test.ex37,
+	clock.test.ex38,
+	clock.test.ex39,
+	clock.test.ex40,
+	clock.test.ex41,
+	clock.test.ex42,
+	clock.test.ex43,
+	clock.test.ex44,
+	clock.test.ex45,
+	clock.test.ex46,
+	clock.test.ex47,
+	clock.test.ex48,
+	clock.test.ex49,
+	clock.test.ex50,
+	clock.test.ex51,
+	clock.test.ex52
+]

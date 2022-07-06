@@ -1,0 +1,42 @@
+rows : Char -> [Text]
+rows letter =
+  top = buildTop letter
+  bottom = List.reverse top |> List.drop 1
+  top ++ bottom
+
+buildTop : Char -> [Text]
+buildTop letter =
+  decimalRep = Char.toNat letter
+  decimalA = Char.toNat ?A
+
+  leadingTrailingSpaces : Nat
+  leadingTrailingSpaces = decimalRep - decimalA
+
+  charRange = List.rangeClosed decimalA decimalRep
+
+  loop : [Text] -> Int -> Nat -> [Nat] -> [Text]
+  loop lines interiorSpaces nextLeadingTrailing = cases
+    [] -> lines
+    decimalChar +: tail ->
+      c : Char
+      c = Char.fromNat decimalChar
+
+      leadingAndTrailingSpaces : [Char]
+      leadingAndTrailingSpaces = List.fill nextLeadingTrailing ?\s
+
+      line =
+        if interiorSpaces < +0 then
+          leadingAndTrailingSpaces ++ [c] ++ leadingAndTrailingSpaces
+        else
+          maxInteriorSpaces : Int
+          maxInteriorSpaces = Int.max interiorSpaces +0
+          spaces : [Char]
+          spaces = List.fill (Int.truncate0 maxInteriorSpaces) ?\s
+          use List ++
+          leadingAndTrailingSpaces ++ [c] ++ spaces ++ [c] ++ leadingAndTrailingSpaces
+
+      nextLine = fromCharList line
+
+      loop (lines :+ nextLine) (interiorSpaces + +2) (nextLeadingTrailing - 1) tail
+
+  loop [] -1 leadingTrailingSpaces charRange

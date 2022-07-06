@@ -1,0 +1,25 @@
+age : Text -> Nat -> Optional Float
+age planet earthAgeSeconds =
+  Optional.map (sec ->  (Nat.toFloat earthAgeSeconds) / sec) (secondsPerYear planet) |> Optional.map roundHundreths
+
+mapPlants =
+  [
+    ("Mercury" , 0.2408467),
+    ("Venus"   , 0.61519726),
+    ("Earth"   , 1.0),
+    ("Mars"    , 1.8808158),
+    ("Jupiter" , 11.862615),
+    ("Saturn"  , 29.447498),
+    ("Uranus"  , 84.016846),
+    ("Neptune" , 164.79132)
+  ] |> Map.fromList
+
+secondsPerYear : Text -> Optional Float
+secondsPerYear planet =
+  earthYear = 365.25 * 24.0 * 60.0 * 60.0
+  maybeSeconds = Map.get planet mapPlants
+  Optional.map (p -> p * earthYear) maybeSeconds
+
+roundHundreths : Float -> Float
+roundHundreths value =
+  (Float.round (value Float.* 100.0)) / 100.0

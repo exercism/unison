@@ -1,0 +1,18 @@
+nucleotideCounts : Text -> Optional (Map Text Nat)
+nucleotideCounts nucleotides =
+  initialMap = [("A",0),("C",0),("G",0),("T",0)] |> Map.fromList
+  chars = toCharList nucleotides
+  go acc c =
+    if not (List.contains (toText c) (Map.keys initialMap) ) then abort else updateMap c acc
+  Abort.toOptional! '(List.foldLeft go initialMap chars)
+
+updateMap : Char -> Map Text Nat -> Map Text Nat
+updateMap c map =
+  add k v =
+    Some (v Nat.+ 1)
+  Map.updateWithKey add (Char.toText c) map
+
+toSortedList : Optional (Map Text Nat) -> Optional [(Text,Nat)]
+toSortedList input =
+  go map = Map.toList map |> List.sortBy (cases (text, val) -> text)
+  Optional.map go input

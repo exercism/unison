@@ -1,8 +1,8 @@
 {
   "authors": ["rlmark"],
   "files": {
-    "solution": ["src/allYourBase.u"],
-    "test": ["test/allYourBase.test.u"],
+    "solution": ["allYourBase.u"],
+    "test": ["allYourBase.test.u"],
     "example": [".meta/examples/allYourBase.example.u"]
   },
   "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base."

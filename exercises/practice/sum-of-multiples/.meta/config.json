@@ -1,8 +1,8 @@
 {
   "authors": ["rlmark"],
   "files": {
-    "solution": ["src/sumOfMultiples.u"],
-    "test": ["test/sumOfMultiples.test.u"],
+    "solution": ["sumOfMultiples.u"],
+    "test": ["sumOfMultiples.test.u"],
     "example": [".meta/examples/sumOfMultiples.example.u"]
   },
   "blurb": "Given a number, find the sum of all the multiples of particular numbers up to but not including that number.",

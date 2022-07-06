@@ -1,0 +1,39 @@
+use base.test.gen
+use List ++
+use LinkedList toList fromList new nil cons tail
+
+linkedList.test.ex1 =
+  label "isNil applied to nil should be true" <| expect (isNil nil && (not (isNil (new 1))))
+
+linkedList.test.ex2 =
+  label "calling cons with nil is the same as calling new" <| expect (cons 1 nil === new 1)
+
+linkedList.test.ex3 _ =
+  listNats = !(listOf nat)
+  linkedList = fromList listNats
+  label "toList and fromList should be symmetrical" <| expect (toList linkedList === listNats)
+
+linkedList.test.ex4 =
+  consTest = head (new 1) === Some 1
+  nilTest = head nil === None
+  label "head should return optional element" <| expect (consTest && nilTest)
+
+linkedList.test.ex5=
+  l1 = new 1
+  l2 = cons 2 l1
+  manyTest = tail l2 === l1
+  consTest = tail l1 === nil
+  nilTest = head nil === None
+  label "tail should drop the first element" <| expect (consTest && nilTest && manyTest)
+
+linkedList.test.ex6 _ =
+  listNats = !(listOf nat)
+  linkedList = fromList listNats
+  label "reversing a list twice should be original list" <| expect (reverseLinkedList linkedList |> reverseLinkedList === linkedList)
+
+linkedList.test.ex7 =
+  nilTest = isNil nil
+  consTest = not <| isNil (new 1)
+  label "isNil should return appropriate boolean" <| expect (nilTest && consTest)
+
+test> tests = test.run ex1 ++ test.run ex2 ++ (runs 10 ex3) ++ test.run ex4 ++ test.run ex5 ++ (runs 10 ex6) ++ test.run ex7

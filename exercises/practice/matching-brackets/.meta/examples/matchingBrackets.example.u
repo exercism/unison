@@ -1,0 +1,61 @@
+structural ability Stack a where
+  push : a -> ()
+  pop : ()
+  peek : Optional a
+  isEmpty : Boolean
+
+Stack.run : '{Stack a } r -> r
+Stack.run stackFunc =
+  impl state = cases
+    {pure} -> pure
+    {push a -> resume} -> handle resume () with impl (a List.+: state)
+    {pop -> resume} -> handle resume () with impl (List.drop 1 state)
+    {peek -> resume} -> handle resume (head state) with impl state
+    {isEmpty -> resume} -> handle resume ([] === state) with impl state
+
+  handle !stackFunc with impl []
+
+unique type BracketType = Open | Close | Other
+
+bracketType : Char -> BracketType
+bracketType = cases
+  ?{ -> Open
+  ?} -> Close
+  ?( -> Open
+  ?) -> Close
+  ?[ -> Open
+  ?] -> Close
+  _  -> Other
+
+closes : Char -> {Stack Char} Boolean
+closes c =
+  if (Stack.isEmpty) then false else
+
+    maybeLastElem = Stack.peek
+
+    checkClosure currentStackElem =
+        (c === ?) && (currentStackElem === ?()) ||
+          ((c === ?]) && (currentStackElem === ?[)) ||
+          ((c === ?}) && (currentStackElem === ?{))
+
+    result = Optional.map checkClosure maybeLastElem
+    Optional.getOrElse false result
+
+checkBalance : [Char] -> {Stack Char} Boolean
+checkBalance = cases
+  [] -> Stack.isEmpty
+  head +: tail -> match bracketType head with
+    Open ->
+      push head
+      checkBalance tail
+    Close ->
+      checkCloses = closes head
+      pop
+      checkCloses && (checkBalance tail)
+    Other ->
+      checkBalance tail
+
+isPaired : Text -> Boolean
+isPaired input =
+  chars = toCharList input
+  Stack.run '(checkBalance chars)

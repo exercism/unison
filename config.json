@@ -1,7 +1,7 @@
 {
   "language": "Unison",
   "slug": "unison",
-  "active": false,
+  "active": true,
   "status": {
     "concept_exercises": false,
     "test_runner": true,
@@ -16,10 +16,15 @@
     "highlightjs_language": "haskell"
   },
   "files": {
-    "solution": [],
-    "test": [],
-    "example": [],
-    "exemplar": []
+    "solution": [
+      "%{camel_slug}.u"
+    ],
+    "test": [
+      "%{camel_slug}.test.u"
+    ],
+    "example": [
+      ".meta/examples/%{camel_slug}.example.u"
+    ]
   },
   "test_runner": {
     "average_run_time": 2.9
@@ -46,6 +51,30 @@
         "difficulty": 1
       },
       {
+        "slug": "allergies",
+        "name": "Allergies",
+        "uuid": "46b0292a-0e22-4e4d-9934-7c166d86a919",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "00540531-9d65-4daf-aaf6-fa2f6d47331d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "db98cc14-f1db-40f6-a5d0-d5c151c98570",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "crypto-square",
         "name": "Crypto Square",
         "uuid": "0099a6d9-881a-458e-930e-506242e62d1c",
@@ -68,6 +97,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "4549e619-87dd-4ba3-b89c-6f3359a25d7c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
       },
       {
         "slug": "all-your-base",
@@ -94,6 +131,30 @@
         "difficulty": 1
       },
       {
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "uuid": "eccd26dc-6826-4d9e-868a-e1d640e57d3b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
+        "slug": "majority-element",
+        "name": "Majority Element",
+        "uuid": "5975f00d-8a77-4240-91c1-1fedb41c2adb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "da6e2fd6-1d81-4ccc-8030-16065fef548b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "0b4e2dbd-7a5e-4a3d-b13d-9138518d9a63",
@@ -102,12 +163,60 @@
         "difficulty": 1
       },
       {
+        "slug": "scale-generator",
+        "name": "Scale Generator",
+        "uuid": "d83fd7ee-2eff-41d5-8a7c-e3893a969150",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "simple-linked-list",
+        "name": "Simple Linked List",
+        "uuid": "3a377fd7-2f66-4326-94f5-e3e05133c252",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "06c1d4b6-1262-474b-80b4-6e779fa11743",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "e12d9757-b6fe-45ff-ab31-b18df42c3f0a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "stream-ops",
+        "name": "Stream Ops",
+        "uuid": "56c6f521-3567-4f35-8f73-c675d14aaa4b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum Of Multiples",
         "uuid": "0fbe5e82-b563-4360-8957-e3a543eb3184",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "996061d4-9b39-4a69-8002-d45dbb84d32f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "run-length-encoding",
@@ -124,6 +233,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
+      },
+      {
+        "slug": "zipper",
+        "name": "Zipper",
+        "uuid": "49dcbf18-2024-499c-a951-ed009f97ef8f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 9
       }
     ]
   },

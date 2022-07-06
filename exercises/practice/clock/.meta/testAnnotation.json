@@ -1,0 +1,105 @@
+[
+{"name":"clock.test.ex1","test_code":"clock.test.ex1 = let\n\ttest.label \"Create a new clock with an initial time, on the hour\" <| test.expect (create +8 +0 === \"08:00\")"},
+
+{"name":"clock.test.ex2","test_code":"clock.test.ex2 = let\n\ttest.label \"Create a new clock with an initial time, past the hour\" <| test.expect (create +11 +9 === \"11:09\")"},
+
+{"name":"clock.test.ex3","test_code":"clock.test.ex3 = let\n\ttest.label \"Create a new clock with an initial time, midnight is zero hours\" <| test.expect (create +24 +0 === \"00:00\")"},
+
+{"name":"clock.test.ex4","test_code":"clock.test.ex4 = let\n\ttest.label \"Create a new clock with an initial time, hour rolls over\" <| test.expect (create +25 +0 === \"01:00\")"},
+
+{"name":"clock.test.ex5","test_code":"clock.test.ex5 = let\n\ttest.label \"Create a new clock with an initial time, hour rolls over continuously\" <| test.expect (create +100 +0 === \"04:00\")"},
+
+{"name":"clock.test.ex6","test_code":"clock.test.ex6 = let\n\ttest.label \"Create a new clock with an initial time, sixty minutes is next hour\" <| test.expect (create +1 +60 === \"02:00\")"},
+
+{"name":"clock.test.ex7","test_code":"clock.test.ex7 = let\n\ttest.label \"Create a new clock with an initial time, minutes roll over\" <| test.expect (create +0 +160 === \"02:40\")"},
+
+{"name":"clock.test.ex8","test_code":"clock.test.ex8 = let\n\ttest.label \"Create a new clock with an initial time, minutes roll over continuously\" <| test.expect (create +0 +1723 === \"04:43\")"},
+
+{"name":"clock.test.ex9","test_code":"clock.test.ex9 = let\n\ttest.label \"Create a new clock with an initial time, hour and minutes roll over\" <| test.expect (create +25 +160 === \"03:40\")"},
+
+{"name":"clock.test.ex10","test_code":"clock.test.ex10 = let\n\ttest.label \"Create a new clock with an initial time, hour and minutes roll over continuously\" <| test.expect (create +201 +3001 === \"11:01\")"},
+
+{"name":"clock.test.ex11","test_code":"clock.test.ex11 = let\n\ttest.label \"Create a new clock with an initial time, hour and minutes roll over to exactly midnight\" <| test.expect (create +72 +8640 === \"00:00\")"},
+
+{"name":"clock.test.ex12","test_code":"clock.test.ex12 = let\n\ttest.label \"Create a new clock with an initial time, negative hour\" <| test.expect (create -1 +15 === \"23:15\")"},
+
+{"name":"clock.test.ex13","test_code":"clock.test.ex13 = let\n\ttest.label \"Create a new clock with an initial time, negative hour rolls over\" <| test.expect (create -25 +0 === \"23:00\")"},
+
+{"name":"clock.test.ex14","test_code":"clock.test.ex14 = let\n\ttest.label \"Create a new clock with an initial time, negative hour rolls over continuously\" <| test.expect (create -91 +0 === \"05:00\")"},
+
+{"name":"clock.test.ex15","test_code":"clock.test.ex15 = let\n\ttest.label \"Create a new clock with an initial time, negative minutes\" <| test.expect (create +1 -40 === \"00:20\")"},
+
+{"name":"clock.test.ex16","test_code":"clock.test.ex16 = let\n\ttest.label \"Create a new clock with an initial time, negative minutes roll over\" <| test.expect (create +1 -160 === \"22:20\")"},
+
+{"name":"clock.test.ex17","test_code":"clock.test.ex17 = let\n\ttest.label \"Create a new clock with an initial time, negative minutes roll over continuously\" <| test.expect (create +1 -4820 === \"16:40\")"},
+
+{"name":"clock.test.ex18","test_code":"clock.test.ex18 = let\n\ttest.label \"Create a new clock with an initial time, negative sixty minutes is previous hour\" <| test.expect (create +2 -60 === \"01:00\")"},
+
+{"name":"clock.test.ex19","test_code":"clock.test.ex19 = let\n\ttest.label \"Create a new clock with an initial time, negative hour and minutes both roll over\" <| test.expect (create -25 -160 === \"20:20\")"},
+
+{"name":"clock.test.ex20","test_code":"clock.test.ex20 = let\n\ttest.label \"Create a new clock with an initial time, negative hour and minutes both roll over continuously\" <| test.expect (create -121 -5810 === \"22:10\")"},
+
+{"name":"clock.test.ex21","test_code":"clock.test.ex21 = let\n\ttest.label \"Add minutes, add minutes\" <| test.expect (add +10 +0 +3 === \"10:03\")"},
+
+{"name":"clock.test.ex22","test_code":"clock.test.ex22 = let\n\ttest.label \"Add minutes, add no minutes\" <| test.expect (add +6 +41 +0 === \"06:41\")"},
+
+{"name":"clock.test.ex23","test_code":"clock.test.ex23 = let\n\ttest.label \"Add minutes, add to next hour\" <| test.expect (add +0 +45 +40 === \"01:25\")"},
+
+{"name":"clock.test.ex24","test_code":"clock.test.ex24 = let\n\ttest.label \"Add minutes, add more than one hour\" <| test.expect (add +10 +0 +61 === \"11:01\")"},
+
+{"name":"clock.test.ex25","test_code":"clock.test.ex25 = let\n\ttest.label \"Add minutes, add more than two hours with carry\" <| test.expect (add +0 +45 +160 === \"03:25\")"},
+
+{"name":"clock.test.ex26","test_code":"clock.test.ex26 = let\n\ttest.label \"Add minutes, add across midnight\" <| test.expect (add +23 +59 +2 === \"00:01\")"},
+
+{"name":"clock.test.ex27","test_code":"clock.test.ex27 = let\n\ttest.label \"Add minutes, add more than one day (1500 min = 25 hrs)\" <| test.expect (add +5 +32 +1500 === \"06:32\")"},
+
+{"name":"clock.test.ex28","test_code":"clock.test.ex28 = let\n\ttest.label \"Add minutes, add more than two days\" <| test.expect (add +1 +1 +3500 === \"11:21\")"},
+
+{"name":"clock.test.ex29","test_code":"clock.test.ex29 = let\n\ttest.label \"Subtract minutes, subtract minutes\" <| test.expect (subtract +10 +3 +3 === \"10:00\")"},
+
+{"name":"clock.test.ex30","test_code":"clock.test.ex30 = let\n\ttest.label \"Subtract minutes, subtract to previous hour\" <| test.expect (subtract +10 +3 +30 === \"09:33\")"},
+
+{"name":"clock.test.ex31","test_code":"clock.test.ex31 = let\n\ttest.label \"Subtract minutes, subtract more than an hour\" <| test.expect (subtract +10 +3 +70 === \"08:53\")"},
+
+{"name":"clock.test.ex32","test_code":"clock.test.ex32 = let\n\ttest.label \"Subtract minutes, subtract across midnight\" <| test.expect (subtract +0 +3 +4 === \"23:59\")"},
+
+{"name":"clock.test.ex33","test_code":"clock.test.ex33 = let\n\ttest.label \"Subtract minutes, subtract more than two hours\" <| test.expect (subtract +0 +0 +160 === \"21:20\")"},
+
+{"name":"clock.test.ex34","test_code":"clock.test.ex34 = let\n\ttest.label \"Subtract minutes, subtract more than two hours with borrow\" <| test.expect (subtract +6 +15 +160 === \"03:35\")"},
+
+{"name":"clock.test.ex35","test_code":"clock.test.ex35 = let\n\ttest.label \"Subtract minutes, subtract more than one day (1500 min = 25 hrs)\" <| test.expect (subtract +5 +32 +1500 === \"04:32\")"},
+
+{"name":"clock.test.ex36","test_code":"clock.test.ex36 = let\n\ttest.label \"Subtract minutes, subtract more than two days\" <| test.expect (subtract +2 +20 +3000 === \"00:20\")"},
+
+{"name":"clock.test.ex37","test_code":"clock.test.ex37 = let\n\ttest.label \"Compare two clocks for equality, clocks with same time\" <| test.expect (equal (+15, +37) (+15, +37) === true)"},
+
+{"name":"clock.test.ex38","test_code":"clock.test.ex38 = let\n\ttest.label \"Compare two clocks for equality, clocks a minute apart\" <| test.expect (equal (+15, +36) (+15, +37) === false)"},
+
+{"name":"clock.test.ex39","test_code":"clock.test.ex39 = let\n\ttest.label \"Compare two clocks for equality, clocks an hour apart\" <| test.expect (equal (+14, +37) (+15, +37) === false)"},
+
+{"name":"clock.test.ex40","test_code":"clock.test.ex40 = let\n\ttest.label \"Compare two clocks for equality, clocks with hour overflow\" <| test.expect (equal (+10, +37) (+34, +37) === true)"},
+
+{"name":"clock.test.ex41","test_code":"clock.test.ex41 = let\n\ttest.label \"Compare two clocks for equality, clocks with hour overflow by several days\" <| test.expect (equal (+3, +11) (+99, +11) === true)"},
+
+{"name":"clock.test.ex42","test_code":"clock.test.ex42 = let\n\ttest.label \"Compare two clocks for equality, clocks with negative hour\" <| test.expect (equal (+22, +40) (-2, +40) === true)"},
+
+{"name":"clock.test.ex43","test_code":"clock.test.ex43 = let\n\ttest.label \"Compare two clocks for equality, clocks with negative hour that wraps\" <| test.expect (equal (+17, +3) (-31, +3) === true)"},
+
+{"name":"clock.test.ex44","test_code":"clock.test.ex44 = let\n\ttest.label \"Compare two clocks for equality, clocks with negative hour that wraps multiple times\" <| test.expect (equal (+13, +49) (-83, +49) === true)"},
+
+{"name":"clock.test.ex45","test_code":"clock.test.ex45 = let\n\ttest.label \"Compare two clocks for equality, clocks with minute overflow\" <| test.expect (equal (+0, +1) (+0, +1441) === true)"},
+
+{"name":"clock.test.ex46","test_code":"clock.test.ex46 = let\n\ttest.label \"Compare two clocks for equality, clocks with minute overflow by several days\" <| test.expect (equal (+2, +2) (+2, +4322) === true)"},
+
+{"name":"clock.test.ex47","test_code":"clock.test.ex47 = let\n\ttest.label \"Compare two clocks for equality, clocks with negative minute\" <| test.expect (equal (+2, +40) (+3, -20) === true)"},
+
+{"name":"clock.test.ex48","test_code":"clock.test.ex48 = let\n\ttest.label \"Compare two clocks for equality, clocks with negative minute that wraps\" <| test.expect (equal (+4, +10) (+5, -1490) === true)"},
+
+{"name":"clock.test.ex49","test_code":"clock.test.ex49 = let\n\ttest.label \"Compare two clocks for equality, clocks with negative minute that wraps multiple times\" <| test.expect (equal (+6, +15) (+6, -4305) === true)"},
+
+{"name":"clock.test.ex50","test_code":"clock.test.ex50 = let\n\ttest.label \"Compare two clocks for equality, clocks with negative hours and minutes\" <| test.expect (equal (+7, +32) (-12, -268) === true)"},
+
+{"name":"clock.test.ex51","test_code":"clock.test.ex51 = let\n\ttest.label \"Compare two clocks for equality, clocks with negative hours and minutes that wrap\" <| test.expect (equal (+18, +7) (-54, -11513) === true)"},
+
+{"name":"clock.test.ex52","test_code":"clock.test.ex52 = let\n\ttest.label \"Compare two clocks for equality, full clock and zeroed clock\" <| test.expect (equal (+24, +0) (+0, +0) === true)"}
+]
