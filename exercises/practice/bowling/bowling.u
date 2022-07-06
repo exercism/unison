@@ -1,0 +1,124 @@
+
+use Either Right Left
+
+unique type Error = Error Text
+
+unique ability Tape a where
+  extract : a
+  left : Optional a
+  right : Optional a
+
+Tape.run.impl : [Optional a] -> a -> [Optional a] -> base.Request {Tape a, g } r -> {g, Throw Error} (r, [a])
+Tape.run.impl lefts current rights = cases
+    {Tape.extract -> resume} ->
+      handle resume current with run.impl lefts current rights
+    {Tape.left -> resume} ->
+      maybeLeft = List.last lefts |> Optional.flatMap id
+      match maybeLeft with
+        Some newCurrent ->
+          leftVal = List.dropLast lefts
+          handle resume (Some newCurrent) with run.impl leftVal newCurrent ((Some current) List.+: rights)
+        None -> handle resume None with run.impl lefts current rights
+    {Tape.right -> resume } ->
+      maybeRight = List.head rights |> Optional.flatMap id
+      match maybeRight with
+        Some newCurrent -> handle resume (Some newCurrent) with run.impl (lefts :+ (Some current)) newCurrent (List.drop 1 rights)
+        None -> handle resume None with run.impl (lefts) current (rights)
+    {r} -> (r, List.somes <| ((lefts :+ (Some current)) ++ rights))
+
+Tape.runWithList : [a] -> '{Tape a, g} r -> '{g, Throw Error} (r, [a])
+Tape.runWithList ls tapeFunction _ =
+  use List ++
+  res = List.head ls
+  match res with
+    Some elem -> handle !tapeFunction with Tape.run.impl [] (elem) ((List.drop 1 ls) |> List.map Some )
+    None -> Throw.throw (Error "Score cannot be taken until the end of the game")
+
+Tape.run : [a] -> '{Tape a, g} r -> '{g, Throw Error} (r)
+Tape.run ls tapeFunction _ =
+  !(Tape.runWithList ls tapeFunction) |> at1
+
+score : [Nat] -> Either Error Nat
+score rolls =
+  res = Tape.run rolls calculateFrame
+  finished = '(isFinished !res)
+  Throw.toEither finished |> mapRight at2
+
+isFinished : ([Frame], Nat) -> {Throw Error} ([Frame], Nat)
+isFinished tuple =
+  (frames, score) = tuple
+  if List.size frames != 10 then throw (Error "Score cannot be taken until the end of the game") else tuple
+
+calculateFrame : '{Tape Nat, Throw Error} ([Frame], Nat)
+calculateFrame _ =
+
+  go : Nat -> [Frame] -> Nat -> {Tape Nat, Throw Error } ([Frame], Nat)
+  go currentFrame framesSoFar currentScore =
+    currentRoll = Tape.extract
+    maybeNext = Tape.right
+    match (currentRoll, maybeNext) with
+      (10, (Some next) ) | currentFrame === 10 -> -- 10th frame strike
+        if isSome Tape.right then
+          final = Tape.extract
+          lastFrames = [10, next, final]
+          total = currentScore + (sum lastFrames)
+          (framesSoFar :+ (Frame 10 lastFrames), total)
+        else
+          throw <| Error "Score cannot be taken until the end of the game"
+      (roll, (Some next) ) | currentFrame === 10 && (roll + next === 10) -> -- 10th frame spare
+        if isSome Tape.right then
+          final = Tape.extract
+          lastFrames = [roll, next, final]
+          total = currentScore + (sum lastFrames)
+          (framesSoFar :+ (Frame 10 lastFrames), total)
+        else
+          throw <| Error "Score cannot be taken until the end of the game"
+      (10, Some next) -> -- Strike
+        completeFrame = Frame currentFrame [10]
+        strikeScore = !Strike.calculate + 10
+        go (currentFrame + 1) (framesSoFar :+ completeFrame) (currentScore + strikeScore)
+      (roll, Some next) | roll + next === 10 -> -- Spare
+        completeFrame = Frame currentFrame [roll, next]
+        spareScore = !Spare.calculate + 10
+        Tape.right
+        go (currentFrame + 1) (framesSoFar :+ completeFrame) (currentScore + spareScore)
+      (roll, Some next) | (roll + next > 10) || (roll > 10) -> -- validate pin set
+        Throw.throw (Error "Pin count exceeds pins on the lane")
+      (roll, Some next) ->
+        completeFrame = Frame currentFrame [roll, next]
+        Tape.right
+        go (currentFrame + 1) (framesSoFar :+ completeFrame) (currentScore + roll + next)
+      (roll, None) ->
+        (framesSoFar, currentScore)
+
+  go 1 [] 0
+
+Strike.calculate : '{Tape Nat} Nat
+Strike.calculate _ =
+  first = Tape.extract
+  Tape.right
+  second = Tape.extract
+  total = first + second
+  Tape.left
+  total
+
+Spare.calculate : '{Tape Nat} Nat
+Spare.calculate _ =
+  Tape.right
+  first = Tape.extract
+  Tape.left
+  first
+
+{{ Represents a frame with a turn number a list for the rolls in the turn }}
+unique type Frame = Frame Nat [Nat]
+
+
+---
+unique type Error = Error Text
+
+{{
+  {score} takes in a list of numbers representing the pins knocked down for each roll of the bowling game, and should return the total score.
+}}
+score : [Nat] -> Either Error Nat
+score rolls =
+  todo "implement score function"
