@@ -9,10 +9,10 @@
   ],
   "files": {
     "solution": [
-      "src/lasagna.u"
+      "lasagna.u"
     ],
     "test": [
-      "test/lasagna.test.u"
+      "lasagna.test.u"
     ],
     "exemplar": [
       ".meta/examples/lasagna.example.u"
