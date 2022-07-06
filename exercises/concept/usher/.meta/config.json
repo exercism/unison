@@ -3,8 +3,8 @@
   "authors": ["rlmark", "pchuisano"],
   "icon": "movie-goer",
   "files": {
-    "solution": ["src/counter.u"],
-    "test": ["test/counter.test.u"],
+    "solution": ["counter.u"],
+    "test": ["counter.test.u"],
     "exemplar": [".meta/examples/counter.example.u"]
   }
 }
