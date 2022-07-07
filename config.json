@@ -250,6 +250,11 @@
       "uuid": "24332ec2-07b2-49e5-aa58-4829d31dc44a",
       "slug": "basics",
       "name": "Basics"
+    },
+    {
+      "uuid": "44f2d0c1-73db-487a-a2d2-aea4fa7be73f",
+      "slug": "lists",
+      "name": "Lists"
     }
   ],
   "key_features": [

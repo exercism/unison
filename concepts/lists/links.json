@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.unison-lang.org/learn/fundamentals/values-and-functions/common-collection-types/#lists",
+    "description": "Lists and other common collection types in Unison"
+  },
+  {
+    "url": "https://www.unison-lang.org/learn/fundamentals/control-flow/pattern-matching2/#pattern-matching-on",
+    "description": "List pattern matching"
+  },
+  {
+    "url": "https://share.unison-lang.org/latest/namespaces/unison/base/;/types/List",
+    "description": "List documentation from the standard library"
+  }
+]
