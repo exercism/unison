@@ -1,0 +1,6 @@
+unique type SublistType = Equal | Sublist | Superlist | Unequal
+
+{{ determine if the first argument, `listOne`,  is a sublist of `listTwo`, a superlist of `listTwo` or equal to `listTwo` }}
+sublist : [a] -> [a] -> SublistType
+sublist listOne listTwo =
+  todo "implement sublist"
