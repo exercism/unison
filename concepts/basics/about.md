@@ -54,8 +54,8 @@ shouldBe1 = getMax 1 (10 - 10)
 Unison multi-line functions use indentation or `let` blocks to specify code boundaries, a.k.a "lexical scope."
 
 ```
-swapperoo : Text -> Text -> Text -> Text
-swapperoo beg middle end =
+swapOrder : Text -> Text -> Text -> Text
+swapOrder beg middle end =
   newBeginning = end ++ middle
   newBeginning ++ beg
 ```
