@@ -1,9 +1,17 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
-    "solution": ["crypto.u"],
-    "test": ["crypto.test.u"],
-    "example": [".meta/examples/crypto.example.u"]
+    "solution": [
+      "crypto.u"
+    ],
+    "test": [
+      "crypto.test.u"
+    ],
+    "example": [
+      ".meta/examples/crypto.example.u"
+    ]
   },
   "blurb": "Implement the classic method for composing secret messages called a square code.",
   "source": "J Dalbey's Programming Practice problems",
