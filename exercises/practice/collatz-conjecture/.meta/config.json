@@ -1,9 +1,17 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
-    "solution": ["collatz.u"],
-    "test": ["collatz.test.u"],
-    "example": [".meta/examples/collatz.example.u"]
+    "solution": [
+      "collatz.u"
+    ],
+    "test": [
+      "collatz.test.u"
+    ],
+    "example": [
+      ".meta/examples/collatz.example.u"
+    ]
   },
   "blurb": "Calculate the number of steps to reach 1 using the Collatz conjecture.",
   "source": "An unsolved problem in mathematics named after mathematician Lothar Collatz",

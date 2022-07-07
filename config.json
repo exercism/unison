@@ -67,6 +67,14 @@
         "difficulty": 1
       },
       {
+        "slug": "bowling",
+        "name": "Bowling",
+        "uuid": "37c049f1-f83a-4b5d-a813-7347fa2b54a3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "clock",
         "name": "Clock",
         "uuid": "db98cc14-f1db-40f6-a5d0-d5c151c98570",

@@ -1,9 +1,17 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
-    "solution": ["queen.u"],
-    "test": ["queen.test.u"],
-    "example": [".meta/examples/queen.example.u"]
+    "solution": [
+      "queen.u"
+    ],
+    "test": [
+      "queen.test.u"
+    ],
+    "example": [
+      ".meta/examples/queen.example.u"
+    ]
   },
   "blurb": "Given the position of two queens on a chess board, indicate whether or not they are positioned so that they can attack each other.",
   "source": "J Dalbey's Programming Practice problems",
