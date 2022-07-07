@@ -1,9 +1,17 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
-    "solution": ["allYourBase.u"],
-    "test": ["allYourBase.test.u"],
-    "example": [".meta/examples/allYourBase.example.u"]
+    "solution": [
+      "allYourBase.u"
+    ],
+    "test": [
+      "allYourBase.test.u"
+    ],
+    "example": [
+      ".meta/examples/allYourBase.example.u"
+    ]
   },
   "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base."
 }

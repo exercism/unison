@@ -1,5 +1,7 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
     "solution": [
       "armstrongNumbers.u"
