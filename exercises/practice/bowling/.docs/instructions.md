@@ -54,5 +54,5 @@ For a tenth frame of XXX (three strikes), the total value is 30.
 
 Write code to score of a game of bowling. The player rolls are represented as a list of numbers.
 
-* `score : [Nat] -> Nat` is called at the very end of the game. It
+* `score : [Nat] -> Either Error Nat` is called at the very end of the game. It
   returns the total score for that game.
