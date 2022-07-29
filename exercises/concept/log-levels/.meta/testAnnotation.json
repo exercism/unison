@@ -1,0 +1,46 @@
+[
+  {
+    "name": "logLevels.test.ex1",
+    "test_code": "logLevels.test.ex1 = expect (message \"[ERROR]: Stack overflow\" === \"Stack overflow\")"
+  },
+  {
+    "name": "logLevels.test.ex2",
+    "test_code": "logLevels.test.ex2 = expect (message \"[WARNING]: Disk almost full\" === \"Disk almost full\")"
+  },
+  {
+    "name": "logLevels.test.ex3",
+    "test_code": "logLevels.test.ex3 = expect (message \"[INFO]: File moved\" === \"File moved\")"
+  },
+  {
+    "name": "logLevels.test.ex4",
+    "test_code": "logLevels.test.ex4 = expect (message \"[WARNING]:   \\tTimezone not set  \\r\\n\" === \"Timezone not set\")"
+  },
+  {
+    "name": "logLevels.test.ex5",
+    "test_code": "logLevels.test.ex5 = expect (logLevel \"[ERROR]: Disk full\" === \"error\")"
+  },
+  {
+    "name": "logLevels.test.ex6",
+    "test_code": "logLevels.test.ex6 = expect (logLevel \"[WARNING]: Unsafe password\" === \"warning\")"
+  },
+  {
+    "name": "logLevels.test.ex7",
+    "test_code": "logLevels.test.ex7 = expect (logLevel \"[INFO]: Timezone changed\" === \"info\")"
+  },
+  {
+    "name": "logLevels.test.ex8",
+    "test_code": "logLevels.test.ex8 = expect (reformat \"[ERROR]: Segmentation fault\" === \"Segmentation fault (error)\")"
+  },
+  {
+    "name": "logLevels.test.ex9",
+    "test_code": "logLevels.test.ex9 = expect (reformat \"[WARNING]: Decreased performance\" === \"Decreased performance (warning)\")"
+  },
+  {
+    "name": "logLevels.test.ex10",
+    "test_code": "logLevels.test.ex10 = expect (reformat \"[INFO]: Disk defragmented\" === \"Disk defragmented (info)\")"
+  },
+  {
+    "name": "logLevels.test.ex11",
+    "test_code": "logLevels.test.ex11 = expect (reformat \"[ERROR]: \\t Corrupt disk\\t \\t \\r\\n\" === \"Corrupt disk (error)\")"
+  }
+]

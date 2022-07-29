@@ -1,0 +1,47 @@
+
+logLevels.test.ex1 =
+  expect (message "[ERROR]: Stack overflow" === "Stack overflow")
+
+logLevels.test.ex2 =
+  expect (message "[WARNING]: Disk almost full" === "Disk almost full")
+
+logLevels.test.ex3=
+  expect (message "[INFO]: File moved" === "File moved")
+
+logLevels.test.ex4 =
+  expect (message "[WARNING]:   \tTimezone not set  \r\n" === "Timezone not set")
+
+logLevels.test.ex5 =
+  expect (logLevel "[ERROR]: Disk full" === "error")
+
+logLevels.test.ex6 =
+  expect (logLevel "[WARNING]: Unsafe password" === "warning")
+
+logLevels.test.ex7 =
+  expect (logLevel "[INFO]: Timezone changed" === "info")
+
+logLevels.test.ex8 =
+  expect (reformat "[ERROR]: Segmentation fault" === "Segmentation fault (error)")
+
+logLevels.test.ex9 =
+  expect (reformat "[WARNING]: Decreased performance" === "Decreased performance (warning)")
+
+logLevels.test.ex10 =
+  expect (reformat "[INFO]: Disk defragmented" === "Disk defragmented (info)")
+
+logLevels.test.ex11 =
+  expect (reformat "[ERROR]: \t Corrupt disk\t \t \r\n" === "Corrupt disk (error)")
+
+test> tests = runAll [
+  logLevels.test.ex1,
+  logLevels.test.ex2,
+  logLevels.test.ex3,
+  logLevels.test.ex4,
+  logLevels.test.ex5,
+  logLevels.test.ex6,
+  logLevels.test.ex7,
+  logLevels.test.ex8,
+  logLevels.test.ex9,
+  logLevels.test.ex10,
+  logLevels.test.ex11
+]

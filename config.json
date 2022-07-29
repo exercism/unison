@@ -30,7 +30,18 @@
     "average_run_time": 2.9
   },
   "exercises": {
-    "concept": [],
+    "concept": [
+      {
+        "slug": "log-levels",
+        "name": "Log Levels",
+        "uuid": "c1d015db-9139-4c81-9855-80e6990e91f1",
+        "practices": [],
+        "prerequisites": [],
+        "concepts": ["text-values"],
+        "difficulty": 1,
+        "status": "wip"
+      }
+    ],
     "practice": [
       {
         "slug": "acronym",
@@ -250,7 +261,13 @@
       }
     ]
   },
-  "concepts": [],
+  "concepts": [
+    {
+      "uuid": "1803a42c-2e6d-4b1a-81f4-6a37c8a7c2dc",
+      "slug": "text-values",
+      "name": "Text"
+    }
+  ],
   "key_features": [
     {
       "title": "Content addressed",
