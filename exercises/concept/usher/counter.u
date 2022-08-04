@@ -1,0 +1,32 @@
+structural ability Counter where
+  getCount : () -> Nat
+  incrementBy : Nat -> ()
+
+Counter.run : Nat -> '{Counter} a -> a
+Counter.run initialValue functionWhichUsesCounter =
+  todo "implement Counter.run handler"
+
+Counter.runWithTotal : Nat -> '{Counter} a -> (Nat, a)
+Counter.runWithTotal initialValue functionWhichUsesCounter =
+  -- placeholder implementation for part 2
+  a = run initialValue functionWhichUsesCounter
+  (0, a)
+
+-- Scenario using the counter ability below
+
+unique type Ticket = Ticket
+
+unique type Theater = Overflow [Ticket] | Main [Ticket]
+
+usher : [Ticket] -> Nat -> Theater -> {Counter} Theater
+usher party maxSeating = cases
+  Main room ->
+    currentTotal = !getCount
+    nextPartySize = List.size party
+    if currentTotal + nextPartySize > maxSeating then
+      Overflow party
+    else
+      incrementBy nextPartySize
+      Main (room ++ party)
+  Overflow room ->
+    Overflow (room ++ party)
