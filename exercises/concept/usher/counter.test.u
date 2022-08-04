@@ -1,3 +1,35 @@
+-- Test programs
+
+program : Theater
+program =
+  runUsher = 'let usher [Ticket, Ticket] 10 (Main [])
+  Counter.run 0 runUsher
+
+programWithList : Theater
+programWithList =
+  attendees = [[Ticket, Ticket], [Ticket, Ticket, Ticket], [Ticket], [Ticket, Ticket, Ticket]]
+  runUsher = 'let List.foldLeft (theater -> party -> usher party 10 theater) (Main []) attendees
+  Counter.run 0 runUsher
+
+programWithOverflow : Theater
+programWithOverflow =
+  attendees = [[Ticket, Ticket], [Ticket, Ticket, Ticket], [Ticket], [Ticket, Ticket, Ticket, Ticket, Ticket]]
+  runUsher = 'let List.foldLeft (theater -> party -> usher party 10 theater) (Main []) attendees
+  Counter.run 0 runUsher
+
+programWithTotal : (Nat, Theater)
+programWithTotal =
+  attendees = [[Ticket, Ticket], [Ticket, Ticket, Ticket], [Ticket]]
+  runUsher = 'let List.foldLeft (theater -> party -> usher party 10 theater) (Main []) attendees
+  Counter.runWithTotal 0 runUsher
+
+noCounter : Text
+noCounter =
+  counterNotCalled : '{Counter} Text
+  counterNotCalled = 'let
+    "counter ability is specified but not called"
+  Counter.run 0 counterNotCalled
+
 counter.test.ex1 =
   test.expect (program === Main [Ticket, Ticket])
 
