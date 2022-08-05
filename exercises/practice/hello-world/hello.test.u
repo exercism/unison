@@ -2,5 +2,5 @@ use Universal
 
 hello.test =
   expected = "Hello, World!"
-  test.expect (hello === expected)
-test> tests = runAll [hello.test]
+  Test.expect (hello === expected)
+test> hello.tests = runAll [hello.test]

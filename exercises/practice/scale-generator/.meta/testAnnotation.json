@@ -1,130 +1,130 @@
 [
   {
-    "test_code": "scaleGenerator.test.ex1 = let\n\ttest.label \"Chromatic scales, Chromatic scale with sharps\" <| test.expect (chromatic \"C\" === [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"A#\",\"B\"])",
+    "test_code": "scaleGenerator.test.ex1 = let\n\tTest.label \"Chromatic scales, Chromatic scale with sharps\" <| Test.expect (chromatic \"C\" === [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"A#\",\"B\"])",
     "name": "scaleGenerator.test.ex1"
   },
   {
-    "test_code": "scaleGenerator.test.ex2 = let\n\ttest.label \"Chromatic scales, Chromatic scale with flats\" <| test.expect (chromatic \"F\" === [\"F\",\"Gb\",\"G\",\"Ab\",\"A\",\"Bb\",\"B\",\"C\",\"Db\",\"D\",\"Eb\",\"E\"])",
+    "test_code": "scaleGenerator.test.ex2 = let\n\tTest.label \"Chromatic scales, Chromatic scale with flats\" <| Test.expect (chromatic \"F\" === [\"F\",\"Gb\",\"G\",\"Ab\",\"A\",\"Bb\",\"B\",\"C\",\"Db\",\"D\",\"Eb\",\"E\"])",
     "name": "scaleGenerator.test.ex2"
   },
   {
-    "test_code": "scaleGenerator.test.ex3 = let\n\ttest.label \"Scales with specified intervals, Simple major scale\" <| test.expect (interval \"C\", \"MMmMMMm\" === [\"C\",\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\"])",
+    "test_code": "scaleGenerator.test.ex3 = let\n\tTest.label \"Scales with specified intervals, Simple major scale\" <| Test.expect (interval \"C\", \"MMmMMMm\" === [\"C\",\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\"])",
     "name": "scaleGenerator.test.ex3"
   },
   {
-    "test_code": "scaleGenerator.test.ex4 = let\n\ttest.label \"Scales with specified intervals, Major scale with sharps\" <| test.expect (interval \"G\", \"MMmMMMm\" === [\"G\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F#\",\"G\"])",
+    "test_code": "scaleGenerator.test.ex4 = let\n\tTest.label \"Scales with specified intervals, Major scale with sharps\" <| Test.expect (interval \"G\", \"MMmMMMm\" === [\"G\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F#\",\"G\"])",
     "name": "scaleGenerator.test.ex4"
   },
   {
-    "test_code": "scaleGenerator.test.ex5 = let\n\ttest.label \"Scales with specified intervals, Major scale with flats\" <| test.expect (interval \"F\", \"MMmMMMm\" === [\"F\",\"G\",\"A\",\"Bb\",\"C\",\"D\",\"E\",\"F\"])",
+    "test_code": "scaleGenerator.test.ex5 = let\n\tTest.label \"Scales with specified intervals, Major scale with flats\" <| Test.expect (interval \"F\", \"MMmMMMm\" === [\"F\",\"G\",\"A\",\"Bb\",\"C\",\"D\",\"E\",\"F\"])",
     "name": "scaleGenerator.test.ex5"
   },
   {
-    "test_code": "scaleGenerator.test.ex6 = let\n\ttest.label \"Scales with specified intervals, Minor scale with sharps\" <| test.expect (interval \"f#\", \"MmMMmMM\" === [\"F#\",\"G#\",\"A\",\"B\",\"C#\",\"D\",\"E\",\"F#\"])",
+    "test_code": "scaleGenerator.test.ex6 = let\n\tTest.label \"Scales with specified intervals, Minor scale with sharps\" <| Test.expect (interval \"f#\", \"MmMMmMM\" === [\"F#\",\"G#\",\"A\",\"B\",\"C#\",\"D\",\"E\",\"F#\"])",
     "name": "scaleGenerator.test.ex6"
   },
   {
-    "test_code": "scaleGenerator.test.ex7 = let\n\ttest.label \"Scales with specified intervals, Minor scale with flats\" <| test.expect (interval \"bb\", \"MmMMmMM\" === [\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"Gb\",\"Ab\",\"Bb\"])",
+    "test_code": "scaleGenerator.test.ex7 = let\n\tTest.label \"Scales with specified intervals, Minor scale with flats\" <| Test.expect (interval \"bb\", \"MmMMmMM\" === [\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"Gb\",\"Ab\",\"Bb\"])",
     "name": "scaleGenerator.test.ex7"
   },
   {
-    "test_code": "scaleGenerator.test.ex8 = let\n\ttest.label \"Scales with specified intervals, Dorian mode\" <| test.expect (interval \"d\", \"MmMMMmM\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\"])",
+    "test_code": "scaleGenerator.test.ex8 = let\n\tTest.label \"Scales with specified intervals, Dorian mode\" <| Test.expect (interval \"d\", \"MmMMMmM\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\"])",
     "name": "scaleGenerator.test.ex8"
   },
   {
-    "test_code": "scaleGenerator.test.ex9 = let\n\ttest.label \"Scales with specified intervals, Mixolydian mode\" <| test.expect (interval \"Eb\", \"MMmMMmM\" === [\"Eb\",\"F\",\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\"])",
+    "test_code": "scaleGenerator.test.ex9 = let\n\tTest.label \"Scales with specified intervals, Mixolydian mode\" <| Test.expect (interval \"Eb\", \"MMmMMmM\" === [\"Eb\",\"F\",\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\"])",
     "name": "scaleGenerator.test.ex9"
   },
   {
-    "test_code": "scaleGenerator.test.ex10 = let\n\ttest.label \"Scales with specified intervals, Lydian mode\" <| test.expect (interval \"a\", \"MMMmMMm\" === [\"A\",\"B\",\"C#\",\"D#\",\"E\",\"F#\",\"G#\",\"A\"])",
+    "test_code": "scaleGenerator.test.ex10 = let\n\tTest.label \"Scales with specified intervals, Lydian mode\" <| Test.expect (interval \"a\", \"MMMmMMm\" === [\"A\",\"B\",\"C#\",\"D#\",\"E\",\"F#\",\"G#\",\"A\"])",
     "name": "scaleGenerator.test.ex10"
   },
   {
-    "test_code": "scaleGenerator.test.ex11 = let\n\ttest.label \"Scales with specified intervals, Phrygian mode\" <| test.expect (interval \"e\", \"mMMMmMM\" === [\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\",\"E\"])",
+    "test_code": "scaleGenerator.test.ex11 = let\n\tTest.label \"Scales with specified intervals, Phrygian mode\" <| Test.expect (interval \"e\", \"mMMMmMM\" === [\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\",\"E\"])",
     "name": "scaleGenerator.test.ex11"
   },
   {
-    "test_code": "scaleGenerator.test.ex12 = let\n\ttest.label \"Scales with specified intervals, Locrian mode\" <| test.expect (interval \"g\", \"mMMmMMM\" === [\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"G\"])",
+    "test_code": "scaleGenerator.test.ex12 = let\n\tTest.label \"Scales with specified intervals, Locrian mode\" <| Test.expect (interval \"g\", \"mMMmMMM\" === [\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"G\"])",
     "name": "scaleGenerator.test.ex12"
   },
   {
-    "test_code": "scaleGenerator.test.ex13 = let\n\ttest.label \"Scales with specified intervals, Harmonic minor\" <| test.expect (interval \"d\", \"MmMMmAm\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"Bb\",\"Db\",\"D\"])",
+    "test_code": "scaleGenerator.test.ex13 = let\n\tTest.label \"Scales with specified intervals, Harmonic minor\" <| Test.expect (interval \"d\", \"MmMMmAm\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"Bb\",\"Db\",\"D\"])",
     "name": "scaleGenerator.test.ex13"
   },
   {
-    "test_code": "scaleGenerator.test.ex14 = let\n\ttest.label \"Scales with specified intervals, Octatonic\" <| test.expect (interval \"C\", \"MmMmMmMm\" === [\"C\",\"D\",\"D#\",\"F\",\"F#\",\"G#\",\"A\",\"B\",\"C\"])",
+    "test_code": "scaleGenerator.test.ex14 = let\n\tTest.label \"Scales with specified intervals, Octatonic\" <| Test.expect (interval \"C\", \"MmMmMmMm\" === [\"C\",\"D\",\"D#\",\"F\",\"F#\",\"G#\",\"A\",\"B\",\"C\"])",
     "name": "scaleGenerator.test.ex14"
   },
   {
-    "test_code": "scaleGenerator.test.ex15 = let\n\ttest.label \"Scales with specified intervals, Hexatonic\" <| test.expect (interval \"Db\", \"MMMMMM\" === [\"Db\",\"Eb\",\"F\",\"G\",\"A\",\"B\",\"Db\"])",
+    "test_code": "scaleGenerator.test.ex15 = let\n\tTest.label \"Scales with specified intervals, Hexatonic\" <| Test.expect (interval \"Db\", \"MMMMMM\" === [\"Db\",\"Eb\",\"F\",\"G\",\"A\",\"B\",\"Db\"])",
     "name": "scaleGenerator.test.ex15"
   },
   {
-    "test_code": "scaleGenerator.test.ex16 = let\n\ttest.label \"Scales with specified intervals, Pentatonic\" <| test.expect (interval \"A\", \"MMAMA\" === [\"A\",\"B\",\"C#\",\"E\",\"F#\",\"A\"])",
+    "test_code": "scaleGenerator.test.ex16 = let\n\tTest.label \"Scales with specified intervals, Pentatonic\" <| Test.expect (interval \"A\", \"MMAMA\" === [\"A\",\"B\",\"C#\",\"E\",\"F#\",\"A\"])",
     "name": "scaleGenerator.test.ex16"
   },
   {
-    "test_code": "scaleGenerator.test.ex17 = let\n\ttest.label \"Scales with specified intervals, Enigmatic\" <| test.expect (interval \"G\", \"mAMMMmm\" === [\"G\",\"G#\",\"B\",\"C#\",\"D#\",\"F\",\"F#\",\"G\"])",
+    "test_code": "scaleGenerator.test.ex17 = let\n\tTest.label \"Scales with specified intervals, Enigmatic\" <| Test.expect (interval \"G\", \"mAMMMmm\" === [\"G\",\"G#\",\"B\",\"C#\",\"D#\",\"F\",\"F#\",\"G\"])",
     "name": "scaleGenerator.test.ex17"
   },
   {
-    "test_code": "scaleGenerator.test.ex18 = let\n\ttest.label \"Scales with specified intervals, Simple major scale\" <| test.expect (interval \"C\", \"MMmMMMm\" === [\"C\",\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\"])",
+    "test_code": "scaleGenerator.test.ex18 = let\n\tTest.label \"Scales with specified intervals, Simple major scale\" <| Test.expect (interval \"C\", \"MMmMMMm\" === [\"C\",\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\"])",
     "name": "scaleGenerator.test.ex18"
   },
   {
-    "test_code": "scaleGenerator.test.ex19 = let\n\ttest.label \"Scales with specified intervals, Major scale with sharps\" <| test.expect (interval \"G\", \"MMmMMMm\" === [\"G\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F#\",\"G\"])",
+    "test_code": "scaleGenerator.test.ex19 = let\n\tTest.label \"Scales with specified intervals, Major scale with sharps\" <| Test.expect (interval \"G\", \"MMmMMMm\" === [\"G\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F#\",\"G\"])",
     "name": "scaleGenerator.test.ex19"
   },
   {
-    "test_code": "scaleGenerator.test.ex20 = let\n\ttest.label \"Scales with specified intervals, Major scale with flats\" <| test.expect (interval \"F\", \"MMmMMMm\" === [\"F\",\"G\",\"A\",\"Bb\",\"C\",\"D\",\"E\",\"F\"])",
+    "test_code": "scaleGenerator.test.ex20 = let\n\tTest.label \"Scales with specified intervals, Major scale with flats\" <| Test.expect (interval \"F\", \"MMmMMMm\" === [\"F\",\"G\",\"A\",\"Bb\",\"C\",\"D\",\"E\",\"F\"])",
     "name": "scaleGenerator.test.ex20"
   },
   {
-    "test_code": "scaleGenerator.test.ex21 = let\n\ttest.label \"Scales with specified intervals, Minor scale with sharps\" <| test.expect (interval \"f#\", \"MmMMmMM\" === [\"F#\",\"G#\",\"A\",\"B\",\"C#\",\"D\",\"E\",\"F#\"])",
+    "test_code": "scaleGenerator.test.ex21 = let\n\tTest.label \"Scales with specified intervals, Minor scale with sharps\" <| Test.expect (interval \"f#\", \"MmMMmMM\" === [\"F#\",\"G#\",\"A\",\"B\",\"C#\",\"D\",\"E\",\"F#\"])",
     "name": "scaleGenerator.test.ex21"
   },
   {
-    "test_code": "scaleGenerator.test.ex22 = let\n\ttest.label \"Scales with specified intervals, Minor scale with flats\" <| test.expect (interval \"bb\", \"MmMMmMM\" === [\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"Gb\",\"Ab\",\"Bb\"])",
+    "test_code": "scaleGenerator.test.ex22 = let\n\tTest.label \"Scales with specified intervals, Minor scale with flats\" <| Test.expect (interval \"bb\", \"MmMMmMM\" === [\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"Gb\",\"Ab\",\"Bb\"])",
     "name": "scaleGenerator.test.ex22"
   },
   {
-    "test_code": "scaleGenerator.test.ex23 = let\n\ttest.label \"Scales with specified intervals, Dorian mode\" <| test.expect (interval \"d\", \"MmMMMmM\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\"])",
+    "test_code": "scaleGenerator.test.ex23 = let\n\tTest.label \"Scales with specified intervals, Dorian mode\" <| Test.expect (interval \"d\", \"MmMMMmM\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\"])",
     "name": "scaleGenerator.test.ex23"
   },
   {
-    "test_code": "scaleGenerator.test.ex24 = let\n\ttest.label \"Scales with specified intervals, Mixolydian mode\" <| test.expect (interval \"Eb\", \"MMmMMmM\" === [\"Eb\",\"F\",\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"C\",\"Eb\"])",
+    "test_code": "scaleGenerator.test.ex24 = let\n\tTest.label \"Scales with specified intervals, Mixolydian mode\" <| Test.expect (interval \"Eb\", \"MMmMMmM\" === [\"Eb\",\"F\",\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"C\",\"Eb\"])",
     "name": "scaleGenerator.test.ex24"
   },
   {
-    "test_code": "scaleGenerator.test.ex25 = let\n\ttest.label \"Scales with specified intervals, Lydian mode\" <| test.expect (interval \"a\", \"MMMmMMm\" === [\"A\",\"B\",\"C#\",\"D#\",\"E\",\"F#\",\"G#\",\"A\"])",
+    "test_code": "scaleGenerator.test.ex25 = let\n\tTest.label \"Scales with specified intervals, Lydian mode\" <| Test.expect (interval \"a\", \"MMMmMMm\" === [\"A\",\"B\",\"C#\",\"D#\",\"E\",\"F#\",\"G#\",\"A\"])",
     "name": "scaleGenerator.test.ex25"
   },
   {
-    "test_code": "scaleGenerator.test.ex26 = let\n\ttest.label \"Scales with specified intervals, Phrygian mode\" <| test.expect (interval \"e\", \"mMMMmMM\" === [\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\",\"E\"])",
+    "test_code": "scaleGenerator.test.ex26 = let\n\tTest.label \"Scales with specified intervals, Phrygian mode\" <| Test.expect (interval \"e\", \"mMMMmMM\" === [\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\",\"E\"])",
     "name": "scaleGenerator.test.ex26"
   },
   {
-    "test_code": "scaleGenerator.test.ex27 = let\n\ttest.label \"Scales with specified intervals, Locrian mode\" <| test.expect (interval \"g\", \"mMMmMMM\" === [\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"G\"])",
+    "test_code": "scaleGenerator.test.ex27 = let\n\tTest.label \"Scales with specified intervals, Locrian mode\" <| Test.expect (interval \"g\", \"mMMmMMM\" === [\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"G\"])",
     "name": "scaleGenerator.test.ex27"
   },
   {
-    "test_code": "scaleGenerator.test.ex28 = let\n\ttest.label \"Scales with specified intervals, Harmonic minor\" <| test.expect (interval \"d\", \"MmMMmAm\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"Bb\",\"Db\",\"D\"])",
+    "test_code": "scaleGenerator.test.ex28 = let\n\tTest.label \"Scales with specified intervals, Harmonic minor\" <| Test.expect (interval \"d\", \"MmMMmAm\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"Bb\",\"Db\",\"D\"])",
     "name": "scaleGenerator.test.ex28"
   },
   {
-    "test_code": "scaleGenerator.test.ex29 = let\n\ttest.label \"Scales with specified intervals, Octatonic\" <| test.expect (interval \"C\", \"MmMmMmMm\" === [\"C\",\"D\",\"D#\",\"F\",\"F#\",\"G#\",\"A\",\"B\",\"C\"])",
+    "test_code": "scaleGenerator.test.ex29 = let\n\tTest.label \"Scales with specified intervals, Octatonic\" <| Test.expect (interval \"C\", \"MmMmMmMm\" === [\"C\",\"D\",\"D#\",\"F\",\"F#\",\"G#\",\"A\",\"B\",\"C\"])",
     "name": "scaleGenerator.test.ex29"
   },
   {
-    "test_code": "scaleGenerator.test.ex30 = let\n\ttest.label \"Scales with specified intervals, Hexatonic\" <| test.expect (interval \"Db\", \"MMMMMM\" === [\"Db\",\"Eb\",\"F\",\"G\",\"A\",\"B\",\"Db\"])",
+    "test_code": "scaleGenerator.test.ex30 = let\n\tTest.label \"Scales with specified intervals, Hexatonic\" <| Test.expect (interval \"Db\", \"MMMMMM\" === [\"Db\",\"Eb\",\"F\",\"G\",\"A\",\"B\",\"Db\"])",
     "name": "scaleGenerator.test.ex30"
   },
   {
-    "test_code": "scaleGenerator.test.ex31 = let\n\ttest.label \"Scales with specified intervals, Pentatonic\" <| test.expect (interval \"A\", \"MMAMA\" === [\"A\",\"B\",\"C#\",\"E\",\"F#\",\"A\"])",
+    "test_code": "scaleGenerator.test.ex31 = let\n\tTest.label \"Scales with specified intervals, Pentatonic\" <| Test.expect (interval \"A\", \"MMAMA\" === [\"A\",\"B\",\"C#\",\"E\",\"F#\",\"A\"])",
     "name": "scaleGenerator.test.ex31"
   },
   {
-    "test_code": "scaleGenerator.test.ex32 = let\n\ttest.label \"Scales with specified intervals, Enigmatic\" <| test.expect (interval \"G\", \"mAMMMmm\" === [\"G\",\"G#\",\"B\",\"C#\",\"D#\",\"F\",\"F#\",\"G\"])",
+    "test_code": "scaleGenerator.test.ex32 = let\n\tTest.label \"Scales with specified intervals, Enigmatic\" <| Test.expect (interval \"G\", \"mAMMMmm\" === [\"G\",\"G#\",\"B\",\"C#\",\"D#\",\"F\",\"F#\",\"G\"])",
     "name": "scaleGenerator.test.ex32"
   }
 ]

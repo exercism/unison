@@ -5,4 +5,5 @@
 .> add
 .> load ./collatz.test.u
 .> add
+.> move.term collatzConjecture.tests tests
 ```

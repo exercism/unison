@@ -5,4 +5,5 @@
 .> add
 .> load ./clock.test.u
 .> add
+.> move.term clock.tests tests
 ```

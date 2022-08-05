@@ -1,2 +1,2 @@
-ciphertext : Text -> Text
-ciphertext inputText = todo "implement ciphertext"
+cryptoSquare.ciphertext : Text -> Text
+cryptoSquare.ciphertext inputText = todo "implement ciphertext"

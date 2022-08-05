@@ -1,11 +1,11 @@
 use Either Right Left
 
 {{ This type is used to capture the expected error message }}
-unique type Error = Error Text
+unique type bowling.Error = Error Text
 
 {{
   {score} takes in a list of numbers representing the pins knocked down for each roll of the bowling game, and should return either the total score or an error.
 }}
-score : [Nat] -> Either Error Nat
-score rolls =
+bowling.score : [Nat] -> Either Error Nat
+bowling.score rolls =
   todo "implement score function"

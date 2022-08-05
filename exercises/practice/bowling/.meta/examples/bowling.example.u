@@ -7,7 +7,7 @@ unique ability Tape a where
   left : Optional a
   right : Optional a
 
-Tape.run.impl : [Optional a] -> a -> [Optional a] -> base.Request {Tape a, g } r -> {g, Throw Error} (r, [a])
+Tape.run.impl : [Optional a] -> a -> [Optional a] -> Request {Tape a, g } r -> {g, Throw Error} (r, [a])
 Tape.run.impl lefts current rights = cases
     {Tape.extract -> resume} ->
       handle resume current with run.impl lefts current rights

@@ -5,4 +5,5 @@
 .> add
 .> load ./hello.test.u
 .> add
+.> move.term hello.tests tests
 ```

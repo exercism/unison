@@ -1,7 +1,7 @@
 
 zipper.test.ex1 = let
   testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch 3 None None))
-  test.label "run should not change tree" <| test.expect ( Zipper.runWithTree testTree '(base.id) |> at2 === testTree)
+  Test.label "run should not change tree" <| Test.expect ( Zipper.runWithTree testTree '(id) |> at2 === testTree)
 
 zipper.test.ex2 = let
   value = 2
@@ -9,7 +9,7 @@ zipper.test.ex2 = let
   nav _ =
     Zipper.left
     focus
-  test.label "can focus left" <| test.expect ( Zipper.run testTree nav  === value)
+  Test.label "can focus left" <| Test.expect ( Zipper.run testTree nav  === value)
 
 zipper.test.ex3 = let
   value = 3
@@ -17,7 +17,7 @@ zipper.test.ex3 = let
   nav _ =
     Zipper.right
     focus
-  test.label "can focus right" <| test.expect ( Zipper.run testTree nav  === value)
+  Test.label "can focus right" <| Test.expect ( Zipper.run testTree nav  === value)
 
 zipper.test.ex4 = let
   value = 4
@@ -26,7 +26,7 @@ zipper.test.ex4 = let
     Zipper.right
     Zipper.right
     focus
-  test.label "can move twice right" <| test.expect ( Zipper.run testTree nav === value)
+  Test.label "can move twice right" <| Test.expect ( Zipper.run testTree nav === value)
 
 zipper.test.ex5 = let
   value = 4
@@ -35,7 +35,7 @@ zipper.test.ex5 = let
     Zipper.left
     Zipper.left
     focus
-  test.label "can move twice left" <| test.expect ( Zipper.run testTree nav  === value)
+  Test.label "can move twice left" <| Test.expect ( Zipper.run testTree nav  === value)
 
 zipper.test.ex6 = let
   value = 4
@@ -44,7 +44,7 @@ zipper.test.ex6 = let
     Zipper.left
     Zipper.right
     focus
-  test.label "can move left and right" <| test.expect ( Zipper.run testTree nav  === value)
+  Test.label "can move left and right" <| Test.expect ( Zipper.run testTree nav  === value)
 
 zipper.test.ex7 = let
   value = 1
@@ -56,7 +56,7 @@ zipper.test.ex7 = let
     Zipper.setValue newLeft
     Zipper.up
     focus
-  test.label "can move left, set value, and up" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
+  Test.label "can move left, set value, and up" <| Test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
 
 zipper.test.ex8 = let
   value = 1
@@ -68,7 +68,7 @@ zipper.test.ex8 = let
     Zipper.setValue newRight
     Zipper.up
     focus
-  test.label "can move right, set value, and up" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
+  Test.label "can move right, set value, and up" <| Test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
 
 zipper.test.ex9 = let
   value = 1
@@ -80,7 +80,7 @@ zipper.test.ex9 = let
     Zipper.setLeft testTree
     Zipper.up
     focus
-  test.label "can move left, set left tree, and up" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
+  Test.label "can move left, set left tree, and up" <| Test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
 
 zipper.test.ex10 = let
   value = 1
@@ -92,7 +92,7 @@ zipper.test.ex10 = let
     Zipper.setRight testTree
     Zipper.up
     focus
-  test.label "can move right, set right tree, and up" <| test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
+  Test.label "can move right, set right tree, and up" <| Test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))
 
 zipper.test.ex11 = let
   value = 3
@@ -102,7 +102,7 @@ zipper.test.ex11 = let
     Zipper.right
     Zipper.right
     focus
-  test.label "returns self when no more rights" <| test.expect ( Zipper.run testTree nav === value)
+  Test.label "returns self when no more rights" <| Test.expect ( Zipper.run testTree nav === value)
 
 zipper.test.ex12 = let
   value = 1
@@ -112,9 +112,9 @@ zipper.test.ex12 = let
     Zipper.up
     Zipper.up
     focus
-  test.label "returns self when no more parents" <| test.expect ( Zipper.run testTree nav === value)
+  Test.label "returns self when no more parents" <| Test.expect ( Zipper.run testTree nav === value)
 
-test> tests = runAll[
+test> zipper.tests = runAll[
   zipper.test.ex1,
   zipper.test.ex2,
   zipper.test.ex3,

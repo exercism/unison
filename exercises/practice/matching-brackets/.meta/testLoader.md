@@ -5,4 +5,5 @@
 .> add
 .> load ./matchingBrackets.test.u
 .> add
+.> move.term matchingBrackets.tests tests
 ```

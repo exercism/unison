@@ -1,3 +1,3 @@
-nucleotideCounts : Text -> Optional (Map Text Nat)
-nucleotideCounts nucleotides =
+nucleotideCount.nucleotideCounts : Text -> Optional (Map Text Nat)
+nucleotideCount.nucleotideCounts nucleotides =
   todo "implement nucleotideCounts"

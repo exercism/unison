@@ -1,3 +1,3 @@
-spiralMatrix : Nat -> [[Nat]]
-spiralMatrix n =
+spiralMatrix.spiralMatrix : Nat -> [[Nat]]
+spiralMatrix.spiralMatrix n =
  todo "implement spiralMatrix"

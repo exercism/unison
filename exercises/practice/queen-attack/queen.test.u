@@ -1,37 +1,37 @@
 queenAttack.test.ex1 = let
-	test.label "queen with a valid position" <| test.expect (toOptional! '(create (2,2)) === Some (2,2))
+	Test.label "queen with a valid position" <| Test.expect (toOptional! '(create (2,2)) === Some (2,2))
 
 queenAttack.test.ex2 = let
-	test.label "queen must have row on board" <| test.expect (toOptional! '(create (8,4)) === None)
+	Test.label "queen must have row on board" <| Test.expect (toOptional! '(create (8,4)) === None)
 
 queenAttack.test.ex3 = let
-	test.label "queen must have column on board" <| test.expect (toOptional! '(create (4,8)) === None)
+	Test.label "queen must have column on board" <| Test.expect (toOptional! '(create (4,8)) === None)
 
 queenAttack.test.ex4 = let
-	test.label "cannot attack" <| test.expect (toOptional! '(canAttack (2,4) (6,6)) === Some false)
+	Test.label "cannot attack" <| Test.expect (toOptional! '(canAttack (2,4) (6,6)) === Some false)
 
 queenAttack.test.ex5 = let
-	test.label "can attack on same row" <| test.expect (toOptional! '(canAttack (2,4) (2,6)) === Some true)
+	Test.label "can attack on same row" <| Test.expect (toOptional! '(canAttack (2,4) (2,6)) === Some true)
 
 queenAttack.test.ex6 = let
-	test.label "can attack on same column" <| test.expect (toOptional! '(canAttack (4,5) (2,5)) === Some true)
+	Test.label "can attack on same column" <| Test.expect (toOptional! '(canAttack (4,5) (2,5)) === Some true)
 
 queenAttack.test.ex7 = let
-	test.label "can attack on first diagonal" <| test.expect (toOptional! '(canAttack (2,2) (0,4)) === Some true)
+	Test.label "can attack on first diagonal" <| Test.expect (toOptional! '(canAttack (2,2) (0,4)) === Some true)
 
 queenAttack.test.ex8 = let
-	test.label "can attack on second diagonal" <| test.expect (toOptional! '(canAttack (2,2) (3,1)) === Some true)
+	Test.label "can attack on second diagonal" <| Test.expect (toOptional! '(canAttack (2,2) (3,1)) === Some true)
 
 queenAttack.test.ex9 = let
-	test.label "can attack on third diagonal" <| test.expect (toOptional! '(canAttack (2,2) (1,1)) === Some true)
+	Test.label "can attack on third diagonal" <| Test.expect (toOptional! '(canAttack (2,2) (1,1)) === Some true)
 
 queenAttack.test.ex10 = let
-	test.label "can attack on fourth diagonal" <| test.expect (toOptional! '(canAttack (1,7) (0,6)) === Some true)
+	Test.label "can attack on fourth diagonal" <| Test.expect (toOptional! '(canAttack (1,7) (0,6)) === Some true)
 
 queenAttack.test.ex11 = let
-	test.label "cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal" <| test.expect (toOptional! '(canAttack (4,1) (2,5)) === Some false)
+	Test.label "cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal" <| Test.expect (toOptional! '(canAttack (4,1) (2,5)) === Some false)
 
-test> tests = runAll [
+test> queenAttack.tests = runAll [
 	queenAttack.test.ex1,
 	queenAttack.test.ex2,
 	queenAttack.test.ex3,

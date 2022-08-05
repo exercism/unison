@@ -5,4 +5,5 @@
 .> add
 .> load ./crypto.test.u
 .> add
+.> move.term cryptoSquare.tests tests
 ```

@@ -5,4 +5,5 @@
 .> add
 .> load ./allYourBase.test.u
 .> add
+.> move.term allYourBase.tests tests
 ```

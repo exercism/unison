@@ -5,4 +5,5 @@
 .> add
 .> load ./armstrongNumbers.test.u
 .> add
+.> move.term armstrongNumbers.tests tests
 ```

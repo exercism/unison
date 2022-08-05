@@ -1,25 +1,25 @@
 cryptoSquare.test.ex1 = let
-	test.label "empty plaintext results in an empty ciphertext" <| test.expect (ciphertext "" === "")
+	Test.label "empty plaintext results in an empty ciphertext" <| Test.expect (ciphertext "" === "")
 
 cryptoSquare.test.ex2 = let
-	test.label "Lowercase" <| test.expect (ciphertext "A" === "a")
+	Test.label "Lowercase" <| Test.expect (ciphertext "A" === "a")
 
 cryptoSquare.test.ex3 = let
-	test.label "Remove spaces" <| test.expect (ciphertext "  b " === "b")
+	Test.label "Remove spaces" <| Test.expect (ciphertext "  b " === "b")
 
 cryptoSquare.test.ex4 = let
-	test.label "Remove punctuation" <| test.expect (ciphertext "@1,%!" === "1")
+	Test.label "Remove punctuation" <| Test.expect (ciphertext "@1,%!" === "1")
 
 cryptoSquare.test.ex5 = let
-	test.label "9 character plaintext results in 3 chunks of 3 characters" <| test.expect (ciphertext "This is fun!" === "tsf hiu isn")
+	Test.label "9 character plaintext results in 3 chunks of 3 characters" <| Test.expect (ciphertext "This is fun!" === "tsf hiu isn")
 
 cryptoSquare.test.ex6 = let
-	test.label "8 character plaintext results in 3 chunks, the last one with a trailing space" <| test.expect (ciphertext "Chill out." === "clu hlt io ")
+	Test.label "8 character plaintext results in 3 chunks, the last one with a trailing space" <| Test.expect (ciphertext "Chill out." === "clu hlt io ")
 
 cryptoSquare.test.ex7 = let
-	test.label "54 character plaintext results in 7 chunks, the last two with trailing spaces" <| test.expect (ciphertext "If man was meant to stay on the ground, god would have given us roots." === "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ")
+	Test.label "54 character plaintext results in 7 chunks, the last two with trailing spaces" <| Test.expect (ciphertext "If man was meant to stay on the ground, god would have given us roots." === "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ")
 
-test> tests = runAll [
+test> cryptoSquare.tests = runAll [
 	cryptoSquare.test.ex1,
 	cryptoSquare.test.ex2,
 	cryptoSquare.test.ex3,

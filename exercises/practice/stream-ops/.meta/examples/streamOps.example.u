@@ -25,7 +25,7 @@ MyStream.ignore streamFunction =
 
 MyStream.filter : (a ->{g} Boolean) -> '{g, MyStream a} r -> '{g, MyStream a} r
 MyStream.filter predicate streamFunction = 'let
-  go : base.Request (MyStream a) r  -> {g, MyStream a} r
+  go : Request (MyStream a) r  -> {g, MyStream a} r
   go = cases
       { r }                -> r
       {MyStream.emit a -> resume} ->
