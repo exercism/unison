@@ -5,4 +5,5 @@
 .> add
 .> load ./majorityElement.test.u
 .> add
+.> move.term majorityElement.tests tests
 ```

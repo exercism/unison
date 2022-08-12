@@ -1,38 +1,38 @@
 [
     {
         "name": "basic",
-        "test_code": "test.expect (abbreviate \"Portable Network Graphics\") === \"PNG\""
+        "test_code": "Test.expect (abbreviate \"Portable Network Graphics\") === \"PNG\""
     },
     {
         "name": "lowercase words",
-        "test_code": "test.expect (abbreviate \"Ruby on Rails\") === \"ROR\""
+        "test_code": "Test.expect (abbreviate \"Ruby on Rails\") === \"ROR\""
     },
     {
         "name": "punctuation",
-        "test_code": "test.expect (abbreviate \"First In, First Out\") === \"FIFO\""
+        "test_code": "Test.expect (abbreviate \"First In, First Out\") === \"FIFO\""
     },
     {
         "name": "all caps word",
-        "test_code": "test.expect (abbreviate \"GNU Image Manipulation Program\") === \"GIMP\""
+        "test_code": "Test.expect (abbreviate \"GNU Image Manipulation Program\") === \"GIMP\""
     },
     {
         "name": "punctuation without whitespace",
-        "test_code": "test.expect (abbreviate \"Complementary metal-oxide semiconductor\") === \"CMOS\""
+        "test_code": "Test.expect (abbreviate \"Complementary metal-oxide semiconductor\") === \"CMOS\""
     },
     {
         "name": "very long abbreviation",
-        "test_code": "test.expect (abbreviate \"Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me\") === \"ROTFLSHTMDCOALM\""
+        "test_code": "Test.expect (abbreviate \"Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me\") === \"ROTFLSHTMDCOALM\""
     },
     {
         "name": "consecutive delimiters",
-        "test_code": "test.expect (abbreviate \"Something - I made up from thin air\") === \"SIMUFTA\""
+        "test_code": "Test.expect (abbreviate \"Something - I made up from thin air\") === \"SIMUFTA\""
     },
     {
         "name": "apostrophes",
-        "test_code": "test.expect (abbreviate \"Halley's Comet\") === \"HC\""
+        "test_code": "Test.expect (abbreviate \"Halley's Comet\") === \"HC\""
     },
     {
         "name": "underscore emphasis",
-        "test_code": "test.expect (abbreviate \"The Road _Not_ Taken\") === \"TRNT\""
+        "test_code": "Test.expect (abbreviate \"The Road _Not_ Taken\") === \"TRNT\""
     }
 ]

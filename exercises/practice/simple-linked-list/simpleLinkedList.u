@@ -1,28 +1,28 @@
-structural type LinkedList a = Placeholder
+structural type linkedL.LinkedList a = Placeholder
 
-LinkedList.new : a -> LinkedList a
-LinkedList.new a = todo "You need to implement new."
+linkedL.LinkedList.new : a -> LinkedList a
+linkedL.LinkedList.new a = todo "You need to implement new."
 
-LinkedList.cons : a -> LinkedList a -> LinkedList a
-LinkedList.cons a ls = todo "You need to implement cons."
+linkedL.LinkedList.cons : a -> LinkedList a -> LinkedList a
+linkedL.LinkedList.cons a ls = todo "You need to implement cons."
 
-LinkedList.nil : LinkedList a
-LinkedList.nil = todo "You need to implement nil."
+linkedL.LinkedList.nil : LinkedList a
+linkedL.LinkedList.nil = todo "You need to implement nil."
 
-LinkedList.fromList : [a] -> LinkedList a
-LinkedList.fromList xs = todo "You need to implement fromList."
+linkedL.LinkedList.fromList : [a] -> LinkedList a
+linkedL.LinkedList.fromList xs = todo "You need to implement fromList."
 
-LinkedList.head : LinkedList a -> Optional a
-LinkedList.head linkedList = todo "You need to implement head"
+linkedL.LinkedList.head : LinkedList a -> Optional a
+linkedL.LinkedList.head linkedList = todo "You need to implement head"
 
-LinkedList.isNil : LinkedList a -> Boolean
-LinkedList.isNil linkedList = todo "You need to implement isNil."
+linkedL.LinkedList.isNil : LinkedList a -> Boolean
+linkedL.LinkedList.isNil linkedList = todo "You need to implement isNil."
 
-LinkedList.tail : LinkedList a -> LinkedList a
-LinkedList.tail linkedList = todo "You need to implement tail."
+linkedL.LinkedList.tail : LinkedList a -> LinkedList a
+linkedL.LinkedList.tail linkedList = todo "You need to implement tail."
 
-LinkedList.reverseLinkedList : LinkedList a -> LinkedList a
-LinkedList.reverseLinkedList linkedList = todo "You need to implement reverseLinkedList."
+linkedL.LinkedList.reverseLinkedList : LinkedList a -> LinkedList a
+linkedL.LinkedList.reverseLinkedList linkedList = todo "You need to implement reverseLinkedList."
 
-LinkedList.toList : LinkedList a -> [a]
-LinkedList.toList linkedList = todo "You need to implement toList."
+linkedL.LinkedList.toList : LinkedList a -> [a]
+linkedL.LinkedList.toList linkedList = todo "You need to implement toList."

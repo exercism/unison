@@ -5,4 +5,5 @@
 .> add
 .> load ./sumOfMultiples.test.u
 .> add
+.> move.term sumOfMultiples.tests tests
 ```

@@ -5,4 +5,5 @@
 .> add
 .> load ./sublist.test.u
 .> add
+.> move.term sublist.tests tests
 ```

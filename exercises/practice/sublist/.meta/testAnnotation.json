@@ -1,74 +1,74 @@
 [
   {
-     "test_code":"sublist.test.ex1 = let\n\ttest.label \"empty lists\" <| test.expect (sublist [] [] === Equal)",
+     "test_code":"sublist.test.ex1 = let\n\tTest.label \"empty lists\" <| Test.expect (sublist [] [] === Equal)",
      "name":"sublist.test.ex1"
   },
   {
-     "test_code":"sublist.test.ex2 = let\n\ttest.label \"empty list within non empty list\" <| test.expect (sublist [] [1,2,3] === Sublist)",
+     "test_code":"sublist.test.ex2 = let\n\tTest.label \"empty list within non empty list\" <| Test.expect (sublist [] [1,2,3] === Sublist)",
      "name":"sublist.test.ex2"
   },
   {
-     "test_code":"sublist.test.ex3 = let\n\ttest.label \"non empty list contains empty list\" <| test.expect (sublist [1,2,3] [] === Superlist)",
+     "test_code":"sublist.test.ex3 = let\n\tTest.label \"non empty list contains empty list\" <| Test.expect (sublist [1,2,3] [] === Superlist)",
      "name":"sublist.test.ex3"
   },
   {
-     "test_code":"sublist.test.ex4 = let\n\ttest.label \"list equals itself\" <| test.expect (sublist [1,2,3] [1,2,3] === Equal)",
+     "test_code":"sublist.test.ex4 = let\n\tTest.label \"list equals itself\" <| Test.expect (sublist [1,2,3] [1,2,3] === Equal)",
      "name":"sublist.test.ex4"
   },
   {
-     "test_code":"sublist.test.ex5 = let\n\ttest.label \"different lists\" <| test.expect (sublist [1,2,3] [2,3,4] === Unequal)",
+     "test_code":"sublist.test.ex5 = let\n\tTest.label \"different lists\" <| Test.expect (sublist [1,2,3] [2,3,4] === Unequal)",
      "name":"sublist.test.ex5"
   },
   {
-     "test_code":"sublist.test.ex6 = let\n\ttest.label \"false start\" <| test.expect (sublist [1,2,5] [0,1,2,3,1,2,5,6] === Sublist)",
+     "test_code":"sublist.test.ex6 = let\n\tTest.label \"false start\" <| Test.expect (sublist [1,2,5] [0,1,2,3,1,2,5,6] === Sublist)",
      "name":"sublist.test.ex6"
   },
   {
-     "test_code":"sublist.test.ex7 = let\n\ttest.label \"consecutive\" <| test.expect (sublist [1,1,2] [0,1,1,1,2,1,2] === Sublist)",
+     "test_code":"sublist.test.ex7 = let\n\tTest.label \"consecutive\" <| Test.expect (sublist [1,1,2] [0,1,1,1,2,1,2] === Sublist)",
      "name":"sublist.test.ex7"
   },
   {
-     "test_code":"sublist.test.ex8 = let\n\ttest.label \"sublist at start\" <| test.expect (sublist [0,1,2] [0,1,2,3,4,5] === Sublist)",
+     "test_code":"sublist.test.ex8 = let\n\tTest.label \"sublist at start\" <| Test.expect (sublist [0,1,2] [0,1,2,3,4,5] === Sublist)",
      "name":"sublist.test.ex8"
   },
   {
-     "test_code":"sublist.test.ex9 = let\n\ttest.label \"sublist in middle\" <| test.expect (sublist [2,3,4] [0,1,2,3,4,5] === Sublist)",
+     "test_code":"sublist.test.ex9 = let\n\tTest.label \"sublist in middle\" <| Test.expect (sublist [2,3,4] [0,1,2,3,4,5] === Sublist)",
      "name":"sublist.test.ex9"
   },
   {
-     "test_code":"sublist.test.ex10 = let\n\ttest.label \"sublist at end\" <| test.expect (sublist [3,4,5] [0,1,2,3,4,5] === Sublist)",
+     "test_code":"sublist.test.ex10 = let\n\tTest.label \"sublist at end\" <| Test.expect (sublist [3,4,5] [0,1,2,3,4,5] === Sublist)",
      "name":"sublist.test.ex10"
   },
   {
-     "test_code":"sublist.test.ex11 = let\n\ttest.label \"at start of superlist\" <| test.expect (sublist [0,1,2,3,4,5] [0,1,2] === Superlist)",
+     "test_code":"sublist.test.ex11 = let\n\tTest.label \"at start of superlist\" <| Test.expect (sublist [0,1,2,3,4,5] [0,1,2] === Superlist)",
      "name":"sublist.test.ex11"
   },
   {
-     "test_code":"sublist.test.ex12 = let\n\ttest.label \"in middle of superlist\" <| test.expect (sublist [0,1,2,3,4,5] [2,3] === Superlist)",
+     "test_code":"sublist.test.ex12 = let\n\tTest.label \"in middle of superlist\" <| Test.expect (sublist [0,1,2,3,4,5] [2,3] === Superlist)",
      "name":"sublist.test.ex12"
   },
   {
-     "test_code":"sublist.test.ex13 = let\n\ttest.label \"at end of superlist\" <| test.expect (sublist [0,1,2,3,4,5] [3,4,5] === Superlist)",
+     "test_code":"sublist.test.ex13 = let\n\tTest.label \"at end of superlist\" <| Test.expect (sublist [0,1,2,3,4,5] [3,4,5] === Superlist)",
      "name":"sublist.test.ex13"
   },
   {
-     "test_code":"sublist.test.ex14 = let\n\ttest.label \"first list missing element from second list\" <| test.expect (sublist [1,3] [1,2,3] === Unequal)",
+     "test_code":"sublist.test.ex14 = let\n\tTest.label \"first list missing element from second list\" <| Test.expect (sublist [1,3] [1,2,3] === Unequal)",
      "name":"sublist.test.ex14"
   },
   {
-     "test_code":"sublist.test.ex15 = let\n\ttest.label \"second list missing element from first list\" <| test.expect (sublist [1,2,3] [1,3] === Unequal)",
+     "test_code":"sublist.test.ex15 = let\n\tTest.label \"second list missing element from first list\" <| Test.expect (sublist [1,2,3] [1,3] === Unequal)",
      "name":"sublist.test.ex15"
   },
   {
-     "test_code":"sublist.test.ex16 = let\n\ttest.label \"first list missing additional digits from second list\" <| test.expect (sublist [1,2] [1,22] === Unequal)",
+     "test_code":"sublist.test.ex16 = let\n\tTest.label \"first list missing additional digits from second list\" <| Test.expect (sublist [1,2] [1,22] === Unequal)",
      "name":"sublist.test.ex16"
   },
   {
-     "test_code":"sublist.test.ex17 = let\n\ttest.label \"order matters to a list\" <| test.expect (sublist [1,2,3] [3,2,1] === Unequal)",
+     "test_code":"sublist.test.ex17 = let\n\tTest.label \"order matters to a list\" <| Test.expect (sublist [1,2,3] [3,2,1] === Unequal)",
      "name":"sublist.test.ex17"
   },
   {
-     "test_code":"sublist.test.ex18 = let\n\ttest.label \"same digits but different numbers\" <| test.expect (sublist [1,0,1] [10,1] === Unequal)",
+     "test_code":"sublist.test.ex18 = let\n\tTest.label \"same digits but different numbers\" <| Test.expect (sublist [1,0,1] [10,1] === Unequal)",
      "name":"sublist.test.ex18"
   }
 ]

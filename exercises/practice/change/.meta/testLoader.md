@@ -5,4 +5,5 @@
 .> add
 .> load ./change.test.u
 .> add
+.> move.term change.tests tests
 ```

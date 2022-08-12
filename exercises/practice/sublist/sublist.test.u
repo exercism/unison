@@ -1,58 +1,58 @@
 sublist.test.ex1 = let
-	test.label "empty lists" <| test.expect (sublist [] [] === Equal)
+	Test.label "empty lists" <| Test.expect (sublist [] [] === Equal)
 
 sublist.test.ex2 = let
-	test.label "empty list within non empty list" <| test.expect (sublist [] [1,2,3] === Sublist)
+	Test.label "empty list within non empty list" <| Test.expect (sublist [] [1,2,3] === Sublist)
 
 sublist.test.ex3 = let
-	test.label "non empty list contains empty list" <| test.expect (sublist [1,2,3] [] === Superlist)
+	Test.label "non empty list contains empty list" <| Test.expect (sublist [1,2,3] [] === Superlist)
 
 sublist.test.ex4 = let
-	test.label "list equals itself" <| test.expect (sublist [1,2,3] [1,2,3] === Equal)
+	Test.label "list equals itself" <| Test.expect (sublist [1,2,3] [1,2,3] === Equal)
 
 sublist.test.ex5 = let
-	test.label "different lists" <| test.expect (sublist [1,2,3] [2,3,4] === Unequal)
+	Test.label "different lists" <| Test.expect (sublist [1,2,3] [2,3,4] === Unequal)
 
 sublist.test.ex6 = let
-	test.label "false start" <| test.expect (sublist [1,2,5] [0,1,2,3,1,2,5,6] === Sublist)
+	Test.label "false start" <| Test.expect (sublist [1,2,5] [0,1,2,3,1,2,5,6] === Sublist)
 
 sublist.test.ex7 = let
-	test.label "consecutive" <| test.expect (sublist [1,1,2] [0,1,1,1,2,1,2] === Sublist)
+	Test.label "consecutive" <| Test.expect (sublist [1,1,2] [0,1,1,1,2,1,2] === Sublist)
 
 sublist.test.ex8 = let
-	test.label "sublist at start" <| test.expect (sublist [0,1,2] [0,1,2,3,4,5] === Sublist)
+	Test.label "sublist at start" <| Test.expect (sublist [0,1,2] [0,1,2,3,4,5] === Sublist)
 
 sublist.test.ex9 = let
-	test.label "sublist in middle" <| test.expect (sublist [2,3,4] [0,1,2,3,4,5] === Sublist)
+	Test.label "sublist in middle" <| Test.expect (sublist [2,3,4] [0,1,2,3,4,5] === Sublist)
 
 sublist.test.ex10 = let
-	test.label "sublist at end" <| test.expect (sublist [3,4,5] [0,1,2,3,4,5] === Sublist)
+	Test.label "sublist at end" <| Test.expect (sublist [3,4,5] [0,1,2,3,4,5] === Sublist)
 
 sublist.test.ex11 = let
-	test.label "at start of superlist" <| test.expect (sublist [0,1,2,3,4,5] [0,1,2] === Superlist)
+	Test.label "at start of superlist" <| Test.expect (sublist [0,1,2,3,4,5] [0,1,2] === Superlist)
 
 sublist.test.ex12 = let
-	test.label "in middle of superlist" <| test.expect (sublist [0,1,2,3,4,5] [2,3] === Superlist)
+	Test.label "in middle of superlist" <| Test.expect (sublist [0,1,2,3,4,5] [2,3] === Superlist)
 
 sublist.test.ex13 = let
-	test.label "at end of superlist" <| test.expect (sublist [0,1,2,3,4,5] [3,4,5] === Superlist)
+	Test.label "at end of superlist" <| Test.expect (sublist [0,1,2,3,4,5] [3,4,5] === Superlist)
 
 sublist.test.ex14 = let
-	test.label "first list missing element from second list" <| test.expect (sublist [1,3] [1,2,3] === Unequal)
+	Test.label "first list missing element from second list" <| Test.expect (sublist [1,3] [1,2,3] === Unequal)
 
 sublist.test.ex15 = let
-	test.label "second list missing element from first list" <| test.expect (sublist [1,2,3] [1,3] === Unequal)
+	Test.label "second list missing element from first list" <| Test.expect (sublist [1,2,3] [1,3] === Unequal)
 
 sublist.test.ex16 = let
-	test.label "first list missing additional digits from second list" <| test.expect (sublist [1,2] [1,22] === Unequal)
+	Test.label "first list missing additional digits from second list" <| Test.expect (sublist [1,2] [1,22] === Unequal)
 
 sublist.test.ex17 = let
-	test.label "order matters to a list" <| test.expect (sublist [1,2,3] [3,2,1] === Unequal)
+	Test.label "order matters to a list" <| Test.expect (sublist [1,2,3] [3,2,1] === Unequal)
 
 sublist.test.ex18 = let
-	test.label "same digits but different numbers" <| test.expect (sublist [1,0,1] [10,1] === Unequal)
+	Test.label "same digits but different numbers" <| Test.expect (sublist [1,0,1] [10,1] === Unequal)
 
-test> tests = runAll [
+test> sublist.tests = runAll [
 	sublist.test.ex1,
 	sublist.test.ex2,
 	sublist.test.ex3,

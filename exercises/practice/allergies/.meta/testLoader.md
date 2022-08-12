@@ -5,4 +5,5 @@
 .> add
 .> load ./allergies.test.u
 .> add
+.> move.term allergies.tests tests
 ```
