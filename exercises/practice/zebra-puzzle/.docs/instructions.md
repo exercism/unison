@@ -25,4 +25,5 @@ drink different beverages and smoke different brands of cigarettes.
 Which of the residents drinks water?
 Who owns the zebra?
 
-For folks who are interested in practicing using Unison Abilities, you may want to look at the `Each` ability, provided by the standard library. More on using the `Each` ability can be found in the [Unison share docs.](https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/;/types/abilities/Each)
+For folks who are interested in practicing using Unison Abilities, you may want to look at the `Each` ability for expressing list comprehensions, provided by the standard library. More on using the `Each` ability can be found in the [Unison share docs.](https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/;/types/abilities/Each)
+
