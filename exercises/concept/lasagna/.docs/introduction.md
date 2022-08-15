@@ -22,7 +22,6 @@ getMax a b = Nat.max a b
 Functions can optionally include a type signature. The last type on the right is always the final return type of the function, and each argument is separated by the function arrow `->`.
 
 ```
-{{getMax accepts two arguments of type Nat and its return type is a Nat}}
 getMax : Nat -> Nat -> Nat
 getMax a b = Nat.max a b
 ```

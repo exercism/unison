@@ -1,8 +1,8 @@
-expectedMinutesInOven : Nat
-expectedMinutesInOven = todo "implement expectedMinutesInOven"
+lasagna.expectedMinutesInOven : Nat
+lasagna.expectedMinutesInOven = todo "implement expectedMinutesInOven"
 
-preparationTimeInMinutes : Nat -> Nat
-preparationTimeInMinutes layers = todo "implement preparationTimeInMinutes"
+lasagna.preparationTimeInMinutes : Nat -> Nat
+lasagna.preparationTimeInMinutes layers = todo "implement preparationTimeInMinutes"
 
-elapsedTimeInMinutes : Nat -> Nat -> Nat
-elapsedTimeInMinutes layers passedAlready = todo "implement elapsedTimeInMinutes"
+lasagna.elapsedTimeInMinutes : Nat -> Nat -> Nat
+lasagna.elapsedTimeInMinutes layers passedAlready = todo "implement elapsedTimeInMinutes"
