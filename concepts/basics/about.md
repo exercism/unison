@@ -22,7 +22,6 @@ getMax a b = Nat.max a b
 Functions can optionally include a type signature. The last type on the right is always the final return type of the function, and each argument is separated by the function arrow `->`.
 
 ```
-{{getMax accepts two arguments of type Nat and its return type is a Nat}}
 getMax : Nat -> Nat -> Nat
 getMax a b = Nat.max a b
 ```
@@ -120,4 +119,4 @@ This concept guide borrows liberally from [the official Unison documentation][un
 
 [use-statements]: https://www.unison-lang.org/learn/language-reference/use-clauses/
 [unison-language-docs]: https://www.unison-lang.org/learn/
-[unison-share-base]: https://share.unison-lang.org/latest/namespaces/unison/base
+[unison-share-base]: https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest
