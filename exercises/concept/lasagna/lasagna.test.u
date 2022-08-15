@@ -7,7 +7,7 @@ lasagna.test.ex2 = let
 lasagna.test.ex3 = let
 	test.expect (elapsedTimeInMinutes 3 20 === 26)
 
-test> tests = runAll [
+test> lasagna.tests = runAll [
   lasagna.test.ex1,
   lasagna.test.ex2,
   lasagna.test.ex3
