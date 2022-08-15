@@ -1,0 +1,12 @@
+use Nat
+
+lasagna.expectedMinutesInOven : Nat
+lasagna.expectedMinutesInOven = 40
+
+lasagna.preparationTimeInMinutes : Nat -> Nat
+lasagna.preparationTimeInMinutes layers =
+  2 * layers
+
+lasagna.elapsedTimeInMinutes : Nat -> Nat -> Nat
+lasagna.elapsedTimeInMinutes layers passedAlready =
+  passedAlready + preparationTimeInMinutes layers
