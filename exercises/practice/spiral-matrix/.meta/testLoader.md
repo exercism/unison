@@ -5,4 +5,5 @@
 .> add
 .> load ./spiralMatrix.test.u
 .> add
+.> move.term spiralMatrix.tests tests
 ```

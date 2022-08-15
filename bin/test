@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Test if the example/exemplar solution of each 
+# Test if the example/exemplar solution of each
 # Practice/Concept Exercise passes the exercise's tests.
 
 # Example:
@@ -28,7 +28,7 @@ function run_test_runner() {
 function verify_exercise() {
     local dir=$(realpath $1)
     local slug=$(basename "${dir}")
-    local implementation_file_key=$2    
+    local implementation_file_key=$2
     local implementation_file=$(jq -r --arg d "${dir}" --arg k "${implementation_file_key}" '$d + "/" + .files[$k][0]' "${dir}/.meta/config.json")
     local stub_file=$(jq -r --arg d "${dir}" '$d + "/" + .files.solution[0]' "${dir}/.meta/config.json")
     local stub_backup_file="${stub_file}.bak"

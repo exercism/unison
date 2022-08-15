@@ -1,46 +1,46 @@
 [
   {
-    "test_code": "queenAttack.test.ex1 = let\n\ttest.label \"queen with a valid position\" <| test.expect (toOptional! '(create (2,2)) === Some (2,2))",
+    "test_code": "queenAttack.test.ex1 = let\n\tTest.label \"queen with a valid position\" <| Test.expect (toOptional! '(create (2,2)) === Some (2,2))",
     "name": "queenAttack.test.ex1"
   },
   {
-    "test_code": "queenAttack.test.ex2 = let\n\ttest.label \"queen must have row on board\" <| test.expect (toOptional! '(create (4,8)) === None)",
+    "test_code": "queenAttack.test.ex2 = let\n\tTest.label \"queen must have row on board\" <| Test.expect (toOptional! '(create (4,8)) === None)",
     "name": "queenAttack.test.ex2"
   },
   {
-    "test_code": "queenAttack.test.ex3 = let\n\ttest.label \"queen must have column on board\" <| test.expect (toOptional! '(create (4,8)) === None)",
+    "test_code": "queenAttack.test.ex3 = let\n\tTest.label \"queen must have column on board\" <| Test.expect (toOptional! '(create (4,8)) === None)",
     "name": "queenAttack.test.ex3"
   },
   {
-    "test_code": "queenAttack.test.ex4 = let\n\ttest.label \"cannot attack\" <| test.expect (toOptional! '(canAttack (2,4) (6,6)) === Some false)",
+    "test_code": "queenAttack.test.ex4 = let\n\tTest.label \"cannot attack\" <| Test.expect (toOptional! '(canAttack (2,4) (6,6)) === Some false)",
     "name": "queenAttack.test.ex4"
   },
   {
-    "test_code": "queenAttack.test.ex5 = let\n\ttest.label \"can attack on same row\" <| test.expect (toOptional! '(canAttack (2,4) (2,6)) === Some true)",
+    "test_code": "queenAttack.test.ex5 = let\n\tTest.label \"can attack on same row\" <| Test.expect (toOptional! '(canAttack (2,4) (2,6)) === Some true)",
     "name": "queenAttack.test.ex5"
   },
   {
-    "test_code": "queenAttack.test.ex6 = let\n\ttest.label \"can attack on same column\" <| test.expect (toOptional! '(canAttack (4,5) (2,5)) === Some true)",
+    "test_code": "queenAttack.test.ex6 = let\n\tTest.label \"can attack on same column\" <| Test.expect (toOptional! '(canAttack (4,5) (2,5)) === Some true)",
     "name": "queenAttack.test.ex6"
   },
   {
-    "test_code": "queenAttack.test.ex7 = let\n\ttest.label \"can attack on first diagonal\" <| test.expect (toOptional! '(canAttack (2,2) (0,4)) === Some true)",
+    "test_code": "queenAttack.test.ex7 = let\n\tTest.label \"can attack on first diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (0,4)) === Some true)",
     "name": "queenAttack.test.ex7"
   },
   {
-    "test_code": "queenAttack.test.ex8 = let\n\ttest.label \"can attack on second diagonal\" <| test.expect (toOptional! '(canAttack (2,2) (3,1)) === Some true)",
+    "test_code": "queenAttack.test.ex8 = let\n\tTest.label \"can attack on second diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (3,1)) === Some true)",
     "name": "queenAttack.test.ex8"
   },
   {
-    "test_code": "queenAttack.test.ex9 = let\n\ttest.label \"can attack on third diagonal\" <| test.expect (toOptional! '(canAttack (2,2) (1,1)) === Some true)",
+    "test_code": "queenAttack.test.ex9 = let\n\tTest.label \"can attack on third diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (1,1)) === Some true)",
     "name": "queenAttack.test.ex9"
   },
   {
-    "test_code": "queenAttack.test.ex10 = let\n\ttest.label \"can attack on fourth diagonal\" <| test.expect (toOptional! '(canAttack (1,7) (0,6)) === Some true)",
+    "test_code": "queenAttack.test.ex10 = let\n\tTest.label \"can attack on fourth diagonal\" <| Test.expect (toOptional! '(canAttack (1,7) (0,6)) === Some true)",
     "name": "queenAttack.test.ex10"
   },
   {
-    "test_code": "queenAttack.test.ex11 = let\n\ttest.label \"cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal\" <| test.expect (toOptional! '(canAttack (4,1) (2,5)) === Some false)",
+    "test_code": "queenAttack.test.ex11 = let\n\tTest.label \"cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal\" <| Test.expect (toOptional! '(canAttack (4,1) (2,5)) === Some false)",
     "name": "queenAttack.test.ex11"
   }
 ]

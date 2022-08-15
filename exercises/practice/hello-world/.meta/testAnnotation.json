@@ -1,6 +1,6 @@
 [
   {
   "name":"helloWorld.test",
-  "test_code":"hello.test =\r\n  expected = \"Hello, World!\"\r\n  test.expect (hello === expected)"
+  "test_code":"hello.test =\r\n  expected = \"Hello, World!\"\r\n  Test.expect (hello === expected)"
   }
 ]

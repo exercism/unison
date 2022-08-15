@@ -68,6 +68,14 @@
         "difficulty": 1
       },
       {
+        "slug": "bowling",
+        "name": "Bowling",
+        "uuid": "37c049f1-f83a-4b5d-a813-7347fa2b54a3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "clock",
         "name": "Clock",
         "uuid": "db98cc14-f1db-40f6-a5d0-d5c151c98570",
@@ -204,6 +212,14 @@
         "difficulty": 5
       },
       {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "0240f3b9-52e7-4408-93c0-7766dbb4c60a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum Of Multiples",
         "uuid": "0fbe5e82-b563-4360-8957-e3a543eb3184",
@@ -265,7 +281,7 @@
     },
     {
       "title": "Functional",
-      "content": "Unison is a statically typed, general purpose functional programming langauge.",
+      "content": "Unison is a statically typed, general purpose functional programming language.",
       "icon": "functional"
     },
     {

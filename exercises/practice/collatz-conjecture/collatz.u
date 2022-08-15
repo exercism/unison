@@ -1,2 +1,2 @@
-steps : Nat -> Optional Nat
-steps n = todo "implement steps"
+collatzConjecture.steps : Nat -> Optional Nat
+collatzConjecture.steps n = todo "implement steps"

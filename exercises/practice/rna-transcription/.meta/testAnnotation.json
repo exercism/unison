@@ -1,30 +1,30 @@
 [
   {
     "name": "rna.test.t1",
-    "test_code": "test.label \"Empty RNA sequence should be empty string\" <| test.expect ((toRNA \"\") === (Some \"\"))"
+    "test_code": "Test.label \"Empty RNA sequence should be empty string\" <| Test.expect ((toRNA \"\") === (Some \"\"))"
   },
   {
     "name": "rna.test.t2",
-    "test_code": "test.label \"RNA complement of cytosine should be guanine\" <| test.expect ((toRNA \"C\") === (Some \"G\"))"
+    "test_code": "Test.label \"RNA complement of cytosine should be guanine\" <| Test.expect ((toRNA \"C\") === (Some \"G\"))"
   },
   {
     "name": "rna.test.t3",
-    "test_code": "test.label \"RNA complement of guanine should be cytosine\" <| test.expect ((toRNA \"G\") === (Some \"C\"))"
+    "test_code": "Test.label \"RNA complement of guanine should be cytosine\" <| Test.expect ((toRNA \"G\") === (Some \"C\"))"
   },
   {
     "name": "rna.test.t4",
-    "test_code": "test.label \"RNA complement of thymine should be adenine\" <| test.expect ((toRNA \"T\") === (Some \"A\"))"
+    "test_code": "Test.label \"RNA complement of thymine should be adenine\" <| Test.expect ((toRNA \"T\") === (Some \"A\"))"
   },
   {
     "name": "rna.test.t5",
-    "test_code": "test.label \"RNA complement of adenine should be uracil\" <| test.expect ((toRNA \"A\") === (Some \"U\"))"
+    "test_code": "Test.label \"RNA complement of adenine should be uracil\" <| Test.expect ((toRNA \"A\") === (Some \"U\"))"
   },
   {
     "name": "rna.test.t6",
-    "test_code": "test.label \"RNA complement\" <| test.expect (((toRNA \"ACGTGGTCTTAA\") === (Some \"UGCACCAGAAUU\")))"
+    "test_code": "Test.label \"RNA complement\" <| Test.expect (((toRNA \"ACGTGGTCTTAA\") === (Some \"UGCACCAGAAUU\")))"
   },
   {
     "name": "rna.test.t7",
-    "test_code": "test.label \"RNA complement should handle invalid DNA input\" <| test.expect ((toRNA \"ACGTXXXCTTAA\")===(None))"
+    "test_code": "Test.label \"RNA complement should handle invalid DNA input\" <| Test.expect ((toRNA \"ACGTXXXCTTAA\")===(None))"
   }
 ]

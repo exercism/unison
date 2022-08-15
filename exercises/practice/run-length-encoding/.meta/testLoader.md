@@ -5,4 +5,5 @@
 .> add
 .> load ./runLength.test.u
 .> add
+.> move.term runLengthEncoding.tests tests
 ```

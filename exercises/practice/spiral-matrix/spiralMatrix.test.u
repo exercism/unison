@@ -1,22 +1,22 @@
 spiralMatrix.test.ex1 = let
-	test.label "empty spiral" <| test.expect (spiralMatrix 0 === [])
+	Test.label "empty spiral" <| Test.expect (spiralMatrix 0 === [])
 
 spiralMatrix.test.ex2 = let
-	test.label "trivial spiral" <| test.expect (spiralMatrix 1 === [[1]])
+	Test.label "trivial spiral" <| Test.expect (spiralMatrix 1 === [[1]])
 
 spiralMatrix.test.ex3 = let
-	test.label "spiral of size 2" <| test.expect (spiralMatrix 2 === [[1,2],[4,3]])
+	Test.label "spiral of size 2" <| Test.expect (spiralMatrix 2 === [[1,2],[4,3]])
 
 spiralMatrix.test.ex4 = let
-	test.label "spiral of size 3" <| test.expect (spiralMatrix 3 === [[1,2,3],[8,9,4],[7,6,5]])
+	Test.label "spiral of size 3" <| Test.expect (spiralMatrix 3 === [[1,2,3],[8,9,4],[7,6,5]])
 
 spiralMatrix.test.ex5 = let
-	test.label "spiral of size 4" <| test.expect (spiralMatrix 4 === [[1,2,3,4],[12,13,14,5],[11,16,15,6],[10,9,8,7]])
+	Test.label "spiral of size 4" <| Test.expect (spiralMatrix 4 === [[1,2,3,4],[12,13,14,5],[11,16,15,6],[10,9,8,7]])
 
 spiralMatrix.test.ex6 = let
-	test.label "spiral of size 5" <| test.expect (spiralMatrix 5 === [[1,2,3,4,5],[16,17,18,19,6],[15,24,25,20,7],[14,23,22,21,8],[13,12,11,10,9]])
+	Test.label "spiral of size 5" <| Test.expect (spiralMatrix 5 === [[1,2,3,4,5],[16,17,18,19,6],[15,24,25,20,7],[14,23,22,21,8],[13,12,11,10,9]])
 
-test> tests = runAll [
+test> spiralMatrix.tests = runAll [
 	spiralMatrix.test.ex1,
 	spiralMatrix.test.ex2,
 	spiralMatrix.test.ex3,

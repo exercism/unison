@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "rlmark"
+  ],
+  "files": {
+    "solution": [
+      "sublist.u"
+    ],
+    "test": [
+      "sublist.test.u"
+    ],
+    "example": [
+      ".meta/examples/sublist.example.u"
+    ]
+  },
+  "blurb": "Write a function to determine if a list is a sublist of another list."
+}

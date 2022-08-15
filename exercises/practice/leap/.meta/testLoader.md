@@ -5,4 +5,5 @@
 .> add
 .> load ./leap.test.u
 .> add
+.> move.term leap.tests tests
 ```

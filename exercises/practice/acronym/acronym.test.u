@@ -1,31 +1,33 @@
+use base.test.Test
+
 acronym.test.basic =
- test.expect (abbreviate "Portable Network Graphics" === "PNG")
+ Test.expect (abbreviate "Portable Network Graphics" === "PNG")
 
 acronym.test.lowercaseWords =
-  test.expect (abbreviate "Ruby on Rails" === "ROR")
+  Test.expect (abbreviate "Ruby on Rails" === "ROR")
 
 acronym.test.punctuation =
-  test.expect (abbreviate "First In, First Out" === "FIFO")
+  Test.expect (abbreviate "First In, First Out" === "FIFO")
 
 acronym.test.allCapsWord =
-  test.expect (abbreviate "GNU Image Manipulation Program" === "GIMP")
+  Test.expect (abbreviate "GNU Image Manipulation Program" === "GIMP")
 
 acronym.test.punctuationWithoutWhitespace =
-  test.expect (abbreviate "Complementary metal-oxide semiconductor" === "CMOS")
+  Test.expect (abbreviate "Complementary metal-oxide semiconductor" === "CMOS")
 
 acronym.test.veryLongAbbreviation =
-  test.expect (abbreviate "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me" === "ROTFLSHTMDCOALM")
+  Test.expect (abbreviate "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me" === "ROTFLSHTMDCOALM")
 
 acronym.test.consecutiveDelimiters =
-  test.expect (abbreviate "Something - I made up from thin air" === "SIMUFTA")
+  Test.expect (abbreviate "Something - I made up from thin air" === "SIMUFTA")
 
 acronym.test.apostrophes =
-  test.expect (abbreviate "Halley's Comet" === "HC")
+  Test.expect (abbreviate "Halley's Comet" === "HC")
 
 acronym.test.underscoreEmphasis =
-  test.expect (abbreviate "The Road _Not_ Taken" === "TRNT")
+  Test.expect (abbreviate "The Road _Not_ Taken" === "TRNT")
 
-test> tests =
+test> acronym.tests =
   runAll [
     acronym.test.basic,
     acronym.test.lowercaseWords,

@@ -1,157 +1,157 @@
-toSorted : [a] -> [a]
-toSorted xs = List.sortBy id xs
+allergies.toSorted : [a] -> [a]
+allergies.toSorted xs = List.sortBy id xs
 
 allergies.test.ex1 = let
-	test.label "not allergic to anything" <| test.expect (allergicTo "eggs" 0 === false)
+	Test.label "not allergic to anything" <| Test.expect (allergicTo "eggs" 0 === false)
 
 allergies.test.ex2 = let
-	test.label "allergic only to eggs" <| test.expect (allergicTo "eggs" 1 === true)
+	Test.label "allergic only to eggs" <| Test.expect (allergicTo "eggs" 1 === true)
 
 allergies.test.ex3 = let
-	test.label "allergic to eggs and something else" <| test.expect (allergicTo "eggs" 3 === true)
+	Test.label "allergic to eggs and something else" <| Test.expect (allergicTo "eggs" 3 === true)
 
 allergies.test.ex4 = let
-	test.label "allergic to something, but not eggs" <| test.expect (allergicTo "eggs" 2 === false)
+	Test.label "allergic to something, but not eggs" <| Test.expect (allergicTo "eggs" 2 === false)
 
 allergies.test.ex5 = let
-	test.label "allergic to everything" <| test.expect (allergicTo "eggs" 255 === true)
+	Test.label "allergic to everything" <| Test.expect (allergicTo "eggs" 255 === true)
 
 allergies.test.ex6 = let
-	test.label "not allergic to anything" <| test.expect (allergicTo "peanuts" 0 === false)
+	Test.label "not allergic to anything" <| Test.expect (allergicTo "peanuts" 0 === false)
 
 allergies.test.ex7 = let
-	test.label "allergic only to peanuts" <| test.expect (allergicTo "peanuts" 2 === true)
+	Test.label "allergic only to peanuts" <| Test.expect (allergicTo "peanuts" 2 === true)
 
 allergies.test.ex8 = let
-	test.label "allergic to peanuts and something else" <| test.expect (allergicTo "peanuts" 7 === true)
+	Test.label "allergic to peanuts and something else" <| Test.expect (allergicTo "peanuts" 7 === true)
 
 allergies.test.ex9 = let
-	test.label "allergic to something, but not peanuts" <| test.expect (allergicTo "peanuts" 5 === false)
+	Test.label "allergic to something, but not peanuts" <| Test.expect (allergicTo "peanuts" 5 === false)
 
 allergies.test.ex10 = let
-	test.label "allergic to everything" <| test.expect (allergicTo "peanuts" 255 === true)
+	Test.label "allergic to everything" <| Test.expect (allergicTo "peanuts" 255 === true)
 
 allergies.test.ex11 = let
-	test.label "not allergic to anything" <| test.expect (allergicTo "shellfish" 0 === false)
+	Test.label "not allergic to anything" <| Test.expect (allergicTo "shellfish" 0 === false)
 
 allergies.test.ex12 = let
-	test.label "allergic only to shellfish" <| test.expect (allergicTo "shellfish" 4 === true)
+	Test.label "allergic only to shellfish" <| Test.expect (allergicTo "shellfish" 4 === true)
 
 allergies.test.ex13 = let
-	test.label "allergic to shellfish and something else" <| test.expect (allergicTo "shellfish" 14 === true)
+	Test.label "allergic to shellfish and something else" <| Test.expect (allergicTo "shellfish" 14 === true)
 
 allergies.test.ex14 = let
-	test.label "allergic to something, but not shellfish" <| test.expect (allergicTo "shellfish" 10 === false)
+	Test.label "allergic to something, but not shellfish" <| Test.expect (allergicTo "shellfish" 10 === false)
 
 allergies.test.ex15 = let
-	test.label "allergic to everything" <| test.expect (allergicTo "shellfish" 255 === true)
+	Test.label "allergic to everything" <| Test.expect (allergicTo "shellfish" 255 === true)
 
 allergies.test.ex16 = let
-	test.label "not allergic to anything" <| test.expect (allergicTo "strawberries" 0 === false)
+	Test.label "not allergic to anything" <| Test.expect (allergicTo "strawberries" 0 === false)
 
 allergies.test.ex17 = let
-	test.label "allergic only to strawberries" <| test.expect (allergicTo "strawberries" 8 === true)
+	Test.label "allergic only to strawberries" <| Test.expect (allergicTo "strawberries" 8 === true)
 
 allergies.test.ex18 = let
-	test.label "allergic to strawberries and something else" <| test.expect (allergicTo "strawberries" 28 === true)
+	Test.label "allergic to strawberries and something else" <| Test.expect (allergicTo "strawberries" 28 === true)
 
 allergies.test.ex19 = let
-	test.label "allergic to something, but not strawberries" <| test.expect (allergicTo "strawberries" 20 === false)
+	Test.label "allergic to something, but not strawberries" <| Test.expect (allergicTo "strawberries" 20 === false)
 
 allergies.test.ex20 = let
-	test.label "allergic to everything" <| test.expect (allergicTo "strawberries" 255 === true)
+	Test.label "allergic to everything" <| Test.expect (allergicTo "strawberries" 255 === true)
 
 allergies.test.ex21 = let
-	test.label "not allergic to anything" <| test.expect (allergicTo "tomatoes" 0 === false)
+	Test.label "not allergic to anything" <| Test.expect (allergicTo "tomatoes" 0 === false)
 
 allergies.test.ex22 = let
-	test.label "allergic only to tomatoes" <| test.expect (allergicTo "tomatoes" 16 === true)
+	Test.label "allergic only to tomatoes" <| Test.expect (allergicTo "tomatoes" 16 === true)
 
 allergies.test.ex23 = let
-	test.label "allergic to tomatoes and something else" <| test.expect (allergicTo "tomatoes" 56 === true)
+	Test.label "allergic to tomatoes and something else" <| Test.expect (allergicTo "tomatoes" 56 === true)
 
 allergies.test.ex24 = let
-	test.label "allergic to something, but not tomatoes" <| test.expect (allergicTo "tomatoes" 40 === false)
+	Test.label "allergic to something, but not tomatoes" <| Test.expect (allergicTo "tomatoes" 40 === false)
 
 allergies.test.ex25 = let
-	test.label "allergic to everything" <| test.expect (allergicTo "tomatoes" 255 === true)
+	Test.label "allergic to everything" <| Test.expect (allergicTo "tomatoes" 255 === true)
 
 allergies.test.ex26 = let
-	test.label "not allergic to anything" <| test.expect (allergicTo "chocolate" 0 === false)
+	Test.label "not allergic to anything" <| Test.expect (allergicTo "chocolate" 0 === false)
 
 allergies.test.ex27 = let
-	test.label "allergic only to chocolate" <| test.expect (allergicTo "chocolate" 32 === true)
+	Test.label "allergic only to chocolate" <| Test.expect (allergicTo "chocolate" 32 === true)
 
 allergies.test.ex28 = let
-	test.label "allergic to chocolate and something else" <| test.expect (allergicTo "chocolate" 112 === true)
+	Test.label "allergic to chocolate and something else" <| Test.expect (allergicTo "chocolate" 112 === true)
 
 allergies.test.ex29 = let
-	test.label "allergic to something, but not chocolate" <| test.expect (allergicTo "chocolate" 80 === false)
+	Test.label "allergic to something, but not chocolate" <| Test.expect (allergicTo "chocolate" 80 === false)
 
 allergies.test.ex30 = let
-	test.label "allergic to everything" <| test.expect (allergicTo "chocolate" 255 === true)
+	Test.label "allergic to everything" <| Test.expect (allergicTo "chocolate" 255 === true)
 
 allergies.test.ex31 = let
-	test.label "not allergic to anything" <| test.expect (allergicTo "pollen" 0 === false)
+	Test.label "not allergic to anything" <| Test.expect (allergicTo "pollen" 0 === false)
 
 allergies.test.ex32 = let
-	test.label "allergic only to pollen" <| test.expect (allergicTo "pollen" 64 === true)
+	Test.label "allergic only to pollen" <| Test.expect (allergicTo "pollen" 64 === true)
 
 allergies.test.ex33 = let
-	test.label "allergic to pollen and something else" <| test.expect (allergicTo "pollen" 224 === true)
+	Test.label "allergic to pollen and something else" <| Test.expect (allergicTo "pollen" 224 === true)
 
 allergies.test.ex34 = let
-	test.label "allergic to something, but not pollen" <| test.expect (allergicTo "pollen" 160 === false)
+	Test.label "allergic to something, but not pollen" <| Test.expect (allergicTo "pollen" 160 === false)
 
 allergies.test.ex35 = let
-	test.label "allergic to everything" <| test.expect (allergicTo "pollen" 255 === true)
+	Test.label "allergic to everything" <| Test.expect (allergicTo "pollen" 255 === true)
 
 allergies.test.ex36 = let
-	test.label "not allergic to anything" <| test.expect (allergicTo "cats" 0 === false)
+	Test.label "not allergic to anything" <| Test.expect (allergicTo "cats" 0 === false)
 
 allergies.test.ex37 = let
-	test.label "allergic only to cats" <| test.expect (allergicTo "cats" 128 === true)
+	Test.label "allergic only to cats" <| Test.expect (allergicTo "cats" 128 === true)
 
 allergies.test.ex38 = let
-	test.label "allergic to cats and something else" <| test.expect (allergicTo "cats" 192 === true)
+	Test.label "allergic to cats and something else" <| Test.expect (allergicTo "cats" 192 === true)
 
 allergies.test.ex39 = let
-	test.label "allergic to something, but not cats" <| test.expect (allergicTo "cats" 64 === false)
+	Test.label "allergic to something, but not cats" <| Test.expect (allergicTo "cats" 64 === false)
 
 allergies.test.ex40 = let
-	test.label "allergic to everything" <| test.expect (allergicTo "cats" 255 === true)
+	Test.label "allergic to everything" <| Test.expect (allergicTo "cats" 255 === true)
 
 allergies.test.ex41 = let
-	test.label "no allergies" <| test.expect (list 0 === [])
+	Test.label "no allergies" <| Test.expect (list 0 === [])
 
 allergies.test.ex42 = let
-	test.label "just eggs" <| test.expect (list 1 === ["eggs"])
+	Test.label "just eggs" <| Test.expect (list 1 === ["eggs"])
 
 allergies.test.ex43 = let
-	test.label "just peanuts" <| test.expect (list 2 === ["peanuts"])
+	Test.label "just peanuts" <| Test.expect (list 2 === ["peanuts"])
 
 allergies.test.ex44 = let
-	test.label "just strawberries" <| test.expect (list 8 === ["strawberries"])
+	Test.label "just strawberries" <| Test.expect (list 8 === ["strawberries"])
 
 allergies.test.ex45 = let
-	test.label "eggs and peanuts" <| test.expect (toSorted (list 3) === toSorted ["eggs","peanuts"])
+	Test.label "eggs and peanuts" <| Test.expect (toSorted (list 3) === toSorted ["eggs","peanuts"])
 
 allergies.test.ex46 = let
-	test.label "more than eggs but not peanuts" <| test.expect (toSorted (list 5) === toSorted ["eggs","shellfish"])
+	Test.label "more than eggs but not peanuts" <| Test.expect (toSorted (list 5) === toSorted ["eggs","shellfish"])
 
 allergies.test.ex47 = let
-	test.label "lots of stuff" <| test.expect (toSorted (list 248) === toSorted ["strawberries","tomatoes","chocolate","pollen","cats"])
+	Test.label "lots of stuff" <| Test.expect (toSorted (list 248) === toSorted ["strawberries","tomatoes","chocolate","pollen","cats"])
 
 allergies.test.ex48 = let
-	test.label "everything" <| test.expect (toSorted (list 255) === toSorted ["eggs","peanuts","shellfish","strawberries","tomatoes","chocolate","pollen","cats"])
+	Test.label "everything" <| Test.expect (toSorted (list 255) === toSorted ["eggs","peanuts","shellfish","strawberries","tomatoes","chocolate","pollen","cats"])
 
 allergies.test.ex49 = let
-	test.label "no allergen score parts" <| test.expect (toSorted (list 509) === toSorted ["eggs","shellfish","strawberries","tomatoes","chocolate","pollen","cats"])
+	Test.label "no allergen score parts" <| Test.expect (toSorted (list 509) === toSorted ["eggs","shellfish","strawberries","tomatoes","chocolate","pollen","cats"])
 
 allergies.test.ex50 = let
-	test.label "no allergen score parts without highest valid score" <| test.expect (list 257 === ["eggs"])
+	Test.label "no allergen score parts without highest valid score" <| Test.expect (list 257 === ["eggs"])
 
-test> tests = runAll [
+test> allergies.tests = runAll [
 	allergies.test.ex1,
 	allergies.test.ex2,
 	allergies.test.ex3,

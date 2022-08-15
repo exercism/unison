@@ -16,3 +16,8 @@ jobs:
 
       - name: Configlet Linter
         run: configlet lint
+
+  configlet:
+    uses: exercism/github-actions/.github/workflows/configlet.yml@main
+    with:
+      fmt: true

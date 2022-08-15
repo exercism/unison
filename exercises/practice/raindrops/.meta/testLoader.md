@@ -5,4 +5,5 @@
 .> add
 .> load ./raindrops.test.u
 .> add
+.> move.term raindrops.tests tests
 ```
