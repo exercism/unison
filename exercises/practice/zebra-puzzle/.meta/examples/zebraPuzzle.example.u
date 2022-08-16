@@ -192,15 +192,15 @@ checkNextHouse currentRow pos = match currentRow with
 calculateHouseOrder' = do
   allValidHouses = validHouses |> Each.toList
   -- first house can't be Green or Ivory
-  one = List.filter (h -> House.position h === Position.One) allValidHouses |> List.filter (h -> (houseIsNot' color Green h) || (houseIsNot' color Ivory h )) one
+  one = List.filter (h -> House.position h === Position.One) allValidHouses |> List.filter (h -> (houseIsNot' color Green h) || (houseIsNot' color Ivory h ))
   two = List.filter (h -> House.position h === Position.Two) allValidHouses
   -- green house drinks tea and middle house drinks milk so the middle cannot be green
-  three = List.filter (h -> House.position h === Position.Three) allValidHouses |> List.filter (h -> ( houseIsNot' color Green h)) three
+  three = List.filter (h -> House.position h === Position.Three) allValidHouses |> List.filter (h -> ( houseIsNot' color Green h))
   four = List.filter (h -> House.position h === Position.Four) allValidHouses
   -- house five cannot be Ivory because it has a house to its right
-  five = List.filter (h -> House.position h === Position.Five) allValidHouses |> List.filter (h -> (houseIsNot' color Ivory h)) five
+  five = List.filter (h -> House.position h === Position.Five) allValidHouses |> List.filter (h -> (houseIsNot' color Ivory h))
   houses = HousePositions one two three four five
-  checkNextHouse one' houses
+  checkNextHouse one houses
 
 calculateHouseOrder = Stack.runList calculateHouseOrder' |> at1
 
