@@ -74,8 +74,7 @@ Define the `containsUnison` function which takes 1 argument (a list of languages
   true
 ```
 
-## 7. Define a function to create a string from the list
-
+## 7. Define a function to determine if a given list is a sub-list
 
 ```
 > languageList.new

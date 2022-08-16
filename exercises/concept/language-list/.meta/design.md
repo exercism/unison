@@ -27,5 +27,5 @@
 - Standard library List documentation: [Lists][base-list]
 - List pattern matching: [Lists][pattern-matching-lists]
 
-[base-list]: https://share.unison-lang.org/latest/namespaces/unison/base/;/types/List
+[base-list]: https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/;/types/data/List
 [pattern-matching-lists]: https://www.unison-lang.org/learn/fundamentals/control-flow/pattern-matching2/#pattern-matching-on

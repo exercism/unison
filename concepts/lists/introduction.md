@@ -32,4 +32,31 @@ Concatenating lists is supported with the `++` operator:
 
 The standard library, `base` contains a variety of functions available for `List` transformations. Check them out by using the `find` command in the UCM or by exploring the `List` namespace in [Unison share][list-docs].
 
-[list-docs]: https://share.unison-lang.org/latest/namespaces/unison/base/;/types/List
+## List pattern matching
+
+It's common to pattern match on the head and tail elements of a list with the `+:` syntax:
+
+```
+match ["a", " b", "c"] with
+  head +: tail -> head
+  otherwise -> "otherwise"
+```
+
+But in Unison you can also pattern match on the last element of a list, just reverse the operator:
+
+```
+match ["a", " b", "c"] with
+  prefix :+ last -> last
+  otherwise -> "otherwise"
+```
+
+Multi list element matching is supported by surrounding the desired elements in square brackets, followed by the concatenation operator, `++`. This expression will match any list with a length of two or more elements:
+
+```
+match ["a", " b", "c"] with
+  [first, second] ++ remainder -> first
+  otherwise -> "otherwise"
+```
+
+
+[list-docs]: https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/;/types/data/List
