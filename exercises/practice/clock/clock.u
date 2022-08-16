@@ -10,8 +10,8 @@
   Values over the traditional hour or minute values should roll over:
   `create +1 +65` should be "02:05"
 }}
-create : Int -> Int -> Text
-create hour minute =
+clock.create : Int -> Int -> Text
+clock.create hour minute =
   todo "implement create "
 
 {{
@@ -20,8 +20,8 @@ create hour minute =
   The minutes to add may be values over 60:
   `add +0 +45 +160` should be "03:25"
 }}
-add : Int -> Int -> Int -> Text
-add hour min additionalMinutes =
+clock.add : Int -> Int -> Int -> Text
+clock.add hour min additionalMinutes =
   todo "implement add"
 
 {{
@@ -29,8 +29,8 @@ add hour min additionalMinutes =
 
   `subtract +10 +3 +4` should be "09:59"
 }}
-subtract : Int -> Int -> Int -> Text
-subtract hours minutes minutesSubtract =
+clock.subtract : Int -> Int -> Int -> Text
+clock.subtract hours minutes minutesSubtract =
   todo "implement subtract"
 
 {{
@@ -38,7 +38,7 @@ subtract hours minutes minutesSubtract =
 
   For example, `equal (+25, +0) (+1, 0)` should be `true` because they both represent the same clock value time.
 }}
-equal : (Int, Int) -> (Int, Int) -> Boolean
-equal clock1 clock2 =
+clock.equal : (Int, Int) -> (Int, Int) -> Boolean
+clock.equal clock1 clock2 =
   todo "implement equal"
 

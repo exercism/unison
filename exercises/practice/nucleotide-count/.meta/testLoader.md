@@ -5,4 +5,5 @@
 .> add
 .> load ./nucleotideCount.test.u
 .> add
+.> move.term nucleotideCount.tests tests
 ```

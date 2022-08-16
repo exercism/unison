@@ -1,34 +1,34 @@
 [
   {
     "name": "stream.test.ex1",
-    "test_code": "stream.test.ex1 = let\n\texpected = [1,2,3]\n\tgo =\n\t\ts = MyStream.fromList expected\n\t\t!(MyStream.toList s)\n\ttest.label \"to and from list\" <| test.expect (go === expected )"
+    "test_code": "stream.test.ex1 = let\n\texpected = [1,2,3]\n\tgo =\n\t\ts = MyStream.fromList expected\n\t\t!(MyStream.toList s)\n\tTest.label \"to and from list\" <| Test.expect (go === expected )"
   },
   {
     "name": "stream.test.ex2",
-    "test_code": "stream.test.ex2 = let\n\tgo =\n\t\ts = MyStream.fromList List.empty\n\t\t!(MyStream.toList s)\n\ttest.label \"to and from list with empty list\" <| test.expect (go === List.empty )"
+    "test_code": "stream.test.ex2 = let\n\tgo =\n\t\ts = MyStream.fromList List.empty\n\t\t!(MyStream.toList s)\n\tTest.label \"to and from list with empty list\" <| Test.expect (go === List.empty )"
   },
   {
     "name": "stream.test.ex3",
-    "test_code": "stream.test.ex3 = let\n\texpected = [1,2,3]\n\tgo = 'let\n\t\tList.map (a -> let\n\t\t\tMyStream.emit a\n\t\t\ta\n\t\t) expected\n\ttest.label \"toListWithResult returns list and result\" <| test.expect (!(MyStream.toListWithResult go) === (expected, expected))"
+    "test_code": "stream.test.ex3 = let\n\texpected = [1,2,3]\n\tgo = 'let\n\t\tList.map (a -> let\n\t\t\tMyStream.emit a\n\t\t\ta\n\t\t) expected\n\tTest.label \"toListWithResult returns list and result\" <| Test.expect (!(MyStream.toListWithResult go) === (expected, expected))"
   },
   {
     "name": "stream.test.ex4",
-    "test_code": "stream.test.ex4 = let\n\texpected = [1,2,3]\n\tgo = 'let\n\t\tList.foldLeft (acc a -> let\n\t\t\tMyStream.emit (a Nat.+ acc)\n\t\t\ta\n\t\t) 0 expected\n\ttest.label \"ignore returns only the result, not the materialized stream\" <| test.expect ((MyStream.ignore go) === 3 )"
+    "test_code": "stream.test.ex4 = let\n\texpected = [1,2,3]\n\tgo = 'let\n\t\tList.foldLeft (acc a -> let\n\t\t\tMyStream.emit (a Nat.+ acc)\n\t\t\ta\n\t\t) 0 expected\n\tTest.label \"ignore returns only the result, not the materialized stream\" <| Test.expect ((MyStream.ignore go) === 3 )"
   },
   {
     "name": "stream.test.ex5",
-    "test_code": "stream.test.ex5 = let\n\tgo = '(List.map MyStream.emit [])\n\ttest.label \"ignore handles empty stream\" <| test.expect ((MyStream.ignore go) === [] )"
+    "test_code": "stream.test.ex5 = let\n\tgo = '(List.map MyStream.emit [])\n\tTest.label \"ignore handles empty stream\" <| Test.expect ((MyStream.ignore go) === [] )"
   },
   {
     "name": "stream.test.ex6",
-    "test_code": "stream.test.ex6 = let\n\texpected = [1,2,3,4]\n\tgo = MyStream.fromList expected |> MyStream.filter isEven\n\ttest.label \"filters stream\" <| test.expect (!(MyStream.toList go) === [2,4] )"
+    "test_code": "stream.test.ex6 = let\n\texpected = [1,2,3,4]\n\tgo = MyStream.fromList expected |> MyStream.filter isEven\n\tTest.label \"filters stream\" <| Test.expect (!(MyStream.toList go) === [2,4] )"
   },
   {
     "name": "stream.test.ex7",
-    "test_code": "stream.test.ex7 = let\n\texpected = [1,2,3,4]\n\tgo = MyStream.fromList expected |> MyStream.map increment\n\ttest.label \"maps over stream\" <| test.expect (!(MyStream.toList go) === [2,3,4,5] )"
+    "test_code": "stream.test.ex7 = let\n\texpected = [1,2,3,4]\n\tgo = MyStream.fromList expected |> MyStream.map increment\n\tTest.label \"maps over stream\" <| Test.expect (!(MyStream.toList go) === [2,3,4,5] )"
   },
   {
     "name": "stream.test.ex8",
-    "test_code": "stream.test.ex8 = let\n\texpected = [1,2,3]\n\tgo = MyStream.fromList expected |> MyStream.flatMap (elem -> !(MyStream.fromList (List.fill 2 elem)))\n\ttest.label \"flatMaps over stream\" <| test.expect (!(MyStream.toList go) === [1,1,2,2,3,3] )"
+    "test_code": "stream.test.ex8 = let\n\texpected = [1,2,3]\n\tgo = MyStream.fromList expected |> MyStream.flatMap (elem -> !(MyStream.fromList (List.fill 2 elem)))\n\tTest.label \"flatMaps over stream\" <| Test.expect (!(MyStream.toList go) === [1,1,2,2,3,3] )"
   }
 ]

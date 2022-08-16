@@ -1,0 +1,10 @@
+unique type SublistType = Equal | Sublist | Superlist | Unequal
+
+{{ determine if the first argument, `listOne`,  is a sublist of `listTwo`, a superlist of `listTwo` or equal to `listTwo` }}
+sublist : [a] -> [a] -> SublistType
+sublist listOne listTwo =
+  powerSliced = List.powerslice listTwo
+  if listOne === listTwo then Equal else
+  if List.contains listOne powerSliced then Sublist else
+  if List.contains listTwo (List.powerslice listOne) then Superlist else
+  Unequal

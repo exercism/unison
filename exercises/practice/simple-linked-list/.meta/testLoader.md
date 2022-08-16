@@ -5,4 +5,5 @@
 .> add
 .> load ./simpleLinkedList.test.u
 .> add
+.> move.term linkedL.tests tests
 ```

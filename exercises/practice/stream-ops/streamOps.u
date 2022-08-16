@@ -1,29 +1,29 @@
-structural ability MyStream a where emit : a -> {MyStream a} ()
+structural ability stream.MyStream a where emit : a -> {stream.MyStream a} ()
 
-MyStream.fromList : [a] -> '{MyStream a} ()
-MyStream.fromList list =
+stream.MyStream.fromList : [a] -> '{MyStream a} ()
+stream.MyStream.fromList list =
   todo "implement fromList"
 
-MyStream.toList : '{g, MyStream a} r -> '{g} [a]
-MyStream.toList streamFunction =
+stream.MyStream.toList : '{g, MyStream a} r -> '{g} [a]
+stream.MyStream.toList streamFunction =
   todo "implement toList"
 
-MyStream.toListWithResult : '{g, MyStream a} r -> '{g} ([a], r)
-MyStream.toListWithResult streamFunction =
+stream.MyStream.toListWithResult : '{g, MyStream a} r -> '{g} ([a], r)
+stream.MyStream.toListWithResult streamFunction =
   todo "implement toListWithResult"
 
-MyStream.ignore : '{g, MyStream a} r ->{g} r
-MyStream.ignore streamFunction =
+stream.MyStream.ignore : '{g, MyStream a} r ->{g} r
+stream.MyStream.ignore streamFunction =
   todo "implement ignore"
 
-MyStream.filter : (a ->{g} Boolean) -> '{g, MyStream a} r -> '{g, MyStream a} r
-MyStream.filter predicate streamFunction =
+stream.MyStream.filter : (a ->{g} Boolean) -> '{g, MyStream a} r -> '{g, MyStream a} r
+stream.MyStream.filter predicate streamFunction =
   todo "implement filter"
 
-MyStream.map : (a ->{g} b) -> '{g, MyStream a} r -> '{g, MyStream b} r
-MyStream.map f streamFunction =
+stream.MyStream.map : (a ->{g} b) -> '{g, MyStream a} r -> '{g, MyStream b} r
+stream.MyStream.map f streamFunction =
   todo "implement map"
 
-MyStream.flatMap : (a ->{e, MyStream b} r) -> '{e, MyStream a} r -> '{e, MyStream b} r
-MyStream.flatMap f streamFunction =
+stream.MyStream.flatMap : (a ->{e, MyStream b} r) -> '{e, MyStream a} r -> '{e, MyStream b} r
+stream.MyStream.flatMap f streamFunction =
   todo "implement flatMap"

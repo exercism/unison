@@ -5,4 +5,5 @@
 .> add
 .> load ./zipper.test.u
 .> add
+.> move.term zipper.tests tests
 ```
