@@ -252,6 +252,14 @@
         "difficulty": 5
       },
       {
+        "slug": "zebra-puzzle",
+        "name": "Zebra Puzzle",
+        "uuid": "642e8ce3-9cb2-4acb-a330-8385dfa40d92",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 10
+      },
+      {
         "slug": "zipper",
         "name": "Zipper",
         "uuid": "49dcbf18-2024-499c-a951-ed009f97ef8f",
