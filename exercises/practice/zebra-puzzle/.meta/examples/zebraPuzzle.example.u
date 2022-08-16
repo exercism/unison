@@ -66,7 +66,6 @@ Stack.runList stackFunc =
     {peek -> resume} -> handle resume (head state) with impl state
     {isEmpty -> resume} -> handle resume ([] === state) with impl state
     {inspect -> resume} -> handle resume state with impl state
-
   handle !stackFunc with impl []
 
 -- Using Each, create houses with combination of all facets
@@ -107,7 +106,6 @@ houseIs' what value house = (what house) === value
 houseIsNot' : forall a. (House -> a) -> a -> House -> Boolean
 houseIsNot' what value house = not (houseIs' what value house)
 
-
 isUnique : forall a. (House -> a) -> [House] -> Boolean
 isUnique what houses =
   facets = List.map what houses
@@ -125,32 +123,26 @@ uniqueHouses houses =
   uPet = isUnique' pet
   uColor && uResident && uBev && uCig && uPet
 
+-- Given a prospective list, are the houses in relation to others valid
 isViableList : [House] -> Boolean
 isViableList orderedHouse =
-
-  -- Green to right of ivory
   green = List.find (h -> houseIs' House.color Green h ) orderedHouse
-  validGreen = match green with
+  greenToRightIvory = match green with
     Some (House pos _ _ _ _ _ ) ->
       leftPositionI = (toInt pos) Int.- +1
       if inRange leftPositionI then
         leftPos = Position.fromInt leftPositionI
         List.any (h -> (houseIs' House.position leftPos h) && (houseIs' House.color Ivory h)) orderedHouse
       else false
-    None -> true -- no constraint violated
+    None -> true
 
   validChesterfieldFox = validNextTo orderedHouse House.cigarette Chesterfields House.pet Fox
-
   koolsNextToHorse = validNextTo orderedHouse House.cigarette Kools House.pet Horse
-
   norwegianNextToBlue = validNextTo orderedHouse House.resident Norwegian House.color Blue
-
-  (uniqueHouses orderedHouse) && validGreen && validChesterfieldFox && koolsNextToHorse && norwegianNextToBlue
-
+  (uniqueHouses orderedHouse) && greenToRightIvory && validChesterfieldFox && koolsNextToHorse && norwegianNextToBlue
 
 validNextTo : forall a b. [House] -> (House -> a) -> a -> (House -> b) -> b -> Boolean
 validNextTo orderedHouse whatTarget target whatFacet facet=
-
   target' = List.find (h -> houseIs' whatTarget target h ) orderedHouse
   match target' with
     Some (House pos _ _ _ _ _ ) ->
@@ -170,13 +162,12 @@ validNextTo orderedHouse whatTarget target whatFacet facet=
     None -> true
 
 -- given a target current and the state of the stack,
--- check if the current target can be added to teh stack
+-- check if the current target can be added to the stack
 possibleNextHouseStack: House -> {Stack House} Boolean
 possibleNextHouseStack current =
   if Stack.isEmpty then false else
     currentStack : [House]
     currentStack = Stack.inspect
-    maybeLastElem = Stack.peek -- look at the stack for the last position
     isViableList (currentStack :+ current)
 
 checkNextHouse : [House] -> HousePositions -> {Stack House} [House]
@@ -199,22 +190,16 @@ checkNextHouse currentRow pos = match currentRow with
       checkNextHouse tail pos
 
 calculateHouseOrder' = do
-
   allValidHouses = validHouses |> Each.toList
-
-  one = List.filter (h -> House.position h === Position.One) allValidHouses
+  -- first house can't be Green or Ivory
+  one = List.filter (h -> House.position h === Position.One) allValidHouses |> List.filter (h -> (houseIsNot' color Green h) || (houseIsNot' color Ivory h )) one
   two = List.filter (h -> House.position h === Position.Two) allValidHouses
-  three = List.filter (h -> House.position h === Position.Three) allValidHouses
-  four = List.filter (h -> House.position h === Position.Four) allValidHouses
-  five = List.filter (h -> House.position h === Position.Five) allValidHouses
-
-  one' = List.filter (h -> (houseIsNot' color Green h) || (houseIsNot' color Ivory h )) one
-  -- and house five cannot be Ivory because it has a house to its right
-  five' = List.filter (h -> (houseIsNot' color Ivory h)) five
   -- green house drinks tea and middle house drinks milk so the middle cannot be green
-  three' = List.filter (h -> ( houseIsNot' color Green h)) three
-
-  houses = HousePositions one' two three' four five'
+  three = List.filter (h -> House.position h === Position.Three) allValidHouses |> List.filter (h -> ( houseIsNot' color Green h)) three
+  four = List.filter (h -> House.position h === Position.Four) allValidHouses
+  -- house five cannot be Ivory because it has a house to its right
+  five = List.filter (h -> House.position h === Position.Five) allValidHouses |> List.filter (h -> (houseIsNot' color Ivory h)) five
+  houses = HousePositions one two three four five
   checkNextHouse one' houses
 
 calculateHouseOrder = Stack.runList calculateHouseOrder' |> at1
