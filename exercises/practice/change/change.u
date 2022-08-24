@@ -1,28 +1,3 @@
-findFewestCoins : [Nat] -> Nat -> Optional [Nat]
-findFewestCoins inputCoins target =
-  sortedCoins = Heap.sortDescending inputCoins
-  minChange 0 target sortedCoins [] None
-
-minChange : Nat -> Nat -> [Nat] -> [Nat] -> Optional [Nat] -> Optional [Nat]
-minChange currentTarget target coins candidate best =
-  isWorse : Boolean
-  isWorse = Optional.map (res -> List.size res <= List.size candidate ) best |> Optional.getOrElse false
-
-  if (currentTarget > target || isWorse) then best else
-    if (currentTarget === target ) then Some candidate else
-      newBest = addCoin currentTarget target coins candidate best
-      dropCoin currentTarget target coins candidate newBest
-
-addCoin : Nat -> Nat -> [Nat] -> [Nat] -> Optional [Nat] -> Optional [Nat]
-addCoin currentTarget target coins candidate bestResult =
-  match coins with
-    coin +: rest | (currentTarget + coin <= target) ->
-        minChange (currentTarget + coin) target coins ( coin +: candidate) bestResult
-    _ -> bestResult
-
-dropCoin : Nat -> Nat -> [Nat] -> [Nat] -> Optional [Nat] -> Optional [Nat]
-dropCoin currentTarget target coins candidate bestResult =
-  match coins with
-    lastCoin +: rest ->
-      minChange currentTarget target rest candidate bestResult
-    _ -> bestResult
+change.findFewestCoins : [Nat] -> Nat -> Optional [Nat]
+change.findFewestCoins inputCoins target =
+  todo "implement findFewestCoins"
