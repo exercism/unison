@@ -57,6 +57,6 @@ Sorry about that! First check that your imports don't reference anything other t
 __If you have any issues, please let us know! 🙂__
 
 [walk-through-vid]: https://www.youtube.com/watch?v=4UMaaiJnWGY
-[unison-share]: https://share.unison-lang.org/latest/namespaces/unison/base
+[unison-share]: https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest
 [local-codebase-ui]: https://www.unison-lang.org/learn/tooling/local-codebase-u-i/
 [unison-track-repo]: https://github.com/exercism/unison

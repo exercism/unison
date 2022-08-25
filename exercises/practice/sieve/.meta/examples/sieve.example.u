@@ -1,0 +1,39 @@
+
+sieve.primes : Nat -> [Nat]
+sieve.primes max =
+  initialSet = List.rangeClosed 2 max |> Set.fromList
+  res = Store.withInitialValue initialSet (getPrimes max)
+  Set.toList res
+
+sieve.getPrimes: Nat -> '{g, Store (Set Nat)} Set Nat
+sieve.getPrimes max = do
+  primes = Store.get
+
+  primes' : Nat -> {Store (Set Nat)} ()
+  primes' possible =
+    if (Set.contains possible primes) then
+      squared = possible * possible
+      toRemove = rangeBy (possible + 1) max possible
+      List.foreach removeN toRemove
+    else ()
+
+  go =
+    sqrtUpper = Float.sqrt(toFloat max) |> base.Float.unsafeToInt |> truncate0
+    possible = List.rangeClosed 2 sqrtUpper
+    List.foreach primes' possible
+  go
+
+  Store.get
+
+sieve.rangeBy : Nat -> Nat -> Nat -> [Nat]
+sieve.rangeBy lower upper by =
+  go l' acc =
+    match l' with
+      l | Nat.mod l by === 0 -> go (l + 1) (acc :+ l)
+      l | l >= upper -> acc
+      l -> go (l + 1) acc
+  go lower []
+
+removeN: Nat -> {Store (Set Nat)} ()
+removeN n =
+  Store.modify (s -> Set.delete n s)

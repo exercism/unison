@@ -5,4 +5,5 @@
 .> add
 .> load ./lasagna.test.u
 .> add
+.> move.term lasagna.tests tests
 ```

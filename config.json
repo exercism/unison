@@ -180,6 +180,14 @@
         "difficulty": 4
       },
       {
+        "slug": "sieve",
+        "name": "Sieve",
+        "uuid": "671a09cb-df24-4a30-8513-26103bb1ae10",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "3a377fd7-2f66-4326-94f5-e3e05133c252",
@@ -250,6 +258,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
+      },
+      {
+        "slug": "zebra-puzzle",
+        "name": "Zebra Puzzle",
+        "uuid": "642e8ce3-9cb2-4acb-a330-8385dfa40d92",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 10
       },
       {
         "slug": "zipper",

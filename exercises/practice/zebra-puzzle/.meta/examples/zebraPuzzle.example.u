@@ -1,0 +1,213 @@
+unique type Color = Red | Green | Yellow | Blue | Ivory
+
+unique type Resident = Englishman | Spaniard | Ukrainian | Norwegian | Japanese
+
+Resident.toText = cases
+  Englishman -> "Englishman"
+  Spaniard -> "Spaniard"
+  Ukrainian -> "Ukrainian"
+  Norwegian -> "Norwegian"
+  Japanese -> "Japanese"
+
+unique type Pet = Dog | Snails | Fox | Horse | Zebra
+
+unique type Beverage = Coffee | Tea | Milk | OrangeJuice | Water
+
+unique type Cigarette = OldGold | Kools | Chesterfields | LuckyStrike | Parliaments
+
+unique type Position = One | Two | Three | Four | Five
+
+Position.toInt : Position -> Int
+Position.toInt = cases
+  One -> +1
+  Two -> +2
+  Three -> +3
+  Four -> +4
+  Five -> +5
+
+Position.fromInt : Int -> Position
+Position.fromInt = cases
+  +1 -> One
+  +2 -> Two
+  +3 -> Three
+  +4 -> Four
+  +5 -> Five
+
+Position.inRange : Int -> Boolean
+Position.inRange i =
+  i <= +5 && (i >= +1)
+
+unique type House = { position : Position, color : Color, resident : Resident, beverage : Beverage, cigarette : Cigarette, pet : Pet}
+
+unique type HousePositions = {one : [House], two : [House], three : [House], four : [House], five : [House] }
+
+atNextPosition : House -> HousePositions -> [House]
+atNextPosition pos housePos = match House.position pos with
+  One -> HousePositions.two housePos
+  Two -> HousePositions.three housePos
+  Three -> HousePositions.four housePos
+  Four -> HousePositions.five housePos
+  Five -> []
+
+-- for backtracking
+structural ability Stack a where
+  push : a -> ()
+  pop : ()
+  peek : Optional a
+  isEmpty : Boolean
+  inspect : [a]
+
+Stack.runList : '{Stack a } r -> (r, [a])
+Stack.runList stackFunc =
+  impl state = cases
+    {pure} -> (pure, state)
+    {push a -> resume} -> handle resume () with impl (a List.+: state)
+    {pop -> resume} -> handle resume () with impl (List.drop 1 state)
+    {peek -> resume} -> handle resume (head state) with impl state
+    {isEmpty -> resume} -> handle resume ([] === state) with impl state
+    {inspect -> resume} -> handle resume state with impl state
+  handle !stackFunc with impl []
+
+-- Using Each, create houses with combination of all facets
+-- then filter down to a list of valid houses by facets not including positionality
+validHouses : '{Each} House
+validHouses _ =
+  position' = each [One, Two, Three, Four, Five]
+  color' = each [Red , Green , Yellow , Blue , Ivory]
+  resident' = each [Englishman, Spaniard, Ukrainian, Norwegian, Japanese]
+  beverage' = each [Coffee, Tea, Milk, OrangeJuice, Water]
+  cigarette' = each [OldGold, Kools, Chesterfields, LuckyStrike, Parliaments]
+  pet' = each [Dog, Snails, Fox, Horse, Zebra]
+  eachHouse : {Each} House
+  eachHouse = House position' color' resident' beverage' cigarette' pet'
+  Each.guard (validHouse eachHouse)
+  eachHouse
+
+-- Tests if a house is valid given its facets not related to positionality
+validHouse : House -> Boolean
+validHouse house =
+  (House position' color' resident' beverage' cigarette' pet') = house
+  List.all (uncurry iff) [
+    (color' === Red, resident' === Englishman),
+    (resident' === Spaniard, pet' === Dog),
+    (color' === Green, beverage' === Coffee),
+    (resident' === Ukrainian, beverage' === Tea),
+    (cigarette' === OldGold, pet' === Snails),
+    (color' === Yellow, cigarette' === Kools),
+    (position' === Three, beverage' === Milk),
+    (position' === One, resident' === Norwegian),
+    (beverage' === OrangeJuice, cigarette' === LuckyStrike),
+    (resident' === Japanese, cigarette' === Parliaments)
+  ]
+
+houseIs' : forall a. (House -> a) -> a -> House -> Boolean
+houseIs' what value house = (what house) === value
+
+houseIsNot' : forall a. (House -> a) -> a -> House -> Boolean
+houseIsNot' what value house = not (houseIs' what value house)
+
+isUnique : forall a. (House -> a) -> [House] -> Boolean
+isUnique what houses =
+  facets = List.map what houses
+  dist = List.distinct facets
+  List.size dist === (List.size houses)
+
+uniqueHouses : [House] -> Boolean
+uniqueHouses houses =
+  isUnique' : forall a. (House -> a) -> Boolean
+  isUnique' what = isUnique what houses
+  uColor = isUnique' color
+  uResident = isUnique' resident
+  uBev = isUnique' beverage
+  uCig = isUnique' cigarette
+  uPet = isUnique' pet
+  uColor && uResident && uBev && uCig && uPet
+
+-- Given a prospective list, are the houses in relation to others valid
+isViableList : [House] -> Boolean
+isViableList orderedHouse =
+  green = List.find (h -> houseIs' House.color Green h ) orderedHouse
+  greenToRightIvory = match green with
+    Some (House pos _ _ _ _ _ ) ->
+      leftPositionI = (toInt pos) Int.- +1
+      if inRange leftPositionI then
+        leftPos = Position.fromInt leftPositionI
+        List.any (h -> (houseIs' House.position leftPos h) && (houseIs' House.color Ivory h)) orderedHouse
+      else false
+    None -> true
+
+  validChesterfieldFox = validNextTo orderedHouse House.cigarette Chesterfields House.pet Fox
+  koolsNextToHorse = validNextTo orderedHouse House.cigarette Kools House.pet Horse
+  norwegianNextToBlue = validNextTo orderedHouse House.resident Norwegian House.color Blue
+  (uniqueHouses orderedHouse) && greenToRightIvory && validChesterfieldFox && koolsNextToHorse && norwegianNextToBlue
+
+validNextTo : forall a b. [House] -> (House -> a) -> a -> (House -> b) -> b -> Boolean
+validNextTo orderedHouse whatTarget target whatFacet facet=
+  target' = List.find (h -> houseIs' whatTarget target h ) orderedHouse
+  match target' with
+    Some (House pos _ _ _ _ _ ) ->
+      leftPositionI = (toInt pos) Int.- +1
+      rightPositionI = (toInt pos) Int.+ +1
+      maybeLeft =
+        if inRange leftPositionI then
+          leftPos = Position.fromInt leftPositionI
+          List.any (h -> (houseIs' House.position leftPos h) && (houseIs' whatFacet facet h)) orderedHouse
+        else false
+      maybeRight =
+        if inRange rightPositionI then
+          rightPos = Position.fromInt rightPositionI
+          List.any (h -> (houseIs' House.position rightPos h) && (houseIs' whatFacet facet h)) orderedHouse
+        else false
+      maybeLeft || maybeRight
+    None -> true
+
+-- given a target current and the state of the stack,
+-- check if the current target can be added to the stack
+possibleNextHouseStack: House -> {Stack House} Boolean
+possibleNextHouseStack current =
+  if Stack.isEmpty then false else
+    currentStack : [House]
+    currentStack = Stack.inspect
+    isViableList (currentStack :+ current)
+
+checkNextHouse : [House] -> HousePositions -> {Stack House} [House]
+checkNextHouse currentRow pos = match currentRow with
+  [] -> Stack.inspect
+  (head +: tail) | House.position head === Five ->
+    Stack.push head
+    maybeStack = Stack.inspect
+    if (isViableList maybeStack) then maybeStack else
+        Stack.pop
+        checkNextHouse tail pos
+  (head +: tail) -> -- for each house in a given position
+    Stack.push head -- push the house onto the stack
+    getNextHouses = atNextPosition head pos -- get the next position over
+    isNotDeadEnd = List.any (nextCurrent -> possibleNextHouseStack nextCurrent ) getNextHouses
+    if isNotDeadEnd then
+      checkNextHouse getNextHouses pos
+    else
+      Stack.pop
+      checkNextHouse tail pos
+
+calculateHouseOrder' = do
+  allValidHouses = validHouses |> Each.toList
+  -- first house can't be Green or Ivory
+  one = List.filter (h -> House.position h === Position.One) allValidHouses |> List.filter (h -> (houseIsNot' color Green h) || (houseIsNot' color Ivory h ))
+  two = List.filter (h -> House.position h === Position.Two) allValidHouses
+  -- green house drinks tea and middle house drinks milk so the middle cannot be green
+  three = List.filter (h -> House.position h === Position.Three) allValidHouses |> List.filter (h -> ( houseIsNot' color Green h))
+  four = List.filter (h -> House.position h === Position.Four) allValidHouses
+  -- house five cannot be Ivory because it has a house to its right
+  five = List.filter (h -> House.position h === Position.Five) allValidHouses |> List.filter (h -> (houseIsNot' color Ivory h))
+  houses = HousePositions one two three four five
+  checkNextHouse one houses
+
+calculateHouseOrder = Stack.runList calculateHouseOrder' |> at1
+
+drinksWater =
+  house = List.find (h -> houseIs' House.beverage Water h) calculateHouseOrder |> Optional.getOrBug "invalid"
+  House.resident house |> Resident.toText
+
+ownsZebra =
+  house = List.find (h -> houseIs' House.pet Zebra h) calculateHouseOrder |> Optional.getOrBug "invalid"
+  House.resident house |> Resident.toText

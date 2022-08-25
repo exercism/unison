@@ -1,12 +1,12 @@
 use Nat
 
-expectedMinutesInOven : Nat
-expectedMinutesInOven = 40
+lasagna.expectedMinutesInOven : Nat
+lasagna.expectedMinutesInOven = 40
 
-preparationTimeInMinutes : Nat -> Nat
-preparationTimeInMinutes layers =
+lasagna.preparationTimeInMinutes : Nat -> Nat
+lasagna.preparationTimeInMinutes layers =
   2 * layers
 
-elapsedTimeInMinutes : Nat -> Nat -> Nat
-elapsedTimeInMinutes layers passedAlready =
+lasagna.elapsedTimeInMinutes : Nat -> Nat -> Nat
+lasagna.elapsedTimeInMinutes layers passedAlready =
   passedAlready + preparationTimeInMinutes layers
