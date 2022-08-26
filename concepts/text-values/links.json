@@ -4,7 +4,7 @@
     "description": "Language reference for text and character literals"
   },
   {
-    "url": "https://share.unison-lang.org/latest/namespaces/unison/base/;/types/Text",
+    "url": "https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/Text",
     "description": "Explore functions available for the Text type online"
   }
 ]

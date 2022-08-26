@@ -1,8 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/log-levels.u
+.> load ./logLevels.u
 .> add
-.> load ./test/log-levels.test.u
+.> load ./logLevels.test.u
 .> add
+.> move.term logLevels.tests tests
 ```

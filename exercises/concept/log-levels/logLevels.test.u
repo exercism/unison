@@ -32,7 +32,7 @@ logLevels.test.ex10 =
 logLevels.test.ex11 =
   expect (reformat "[ERROR]: \t Corrupt disk\t \t \r\n" === "Corrupt disk (error)")
 
-test> tests = runAll [
+test> logLevels.tests = runAll [
   logLevels.test.ex1,
   logLevels.test.ex2,
   logLevels.test.ex3,

@@ -46,7 +46,7 @@
         "name": "Log Levels",
         "uuid": "c1d015db-9139-4c81-9855-80e6990e91f1",
         "practices": [],
-        "prerequisites": [],
+        "prerequisites": ["basics"],
         "concepts": ["text-values"],
         "difficulty": 1,
         "status": "wip"

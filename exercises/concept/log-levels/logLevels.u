@@ -1,12 +1,12 @@
-message : Text -> Text
-message logLine =
+logLevels.message : Text -> Text
+logLevels.message logLine =
   "REPLACE ME! Takes a string representing a log line and returns its message with whitespace trimmed."
 
-logLevel : Text -> Text
-logLevel logLine =
+logLevels.logLevel : Text -> Text
+logLevels.logLevel logLine =
   "REPLACE ME! Takes a string representing a log line and returns its level in lower-case."
 
 
-reformat : Text -> Text
-reformat logLine =
+logLevels.reformat : Text -> Text
+logLevels.reformat logLine =
   "REPLACE ME! Takes a string representing a log line and formats it with the message first and the log level in parentheses."

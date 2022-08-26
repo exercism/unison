@@ -1,21 +1,21 @@
 {
-  "blurb": "Learn about strings by parsing application logs",
-  "icon": "log-levels",
   "authors": [
     "rlmark"
   ],
+  "files": {
+    "solution": [
+      "logLevels.u"
+    ],
+    "test": [
+      "logLevels.test.u"
+    ],
+    "exemplar": [
+      ".meta/examples/logLevels.example.u"
+    ]
+  },
   "forked_from": [
     "clojure/log-levels"
   ],
-  "files": {
-    "solution": [
-      "src/log-levels.u"
-    ],
-    "test": [
-      "test/log-levels.test.u"
-    ],
-    "exemplar": [
-      ".meta/examples/log-levels.example.u"
-    ]
-  }
+  "icon": "log-levels",
+  "blurb": "Learn about strings by parsing application logs"
 }

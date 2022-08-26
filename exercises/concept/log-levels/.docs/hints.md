@@ -11,6 +11,6 @@
 - While `Text` may not have a `toLower` function, maybe you can use `Char.toLower` and operate on the individual characters?
 
 
-[fold]: https://share.unison-lang.org/latest/namespaces/unison/base/;/terms/Optional/fold/doc
-[getOrElse]: https://share.unison-lang.org/latest/namespaces/unison/base/;/terms/Optional/getOrElse/doc
-[listDocs]: https://share.unison-lang.org/latest/namespaces/unison/base/;/types/List
+[fold]: https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/;/terms/Optional/fold
+[getOrElse]: https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/;/terms/Optional/getOrElse
+[listDocs]: https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/;/types/data/List
