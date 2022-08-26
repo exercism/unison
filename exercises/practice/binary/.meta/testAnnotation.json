@@ -1,0 +1,62 @@
+[
+  {
+    "test_code": "binary.test.ex1 = let\n\tTest.label \"binary 0 is decimal 0\" <| Test.expect (decimal \"0\" === Some (0))",
+    "name": "binary.test.ex1"
+  },
+  {
+    "test_code": "binary.test.ex2 = let\n\tTest.label \"binary 1 is decimal 1\" <| Test.expect (decimal \"1\" === Some (1))",
+    "name": "binary.test.ex2"
+  },
+  {
+    "test_code": "binary.test.ex3 = let\n\tTest.label \"binary 10 is decimal 2\" <| Test.expect (decimal \"10\" === Some (2))",
+    "name": "binary.test.ex3"
+  },
+  {
+    "test_code": "binary.test.ex4 = let\n\tTest.label \"binary 11 is decimal 3\" <| Test.expect (decimal \"11\" === Some (3))",
+    "name": "binary.test.ex4"
+  },
+  {
+    "test_code": "binary.test.ex5 = let\n\tTest.label \"binary 100 is decimal 4\" <| Test.expect (decimal \"100\" === Some (4))",
+    "name": "binary.test.ex5"
+  },
+  {
+    "test_code": "binary.test.ex6 = let\n\tTest.label \"binary 1001 is decimal 9\" <| Test.expect (decimal \"1001\" === Some (9))",
+    "name": "binary.test.ex6"
+  },
+  {
+    "test_code": "binary.test.ex7 = let\n\tTest.label \"binary 11010 is decimal 26\" <| Test.expect (decimal \"11010\" === Some (26))",
+    "name": "binary.test.ex7"
+  },
+  {
+    "test_code": "binary.test.ex8 = let\n\tTest.label \"binary 10001101000 is decimal 1128\" <| Test.expect (decimal \"10001101000\" === Some (1128))",
+    "name": "binary.test.ex8"
+  },
+  {
+    "test_code": "binary.test.ex9 = let\n\tTest.label \"binary ignores leading zeros\" <| Test.expect (decimal \"000011111\" === Some (31))",
+    "name": "binary.test.ex9"
+  },
+  {
+    "test_code": "binary.test.ex10 = let\n\tTest.label \"2 is not a valid binary digit\" <| Test.expect (decimal \"2\" === None)",
+    "name": "binary.test.ex10"
+  },
+  {
+    "test_code": "binary.test.ex11 = let\n\tTest.label \"a number containing a non-binary digit is invalid\" <| test.expect (decimal \"01201\" === None)",
+    "name": "binary.test.ex11"
+  },
+  {
+    "test_code": "binary.test.ex12 = let\n\tTest.label \"a number with trailing non-binary characters is invalid\" <| Test.expect (decimal \"10nope\" === None)",
+    "name": "binary.test.ex12"
+  },
+  {
+    "test_code": "binary.test.ex13 = let\n\tTest.label \"a number with leading non-binary characters is invalid\" <| Test.expect (decimal \"nope10\" === None)",
+    "name": "binary.test.ex13"
+  },
+  {
+    "test_code": "binary.test.ex14 = let\n\tTest.label \"a number with internal non-binary characters is invalid\" <| Test.expect (decimal \"10nope10\" === None)",
+    "name": "binary.test.ex14"
+  },
+  {
+    "test_code": "binary.test.ex15 = let\n\tTest.label \"a number and a word whitespace separated is invalid\" <| Test.expect (decimal \"001 nope\" === None)",
+    "name": "binary.test.ex15"
+  }
+]

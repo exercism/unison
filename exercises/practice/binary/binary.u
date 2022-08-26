@@ -1,0 +1,2 @@
+binary.decimal : Text -> Optional Nat
+binary.decimal input = todo "implement decimal"

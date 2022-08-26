@@ -1,0 +1,64 @@
+> binary.decimal "1001"
+
+binary.test.ex1 = let
+	Test.label "binary 0 is decimal 0" <| Test.expect (decimal "0" === Some (0))
+
+binary.test.ex2 = let
+	Test.label "binary 1 is decimal 1" <| Test.expect (decimal "1" === Some (1))
+
+binary.test.ex3 = let
+	Test.label "binary 10 is decimal 2" <| Test.expect (decimal "10" === Some (2))
+
+binary.test.ex4 = let
+	Test.label "binary 11 is decimal 3" <| Test.expect (decimal "11" === Some (3))
+
+binary.test.ex5 = let
+	Test.label "binary 100 is decimal 4" <| Test.expect (decimal "100" === Some (4))
+
+binary.test.ex6 = let
+	Test.label "binary 1001 is decimal 9" <| Test.expect (decimal "1001" === Some (9))
+
+binary.test.ex7 = let
+	Test.label "binary 11010 is decimal 26" <| Test.expect (decimal "11010" === Some (26))
+
+binary.test.ex8 = let
+	Test.label "binary 10001101000 is decimal 1128" <| Test.expect (decimal "10001101000" === Some (1128))
+
+binary.test.ex9 = let
+	Test.label "binary ignores leading zeros" <| Test.expect (decimal "000011111" === Some (31))
+
+binary.test.ex10 = let
+	Test.label "2 is not a valid binary digit" <| Test.expect (decimal "2" === None)
+
+binary.test.ex11 = let
+	Test.label "a number containing a non-binary digit is invalid" <| Test.expect (decimal "01201" === None)
+
+binary.test.ex12 = let
+	Test.label "a number with trailing non-binary characters is invalid" <| Test.expect (decimal "10nope" === None)
+
+binary.test.ex13 = let
+	Test.label "a number with leading non-binary characters is invalid" <| Test.expect (decimal "nope10" === None)
+
+binary.test.ex14 = let
+	Test.label "a number with internal non-binary characters is invalid" <| Test.expect (decimal "10nope10" === None)
+
+binary.test.ex15 = let
+	Test.label "a number and a word whitespace separated is invalid" <| Test.expect (decimal "001 nope" === None)
+
+test> binary.tests = runAll [
+	binary.test.ex1,
+	binary.test.ex2,
+	binary.test.ex3,
+	binary.test.ex4,
+	binary.test.ex5,
+	binary.test.ex6,
+	binary.test.ex7,
+	binary.test.ex8,
+	binary.test.ex9,
+	binary.test.ex10,
+	binary.test.ex11,
+	binary.test.ex12,
+	binary.test.ex13,
+	binary.test.ex14,
+	binary.test.ex15
+]

@@ -1,0 +1,10 @@
+binary.decimal : Text -> Optional Nat
+binary.decimal input =
+  withIndex = Text.reverse input |> toCharList |> List.indexed
+  go : Nat -> (Char, Nat) -> {Abort} Nat
+  go acc tup =
+    (char, index) = tup
+    binaryDigit = if not (char === ?0 || (char === ?1)) then abort else toAbort(Char.ascii.toBase36Digit char)
+    (binaryDigit * (Nat.pow 2 index)) + acc
+  res = do List.foldLeft go 0 withIndex
+  Abort.toOptional! res

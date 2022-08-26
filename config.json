@@ -68,6 +68,14 @@
         "difficulty": 1
       },
       {
+        "slug": "binary",
+        "name": "Binary",
+        "uuid": "e3e12d02-5b10-423d-8331-7efdd240ec5f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "bowling",
         "name": "Bowling",
         "uuid": "37c049f1-f83a-4b5d-a813-7347fa2b54a3",
