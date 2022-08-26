@@ -40,6 +40,16 @@
         "concepts": ["basics"],
         "difficulty": 1,
         "status": "wip"
+      },
+      {
+        "slug": "language-list",
+        "name": "Language List",
+        "uuid": "5ebdb25b-39a0-4cd8-9f73-04ec565ef15f",
+        "practices": [],
+        "prerequisites": [],
+        "concepts": ["lists"],
+        "difficulty": 2,
+        "status": "wip"
       }
     ],
     "practice": [

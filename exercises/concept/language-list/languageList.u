@@ -1,0 +1,17 @@
+languageList.new : [Text]
+languageList.new = todo "return empty list"
+
+languageList.add : Text -> [Text] -> [Text]
+languageList.add input list = todo "return a list with the input preprended"
+
+languageList.drop1 : [Text] -> [Text]
+languageList.drop1 list = todo "return a list with the first element dropped"
+
+languageList.size : [Text] -> Nat
+languageList.size list = todo "return the size of the list"
+
+languageList.contains : Text -> [Text] -> Boolean
+languageList.contains input list = todo "return if the element is in the list"
+
+languageList.reverse : [Text] -> [Text]
+languageList.reverse list = todo "return the reversed list"

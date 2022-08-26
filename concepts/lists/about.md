@@ -12,7 +12,7 @@ listText : [Text]
 listText = ["hello", "world"]
 ```
 
-Unison implements lists as a finger tree, allowing for fast access of the first and last element. You can read more about the underlying implementation in the [standard library List documentation][list-docs]. Appending single elements to either side of the list can be done with the `+:` and `:+`:
+Unison implements lists as a finger tree, allowing for fast access of the first and last element. You can read more about the underlying implementation in the [standard library List documentation][list-docs]. Appending single elements to either side of the list can be done with the `+:` and `:+` operators:
 
 ```
 myList = [1,2,3,4]
@@ -30,10 +30,7 @@ Concatenating lists is supported with the `++` operator:
   [1, 2, 3, 4, 5]
 ```
 
-The standard library, `base` contains a variety of functions available for `List` transformations. Check them out by using the `find` command in the UCM or by exploring the `List` namespace in [Unison share][list-docs].
-
-[list-docs]: https://share.unison-lang.org/latest/namespaces/unison/base/;/types/List
-
+The standard library, `base` contains a variety of functions available for `List` transformations. Check them out by using the `find.all` command in the UCM or by exploring the `List` namespace in [Unison share][list-docs].
 
 ## List pattern matching
 
@@ -60,3 +57,5 @@ match ["a", " b", "c"] with
   [first, second] ++ remainder -> first
   otherwise -> "otherwise"
 ```
+
+[list-docs]: https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/;/types/data/List

@@ -2,17 +2,15 @@
   "authors": [
     "rlmark"
   ],
-  "contributors": [
-  ],
   "files": {
     "solution": [
-      "language-list.u"
+      "languageList.u"
     ],
     "test": [
-      "language-list.test.u"
+      "languageList.test.u"
     ],
     "exemplar": [
-      ".meta/examples/language-list.example.u"
+      ".meta/examples/languageList.example.u"
     ]
   },
   "forked_from": [
