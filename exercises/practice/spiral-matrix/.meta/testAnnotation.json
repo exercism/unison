@@ -1,0 +1,26 @@
+[
+  {
+    "test_code": "spiralMatrix.test.ex1 = let\n\tTest.label \"empty spiral\" <| Test.expect (spiralMatrix 0 === [])",
+    "name": "spiralMatrix.test.ex1"
+  },
+  {
+    "test_code": "spiralMatrix.test.ex2 = let\n\tTest.label \"trivial spiral\" <| Test.expect (spiralMatrix 1 === [[1]])",
+    "name": "spiralMatrix.test.ex2"
+  },
+  {
+    "test_code": "spiralMatrix.test.ex3 = let\n\tTest.label \"spiral of size 2\" <| Test.expect (spiralMatrix 2 === [[1,2],[4,3]])",
+    "name": "spiralMatrix.test.ex3"
+  },
+  {
+    "test_code": "spiralMatrix.test.ex4 = let\n\tTest.label \"spiral of size 3\" <| Test.expect (spiralMatrix 3 === [[1,2,3],[8,9,4],[7,6,5]])",
+    "name": "spiralMatrix.test.ex4"
+  },
+  {
+    "test_code": "spiralMatrix.test.ex5 = let\n\tTest.label \"spiral of size 4\" <| Test.expect (spiralMatrix 4 === [[1,2,3,4],[12,13,14,5],[11,16,15,6],[10,9,8,7]])",
+    "name": "spiralMatrix.test.ex5"
+  },
+  {
+    "test_code": "spiralMatrix.test.ex6 = let\n\tTest.label \"spiral of size 5\" <| Test.expect (spiralMatrix 5 === [[1,2,3,4,5],[16,17,18,19,6],[15,24,25,20,7],[14,23,22,21,8],[13,12,11,10,9]])",
+    "name": "spiralMatrix.test.ex6"
+  }
+]

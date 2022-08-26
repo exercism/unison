@@ -27,6 +27,13 @@
       "path": "docs/RESOURCES.md",
       "title": "Useful Unison resources",
       "blurb": "A collection of useful resources to help you master Unison"
+    },
+    {
+      "uuid": "1b931134-401b-4b47-8a1d-7e0daebd24bc",
+      "slug": "workflow",
+      "path": "docs/WORKFLOW.md",
+      "title": "Working on the command line",
+      "blurb": "Tips for working with Unison locally via the Exercism CLI"
     }
   ]
 }

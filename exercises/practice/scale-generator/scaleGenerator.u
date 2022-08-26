@@ -1,0 +1,7 @@
+scaleGenerator.chromatic : Text -> [Text]
+scaleGenerator.chromatic tonic =
+  todo "implement chromatic"
+
+scaleGenerator.interval : Text -> Text -> [Text]
+scaleGenerator.interval tonic intervals =
+  todo "implement interval"

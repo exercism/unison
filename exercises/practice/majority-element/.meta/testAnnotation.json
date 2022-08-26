@@ -1,0 +1,26 @@
+[
+  {
+    "name": "majorityElement.test.ex1",
+    "test_code": "majorityElement.test.ex1 = let\n\tTest.label \"should find the simple majority in a list\" <| Test.expect (majorityFinder [Red, Blue, Red, Red, Yellow] === (Some Red))"
+  },
+  {
+    "name": "majorityElement.test.ex2",
+    "test_code": "majorityElement.test.ex2 = let\n\tTest.label \"should not return value if no majority exists\" <| Test.expect (majorityFinder [Red, Blue, Green, Yellow] === None)"
+  },
+  {
+    "name": "majorityElement.test.ex3",
+    "test_code": "majorityElement.test.ex3 = let\n\tTest.label \"should not return value if most common element is exactly n/2\" <| Test.expect (majorityFinder [Red, Blue, Red, Green, Red, Yellow] === None)"
+  },
+  {
+    "name": "majorityElement.test.ex4",
+    "test_code": "majorityElement.test.ex4 = let\n\tTest.label \"should not return value if 50/50 split\" <| Test.expect (majorityFinder [Red, Red, Blue, Blue, Red, Blue] === None)"
+  },
+  {
+    "name": "majorityElement.test.ex5",
+    "test_code": "majorityElement.test.ex5 = let\n\tTest.label \"should handle empty list case\" <| Test.expect (majorityFinder [] === None)"
+  },
+  {
+    "name": "majorityElement.test.ex6 _",
+    "test_code": "majorityElement.test.ex6 _ = let\n\tall =  [Red, Orange, Yellow, Green, Blue]\n\tselection = !(gen.oneOf all)\n\tfillN = !(gen.natIn 0 (List.size all))\n\tmostCommonElems = List.fill fillN selection\n\ttestList = all List.++ mostCommonElems\n\t-- fill + 1 because the element exists in the original list one time\n\texpected = if ((fillN + 1) > ((List.size testList) / 2) ) then Some selection else None\n\tTest.label \"should handle wide distribution of inputs\" <| Test.expect (majorityFinder testList === expected)"
+  }
+]

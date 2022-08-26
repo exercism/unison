@@ -1,0 +1,44 @@
+{{
+  Given an hour and minute value represented as positive or negative numbers, return the "clock time" in text form.
+
+  For example:
+  `create +23 +5` should be "23:05"
+
+  Negative arguments should be supported:
+  `create -1 +15` should be "23:15"
+
+  Values over the traditional hour or minute values should roll over:
+  `create +1 +65` should be "02:05"
+}}
+clock.create : Int -> Int -> Text
+clock.create hour minute =
+  todo "implement create "
+
+{{
+  {add} is a function which takes in an hour and minutes representing the initial time, and a third argument representing the number of minutes to add.
+
+  The minutes to add may be values over 60:
+  `add +0 +45 +160` should be "03:25"
+}}
+clock.add : Int -> Int -> Int -> Text
+clock.add hour min additionalMinutes =
+  todo "implement add"
+
+{{
+  {subtract} is a function which takes in an hour and minutes representing the initial time, and a third argument representing the number of minutes to subtract
+
+  `subtract +10 +3 +4` should be "09:59"
+}}
+clock.subtract : Int -> Int -> Int -> Text
+clock.subtract hours minutes minutesSubtract =
+  todo "implement subtract"
+
+{{
+  {equal} is a function which takes in two hour and minute pairs representing the initial times, returning if the resulting clock values are the same.
+
+  For example, `equal (+25, +0) (+1, 0)` should be `true` because they both represent the same clock value time.
+}}
+clock.equal : (Int, Int) -> (Int, Int) -> Boolean
+clock.equal clock1 clock2 =
+  todo "implement equal"
+

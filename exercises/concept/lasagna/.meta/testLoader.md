@@ -1,8 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/lasagna.u
+.> load ./lasagna.u
 .> add
-.> load ./test/lasagna.test.u
+.> load ./lasagna.test.u
 .> add
+.> move.term lasagna.tests tests
 ```

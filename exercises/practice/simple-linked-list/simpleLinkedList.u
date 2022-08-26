@@ -1,0 +1,28 @@
+structural type linkedL.LinkedList a = Placeholder
+
+linkedL.LinkedList.new : a -> LinkedList a
+linkedL.LinkedList.new a = todo "You need to implement new."
+
+linkedL.LinkedList.cons : a -> LinkedList a -> LinkedList a
+linkedL.LinkedList.cons a ls = todo "You need to implement cons."
+
+linkedL.LinkedList.nil : LinkedList a
+linkedL.LinkedList.nil = todo "You need to implement nil."
+
+linkedL.LinkedList.fromList : [a] -> LinkedList a
+linkedL.LinkedList.fromList xs = todo "You need to implement fromList."
+
+linkedL.LinkedList.head : LinkedList a -> Optional a
+linkedL.LinkedList.head linkedList = todo "You need to implement head"
+
+linkedL.LinkedList.isNil : LinkedList a -> Boolean
+linkedL.LinkedList.isNil linkedList = todo "You need to implement isNil."
+
+linkedL.LinkedList.tail : LinkedList a -> LinkedList a
+linkedL.LinkedList.tail linkedList = todo "You need to implement tail."
+
+linkedL.LinkedList.reverseLinkedList : LinkedList a -> LinkedList a
+linkedL.LinkedList.reverseLinkedList linkedList = todo "You need to implement reverseLinkedList."
+
+linkedL.LinkedList.toList : LinkedList a -> [a]
+linkedL.LinkedList.toList linkedList = todo "You need to implement toList."

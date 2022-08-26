@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "rlmark"
+  ],
+  "files": {
+    "solution": [
+      "zebraPuzzle.u"
+    ],
+    "test": [
+      "zebraPuzzle.test.u"
+    ],
+    "example": [
+      ".meta/examples/zebraPuzzle.example.u"
+    ]
+  },
+  "blurb": "Solve the zebra puzzle.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Zebra_Puzzle"
+}

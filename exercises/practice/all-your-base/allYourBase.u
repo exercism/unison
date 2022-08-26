@@ -1,0 +1,2 @@
+allYourBase.rebase : Int -> [Int] -> Int -> Optional [Int]
+allYourBase.rebase inputBase inputDigits outputBase = todo "implement rebase"

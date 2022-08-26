@@ -1,8 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/queen.u
+.> load ./queen.u
 .> add
-.> load ./test/queen.test.u
+.> load ./queen.test.u
 .> add
+.> move.term queenAttack.tests tests
 ```

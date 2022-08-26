@@ -1,0 +1,20 @@
+unique type majorityElement.Color = Red | Orange | Yellow | Green | Blue | Purple
+
+majorityElement.majorityFinder : [Color] -> Optional Color
+majorityElement.majorityFinder words =
+  todo "implement majorityFinder"
+
+
+structural ability majorityElement.Store where
+  put : a ->{Store a} ()
+  get : {Store a} a
+
+majorityElement.Store.runWith : a -> '{Store a, g} r -> {g} (a, r)
+majorityElement.Store.runWith elem storeFunction =
+  todo "optionally implement runWith handler if you choose to use the Store ability"
+
+unique type majorityElement.StoredState = Placeholder
+
+majorityElement.update : a -> '{Store StoredState} ()
+majorityElement.update currentElement _ =
+  todo "optionally implement update"

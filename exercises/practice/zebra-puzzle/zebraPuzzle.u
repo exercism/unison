@@ -1,0 +1,8 @@
+
+{{Which resident owns the Zebra?}}
+zebraPuzzle.ownsZebra : Text
+zebraPuzzle.ownsZebra = todo "return the text value of the resident who owns the zebra"
+
+{{Which resident drinks Water?}}
+zebraPuzzle.drinksWater : Text
+zebraPuzzle.drinksWater = todo "return the text value of the resident who drinks water"

@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "rlmark"
+  ],
+  "files": {
+    "solution": [
+      "scaleGenerator.u"
+    ],
+    "test": [
+      "scaleGenerator.test.u"
+    ],
+    "example": [
+      ".meta/examples/scaleGenerator.example.u"
+    ]
+  },
+  "blurb": "Generate musical scales, given a starting note and a set of intervals."
+}

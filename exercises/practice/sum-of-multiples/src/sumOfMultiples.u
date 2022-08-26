@@ -1,2 +1,0 @@
-sumOfMultiples : [Nat] -> Nat -> Nat
-sumOfMultiples targets upperBound = todo "implement sumOfMultiples"

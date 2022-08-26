@@ -1,0 +1,3 @@
+leap.leap : Nat -> Boolean
+leap.leap year =
+  todo "implement leap function"

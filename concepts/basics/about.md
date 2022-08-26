@@ -22,7 +22,6 @@ getMax a b = Nat.max a b
 Functions can optionally include a type signature. The last type on the right is always the final return type of the function, and each argument is separated by the function arrow `->`.
 
 ```
-{{getMax accepts two arguments of type Nat and its return type is a Nat}}
 getMax : Nat -> Nat -> Nat
 getMax a b = Nat.max a b
 ```
@@ -54,8 +53,8 @@ shouldBe1 = getMax 1 (10 - 10)
 Unison multi-line functions use indentation or `let` blocks to specify code boundaries, a.k.a "lexical scope."
 
 ```
-swapperoo : Text -> Text -> Text -> Text
-swapperoo beg middle end =
+swapOrder : Text -> Text -> Text -> Text
+swapOrder beg middle end =
   newBeginning = end ++ middle
   newBeginning ++ beg
 ```
@@ -120,4 +119,4 @@ This concept guide borrows liberally from [the official Unison documentation][un
 
 [use-statements]: https://www.unison-lang.org/learn/language-reference/use-clauses/
 [unison-language-docs]: https://www.unison-lang.org/learn/
-[unison-share-base]: https://share.unison-lang.org/latest/namespaces/unison/base
+[unison-share-base]: https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest

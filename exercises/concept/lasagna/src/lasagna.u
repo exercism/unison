@@ -1,8 +1,0 @@
-expectedMinutesInOven : Nat
-expectedMinutesInOven = todo "implement expectedMinutesInOven"
-
-preparationTimeInMinutes : Nat -> Nat
-preparationTimeInMinutes layers = todo "implement preparationTimeInMinutes"
-
-elapsedTimeInMinutes : Nat -> Nat -> Nat
-elapsedTimeInMinutes layers passedAlready = todo "implement elapsedTimeInMinutes"

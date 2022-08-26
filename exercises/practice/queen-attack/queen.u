@@ -1,0 +1,7 @@
+queenAttack.create : (Nat,Nat) -> {Abort} (Nat,Nat)
+queenAttack.create coordinates =
+  todo "implement create"
+
+queenAttack.canAttack  : (Nat,Nat) -> (Nat,Nat) -> {Abort} Boolean
+queenAttack.canAttack whiteQueen blackQueen =
+  todo "implement canAttack"

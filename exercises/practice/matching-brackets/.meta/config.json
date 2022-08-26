@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "rlmark"
+  ],
+  "files": {
+    "solution": [
+      "matchingBrackets.u"
+    ],
+    "test": [
+      "matchingBrackets.test.u"
+    ],
+    "example": [
+      ".meta/examples/matchingBrackets.example.u"
+    ]
+  },
+  "blurb": "Make sure the brackets and braces all match.",
+  "source": "Ginna Baker"
+}

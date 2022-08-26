@@ -76,8 +76,8 @@ Unison provides a way to quickly evaluate code called a "watch expression". A wa
 Unison multi-line functions use indentation or `let` blocks to specify code boundaries, a.k.a "lexical scope."
 
 ```
-swapperoo : Text -> Text -> Text -> Text
-swapperoo beg middle end =
+swapOrder : Text -> Text -> Text -> Text
+swapOrder beg middle end =
   newBeginning = end ++ middle
   newBeginning ++ beg
 ```
@@ -142,4 +142,4 @@ This concept guide borrows liberally from [the official Unison documentation][un
 
 [use-statements]: https://www.unison-lang.org/learn/language-reference/use-clauses/
 [unison-language-docs]: https://www.unison-lang.org/learn/
-[unison-share-base]: https://share.unison-lang.org/latest/namespaces/unison/base
+[unison-share-base]: https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest
