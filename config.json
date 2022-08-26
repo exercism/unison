@@ -39,6 +39,7 @@
           "booleans"
         ],
         "prerequisites": [
+          "basics"
         ],
         "status": "wip"
       },{
