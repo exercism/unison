@@ -2,12 +2,16 @@
   "authors": [
     "rlmark"
   ],
-  "contributors": [
-  ],
   "files": {
-    "solution": ["src/pacmanRules.u"],
-    "test": ["test/pacmanRules.test.u"],
-    "exemplar": [".meta/examples/pacmanRules.example.u"]
+    "solution": [
+      "pacmanRules.u"
+    ],
+    "test": [
+      "pacmanRules.test.u"
+    ],
+    "exemplar": [
+      ".meta/examples/pacmanRules.example.u"
+    ]
   },
   "blurb": "Learn about booleans by implementing the rules of the Pac-Man game."
 }
