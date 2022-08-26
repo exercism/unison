@@ -1,2 +1,0 @@
-steps : Nat -> Optional Nat
-steps n = todo "implement steps"

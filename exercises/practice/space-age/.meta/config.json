@@ -1,11 +1,13 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
     "solution": [
-      "src/spaceAge.u"
+      "spaceAge.u"
     ],
     "test": [
-      "test/spaceAge.test.u"
+      "spaceAge.test.u"
     ],
     "example": [
       ".meta/examples/spaceAge.example.u"

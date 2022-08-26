@@ -1,8 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/spaceAge.u
+.> load ./spaceAge.u
 .> add
-.> load ./test/spaceAge.test.u
+.> load ./spaceAge.test.u
 .> add
+.> move.term spaceAge.tests tests
 ```

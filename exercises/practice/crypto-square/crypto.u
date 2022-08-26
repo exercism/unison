@@ -1,0 +1,2 @@
+cryptoSquare.ciphertext : Text -> Text
+cryptoSquare.ciphertext inputText = todo "implement ciphertext"

@@ -1,2 +1,0 @@
-rebase : Int -> [Int] -> Int -> Optional [Int]
-rebase inputBase inputDigits outputBase = todo "implement rebase"

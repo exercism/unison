@@ -1,3 +1,0 @@
-use base Text
-hello : Text
-hello = "Goodbye, Mars!"

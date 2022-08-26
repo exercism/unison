@@ -1,3 +1,0 @@
-leap : Nat -> Boolean
-leap year =
-  todo "implement leap function"

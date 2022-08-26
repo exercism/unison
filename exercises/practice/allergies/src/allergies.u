@@ -1,7 +1,0 @@
-allergicTo : Text -> Nat -> Boolean
-allergicTo allergen score =
-  todo "implement allergicTo"
-
-list : Nat -> [Text]
-list score =
-  todo "implement list"

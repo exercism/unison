@@ -1,11 +1,13 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
     "solution": [
-      "src/armstrongNumbers.u"
+      "armstrongNumbers.u"
     ],
     "test": [
-      "test/armstrongNumbers.test.u"
+      "armstrongNumbers.test.u"
     ],
     "example": [
       ".meta/examples/armstrongNumbers.example.u"

@@ -1,11 +1,13 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
     "solution": [
-      "src/raindrops.u"
+      "raindrops.u"
     ],
     "test": [
-      "test/raindrops.test.u"
+      "raindrops.test.u"
     ],
     "example": [
       ".meta/examples/raindrops.example.u"

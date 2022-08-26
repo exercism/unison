@@ -1,8 +1,9 @@
 # Testing transcript for exercise
 
 ```ucm
-.> load ./src/matchingBrackets.u
+.> load ./matchingBrackets.u
 .> add
-.> load ./test/matchingBrackets.test.u
+.> load ./matchingBrackets.test.u
 .> add
+.> move.term matchingBrackets.tests tests
 ```

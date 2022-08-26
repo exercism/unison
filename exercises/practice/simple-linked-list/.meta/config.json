@@ -1,9 +1,17 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
-    "solution": ["src/simpleLinkedList.u"],
-    "test": ["test/simpleLinkedList.test.u"],
-    "example": [".meta/examples/simpleLinkedList.example.u"]
+    "solution": [
+      "simpleLinkedList.u"
+    ],
+    "test": [
+      "simpleLinkedList.test.u"
+    ],
+    "example": [
+      ".meta/examples/simpleLinkedList.example.u"
+    ]
   },
   "blurb": "Write a simple linked list implementation that uses Elements and a List.",
   "source": "Inspired by 'Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby', singly linked-lists.",

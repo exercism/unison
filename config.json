@@ -1,7 +1,7 @@
 {
   "language": "Unison",
   "slug": "unison",
-  "active": false,
+  "active": true,
   "status": {
     "concept_exercises": false,
     "test_runner": true,
@@ -17,10 +17,10 @@
   },
   "files": {
     "solution": [
-      "src/%{camel_slug}.u"
+      "%{camel_slug}.u"
     ],
     "test": [
-      "test/%{camel_slug}.test.u"
+      "%{camel_slug}.test.u"
     ],
     "example": [
       ".meta/examples/%{camel_slug}.example.u"
@@ -41,8 +41,16 @@
         "prerequisites": [
         ],
         "status": "wip"
+      },{
+        "slug": "lasagna",
+        "name": "Lasagna",
+        "uuid": "73724654-8ed6-477e-9d2f-7c7e77a6d3f2",
+        "practices": [],
+        "prerequisites": [],
+        "concepts": ["basics"],
+        "difficulty": 1,
+        "status": "wip"
       }
-
     ],
     "practice": [
       {
@@ -68,6 +76,22 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "bowling",
+        "name": "Bowling",
+        "uuid": "37c049f1-f83a-4b5d-a813-7347fa2b54a3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "db98cc14-f1db-40f6-a5d0-d5c151c98570",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       },
       {
         "slug": "crypto-square",
@@ -142,12 +166,36 @@
         "difficulty": 4
       },
       {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "da6e2fd6-1d81-4ccc-8030-16065fef548b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "0b4e2dbd-7a5e-4a3d-b13d-9138518d9a63",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "scale-generator",
+        "name": "Scale Generator",
+        "uuid": "d83fd7ee-2eff-41d5-8a7c-e3893a969150",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "sieve",
+        "name": "Sieve",
+        "uuid": "671a09cb-df24-4a30-8513-26103bb1ae10",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "simple-linked-list",
@@ -172,6 +220,22 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
+      },
+      {
+        "slug": "stream-ops",
+        "name": "Stream Ops",
+        "uuid": "56c6f521-3567-4f35-8f73-c675d14aaa4b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "0240f3b9-52e7-4408-93c0-7766dbb4c60a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       },
       {
         "slug": "sum-of-multiples",
@@ -204,6 +268,22 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
+      },
+      {
+        "slug": "zebra-puzzle",
+        "name": "Zebra Puzzle",
+        "uuid": "642e8ce3-9cb2-4acb-a330-8385dfa40d92",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 10
+      },
+      {
+        "slug": "zipper",
+        "name": "Zipper",
+        "uuid": "49dcbf18-2024-499c-a951-ed009f97ef8f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 9
       }
     ]
   },
@@ -212,6 +292,11 @@
       "uuid": "15ceedc0-9a50-4749-9a03-7b6b633c757b",
       "slug": "booleans",
       "name": "Booleans"
+    },
+    {
+      "uuid": "24332ec2-07b2-49e5-aa58-4829d31dc44a",
+      "slug": "basics",
+      "name": "Basics"
     }
   ],
   "key_features": [
@@ -227,7 +312,7 @@
     },
     {
       "title": "Functional",
-      "content": "Unison is a statically typed, general purpose functional programming langauge.",
+      "content": "Unison is a statically typed, general purpose functional programming language.",
       "icon": "functional"
     },
     {

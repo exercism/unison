@@ -1,0 +1,3 @@
+armstrongNumbers.isArmstrongNumber : Nat -> Boolean
+armstrongNumbers.isArmstrongNumber number =
+  todo "implement isArmstrongNumber"

@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "rlmark"
+  ],
+  "files": {
+    "solution": [
+      "clock.u"
+    ],
+    "test": [
+      "clock.test.u"
+    ],
+    "example": [
+      ".meta/examples/clock.example.u"
+    ]
+  },
+  "blurb": "Implement a clock that handles times without dates.",
+  "source": "Pairing session with Erin Drummond",
+  "source_url": "https://twitter.com/ebdrummond"
+}

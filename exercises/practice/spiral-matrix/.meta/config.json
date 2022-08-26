@@ -1,11 +1,13 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
     "solution": [
-      "src/spiralMatrix.u"
+      "spiralMatrix.u"
     ],
     "test": [
-      "test/spiralMatrix.test.u"
+      "spiralMatrix.test.u"
     ],
     "example": [
       ".meta/examples/spiralMatrix.example.u"

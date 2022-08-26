@@ -1,2 +1,0 @@
-ciphertext : Text -> Text
-ciphertext inputText = todo "implement ciphertext"

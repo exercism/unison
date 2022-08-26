@@ -1,8 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/spiralMatrix.u
+.> load ./spiralMatrix.u
 .> add
-.> load ./test/spiralMatrix.test.u
+.> load ./spiralMatrix.test.u
 .> add
+.> move.term spiralMatrix.tests tests
 ```

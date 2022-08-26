@@ -1,0 +1,17 @@
+structural ability matchingBrackets.Stack a where
+  push : a -> ()
+  pop : ()
+  peek : Optional a
+  isEmpty : Boolean
+
+matchingBrackets.Stack.run : '{Stack a } r -> r
+matchingBrackets.Stack.run stackFunc =
+  todo "if you choose to use the given Stack ability, this is the handler for the ability"
+
+matchingBrackets.checkBalance : [Char] -> {Stack Char} Boolean
+matchingBrackets.checkBalance charList =
+  todo "if you choose to use abilities to solve this, this is a potential function to implement."
+
+matchingBrackets.isPaired : Text -> Boolean
+matchingBrackets.isPaired input =
+  todo "implement isPaired, optionally using abilities"

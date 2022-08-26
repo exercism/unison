@@ -1,8 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/acronym.u
+.> load ./acronym.u
 .> add
-.> load ./test/acronym.test.u
+.> load ./acronym.test.u
 .> add
+.> move.term acronym.tests tests
 ```

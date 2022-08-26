@@ -1,0 +1,86 @@
+structural type Tree a
+  = Branch a (Optional (Tree a)) (Optional (Tree a))
+
+structural ability Zipper t a where
+  setValue : a ->{Zipper t a} ()
+  setLeft : t a ->{Zipper t a} ()
+  setRight : t a ->{Zipper t a} ()
+  left : {Zipper t a} ()
+  right : {Zipper t a} ()
+  up : {Zipper t a} ()
+  focus : {Zipper t a} a
+
+unique type Path a
+  = Left a (Tree a)
+  | Right a (Tree a)
+  | Top a (Tree a)
+
+Path.moveLeft : Tree a -> [Path a] -> [Path a]
+Path.moveLeft tree pathList =
+  use List +:
+  (Branch x l r) = tree
+  rr = Optional.getOrElse tree r
+  Path.Left x rr +: pathList
+
+Path.moveRight : Tree a -> [Path a] -> [Path a]
+Path.moveRight tree pathList =
+  use List +:
+  (Branch x l r) = tree
+  ll = Optional.getOrElse tree l
+  Path.Right x ll +: pathList
+
+Path.up : Tree a -> [Path a] -> Tree a
+Path.up tree = cases
+  Path.Left a r +: paths  ->
+    Branch a (Some tree) (Some r)
+  Path.Right a l +: paths ->
+    Branch a (Some l) (Some tree)
+  top                     -> tree
+
+setVal : a -> Tree a -> Tree a
+setVal a = cases
+  Branch _ l r -> Branch a l r
+
+Zipper.handlerImpl : Tree a -> {g} Request (Zipper Tree a) r -> {g} (r, Tree a)
+Zipper.handlerImpl binTree =
+  go : Tree a -> [Path a] -> {g} Request (Zipper Tree a) r -> {g} (r, Tree a)
+  go tree path = cases
+    { r }                          -> (r, tree)
+    {setValue a -> resume}         ->
+      updatedTree = setVal a tree
+      handle !resume with go updatedTree path
+    {focus -> resume}              ->
+      (Branch a l r) = tree
+      handle resume a with go tree path
+    {Zipper.left -> resume}        ->
+      (Branch a ll r) = tree
+      left' = Optional.getOrElse tree ll
+      path' = moveLeft tree path
+      handle !resume with go left' path'
+    {Zipper.right -> resume}       ->
+      (Branch a l rr) = tree
+      right' = Optional.getOrElse tree rr
+      path' = moveRight tree path
+      handle !resume with go right' path'
+    {Zipper.up -> resume}          ->
+      upTree = Path.up tree path
+      popped = List.drop 1 path
+      handle !resume with go upTree popped
+    {setLeft leftTree -> resume}   ->
+      (Branch a ll r) = tree
+      handle !resume with go (Branch a (Some leftTree) r) path
+    {setRight rightTree -> resume} ->
+      (Branch a l rr) = tree
+      handle !resume with go (Branch a l (Some rightTree)) path
+  let
+    (Branch a l r) = binTree
+    go binTree [Top a binTree]
+
+Zipper.run : Tree a -> '{Zipper Tree a, g} r -> {g} r
+Zipper.run tree zipperFunction =
+  result = handle !zipperFunction with handlerImpl tree
+  at1 result
+
+Zipper.runWithTree : Tree a -> '{Zipper Tree a, g } r ->  {g} (r, Tree a)
+Zipper.runWithTree tree zipperFunction =
+  handle !zipperFunction with handlerImpl tree

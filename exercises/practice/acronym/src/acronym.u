@@ -1,2 +1,0 @@
-abbreviate : Text -> Text
-abbreviate test = todo "implement abbreviate function"

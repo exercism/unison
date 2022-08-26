@@ -1,0 +1,2 @@
+acronym.abbreviate : Text -> Text
+acronym.abbreviate test = todo "implement abbreviate function"

@@ -1,0 +1,3 @@
+diamond.rows : Char -> [Text]
+diamond.rows letter =
+  todo "implement rows"

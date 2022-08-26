@@ -1,0 +1,7 @@
+runLengthEncoding.encode : Text -> Text
+runLengthEncoding.encode input =
+  todo "implement encode"
+
+runLengthEncoding.decode : Text -> Text
+runLengthEncoding.decode input =
+  todo "implement decode"

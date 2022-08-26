@@ -1,0 +1,7 @@
+allergies.allergicTo : Text -> Nat -> Boolean
+allergies.allergicTo allergen score =
+  todo "implement allergicTo"
+
+allergies.list : Nat -> [Text]
+allergies.list score =
+  todo "implement list"

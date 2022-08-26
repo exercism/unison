@@ -1,2 +1,0 @@
-convert : Nat -> Text
-convert n = todo "You need to implement convert."

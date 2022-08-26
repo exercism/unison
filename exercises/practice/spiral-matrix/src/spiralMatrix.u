@@ -1,3 +1,0 @@
-spiralMatrix : Nat -> [[Nat]]
-spiralMatrix n =
- todo "implement spiralMatrix"

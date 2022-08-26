@@ -1,8 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/raindrops.u
+.> load ./raindrops.u
 .> add
-.> load ./test/raindrops.test.u
+.> load ./raindrops.test.u
 .> add
+.> move.term raindrops.tests tests
 ```

@@ -1,8 +1,9 @@
 # Testing transcript for hello exercise
 
 ```ucm
-.> load ./src/simpleLinkedList.u
+.> load ./simpleLinkedList.u
 .> add
-.> load ./test/simpleLinkedList.test.u
+.> load ./simpleLinkedList.test.u
 .> add
+.> move.term linkedL.tests tests
 ```

@@ -1,9 +1,17 @@
 {
-  "authors": ["rlmark"],
+  "authors": [
+    "rlmark"
+  ],
   "files": {
-    "solution": ["src/runLength.u"],
-    "test": ["test/runLength.test.u"],
-    "example": [".meta/examples/runLength.example.u"]
+    "solution": [
+      "runLength.u"
+    ],
+    "test": [
+      "runLength.test.u"
+    ],
+    "example": [
+      ".meta/examples/runLength.example.u"
+    ]
   },
   "blurb": "Implement run-length encoding and decoding.",
   "source": "Wikipedia",

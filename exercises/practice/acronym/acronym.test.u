@@ -1,0 +1,41 @@
+use base.test.Test
+
+acronym.test.basic =
+ Test.expect (abbreviate "Portable Network Graphics" === "PNG")
+
+acronym.test.lowercaseWords =
+  Test.expect (abbreviate "Ruby on Rails" === "ROR")
+
+acronym.test.punctuation =
+  Test.expect (abbreviate "First In, First Out" === "FIFO")
+
+acronym.test.allCapsWord =
+  Test.expect (abbreviate "GNU Image Manipulation Program" === "GIMP")
+
+acronym.test.punctuationWithoutWhitespace =
+  Test.expect (abbreviate "Complementary metal-oxide semiconductor" === "CMOS")
+
+acronym.test.veryLongAbbreviation =
+  Test.expect (abbreviate "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me" === "ROTFLSHTMDCOALM")
+
+acronym.test.consecutiveDelimiters =
+  Test.expect (abbreviate "Something - I made up from thin air" === "SIMUFTA")
+
+acronym.test.apostrophes =
+  Test.expect (abbreviate "Halley's Comet" === "HC")
+
+acronym.test.underscoreEmphasis =
+  Test.expect (abbreviate "The Road _Not_ Taken" === "TRNT")
+
+test> acronym.tests =
+  runAll [
+    acronym.test.basic,
+    acronym.test.lowercaseWords,
+    acronym.test.punctuation,
+    acronym.test.allCapsWord,
+    acronym.test.punctuationWithoutWhitespace,
+    acronym.test.veryLongAbbreviation,
+    acronym.test.consecutiveDelimiters,
+    acronym.test.apostrophes,
+    acronym.test.underscoreEmphasis
+  ]

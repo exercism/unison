@@ -1,8 +1,9 @@
 # Testing transcript for hello exercise
 
 ```ucm
-.> load ./src/majorityElement.u
+.> load ./majorityElement.u
 .> add
-.> load ./test/majorityElement.test.u
+.> load ./majorityElement.test.u
 .> add
+.> move.term majorityElement.tests tests
 ```
