@@ -1,0 +1,19 @@
+pacmanRules.eatGhost: Boolean -> Boolean -> Boolean
+pacmanRules.eatGhost powerPelletActive touchingGhost =
+  "implement eatGhost"
+  false
+
+pacmanRules.score: Boolean -> Boolean -> Boolean
+pacmanRules.score powerPelletActive touchingDot =
+  "implement score"
+  false
+
+pacmanRules.lose : Boolean -> Boolean -> Boolean
+pacmanRules.lose powerPelletActive touchingGhost =
+  "implement lose"
+  false
+
+pacmanRules.win : Boolean -> Boolean -> Boolean -> Boolean
+pacmanRules.win eatenAll powerPelletActive touchingGhost =
+  "implement win"
+  false

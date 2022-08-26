@@ -1,8 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./src/pacmanRules.u
+.> load ./pacmanRules.u
 .> add
-.> load ./test/pacmanRules.test.u
+.> load ./pacmanRules.test.u
 .> add
+.> move.term pacmanRules.tests tests
 ```
