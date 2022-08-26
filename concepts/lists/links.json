@@ -8,7 +8,11 @@
     "description": "List pattern matching"
   },
   {
-    "url": "https://share.unison-lang.org/latest/namespaces/unison/base/;/types/List",
+    "url": "https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/;/types/data/List",
     "description": "List documentation from the standard library"
+  },
+  {
+    "url": "https://www.unison-lang.org/learn/fundamentals/control-flow/looping/",
+    "description": "Tips for using recursion using a List example"
   }
 ]
