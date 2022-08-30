@@ -1,0 +1,2 @@
+darts.score : Float -> Float -> Nat
+darts.score x y = todo "implement score"
