@@ -1,0 +1,7 @@
+{
+  "blurb": "Unison represents true and false values with the \"Boolean\" type. Booleans can be combined into expressions using boolean operators \"not\", \"||\", and \"&&\".",
+  "authors": [
+    "rlmark"
+  ],
+  "contributors": []
+}

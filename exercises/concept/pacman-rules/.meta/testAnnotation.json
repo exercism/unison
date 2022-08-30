@@ -1,0 +1,50 @@
+[
+  {
+    "name": "pacmanRules.test.ex1",
+    "test_code": "pacmanRules.test.ex1 = let\n\tTest.label \"eatGhost, ghost gets eaten\" <| expect (eatGhost true true)"
+  },
+  {
+    "name": "pacmanRules.test.ex2",
+    "test_code": "pacmanRules.test.ex2 = let\n\tTest.label \"eatGhost, ghost does not get eaten because no power pellet active\" <| expect (eatGhost false true === false)"
+  },
+  {
+    "name": "pacmanRules.test.ex3",
+    "test_code": "pacmanRules.test.ex3 = let\n\tTest.label \"eatGhost, ghost does not get eaten because not touching ghost\" <| expect (eatGhost true false === false)"
+  },
+  {
+    "name": "pacmanRules.test.ex4",
+    "test_code": "pacmanRules.test.ex4 = let\n\tTest.label \"score, score when eating dot\" <| expect (score false true)"
+  },
+  {
+    "name": "pacmanRules.test.ex5",
+    "test_code": "pacmanRules.test.ex5 = let\n\tTest.label \"score, score when eating power pellet\" <| expect (score true false)"
+  },
+  {
+    "name": "pacmanRules.test.ex6",
+    "test_code": "pacmanRules.test.ex6 = let\n\tTest.label \"score, no score when nothing eaten\" <| expect (score false false === false )"
+  },
+  {
+    "name": "pacmanRules.test.ex7",
+    "test_code": "pacmanRules.test.ex7 = let\n\tTest.label \"lose if touching a ghost without a power pellet active\" <| expect (lose false true)"
+  },
+  {
+    "name": "pacmanRules.test.ex8",
+    "test_code": "pacmanRules.test.ex8 = let\n\tTest.label \"don't lose if touching a ghost with a power pellet active\" <| expect (lose true true === false)"
+  },
+  {
+    "name": "pacmanRules.test.ex9",
+    "test_code": "pacmanRules.test.ex9 = let\n\tTest.label \"don't lose if not touching a ghost\" <| expect (lose true false === false)"
+  },
+  {
+    "name": "pacmanRules.test.ex10",
+    "test_code": "pacmanRules.test.ex10 = let\n\tTest.label \"win if all dots eaten\" <| expect (win true false false)"
+  },
+  {
+    "name": "pacmanRules.test.ex11",
+    "test_code": "pacmanRules.test.ex11 = let\n\tTest.label \"don't win if all dots eaten, but touching a ghost\" <| expect (win true false true === false)"
+  },
+  {
+    "name": "pacmanRules.test.ex12",
+    "test_code": "pacmanRules.test.ex12 = let\n\tTest.label \"win if all dots eaten and touching a ghost with a power pellet active\" ,| expect (win true true true)"
+  }
+]

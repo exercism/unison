@@ -32,6 +32,17 @@
   "exercises": {
     "concept": [
       {
+        "slug": "pacman-rules",
+        "name": "Pacman Rules",
+        "uuid": "0606129a-6262-4fd5-80b9-bdc66ec46f76",
+        "concepts": [
+          "booleans"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "status": "wip"
+      },{
         "slug": "lasagna",
         "name": "Lasagna",
         "uuid": "73724654-8ed6-477e-9d2f-7c7e77a6d3f2",
@@ -278,6 +289,11 @@
     ]
   },
   "concepts": [
+    {
+      "uuid": "15ceedc0-9a50-4749-9a03-7b6b633c757b",
+      "slug": "booleans",
+      "name": "Booleans"
+    },
     {
       "uuid": "24332ec2-07b2-49e5-aa58-4829d31dc44a",
       "slug": "basics",
