@@ -1,5 +1,5 @@
 {
-  "authors": [],
+  "authors": ["rlmark"],
   "files": {
     "solution": [
       "darts.u"
