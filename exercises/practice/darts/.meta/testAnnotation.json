@@ -1,0 +1,54 @@
+[
+  {
+    "test_code": "darts.test.ex1 = let\n\tTest.label \"Missed target\" <| Test.expect (score -9.0 9.0 === 0)",
+    "name": "darts.test.ex1"
+  },
+  {
+    "test_code": "darts.test.ex2 = let\n\tTest.label \"On the outer circle\" <| Test.expect (score 0.0 10.0 === 1)",
+    "name": "darts.test.ex2"
+  },
+  {
+    "test_code": "darts.test.ex3 = let\n\tTest.label \"On the middle circle\" <| Test.expect (score -5.0 0.0 === 5)",
+    "name": "darts.test.ex3"
+  },
+  {
+    "test_code": "darts.test.ex4 = let\n\tTest.label \"On the inner circle\" <| Test.expect (score 0.0 -1.0 === 10)",
+    "name": "darts.test.ex4"
+  },
+  {
+    "test_code": "darts.test.ex5 = let\n\tTest.label \"Exactly on centre\" <| Test.expect (score 0.0 0.0 === 10)",
+    "name": "darts.test.ex5"
+  },
+  {
+    "test_code": "darts.test.ex6 = let\n\tTest.label \"Near the centre\" <| Test.expect (score -0.1 -0.1 === 10)",
+    "name": "darts.test.ex6"
+  },
+  {
+    "test_code": "darts.test.ex7 = let\n\tTest.label \"Just within the inner circle\" <| Test.expect (score 0.7 0.7 === 10)",
+    "name": "darts.test.ex7"
+  },
+  {
+    "test_code": "darts.test.ex8 = let\n\tTest.label \"Just outside the inner circle\" <| Test.expect (score 0.8 -0.8 === 5)",
+    "name": "darts.test.ex8"
+  },
+  {
+    "test_code": "darts.test.ex9 = let\n\tTest.label \"Just within the middle circle\" <| Test.expect (score -3.5 3.5 === 5)",
+    "name": "darts.test.ex9"
+  },
+  {
+    "test_code": "darts.test.ex10 = let\n\tTest.label \"Just outside the middle circle\" <| Test.expect (score -3.6 -3.6 === 1)",
+    "name": "darts.test.ex10"
+  },
+  {
+    "test_code": "darts.test.ex11 = let\n\tTest.label \"Just within the outer circle\" <| Test.expect (score -7.0 7.0 === 1)",
+    "name": "darts.test.ex11"
+  },
+  {
+    "test_code": "darts.test.ex12 = let\n\tTest.label \"Just outside the outer circle\" <| Test.expect (score 7.1 -7.1 === 0)",
+    "name": "darts.test.ex12"
+  },
+  {
+    "test_code": "darts.test.ex13 = let\n\tTest.label \"Asymmetric position between the inner and middle circles\" <| Test.expect (score 0.5 -4.0 === 5)",
+    "name": "darts.test.ex13"
+  }
+]

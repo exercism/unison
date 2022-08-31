@@ -1,0 +1,8 @@
+darts.score : Float -> Float -> Nat
+darts.score x y =
+  distance = Float.sqrt <| ((x * x) + (y * y))
+  match distance with
+    d | d <= 1.0 -> 10
+    d | d <= 5.0 -> 5
+    d | d <= 10.0 -> 1
+    otherwise -> 0

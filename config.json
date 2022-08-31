@@ -119,6 +119,14 @@
         "difficulty": 1
       },
       {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "3a82983f-9b8c-4b61-973c-5a40dd2fc708",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "diamond",
         "name": "Diamond",
         "uuid": "4549e619-87dd-4ba3-b89c-6f3359a25d7c",
