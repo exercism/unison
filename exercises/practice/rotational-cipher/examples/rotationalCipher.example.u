@@ -1,0 +1,11 @@
+rotationalCipher.rotate : Text -> Nat -> Text
+rotationalCipher.rotate text shiftKey =
+  rotateChar : Char -> Char
+  rotateChar c = if (not (isLetter c )) then c else
+    use Nat
+    base = if (isUpper c) then (Char.toNat ?A) else (Char.toNat ?a)
+    cNat = Char.toNat c
+    natChar = Nat.mod (cNat - base + shiftKey) 26
+    Char.fromNat (natChar + base)
+
+  toCharList text |> List.map rotateChar |> fromCharList

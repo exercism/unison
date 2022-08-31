@@ -1,0 +1,44 @@
+
+
+rotationalCipher.test.ex1 = let
+	Test.label "rotate a by 0, same output as input" <| Test.expect (rotate "a" 0 === "a")
+
+rotationalCipher.test.ex2 = let
+	Test.label "rotate a by 1" <| Test.expect (rotate "a" 1 === "b")
+
+rotationalCipher.test.ex3 = let
+	Test.label "rotate a by 26, same output as input" <| Test.expect (rotate "a" 26 === "a")
+
+rotationalCipher.test.ex4 = let
+	Test.label "rotate m by 13" <| Test.expect (rotate "m" 13 === "z")
+
+rotationalCipher.test.ex5 = let
+	Test.label "rotate n by 13 with wrap around alphabet" <| Test.expect (rotate "n" 13 === "a")
+
+rotationalCipher.test.ex6 = let
+	Test.label "rotate capital letters" <| Test.expect (rotate "OMG" 5 === "TRL")
+
+rotationalCipher.test.ex7 = let
+	Test.label "rotate spaces" <| Test.expect (rotate "O M G" 5 === "T R L")
+
+rotationalCipher.test.ex8 = let
+	Test.label "rotate numbers" <| Test.expect (rotate "Testing 1 2 3 testing" 4 === "Xiwxmrk 1 2 3 xiwxmrk")
+
+rotationalCipher.test.ex9 = let
+	Test.label "rotate punctuation" <| Test.expect (rotate "Let's eat, Grandma!" 21 === "Gzo'n zvo, Bmviyhv!")
+
+rotationalCipher.test.ex10 = let
+	Test.label "rotate all letters" <| Test.expect (rotate "The quick brown fox jumps over the lazy dog." 13 === "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.")
+
+test> rotationalCipher.tests = runAll [
+	rotationalCipher.test.ex1,
+	rotationalCipher.test.ex2,
+	rotationalCipher.test.ex3,
+	rotationalCipher.test.ex4,
+	rotationalCipher.test.ex5,
+	rotationalCipher.test.ex6,
+	rotationalCipher.test.ex7,
+	rotationalCipher.test.ex8,
+	rotationalCipher.test.ex9,
+	rotationalCipher.test.ex10
+]

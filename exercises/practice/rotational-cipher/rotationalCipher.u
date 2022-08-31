@@ -1,0 +1,2 @@
+rotationalCipher.rotate : Text -> Nat -> Text
+rotationalCipher.rotate text shiftKey = todo "implement rotate"
