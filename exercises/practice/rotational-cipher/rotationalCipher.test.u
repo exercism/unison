@@ -1,5 +1,3 @@
-
-
 rotationalCipher.test.ex1 = let
 	Test.label "rotate a by 0, same output as input" <| Test.expect (rotate "a" 0 === "a")
 
