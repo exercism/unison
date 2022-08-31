@@ -191,6 +191,14 @@
         "difficulty": 1
       },
       {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "48003454-b404-4b39-a0d9-78106fd5a11a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "scale-generator",
         "name": "Scale Generator",
         "uuid": "d83fd7ee-2eff-41d5-8a7c-e3893a969150",
