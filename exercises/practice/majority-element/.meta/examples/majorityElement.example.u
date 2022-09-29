@@ -1,38 +1,37 @@
-unique type Color = Red | Orange | Yellow | Green | Blue | Purple
+unique type majorityElement.Color = Red | Orange | Yellow | Green | Blue | Purple
 
-majorityFinder : [Color] -> Optional Color
-majorityFinder colors =
+majorityElement.majorityFinder : [Color] -> Optional Color
+majorityElement.majorityFinder colors =
   res _ = List.map (c -> !(update c)) colors
-  (Counter colorTup, r) = Store.runWith (Counter None) res
+  (Counter colorTup, r) = MyStore.runWith (Counter None) res
   Optional.flatMap (cases (_, candidate) -> let
       count = List.filter (elem -> elem === candidate) colors |> List.size
       if count > ((List.size colors) / 2) then Some candidate else None
     ) colorTup
 
+structural ability majorityElement.MyStore a where
+  put : a ->{majorityElement.MyStore a} ()
+  get : {majorityElement.MyStore a} a
 
-structural ability Store where
-  put : a ->{Store a} ()
-  get : {Store a} a
-
-Store.runWith : a -> '{Store a, g} r -> {g} (a, r)
-Store.runWith elem storeFunction =
+majorityElement.MyStore.runWith : a -> '{MyStore a, g} r -> {g} (a, r)
+majorityElement.MyStore.runWith elem storeFunction =
   impl a = cases
     {pure} -> (a, pure)
-    {Store.get -> resume } -> handle resume a with impl a
-    {Store.put aa -> resume} -> handle resume () with impl aa
+    {MyStore.get -> resume } -> handle resume a with impl a
+    {MyStore.put aa -> resume} -> handle resume () with impl aa
   handle !storeFunction with impl elem
 
 unique type StoredState a = Counter (Optional (Nat, a))
 
-update : a -> '{Store (StoredState a)} ()
-update newElem _ =
-  match Store.get with
+majorityElement.update : a -> '{MyStore (StoredState a)} ()
+majorityElement.update newElem _ =
+  match MyStore.get with
     Counter None ->
-      Store.put (Counter (Some (1, newElem)))
+      MyStore.put (Counter (Some (1, newElem)))
     Counter (Some (count, currentElem)) | newElem === currentElem ->
-      Store.put (Counter (Some ((count + 1), currentElem)))
+      MyStore.put (Counter (Some ((count + 1), currentElem)))
     Counter (Some (count, currentElem)) | count === 0 ->
-      Store.put  ( Counter (Some (1, newElem)))
+      MyStore.put  ( Counter (Some (1, newElem)))
     Counter (Some (count, currentElem)) ->
-      Store.put (Counter (Some ((count - 1), currentElem)))
+      MyStore.put (Counter (Some ((count - 1), currentElem)))
 
