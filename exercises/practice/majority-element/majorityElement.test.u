@@ -1,3 +1,5 @@
+use majorityElement.Color
+
 majorityElement.test.ex1 = let
   Test.label "should find the simple majority in a list" <| Test.expect (majorityFinder [Red, Blue, Red, Red, Yellow] === (Some Red))
 
