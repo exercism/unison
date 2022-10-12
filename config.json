@@ -256,7 +256,7 @@
       },
       {
         "slug": "sum-of-multiples",
-        "name": "Sum Of Multiples",
+        "name": "Sum of Multiples",
         "uuid": "0fbe5e82-b563-4360-8957-e3a543eb3184",
         "practices": [],
         "prerequisites": [],
@@ -272,7 +272,7 @@
       },
       {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "f544ddc2-efb7-4dff-994f-9c2578c68414",
         "practices": [],
         "prerequisites": [],
