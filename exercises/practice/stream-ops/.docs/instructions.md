@@ -4,7 +4,7 @@ Implement basic `Stream` ability operations.
 
 In functional languages, functions like `filter`, `map`, and
 `reduce` are very common. Implement a series of basic functional combinators for a stream ability
-without using existing functions. You'll need to write your own [ability handlers](https://www.unisonweb.org/docs/abilities/#creating-and-handling-abilities) for this.
+without using existing functions. You'll need to write your own [ability handlers](https://www.unison-lang.org/learn/fundamentals/abilities/writing-abilities/) for this.
 
 💡 We're going to call this ability `MyStream` to avoid conflicting with the existing `Stream` ability in the standard library.
 
