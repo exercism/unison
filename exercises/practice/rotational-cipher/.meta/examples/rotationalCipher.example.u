@@ -6,6 +6,6 @@ rotationalCipher.rotate text shiftKey =
     base = if (isUpper c) then (Char.toNat ?A) else (Char.toNat ?a)
     cNat = Char.toNat c
     natChar = Nat.mod (cNat - base + shiftKey) 26
-    Char.fromNat (natChar + base)
+    Char.fromNat (natChar + base) |> getOrBug "nat value was invalid"
 
   toCharList text |> List.map rotateChar |> fromCharList
