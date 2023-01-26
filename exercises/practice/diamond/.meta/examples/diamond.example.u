@@ -19,7 +19,7 @@ buildTop letter =
     [] -> lines
     decimalChar +: tail ->
       c : Char
-      c = Char.fromNat decimalChar
+      c = Char.fromNat.impl decimalChar
 
       leadingAndTrailingSpaces : [Char]
       leadingAndTrailingSpaces = List.fill nextLeadingTrailing ?\s
