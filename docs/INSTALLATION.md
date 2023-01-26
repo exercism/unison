@@ -2,7 +2,9 @@
 
 ## Installation Options
 
-The current Unison release is available for Mac OS X, 64-bit Linux, and Windows users! We hope that if you are trying out Unison you'll come talk to us in the Exercism slack or in the [Unison language slack](http://unison-lang.org/slack). Come ask questions, and report issues you might encounter! We want you to have a welcoming and positive experience when getting started! 😊
+The current Unison release is available for Mac OS X, 64-bit Linux, and Windows users! We hope that if you are trying out Unison you'll come talk to us in the Exercism forum or in the [Unison language slack](http://unison-lang.org/slack). Come ask questions, and report issues you might encounter! We want you to have a welcoming and positive experience when getting started! 😊
+
+Unison can be downloaded with [homebrew](https://brew.sh/), [Nix](https://github.com/ceedubs/unison-nix/#usage), or directly via packaged binaries. All of these download options are described in the [Installation instructions page of our website](https://www.unison-lang.org/learn/quickstart/#installation-options). Once you have the UCM installed, head back here!
 
 ### Option 1: Using Homebrew
 
@@ -25,20 +27,13 @@ Note: if you get prompted for a GitHub username and password at this point, make
 
 ### Option 2: Install manually for Mac and Linux users
 
-Linux:
+[Linux and Mac manual install links are provided here](https://www.unison-lang.org/learn/quickstart/#installation-options) under the respective Linux and Mac manual download section.
+
+You'll be running a command in your shell that looks something like this, but the link above will contain the most up-to-date binary:
 
 ```
 mkdir unisonlanguage
-curl -L https://github.com/unisonweb/unison/releases/download/release%2FM3/ucm-linux.tar.gz --output unisonlanguage/ucm.tar.gz
-tar -xzf unisonlanguage/ucm.tar.gz -C unisonlanguage
-./unisonlanguage/ucm
-```
-
-Mac:
-
-```
-mkdir unisonlanguage
-curl -L https://github.com/unisonweb/unison/releases/download/release%2FM3/ucm-macos.tar.gz --output unisonlanguage/ucm.tar.gz
+curl -L https://github.com/unisonweb/unison/releases/download/release_VERSION_NAME/ucm-YOUR_PLATFORM.tar.gz --output unisonlanguage/ucm.tar.gz
 tar -xzf unisonlanguage/ucm.tar.gz -C unisonlanguage
 ./unisonlanguage/ucm
 ```
@@ -49,7 +44,7 @@ tar -xzf unisonlanguage/ucm.tar.gz -C unisonlanguage
 2. If you’re not sure you already have it, install Git:
   * Via winget: `winget install --id Git.Git -e --source winget`
   * If you are on Windows 10 and don’t have winget, you can install it from [the Microsoft Store](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1), and then run the command above.
-3. [Download the UCM with this link](https://github.com/unisonweb/unison/releases/download/release%2FM3/ucm-windows.zip) and extract it to a location of your choosing.
+3. [Download the UCM with the link provided here]https://www.unison-lang.org/learn/quickstart/#installation-options) and extract it to a location of your choosing.
 4. Run `ucm.exe`
 
 ### Option 4: Nix installation
@@ -73,7 +68,7 @@ If you're ever confused about what directory the `ucm` is watching for file chan
 
 ## Editor support
 
-You can use any text editor to write your `.u` files. A few popular editors with Unison support are listed below:
+You can use any text editor to write your `.u` files. Unison has [LSP support](https://github.com/unisonweb/unison/blob/trunk/docs/language-server.markdown), so your favorite IDE can help out with things like types on hover and auto-complete. A few popular editors with Unison support are listed below:
 
 ### Vim
 
@@ -97,7 +92,7 @@ apm install unisonweb/atom-unison
 
 1. Bring up the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VS Code, or with ⇧⌘X.
 2. Search for "unison"
-3. Select "Unison Syntax Highlighting" and click "Install."
+3. Install the [Unison VS Code extension](https://marketplace.visualstudio.com/items?itemName=unison-lang.unison)
 
 ### Emacs
 Install [`unison-mode`](https://github.com/dariooddenino/unison-mode-emacs).
