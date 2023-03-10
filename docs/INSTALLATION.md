@@ -52,7 +52,7 @@ Head to [https://github.com/ceedubs/unison-nix/#usage](https://github.com/ceedub
 
 ## Create your Unison codebase
 
-Run `ucm` to initialize a Unison codebase in `$HOME/.unison`. This is where Unison will store function definitions, types, namespaces, and so on. By default, the Unison Codebase Manger (abbreviated the "UCM")  will begin downloading the standard library, called `base`, which you'll use to write Unison code. It may take a moment! 🕰
+Run `ucm` to initialize a Unison codebase in `$HOME/.unison`. This is where Unison will store function definitions, types, namespaces, and so on. By default, the Unison Codebase Manager (abbreviated the "UCM")  will begin downloading the standard library, called `base`, which you'll use to write Unison code. It may take a moment! 🕰
 
 ## Unison workflow
 
