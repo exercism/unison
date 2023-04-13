@@ -22,7 +22,7 @@ We recommend you create, or `cd`, into a namespace for each exercise that you're
 
 ## Imports
 
-Unison's syntax for managing and specifying imports is the `use` syntax. For example `use base.List` would bring all the functions under the `base.List` namespace into scope. This can be useful in situations where you are using a function like `map` on a `List` that needs to be to disambiguated from other `map` functions like `Optional.map`. You can also import specific functions by following the namespace with a space separated list of functions to bring into scope, as in: `use base.List tails head flatMap`.
+Unison's syntax for managing and specifying imports is the `use` syntax. For example `use base.data.List` would bring all the functions under the `base.data.List` namespace into scope. This can be useful in situations where you are using a function like `map` on a `List` that needs to be to disambiguated from other `map` functions like `Optional.map`. You can also import specific functions by following the namespace with a space separated list of functions to bring into scope, as in: `use base.data.List tails head flatMap`.
 
 You can use the `use` syntax both at the top-level of a file and within functions to specify imports. `use` clauses respect the rules of lexical scoping, so more nested imports take precedence over less nested imports.
 
@@ -36,7 +36,7 @@ A full list of UCM commands is available by entering `help` in the UCM, but here
 
 You can search for terms by name or namespace prefix in the UCM with the `find` command, but `find` also supports _type based_ searching of a codebase. To search for a function by type signature, enter `find` followed by a space and colon, e.g. `find : [a] -> [[a]]`.
 
-You can list the contents of a namespace with the `ls` command, for example `ls base.Map` or `ls .exercism.helloWorld`. Many of the commands in the UCM will accept either relative namespace path arguments or fully qualified namespace arguments. Fully qualified paths start with a `.` representing the "root" of your codebase.
+You can list the contents of a namespace with the `ls` command, for example `ls base.data.List` or `ls .exercism.helloWorld`. Many of the commands in the UCM will accept either relative namespace path arguments or fully qualified namespace arguments. Fully qualified paths start with a `.` representing the "root" of your codebase.
 
 Move around the UCM with the `cd` command in the CLI. If a namespace doesn't exist, `cd` will _create_ one when you navigate to it. To go up a namespace you can use `cd ..`.
 
