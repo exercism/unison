@@ -1,0 +1,7 @@
+knapsack.maximum_value : Nat -> [(Nat, Nat)] -> Nat
+knapsack.maximum_value maximum_weight = cases
+  [] -> 0
+  (weight, _) +: tail | weight > maximum_weight ->
+    maximum_value maximum_weight tail
+  (weight, value) +: tail ->
+    Nat.max (maximum_value maximum_weight tail) (value + maximum_value (maximum_weight - weight) tail)
