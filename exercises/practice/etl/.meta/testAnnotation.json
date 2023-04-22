@@ -1,0 +1,18 @@
+[
+  {
+    "test_code": "etl.test.ex1 = let\t\n\tlettersByScore = [(1, [?A])] |> Map.fromList\n\texpected = [(?a, 1)] |> Map.fromList\n\tTest.label \"Single letter\" <| Test.expect (transform lettersByScore === expected)",
+    "name": "etl.test.ex1\n\tlettersByScore\n\texpected"
+  },
+  {
+    "test_code": "etl.test.ex2 = let\n\tlettersByScore = [(1, [?A, ?E, ?I, ?O, ?U])] |> Map.fromList\n\texpected = \n\t\t[ (?a, 1),\n\t\t\t(?e, 1),\n\t\t\t(?i, 1),\n\t\t\t(?o, 1),\n\t\t\t(?u, 1) ] |> Map.fromList\n\tTest.label \"Single score with multiple letters\" <| Test.expect (transform lettersByScore === expected)",
+    "name": "etl.test.ex2\n\tlettersByScore\n\texpected\n\t\t[\n\t\t\t(?e,\n\t\t\t(?i,\n\t\t\t(?o,\n\t\t\t(?u,"
+  },
+  {
+    "test_code": "etl.test.ex3 = let\t\n\tlettersByScore = \n\t\t[ (1, [?A, ?E]),\n\t\t\t(2, [?D, ?G]) ] |> Map.fromList\n\texpected = \n\t\t[ (?a, 1),\n\t\t\t(?d, 2),\n\t\t\t(?e, 1),\n\t\t\t(?g, 2) ] |> Map.fromList\n\tTest.label \"Multiple scores with multiple letters\" <| Test.expect (transform lettersByScore === expected)",
+    "name": "etl.test.ex3\n\tlettersByScore\n\t\t[\n\t\t\t(2,\n\texpected\n\t\t[\n\t\t\t(?d,\n\t\t\t(?e,\n\t\t\t(?g,"
+  },
+  {
+    "test_code": "etl.test.ex4 = let\n\tlettersByScore = \n\t\t[ (1, [?A, ?E, ?I, ?O, ?U, ?L, ?N, ?R, ?S, ?T]),\n\t\t\t(2, [?D, ?G]),\n\t\t\t(3, [?B, ?C, ?M, ?P]),\n\t\t\t(4, [?F, ?H, ?V, ?W, ?Y]),\n\t\t\t(5, [?K]),\n\t\t\t(8, [?J, ?X]),\n\t\t\t(10, [?Q, ?Z]) ] |> Map.fromList\n\texpected = \n\t\t[ (?a, 1),\n\t\t\t(?b, 3),\n\t\t\t(?c, 3),\n\t\t\t(?d, 2),\n\t\t\t(?e, 1),\n\t\t\t(?f, 4),\n\t\t\t(?g, 2),\n\t\t\t(?h, 4),\n\t\t\t(?i, 1),\n\t\t\t(?j, 8),\n\t\t\t(?k, 5),\n\t\t\t(?l, 1),\n\t\t\t(?m, 3),\n\t\t\t(?n, 1),\n\t\t\t(?o, 1),\n\t\t\t(?p, 3),\n\t\t\t(?q, 10),\n\t\t\t(?r, 1),\n\t\t\t(?s, 1),\n\t\t\t(?t, 1),\n\t\t\t(?u, 1),\n\t\t\t(?v, 4),\n\t\t\t(?w, 4),\n\t\t\t(?x, 8),\n\t\t\t(?y, 4),\n\t\t\t(?z, 10) ] |> Map.fromList\n\tTest.label \"Multiple scores with differing numbers of letters\" <| Test.expect (transform lettersByScore == expected)",
+    "name": "etl.test.ex4\n\tlettersByScore\n\t\t[\n\t\t\t(2,\n\t\t\t(3,\n\t\t\t(4,\n\t\t\t(5,\n\t\t\t(8,\n\t\t\t(10,\n\texpected\n\t\t[\n\t\t\t(?b,\n\t\t\t(?c,\n\t\t\t(?d,\n\t\t\t(?e,\n\t\t\t(?f,\n\t\t\t(?g,\n\t\t\t(?h,\n\t\t\t(?i,\n\t\t\t(?j,\n\t\t\t(?k,\n\t\t\t(?l,\n\t\t\t(?m,\n\t\t\t(?n,\n\t\t\t(?o,\n\t\t\t(?p,\n\t\t\t(?q,\n\t\t\t(?r,\n\t\t\t(?s,\n\t\t\t(?t,\n\t\t\t(?u,\n\t\t\t(?v,\n\t\t\t(?w,\n\t\t\t(?x,\n\t\t\t(?y,\n\t\t\t(?z,"
+  }
+]
