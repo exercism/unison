@@ -1,0 +1,106 @@
+proteinTranslation.test.ex1 = let
+  Test.label "Empty RNA sequence results in no proteins" <| Test.expect (proteins "" === [])
+
+proteinTranslation.test.ex2 = let
+  Test.label "Methionine RNA sequence" <| Test.expect (proteins "AUG" === ["Methionine"])
+
+proteinTranslation.test.ex3 = let
+  Test.label "Phenylalanine RNA sequence 1" <| Test.expect (proteins "UUU" === ["Phenylalanine"])
+
+proteinTranslation.test.ex4 = let
+  Test.label "Phenylalanine RNA sequence 2" <| Test.expect (proteins "UUC" === ["Phenylalanine"])
+
+proteinTranslation.test.ex5 = let
+  Test.label "Leucine RNA sequence 1" <| Test.expect (proteins "UUA" === ["Leucine"])
+
+proteinTranslation.test.ex6 = let
+  Test.label "Leucine RNA sequence 2" <| Test.expect (proteins "UUG" === ["Leucine"])
+
+proteinTranslation.test.ex7 = let
+  Test.label "Serine RNA sequence 1" <| Test.expect (proteins "UCU" === ["Serine"])
+
+proteinTranslation.test.ex8 = let
+  Test.label "Serine RNA sequence 2" <| Test.expect (proteins "UCC" === ["Serine"])
+
+proteinTranslation.test.ex9 = let
+  Test.label "Serine RNA sequence 3" <| Test.expect (proteins "UCA" === ["Serine"])
+
+proteinTranslation.test.ex10 = let
+  Test.label "Serine RNA sequence 4" <| Test.expect (proteins "UCG" === ["Serine"])
+
+proteinTranslation.test.ex11 = let
+  Test.label "Tyrosine RNA sequence 1" <| Test.expect (proteins "UAU" === ["Tyrosine"])
+
+proteinTranslation.test.ex12 = let
+  Test.label "Tyrosine RNA sequence 2" <| Test.expect (proteins "UAC" === ["Tyrosine"])
+
+proteinTranslation.test.ex13 = let
+  Test.label "Cysteine RNA sequence 1" <| Test.expect (proteins "UGU" === ["Cysteine"])
+
+proteinTranslation.test.ex14 = let
+  Test.label "Cysteine RNA sequence 2" <| Test.expect (proteins "UGC" === ["Cysteine"])
+
+proteinTranslation.test.ex15 = let
+  Test.label "Tryptophan RNA sequence" <| Test.expect (proteins "UGG" === ["Tryptophan"])
+
+proteinTranslation.test.ex16 = let
+  Test.label "STOP codon RNA sequence 1" <| Test.expect (proteins "UAA" === [])
+
+proteinTranslation.test.ex17 = let
+  Test.label "STOP codon RNA sequence 2" <| Test.expect (proteins "UAG" === [])
+
+proteinTranslation.test.ex18 = let
+  Test.label "STOP codon RNA sequence 3" <| Test.expect (proteins "UGA" === [])
+
+proteinTranslation.test.ex19 = let
+  Test.label "Sequence of two protein codons translates into proteins" <| Test.expect (proteins "UUUUUU" === ["Phenylalanine", "Phenylalanine"])
+
+proteinTranslation.test.ex20 = let
+  Test.label "Sequence of two different protein codons translates into proteins" <| Test.expect (proteins "UUAUUG" === ["Leucine", "Leucine"])
+
+proteinTranslation.test.ex21 = let
+  Test.label "Translate RNA strand into correct protein list" <| Test.expect (proteins "AUGUUUUGG" === ["Methionine", "Phenylalanine", "Tryptophan"])
+
+proteinTranslation.test.ex22 = let
+  Test.label "Translation stops if STOP codon at beginning of sequence" <| Test.expect (proteins "UAGUGG" === [])
+
+proteinTranslation.test.ex23 = let
+  Test.label "Translation stops if STOP codon at end of two-codon sequence" <| Test.expect (proteins "UGGUAG" === ["Tryptophan"])
+
+proteinTranslation.test.ex24 = let
+  Test.label "Translation stops if STOP codon at end of three-codon sequence" <| Test.expect (proteins "AUGUUUUAA" === ["Methionine", "Phenylalanine"])
+
+proteinTranslation.test.ex25 = let
+  Test.label "Translation stops if STOP codon in middle of three-codon sequence" <| Test.expect (proteins "UGGUAGUGG" === ["Tryptophan"])
+
+proteinTranslation.test.ex26 = let
+  Test.label "Translation stops if STOP codon in middle of six-codon sequence" <| Test.expect (proteins "UGGUGUUAUUAAUGGUUU" === ["Tryptophan", "Cysteine", "Tyrosine"])
+
+test> proteinTranslation.tests = runAll [
+  proteinTranslation.test.ex1,
+  proteinTranslation.test.ex2,
+  proteinTranslation.test.ex3,
+  proteinTranslation.test.ex4,
+  proteinTranslation.test.ex5,
+  proteinTranslation.test.ex6,
+  proteinTranslation.test.ex7,
+  proteinTranslation.test.ex8,
+  proteinTranslation.test.ex9,
+  proteinTranslation.test.ex10,
+  proteinTranslation.test.ex11,
+  proteinTranslation.test.ex12,
+  proteinTranslation.test.ex13,
+  proteinTranslation.test.ex14,
+  proteinTranslation.test.ex15,
+  proteinTranslation.test.ex16,
+  proteinTranslation.test.ex17,
+  proteinTranslation.test.ex18,
+  proteinTranslation.test.ex19,
+  proteinTranslation.test.ex20,
+  proteinTranslation.test.ex21,
+  proteinTranslation.test.ex22,
+  proteinTranslation.test.ex23,
+  proteinTranslation.test.ex24,
+  proteinTranslation.test.ex25,
+  proteinTranslation.test.ex26
+]

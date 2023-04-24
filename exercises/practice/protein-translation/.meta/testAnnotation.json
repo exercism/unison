@@ -1,0 +1,106 @@
+[
+  {
+    "test_code": "proteinTranslation.test.ex1 = let\n  Test.label \"Empty RNA sequence results in no proteins\" <| Test.expect (proteins \"\" === [])",
+    "name": "proteinTranslation.test.ex1"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex2 = let\n  Test.label \"Methionine RNA sequence\" <| Test.expect (proteins \"AUG\" === [\"Methionine\"])",
+    "name": "proteinTranslation.test.ex2"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex3 = let\n  Test.label \"Phenylalanine RNA sequence 1\" <| Test.expect (proteins \"UUU\" === [\"Phenylalanine\"])",
+    "name": "proteinTranslation.test.ex3"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex4 = let\n  Test.label \"Phenylalanine RNA sequence 2\" <| Test.expect (proteins \"UUC\" === [\"Phenylalanine\"])",
+    "name": "proteinTranslation.test.ex4"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex5 = let\n  Test.label \"Leucine RNA sequence 1\" <| Test.expect (proteins \"UUA\" === [\"Leucine\"])",
+    "name": "proteinTranslation.test.ex5"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex6 = let\n  Test.label \"Leucine RNA sequence 2\" <| Test.expect (proteins \"UUG\" === [\"Leucine\"])",
+    "name": "proteinTranslation.test.ex6"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex7 = let\n  Test.label \"Serine RNA sequence 1\" <| Test.expect (proteins \"UCU\" === [\"Serine\"])",
+    "name": "proteinTranslation.test.ex7"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex8 = let\n  Test.label \"Serine RNA sequence 2\" <| Test.expect (proteins \"UCC\" === [\"Serine\"])",
+    "name": "proteinTranslation.test.ex8"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex9 = let\n  Test.label \"Serine RNA sequence 3\" <| Test.expect (proteins \"UCA\" === [\"Serine\"])",
+    "name": "proteinTranslation.test.ex9"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex10 = let\n  Test.label \"Serine RNA sequence 4\" <| Test.expect (proteins \"UCG\" === [\"Serine\"])",
+    "name": "proteinTranslation.test.ex10"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex11 = let\n  Test.label \"Tyrosine RNA sequence 1\" <| Test.expect (proteins \"UAU\" === [\"Tyrosine\"])",
+    "name": "proteinTranslation.test.ex11"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex12 = let\n  Test.label \"Tyrosine RNA sequence 2\" <| Test.expect (proteins \"UAC\" === [\"Tyrosine\"])",
+    "name": "proteinTranslation.test.ex12"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex13 = let\n  Test.label \"Cysteine RNA sequence 1\" <| Test.expect (proteins \"UGU\" === [\"Cysteine\"])",
+    "name": "proteinTranslation.test.ex13"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex14 = let\n  Test.label \"Cysteine RNA sequence 2\" <| Test.expect (proteins \"UGC\" === [\"Cysteine\"])",
+    "name": "proteinTranslation.test.ex14"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex15 = let\n  Test.label \"Tryptophan RNA sequence\" <| Test.expect (proteins \"UGG\" === [\"Tryptophan\"])",
+    "name": "proteinTranslation.test.ex15"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex16 = let\n  Test.label \"STOP codon RNA sequence 1\" <| Test.expect (proteins \"UAA\" === [])",
+    "name": "proteinTranslation.test.ex16"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex17 = let\n  Test.label \"STOP codon RNA sequence 2\" <| Test.expect (proteins \"UAG\" === [])",
+    "name": "proteinTranslation.test.ex17"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex18 = let\n  Test.label \"STOP codon RNA sequence 3\" <| Test.expect (proteins \"UGA\" === [])",
+    "name": "proteinTranslation.test.ex18"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex19 = let\n  Test.label \"Sequence of two protein codons translates into proteins\" <| Test.expect (proteins \"UUUUUU\" === [\"Phenylalanine\", \"Phenylalanine\"])",
+    "name": "proteinTranslation.test.ex19"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex20 = let\n  Test.label \"Sequence of two different protein codons translates into proteins\" <| Test.expect (proteins \"UUAUUG\" === [\"Leucine\", \"Leucine\"])",
+    "name": "proteinTranslation.test.ex20"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex21 = let\n  Test.label \"Translate RNA strand into correct protein list\" <| Test.expect (proteins \"AUGUUUUGG\" === [\"Methionine\", \"Phenylalanine\", \"Tryptophan\"])",
+    "name": "proteinTranslation.test.ex21"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex22 = let\n  Test.label \"Translation stops if STOP codon at beginning of sequence\" <| Test.expect (proteins \"UAGUGG\" === [])",
+    "name": "proteinTranslation.test.ex22"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex23 = let\n  Test.label \"Translation stops if STOP codon at end of two-codon sequence\" <| Test.expect (proteins \"UGGUAG\" === [\"Tryptophan\"])",
+    "name": "proteinTranslation.test.ex23"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex24 = let\n  Test.label \"Translation stops if STOP codon at end of three-codon sequence\" <| Test.expect (proteins \"AUGUUUUAA\" === [\"Methionine\", \"Phenylalanine\"])",
+    "name": "proteinTranslation.test.ex24"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex25 = let\n  Test.label \"Translation stops if STOP codon in middle of three-codon sequence\" <| Test.expect (proteins \"UGGUAGUGG\" === [\"Tryptophan\"])",
+    "name": "proteinTranslation.test.ex25"
+  },
+  {
+    "test_code": "proteinTranslation.test.ex26 = let\n  Test.label \"Translation stops if STOP codon in middle of six-codon sequence\" <| Test.expect (proteins \"UGGUGUUAUUAAUGGUUU\" === [\"Tryptophan\", \"Cysteine\", \"Tyrosine\"])",
+    "name": "proteinTranslation.test.ex26"
+  }
+]

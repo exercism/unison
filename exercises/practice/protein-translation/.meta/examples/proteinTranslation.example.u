@@ -1,0 +1,28 @@
+proteinTranslation.codonToProtein : Text -> Text
+proteinTranslation.codonToProtein codon = match codon with
+  "AUG" -> "Methionine"
+  "UUC" -> "Phenylalanine"
+  "UUU" -> "Phenylalanine"
+  "UUA" -> "Leucine"
+  "UUG" -> "Leucine"
+  "UCU" -> "Serine"
+  "UCC" -> "Serine"
+  "UCA" -> "Serine"
+  "UCG" -> "Serine"
+  "UAU" -> "Tyrosine"
+  "UAC" -> "Tyrosine"
+  "UGU" -> "Cysteine"
+  "UGC" -> "Cysteine"
+  "UGG" -> "Tryptophan"
+  "UAA" -> "STOP"
+  "UAG" -> "STOP"
+  "UGA" -> "STOP"
+  _ -> ""
+
+proteinTranslation.proteins : Text -> [Text]
+proteinTranslation.proteins rna =
+  rna
+    |> toCharList
+    |> List.chunk 3
+    |> List.map (nucleotides -> nucleotides |> fromCharList |> codonToProtein)
+    |> List.takeWhile (codon -> codon != "STOP")
