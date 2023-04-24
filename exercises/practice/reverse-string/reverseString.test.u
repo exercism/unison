@@ -1,0 +1,26 @@
+reverseString.test.ex1 = let
+  Test.label "An empty string" <| Test.expect (reverseString.reverse "" === "")
+
+reverseString.test.ex2 = let
+  Test.label "A word" <| Test.expect (reverseString.reverse "robot" === "tobor")
+
+reverseString.test.ex3 = let
+  Test.label "A capitalized word" <| Test.expect (reverseString.reverse "Ramen" === "nemaR")
+
+reverseString.test.ex4 = let
+  Test.label "A sentence with punctuation" <| Test.expect (reverseString.reverse "I'm hungry!" === "!yrgnuh m'I")
+
+reverseString.test.ex5 = let
+  Test.label "A palindrome" <| Test.expect (reverseString.reverse "racecar" === "racecar")
+
+reverseString.test.ex6 = let
+  Test.label "An even-sized word" <| Test.expect (reverseString.reverse "drawer" === "reward")
+
+test> reverseString.tests = runAll [
+  reverseString.test.ex1,
+  reverseString.test.ex2,
+  reverseString.test.ex3,
+  reverseString.test.ex4,
+  reverseString.test.ex5,
+  reverseString.test.ex6
+]

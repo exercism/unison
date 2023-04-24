@@ -1,0 +1,2 @@
+reverseString.reverse : Text -> Text
+reverseString.reverse text = todo "implement reverse"
