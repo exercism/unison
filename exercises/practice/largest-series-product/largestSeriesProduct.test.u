@@ -1,0 +1,92 @@
+largestSeriesProduct.test.ex1 = let
+  digits = "29"
+  span = +2
+  Test.label "Finds the largest product if span equals length" <| Test.expect (largestProduct digits span === Some 18)
+  
+largestSeriesProduct.test.ex2 = let
+  digits = "0123456789"
+  span = +2
+  Test.label "Can find the largest product of 2 with numbers in order" <| Test.expect (largestProduct digits span === Some 72)
+
+largestSeriesProduct.test.ex3 = let
+  digits = "576802143"
+  span = +2
+  Test.label "Can find the largest product of 2" <| Test.expect (largestProduct digits span === Some 48)
+
+largestSeriesProduct.test.ex4 = let
+  digits = "0123456789"
+  span = +3
+  Test.label "Can find the largest product of 3 with numbers in order" <| Test.expect (largestProduct digits span === Some 504)
+
+largestSeriesProduct.test.ex5 = let
+  digits = "1027839564"
+  span = +3
+  Test.label "Can find the largest product of 3" <| Test.expect (largestProduct digits span === Some 270)
+
+largestSeriesProduct.test.ex6 = let
+  digits = "0123456789"
+  span = +5
+  Test.label "Can find the largest product of 5 with numbers in order" <| Test.expect (largestProduct digits span === Some 15120)
+
+largestSeriesProduct.test.ex7 = let
+  digits = "73167176531330624919225119674426574742355349194934"
+  span = +6
+  Test.label "Can get the largest product of a big number" <| Test.expect (largestProduct digits span === Some 23520)
+
+largestSeriesProduct.test.ex8 = let
+  digits = "0000"
+  span = +2
+  Test.label "Reports zero if the only digits are zero" <| Test.expect (largestProduct digits span === Some 0)
+
+largestSeriesProduct.test.ex9 = let
+  digits = "99099"
+  span = +3
+  Test.label "Reports zero if all spans include zero" <| Test.expect (largestProduct digits span === Some 0)
+
+largestSeriesProduct.test.ex10 = let
+  digits = "123"
+  span = +4
+  Test.label "Rejects span longer than string length" <| Test.expect (largestProduct digits span === None)
+
+largestSeriesProduct.test.ex11 = let
+  digits = ""
+  span = +0
+  Test.label "Reports 1 for empty string and empty product (0 span)" <| Test.expect (largestProduct digits span === Some 1)
+
+largestSeriesProduct.test.ex12 = let
+  digits = "123"
+  span = +0
+  Test.label "Reports 1 for nonempty string and empty product (0 span)" <| Test.expect (largestProduct digits span === Some 1)
+
+largestSeriesProduct.test.ex13 = let
+  digits = ""
+  span = +1
+  Test.label "Rejects empty string and nonzero span" <| Test.expect (largestProduct digits span === None)
+
+largestSeriesProduct.test.ex14 = let
+  digits = "1234a5"
+  span = +2
+  Test.label "Rejects invalid character in digits" <| Test.expect (largestProduct digits span === None)
+
+largestSeriesProduct.test.ex15 = let
+  digits = "12345"
+  span = -1
+  Test.label "Rejects negative span" <| Test.expect (largestProduct digits span === None)
+
+test> largestSeriesProduct.tests = runAll [
+	largestSeriesProduct.test.ex1,
+	largestSeriesProduct.test.ex2,
+	largestSeriesProduct.test.ex3,
+	largestSeriesProduct.test.ex4,
+	largestSeriesProduct.test.ex5,
+	largestSeriesProduct.test.ex6,
+	largestSeriesProduct.test.ex7,
+	largestSeriesProduct.test.ex8,
+	largestSeriesProduct.test.ex9,
+	largestSeriesProduct.test.ex10,
+	largestSeriesProduct.test.ex11,
+	largestSeriesProduct.test.ex12,
+	largestSeriesProduct.test.ex13,
+	largestSeriesProduct.test.ex14,
+	largestSeriesProduct.test.ex15
+]
