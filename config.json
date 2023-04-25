@@ -306,6 +306,14 @@
         "difficulty": 9
       },
       {
+        "slug": "protein-translation",
+        "name": "Protein-Translation",
+        "uuid": "0ed31b68-a411-4819-a501-d46b5b31e069",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "difference-of-squares",
         "name": "Difference-Of-Squares",
         "uuid": "a9022ecf-0811-4807-8d8e-29da4c684d6b",
