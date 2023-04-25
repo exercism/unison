@@ -1,0 +1,8 @@
+differenceOfSquares.squareOfSum : Nat -> Nat
+differenceOfSquares.squareOfSum number = todo "squareOfSum"
+
+differenceOfSquares.sumOfSquares : Nat -> Nat
+differenceOfSquares.sumOfSquares number = todo "sumOfSquares"
+
+differenceOfSquares.difference : Nat -> Nat
+differenceOfSquares.difference number = todo "difference"
