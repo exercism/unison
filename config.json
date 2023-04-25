@@ -306,6 +306,14 @@
         "difficulty": 9
       },
       {
+        "slug": "difference-of-squares",
+        "name": "Difference-Of-Squares",
+        "uuid": "a9022ecf-0811-4807-8d8e-29da4c684d6b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "knapsack",
         "name": "Knapsack",
         "uuid": "48170328-ca9b-4598-b6a5-049cd6d318df",
