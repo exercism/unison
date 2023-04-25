@@ -42,13 +42,16 @@
           "basics"
         ],
         "status": "wip"
-      },{
+      },
+      {
         "slug": "lasagna",
         "name": "Lasagna",
         "uuid": "73724654-8ed6-477e-9d2f-7c7e77a6d3f2",
         "practices": [],
         "prerequisites": [],
-        "concepts": ["basics"],
+        "concepts": [
+          "basics"
+        ],
         "difficulty": 1,
         "status": "wip"
       }
@@ -348,5 +351,15 @@
       "icon": "fun"
     }
   ],
-  "tags": ["paradigm/functional", "typing/static", "execution_mode/compiled", "platform/windows", "platform/mac", "platform/linux", "runtime/standalone_executable", "runtime/language_specific", "used_for/backends"]
+  "tags": [
+    "paradigm/functional",
+    "typing/static",
+    "execution_mode/compiled",
+    "platform/windows",
+    "platform/mac",
+    "platform/linux",
+    "runtime/standalone_executable",
+    "runtime/language_specific",
+    "used_for/backends"
+  ]
 }
