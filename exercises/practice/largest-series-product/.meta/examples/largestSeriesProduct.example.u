@@ -1,0 +1,27 @@
+Text.toDigits : Text -> Optional [Nat]
+Text.toDigits text =
+  inner : List Char -> Optional [Nat] -> Optional [Nat]
+  inner = cases
+    _, None -> None
+    [], Some digits -> Some (List.reverse digits)
+    char +: tail, Some digits -> inner tail (Char.toText char |> Nat.fromText |> Optional.map (digit -> digit +: digits))
+
+  inner (toCharList text) (Some [])
+
+List.product : [Nat] -> Nat
+List.product numbers = List.foldLeft (Nat.*) 1 numbers
+
+List.slices : Nat -> [a] -> [[a]]
+List.slices size list =
+  List.rangeClosed 0 (List.size list - size)
+    |> List.map (idx -> List.slice idx (idx + size) list) 
+  
+largestSeriesProduct.largestProduct : Text -> Int -> Optional Nat
+largestSeriesProduct.largestProduct text span =
+  match (toDigits text, Int.toNat span) with
+    Some digits, Some span | span <= Text.size text -> 
+      digits
+        |> List.slices span
+        |> List.map List.product
+        |> maximum
+    _, _ -> None
