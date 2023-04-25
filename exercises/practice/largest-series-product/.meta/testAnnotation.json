@@ -1,0 +1,62 @@
+[
+  {
+    "test_code": "largestSeriesProduct.test.ex1 = let\n  digits = \"29\"\n  span = +2\n  Test.label \"Finds the largest product if span equals length\" <| Test.expect (largestProduct digits span === Some 18)",
+    "name": "largestSeriesProduct.test.ex1"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex2 = let\n  digits = \"0123456789\"\n  span = +2\n  Test.label \"Can find the largest product of 2 with numbers in order\" <| Test.expect (largestProduct digits span === Some 72)",
+    "name": "largestSeriesProduct.test.ex2"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex3 = let\n  digits = \"576802143\"\n  span = +2\n  Test.label \"Can find the largest product of 2\" <| Test.expect (largestProduct digits span === Some 48)",
+    "name": "largestSeriesProduct.test.ex3"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex4 = let\n  digits = \"0123456789\"\n  span = +3\n  Test.label \"Can find the largest product of 3 with numbers in order\" <| Test.expect (largestProduct digits span === Some 504)",
+    "name": "largestSeriesProduct.test.ex4"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex5 = let\n  digits = \"1027839564\"\n  span = +3\n  Test.label \"Can find the largest product of 3\" <| Test.expect (largestProduct digits span === Some 270)",
+    "name": "largestSeriesProduct.test.ex5"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex6 = let\n  digits = \"0123456789\"\n  span = +5\n  Test.label \"Can find the largest product of 5 with numbers in order\" <| Test.expect (largestProduct digits span === Some 15120)",
+    "name": "largestSeriesProduct.test.ex6"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex7 = let\n  digits = \"73167176531330624919225119674426574742355349194934\"\n  span = +6\n  Test.label \"Can get the largest product of a big number\" <| Test.expect (largestProduct digits span === Some 23520)",
+    "name": "largestSeriesProduct.test.ex7"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex8 = let\n  digits = \"0000\"\n  span = +2\n  Test.label \"Reports zero if the only digits are zero\" <| Test.expect (largestProduct digits span === Some 0)",
+    "name": "largestSeriesProduct.test.ex8"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex9 = let\n  digits = \"99099\"\n  span = +3\n  Test.label \"Reports zero if all spans include zero\" <| Test.expect (largestProduct digits span === Some 0)",
+    "name": "largestSeriesProduct.test.ex9"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex10 = let\n  digits = \"123\"\n  span = +4\n  Test.label \"Rejects span longer than string length\" <| Test.expect (largestProduct digits span === None)",
+    "name": "largestSeriesProduct.test.ex10"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex11 = let\n  digits = \"\"\n  span = +0\n  Test.label \"Reports 1 for empty string and empty product (0 span)\" <| Test.expect (largestProduct digits span === Some 1)",
+    "name": "largestSeriesProduct.test.ex11"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex12 = let\n  digits = \"123\"\n  span = +0\n  Test.label \"Reports 1 for nonempty string and empty product (0 span)\" <| Test.expect (largestProduct digits span === Some 1)",
+    "name": "largestSeriesProduct.test.ex12"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex13 = let\n  digits = \"\"\n  span = +1\n  Test.label \"Rejects empty string and nonzero span\" <| Test.expect (largestProduct digits span === None)",
+    "name": "largestSeriesProduct.test.ex13"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex14 = let\n  digits = \"1234a5\"\n  span = +2\n  Test.label \"Rejects invalid character in digits\" <| Test.expect (largestProduct digits span === None)",
+    "name": "largestSeriesProduct.test.ex14"
+  },
+  {
+    "test_code": "largestSeriesProduct.test.ex15 = let\n  digits = \"12345\"\n  span = -1\n  Test.label \"Rejects negative span\" <| Test.expect (largestProduct digits span === None)",
+    "name": "largestSeriesProduct.test.ex15"
+  }
+]

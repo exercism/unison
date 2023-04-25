@@ -1,0 +1,2 @@
+largestSeriesProduct.largestProduct : Text -> Int -> Optional Nat
+largestSeriesProduct.largestProduct sequence span = todo "implement largestProduct"
