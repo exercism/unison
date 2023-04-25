@@ -1,0 +1,2 @@
+proteinTranslation.proteins : Text -> [Text]
+proteinTranslation.proteins rna = todo "implement proteins"

@@ -1,0 +1,38 @@
+[
+  {
+    "test_code": "differenceOfSquares.test.ex1 = let\n  Test.label \"Square of sum 1\" <| Test.expect (squareOfSum 1 === 1)",
+    "name": "differenceOfSquares.test.ex1"
+  },
+  {
+    "test_code": "differenceOfSquares.test.ex2 = let\n  Test.label \"Square of sum 5\" <| Test.expect (squareOfSum 5 === 225)",
+    "name": "differenceOfSquares.test.ex2"
+  },
+  {
+    "test_code": "differenceOfSquares.test.ex3 = let\n  Test.label \"Square of sum 100\" <| Test.expect (squareOfSum 100 === 25502500)",
+    "name": "differenceOfSquares.test.ex3"
+  },
+  {
+    "test_code": "differenceOfSquares.test.ex4 = let\n  Test.label \"Sum of squares 1\" <| Test.expect (sumOfSquares 1 === 1)",
+    "name": "differenceOfSquares.test.ex4"
+  },
+  {
+    "test_code": "differenceOfSquares.test.ex5 = let\n  Test.label \"Sum of squares 5\" <| Test.expect (sumOfSquares 5 === 55)",
+    "name": "differenceOfSquares.test.ex5"
+  },
+  {
+    "test_code": "differenceOfSquares.test.ex6 = let\n  Test.label \"Sum of squares 100\" <| Test.expect (sumOfSquares 100 === 338350)",
+    "name": "differenceOfSquares.test.ex6"
+  },
+  {
+    "test_code": "differenceOfSquares.test.ex7 = let\n  Test.label \"Difference of squares 1\" <| Test.expect (difference 1 === 0)",
+    "name": "differenceOfSquares.test.ex7"
+  },
+  {
+    "test_code": "differenceOfSquares.test.ex8 = let\n  Test.label \"Difference of squares 5\" <| Test.expect (difference 5 === 170)",
+    "name": "differenceOfSquares.test.ex8"
+  },
+  {
+    "test_code": "differenceOfSquares.test.ex9 = let\n  Test.label \"Difference of squares 100\" <| Test.expect (difference 100 === 25164150)",
+    "name": "differenceOfSquares.test.ex9"
+  }
+]
