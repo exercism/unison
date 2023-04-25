@@ -1,0 +1,2 @@
+bob.response : Text -> Text
+bob.response sentence = todo "implement response"

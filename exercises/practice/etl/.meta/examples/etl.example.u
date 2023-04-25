@@ -1,0 +1,6 @@
+etl.transform : Map Nat [Char] -> Map Char Nat
+etl.transform lettersByScore = 
+  lettersByScore
+    |> Map.toList
+    |> List.flatMap (cases (score, letters) -> List.map (letter -> (Char.toLowercase letter, score)) letters)
+    |> Map.fromList
