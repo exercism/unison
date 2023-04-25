@@ -1,0 +1,48 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: ./bin/generate-test-annotation <slug>"
+    exit 1
+fi
+
+if ! command -v jq &> /dev/null; then
+    echo "The 'jq' tool needs to be installed"
+    exit 1
+fi
+
+slug="${1}"
+name=$(sed -E 's/-([a-z])/\U\1/g' <<< "${slug}")
+exercise_dir=""
+
+for exercise_type in "concept" "practice"; do
+    dir="exercises/${exercise_type}/${slug}"
+    if [[ -d "${dir}" ]]; then
+        exercise_dir="${dir}"
+        break
+    fi
+done
+
+if [[ -z "${exercise_dir}" ]]; then
+    echo "Could not find directory for exercise '${slug}'"
+    exit 2
+fi
+
+test_file="${exercise_dir}/${name}.test.u"
+test_annotation_file="${exercise_dir}/.meta/testAnnotation.json"
+
+test_code=""
+
+while IFS= read -r line; do
+  if [[ $line == "${name}.test"* ]]; then
+    test_code="${line}"
+  elif [[ $line == *"Test.label"* ]]; then
+    test_name=$(echo "${test_code}" | cut -d' ' -f1)
+    test_code+=$'\n'
+    test_code+="${line}"
+    jq -n --arg name "${test_name}" --arg test_code "${test_code}" '{$test_code, $name}'
+    test_code=""
+  elif [[ ! -z "${test_code}" ]]; then
+    test_code+=$'\n'
+    test_code+="${line}"
+  fi
+done < "$test_file" | jq -n '[inputs]' > "${test_annotation_file}"

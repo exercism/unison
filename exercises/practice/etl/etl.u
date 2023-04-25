@@ -1,0 +1,2 @@
+etl.transform : Map Nat [Char] -> Map Char Nat
+etl.transform lettersByScore = todo "implement transform"
