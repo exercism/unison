@@ -313,6 +313,7 @@
         "prerequisites": [],
         "difficulty": 1
       },
+      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "66a4dd87-5397-4125-a002-271b750ac32a",
