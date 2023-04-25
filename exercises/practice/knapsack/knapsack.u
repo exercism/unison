@@ -1,2 +1,2 @@
-knapsack.maximum_value : Nat -> [(Nat, Nat)] -> Nat
-knapsack.maximum_value maximum_weight items  = todo "maximum_value score"
+knapsack.maximumValue : Nat -> [(Nat, Nat)] -> Nat
+knapsack.maximumValue maximumWeight items  = todo "maximumValue score"
