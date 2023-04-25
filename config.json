@@ -311,7 +311,7 @@
         "uuid": "04dcaeca-77f8-4f4d-9641-792559d58aee",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 2
       },
       {
         "slug": "etl",
