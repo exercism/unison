@@ -314,6 +314,14 @@
         "difficulty": 1
       },
       {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "48170328-ca9b-4598-b6a5-049cd6d318df",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "d542ca66-4c3a-45ad-b7fd-ce8d8656aee8",
