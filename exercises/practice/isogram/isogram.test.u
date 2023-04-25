@@ -1,0 +1,58 @@
+isogram.test.ex1 = let
+  Test.label "Empty string" <| Test.expect (isIsogram "" === true)
+
+isogram.test.ex2 = let
+  Test.label "Isogram with only lower case characters" <| Test.expect (isIsogram "isogram" === true)
+
+isogram.test.ex3 = let
+  Test.label "Word with one duplicated character" <| Test.expect (isIsogram "eleven" === false)
+
+isogram.test.ex4 = let
+  Test.label "Word with one duplicated character from the end of the alphabet" <| Test.expect (isIsogram "zzyzx" === false)
+
+isogram.test.ex5 = let
+  Test.label "Longest reported english isogram" <| Test.expect (isIsogram "subdermatoglyphic" === true)
+
+isogram.test.ex6 = let
+  Test.label "Word with duplicated character in mixed case" <| Test.expect (isIsogram "Alphabet" === false)
+
+isogram.test.ex7 = let
+  Test.label "Word with duplicated character in mixed case, lowercase first" <| Test.expect (isIsogram "alphAbet" === false)
+
+isogram.test.ex8 = let
+  Test.label "Hypothetical isogrammic word with hyphen" <| Test.expect (isIsogram "thumbscrew-japingly" === true)
+
+isogram.test.ex9 = let
+  Test.label "Hypothetical word with duplicated character following hyphen" <| Test.expect (isIsogram "thumbscrew-jappingly" === false)
+
+isogram.test.ex10 = let
+  Test.label "Isogram with duplicated hyphen" <| Test.expect (isIsogram "six-year-old" === true)
+
+isogram.test.ex11 = let
+  Test.label "Made-up name that is an isogram" <| Test.expect (isIsogram "Emily Jung Schwartzkopf" === true)
+
+isogram.test.ex12 = let
+  Test.label "Duplicated character in the middle" <| Test.expect (isIsogram "accentor" === false)
+
+isogram.test.ex13 = let
+  Test.label "Same first and last characters" <| Test.expect (isIsogram "angola" === false)
+
+isogram.test.ex14 = let
+  Test.label "Word with duplicated character and with two hyphens" <| Test.expect (isIsogram "up-to-date" === false)
+
+test> isogram.tests = runAll [
+  isogram.test.ex1,
+  isogram.test.ex2,
+  isogram.test.ex3,
+  isogram.test.ex4,
+  isogram.test.ex5,
+  isogram.test.ex6,
+  isogram.test.ex7,
+  isogram.test.ex8,
+  isogram.test.ex9,
+  isogram.test.ex10,
+  isogram.test.ex11,
+  isogram.test.ex12,
+  isogram.test.ex13,
+  isogram.test.ex14
+]

@@ -1,0 +1,2 @@
+isogram.isIsogram : Text -> Boolean
+isogram.isIsogram text = todo "implement isIsogram"
