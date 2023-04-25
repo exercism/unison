@@ -1,8 +1,8 @@
 zebraPuzzle.test.ex1 = let
-	Test.label "resident who drinks water" <| Test.expect (drinksWater === "Norwegian")
+  Test.label "resident who drinks water" <| Test.expect (drinksWater === "Norwegian")
 
 zebraPuzzle.test.ex2 = let
-	Test.label "resident who owns zebra" <| Test.expect (ownsZebra === "Japanese")
+  Test.label "resident who owns zebra" <| Test.expect (ownsZebra === "Japanese")
 
 test> zebraPuzzle.tests = runAll[
   zebraPuzzle.test.ex1,

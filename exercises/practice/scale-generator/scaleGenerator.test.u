@@ -1,8 +1,8 @@
 scaleGenerator.test.ex1 = let
-	Test.label "Chromatic scales, Chromatic scale with sharps" <| Test.expect (chromatic "C" === ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"])
+  Test.label "Chromatic scales, Chromatic scale with sharps" <| Test.expect (chromatic "C" === ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"])
 
 scaleGenerator.test.ex2 = let
-	Test.label "Chromatic scales, Chromatic scale with flats" <| Test.expect (chromatic "F" === ["F","Gb","G","Ab","A","Bb","B","C","Db","D","Eb","E"])
+  Test.label "Chromatic scales, Chromatic scale with flats" <| Test.expect (chromatic "F" === ["F","Gb","G","Ab","A","Bb","B","C","Db","D","Eb","E"])
 
 scaleGenerator.test.ex3 = let
   Test.label "Scales with specified intervals, Simple major scale" <| Test.expect (interval "C" "MMmMMMm" === ["C","D","E","F","G","A","B","C"])
@@ -95,36 +95,36 @@ scaleGenerator.test.ex32 = let
   Test.label "Scales with specified intervals, Enigmatic" <| Test.expect (interval "G" "mAMMMmm" === ["G","G#","B","C#","D#","F","F#","G"])
 
 test> scaleGenerator.tests = runAll [
-	scaleGenerator.test.ex1,
-	scaleGenerator.test.ex2,
-	scaleGenerator.test.ex3,
-	scaleGenerator.test.ex4,
-	scaleGenerator.test.ex5,
-	scaleGenerator.test.ex6,
-	scaleGenerator.test.ex7,
-	scaleGenerator.test.ex8,
-	scaleGenerator.test.ex9,
-	scaleGenerator.test.ex10,
-	scaleGenerator.test.ex11,
-	scaleGenerator.test.ex12,
-	scaleGenerator.test.ex13,
-	scaleGenerator.test.ex14,
-	scaleGenerator.test.ex15,
-	scaleGenerator.test.ex16,
-	scaleGenerator.test.ex17,
-	scaleGenerator.test.ex18,
-	scaleGenerator.test.ex19,
-	scaleGenerator.test.ex20,
-	scaleGenerator.test.ex21,
-	scaleGenerator.test.ex22,
-	scaleGenerator.test.ex23,
-	scaleGenerator.test.ex24,
-	scaleGenerator.test.ex25,
-	scaleGenerator.test.ex26,
-	scaleGenerator.test.ex27,
-	scaleGenerator.test.ex28,
-	scaleGenerator.test.ex29,
-	scaleGenerator.test.ex30,
-	scaleGenerator.test.ex31,
-	scaleGenerator.test.ex32
+  scaleGenerator.test.ex1,
+  scaleGenerator.test.ex2,
+  scaleGenerator.test.ex3,
+  scaleGenerator.test.ex4,
+  scaleGenerator.test.ex5,
+  scaleGenerator.test.ex6,
+  scaleGenerator.test.ex7,
+  scaleGenerator.test.ex8,
+  scaleGenerator.test.ex9,
+  scaleGenerator.test.ex10,
+  scaleGenerator.test.ex11,
+  scaleGenerator.test.ex12,
+  scaleGenerator.test.ex13,
+  scaleGenerator.test.ex14,
+  scaleGenerator.test.ex15,
+  scaleGenerator.test.ex16,
+  scaleGenerator.test.ex17,
+  scaleGenerator.test.ex18,
+  scaleGenerator.test.ex19,
+  scaleGenerator.test.ex20,
+  scaleGenerator.test.ex21,
+  scaleGenerator.test.ex22,
+  scaleGenerator.test.ex23,
+  scaleGenerator.test.ex24,
+  scaleGenerator.test.ex25,
+  scaleGenerator.test.ex26,
+  scaleGenerator.test.ex27,
+  scaleGenerator.test.ex28,
+  scaleGenerator.test.ex29,
+  scaleGenerator.test.ex30,
+  scaleGenerator.test.ex31,
+  scaleGenerator.test.ex32
 ]
