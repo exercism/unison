@@ -1,0 +1,26 @@
+[
+  {
+    "test_code": "reverseString.test.ex1 = let\n  Test.label \"An empty string\" <| Test.expect (reverseString.reverse \"\" === \"\")",
+    "name": "reverseString.test.ex1"
+  },
+  {
+    "test_code": "reverseString.test.ex2 = let\n  Test.label \"A word\" <| Test.expect (reverseString.reverse \"robot\" === \"tobor\")",
+    "name": "reverseString.test.ex2"
+  },
+  {
+    "test_code": "reverseString.test.ex3 = let\n  Test.label \"A capitalized word\" <| Test.expect (reverseString.reverse \"Ramen\" === \"nemaR\")",
+    "name": "reverseString.test.ex3"
+  },
+  {
+    "test_code": "reverseString.test.ex4 = let\n  Test.label \"A sentence with punctuation\" <| Test.expect (reverseString.reverse \"I'm hungry!\" === \"!yrgnuh m'I\")",
+    "name": "reverseString.test.ex4"
+  },
+  {
+    "test_code": "reverseString.test.ex5 = let\n  Test.label \"A palindrome\" <| Test.expect (reverseString.reverse \"racecar\" === \"racecar\")",
+    "name": "reverseString.test.ex5"
+  },
+  {
+    "test_code": "reverseString.test.ex6 = let\n  Test.label \"An even-sized word\" <| Test.expect (reverseString.reverse \"drawer\" === \"reward\")",
+    "name": "reverseString.test.ex6"
+  }
+]

@@ -1,0 +1,2 @@
+reverseString.reverse : Text -> Text
+reverseString.reverse = Text.reverse
