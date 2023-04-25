@@ -1,0 +1,102 @@
+[
+  {
+    "test_code": "bob.test.ex1 = let\n\tTest.label \"Stating something\" <| Test.expect (response \"Tom-ay-to, tom-aaaah-to.\" === \"Whatever.\")",
+    "name": "bob.test.ex1"
+  },
+  {
+    "test_code": "bob.test.ex2 = let\n\tTest.label \"Shouting\" <| Test.expect (response \"WATCH OUT!\" === \"Whoa, chill out!\")",
+    "name": "bob.test.ex2"
+  },
+  {
+    "test_code": "bob.test.ex3 = let\n\tTest.label \"Shouting gibberish\" <| Test.expect (response \"FCECDFCAAB\" === \"Whoa, chill out!\")",
+    "name": "bob.test.ex3"
+  },
+  {
+    "test_code": "bob.test.ex4 = let\n\tTest.label \"Asking a question\" <| Test.expect (response \"Does this cryogenic chamber make me look fat?\" === \"Sure.\")",
+    "name": "bob.test.ex4"
+  },
+  {
+    "test_code": "bob.test.ex5 = let\n\tTest.label \"Asking a numeric question\" <| Test.expect (response \"You are, what, like 15?\" === \"Sure.\")",
+    "name": "bob.test.ex5"
+  },
+  {
+    "test_code": "bob.test.ex6 = let\n\tTest.label \"Asking gibberish\" <| Test.expect (response \"fffbbcbeab?\" === \"Sure.\")",
+    "name": "bob.test.ex6"
+  },
+  {
+    "test_code": "bob.test.ex7 = let\n\tTest.label \"Talking forcefully\" <| Test.expect (response \"Hi there!\" === \"Whatever.\")",
+    "name": "bob.test.ex7"
+  },
+  {
+    "test_code": "bob.test.ex8 = let\n\tTest.label \"Using acronyms in regular speech\" <| Test.expect (response \"It's OK if you don't want to go work for NASA.\" === \"Whatever.\")",
+    "name": "bob.test.ex8"
+  },
+  {
+    "test_code": "bob.test.ex9 = let\n\tTest.label \"Forceful question\" <| Test.expect (response \"WHAT'S GOING ON?\" === \"Calm down, I know what I'm doing!\")",
+    "name": "bob.test.ex9"
+  },
+  {
+    "test_code": "bob.test.ex10 = let\n\tTest.label \"Shouting numbers\" <| Test.expect (response \"1, 2, 3 GO!\" === \"Whoa, chill out!\")",
+    "name": "bob.test.ex10"
+  },
+  {
+    "test_code": "bob.test.ex11 = let\n\tTest.label \"No letters\" <| Test.expect (response \"1, 2, 3\" === \"Whatever.\")",
+    "name": "bob.test.ex11"
+  },
+  {
+    "test_code": "bob.test.ex12 = let\n\tTest.label \"Question with no letters\" <| Test.expect (response \"4?\" === \"Sure.\")",
+    "name": "bob.test.ex12"
+  },
+  {
+    "test_code": "bob.test.ex13 = let\n\tTest.label \"Shouting with special characters\" <| Test.expect (response \"ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!\" === \"Whoa, chill out!\")",
+    "name": "bob.test.ex13"
+  },
+  {
+    "test_code": "bob.test.ex14 = let\n\tTest.label \"Shouting with no exclamation mark\" <| Test.expect (response \"I HATE THE DENTIST\" === \"Whoa, chill out!\")",
+    "name": "bob.test.ex14"
+  },
+  {
+    "test_code": "bob.test.ex15 = let\n\tTest.label \"Statement containing question mark\" <| Test.expect (response \"Ending with ? means a question.\" === \"Whatever.\")",
+    "name": "bob.test.ex15"
+  },
+  {
+    "test_code": "bob.test.ex16 = let\n\tTest.label \"Non-letters with question\" <| Test.expect (response \":) ?\" === \"Sure.\")",
+    "name": "bob.test.ex16"
+  },
+  {
+    "test_code": "bob.test.ex17 = let\n\tTest.label \"Prattling on\" <| Test.expect (response \"Wait! Hang on. Are you going to be OK?\" === \"Sure.\")",
+    "name": "bob.test.ex17"
+  },
+  {
+    "test_code": "bob.test.ex18 = let\n\tTest.label \"Silence\" <| Test.expect (response \"\" === \"Fine. Be that way!\")",
+    "name": "bob.test.ex18"
+  },
+  {
+    "test_code": "bob.test.ex19 = let\n\tTest.label \"Prolonged silence\" <| Test.expect (response \"          \" === \"Fine. Be that way!\")",
+    "name": "bob.test.ex19"
+  },
+  {
+    "test_code": "bob.test.ex20 = let\n\tTest.label \"Alternate silence\" <| Test.expect (response \"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\" === \"Fine. Be that way!\")",
+    "name": "bob.test.ex20"
+  },
+  {
+    "test_code": "bob.test.ex21 = let\n\tTest.label \"Multiple line question\" <| Test.expect (response \"\\nDoes this cryogenic chamber make me look fat?\\nNo.\" === \"Whatever.\")",
+    "name": "bob.test.ex21"
+  },
+  {
+    "test_code": "bob.test.ex22 = let\n\tTest.label \"Starting with whitespace\" <| Test.expect (response \"         hmmmmmmm...\" === \"Whatever.\")",
+    "name": "bob.test.ex22"
+  },
+  {
+    "test_code": "bob.test.ex23 = let\n\tTest.label \"Ending with whitespace\" <| Test.expect (response \"Okay if like my  spacebar  quite a bit?   \" === \"Sure.\")",
+    "name": "bob.test.ex23"
+  },
+  {
+    "test_code": "bob.test.ex24 = let\n\tTest.label \"Other whitespace\" <| Test.expect (response \"\\n\\r \\t\" === \"Fine. Be that way!\")",
+    "name": "bob.test.ex24"
+  },
+  {
+    "test_code": "bob.test.ex25 = let\n\tTest.label \"Non-question ending with whitespace\" <| Test.expect (response \"This is a statement ending with whitespace      \" === \"Whatever.\")",
+    "name": "bob.test.ex25"
+  }
+]
