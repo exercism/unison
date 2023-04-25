@@ -307,7 +307,7 @@
       },
       {
         "slug": "reverse-string",
-        "name": "Reverse-String",
+        "name": "Reverse String",
         "uuid": "b1327f91-8568-4d80-b5ff-b043250cc819",
         "practices": [],
         "prerequisites": [],
@@ -315,7 +315,7 @@
       },
       {
         "slug": "protein-translation",
-        "name": "Protein-Translation",
+        "name": "Protein Translation",
         "uuid": "0ed31b68-a411-4819-a501-d46b5b31e069",
         "practices": [],
         "prerequisites": [],
@@ -323,7 +323,7 @@
       },
       {
         "slug": "difference-of-squares",
-        "name": "Difference-Of-Squares",
+        "name": "Difference Of Squares",
         "uuid": "a9022ecf-0811-4807-8d8e-29da4c684d6b",
         "practices": [],
         "prerequisites": [],
@@ -347,7 +347,7 @@
       },
       {
         "slug": "largest-series-product",
-        "name": "Largest-Series-Product",
+        "name": "Largest Series Product",
         "uuid": "04dcaeca-77f8-4f4d-9641-792559d58aee",
         "practices": [],
         "prerequisites": [],
