@@ -306,6 +306,14 @@
         "difficulty": 9
       },
       {
+        "slug": "etl",
+        "name": "ETL",
+        "uuid": "2d8bec01-cecb-4f8b-91c9-f887e6aa9689",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "66a4dd87-5397-4125-a002-271b750ac32a",
