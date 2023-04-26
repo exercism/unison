@@ -1,0 +1,58 @@
+[
+  {
+    "test_code": "isogram.test.ex1 = let\n  Test.label \"Empty string\" <| Test.expect (isIsogram \"\" === true)",
+    "name": "isogram.test.ex1"
+  },
+  {
+    "test_code": "isogram.test.ex2 = let\n  Test.label \"Isogram with only lower case characters\" <| Test.expect (isIsogram \"isogram\" === true)",
+    "name": "isogram.test.ex2"
+  },
+  {
+    "test_code": "isogram.test.ex3 = let\n  Test.label \"Word with one duplicated character\" <| Test.expect (isIsogram \"eleven\" === false)",
+    "name": "isogram.test.ex3"
+  },
+  {
+    "test_code": "isogram.test.ex4 = let\n  Test.label \"Word with one duplicated character from the end of the alphabet\" <| Test.expect (isIsogram \"zzyzx\" === false)",
+    "name": "isogram.test.ex4"
+  },
+  {
+    "test_code": "isogram.test.ex5 = let\n  Test.label \"Longest reported english isogram\" <| Test.expect (isIsogram \"subdermatoglyphic\" === true)",
+    "name": "isogram.test.ex5"
+  },
+  {
+    "test_code": "isogram.test.ex6 = let\n  Test.label \"Word with duplicated character in mixed case\" <| Test.expect (isIsogram \"Alphabet\" === false)",
+    "name": "isogram.test.ex6"
+  },
+  {
+    "test_code": "isogram.test.ex7 = let\n  Test.label \"Word with duplicated character in mixed case, lowercase first\" <| Test.expect (isIsogram \"alphAbet\" === false)",
+    "name": "isogram.test.ex7"
+  },
+  {
+    "test_code": "isogram.test.ex8 = let\n  Test.label \"Hypothetical isogrammic word with hyphen\" <| Test.expect (isIsogram \"thumbscrew-japingly\" === true)",
+    "name": "isogram.test.ex8"
+  },
+  {
+    "test_code": "isogram.test.ex9 = let\n  Test.label \"Hypothetical word with duplicated character following hyphen\" <| Test.expect (isIsogram \"thumbscrew-jappingly\" === false)",
+    "name": "isogram.test.ex9"
+  },
+  {
+    "test_code": "isogram.test.ex10 = let\n  Test.label \"Isogram with duplicated hyphen\" <| Test.expect (isIsogram \"six-year-old\" === true)",
+    "name": "isogram.test.ex10"
+  },
+  {
+    "test_code": "isogram.test.ex11 = let\n  Test.label \"Made-up name that is an isogram\" <| Test.expect (isIsogram \"Emily Jung Schwartzkopf\" === true)",
+    "name": "isogram.test.ex11"
+  },
+  {
+    "test_code": "isogram.test.ex12 = let\n  Test.label \"Duplicated character in the middle\" <| Test.expect (isIsogram \"accentor\" === false)",
+    "name": "isogram.test.ex12"
+  },
+  {
+    "test_code": "isogram.test.ex13 = let\n  Test.label \"Same first and last characters\" <| Test.expect (isIsogram \"angola\" === false)",
+    "name": "isogram.test.ex13"
+  },
+  {
+    "test_code": "isogram.test.ex14 = let\n  Test.label \"Word with duplicated character and with two hyphens\" <| Test.expect (isIsogram \"up-to-date\" === false)",
+    "name": "isogram.test.ex14"
+  }
+]

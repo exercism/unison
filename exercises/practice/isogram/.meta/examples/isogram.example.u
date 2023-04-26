@@ -1,0 +1,4 @@
+isogram.isIsogram : Text -> Boolean
+isogram.isIsogram text =
+  letters = text |> Text.toLowercase |> toCharList |> List.filter isLetter
+  letters |> distinct |> size == size letters
