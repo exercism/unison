@@ -1,7 +1,7 @@
 etl.test.ex1 = let  
   lettersByScore = [(1, [?A])] |> Map.fromList
   expected = [(?a, 1)] |> Map.fromList
-  Test.label "Single letter" <| Test.expect (transform lettersByScore === expected)
+  Test.label "Single letter" <| Test.expect (transform lettersByScore == expected)
 
 etl.test.ex2 = let
   lettersByScore = [(1, [?A, ?E, ?I, ?O, ?U])] |> Map.fromList
@@ -11,7 +11,7 @@ etl.test.ex2 = let
       (?i, 1),
       (?o, 1),
       (?u, 1) ] |> Map.fromList
-  Test.label "Single score with multiple letters" <| Test.expect (transform lettersByScore === expected)
+  Test.label "Single score with multiple letters" <| Test.expect (transform lettersByScore == expected)
 
 etl.test.ex3 = let  
   lettersByScore = 
@@ -22,7 +22,7 @@ etl.test.ex3 = let
       (?d, 2),
       (?e, 1),
       (?g, 2) ] |> Map.fromList
-  Test.label "Multiple scores with multiple letters" <| Test.expect (transform lettersByScore === expected)
+  Test.label "Multiple scores with multiple letters" <| Test.expect (transform lettersByScore == expected)
 
 etl.test.ex4 = let
   lettersByScore = 
