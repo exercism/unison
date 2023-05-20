@@ -1,0 +1,116 @@
+anagram.test.ex1 = let
+  actual = findAnagrams "diaper" ["hello", "world", "zombies", "pants"]
+  Test.label "no matches" <| Test.expect (actual === [])
+
+anagram.test.ex2 = let
+  actual = findAnagrams "master" ["stream", "pigeon", "maters"]
+  expected = ["stream", "maters"]
+  Test.label "detects two anagrams" <| Test.expect (actual === expected)
+
+anagram.test.ex3 = let
+  actual = findAnagrams "solemn" ["lemons","cherry","melons"]
+  expected = ["lemons","melons"]
+  Test.label "detects two anagrams" <| Test.expect (actual === expected)
+
+anagram.test.ex4 = let
+  actual = findAnagrams "good" ["dog","goody"]
+  expected = []
+  Test.label "does not detect anagram subsets" <| Test.expect (actual === expected)
+
+anagram.test.ex5 = let
+  actual = findAnagrams "listen" ["enlists","google","inlets","banana"]
+  expected = ["inlets"]
+  Test.label "detects anagram" <| Test.expect (actual === expected)
+
+anagram.test.ex6 = let
+  actual = findAnagrams "allergy" ["gallery","ballerina","regally","clergy","largely","leading"]
+  expected = ["gallery","regally","largely"]
+  Test.label "detects three anagrams" <| Test.expect (actual === expected)
+
+anagram.test.ex7 = let
+  actual = findAnagrams "nose" ["Eons","ONES"]
+  expected = ["Eons","ONES"]
+  Test.label "detects multiple anagrams with different case" <| Test.expect (actual === expected)
+
+anagram.test.ex8 = let
+  actual = findAnagrams "mass" ["last"]
+  expected = []
+  Test.label "does not detect non-anagrams with identical checksum" <| Test.expect (actual === expected)
+
+anagram.test.ex9 = let
+  actual = findAnagrams "Orchestra" ["cashregister","Carthorse","radishes"]
+  expected = ["Carthorse"]
+  Test.label "detects anagrams case-insensitively" <| Test.expect (actual === expected)
+
+anagram.test.ex10 = let
+  actual = findAnagrams "Orchestra" ["cashregister","carthorse","radishes"]
+  expected = ["carthorse"]
+  Test.label "detects anagrams using case-insensitive subject" <| Test.expect (actual === expected)
+
+anagram.test.ex11 = let
+  actual = findAnagrams "orchestra" ["cashregister","Carthorse","radishes"]
+  expected = ["Carthorse"]
+  Test.label "detects anagrams using case-insensitive possible matches" <| Test.expect (actual === expected)
+
+anagram.test.ex12 = let 
+  actual = findAnagrams "go" ["go Go GO"]
+  expected = []
+  Test.label "does not detect an anagram if the original word is repeated" <| Test.expect (actual === expected)
+
+anagram.test.ex13 = let
+  actual = findAnagrams "tapper" ["patter"]
+  expected = []
+  Test.label "anagrams must use all letters exactly once" <| Test.expect (actual === expected)
+
+anagram.test.ex14 = let
+  actual = findAnagrams "BANANA" ["BANANA","Banana","banana"]
+  expected = []
+  Test.label "words are not anagrams of themselves (case-insensitive)" <| Test.expect (actual === expected)
+
+anagram.test.ex15 = let
+  actual = findAnagrams "BANANA" ["BANANA"]
+  expected = []
+  Test.label "words are not anagrams of themselves" <| Test.expect (actual === expected)
+
+anagram.test.ex16 = let
+  actual = findAnagrams "BANANA" ["Banana"]
+  expected = []
+  Test.label "words are not anagrams of themselves even if letter case is partially different" <| Test.expect (actual === expected)
+
+anagram.test.ex17 = let
+  actual = findAnagrams "BANANA" ["banana"]
+  expected = []
+  Test.label "words are not anagrams of themselves even if letter case is completely different" <| Test.expect (actual === expected)
+
+anagram.test.ex18 = let
+  actual = findAnagrams "LISTEN" ["Listen","Silent","LISTEN"]
+  expected = ["Silent"]
+  Test.label "words other than themselves can be anagrams" <| Test.expect (actual === expected)
+
+anagram.test.ex19 = let
+  actual = findAnagrams "LISTEN" ["LISTEN","Silent" ]
+  expected = ["Silent"]
+  Test.label "words other than themselves can be anagrams" <| Test.expect (actual === expected)
+
+test> anagram.tests = runAll [
+  anagram.test.ex1,
+  anagram.test.ex2,
+  anagram.test.ex3,
+  anagram.test.ex4,
+  anagram.test.ex5,
+  anagram.test.ex6,
+  anagram.test.ex7,
+  anagram.test.ex8,
+  anagram.test.ex9,
+  anagram.test.ex10,
+  anagram.test.ex11,
+  anagram.test.ex12,
+  anagram.test.ex13,
+  anagram.test.ex14,
+  anagram.test.ex15,
+  anagram.test.ex16,
+  anagram.test.ex17,
+  anagram.test.ex18,
+  anagram.test.ex19,
+]
+
