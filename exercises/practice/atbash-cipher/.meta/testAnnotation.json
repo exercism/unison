@@ -1,0 +1,58 @@
+[
+  {
+    "test_code": "atbashCipher.test.ex1 = let\n  actual = encode \"yes\"\n  expected = \"bvh\"\n  Test.label \"encode yes\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex1"
+  },
+  {
+    "test_code": "atbashCipher.test.ex2 = let\n  actual = encode \"no\"\n  expected = \"ml\"\n  Test.label \"encode no\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex2"
+  },
+  {
+    "test_code": "atbashCipher.test.ex3 = let\n  actual = encode \"OMG\"\n  expected = \"lnt\"\n  Test.label \"encode OMG\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex3"
+  },
+  {
+    "test_code": "atbashCipher.test.ex4 = let\n  actual = encode \"O M G\"\n  expected = \"lnt\"\n  Test.label \"encode spaces\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex4"
+  },
+  {
+    "test_code": "atbashCipher.test.ex5 = let\n  actual = encode \"mindblowingly\"\n  expected = \"nrmwy oldrm tob\"\n  Test.label \"encode mindblowingly\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex5"
+  },
+  {
+    "test_code": "atbashCipher.test.ex6 = let\n  actual = encode \"Testing,1 2 3, testing.\"\n  expected = \"gvhgr mt123 gvhgr mt\"\n  Test.label \"encode numbers\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex6"
+  },
+  {
+    "test_code": "atbashCipher.test.ex7 = let\n  actual = encode \"Truth is fiction.\"\n  expected = \"gifgs rhurx grlm\"\n  Test.label \"encode deep thought\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex7"
+  },
+  {
+    "test_code": "atbashCipher.test.ex8 = let\n  actual = encode \"The quick brown fox jumps over the lazy dog.\"\n  expected = \"gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt\"\n  Test.label \"encode all the letters\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex8"
+  },
+  {
+    "test_code": "atbashCipher.test.ex9 = let\n  actual = decode \"vcvix rhn\"\n  expected = \"exercism\"\n  Test.label \"decode exercism\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex9"
+  },
+  {
+    "test_code": "atbashCipher.test.ex10 = let\n  actual = decode \"zmlyh gzxov rhlug vmzhg vkkrm thglm v\"\n  expected = \"anobstacleisoftenasteppingstone\"\n  Test.label \"decode a sentence\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex10"
+  },
+  {
+    "test_code": "atbashCipher.test.ex11 = let\n  actual = decode \"gvhgr mt123 gvhgr mt\"\n  expected = \"testing123testing\"\n  Test.label \"decode numbers\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex11"
+  },
+  {
+    "test_code": "atbashCipher.test.ex12 = let\n  actual = decode \"gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt\"\n  expected = \"thequickbrownfoxjumpsoverthelazydog\"\n  Test.label \"decode all the letters\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex12"
+  },
+  {
+    "test_code": "atbashCipher.test.ex13 = let\n  actual = decode \"vc vix    r hn\"\n  expected = \"exercism\"\n  Test.label \"decode with too many spaces\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex13"
+  },
+  {
+    "test_code": "atbashCipher.test.ex14 = let\n  actual = decode \"zmlyhgzxovrhlugvmzhgvkkrmthglmv\"\n  expected = \"anobstacleisoftenasteppingstone\"\n  Test.label \"decode with no spaces\" <| Test.expect (actual == expected)",
+    "name": "atbashCipher.test.ex14"
+  }
+]

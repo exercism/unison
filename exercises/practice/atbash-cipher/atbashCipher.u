@@ -1,0 +1,6 @@
+atbashCipher.encode : Text -> Text
+atbashCipher.encode input = todo "implement encode"
+
+atbashCipher.decode : Text -> Text
+atbashCipher.decode input = todo "implement decode"
+

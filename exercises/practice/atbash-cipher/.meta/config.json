@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "dreig"
+  ],
+  "files": {
+    "solution": [
+      "atbashCipher.u"
+    ],
+    "test": [
+      "atbashCipher.test.u"
+    ],
+    "example": [
+      ".meta/examples/atbashCipher.example.u"
+    ]
+  },
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Atbash"
+}
