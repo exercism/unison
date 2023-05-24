@@ -1,0 +1,46 @@
+[
+  {
+    "test_code": "binarySearch.test.ex1 = let\n  actual = find (Array.fromList [6]) 6\n  expected = Some 0\n  Test.label \"finds a value in an array with one element\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex1"
+  },
+  {
+    "test_code": "binarySearch.test.ex2 = let\n  actual = find (Array.fromList [1,3,4,6,8,9,11]) 6\n  expected = Some 3\n  Test.label \"finds a value in the middle of an array\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex2"
+  },
+  {
+    "test_code": "binarySearch.test.ex3 = let\n  actual = find (Array.fromList [1,3,4,6,8,9,11]) 1\n  expected = Some 0\n  Test.label \"finds a value at the beginning of an array\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex3"
+  },
+  {
+    "test_code": "binarySearch.test.ex4 = let\n  actual = find (Array.fromList [1,3,4,6,8,9,11]) 11\n  expected = Some 6\n  Test.label \"finds a value at the end of an array\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex4"
+  },
+  {
+    "test_code": "binarySearch.test.ex5 = let\n  actual = find (Array.fromList [1,3,5,8,13,21,34,55,89,144,233,377,634]) 144\n  expected = Some 9\n  Test.label \"finds a value in an array of odd length\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex5"
+  },
+  {
+    "test_code": "binarySearch.test.ex6 = let\n  actual = find (Array.fromList [1,3,5,8,13,21,34,55,89,144,233,377]) 21\n  expected = Some 5\n  Test.label \"finds a value in an array of even length\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex6"
+  },
+  {
+    "test_code": "binarySearch.test.ex7 = let\n  actual = find (Array.fromList [1,3,4,6,8,9,11]) 7\n  expected = None\n  Test.label \"identifies that a value is not included in the array\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex7"
+  },
+  {
+    "test_code": "binarySearch.test.ex8 = let\n  actual = find (Array.fromList [1,3,4,6,8,9,11]) 0\n  expected = None\n  Test.label \"a value smaller than the array's smallest value is not found\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex8"
+  },
+  {
+    "test_code": "binarySearch.test.ex9 = let\n  actual = find (Array.fromList [1,3,4,6,8,9,11]) 13\n  expected = None\n  Test.label \"a value larger than the array's largest value is not found\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex9"
+  },
+  {
+    "test_code": "binarySearch.test.ex10 = let\n  actual = find (Array.fromList []) 1\n  expected = None\n  Test.label \"nothing is found in an empty array\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex10"
+  },
+  {
+    "test_code": "binarySearch.test.ex11 = let\n  actual = find (Array.fromList [1,2]) 0\n  expected = None\n  Test.label \"nothing is found when the left and right bounds cross\" <| Test.expect (actual === expected)",
+    "name": "binarySearch.test.ex11"
+  }
+]

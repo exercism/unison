@@ -1,0 +1,18 @@
+binarySearch.find : data.Array Nat -> Nat -> Optional Nat
+binarySearch.find numbers target =
+  helper : Nat -> Nat -> Nat -> Nat
+  helper lo hi target =
+    if lo < hi then
+      mid = (lo + hi) / 2
+      match Array.at mid numbers with
+        Some n | n < target
+          -> helper (mid+1) hi target
+        _ -> helper lo mid target
+    else lo
+
+  index = helper 0 (size numbers) target
+  match Array.at index numbers with
+    Some n | n == target
+      -> Some index
+    _ -> None
+

@@ -1,0 +1,69 @@
+binarySearch.test.ex1 = let
+  actual = find (Array.fromList [6]) 6
+  expected = Some 0
+  Test.label "finds a value in an array with one element" <| Test.expect (actual === expected)
+
+binarySearch.test.ex2 = let
+  actual = find (Array.fromList [1,3,4,6,8,9,11]) 6
+  expected = Some 3
+  Test.label "finds a value in the middle of an array" <| Test.expect (actual === expected)
+
+binarySearch.test.ex3 = let
+  actual = find (Array.fromList [1,3,4,6,8,9,11]) 1
+  expected = Some 0
+  Test.label "finds a value at the beginning of an array" <| Test.expect (actual === expected)
+
+binarySearch.test.ex4 = let
+  actual = find (Array.fromList [1,3,4,6,8,9,11]) 11
+  expected = Some 6
+  Test.label "finds a value at the end of an array" <| Test.expect (actual === expected)
+
+binarySearch.test.ex5 = let
+  actual = find (Array.fromList [1,3,5,8,13,21,34,55,89,144,233,377,634]) 144
+  expected = Some 9
+  Test.label "finds a value in an array of odd length" <| Test.expect (actual === expected)
+
+binarySearch.test.ex6 = let
+  actual = find (Array.fromList [1,3,5,8,13,21,34,55,89,144,233,377]) 21
+  expected = Some 5
+  Test.label "finds a value in an array of even length" <| Test.expect (actual === expected)
+
+binarySearch.test.ex7 = let
+  actual = find (Array.fromList [1,3,4,6,8,9,11]) 7
+  expected = None
+  Test.label "identifies that a value is not included in the array" <| Test.expect (actual === expected)
+
+binarySearch.test.ex8 = let
+  actual = find (Array.fromList [1,3,4,6,8,9,11]) 0
+  expected = None
+  Test.label "a value smaller than the array's smallest value is not found" <| Test.expect (actual === expected)
+
+binarySearch.test.ex9 = let
+  actual = find (Array.fromList [1,3,4,6,8,9,11]) 13
+  expected = None
+  Test.label "a value larger than the array's largest value is not found" <| Test.expect (actual === expected)
+
+binarySearch.test.ex10 = let
+  actual = find (Array.fromList []) 1
+  expected = None
+  Test.label "nothing is found in an empty array" <| Test.expect (actual === expected)
+
+binarySearch.test.ex11 = let
+  actual = find (Array.fromList [1,2]) 0
+  expected = None
+  Test.label "nothing is found when the left and right bounds cross" <| Test.expect (actual === expected)
+
+test> binarySearch.tests = runAll [
+  binarySearch.test.ex1,
+  binarySearch.test.ex2,
+  binarySearch.test.ex3,
+  binarySearch.test.ex4,
+  binarySearch.test.ex5,
+  binarySearch.test.ex6,
+  binarySearch.test.ex7,
+  binarySearch.test.ex8,
+  binarySearch.test.ex8,
+  binarySearch.test.ex9,
+  binarySearch.test.ex10,
+  binarySearch.test.ex11,
+]

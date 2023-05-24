@@ -1,0 +1,3 @@
+binarySearch.find : data.Array Nat -> Nat -> Optional Nat
+binarySearch.find numbers target = todo "implement binary search"
+

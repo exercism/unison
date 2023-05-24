@@ -376,6 +376,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "uuid": "8fdf2a7e-03c4-4d72-b745-be261fc1291e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ]
   },
