@@ -58,9 +58,17 @@
     ],
     "practice": [
       {
-        "slug": "acronym",
-        "name": "Acronym",
-        "uuid": "da98b0d1-7b2d-4a0a-8493-c431b4409b40",
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "151ebc38-659c-4752-b51c-cc7d1d7b1ef4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "leap",
+        "name": "Leap",
+        "uuid": "d2bbc189-f4c8-46b9-8616-a28e3d946bde",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
@@ -82,17 +90,17 @@
         "difficulty": 1
       },
       {
-        "slug": "hello-world",
-        "name": "Hello World",
-        "uuid": "151ebc38-659c-4752-b51c-cc7d1d7b1ef4",
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "b1327f91-8568-4d80-b5ff-b043250cc819",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
       },
       {
-        "slug": "leap",
-        "name": "Leap",
-        "uuid": "d2bbc189-f4c8-46b9-8616-a28e3d946bde",
+        "slug": "sum-of-multiples",
+        "name": "Sum Of Multiples",
+        "uuid": "0fbe5e82-b563-4360-8957-e3a543eb3184",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
@@ -101,6 +109,30 @@
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "da6e2fd6-1d81-4ccc-8030-16065fef548b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "acronym",
+        "name": "Acronym",
+        "uuid": "da98b0d1-7b2d-4a0a-8493-c431b4409b40",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "c7f87c99-5e61-4887-909e-eefcbd6a4183",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "difference-of-squares",
+        "name": "Difference of Squares",
+        "uuid": "a9022ecf-0811-4807-8d8e-29da4c684d6b",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
@@ -122,33 +154,9 @@
         "difficulty": 1
       },
       {
-        "slug": "sum-of-multiples",
-        "name": "Sum Of Multiples",
-        "uuid": "0fbe5e82-b563-4360-8957-e3a543eb3184",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
-        "uuid": "f544ddc2-efb7-4dff-994f-9c2578c68414",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "reverse-string",
-        "name": "Reverse String",
-        "uuid": "b1327f91-8568-4d80-b5ff-b043250cc819",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "difference-of-squares",
-        "name": "Difference of Squares",
-        "uuid": "a9022ecf-0811-4807-8d8e-29da4c684d6b",
+        "slug": "bob",
+        "name": "Bob",
+        "uuid": "66a4dd87-5397-4125-a002-271b750ac32a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
@@ -162,17 +170,9 @@
         "difficulty": 1
       },
       {
-        "slug": "bob",
-        "name": "Bob",
-        "uuid": "66a4dd87-5397-4125-a002-271b750ac32a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "isogram",
-        "name": "Isogram",
-        "uuid": "c7f87c99-5e61-4887-909e-eefcbd6a4183",
+        "slug": "run-length-encoding",
+        "name": "Run Length Encoding",
+        "uuid": "f544ddc2-efb7-4dff-994f-9c2578c68414",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
@@ -181,14 +181,6 @@
         "slug": "darts",
         "name": "Darts",
         "uuid": "3a82983f-9b8c-4b61-973c-5a40dd2fc708",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "sieve",
-        "name": "Sieve",
-        "uuid": "671a09cb-df24-4a30-8513-26103bb1ae10",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -213,6 +205,14 @@
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "d542ca66-4c3a-45ad-b7fd-ce8d8656aee8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "sieve",
+        "name": "Sieve",
+        "uuid": "671a09cb-df24-4a30-8513-26103bb1ae10",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -250,6 +250,14 @@
         "difficulty": 4
       },
       {
+        "slug": "simple-linked-list",
+        "name": "Simple Linked List",
+        "uuid": "3a377fd7-2f66-4326-94f5-e3e05133c252",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "4122377f-1ddc-4733-98c1-bd52e67de95d",
@@ -269,14 +277,6 @@
         "slug": "scale-generator",
         "name": "Scale Generator",
         "uuid": "d83fd7ee-2eff-41d5-8a7c-e3893a969150",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4
-      },
-      {
-        "slug": "simple-linked-list",
-        "name": "Simple Linked List",
-        "uuid": "3a377fd7-2f66-4326-94f5-e3e05133c252",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
