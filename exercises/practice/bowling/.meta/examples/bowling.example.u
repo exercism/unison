@@ -79,13 +79,13 @@ calculateFrame _ =
       (roll, Some next) | roll + next === 10 -> -- Spare
         completeFrame = Frame currentFrame [roll, next]
         spareScore = !Spare.calculate + 10
-        Tape.right
+        base.ignore Tape.right
         go (currentFrame + 1) (framesSoFar :+ completeFrame) (currentScore + spareScore)
-      (roll, Some next) | (roll + next > 10) || (roll > 10) -> -- validate pin set
+      (roll, Some next) | (roll + next base.Nat.> 10) || (roll base.Nat.> 10) -> -- validate pin set
         Throw.throw (Error "Pin count exceeds pins on the lane")
       (roll, Some next) ->
         completeFrame = Frame currentFrame [roll, next]
-        Tape.right
+        base.ignore Tape.right
         go (currentFrame + 1) (framesSoFar :+ completeFrame) (currentScore + roll + next)
       (roll, None) ->
         (framesSoFar, currentScore)
@@ -93,20 +93,20 @@ calculateFrame _ =
   go 1 [] 0
 
 Strike.calculate : '{Tape Nat} Nat
-Strike.calculate _ =
+Strike.calculate = do
+  first : Nat
   first = Tape.extract
-  Tape.right
+  base.ignore Tape.right
+  second : Nat
   second = Tape.extract
+  total : Nat
   total = first + second
-  Tape.left
+  base.ignore Tape.left
   total
 
 Spare.calculate : '{Tape Nat} Nat
 Spare.calculate _ =
-  Tape.right
+  base.ignore Tape.right
   first = Tape.extract
-  Tape.left
+  base.ignore Tape.left
   first
-
-{{ Represents a frame with a turn number a list for the rolls in the turn }}
-unique type Frame = Frame Nat [Nat]
