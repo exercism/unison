@@ -13,4 +13,4 @@ convert n =
   if raindrop then
     List.foldLeft (acc -> cases (bool, sound) -> addSound bool sound acc ) "" [(isThree, "Pling"), (isFive, "Plang"), (isSeven, "Plong")]
   else
-    toText n
+    Nat.toText n
