@@ -2,7 +2,7 @@ structural ability MyStream a where emit : a -> {MyStream a} ()
 
 MyStream.fromList : [a] -> '{MyStream a} ()
 MyStream.fromList list = 'let
-  List.foreach MyStream.emit list
+  List.foreach list MyStream.emit
 
 MyStream.toList : '{g, MyStream a} r -> '{g} [a]
 MyStream.toList streamFunction = 'let
