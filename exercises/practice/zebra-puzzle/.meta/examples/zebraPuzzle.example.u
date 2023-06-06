@@ -24,7 +24,6 @@ Position.toInt = cases
   Three -> +3
   Four -> +4
   Five -> +5
-  _ -> bug "invalid position"
 
 Position.fromInt : Int -> Position
 Position.fromInt = cases
