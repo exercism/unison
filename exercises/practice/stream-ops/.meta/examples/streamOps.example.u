@@ -4,7 +4,6 @@ MyStream.fromList : [a] -> '{MyStream a} ()
 MyStream.fromList list = 'let
   List.foreach MyStream.emit list
 
-
 MyStream.toList : '{g, MyStream a} r -> '{g} [a]
 MyStream.toList streamFunction = 'let
   at1 !(toListWithResult streamFunction)
