@@ -32,10 +32,11 @@ Position.fromInt = cases
   +3 -> Three
   +4 -> Four
   +5 -> Five
+  _ -> bug "invalid position"
 
 Position.inRange : Int -> Boolean
 Position.inRange i =
-  i <= +5 && (i >= +1)
+  i Int.<= +5 && (i Int.>= +1)
 
 unique type House = { position : Position, color : Color, resident : Resident, beverage : Beverage, cigarette : Cigarette, pet : Pet}
 

@@ -3,7 +3,7 @@ nucleotideCounts nucleotides =
   initialMap = [("A",0),("C",0),("G",0),("T",0)] |> Map.fromList
   chars = toCharList nucleotides
   go acc c =
-    if not (List.contains (toText c) (Map.keys initialMap) ) then abort else updateMap c acc
+    if not (List.contains (Char.toText c) (Map.keys initialMap) ) then abort else updateMap c acc
   Abort.toOptional! '(List.foldLeft go initialMap chars)
 
 updateMap : Char -> Map Text Nat -> Map Text Nat
