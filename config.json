@@ -15,6 +15,9 @@
     "indent_size": 2,
     "highlightjs_language": "haskell"
   },
+  "test_runner": {
+    "average_run_time": 2
+  },
   "files": {
     "solution": [
       "%{camel_slug}.u"
@@ -25,9 +28,6 @@
     "example": [
       ".meta/examples/%{camel_slug}.example.u"
     ]
-  },
-  "test_runner": {
-    "average_run_time": 2
   },
   "exercises": {
     "concept": [
@@ -47,12 +47,10 @@
         "slug": "lasagna",
         "name": "Lasagna",
         "uuid": "73724654-8ed6-477e-9d2f-7c7e77a6d3f2",
-        "practices": [],
-        "prerequisites": [],
         "concepts": [
           "basics"
         ],
-        "difficulty": 1,
+        "prerequisites": [],
         "status": "wip"
       }
     ],
@@ -424,14 +422,14 @@
     }
   ],
   "tags": [
-    "paradigm/functional",
-    "typing/static",
     "execution_mode/compiled",
-    "platform/windows",
-    "platform/mac",
+    "paradigm/functional",
     "platform/linux",
-    "runtime/standalone_executable",
+    "platform/mac",
+    "platform/windows",
     "runtime/language_specific",
+    "runtime/standalone_executable",
+    "typing/static",
     "used_for/backends"
   ]
 }
