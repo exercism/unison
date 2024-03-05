@@ -1,0 +1,29 @@
+atbashCipher.encodeSingle : Char -> Char
+atbashCipher.encodeSingle c = Map.get c mapping |> Optional.getOrElse c
+
+atbashCipher.mapping : Map Char Char
+atbashCipher.mapping =
+  use Char rangeClosed
+  List.zip (rangeClosed ?a ?z) (rangeClosed ?a ?z |> List.reverse)
+    |> Map.fromList
+
+atbashCipher.encode : Text -> Text
+atbashCipher.encode input =
+  use List map
+  toCharList input
+    |> List.filter isAlphaNum
+    |> map ascii.toLower
+    |> map encodeSingle
+    |> List.chunk 5
+    |> map fromCharList
+    |> Text.join " "
+
+atbashCipher.decode : Text -> Text
+atbashCipher.decode input =
+  use List map
+  toCharList input
+    |> List.filter isAlphaNum
+    |> map ascii.toLower
+    |> map encodeSingle
+    |> fromCharList
+
