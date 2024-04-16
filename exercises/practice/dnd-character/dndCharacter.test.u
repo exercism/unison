@@ -1,0 +1,27 @@
+test> dndCharacter.tests.testModifier = verify do
+  testCases = [ (18, +4), (17, +3), (16, +3), (15, +2), (14, +2)
+              , (13, +1), (12, +1), (11, +0), (10, +0), (9, -1)
+              , (8, -1), (7, -2), (6, -2), (5, -3), (4, -3)
+              , (3, -4) ]
+  checkCase : (Nat, Int) -> Boolean
+  checkCase testCase =
+    (input, expected) = testCase
+    expected == modifier input
+  ensure (List.all checkCase testCases)
+
+test> dndCharacter.tests.testAbility = verify do
+  calculatedAbility = !ability_
+  ensure (Nat.inRange 3 19 calculatedAbility)
+
+test> dndCharacter.tests.testCharacter = verify do
+  (Character strength dexterity constitution intelligence wisdom charisma hitpoints) = !character
+  expectedHitpoints = Int.abs (+10 Int.+ modifier constitution)
+  ensure (
+    (Nat.inRange 3 19 strength) &&
+    (Nat.inRange 3 19 dexterity) &&
+    (Nat.inRange 3 19 constitution) &&
+    (Nat.inRange 3 19 intelligence) &&
+    (Nat.inRange 3 19 wisdom) &&
+    (Nat.inRange 3 19 charisma) &&
+    (hitpoints == expectedHitpoints)
+  )

@@ -1,0 +1,20 @@
+unique type dndCharacter.Character = { strength : Nat
+                                     , dexterity : Nat
+                                     , constitution : Nat
+                                     , intelligence : Nat
+                                     , wisdom : Nat
+                                     , charisma : Nat
+                                     , hitpoints : Nat
+                                     }
+
+dndCharacter.modifier : Nat -> Int
+dndCharacter.modifier score =
+  todo "implement modifier"
+
+dndCharacter.ability_ : '{Random} Nat
+dndCharacter.ability_ =
+  todo "implement ability_"
+
+dndCharacter.character : '{Random} Character
+dndCharacter.character =
+  todo "implement character"
