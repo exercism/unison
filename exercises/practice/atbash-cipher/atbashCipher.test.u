@@ -1,0 +1,87 @@
+atbashCipher.test.ex1 = let
+  actual = encode "yes"
+  expected = "bvh"
+  Test.label "encode yes" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex2 = let
+  actual = encode "no"
+  expected = "ml"
+  Test.label "encode no" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex3 = let
+  actual = encode "OMG"
+  expected = "lnt"
+  Test.label "encode OMG" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex4 = let
+  actual = encode "O M G"
+  expected = "lnt"
+  Test.label "encode spaces" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex5 = let
+  actual = encode "mindblowingly"
+  expected = "nrmwy oldrm tob"
+  Test.label "encode mindblowingly" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex6 = let
+  actual = encode "Testing,1 2 3, testing."
+  expected = "gvhgr mt123 gvhgr mt"
+  Test.label "encode numbers" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex7 = let
+  actual = encode "Truth is fiction."
+  expected = "gifgs rhurx grlm"
+  Test.label "encode deep thought" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex8 = let
+  actual = encode "The quick brown fox jumps over the lazy dog."
+  expected = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
+  Test.label "encode all the letters" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex9 = let
+  actual = decode "vcvix rhn"
+  expected = "exercism"
+  Test.label "decode exercism" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex10 = let
+  actual = decode "zmlyh gzxov rhlug vmzhg vkkrm thglm v"
+  expected = "anobstacleisoftenasteppingstone"
+  Test.label "decode a sentence" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex11 = let
+  actual = decode "gvhgr mt123 gvhgr mt"
+  expected = "testing123testing"
+  Test.label "decode numbers" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex12 = let
+  actual = decode "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
+  expected = "thequickbrownfoxjumpsoverthelazydog"
+  Test.label "decode all the letters" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex13 = let
+  actual = decode "vc vix    r hn"
+  expected = "exercism"
+  Test.label "decode with too many spaces" <| Test.expect (actual == expected)
+
+atbashCipher.test.ex14 = let
+  actual = decode "zmlyhgzxovrhlugvmzhgvkkrmthglmv"
+  expected = "anobstacleisoftenasteppingstone"
+  Test.label "decode with no spaces" <| Test.expect (actual == expected)
+
+test> atbashCipher.tests = runAll [ 
+  atbashCipher.test.ex1,
+  atbashCipher.test.ex2,
+  atbashCipher.test.ex3,
+  atbashCipher.test.ex4,
+  atbashCipher.test.ex5,
+  atbashCipher.test.ex6,
+  atbashCipher.test.ex7,
+  atbashCipher.test.ex8,
+  atbashCipher.test.ex9,
+  atbashCipher.test.ex10,
+  atbashCipher.test.ex11,
+  atbashCipher.test.ex12,
+  atbashCipher.test.ex13,
+  atbashCipher.test.ex14,
+]
+
