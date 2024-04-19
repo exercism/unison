@@ -1,0 +1,43 @@
+unique type dndCharacter.Character = { strength : Nat
+                                     , dexterity : Nat
+                                     , constitution : Nat
+                                     , intelligence : Nat
+                                     , wisdom : Nat
+                                     , charisma : Nat
+                                     , hitpoints : Nat
+                                     }
+
+dndCharacter.modifier : Nat -> Int
+dndCharacter.modifier score =
+  use Int - div
+  score
+    |> Nat.toInt
+    |> (c -> c - +10)
+    |> (c -> div c +2)
+
+dndCharacter.ability_ : '{Random} Nat
+dndCharacter.ability_ = do
+  '(Random.natIn 1 7)
+    |> List.replicate 4
+    |> List.sort
+    |> List.slice 1 4
+    |> Nat.sum
+
+dndCharacter.character : '{Random} Character
+dndCharacter.character = do
+  strength = !ability_
+  dexterity = !ability_
+  constitution = !ability_
+  intelligence = !ability_
+  wisdom = !ability_
+  charisma = !ability_
+  mod = modifier constitution
+  hitpoints = Int.abs (+10 Int.+ mod)
+  Character
+    strength
+    dexterity
+    constitution
+    intelligence
+    wisdom
+    charisma
+    hitpoints
