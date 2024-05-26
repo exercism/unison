@@ -44,7 +44,7 @@ tar -xzf unisonlanguage/ucm.tar.gz -C unisonlanguage
 2. If you’re not sure you already have it, install Git:
   * Via winget: `winget install --id Git.Git -e --source winget`
   * If you are on Windows 10 and don’t have winget, you can install it from [the Microsoft Store](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1), and then run the command above.
-3. [Download the UCM with the link provided here]https://www.unison-lang.org/learn/quickstart/#installation-options) and extract it to a location of your choosing.
+3. [Download the UCM with the link provided here](https://www.unison-lang.org/learn/quickstart/#installation-options) and extract it to a location of your choosing.
 4. Run `ucm.exe`
 
 ### Option 4: Nix installation
