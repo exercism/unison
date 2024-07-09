@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "SimaDovakin"
+  ],
+  "files": {
+    "solution": [
+      "listOps.u"
+    ],
+    "test": [
+      "listOps.test.u"
+    ],
+    "example": [
+      ".meta/examples/listOps.example.u"
+    ]
+  },
+  "blurb": "Implement basic list operations."
+}

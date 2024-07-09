@@ -1,0 +1,23 @@
+listOps.append : [a] -> [a] -> [a]
+listOps.append list1 list2 = todo "implement append"
+
+listOps.concat : [[a]] -> [a]
+listOps.concat nestedList = todo "implement concat"
+
+listOps.filter : (a -> Boolean) -> [a] -> [a]
+listOps.filter predicate list = todo "implement filter"
+
+listOps.length : [a] -> Nat
+listOps.length list = todo "implement length"
+
+listOps.map : (a -> b) -> [a] -> [b]
+listOps.map function list = todo "implement map"
+
+listOps.foldl : (a -> b -> a) -> a -> [b] -> a
+listOps.foldl function initial list = todo "implement foldl"
+
+listOps.foldr : (a -> b -> a) -> a -> [b] -> a
+listOps.foldr function initial list = todo "implement foldr"
+
+listOps.reverse : [a] -> [a]
+listOps.reverse list = todo "implement reverse"
