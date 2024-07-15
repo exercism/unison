@@ -1,0 +1,2 @@
+scrabbleScore.score : Text -> Nat
+scrabbleScore.score word = todo "implement score"
