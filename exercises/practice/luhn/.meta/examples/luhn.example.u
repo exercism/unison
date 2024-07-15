@@ -3,7 +3,7 @@ luhn.isValid string =
   charList = toCharList string
   digitCharList = List.filter (Class.is Class.digit) charList
   match (charList |> any (not << isValidChar), 1 >= size digitCharList) with
-    (false, false) -> List.filter (Class.is Class.digit) charList
+    (false, false) -> digitCharList
                         |> map toDigit
                         |> checkSum
                         |> (s -> 0 == mod s 10)
