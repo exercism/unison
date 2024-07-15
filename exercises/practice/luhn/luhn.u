@@ -1,0 +1,2 @@
+luhn.isValid : Text -> Boolean
+luhn.isValid string = todo "implement isValid"
