@@ -1,0 +1,17 @@
+scrabbleScore.score : Text -> Nat
+scrabbleScore.score word =
+  word
+    |> toCharList
+    |> List.foldLeft (total ch -> total + charToScore ch) 0
+
+scrabbleScore.charToScore : Char -> Nat
+scrabbleScore.charToScore char =
+  match toUppercase char with
+    c | List.contains c [?A, ?E, ?I, ?O, ?U, ?L, ?N, ?R, ?S, ?T] -> 1
+    c | List.contains c [?D, ?G] -> 2
+    c | List.contains c [?B, ?C, ?M, ?P] -> 3
+    c | List.contains c [?F, ?H, ?V, ?W, ?Y] -> 4
+    c | List.contains c [?J, ?X] -> 8
+    c | List.contains c [?Q, ?Z] -> 10
+    ?K -> 5
+    _ -> 0
