@@ -1,0 +1,42 @@
+[
+  {
+    "name": "pangram.isPangram.tests.ex1",
+    "test_code": "expect (false == isPangram \"\")\n    |> Test.label \"empty sentence\""
+  },
+  {
+    "name": "pangram.isPangram.tests.ex2",
+    "test_code": "expect (true == isPangram \"abcdefghijklmnopqrstuvwxyz\")\n    |> Test.label \"perfect lower case\""
+  },
+  {
+    "name": "pangram.isPangram.tests.ex3",
+    "test_code": "expect (true == isPangram \"the quick brown fox jumps over the lazy dog\")\n    |> Test.label \"only lower case\""
+  },
+  {
+    "name": "pangram.isPangram.tests.ex4",
+    "test_code": "expect (false == isPangram \"a quick movement of the enemy will jeopardize five gunboats\")\n    |> Test.label \"missing the letter 'x'\""
+  },
+  {
+    "name": "pangram.isPangram.tests.ex5",
+    "test_code": "expect (false == isPangram \"five boxing wizards jump quickly at it\")\n    |> Test.label \"missing the letter 'h'\""
+  },
+  {
+    "name": "pangram.isPangram.tests.ex6",
+    "test_code": "expect (true == isPangram \"the_quick_brown_fox_jumps_over_the_lazy_dog\")\n    |> Test.label \"with underscores\""
+  },
+  {
+    "name": "pangram.isPangram.tests.ex7",
+    "test_code": "expect (true == isPangram \"the 1 quick brown fox jumps over the 2 lazy dogs\")\n    |> Test.label \"with numbers\""
+  },
+  {
+    "name": "pangram.isPangram.tests.ex8",
+    "test_code": "expect (false == isPangram \"7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog\")\n    |> Test.label \"missing letters replaced by numbers\""
+  },
+  {
+    "name": "pangram.isPangram.tests.ex9",
+    "test_code": "expect (true == isPangram \"\"Five quacking Zephyrs jolt my wax bed.\"\")\n    |> Test.label \"mixed case and punctuation\""
+  },
+  {
+    "name": "pangram.isPangram.tests.ex10",
+    "test_code": "expect (false == isPangram \"abcdefghijklm ABCDEFGHIJKLM\")\n    |> Test.label \"a-m and A-M are 26 different characters but not a pangram\""
+  }
+]
