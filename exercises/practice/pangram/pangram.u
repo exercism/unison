@@ -1,0 +1,2 @@
+pangram.isPangram : Text -> Boolean
+pangram.isPangram sentence = todo "implement isPangram"

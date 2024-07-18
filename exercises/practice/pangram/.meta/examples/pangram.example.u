@@ -1,0 +1,18 @@
+pangram.isPangram : Text -> Boolean
+pangram.isPangram sentence =
+  pangramNumber = 67108863
+  sentence
+    |> toCharList
+    |> map getPower
+    |> filter ((!==) None)
+    |> map (shiftLeft 1 << getOrElse 0)
+    |> foldLeft or 0
+    |> (==) pangramNumber
+
+
+pangram.getPower : Char -> Optional Nat
+pangram.getPower = cases
+  c | (c >= ?A) && (c <= ?Z) -> Some (toNat c - toNat ?A)
+  c | (c >= ?a) && (c <= ?z) -> Some (toNat c - toNat ?a)
+  _ -> None
+

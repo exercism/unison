@@ -1,0 +1,52 @@
+pangram.isPangram.tests.ex1 =
+  expect (false == isPangram "")
+    |> Test.label "empty sentence"
+
+pangram.isPangram.tests.ex2 =
+  expect (true == isPangram "abcdefghijklmnopqrstuvwxyz")
+    |> Test.label "perfect lower case"
+
+pangram.isPangram.tests.ex3 =
+  expect (true == isPangram "the quick brown fox jumps over the lazy dog")
+    |> Test.label "only lower case"
+
+pangram.isPangram.tests.ex4 =
+  expect (false == isPangram "a quick movement of the enemy will jeopardize five gunboats")
+    |> Test.label "missing the letter 'x'"
+
+pangram.isPangram.tests.ex5 =
+  expect (false == isPangram "five boxing wizards jump quickly at it")
+    |> Test.label "missing the letter 'h'"
+
+pangram.isPangram.tests.ex6 =
+  expect (true == isPangram "the_quick_brown_fox_jumps_over_the_lazy_dog")
+    |> Test.label "with underscores"
+
+pangram.isPangram.tests.ex7 =
+  expect (true == isPangram "the 1 quick brown fox jumps over the 2 lazy dogs")
+    |> Test.label "with numbers"
+
+pangram.isPangram.tests.ex8 =
+  expect (false == isPangram "7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog")
+    |> Test.label "missing letters replaced by numbers"
+
+pangram.isPangram.tests.ex9 =
+  expect (true == isPangram "\"Five quacking Zephyrs jolt my wax bed.\"")
+    |> Test.label "mixed case and punctuation"
+
+pangram.isPangram.tests.ex10 =
+  expect (false == isPangram "abcdefghijklm ABCDEFGHIJKLM")
+    |> Test.label "a-m and A-M are 26 different characters but not a pangram"
+
+test> pangram.tests = runAll [
+  pangram.isPangram.tests.ex1,
+  pangram.isPangram.tests.ex2,
+  pangram.isPangram.tests.ex3,
+  pangram.isPangram.tests.ex4,
+  pangram.isPangram.tests.ex5,
+  pangram.isPangram.tests.ex6,
+  pangram.isPangram.tests.ex7,
+  pangram.isPangram.tests.ex8,
+  pangram.isPangram.tests.ex9,
+  pangram.isPangram.tests.ex10
+]
