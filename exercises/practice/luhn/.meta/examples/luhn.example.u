@@ -1,0 +1,43 @@
+luhn.isValid : Text -> Boolean
+luhn.isValid string =
+  charList = toCharList string
+  digitCharList = List.filter (Class.is Class.digit) charList
+  match (charList |> any (not << isValidChar), 1 >= size digitCharList) with
+    (false, false) -> digitCharList
+                        |> map toDigit
+                        |> checkSum
+                        |> (s -> 0 == mod s 10)
+    (_, _) -> false
+
+luhn.checkSum : [Optional Nat] -> Nat
+luhn.checkSum digits =
+  digits
+    |> foldRight accumulateDigits (0, 0)
+    |> at2
+
+luhn.isValidChar : Char -> Boolean
+luhn.isValidChar char =
+  charClass = Class.or Class.digit Class.whitespace
+  Class.is charClass char
+
+luhn.toDigit : Char -> Optional Nat
+luhn.toDigit char =
+  codePoint = toNat char
+  match inRange 48 58 codePoint with
+    true -> Some (codePoint - 48)
+    false -> None
+
+luhn.doubleDigit : Nat -> Nat
+luhn.doubleDigit digit =
+  doubledDigit = digit * 2
+  match doubledDigit > 9 with
+    true -> doubledDigit - 9
+    false -> doubledDigit
+
+luhn.accumulateDigits : Optional Nat -> (Nat, Nat) -> (Nat, Nat)
+luhn.accumulateDigits digit acc =
+  (index, totalSum) = acc
+  match (digit, 1 == mod index 2) with
+    (Some d, true) -> (index + 1, totalSum + doubleDigit d)
+    (Some d, false) -> (index + 1, totalSum + d)
+    (_, _) -> (index, totalSum)

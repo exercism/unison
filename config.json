@@ -392,6 +392,14 @@
         "difficulty": 4
       },
       {
+        "slug": "luhn",
+        "name": "Luhn",
+        "uuid": "209e0108-01b7-43e3-bdaa-a3b30ca6b5a2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "b03f5c6e-86c4-4aa7-92cc-7587dd5dc3d3",
