@@ -1,0 +1,98 @@
+minesweeper.annotate.tests.ex1 =
+  expected = []
+  input = []
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "no rows"
+
+minesweeper.annotate.tests.ex2 =
+  expected = [""]
+  input = [""]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "no columns"
+
+minesweeper.annotate.tests.ex3 =
+  expected = ["   ", "   ", "   "]
+  input = ["   ", "   ", "   "]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "no mines"
+
+minesweeper.annotate.tests.ex4 =
+  expected = ["***", "***", "***"]
+  input = ["***", "***", "***"]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "minefield with only mines"
+
+minesweeper.annotate.tests.ex5 =
+  expected = ["111", "1*1", "111"]
+  input = ["   ", " * ", "   "]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "mine surrounded by spaces"
+
+minesweeper.annotate.tests.ex6 =
+  expected = ["***", "*8*", "***"]
+  input = ["***", "* *", "***"]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "space surrounded by mines"
+
+minesweeper.annotate.tests.ex7 =
+  expected = ["1*2*1"]
+  input = [" * * "]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "horizontal line"
+
+minesweeper.annotate.tests.ex8 =
+  expected = ["*1 1*"]
+  input = ["*   *"]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "horizontal line, mines at edges"
+
+minesweeper.annotate.tests.ex9 =
+  expected = ["1", "*", "2", "*", "1"]
+  input = [" ", "*", " ", "*", " "]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "vertical line"
+
+minesweeper.annotate.tests.ex10 =
+  expected = ["*", "1", " ", "1", "*"]
+  input = ["*", " ", " ", " ", "*"]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "vertical line, mines at edges"
+
+minesweeper.annotate.tests.ex11 =
+  expected = [" 2*2 ", "25*52", "*****", "25*52", " 2*2 "]
+  input = ["  *  ", "  *  ", "*****", "  *  ", "  *  "]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "cross"
+
+minesweeper.annotate.tests.ex12 =
+  expected = ["1*22*1", "12*322", " 123*2", "112*4*", "1*22*2", "111111"]
+  input = [" *  * ", "  *   ", "    * ", "   * *", " *  * ", "      "]
+  expected === minesweeper.annotate input
+    |> expect
+    |> Test.label "large minefield"
+
+test> minesweeper.tests = runAll [
+  minesweeper.annotate.tests.ex1,
+  minesweeper.annotate.tests.ex2,
+  minesweeper.annotate.tests.ex3,
+  minesweeper.annotate.tests.ex4,
+  minesweeper.annotate.tests.ex5,
+  minesweeper.annotate.tests.ex6,
+  minesweeper.annotate.tests.ex7,
+  minesweeper.annotate.tests.ex8,
+  minesweeper.annotate.tests.ex9,
+  minesweeper.annotate.tests.ex10,
+  minesweeper.annotate.tests.ex11,
+  minesweeper.annotate.tests.ex12
+]
