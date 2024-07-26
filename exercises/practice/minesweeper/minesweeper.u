@@ -1,0 +1,2 @@
+minesweeper.annotate : [Text] -> [Text]
+minesweeper.annotate = todo "implement annotate"

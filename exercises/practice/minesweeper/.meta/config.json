@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "SimaDovakin"
+  ],
+  "files": {
+    "solution": [
+      "minesweeper.u"
+    ],
+    "test": [
+      "minesweeper.test.u"
+    ],
+    "example": [
+      ".meta/examples/minesweeper.example.u"
+    ]
+  },
+  "blurb": "Add the numbers to a minesweeper board."
+}
