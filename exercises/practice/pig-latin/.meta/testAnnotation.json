@@ -1,0 +1,90 @@
+[
+  {
+    "name": "pigLatin.translate.tests.ex1",
+    "test_code": "expect (\"appleay\" == pigLatin.translate \"apple\")\n    |> Test.label \"ay is added to words that start with vowels - word beginning with a\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex2",
+    "test_code": "expect (\"earay\" == pigLatin.translate \"ear\")\n    |> Test.label \"ay is added to words that start with vowels - word beginning with e\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex3",
+    "test_code": "expect (\"iglooay\" == pigLatin.translate \"igloo\")\n    |> Test.label \"ay is added to words that start with vowels - word beginning with i\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex4",
+    "test_code": "expect (\"objectay\" == pigLatin.translate \"object\")\n    |> Test.label \"ay is added to words that start with vowels - word beginning with o\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex5",
+    "test_code": "expect (\"underay\" == pigLatin.translate \"under\")\n    |> Test.label \"ay is added to words that start with vowels - word beginning with u\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex6",
+    "test_code": "expect (\"equalay\" == pigLatin.translate \"equal\")\n    |> Test.label \"ay is added to words that start with vowels - word beginning with a vowel and followed by a qu\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex7",
+    "test_code": "expect (\"igpay\" == pigLatin.translate \"pig\")\n    |> Test.label \"first letter and ay are moved to the end of words that start with consonants - word beginning with p\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex8",
+    "test_code": "expect (\"oalakay\" == pigLatin.translate \"koala\")\n    |> Test.label \"first letter and ay are moved to the end of words that start with consonants - word beginning with k\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex9",
+    "test_code": "expect (\"enonxay\" == pigLatin.translate \"xenon\")\n    |> Test.label \"first letter and ay are moved to the end of words that start with consonants - word beginning with x\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex10",
+    "test_code": "expect (\"atqay\" == pigLatin.translate \"qat\")\n    |> Test.label \"first letter and ay are moved to the end of words that start with consonants - word beginning with q without a following u\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex11",
+    "test_code": "expect (\"airchay\" == pigLatin.translate \"chair\")\n    |> Test.label \"some letter clusters are treated like a single consonant - word beginning with ch\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex12",
+    "test_code": "expect (\"eenquay\" == pigLatin.translate \"queen\")\n    |> Test.label \"some letter clusters are treated like a single consonant - word beginning with qu\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex13",
+    "test_code": "expect (\"aresquay\" == pigLatin.translate \"square\")\n    |> Test.label \"some letter clusters are treated like a single consonant - word beginning with qu and a preceding consonant\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex14",
+    "test_code": "expect (\"erapythay\" == pigLatin.translate \"therapy\")\n    |> Test.label \"some letter clusters are treated like a single consonant - word beginning with th\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex15",
+    "test_code": "expect (\"ushthray\" == pigLatin.translate \"thrush\")\n    |> Test.label \"some letter clusters are treated like a single consonant - word beginning with thr\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex16",
+    "test_code": "expect (\"oolschay\" == pigLatin.translate \"school\")\n    |> Test.label \"some letter clusters are treated like a single consonant - word beginning with sch\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex17",
+    "test_code": "expect (\"yttriaay\" == pigLatin.translate \"yttria\")\n    |> Test.label \"some letter clusters are treated like a single vowel - word beginning with yt\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex18",
+    "test_code": "expect (\"xrayay\" == pigLatin.translate \"xray\")\n    |> Test.label \"some letter clusters are treated like a single vowel - word beginning with xr\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex19",
+    "test_code": "expect (\"ellowyay\" == pigLatin.translate \"yellow\")\n    |> Test.label \"position of y in a word determines if it is a consonant or a vowel - y is treated like a consonant at the beginning of a word\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex20",
+    "test_code": "expect (\"ythmrhay\" == pigLatin.translate \"rhythm\")\n    |> Test.label \"position of y in a word determines if it is a consonant or a vowel - y is treated like a vowel at the end of a consonant cluster\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex21",
+    "test_code": "expect (\"ymay\" == pigLatin.translate \"my\")\n    |> Test.label \"position of y in a word determines if it is a consonant or a vowel - y as second letter in two letter word\""
+  },
+  {
+    "name": "pigLatin.translate.tests.ex22",
+    "test_code": "expect (\"ickquay astfay unray\" == pigLatin.translate \"quick fast run\")\n    |> Test.label \"phrases are translated - a whole phrase\""
+  }
+]
