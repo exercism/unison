@@ -1,0 +1,4 @@
+use data Array
+
+binarySearch.find : Array Nat -> Nat -> Optional Int
+binarySearch.find = todo "implement find"
