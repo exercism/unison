@@ -422,6 +422,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 7
+      },
+      {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "135ead8d-cd69-4336-a885-20e56359cea8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       }
     ]
   },

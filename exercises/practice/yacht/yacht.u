@@ -1,0 +1,16 @@
+unique type yacht.Category
+  = Ones
+  | Twos
+  | Threes
+  | Fours
+  | Fives
+  | Sixes
+  | FullHouse
+  | FourOfAKind
+  | LittleStraight
+  | BigStraight
+  | Choice
+  | Yacht
+
+yacht.yacht : Categoty -> [Nat] -> Nat
+yacht.yacht = todo "implement yacht"

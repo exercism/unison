@@ -1,0 +1,75 @@
+unique type yacht.Category
+  = Ones
+  | Twos
+  | Threes
+  | Fours
+  | Fives
+  | Sixes
+  | FullHouse
+  | FourOfAKind
+  | LittleStraight
+  | BigStraight
+  | Choice
+  | Yacht
+
+yacht.yacht : Category -> [Nat] -> Nat
+yacht.yacht category dice =
+  match category with
+    Ones -> calculateNumericCategories 1 dice
+    Twos -> calculateNumericCategories 2 dice
+    Threes -> calculateNumericCategories 3 dice
+    Fours -> calculateNumericCategories 4 dice
+    Fives -> calculateNumericCategories 5 dice
+    Sixes -> calculateNumericCategories 6 dice
+    FullHouse -> fullHouse dice
+    FourOfAKind -> fourOfAKind dice
+    LittleStraight -> littleStraight dice
+    BigStraight -> bigStraight dice
+    Choice -> sum dice
+    Yacht -> yacht' dice
+
+yacht.calculateNumericCategories : Nat -> [Nat] -> Nat
+yacht.calculateNumericCategories element dice = element * countElement element dice
+
+yacht.fullHouse : [Nat] -> Nat
+yacht.fullHouse dice =
+  diceFrequencies = frequencies dice
+  match values diceFrequencies with
+    [2, 3] -> sum dice
+    [3, 2] -> sum dice
+    _ -> 0
+
+yacht.fourOfAKind : [Nat] -> Nat
+yacht.fourOfAKind dice =
+  diceFrequencies = frequencies dice
+  match toList diceFrequencies with
+    [_, (die, 4)] -> die * 4
+    [(die, 4), _] -> die * 4
+    [(die, 5)] -> die * 4
+    _ -> 0
+
+yacht.littleStraight : [Nat] -> Nat
+yacht.littleStraight dice =
+  match List.sort dice with
+    [1, 2, 3, 4, 5] -> 30
+    _ -> 0
+
+yacht.bigStraight : [Nat] -> Nat
+yacht.bigStraight dice =
+  match List.sort dice with
+    [2, 3, 4, 5, 6] -> 30
+    _ -> 0
+
+yacht.yacht' : [Nat] -> Nat
+yacht.yacht' dice =
+  diceFrequencies = frequencies dice
+  match size diceFrequencies with
+    1 -> 50
+    _ -> 0
+
+yacht.frequencies : [Nat] -> Map Nat Nat
+yacht.frequencies =
+  updateFrequency = cases
+    Some die -> Some (die + 1)
+    None -> Some 1
+  List.foldLeft (acc die -> Map.alter updateFrequency die acc) Map.empty
