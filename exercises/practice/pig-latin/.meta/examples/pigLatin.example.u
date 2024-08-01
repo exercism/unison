@@ -1,0 +1,32 @@
+pigLatin.translate : Text -> Text
+pigLatin.translate = words >> map toPigLatin >> join " "
+
+toPigLatin : Text -> Text
+toPigLatin text =
+  use Text join
+  match startsWithVowelSound text with
+    true -> text ++ "ay"
+    false ->
+      (consonantPrefix, wordsRest) = splitByConsonantPrefix text
+      isPrefixEmpty = consonantPrefix == ""
+      isRestStartsWithQu = startsWith "qu" wordsRest
+      isRestStartsWithQ = startsWith "q" wordsRest
+      isRestStartsWithY = startsWith "y" wordsRest
+      match (isPrefixEmpty, isRestStartsWithQu, isRestStartsWithQ, isRestStartsWithY) with
+        (_, true, _, _) -> join "" [drop 2 wordsRest, consonantPrefix, "quay"]
+        (_, false, true, _) -> join "" [drop 1 wordsRest, consonantPrefix, "qay"]
+        (true, _, _, true) -> join "" [drop 1 wordsRest, consonantPrefix, "yay"]
+        _ -> join "" [wordsRest, consonantPrefix, "ay"]
+
+pigLatin.isVowel : Char -> Boolean
+pigLatin.isVowel = Class.is (Class.in "aeiou")
+
+pigLatin.startsWithVowelSound : Text -> Boolean
+pigLatin.startsWithVowelSound text =
+  match (Optional.map isVowel (head text), any (p -> startsWith p text) ["xr", "yt"]) with
+    (Some true, _) -> true
+    (_, true) -> true
+    _ -> false
+
+pigLatin.splitByConsonantPrefix : Text -> (Text, Text)
+pigLatin.splitByConsonantPrefix = break (c -> or (isVowel c) (is (in "qy") c))
