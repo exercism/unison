@@ -1,0 +1,118 @@
+[
+  {
+    "name": "yacht.yacht.tests.ex1",
+    "test_code": "expect (50 == yacht.yacht Yacht [5, 5, 5, 5, 5])\n    |> Test.label \"Yacht\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex2",
+    "test_code": "expect (0 == yacht.yacht Yacht [1, 3, 3, 2, 5])\n    |> Test.label \"Not Yacht\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex3",
+    "test_code": "expect (3 == yacht.yacht Ones [1, 1, 1, 3, 5])\n    |> Test.label \"Ones\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex4",
+    "test_code": "expect (3 == yacht.yacht Ones [3, 1, 1, 5, 1])\n    |> Test.label \"Ones, out of order\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex5",
+    "test_code": "expect (0 == yacht.yacht Ones [4, 3, 6, 5, 5])\n    |> Test.label \"No ones\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex6",
+    "test_code": "expect (2 == yacht.yacht Twos [2, 3, 4, 5, 6])\n    |> Test.label \"Twos\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex7",
+    "test_code": "expect (8 == yacht.yacht Fours [1, 4, 1, 4, 1])\n    |> Test.label \"Fours\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex8",
+    "test_code": "expect (15 == yacht.yacht Threes [3, 3, 3, 3, 3])\n    |> Test.label \"Yacht counted as threes\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex9",
+    "test_code": "expect (0 == yacht.yacht Fives [3, 3, 3, 3, 3])\n    |> Test.label \"Yacht of 3s counted as fives\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex10",
+    "test_code": "expect (10 == yacht.yacht Fives [1, 5, 3, 5, 3])\n    |> Test.label \"Fives\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex11",
+    "test_code": "expect (6 == yacht.yacht Sixes [2, 3, 4, 5, 6])\n    |> Test.label \"Sixes\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex12",
+    "test_code": "expect (16 == yacht.yacht FullHouse [2, 2, 4, 4, 4])\n    |> Test.label \"Full house two small, three big\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex13",
+    "test_code": "expect (19 == yacht.yacht FullHouse [5, 3, 3, 5, 3])\n    |> Test.label \"Full house three small, two big\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex14",
+    "test_code": "expect (0 == yacht.yacht FullHouse [2, 2, 4, 4, 5])\n    |> Test.label \"Two pair is not a full house\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex15",
+    "test_code": "expect (0 == yacht.yacht FullHouse [1, 4, 4, 4, 4])\n    |> Test.label \"Four of a kind is not a full house\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex16",
+    "test_code": "expect (0 == yacht.yacht FullHouse [2, 2, 2, 2, 2])\n    |> Test.label \"Yacht is not a full house\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex17",
+    "test_code": "expect (24 == yacht.yacht FourOfAKind [6, 6, 4, 6, 6])\n    |> Test.label \"Four of a Kind\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex18",
+    "test_code": "expect (12 == yacht.yacht FourOfAKind [3, 3, 3, 3, 3])\n    |> Test.label \"Yacht can be scored as Four of a Kind\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex19",
+    "test_code": "expect (0 == yacht.yacht FourOfAKind [3, 3, 3, 5, 5])\n    |> Test.label \"Full house is not Four of a Kind\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex20",
+    "test_code": "expect (30 == yacht.yacht LittleStraight [3, 5, 4, 1, 2])\n    |> Test.label \"Little Straight\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex21",
+    "test_code": "expect (0 == yacht.yacht BigStraight [1, 2, 3, 4, 5])\n    |> Test.label \"Little Straight as Big Straight\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex22",
+    "test_code": "expect (0 == yacht.yacht LittleStraight [1, 1, 2, 3, 4])\n    |> Test.label \"Four in order but not a little straight\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex23",
+    "test_code": "expect (0 == yacht.yacht LittleStraight [1, 2, 3, 4, 6])\n    |> Test.label \"No pairs but not a little straight\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex24",
+    "test_code": "expect (0 == yacht.yacht LittleStraight [1, 1, 3, 4, 5])\n    |> Test.label \"Minimum is 1, maximum is 5, but not a little straight\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex25",
+    "test_code": "expect (30 == yacht.yacht BigStraight [4, 6, 2, 5, 3])\n    |> Test.label \"Big Straight\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex26",
+    "test_code": "expect (0 == yacht.yacht LittleStraight [6, 5, 4, 3, 2])\n    |> Test.label \"Big Straight as little straight\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex27",
+    "test_code": "expect (0 == yacht.yacht BigStraight [6, 5, 4, 3, 1])\n    |> Test.label \"No pairs but not a big straight\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex28",
+    "test_code": "expect (23 == yacht.yacht Choice [3, 3, 5, 6, 6])\n    |> Test.label \"Choice\""
+  },
+  {
+    "name": "yacht.yacht.tests.ex29",
+    "test_code": "expect (10 == yacht.yacht Choice [2, 2, 2, 2, 2])\n    |> Test.label \"Yacht as choice\""
+  }
+]

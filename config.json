@@ -424,6 +424,14 @@
         "difficulty": 7
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "135ead8d-cd69-4336-a885-20e56359cea8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig-Latin",
         "uuid": "5f93f3f5-c7d0-4597-86a4-4e9ff66fcc90",
