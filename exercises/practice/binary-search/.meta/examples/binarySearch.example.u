@@ -1,0 +1,17 @@
+use data Array
+
+binarySearch.find : Array Nat -> Nat -> Optional Int
+binarySearch.find array target =
+  binSearch array target +0 (size array - 1 |> toInt)
+
+binarySearch.binSearch : Array Nat -> Nat -> Int -> Int -> Optional Int
+binarySearch.binSearch arr val = cases
+    startIndex, endIndex | endIndex < startIndex -> None
+    startIndex, endIndex ->
+      midIndex = (startIndex + endIndex) / +2
+      match at (toNat midIndex |> getOrElse 0) arr with
+        None -> None
+        Some v -> match ordering v val with
+                    Equal -> Some midIndex
+                    Less -> binSearch arr val (midIndex + +1) endIndex
+                    Greater -> binSearch arr val startIndex (midIndex - +1)

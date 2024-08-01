@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "SimaDovakin"
+  ],
+  "files": {
+    "solution": [
+      "binarySearch.u"
+    ],
+    "test": [
+      "binarySearch.test.u"
+    ],
+    "example": [
+      ".meta/examples/binarySearch.example.u"
+    ]
+  },
+  "blurb": "Implement a binary search algorithm.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Binary_search_algorithm"
+}
