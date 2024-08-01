@@ -1,0 +1,2 @@
+pigLatin.translate : Text -> Text
+pigLatin.translate = todo "implement translate"
