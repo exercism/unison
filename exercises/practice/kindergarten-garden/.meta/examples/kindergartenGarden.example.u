@@ -1,0 +1,45 @@
+unique type kindergartenGarden.Plant
+  = Clover
+  | Grass
+  | Radishes
+  | Violets
+
+unique type kindergartenGarden.Garden
+  = Garden (Map Text [kindergartenGarden.Plant])
+
+{{
+  Accepts a list of students' names and raw garden diagram and returns Garden type.
+}}
+kindergartenGarden.garden : [Text] -> Text -> Garden
+kindergartenGarden.garden students plants =
+  rows = lines plants
+  (firstRow, lastRow) = (head rows, last rows)
+  processedPlants =
+    processRows (getOrElse "" firstRow) (getOrElse "" lastRow)
+  Garden (zip students processedPlants |> fromList)
+
+{{
+  Accepts student's name and Garden and returns list of plants.
+}}
+kindergartenGarden.lookupPlants : Text -> Garden -> [Plant]
+kindergartenGarden.lookupPlants student garden =
+  (Garden cups) = garden
+  cups
+    |> Map.get student
+    |> Optional.getOrElse []
+
+kindergartenGarden.toPlant : Char -> Plant
+kindergartenGarden.toPlant = cases
+  ?C -> Clover
+  ?G -> Grass
+  ?R -> Radishes
+  ?V -> Violets
+  _ -> Grass
+
+kindergartenGarden.processRows : Text -> Text -> [[Plant]]
+kindergartenGarden.processRows = cases
+  "", "" -> []
+  row1, row2 -> match (toCharList row1, toCharList row2) with
+                  ([x, y] ++ xs, [n, m] ++ ns) ->
+                    (map toPlant [x, y, n, m]) +: processRows (fromCharList xs) (fromCharList ns)
+                  _ -> []
