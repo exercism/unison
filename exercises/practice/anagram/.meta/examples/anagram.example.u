@@ -1,0 +1,8 @@
+anagram.findAnagrams : Text -> [Text] -> [Text]
+anagram.findAnagrams subject candidates =
+  use Text toLowercase
+  use Bag fromText
+  isAnagram : Text -> Text -> Boolean
+  isAnagram = on (Bag.==) (toLowercase >> fromText)
+
+  List.filter (c -> toLowercase c != toLowercase subject && isAnagram subject c) candidates
