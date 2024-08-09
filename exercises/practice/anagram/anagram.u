@@ -1,0 +1,2 @@
+anagram.findAnagrams : Text -> [Text] -> [Text]
+anagram.findAnagrams subject candidates = todo "implement findAnagrams"
