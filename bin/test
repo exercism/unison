@@ -1,67 +1,79 @@
 #!/usr/bin/env bash
 
-# Test if the example/exemplar solution of each
-# Practice/Concept Exercise passes the exercise's tests.
+# Synopsis:
+# Verify that each exercise's example/exemplar solution passes the tests.
+# You can either verify all exercises or a single exercise.
 
-# Example:
-# ./bin/test
+# Example: verify all exercises
+# bin/test
+
+# Example: verify single exercise
+# bin/test two-fer
 
 set -eo pipefail
 
+die() { echo "$*" >&2; exit 1; }
+
+required_tool() {
+    command -v "${1}" >/dev/null 2>&1 ||
+        die "${1} is required but not installed. Please install it and make sure it's in your PATH."
+}
+
+required_tool jq
+
+copy_example_or_examplar_to_solution() {
+    jq -c '[.files.solution, .files.exemplar // .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json \
+    | while read -r src_and_dst; do
+        cp "$(jq -r '.src' <<< "${src_and_dst}")" "$(jq -r '.dst' <<< "${src_and_dst}")"
+    done
+}
+
 docker pull exercism/unison-test-runner
 
-exit_code=0
+run_tests() {
+    local slug
 
-function run_test_runner() {
-    local dir=$1
-    local slug=$2
+    slug="${1}"
 
     docker run \
         --rm \
         --network none \
-        --mount type=bind,src="${dir}",dst=/solution \
-        --mount type=bind,src="${dir}",dst=/output \
+        --mount type=bind,src="${PWD}",dst=/solution \
+        --mount type=bind,src="${PWD}",dst=/output \
         --tmpfs /tmp:rw \
         exercism/unison-test-runner "${slug}" "/solution" "/output"
+    jq -e '.status == "pass"' "${PWD}/results.json" >/dev/null 2>&1
 }
 
-function verify_exercise() {
-    local dir=$(realpath $1)
-    local slug=$(basename "${dir}")
-    local implementation_file_key=$2
-    local implementation_file=$(jq -r --arg d "${dir}" --arg k "${implementation_file_key}" '$d + "/" + .files[$k][0]' "${dir}/.meta/config.json")
-    local stub_file=$(jq -r --arg d "${dir}" '$d + "/" + .files.solution[0]' "${dir}/.meta/config.json")
-    local stub_backup_file="${stub_file}.bak"
-    local results_file="${dir}/results.json"
+verify_exercise() {
+    local dir
+    local slug
+    local tmp_dir
 
-    cp "${stub_file}" "${stub_backup_file}"
-    cp "${implementation_file}" "${stub_file}"
+    dir=$(realpath "${1}")
+    slug=$(basename "${dir}")
+    tmp_dir=$(mktemp -d -t "exercism-verify-${slug}-XXXXX")
 
-    run_test_runner "${dir}" "${slug}"
+    echo "Verifying ${slug} exercise..."
 
-    if [[ $(jq -r '.status' "${results_file}") != "pass" ]]; then
-        echo "${slug}: ${implementation_file_key} solution did not pass the tests"
-        exit_code=1
-    fi
+    (
+        trap 'rm -rf "$tmp_dir"' EXIT    # remove tempdir when subshell ends
+        cp -r "${dir}/." "${tmp_dir}"
+        cd "${tmp_dir}"
 
-    mv "${stub_backup_file}" "${stub_file}"
-    rm -f "${results_file}"
+        copy_example_or_examplar_to_solution
+        run_tests "${slug}"
+    )
 }
 
-# Verify the Concept Exercises
-for concept_exercise_dir in ./exercises/concept/*/; do
-    if [ -d $concept_exercise_dir ]; then
-        echo "Checking $(basename "${concept_exercise_dir}") exercise..."
-        verify_exercise $concept_exercise_dir "exemplar"
+exercise_slug="${1:-*}"
+
+shopt -s nullglob
+count=0
+for exercise_dir in ./exercises/{concept,practice}/${exercise_slug}/; do
+    if [[ -d "${exercise_dir}" ]]; then
+        verify_exercise "${exercise_dir}"
+        ((++count))
     fi
 done
-
-# Verify the Practice Exercises
-for practice_exercise_dir in ./exercises/practice/*/; do
-    if [ -d $practice_exercise_dir ]; then
-        echo "Checking $(basename "${practice_exercise_dir}") exercise..."
-        verify_exercise $practice_exercise_dir "example"
-    fi
-done
-
-exit ${exit_code}
+((count > 0)) || die 'no matching exercises found!'
