@@ -456,6 +456,14 @@
         "difficulty": 2
       },
       {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "2623646b-91a2-485e-a9e5-e4b5f9194f28",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "7aa2f51d-451e-453d-9c76-9d3637aaad72",

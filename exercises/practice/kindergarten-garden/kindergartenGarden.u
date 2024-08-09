@@ -1,0 +1,20 @@
+unique type kindergartenGarden.Plant
+  = Clover
+  | Grass
+  | Radishes
+  | Violets
+
+unique type kindergartenGarden.Garden
+  = todo "implement Garden type"
+
+{{
+  Accepts a list of students' names and raw garden diagram and returns Garden type.
+}}
+kindergartenGarden.garden : [Text] -> Text -> Garden
+kindergartenGarden.garden = todo "implement garden"
+
+{{
+  Accepts student's name and Garden and returns list of plants.
+}}
+kindergartenGarden.lookupPlants : Text -> Garden -> [Plant]
+kindergartenGarden.lookupPlants = todo "implement lookupPlants"
