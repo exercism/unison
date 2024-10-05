@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./rotationalCipher.u
-.> add
-.> load ./rotationalCipher.test.u
-.> add
-.> move.term rotationalCipher.tests tests
+scratch/main> load ./rotationalCipher.u
+scratch/main> add
+scratch/main> load ./rotationalCipher.test.u
+scratch/main> add
+scratch/main> move.term rotationalCipher.tests tests
 ```

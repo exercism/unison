@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./knapsack.u
-.> add
-.> load ./knapsack.test.u
-.> add
-.> move.term knapsack.tests tests
+scratch/main> load ./knapsack.u
+scratch/main> add
+scratch/main> load ./knapsack.test.u
+scratch/main> add
+scratch/main> move.term knapsack.tests tests
 ```

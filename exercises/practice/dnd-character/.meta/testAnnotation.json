@@ -1,74 +1,74 @@
 [
   {
-      "test_code": "input = 18\n  expected = 4\n  label \"computes the modifier for 18 to be 4\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex1"
+    "name": "computes the modifier for 18 to be 4",
+    "test_code": "input = 18\n  expected = +4\n  Test.label.deprecated \"computes the modifier for 18 to be 4\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 17\n  expected = 3\n  label \"computes the modifier for 17 to be 3\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex2"
+    "name": "computes the modifier for 17 to be 3",
+    "test_code": "input = 17\n  expected = +3\n  Test.label.deprecated \"computes the modifier for 17 to be 3\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 16\n  expected = 3\n  label \"computes the modifier for 16 to be 3\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex3"
+    "name": "computes the modifier for 16 to be 3",
+    "test_code": "input = 16\n  expected = +3\n  Test.label.deprecated \"computes the modifier for 16 to be 3\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 15\n  expected = 2\n  label \"computes the modifier for 15 to be 2\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex4"
+    "name": "computes the modifier for 15 to be 2",
+    "test_code": "input = 15\n  expected = +2\n  Test.label.deprecated \"computes the modifier for 15 to be 2\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 14\n  expected = 2\n  label \"computes the modifier for 14 to be 2\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex5"
+    "name": "computes the modifier for 14 to be 2",
+    "test_code": "input = 14\n  expected = +2\n  Test.label.deprecated \"computes the modifier for 14 to be 2\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 13\n  expected = 1\n  label \"computes the modifier for 13 to be 1\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex6"
+    "name": "computes the modifier for 13 to be 1",
+    "test_code": "input = 13\n  expected = +1\n  Test.label.deprecated \"computes the modifier for 13 to be 1\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 12\n  expected = 1\n  label \"computes the modifier for 12 to be 1\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex7"
+    "name": "computes the modifier for 12 to be 1",
+    "test_code": "input = 12\n  expected = +1\n  Test.label.deprecated \"computes the modifier for 12 to be 1\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 11\n  expected = 0\n  label \"computes the modifier for 11 to be 0\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex8"
+    "name": "computes the modifier for 11 to be 0",
+    "test_code": "input = 11\n  expected = +0\n  Test.label.deprecated \"computes the modifier for 11 to be 0\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 10\n  expected = 0\n  label \"computes the modifier for 10 to be 0\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex9"
+    "name": "computes the modifier for 10 to be 0",
+    "test_code": "input = 10\n  expected = +0\n  Test.label.deprecated \"computes the modifier for 10 to be 0\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 9\n  expected = -1\n  label \"computes the modifier for 9 to be -1\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex10"
+    "name": "computes the modifier for 9 to be -1",
+    "test_code": "input = 9\n  expected = -1\n  Test.label.deprecated \"computes the modifier for 9 to be -1\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 8\n  expected = -1\n  label \"computes the modifier for 8 to be -1\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex11"
+    "name": "computes the modifier for 8 to be -1",
+    "test_code": "input = 8\n  expected = -1\n  Test.label.deprecated \"computes the modifier for 8 to be -1\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 7\n  expected = -2\n  label \"computes the modifier for 7 to be -2\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex12"
+    "name": "computes the modifier for 7 to be -2",
+    "test_code": "input = 7\n  expected = -2\n  Test.label.deprecated \"computes the modifier for 7 to be -2\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 6\n  expected = -2\n  label \"computes the modifier for 6 to be -2\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex13"
+    "name": "computes the modifier for 6 to be -2",
+    "test_code": "input = 6\n  expected = -2\n  Test.label.deprecated \"computes the modifier for 6 to be -2\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 5\n  expected = -3\n  label \"computes the modifier for 5 to be -3\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex14"
+    "name": "computes the modifier for 5 to be -3",
+    "test_code": "input = 5\n  expected = -3\n  Test.label.deprecated \"computes the modifier for 5 to be -3\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 4\n  expected = -3\n  label \"computes the modifier for 4 to be -3\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex15"
+    "name": "computes the modifier for 4 to be -3",
+    "test_code": "input = 4\n  expected = -3\n  Test.label.deprecated \"computes the modifier for 4 to be -3\" <| expect (expected == modifier input)"
   },
   {
-      "test_code": "input = 3\n  expected = -4\n  label \"computes the modifier for 3 to be -4\" <| expect (expected == modifier input)",
-      "name": "dndCharacter.test.testModifier.ex16"
+    "name": "computes the modifier for 3 to be -4",
+    "test_code": "input = 3\n  expected = -4\n  Test.label.deprecated \"computes the modifier for 3 to be -4\" <| expect (expected == modifier input)"
   },
   {
-    "test_code": "do\n  seed = !nat\n  calculatedAbility = Random.lcg seed ability_\n  label \"generates value within range\" <| expect (Nat.inRange 3 19 calculatedAbility)\n",
-    "name": "dndCharacter.test.testAbility"
+    "name": "generates value within range",
+    "test_code": "do\n  use test.deprecated.gen nat\n  seed = !nat\n  calculatedAbility = Random.lcg seed ability_\n  Test.label.deprecated \"generates value within range\" <| expect (Nat.inRange 3 19 calculatedAbility)"
   },
   {
-    "test_code": "do\n  seed = !nat\n  (Character strength dexterity constitution intelligence wisdom charisma hitpoints) = Random.lcg seed character\n  expectedHitpoints = Int.abs (+10 Int.+ modifier constitution)\n  expect ((Nat.inRange 3 19 strength) && (Nat.inRange 3 19 dexterity) && (Nat.inRange 3 19 constitution) && (Nat.inRange 3 19 intelligence) && (Nat.inRange 3 19 wisdom) && (Nat.inRange 3 19 charisma) && (hitpoints == expectedHitpoints)\n  ) |> label \"generates valid character\"",
-    "name": "dndCharacter.test.testCharacter"
+    "name": "generates valid character",
+    "test_code": "do\n  use test.deprecated.gen nat\n  seed = !nat\n  (Character strength dexterity constitution intelligence wisdom charisma hitpoints) = Random.lcg seed character\n  expectedHitpoints = Int.abs (+10 Int.+ modifier constitution)\n  expect ((Nat.inRange 3 19 strength) && (Nat.inRange 3 19 dexterity) && (Nat.inRange 3 19 constitution) && (Nat.inRange 3 19 intelligence) && (Nat.inRange 3 19 wisdom) && (Nat.inRange 3 19 charisma) && (hitpoints == expectedHitpoints)\n  ) |> Test.label.deprecated \"generates valid character\""
   }
 ]

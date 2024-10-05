@@ -1,50 +1,50 @@
 [
   {
-    "name": "minesweeper.annotate.tests.ex1",
-    "test_code": "expected = []\n  input = []\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"no rows\""
+    "name": "no rows",
+    "test_code": "expected = []\n  input = []\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"no rows\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex2",
-    "test_code": "expected = [\"\"]\n  input = [\"\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"no columns\""
+    "name": "no columns",
+    "test_code": "expected = [\"\"]\n  input = [\"\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"no columns\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex3",
-    "test_code": "expected = [\"   \", \"   \", \"   \"]\n  input = [\"   \", \"   \", \"   \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"no mines\""
+    "name": "no mines",
+    "test_code": "expected = [\"   \", \"   \", \"   \"]\n  input = [\"   \", \"   \", \"   \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"no mines\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex4",
-    "test_code": "expected = [\"***\", \"***\", \"***\"]\n  input = [\"***\", \"***\", \"***\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"minefield with only mines\""
+    "name": "minefield with only mines",
+    "test_code": "expected = [\"***\", \"***\", \"***\"]\n  input = [\"***\", \"***\", \"***\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"minefield with only mines\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex5",
-    "test_code": "expected = [\"111\", \"1*1\", \"111\"]\n  input = [\"   \", \" * \", \"   \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"mine surrounded by spaces\""
+    "name": "mine surrounded by spaces",
+    "test_code": "expected = [\"111\", \"1*1\", \"111\"]\n  input = [\"   \", \" * \", \"   \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"mine surrounded by spaces\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex6",
-    "test_code": "expected = [\"***\", \"*8*\", \"***\"]\n  input = [\"***\", \"* *\", \"***\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"space surrounded by mines\""
+    "name": "space surrounded by mines",
+    "test_code": "expected = [\"***\", \"*8*\", \"***\"]\n  input = [\"***\", \"* *\", \"***\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"space surrounded by mines\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex7",
-    "test_code": "expected = [\"1*2*1\"]\n  input = [\" * * \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"horizontal line\""
+    "name": "horizontal line",
+    "test_code": "expected = [\"1*2*1\"]\n  input = [\" * * \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"horizontal line\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex8",
-    "test_code": "expected = [\"*1 1*\"]\n  input = [\"*   *\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"horizontal line, mines at edges\""
+    "name": "horizontal line, mines at edges",
+    "test_code": "expected = [\"*1 1*\"]\n  input = [\"*   *\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"horizontal line, mines at edges\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex9",
-    "test_code": "expected = [\"1\", \"*\", \"2\", \"*\", \"1\"]\n  input = [\" \", \"*\", \" \", \"*\", \" \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"vertical line\""
+    "name": "vertical line",
+    "test_code": "expected = [\"1\", \"*\", \"2\", \"*\", \"1\"]\n  input = [\" \", \"*\", \" \", \"*\", \" \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"vertical line\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex10",
-    "test_code": "expected = [\"*\", \"1\", \" \", \"1\", \"*\"]\n  input = [\"*\", \" \", \" \", \" \", \"*\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"vertical line, mines at edges\""
+    "name": "vertical line, mines at edges",
+    "test_code": "expected = [\"*\", \"1\", \" \", \"1\", \"*\"]\n  input = [\"*\", \" \", \" \", \" \", \"*\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"vertical line, mines at edges\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex11",
-    "test_code": "expected = [\" 2*2 \", \"25*52\", \"*****\", \"25*52\", \" 2*2 \"]\n  input = [\"  *  \", \"  *  \", \"*****\", \"  *  \", \"  *  \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"cross\""
+    "name": "cross",
+    "test_code": "expected = [\" 2*2 \", \"25*52\", \"*****\", \"25*52\", \" 2*2 \"]\n  input = [\"  *  \", \"  *  \", \"*****\", \"  *  \", \"  *  \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"cross\""
   },
   {
-    "name": "minesweeper.annotate.tests.ex12",
-    "test_code": "expected = [\"1*22*1\", \"12*322\", \" 123*2\", \"112*4*\", \"1*22*2\", \"111111\"]\n  input = [\" *  * \", \"  *   \", \"    * \", \"   * *\", \" *  * \", \"      \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label \"large minefield\""
+    "name": "large minefield",
+    "test_code": "expected = [\"1*22*1\", \"12*322\", \" 123*2\", \"112*4*\", \"1*22*2\", \"111111\"]\n  input = [\" *  * \", \"  *   \", \"    * \", \"   * *\", \" *  * \", \"      \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"large minefield\""
   }
 ]

@@ -1,54 +1,54 @@
 [
   {
-    "test_code": "runLengthEncoding.test.ex1 = let\n\tTest.label \"run-length encode a string, empty string\" <| Test.expect (encode \"\" === \"\")",
-    "name": "runLengthEncoding.test.ex1"
+    "name": "run-length encode a string, empty string",
+    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, empty string\" <| Test.expect ((encode \"\") === \"\")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex2 = let\n\tTest.label \"run-length encode a string, single characters only are encoded without count\" <| Test.expect (encode \"XYZ\" === \"XYZ\")",
-    "name": "runLengthEncoding.test.ex2"
+    "name": "run-length encode a string, single characters only are encoded without count",
+    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, single characters only are encoded without count\" <| Test.expect (encode \"XYZ\" === \"XYZ\")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex3 = let\n\tTest.label \"run-length encode a string, string with no single characters\" <| Test.expect (encode \"AABBBCCCC\" === \"2A3B4C\")",
-    "name": "runLengthEncoding.test.ex3"
+    "name": "run-length encode a string, string with no single characters",
+    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, string with no single characters\" <| Test.expect (encode \"AABBBCCCC\" === \"2A3B4C\")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex4 = let\n\tTest.label \"run-length encode a string, single characters mixed with repeated characters\" <| Test.expect (encode \"WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB\" === \"12WB12W3B24WB\")",
-    "name": "runLengthEncoding.test.ex4"
+    "name": "run-length encode a string, single characters mixed with repeated characters",
+    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, single characters mixed with repeated characters\" <| Test.expect (encode \"WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB\" === \"12WB12W3B24WB\")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex5 = let\n\tTest.label \"run-length encode a string, multiple whitespace mixed in string\" <| Test.expect (encode \"  hsqq qww  \" === \"2 hs2q q2w2 \")",
-    "name": "runLengthEncoding.test.ex5"
+    "name": "run-length encode a string, multiple whitespace mixed in string",
+    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, multiple whitespace mixed in string\" <| Test.expect (encode \"  hsqq qww  \" === \"2 hs2q q2w2 \")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex6 = let\n\tTest.label \"run-length encode a string, lowercase characters\" <| Test.expect (encode \"aabbbcccc\" === \"2a3b4c\")",
-    "name": "runLengthEncoding.test.ex6"
+    "name": "run-length encode a string, lowercase characters",
+    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, lowercase characters\" <| Test.expect (encode \"aabbbcccc\" === \"2a3b4c\")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex7 = let\n\tTest.label \"run-length decode a string, empty string\" <| Test.expect (decode \"\" === \"\")",
-    "name": "runLengthEncoding.test.ex7"
+    "name": "run-length decode a string, empty string",
+    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, empty string\" <| Test.expect (decode \"\" === \"\")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex8 = let\n\tTest.label \"run-length decode a string, single characters only\" <| Test.expect (decode \"XYZ\" === \"XYZ\")",
-    "name": "runLengthEncoding.test.ex8"
+    "name": "run-length decode a string, single characters only",
+    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, single characters only\" <| Test.expect (decode \"XYZ\" === \"XYZ\")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex9 = let\n\tTest.label \"run-length decode a string, string with no single characters\" <| Test.expect (decode \"2A3B4C\" === \"AABBBCCCC\")",
-    "name": "runLengthEncoding.test.ex9"
+    "name": "run-length decode a string, string with no single characters",
+    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, string with no single characters\" <| Test.expect (decode \"2A3B4C\" === \"AABBBCCCC\")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex10 = let\n\tTest.label \"run-length decode a string, single characters with repeated characters\" <| Test.expect (decode \"12WB12W3B24WB\" === \"WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB\")",
-    "name": "runLengthEncoding.test.ex10"
+    "name": "run-length decode a string, single characters with repeated characters",
+    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, single characters with repeated characters\" <| Test.expect (decode \"12WB12W3B24WB\" === \"WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB\")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex11 = let\n\tTest.label \"run-length decode a string, multiple whitespace mixed in string\" <| Test.expect (decode \"2 hs2q q2w2 \" === \"  hsqq qww  \")",
-    "name": "runLengthEncoding.test.ex11"
+    "name": "run-length decode a string, multiple whitespace mixed in string",
+    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, multiple whitespace mixed in string\" <| Test.expect (decode \"2 hs2q q2w2 \" === \"  hsqq qww  \")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex12 = let\n\tTest.label \"run-length decode a string, lowercase string\" <| Test.expect (decode \"2a3b4c\" === \"aabbbcccc\")",
-    "name": "runLengthEncoding.test.ex12"
+    "name": "run-length decode a string, lowercase string",
+    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, lowercase string\" <| Test.expect (decode \"2a3b4c\" === \"aabbbcccc\")"
   },
   {
-    "test_code": "runLengthEncoding.test.ex13 = let\n\tTest.label \"encode and then decode, encode followed by decode gives original string\" <| Test.expect (consistency \"zzz ZZ  zZ\" === \"zzz ZZ  zZ\")",
-    "name": "runLengthEncoding.test.ex13"
+    "name": "encode and then decode, encode followed by decode gives original string",
+    "test_code": "let\n  Test.label.deprecated \"encode and then decode, encode followed by decode gives original string\" <| Test.expect (consistency \"zzz ZZ  zZ\" === \"zzz ZZ  zZ\")"
   }
 ]

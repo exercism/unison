@@ -1,46 +1,46 @@
 [
   {
-    "name": "scrabbleScore.score.tests.ex1",
-    "test_code": "expect (1 == scrabbleScore.score \"a\")\n    |> Test.label \"lowercase letter\""
+    "name": "lowercase letter",
+    "test_code": "expect (1 == scrabbleScore.score \"a\")\n    |> Test.label.deprecated \"lowercase letter\""
   },
   {
-    "name": "scrabbleScore.score.tests.ex2",
-    "test_code": "expect (1 == scrabbleScore.score \"A\")\n    |> Test.label \"uppercase letter\""
+    "name": "uppercase letter",
+    "test_code": "expect (1 == scrabbleScore.score \"A\")\n    |> Test.label.deprecated \"uppercase letter\""
   },
   {
-    "name": "scrabbleScore.score.tests.ex3",
-    "test_code": "expect (4 == scrabbleScore.score \"f\")\n    |> Test.label \"valuable letter\""
+    "name": "valuable letter",
+    "test_code": "expect (4 == scrabbleScore.score \"f\")\n    |> Test.label.deprecated \"valuable letter\""
   },
   {
-    "name": "scrabbleScore.score.tests.ex4",
-    "test_code": "expect (2 == scrabbleScore.score \"at\")\n    |> Test.label \"short word\""
+    "name": "short word",
+    "test_code": "expect (2 == scrabbleScore.score \"at\")\n    |> Test.label.deprecated \"short word\""
   },
   {
-    "name": "scrabbleScore.score.tests.ex5",
-    "test_code": "expect (12 == scrabbleScore.score \"zoo\")\n    |> Test.label \"short, valuable word\""
+    "name": "short, valuable word",
+    "test_code": "expect (12 == scrabbleScore.score \"zoo\")\n    |> Test.label.deprecated \"short, valuable word\""
   },
   {
-    "name": "scrabbleScore.score.tests.ex6",
-    "test_code": "expect (6 == scrabbleScore.score \"street\")\n    |> Test.label \"medium word\""
+    "name": "medium word",
+    "test_code": "expect (6 == scrabbleScore.score \"street\")\n    |> Test.label.deprecated \"medium word\""
   },
   {
-    "name": "scrabbleScore.score.tests.ex7",
-    "test_code": "expect (22 == scrabbleScore.score \"quirky\")\n    |> Test.label \"medium, valuable word\""
+    "name": "medium, valuable word",
+    "test_code": "expect (22 == scrabbleScore.score \"quirky\")\n    |> Test.label.deprecated \"medium, valuable word\""
   },
   {
-    "name": "scrabbleScore.score.tests.ex8",
-    "test_code": "expect (41 == scrabbleScore.score \"OxyphenButazone\")\n    |> Test.label \"long, mixed-case word\""
+    "name": "long, mixed-case word",
+    "test_code": "expect (41 == scrabbleScore.score \"OxyphenButazone\")\n    |> Test.label.deprecated \"long, mixed-case word\""
   },
   {
-    "name": "scrabbleScore.score.tests.ex9",
-    "test_code": "expect (8 == scrabbleScore.score \"pinata\")\n    |> Test.label \"english-like word\""
+    "name": "english-like word",
+    "test_code": "expect (8 == scrabbleScore.score \"pinata\")\n    |> Test.label.deprecated \"english-like word\""
   },
   {
-    "name": "scrabbleScore.score.tests.ex10",
-    "test_code": "expect (0 == scrabbleScore.score \"\")\n    |> Test.label \"empty input\""
+    "name": "empty input",
+    "test_code": "expect (0 == scrabbleScore.score \"\")\n    |> Test.label.deprecated \"empty input\""
   },
   {
-    "name": "scrabbleScore.score.tests.ex11",
-    "test_code": "expect (87 == scrabbleScore.score \"abcdefghijklmnopqrstuvwxyz\")\n    |> Test.label \"entire alphabet available\""
+    "name": "entire alphabet available",
+    "test_code": "expect (87 == scrabbleScore.score \"abcdefghijklmnopqrstuvwxyz\")\n    |> Test.label.deprecated \"entire alphabet available\""
   }
 ]

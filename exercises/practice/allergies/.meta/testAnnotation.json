@@ -1,202 +1,202 @@
 [
   {
-    "test_code": "allergies.test.ex1 = let\n\tTest.label \"not allergic to anything\" <| Test.expect (allergicTo \"eggs\" 0 === false)",
-    "name": "allergies.test.ex1"
+    "name": "not allergic to anything",
+    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"eggs\" 0 === false)"
   },
   {
-    "test_code": "allergies.test.ex2 = let\n\tTest.label \"allergic only to eggs\" <| Test.expect (allergicTo \"eggs\" 1 === true)",
-    "name": "allergies.test.ex2"
+    "name": "allergic only to eggs",
+    "test_code": "let\n  Test.label.deprecated \"allergic only to eggs\" <| Test.expect (allergicTo \"eggs\" 1 === true)"
   },
   {
-    "test_code": "allergies.test.ex3 = let\n\tTest.label \"allergic to eggs and something else\" <| Test.expect (allergicTo \"eggs\" 3 === true)",
-    "name": "allergies.test.ex3"
+    "name": "allergic to eggs and something else",
+    "test_code": "let\n  Test.label.deprecated \"allergic to eggs and something else\" <| Test.expect (allergicTo \"eggs\" 3 === true)"
   },
   {
-    "test_code": "allergies.test.ex4 = let\n\tTest.label \"allergic to something, but not eggs\" <| Test.expect (allergicTo \"eggs\" 2 === false)",
-    "name": "allergies.test.ex4"
+    "name": "allergic to something, but not eggs",
+    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not eggs\" <| Test.expect (allergicTo \"eggs\" 2 === false)"
   },
   {
-    "test_code": "allergies.test.ex5 = let\n\tTest.label \"allergic to everything\" <| Test.expect (allergicTo \"eggs\" 255 === true)",
-    "name": "allergies.test.ex5"
+    "name": "allergic to everything",
+    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"eggs\" 255 === true)"
   },
   {
-    "test_code": "allergies.test.ex6 = let\n\tTest.label \"not allergic to anything\" <| Test.expect (allergicTo \"peanuts\" 0 === false)",
-    "name": "allergies.test.ex6"
+    "name": "not allergic to anything",
+    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"peanuts\" 0 === false)"
   },
   {
-    "test_code": "allergies.test.ex7 = let\n\tTest.label \"allergic only to peanuts\" <| Test.expect (allergicTo \"peanuts\" 2 === true)",
-    "name": "allergies.test.ex7"
+    "name": "allergic only to peanuts",
+    "test_code": "let\n  Test.label.deprecated \"allergic only to peanuts\" <| Test.expect (allergicTo \"peanuts\" 2 === true)"
   },
   {
-    "test_code": "allergies.test.ex8 = let\n\tTest.label \"allergic to peanuts and something else\" <| Test.expect (allergicTo \"peanuts\" 7 === true)",
-    "name": "allergies.test.ex8"
+    "name": "allergic to peanuts and something else",
+    "test_code": "let\n  Test.label.deprecated \"allergic to peanuts and something else\" <| Test.expect (allergicTo \"peanuts\" 7 === true)"
   },
   {
-    "test_code": "allergies.test.ex9 = let\n\tTest.label \"allergic to something, but not peanuts\" <| Test.expect (allergicTo \"peanuts\" 5 === false)",
-    "name": "allergies.test.ex9"
+    "name": "allergic to something, but not peanuts",
+    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not peanuts\" <| Test.expect (allergicTo \"peanuts\" 5 === false)"
   },
   {
-    "test_code": "allergies.test.ex10 = let\n\tTest.label \"allergic to everything\" <| Test.expect (allergicTo \"peanuts\" 255 === true)",
-    "name": "allergies.test.ex10"
+    "name": "allergic to everything",
+    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"peanuts\" 255 === true)"
   },
   {
-    "test_code": "allergies.test.ex11 = let\n\tTest.label \"not allergic to anything\" <| Test.expect (allergicTo \"shellfish\" 0 === false)",
-    "name": "allergies.test.ex11"
+    "name": "not allergic to anything",
+    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"shellfish\" 0 === false)"
   },
   {
-    "test_code": "allergies.test.ex12 = let\n\tTest.label \"allergic only to shellfish\" <| Test.expect (allergicTo \"shellfish\" 4 === true)",
-    "name": "allergies.test.ex12"
+    "name": "allergic only to shellfish",
+    "test_code": "let\n  Test.label.deprecated \"allergic only to shellfish\" <| Test.expect (allergicTo \"shellfish\" 4 === true)"
   },
   {
-    "test_code": "allergies.test.ex13 = let\n\tTest.label \"allergic to shellfish and something else\" <| Test.expect (allergicTo \"shellfish\" 14 === true)",
-    "name": "allergies.test.ex13"
+    "name": "allergic to shellfish and something else",
+    "test_code": "let\n  Test.label.deprecated \"allergic to shellfish and something else\" <| Test.expect (allergicTo \"shellfish\" 14 === true)"
   },
   {
-    "test_code": "allergies.test.ex14 = let\n\tTest.label \"allergic to something, but not shellfish\" <| Test.expect (allergicTo \"shellfish\" 10 === false)",
-    "name": "allergies.test.ex14"
+    "name": "allergic to something, but not shellfish",
+    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not shellfish\" <| Test.expect (allergicTo \"shellfish\" 10 === false)"
   },
   {
-    "test_code": "allergies.test.ex15 = let\n\tTest.label \"allergic to everything\" <| Test.expect (allergicTo \"shellfish\" 255 === true)",
-    "name": "allergies.test.ex15"
+    "name": "allergic to everything",
+    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"shellfish\" 255 === true)"
   },
   {
-    "test_code": "allergies.test.ex16 = let\n\tTest.label \"not allergic to anything\" <| Test.expect (allergicTo \"strawberries\" 0 === false)",
-    "name": "allergies.test.ex16"
+    "name": "not allergic to anything",
+    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"strawberries\" 0 === false)"
   },
   {
-    "test_code": "allergies.test.ex17 = let\n\tTest.label \"allergic only to strawberries\" <| Test.expect (allergicTo \"strawberries\" 8 === true)",
-    "name": "allergies.test.ex17"
+    "name": "allergic only to strawberries",
+    "test_code": "let\n  Test.label.deprecated \"allergic only to strawberries\" <| Test.expect (allergicTo \"strawberries\" 8 === true)"
   },
   {
-    "test_code": "allergies.test.ex18 = let\n\tTest.label \"allergic to strawberries and something else\" <| Test.expect (allergicTo \"strawberries\" 28 === true)",
-    "name": "allergies.test.ex18"
+    "name": "allergic to strawberries and something else",
+    "test_code": "let\n  Test.label.deprecated \"allergic to strawberries and something else\" <| Test.expect (allergicTo \"strawberries\" 28 === true)"
   },
   {
-    "test_code": "allergies.test.ex19 = let\n\tTest.label \"allergic to something, but not strawberries\" <| Test.expect (allergicTo \"strawberries\" 20 === false)",
-    "name": "allergies.test.ex19"
+    "name": "allergic to something, but not strawberries",
+    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not strawberries\" <| Test.expect (allergicTo \"strawberries\" 20 === false)"
   },
   {
-    "test_code": "allergies.test.ex20 = let\n\tTest.label \"allergic to everything\" <| Test.expect (allergicTo \"strawberries\" 255 === true)",
-    "name": "allergies.test.ex20"
+    "name": "allergic to everything",
+    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"strawberries\" 255 === true)"
   },
   {
-    "test_code": "allergies.test.ex21 = let\n\tTest.label \"not allergic to anything\" <| Test.expect (allergicTo \"tomatoes\" 0 === false)",
-    "name": "allergies.test.ex21"
+    "name": "not allergic to anything",
+    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"tomatoes\" 0 === false)"
   },
   {
-    "test_code": "allergies.test.ex22 = let\n\tTest.label \"allergic only to tomatoes\" <| Test.expect (allergicTo \"tomatoes\" 16 === true)",
-    "name": "allergies.test.ex22"
+    "name": "allergic only to tomatoes",
+    "test_code": "let\n  Test.label.deprecated \"allergic only to tomatoes\" <| Test.expect (allergicTo \"tomatoes\" 16 === true)"
   },
   {
-    "test_code": "allergies.test.ex23 = let\n\tTest.label \"allergic to tomatoes and something else\" <| Test.expect (allergicTo \"tomatoes\" 56 === true)",
-    "name": "allergies.test.ex23"
+    "name": "allergic to tomatoes and something else",
+    "test_code": "let\n  Test.label.deprecated \"allergic to tomatoes and something else\" <| Test.expect (allergicTo \"tomatoes\" 56 === true)"
   },
   {
-    "test_code": "allergies.test.ex24 = let\n\tTest.label \"allergic to something, but not tomatoes\" <| Test.expect (allergicTo \"tomatoes\" 40 === false)",
-    "name": "allergies.test.ex24"
+    "name": "allergic to something, but not tomatoes",
+    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not tomatoes\" <| Test.expect (allergicTo \"tomatoes\" 40 === false)"
   },
   {
-    "test_code": "allergies.test.ex25 = let\n\tTest.label \"allergic to everything\" <| Test.expect (allergicTo \"tomatoes\" 255 === true)",
-    "name": "allergies.test.ex25"
+    "name": "allergic to everything",
+    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"tomatoes\" 255 === true)"
   },
   {
-    "test_code": "allergies.test.ex26 = let\n\tTest.label \"not allergic to anything\" <| Test.expect (allergicTo \"chocolate\" 0 === false)",
-    "name": "allergies.test.ex26"
+    "name": "not allergic to anything",
+    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"chocolate\" 0 === false)"
   },
   {
-    "test_code": "allergies.test.ex27 = let\n\tTest.label \"allergic only to chocolate\" <| Test.expect (allergicTo \"chocolate\" 32 === true)",
-    "name": "allergies.test.ex27"
+    "name": "allergic only to chocolate",
+    "test_code": "let\n  Test.label.deprecated \"allergic only to chocolate\" <| Test.expect (allergicTo \"chocolate\" 32 === true)"
   },
   {
-    "test_code": "allergies.test.ex28 = let\n\tTest.label \"allergic to chocolate and something else\" <| Test.expect (allergicTo \"chocolate\" 112 === true)",
-    "name": "allergies.test.ex28"
+    "name": "allergic to chocolate and something else",
+    "test_code": "let\n  Test.label.deprecated \"allergic to chocolate and something else\" <| Test.expect (allergicTo \"chocolate\" 112 === true)"
   },
   {
-    "test_code": "allergies.test.ex29 = let\n\tTest.label \"allergic to something, but not chocolate\" <| Test.expect (allergicTo \"chocolate\" 80 === false)",
-    "name": "allergies.test.ex29"
+    "name": "allergic to something, but not chocolate",
+    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not chocolate\" <| Test.expect (allergicTo \"chocolate\" 80 === false)"
   },
   {
-    "test_code": "allergies.test.ex30 = let\n\tTest.label \"allergic to everything\" <| Test.expect (allergicTo \"chocolate\" 255 === true)",
-    "name": "allergies.test.ex30"
+    "name": "allergic to everything",
+    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"chocolate\" 255 === true)"
   },
   {
-    "test_code": "allergies.test.ex31 = let\n\tTest.label \"not allergic to anything\" <| Test.expect (allergicTo \"pollen\" 0 === false)",
-    "name": "allergies.test.ex31"
+    "name": "not allergic to anything",
+    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"pollen\" 0 === false)"
   },
   {
-    "test_code": "allergies.test.ex32 = let\n\tTest.label \"allergic only to pollen\" <| Test.expect (allergicTo \"pollen\" 64 === true)",
-    "name": "allergies.test.ex32"
+    "name": "allergic only to pollen",
+    "test_code": "let\n  Test.label.deprecated \"allergic only to pollen\" <| Test.expect (allergicTo \"pollen\" 64 === true)"
   },
   {
-    "test_code": "allergies.test.ex33 = let\n\tTest.label \"allergic to pollen and something else\" <| Test.expect (allergicTo \"pollen\" 224 === true)",
-    "name": "allergies.test.ex33"
+    "name": "allergic to pollen and something else",
+    "test_code": "let\n  Test.label.deprecated \"allergic to pollen and something else\" <| Test.expect (allergicTo \"pollen\" 224 === true)"
   },
   {
-    "test_code": "allergies.test.ex34 = let\n\tTest.label \"allergic to something, but not pollen\" <| Test.expect (allergicTo \"pollen\" 160 === false)",
-    "name": "allergies.test.ex34"
+    "name": "allergic to something, but not pollen",
+    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not pollen\" <| Test.expect (allergicTo \"pollen\" 160 === false)"
   },
   {
-    "test_code": "allergies.test.ex35 = let\n\tTest.label \"allergic to everything\" <| Test.expect (allergicTo \"pollen\" 255 === true)",
-    "name": "allergies.test.ex35"
+    "name": "allergic to everything",
+    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"pollen\" 255 === true)"
   },
   {
-    "test_code": "allergies.test.ex36 = let\n\tTest.label \"not allergic to anything\" <| Test.expect (allergicTo \"cats\" 0 === false)",
-    "name": "allergies.test.ex36"
+    "name": "not allergic to anything",
+    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"cats\" 0 === false)"
   },
   {
-    "test_code": "allergies.test.ex37 = let\n\tTest.label \"allergic only to cats\" <| Test.expect (allergicTo \"cats\" 128 === true)",
-    "name": "allergies.test.ex37"
+    "name": "allergic only to cats",
+    "test_code": "let\n  Test.label.deprecated \"allergic only to cats\" <| Test.expect (allergicTo \"cats\" 128 === true)"
   },
   {
-    "test_code": "allergies.test.ex38 = let\n\tTest.label \"allergic to cats and something else\" <| Test.expect (allergicTo \"cats\" 192 === true)",
-    "name": "allergies.test.ex38"
+    "name": "allergic to cats and something else",
+    "test_code": "let\n  Test.label.deprecated \"allergic to cats and something else\" <| Test.expect (allergicTo \"cats\" 192 === true)"
   },
   {
-    "test_code": "allergies.test.ex39 = let\n\tTest.label \"allergic to something, but not cats\" <| Test.expect (allergicTo \"cats\" 64 === false)",
-    "name": "allergies.test.ex39"
+    "name": "allergic to something, but not cats",
+    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not cats\" <| Test.expect (allergicTo \"cats\" 64 === false)"
   },
   {
-    "test_code": "allergies.test.ex40 = let\n\tTest.label \"allergic to everything\" <| Test.expect (allergicTo \"cats\" 255 === true)",
-    "name": "allergies.test.ex40"
+    "name": "allergic to everything",
+    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"cats\" 255 === true)"
   },
   {
-    "test_code": "allergies.test.ex41 = let\n\tTest.label \"no allergies\" <| Test.expect (list 0 === [])",
-    "name": "allergies.test.ex41"
+    "name": "no allergies",
+    "test_code": "let\n  Test.label.deprecated \"no allergies\" <| Test.expect (list 0 === [])"
   },
   {
-    "test_code": "allergies.test.ex42 = let\n\tTest.label \"just eggs\" <| Test.expect (list 1 === [\"eggs\"])",
-    "name": "allergies.test.ex42"
+    "name": "just eggs",
+    "test_code": "let\n  Test.label.deprecated \"just eggs\" <| Test.expect (list 1 === [\"eggs\"])"
   },
   {
-    "test_code": "allergies.test.ex43 = let\n\tTest.label \"just peanuts\" <| Test.expect (list 2 === [\"peanuts\"])",
-    "name": "allergies.test.ex43"
+    "name": "just peanuts",
+    "test_code": "let\n  Test.label.deprecated \"just peanuts\" <| Test.expect (list 2 === [\"peanuts\"])"
   },
   {
-    "test_code": "allergies.test.ex44 = let\n\tTest.label \"just strawberries\" <| Test.expect (list 8 === [\"strawberries\"])",
-    "name": "allergies.test.ex44"
+    "name": "just strawberries",
+    "test_code": "let\n  Test.label.deprecated \"just strawberries\" <| Test.expect (list 8 === [\"strawberries\"])"
   },
   {
-    "test_code": "allergies.test.ex45 = let\n\tTest.label \"eggs and peanuts\" <| Test.expect (list 3 === [\"eggs\",\"peanuts\"])",
-    "name": "allergies.test.ex45"
+    "name": "eggs and peanuts",
+    "test_code": "let\n  Test.label.deprecated \"eggs and peanuts\" <| Test.expect (toSorted (list 3) === toSorted [\"eggs\",\"peanuts\"])"
   },
   {
-    "test_code": "allergies.test.ex46 = let\n\tTest.label \"more than eggs but not peanuts\" <| Test.expect (list 5 === [\"eggs\",\"shellfish\"])",
-    "name": "allergies.test.ex46"
+    "name": "more than eggs but not peanuts",
+    "test_code": "let\n  Test.label.deprecated \"more than eggs but not peanuts\" <| Test.expect (toSorted (list 5) === toSorted [\"eggs\",\"shellfish\"])"
   },
   {
-    "test_code": "allergies.test.ex47 = let\n\tTest.label \"lots of stuff\" <| Test.expect (list 248 === [\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"])",
-    "name": "allergies.test.ex47"
+    "name": "lots of stuff",
+    "test_code": "let\n  Test.label.deprecated \"lots of stuff\" <| Test.expect (toSorted (list 248) === toSorted [\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"])"
   },
   {
-    "test_code": "allergies.test.ex48 = let\n\tTest.label \"everything\" <| Test.expect (list 255 === [\"eggs\",\"peanuts\",\"shellfish\",\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"])",
-    "name": "allergies.test.ex48"
+    "name": "everything",
+    "test_code": "let\n  Test.label.deprecated \"everything\" <| Test.expect (toSorted (list 255) === toSorted [\"eggs\",\"peanuts\",\"shellfish\",\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"])"
   },
   {
-    "test_code": "allergies.test.ex49 = let\n\tTest.label \"no allergen score parts\" <| Test.expect (list 509 === [\"eggs\",\"shellfish\",\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"])",
-    "name": "allergies.test.ex49"
+    "name": "no allergen score parts",
+    "test_code": "let\n  Test.label.deprecated \"no allergen score parts\" <| Test.expect (toSorted (list 509) === toSorted [\"eggs\",\"shellfish\",\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"])"
   },
   {
-    "test_code": "allergies.test.ex50 = let\n\tTest.label \"no allergen score parts without highest valid score\" <| Test.expect (list 257 === [\"eggs\"])",
-    "name": "allergies.test.ex50"
+    "name": "no allergen score parts without highest valid score",
+    "test_code": "let\n  Test.label.deprecated \"no allergen score parts without highest valid score\" <| Test.expect (list 257 === [\"eggs\"])"
   }
 ]

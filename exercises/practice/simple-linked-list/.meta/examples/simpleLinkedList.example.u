@@ -14,8 +14,8 @@ LinkedList.fromList xs = List.foldRight (a acc -> Cons a acc) LinkedList.Nil xs
 
 LinkedList.head : LinkedList a -> Optional a
 LinkedList.head linkedList = match linkedList with
-  Nil -> None
-  Cons a _ -> Some a
+  LinkedList.Nil -> None
+  LinkedList.Cons a _ -> Some a
 
 LinkedList.isNil : LinkedList a -> Boolean
 LinkedList.isNil linkedList = match linkedList with
@@ -24,17 +24,17 @@ LinkedList.isNil linkedList = match linkedList with
 
 LinkedList.tail : LinkedList a -> LinkedList a
 LinkedList.tail linkedList = match linkedList with
-  Cons a t -> t
-  Nil -> Nil
+  LinkedList.Cons a t -> t
+  LinkedList.Nil -> Nil
 
 LinkedList.reverseLinkedList : LinkedList a -> LinkedList a
 LinkedList.reverseLinkedList linkedList =
   go acc = cases
-    Nil -> acc
-    Cons a rest -> go (Cons a acc) rest
+    LinkedList.Nil -> acc
+    LinkedList.Cons a rest -> go (Cons a acc) rest
   go Nil linkedList
 
 LinkedList.toList : LinkedList a -> [a]
 LinkedList.toList linkedList = match linkedList with
   LinkedList.Nil -> List.empty
-  Cons a remaining -> a +: (toList remaining)
+  LinkedList.Cons a remaining -> a +: (toList remaining)

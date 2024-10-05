@@ -9,87 +9,87 @@ kindergartenGarden.tests.defaultGarden =
 kindergartenGarden.lookupPlants.tests.ex1 =
   garden = kindergartenGarden.tests.defaultGarden "RC\nGG"
   expect ([Radishes, Clover, Grass, Grass] === kindergartenGarden.lookupPlants "Alice" garden)
-    |> Test.label "partial garden - garden with single student"
+    |> Test.label.deprecated "partial garden - garden with single student"
 
 kindergartenGarden.lookupPlants.tests.ex2 =
   garden = kindergartenGarden.tests.defaultGarden "VC\nRC"
   expect ([Violets, Clover, Radishes, Clover] === kindergartenGarden.lookupPlants "Alice" garden)
-    |> Test.label "partial garden - different garden with single student"
+    |> Test.label.deprecated "partial garden - different garden with single student"
 
 kindergartenGarden.lookupPlants.tests.ex3 =
   garden = kindergartenGarden.tests.defaultGarden "VVCG\nVVRC"
   expect ([Clover, Grass, Radishes, Clover] === kindergartenGarden.lookupPlants "Bob" garden)
-    |> Test.label "partial garden - garden with two students"
+    |> Test.label.deprecated "partial garden - garden with two students"
 
 kindergartenGarden.lookupPlants.tests.ex4 =
   garden = kindergartenGarden.tests.defaultGarden "VVCCGG\nVVCCGG"
   expect ([Clover, Clover, Clover, Clover] === kindergartenGarden.lookupPlants "Bob" garden)
-    |> Test.label "partial garden - multiple students for the same garden with three students - second student's garden"
+    |> Test.label.deprecated "partial garden - multiple students for the same garden with three students - second student's garden"
 
 kindergartenGarden.lookupPlants.tests.ex5 =
   garden = kindergartenGarden.tests.defaultGarden "VVCCGG\nVVCCGG"
   expect ([Grass, Grass, Grass, Grass] === kindergartenGarden.lookupPlants "Charlie" garden)
-    |> Test.label "partial garden - multiple students for the same garden with three students - third student's garden"
+    |> Test.label.deprecated "partial garden - multiple students for the same garden with three students - third student's garden"
 
 kindergartenGarden.lookupPlants.tests.ex6 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Violets, Radishes, Violets, Radishes] === kindergartenGarden.lookupPlants "Alice" garden)
-    |> Test.label "full garden - for Alice, first student's garden"
+    |> Test.label.deprecated "full garden - for Alice, first student's garden"
 
 kindergartenGarden.lookupPlants.tests.ex7 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Clover, Grass, Clover, Clover] === kindergartenGarden.lookupPlants "Bob" garden)
-    |> Test.label "full garden - for Bob, second student's garden"
+    |> Test.label.deprecated "full garden - for Bob, second student's garden"
 
 kindergartenGarden.lookupPlants.tests.ex8 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Violets, Violets, Clover, Grass] === kindergartenGarden.lookupPlants "Charlie" garden)
-    |> Test.label "full garden - for Charlie"
+    |> Test.label.deprecated "full garden - for Charlie"
 
 kindergartenGarden.lookupPlants.tests.ex9 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Radishes, Violets, Clover, Radishes] === kindergartenGarden.lookupPlants "David" garden)
-    |> Test.label "full garden - for David"
+    |> Test.label.deprecated "full garden - for David"
 
 kindergartenGarden.lookupPlants.tests.ex10 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Clover, Grass, Radishes, Grass] === kindergartenGarden.lookupPlants "Eve" garden)
-    |> Test.label "full garden - for Eve"
+    |> Test.label.deprecated "full garden - for Eve"
 
 kindergartenGarden.lookupPlants.tests.ex11 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Grass, Clover, Violets, Clover] === kindergartenGarden.lookupPlants "Fred" garden)
-    |> Test.label "full garden - for Fred"
+    |> Test.label.deprecated "full garden - for Fred"
 
 kindergartenGarden.lookupPlants.tests.ex12 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Clover, Grass, Grass, Clover] === kindergartenGarden.lookupPlants "Ginny" garden)
-    |> Test.label "full garden - for Ginny"
+    |> Test.label.deprecated "full garden - for Ginny"
 
 kindergartenGarden.lookupPlants.tests.ex13 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Violets, Radishes, Radishes, Violets] === kindergartenGarden.lookupPlants "Harriet" garden)
-    |> Test.label "full garden - for Harriet"
+    |> Test.label.deprecated "full garden - for Harriet"
 
 kindergartenGarden.lookupPlants.tests.ex14 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Grass, Clover, Violets, Clover] === kindergartenGarden.lookupPlants "Ileana" garden)
-    |> Test.label "full garden - for Ileana"
+    |> Test.label.deprecated "full garden - for Ileana"
 
 kindergartenGarden.lookupPlants.tests.ex15 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Violets, Clover, Violets, Grass] === kindergartenGarden.lookupPlants "Joseph" garden)
-    |> Test.label "full garden - for Joseph"
+    |> Test.label.deprecated "full garden - for Joseph"
 
 kindergartenGarden.lookupPlants.tests.ex16 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Grass, Clover, Clover, Grass] === kindergartenGarden.lookupPlants "Kincaid" garden)
-    |> Test.label "full garden - for Kincaid, second to last student's garden"
+    |> Test.label.deprecated "full garden - for Kincaid, second to last student's garden"
 
 kindergartenGarden.lookupPlants.tests.ex17 =
   garden = kindergartenGarden.tests.defaultGarden "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
   expect ([Grass, Violets, Clover, Violets] === kindergartenGarden.lookupPlants "Larry" garden)
-    |> Test.label "full garden - for Larry, last student's garden"
+    |> Test.label.deprecated "full garden - for Larry, last student's garden"
 
 test> kindergartenGarden.tests = runAll [
   kindergartenGarden.lookupPlants.tests.ex1,

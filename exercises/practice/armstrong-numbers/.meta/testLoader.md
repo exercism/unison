@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./armstrongNumbers.u
-.> add
-.> load ./armstrongNumbers.test.u
-.> add
-.> move.term armstrongNumbers.tests tests
+scratch/main> load ./armstrongNumbers.u
+scratch/main> add
+scratch/main> load ./armstrongNumbers.test.u
+scratch/main> add
+scratch/main> move.term armstrongNumbers.tests tests
 ```

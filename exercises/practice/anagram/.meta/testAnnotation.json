@@ -1,66 +1,66 @@
 [
   {
     "name": "no matches",
-    "test_code": "anagram.findAnagrams.tests.ex1 = let\n  actual = findAnagrams \"diaper\" [\"hello\", \"world\", \"zombies\", \"pants\"]\n  Test.label \"no matches\" <| Test.expect (actual === [])"
+    "test_code": "let\n  actual = findAnagrams \"diaper\" [\"hello\", \"world\", \"zombies\", \"pants\"]\n  Test.label.deprecated \"no matches\" <| Test.expect (actual === [])"
   },
   {
     "name": "detects two anagrams",
-    "test_code": "anagram.findAnagrams.tests.ex2 = let\n  actual = findAnagrams \"solemn\" [\"lemons\",\"cherry\",\"melons\"]\n  expected = [\"lemons\",\"melons\"]\n  Test.label \"detects two anagrams\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"solemn\" [\"lemons\",\"cherry\",\"melons\"]\n  expected = [\"lemons\",\"melons\"]\n  Test.label.deprecated \"detects two anagrams\" <| Test.expect (actual === expected)"
   },
   {
     "name": "does not detect anagram subsets",
-    "test_code": "anagram.findAnagrams.tests.ex3 = let\n  actual = findAnagrams \"good\" [\"dog\",\"goody\"]\n  expected = []\n  Test.label \"does not detect anagram subsets\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"good\" [\"dog\",\"goody\"]\n  expected = []\n  Test.label.deprecated \"does not detect anagram subsets\" <| Test.expect (actual === expected)"
   },
   {
     "name": "detects anagram",
-    "test_code": "anagram.findAnagrams.tests.ex4 = let\n  actual = findAnagrams \"listen\" [\"enlists\",\"google\",\"inlets\",\"banana\"]\n  expected = [\"inlets\"]\n  Test.label \"detects anagram\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"listen\" [\"enlists\",\"google\",\"inlets\",\"banana\"]\n  expected = [\"inlets\"]\n  Test.label.deprecated \"detects anagram\" <| Test.expect (actual === expected)"
   },
   {
     "name": "detects three anagrams",
-    "test_code": "anagram.findAnagrams.tests.ex5 = let\n  actual = findAnagrams \"allergy\" [\"gallery\",\"ballerina\",\"regally\",\"clergy\",\"largely\",\"leading\"]\n  expected = [\"gallery\",\"regally\",\"largely\"]\n  Test.label \"detects three anagrams\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"allergy\" [\"gallery\",\"ballerina\",\"regally\",\"clergy\",\"largely\",\"leading\"]\n  expected = [\"gallery\",\"regally\",\"largely\"]\n  Test.label.deprecated \"detects three anagrams\" <| Test.expect (actual === expected)"
   },
   {
     "name": "detects multiple anagrams with different case",
-    "test_code": "anagram.findAnagrams.tests.ex6 = let\n  actual = findAnagrams \"nose\" [\"Eons\",\"ONES\"]\n  expected = [\"Eons\",\"ONES\"]\n  Test.label \"detects multiple anagrams with different case\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"nose\" [\"Eons\",\"ONES\"]\n  expected = [\"Eons\",\"ONES\"]\n  Test.label.deprecated \"detects multiple anagrams with different case\" <| Test.expect (actual === expected)"
   },
   {
     "name": "does not detect non-anagrams with identical checksum",
-    "test_code": "anagram.findAnagrams.tests.ex7 = let\n  actual = findAnagrams \"mass\" [\"last\"]\n  expected = []\n  Test.label \"does not detect non-anagrams with identical checksum\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"mass\" [\"last\"]\n  expected = []\n  Test.label.deprecated \"does not detect non-anagrams with identical checksum\" <| Test.expect (actual === expected)"
   },
   {
     "name": "detects anagrams case-insensitively",
-    "test_code": "anagram.findAnagrams.tests.ex8 = let\n  actual = findAnagrams \"Orchestra\" [\"cashregister\",\"Carthorse\",\"radishes\"]\n  expected = [\"Carthorse\"]\n  Test.label \"detects anagrams case-insensitively\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"Orchestra\" [\"cashregister\",\"Carthorse\",\"radishes\"]\n  expected = [\"Carthorse\"]\n  Test.label.deprecated \"detects anagrams case-insensitively\" <| Test.expect (actual === expected)"
   },
   {
     "name": "detects anagrams using case-insensitive subject",
-    "test_code": "anagram.findAnagrams.tests.ex9 = let\n  actual = findAnagrams \"Orchestra\" [\"cashregister\",\"carthorse\",\"radishes\"]\n  expected = [\"carthorse\"]\n  Test.label \"detects anagrams using case-insensitive subject\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"Orchestra\" [\"cashregister\",\"carthorse\",\"radishes\"]\n  expected = [\"carthorse\"]\n  Test.label.deprecated \"detects anagrams using case-insensitive subject\" <| Test.expect (actual === expected)"
   },
   {
     "name": "detects anagrams using case-insensitive possible matches",
-    "test_code": "anagram.findAnagrams.tests.ex10 = let\n  actual = findAnagrams \"orchestra\" [\"cashregister\",\"Carthorse\",\"radishes\"]\n  expected = [\"Carthorse\"]\n  Test.label \"detects anagrams using case-insensitive possible matches\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"orchestra\" [\"cashregister\",\"Carthorse\",\"radishes\"]\n  expected = [\"Carthorse\"]\n  Test.label.deprecated \"detects anagrams using case-insensitive possible matches\" <| Test.expect (actual === expected)"
   },
   {
     "name": "does not detect an anagram if the original word is repeated",
-    "test_code": "anagram.findAnagrams.tests.ex11 = let \n  actual = findAnagrams \"go\" [\"go Go GO\"]\n  expected = []\n  Test.label \"does not detect an anagram if the original word is repeated\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"go\" [\"go Go GO\"]\n  expected = []\n  Test.label.deprecated \"does not detect an anagram if the original word is repeated\" <| Test.expect (actual === expected)"
   },
   {
     "name": "anagrams must use all letters exactly once",
-    "test_code": "anagram.findAnagrams.tests.ex12 = let\n  actual = findAnagrams \"tapper\" [\"patter\"]\n  expected = []\n  Test.label \"anagrams must use all letters exactly once\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"tapper\" [\"patter\"]\n  expected = []\n  Test.label.deprecated \"anagrams must use all letters exactly once\" <| Test.expect (actual === expected)"
   },
   {
     "name": "words are not anagrams of themselves",
-    "test_code": "anagram.findAnagrams.tests.ex13 = let\n  actual = findAnagrams \"BANANA\" [\"BANANA\"]\n  expected = []\n  Test.label \"words are not anagrams of themselves\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"BANANA\" [\"BANANA\"]\n  expected = []\n  Test.label.deprecated \"words are not anagrams of themselves\" <| Test.expect (actual === expected)"
   },
   {
     "name": "words are not anagrams of themselves even if letter case is partially different",
-    "test_code": "anagram.findAnagrams.tests.ex14 = let\n  actual = findAnagrams \"BANANA\" [\"Banana\"]\n  expected = []\n  Test.label \"words are not anagrams of themselves even if letter case is partially different\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"BANANA\" [\"Banana\"]\n  expected = []\n  Test.label.deprecated \"words are not anagrams of themselves even if letter case is partially different\" <| Test.expect (actual === expected)"
   },
   {
     "name": "words are not anagrams of themselves even if letter case is completely different",
-    "test_code": "anagram.findAnagrams.tests.ex15 = let\n  actual = findAnagrams \"BANANA\" [\"banana\"]\n  expected = []\n  Test.label \"words are not anagrams of themselves even if letter case is completely different\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"BANANA\" [\"banana\"]\n  expected = []\n  Test.label.deprecated \"words are not anagrams of themselves even if letter case is completely different\" <| Test.expect (actual === expected)"
   },
   {
     "name": "words other than themselves can be anagrams",
-    "test_code": "anagram.findAnagrams.tests.ex16 = let\n  actual = findAnagrams \"LISTEN\" [\"LISTEN\",\"Silent\" ]\n  expected = [\"Silent\"]\n  Test.label \"words other than themselves can be anagrams\" <| Test.expect (actual === expected)"
+    "test_code": "let\n  actual = findAnagrams \"LISTEN\" [\"LISTEN\",\"Silent\" ]\n  expected = [\"Silent\"]\n  Test.label.deprecated \"words other than themselves can be anagrams\" <| Test.expect (actual === expected)"
   }
 ]

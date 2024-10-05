@@ -12,7 +12,7 @@ minesweeper.annotate board =
 
 minesweeper.directions : [(Int, Int)]
 minesweeper.directions =
-  use base.Int range
+  use Int range
   range -1 +2
     |> map (n -> zip (fill 3 n) (range -1 +2))
     |> join
@@ -47,7 +47,7 @@ minesweeper.createCoordinatesMap coordinates =
 
 minesweeper.findRowMines : Int -> Text -> [(Int, Int)]
 minesweeper.findRowMines rowNumber row =
-  use base.Int range
+  use Int range
   isMine = at2 >> (==) ?*
   row
     |> toCharList
@@ -57,7 +57,7 @@ minesweeper.findRowMines rowNumber row =
 
 minesweeper.findBoardMines : [Text] -> [(Int, Int)]
 minesweeper.findBoardMines board =
-  use base.Int range
+  use Int range
   board
     |> zip (range +0 (size board |> toInt))
     |> map (uncurry findRowMines)
@@ -65,7 +65,7 @@ minesweeper.findBoardMines board =
 
 minesweeper.annotateRow : Int -> Text -> Map (Int, Int) Nat -> Text
 minesweeper.annotateRow rowNumber row coordinatesMap =
-  use base.Int range
+  use Int range
   populateTile indexedTile =
     (colNumber, value) = indexedTile
     match value with
@@ -81,7 +81,7 @@ minesweeper.annotateRow rowNumber row coordinatesMap =
 
 minesweeper.annotateBoard : [Text] -> Map (Int, Int) Nat -> [Text]
 minesweeper.annotateBoard board coordinatesMap =
-  use base.Int range
+  use Int range
   board
     |> zip (range +0 (size board |> toInt))
     |> map (p -> (uncurry annotateRow p) coordinatesMap)

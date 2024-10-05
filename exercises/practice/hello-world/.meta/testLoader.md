@@ -1,9 +1,9 @@
 # Testing transcript for hello exercise
 
 ```ucm
-.> load ./hello.u
-.> add
-.> load ./hello.test.u
-.> add
-.> move.term hello.tests tests
+scratch/main> load ./hello.u
+scratch/main> add
+scratch/main> load ./hello.test.u
+scratch/main> add
+scratch/main> move.term hello.tests tests
 ```

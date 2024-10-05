@@ -1,46 +1,46 @@
 scrabbleScore.score.tests.ex1 =
   expect (1 == scrabbleScore.score "a")
-    |> Test.label "lowercase letter"
+    |> Test.label.deprecated "lowercase letter"
 
 scrabbleScore.score.tests.ex2 =
   expect (1 == scrabbleScore.score "A")
-    |> Test.label "uppercase letter"
+    |> Test.label.deprecated "uppercase letter"
 
 scrabbleScore.score.tests.ex3 =
   expect (4 == scrabbleScore.score "f")
-    |> Test.label "valuable letter"
+    |> Test.label.deprecated "valuable letter"
 
 scrabbleScore.score.tests.ex4 =
   expect (2 == scrabbleScore.score "at")
-    |> Test.label "short word"
+    |> Test.label.deprecated "short word"
 
 scrabbleScore.score.tests.ex5 =
   expect (12 == scrabbleScore.score "zoo")
-    |> Test.label "short, valuable word"
+    |> Test.label.deprecated "short, valuable word"
 
 scrabbleScore.score.tests.ex6 =
   expect (6 == scrabbleScore.score "street")
-    |> Test.label "medium word"
+    |> Test.label.deprecated "medium word"
 
 scrabbleScore.score.tests.ex7 =
   expect (22 == scrabbleScore.score "quirky")
-    |> Test.label "medium, valuable word"
+    |> Test.label.deprecated "medium, valuable word"
 
 scrabbleScore.score.tests.ex8 =
   expect (41 == scrabbleScore.score "OxyphenButazone")
-    |> Test.label "long, mixed-case word"
+    |> Test.label.deprecated "long, mixed-case word"
 
 scrabbleScore.score.tests.ex9 =
   expect (8 == scrabbleScore.score "pinata")
-    |> Test.label "english-like word"
+    |> Test.label.deprecated "english-like word"
 
 scrabbleScore.score.tests.ex10 =
   expect (0 == scrabbleScore.score "")
-    |> Test.label "empty input"
+    |> Test.label.deprecated "empty input"
 
 scrabbleScore.score.tests.ex11 =
   expect (87 == scrabbleScore.score "abcdefghijklmnopqrstuvwxyz")
-    |> Test.label "entire alphabet available"
+    |> Test.label.deprecated "entire alphabet available"
 
 test> scrabbleScore.tests = runAll [
   scrabbleScore.score.tests.ex1,

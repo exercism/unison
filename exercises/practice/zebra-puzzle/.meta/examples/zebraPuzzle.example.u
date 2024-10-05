@@ -19,11 +19,11 @@ unique type Position = One | Two | Three | Four | Five
 
 Position.toInt : Position -> Int
 Position.toInt = cases
-  One -> +1
-  Two -> +2
-  Three -> +3
-  Four -> +4
-  Five -> +5
+  Position.One -> +1
+  Position.Two -> +2
+  Position.Three -> +3
+  Position.Four -> +4
+  Position.Five -> +5
 
 Position.fromInt : Int -> Position
 Position.fromInt = cases
@@ -44,11 +44,11 @@ unique type HousePositions = {one : [House], two : [House], three : [House], fou
 
 atNextPosition : House -> HousePositions -> [House]
 atNextPosition pos housePos = match House.position pos with
-  One -> HousePositions.two housePos
-  Two -> HousePositions.three housePos
-  Three -> HousePositions.four housePos
-  Four -> HousePositions.five housePos
-  Five -> []
+  Position.One -> HousePositions.two housePos
+  Position.Two -> HousePositions.three housePos
+  Position.Three -> HousePositions.four housePos
+  Position.Four -> HousePositions.five housePos
+  Position.Five -> []
 
 -- for backtracking
 structural ability Stack a where

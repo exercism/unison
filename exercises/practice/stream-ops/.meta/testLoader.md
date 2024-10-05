@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./streamOps.u
-.> add
-.> load ./streamOps.test.u
-.> add
-.> move.term stream.tests tests
+scratch/main> load ./streamOps.u
+scratch/main> add
+scratch/main> load ./streamOps.test.u
+scratch/main> add
+scratch/main> move.term stream.tests tests
 ```

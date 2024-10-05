@@ -1,9 +1,9 @@
 # Testing transcript for scrabble-score exercise
 
 ```ucm
-.> load ./scrabbleScore.u
-.> add
-.> load ./scrabbleScore.test.u
-.> add
-.> move.term scrabbleScore.tests tests
+scratch/main> load ./scrabbleScore.u
+scratch/main> add
+scratch/main> load ./scrabbleScore.test.u
+scratch/main> add
+scratch/main> move.term scrabbleScore.tests tests
 ```

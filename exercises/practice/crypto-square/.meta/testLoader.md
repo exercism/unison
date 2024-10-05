@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./crypto.u
-.> add
-.> load ./crypto.test.u
-.> add
-.> move.term cryptoSquare.tests tests
+scratch/main> load ./crypto.u
+scratch/main> add
+scratch/main> load ./crypto.test.u
+scratch/main> add
+scratch/main> move.term cryptoSquare.tests tests
 ```

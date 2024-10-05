@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./darts.u
-.> add
-.> load ./darts.test.u
-.> add
-.> move.term darts.tests tests
+scratch/main> load ./darts.u
+scratch/main> add
+scratch/main> load ./darts.test.u
+scratch/main> add
+scratch/main> move.term darts.tests tests
 ```

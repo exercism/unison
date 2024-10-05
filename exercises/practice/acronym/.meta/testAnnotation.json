@@ -1,38 +1,38 @@
 [
-    {
-        "name": "basic",
-        "test_code": "Test.expect (abbreviate \"Portable Network Graphics\") === \"PNG\""
-    },
-    {
-        "name": "lowercase words",
-        "test_code": "Test.expect (abbreviate \"Ruby on Rails\") === \"ROR\""
-    },
-    {
-        "name": "punctuation",
-        "test_code": "Test.expect (abbreviate \"First In, First Out\") === \"FIFO\""
-    },
-    {
-        "name": "all caps word",
-        "test_code": "Test.expect (abbreviate \"GNU Image Manipulation Program\") === \"GIMP\""
-    },
-    {
-        "name": "punctuation without whitespace",
-        "test_code": "Test.expect (abbreviate \"Complementary metal-oxide semiconductor\") === \"CMOS\""
-    },
-    {
-        "name": "very long abbreviation",
-        "test_code": "Test.expect (abbreviate \"Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me\") === \"ROTFLSHTMDCOALM\""
-    },
-    {
-        "name": "consecutive delimiters",
-        "test_code": "Test.expect (abbreviate \"Something - I made up from thin air\") === \"SIMUFTA\""
-    },
-    {
-        "name": "apostrophes",
-        "test_code": "Test.expect (abbreviate \"Halley's Comet\") === \"HC\""
-    },
-    {
-        "name": "underscore emphasis",
-        "test_code": "Test.expect (abbreviate \"The Road _Not_ Taken\") === \"TRNT\""
-    }
+  {
+    "name": "acronym.test.basic",
+    "test_code": "Test.expect (abbreviate \"Portable Network Graphics\" === \"PNG\")"
+  },
+  {
+    "name": "acronym.test.lowercaseWords",
+    "test_code": "Test.expect (abbreviate \"Ruby on Rails\" === \"ROR\")"
+  },
+  {
+    "name": "acronym.test.punctuation",
+    "test_code": "Test.expect (abbreviate \"First In, First Out\" === \"FIFO\")"
+  },
+  {
+    "name": "acronym.test.allCapsWord",
+    "test_code": "Test.expect (abbreviate \"GNU Image Manipulation Program\" === \"GIMP\")"
+  },
+  {
+    "name": "acronym.test.punctuationWithoutWhitespace",
+    "test_code": "Test.expect (abbreviate \"Complementary metal-oxide semiconductor\" === \"CMOS\")"
+  },
+  {
+    "name": "acronym.test.veryLongAbbreviation",
+    "test_code": "Test.expect (abbreviate \"Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me\" === \"ROTFLSHTMDCOALM\")"
+  },
+  {
+    "name": "acronym.test.consecutiveDelimiters",
+    "test_code": "Test.expect (abbreviate \"Something - I made up from thin air\" === \"SIMUFTA\")"
+  },
+  {
+    "name": "acronym.test.apostrophes",
+    "test_code": "Test.expect (abbreviate \"Halley's Comet\" === \"HC\")"
+  },
+  {
+    "name": "acronym.test.underscoreEmphasis",
+    "test_code": "Test.expect (abbreviate \"The Road _Not_ Taken\" === \"TRNT\")"
+  }
 ]

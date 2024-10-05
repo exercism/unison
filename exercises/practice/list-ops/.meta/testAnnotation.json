@@ -1,90 +1,90 @@
 [
   {
-    "name": "listOps.append.tests.ex1",
-    "test_code": "Test.expect ([] === (listOps.append [] []))\n    |> Test.label \"append entries to a list and return the new list - empty lists\""
+    "name": "append entries to a list and return the new list - empty lists",
+    "test_code": "Test.expect ([] === (listOps.append [] []))\n    |> Test.label.deprecated \"append entries to a list and return the new list - empty lists\""
   },
   {
-    "name": "listOps.append.tests.ex2",
-    "test_code": "Test.expect ([1, 2, 3, 4] === listOps.append [] [1, 2, 3, 4])\n    |> Test.label \"append entries to a list and return the new list - list to empty list\""
+    "name": "append entries to a list and return the new list - list to empty list",
+    "test_code": "Test.expect ([1, 2, 3, 4] === listOps.append [] [1, 2, 3, 4])\n    |> Test.label.deprecated \"append entries to a list and return the new list - list to empty list\""
   },
   {
-    "name": "listOps.append.tests.ex3",
-    "test_code": "Test.expect ([1, 2, 3, 4] === listOps.append [1, 2, 3, 4] [])\n    |> Test.label \"append entries to a list and return the new list - empty list to list\""
+    "name": "append entries to a list and return the new list - empty list to list",
+    "test_code": "Test.expect ([1, 2, 3, 4] === listOps.append [1, 2, 3, 4] [])\n    |> Test.label.deprecated \"append entries to a list and return the new list - empty list to list\""
   },
   {
-    "name": "listOps.append.tests.ex4",
-    "test_code": "Test.expect ([1, 2, 2, 3, 4, 5] === listOps.append [1, 2] [2, 3, 4, 5])\n    |> Test.label \"append entries to a list and return the new list - non-empty lists\""
+    "name": "append entries to a list and return the new list - non-empty lists",
+    "test_code": "Test.expect ([1, 2, 2, 3, 4, 5] === listOps.append [1, 2] [2, 3, 4, 5])\n    |> Test.label.deprecated \"append entries to a list and return the new list - non-empty lists\""
   },
   {
-    "name": "listOps.concat.tests.ex1",
-    "test_code": "Test.expect ([] === listOps.concat [])\n    |> Test.label \"concatenate a list of lists - empty list\""
+    "name": "concatenate a list of lists - empty list",
+    "test_code": "Test.expect ([] === listOps.concat [])\n    |> Test.label.deprecated \"concatenate a list of lists - empty list\""
   },
   {
-    "name": "listOps.concat.tests.ex2",
-    "test_code": "Test.expect ([1, 2, 3, 4, 5, 6] === listOps.concat [[1, 2], [3], [], [4, 5, 6]])\n    |> Test.label \"concatenate a list of lists - list of lists\""
+    "name": "concatenate a list of lists - list of lists",
+    "test_code": "Test.expect ([1, 2, 3, 4, 5, 6] === listOps.concat [[1, 2], [3], [], [4, 5, 6]])\n    |> Test.label.deprecated \"concatenate a list of lists - list of lists\""
   },
   {
-    "name": "listOps.concat.tests.ex3",
-    "test_code": "Test.expect ([[1], [2], [3], [], [4, 5, 6]] === listOps.concat [[[1], [2]], [[3]], [[]], [[4, 5, 6]]])\n    |> Test.label \"concatenate a list of lists - list of nested lists\""
+    "name": "concatenate a list of lists - list of nested lists",
+    "test_code": "Test.expect ([[1], [2], [3], [], [4, 5, 6]] === listOps.concat [[[1], [2]], [[3]], [[]], [[4, 5, 6]]])\n    |> Test.label.deprecated \"concatenate a list of lists - list of nested lists\""
   },
   {
-    "name": "listOps.filter.tests.ex1",
-    "test_code": "Test.expect ([] === listOps.filter (x -> 1 == mod x 2) [])\n    |> Test.label \"filter list returning only values that satisfy the filter function - empty list\""
+    "name": "filter list returning only values that satisfy the filter function - empty list",
+    "test_code": "Test.expect ([] === listOps.filter (x -> 1 == mod x 2) [])\n    |> Test.label.deprecated \"filter list returning only values that satisfy the filter function - empty list\""
   },
   {
-    "name": "listOps.filter.tests.ex2",
-    "test_code": "Test.expect ([1, 3, 5] === listOps.filter (x -> 1 == mod x 2) [1, 2, 3, 5])\n    |> Test.label \"filter list returning only values that satisfy the filter function - non-empty list\""
+    "name": "filter list returning only values that satisfy the filter function - non-empty list",
+    "test_code": "Test.expect ([1, 3, 5] === listOps.filter (x -> 1 == mod x 2) [1, 2, 3, 5])\n    |> Test.label.deprecated \"filter list returning only values that satisfy the filter function - non-empty list\""
   },
   {
-    "name": "listOps.foldl.tests.ex1",
-    "test_code": "use Nat *\n  Test.expect (2 == listOps.foldl (acc el -> el * acc) 2 [])\n    |> Test.label \"folds (reduces) the given list from the left with a function - empty list\""
+    "name": "folds (reduces) the given list from the left with a function - empty list",
+    "test_code": "use Nat *\n  Test.expect (2 == listOps.foldl (acc el -> el * acc) 2 [])\n    |> Test.label.deprecated \"folds (reduces) the given list from the left with a function - empty list\""
   },
   {
-    "name": "listOps.foldl.tests.ex2",
-    "test_code": "use Nat +\n  Test.expect (15 == listOps.foldl (acc el -> el + acc) 5 [1, 2, 3, 4])\n    |> Test.label \"folds (reduces) the given list from the left with a function - direction independent function applied to non-empty list\""
+    "name": "folds (reduces) the given list from the left with a function - direction independent function applied to non-empty list",
+    "test_code": "use Nat +\n  Test.expect (15 == listOps.foldl (acc el -> el + acc) 5 [1, 2, 3, 4])\n    |> Test.label.deprecated \"folds (reduces) the given list from the left with a function - direction independent function applied to non-empty list\""
   },
   {
-    "name": "listOps.foldl.tests.ex3",
-    "test_code": "use Float /\n  Test.expect (64.0 == listOps.foldl (acc el -> el / acc) 24.0 [1.0, 2.0, 3.0, 4.0])\n    |> Test.label \"folds (reduces) the given list from the left with a function - direction dependent function applied to non-empty list\""
+    "name": "folds (reduces) the given list from the left with a function - direction dependent function applied to non-empty list",
+    "test_code": "use Float /\n  Test.expect (64.0 == listOps.foldl (acc el -> el / acc) 24.0 [1.0, 2.0, 3.0, 4.0])\n    |> Test.label.deprecated \"folds (reduces) the given list from the left with a function - direction dependent function applied to non-empty list\""
   },
   {
-    "name": "listOps.foldr.tests.ex1",
-    "test_code": "use Nat *\n  Test.expect (2 == listOps.foldr (acc el -> el * acc) 2 [])\n    |> Test.label \"folds (reduces) the given list from the right with a function - empty list\""
+    "name": "folds (reduces) the given list from the right with a function - empty list",
+    "test_code": "use Nat *\n  Test.expect (2 == listOps.foldr (acc el -> el * acc) 2 [])\n    |> Test.label.deprecated \"folds (reduces) the given list from the right with a function - empty list\""
   },
   {
-    "name": "listOps.foldr.tests.ex2",
-    "test_code": "use Nat +\n  Test.expect (15 == listOps.foldr (acc el -> el + acc) 5 [1, 2, 3, 4])\n    |> Test.label \"folds (reduces) the given list from the right with a function - direction independent function applied to non-empty list\""
+    "name": "folds (reduces) the given list from the right with a function - direction independent function applied to non-empty list",
+    "test_code": "use Nat +\n  Test.expect (15 == listOps.foldr (acc el -> el + acc) 5 [1, 2, 3, 4])\n    |> Test.label.deprecated \"folds (reduces) the given list from the right with a function - direction independent function applied to non-empty list\""
   },
   {
-    "name": "listOps.foldr.tests.ex3",
-    "test_code": "use Float /\n  Test.expect (9.0 == listOps.foldr (acc el -> el / acc) 24.0 [1.0, 2.0, 3.0, 4.0])\n    |> Test.label \"folds (reduces) the given list from the right with a function - direction dependent function applied to non-empty list\""
+    "name": "folds (reduces) the given list from the right with a function - direction dependent function applied to non-empty list",
+    "test_code": "use Float /\n  Test.expect (9.0 == listOps.foldr (acc el -> el / acc) 24.0 [1.0, 2.0, 3.0, 4.0])\n    |> Test.label.deprecated \"folds (reduces) the given list from the right with a function - direction dependent function applied to non-empty list\""
   },
   {
-    "name": "listOps.length.tests.ex1",
-    "test_code": "Test.expect (0 == listOps.length [])\n    |> Test.label \"returns the length of a list - empty list\""
+    "name": "returns the length of a list - empty list",
+    "test_code": "Test.expect (0 == listOps.length [])\n    |> Test.label.deprecated \"returns the length of a list - empty list\""
   },
   {
-    "name": "listOps.length.tests.ex2",
-    "test_code": "Test.expect (4 == listOps.length [1, 2, 3, 4])\n    |> Test.label \"returns the length of a list - non-empty list\""
+    "name": "returns the length of a list - non-empty list",
+    "test_code": "Test.expect (4 == listOps.length [1, 2, 3, 4])\n    |> Test.label.deprecated \"returns the length of a list - non-empty list\""
   },
   {
-    "name": "listOps.map.tests.ex1",
-    "test_code": "Test.expect ([] === listOps.map (x -> x + 1) [])\n    |> Test.label \"return a list of elements whose values equal the list value transformed by the mapping function - empty list\""
+    "name": "return a list of elements whose values equal the list value transformed by the mapping function - empty list",
+    "test_code": "Test.expect ([] === listOps.map (x -> x + 1) [])\n    |> Test.label.deprecated \"return a list of elements whose values equal the list value transformed by the mapping function - empty list\""
   },
   {
-    "name": "listOps.map.tests.ex2",
-    "test_code": "Test.expect ([2, 4, 6, 8] === listOps.map (x -> x + 1) [1, 3, 5, 7])\n    |> Test.label \"return a list of elements whose values equal the list value transformed by the mapping function - non-empty list\""
+    "name": "return a list of elements whose values equal the list value transformed by the mapping function - non-empty list",
+    "test_code": "Test.expect ([2, 4, 6, 8] === listOps.map (x -> x + 1) [1, 3, 5, 7])\n    |> Test.label.deprecated \"return a list of elements whose values equal the list value transformed by the mapping function - non-empty list\""
   },
   {
-    "name": "listOps.reverse.tests.ex1",
-    "test_code": "Test.expect ([] === listOps.reverse [])\n    |> Test.label \"reverse the elements of the list - empty list\""
+    "name": "reverse the elements of the list - empty list",
+    "test_code": "Test.expect ([] === listOps.reverse [])\n    |> Test.label.deprecated \"reverse the elements of the list - empty list\""
   },
   {
-    "name": "listOps.reverse.tests.ex2",
-    "test_code": "Test.expect ([7, 5, 3, 1] === listOps.reverse [1, 3, 5, 7])\n    |> Test.label \"reverse the elements of the list - non-empty list\""
+    "name": "reverse the elements of the list - non-empty list",
+    "test_code": "Test.expect ([7, 5, 3, 1] === listOps.reverse [1, 3, 5, 7])\n    |> Test.label.deprecated \"reverse the elements of the list - non-empty list\""
   },
   {
-    "name": "listOps.reverse.tests.ex3",
-    "test_code": "Test.expect ([[4, 5, 6], [], [3], [1, 2]] === listOps.reverse [[1, 2], [3], [], [4, 5, 6]])\n    |> Test.label \"reverse the elements of the list - list of lists is not flattened\""
+    "name": "reverse the elements of the list - list of lists is not flattened",
+    "test_code": "Test.expect ([[4, 5, 6], [], [3], [1, 2]] === listOps.reverse [[1, 2], [3], [], [4, 5, 6]])\n    |> Test.label.deprecated \"reverse the elements of the list - list of lists is not flattened\""
   }
 ]

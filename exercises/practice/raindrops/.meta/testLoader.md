@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./raindrops.u
-.> add
-.> load ./raindrops.test.u
-.> add
-.> move.term raindrops.tests tests
+scratch/main> load ./raindrops.u
+scratch/main> add
+scratch/main> load ./raindrops.test.u
+scratch/main> add
+scratch/main> move.term raindrops.tests tests
 ```

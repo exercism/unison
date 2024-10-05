@@ -1,9 +1,9 @@
 # Testing transcript for pangram exercise
 
 ```ucm
-.> load ./pangram.u
-.> add
-.> load ./pangram.test.u
-.> add
-.> move.term pangram.tests tests
+scratch/main> load ./pangram.u
+scratch/main> add
+scratch/main> load ./pangram.test.u
+scratch/main> add
+scratch/main> move.term pangram.tests tests
 ```

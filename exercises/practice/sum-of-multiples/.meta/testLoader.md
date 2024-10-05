@@ -1,9 +1,9 @@
 # Testing transcript for hello exercise
 
 ```ucm
-.> load ./sumOfMultiples.u
-.> add
-.> load ./sumOfMultiples.test.u
-.> add
-.> move.term sumOfMultiples.tests tests
+scratch/main> load ./sumOfMultiples.u
+scratch/main> add
+scratch/main> load ./sumOfMultiples.test.u
+scratch/main> add
+scratch/main> move.term sumOfMultiples.tests tests
 ```

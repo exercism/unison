@@ -1,9 +1,9 @@
 # Testing transcript for secret-handshake exercise
 
 ```ucm
-.> load ./secretHandshake.u
-.> add
-.> load ./secretHandshake.test.u
-.> add
-.> move.term secretHandshake.tests tests
+scratch/main> load ./secretHandshake.u
+scratch/main> add
+scratch/main> load ./secretHandshake.test.u
+scratch/main> add
+scratch/main> move.term secretHandshake.tests tests
 ```

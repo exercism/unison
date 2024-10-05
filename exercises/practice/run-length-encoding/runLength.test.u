@@ -1,44 +1,44 @@
 runLengthEncoding.test.ex1 = let
-  Test.label "run-length encode a string, empty string" <| Test.expect ((encode "") === "")
+  Test.label.deprecated "run-length encode a string, empty string" <| Test.expect ((encode "") === "")
 
 runLengthEncoding.test.ex2 = let
-  Test.label "run-length encode a string, single characters only are encoded without count" <| Test.expect (encode "XYZ" === "XYZ")
+  Test.label.deprecated "run-length encode a string, single characters only are encoded without count" <| Test.expect (encode "XYZ" === "XYZ")
 
 runLengthEncoding.test.ex3 = let
-  Test.label "run-length encode a string, string with no single characters" <| Test.expect (encode "AABBBCCCC" === "2A3B4C")
+  Test.label.deprecated "run-length encode a string, string with no single characters" <| Test.expect (encode "AABBBCCCC" === "2A3B4C")
 
 runLengthEncoding.test.ex4 = let
-  Test.label "run-length encode a string, single characters mixed with repeated characters" <| Test.expect (encode "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB" === "12WB12W3B24WB")
+  Test.label.deprecated "run-length encode a string, single characters mixed with repeated characters" <| Test.expect (encode "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB" === "12WB12W3B24WB")
 
 runLengthEncoding.test.ex5 = let
-  Test.label "run-length encode a string, multiple whitespace mixed in string" <| Test.expect (encode "  hsqq qww  " === "2 hs2q q2w2 ")
+  Test.label.deprecated "run-length encode a string, multiple whitespace mixed in string" <| Test.expect (encode "  hsqq qww  " === "2 hs2q q2w2 ")
 
 runLengthEncoding.test.ex6 = let
-  Test.label "run-length encode a string, lowercase characters" <| Test.expect (encode "aabbbcccc" === "2a3b4c")
+  Test.label.deprecated "run-length encode a string, lowercase characters" <| Test.expect (encode "aabbbcccc" === "2a3b4c")
 
 runLengthEncoding.test.ex7 = let
-  Test.label "run-length decode a string, empty string" <| Test.expect (decode "" === "")
+  Test.label.deprecated "run-length decode a string, empty string" <| Test.expect (decode "" === "")
 
 runLengthEncoding.test.ex8 = let
-  Test.label "run-length decode a string, single characters only" <| Test.expect (decode "XYZ" === "XYZ")
+  Test.label.deprecated "run-length decode a string, single characters only" <| Test.expect (decode "XYZ" === "XYZ")
 
 runLengthEncoding.test.ex9 = let
-  Test.label "run-length decode a string, string with no single characters" <| Test.expect (decode "2A3B4C" === "AABBBCCCC")
+  Test.label.deprecated "run-length decode a string, string with no single characters" <| Test.expect (decode "2A3B4C" === "AABBBCCCC")
 
 runLengthEncoding.test.ex10 = let
-  Test.label "run-length decode a string, single characters with repeated characters" <| Test.expect (decode "12WB12W3B24WB" === "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB")
+  Test.label.deprecated "run-length decode a string, single characters with repeated characters" <| Test.expect (decode "12WB12W3B24WB" === "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB")
 
 runLengthEncoding.test.ex11 = let
-  Test.label "run-length decode a string, multiple whitespace mixed in string" <| Test.expect (decode "2 hs2q q2w2 " === "  hsqq qww  ")
+  Test.label.deprecated "run-length decode a string, multiple whitespace mixed in string" <| Test.expect (decode "2 hs2q q2w2 " === "  hsqq qww  ")
 
 runLengthEncoding.test.ex12 = let
-  Test.label "run-length decode a string, lowercase string" <| Test.expect (decode "2a3b4c" === "aabbbcccc")
+  Test.label.deprecated "run-length decode a string, lowercase string" <| Test.expect (decode "2a3b4c" === "aabbbcccc")
 
 runLengthEncoding.consistency : Text -> Text
 runLengthEncoding.consistency = encode >> decode
 
 runLengthEncoding.test.ex13 = let
-  Test.label "encode and then decode, encode followed by decode gives original string" <| Test.expect (consistency "zzz ZZ  zZ" === "zzz ZZ  zZ")
+  Test.label.deprecated "encode and then decode, encode followed by decode gives original string" <| Test.expect (consistency "zzz ZZ  zZ" === "zzz ZZ  zZ")
 
 test> runLengthEncoding.tests = runAll [
   runLengthEncoding.test.ex1,

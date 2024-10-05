@@ -7,12 +7,12 @@ chromatic : Text -> [Text]
 chromatic tonic =
   normalizedTonic = normalize tonic
   if List.contains tonic flatKeys then
-    maybeI = Search.indexOf normalizedTonic flatChromaticScale
+    maybeI = firstIndexOf normalizedTonic flatChromaticScale
     maybeTup = Optional.map (i -> List.splitAt i flatChromaticScale) maybeI
     maybeScale = Optional.map (cases (newSuffix, newPrefix) -> newPrefix List.++ newSuffix) maybeTup
     Optional.getOrElse [] maybeScale
   else
-    maybeI = Search.indexOf normalizedTonic chromaticScale
+    maybeI = firstIndexOf normalizedTonic chromaticScale
     maybeTup = Optional.map (i -> List.splitAt i chromaticScale) maybeI
     maybeScale = Optional.map (cases (newSuffix, newPrefix) -> newPrefix List.++ newSuffix) maybeTup
     Optional.getOrElse [] maybeScale
@@ -27,7 +27,7 @@ patternToSteps = cases
 mkPattern : Text -> [Nat]
 mkPattern pattern =
   steps = toCharList pattern |> List.map patternToSteps
-  List.scanl (+) 0 steps |> toList
+  List.scanLeft (+) 0 steps |> toList
 
 indexAtWithRotation : Nat -> [a] -> a
 indexAtWithRotation n ls =

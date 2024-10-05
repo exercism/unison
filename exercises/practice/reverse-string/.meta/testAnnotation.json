@@ -1,26 +1,26 @@
 [
   {
-    "test_code": "reverseString.test.ex1 = let\n  Test.label \"An empty string\" <| Test.expect (reverseString.reverse \"\" === \"\")",
-    "name": "reverseString.test.ex1"
+    "name": "An empty string",
+    "test_code": "let\n  Test.label.deprecated \"An empty string\" <| Test.expect (reverseString.reverse \"\" === \"\")"
   },
   {
-    "test_code": "reverseString.test.ex2 = let\n  Test.label \"A word\" <| Test.expect (reverseString.reverse \"robot\" === \"tobor\")",
-    "name": "reverseString.test.ex2"
+    "name": "A word",
+    "test_code": "let\n  Test.label.deprecated \"A word\" <| Test.expect (reverseString.reverse \"robot\" === \"tobor\")"
   },
   {
-    "test_code": "reverseString.test.ex3 = let\n  Test.label \"A capitalized word\" <| Test.expect (reverseString.reverse \"Ramen\" === \"nemaR\")",
-    "name": "reverseString.test.ex3"
+    "name": "A capitalized word",
+    "test_code": "let\n  Test.label.deprecated \"A capitalized word\" <| Test.expect (reverseString.reverse \"Ramen\" === \"nemaR\")"
   },
   {
-    "test_code": "reverseString.test.ex4 = let\n  Test.label \"A sentence with punctuation\" <| Test.expect (reverseString.reverse \"I'm hungry!\" === \"!yrgnuh m'I\")",
-    "name": "reverseString.test.ex4"
+    "name": "A sentence with punctuation",
+    "test_code": "let\n  Test.label.deprecated \"A sentence with punctuation\" <| Test.expect (reverseString.reverse \"I'm hungry!\" === \"!yrgnuh m'I\")"
   },
   {
-    "test_code": "reverseString.test.ex5 = let\n  Test.label \"A palindrome\" <| Test.expect (reverseString.reverse \"racecar\" === \"racecar\")",
-    "name": "reverseString.test.ex5"
+    "name": "A palindrome",
+    "test_code": "let\n  Test.label.deprecated \"A palindrome\" <| Test.expect (reverseString.reverse \"racecar\" === \"racecar\")"
   },
   {
-    "test_code": "reverseString.test.ex6 = let\n  Test.label \"An even-sized word\" <| Test.expect (reverseString.reverse \"drawer\" === \"reward\")",
-    "name": "reverseString.test.ex6"
+    "name": "An even-sized word",
+    "test_code": "let\n  Test.label.deprecated \"An even-sized word\" <| Test.expect (reverseString.reverse \"drawer\" === \"reward\")"
   }
 ]

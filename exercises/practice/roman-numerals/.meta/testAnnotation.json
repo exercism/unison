@@ -1,106 +1,106 @@
 [
   {
-    "test_code": "romanNumerals.test.ex1 = let\n  Test.label \"1 is I\" <| Test.expect (toRoman 1 === \"I\")",
-    "name": "romanNumerals.test.ex1"
+    "name": "1 is I",
+    "test_code": "let\n  Test.label.deprecated \"1 is I\" <| Test.expect (toRoman 1 === \"I\")"
   },
   {
-    "test_code": "romanNumerals.test.ex2 = let\n  Test.label \"2 is II\" <| Test.expect (toRoman 2 === \"II\")",
-    "name": "romanNumerals.test.ex2"
+    "name": "2 is II",
+    "test_code": "let\n  Test.label.deprecated \"2 is II\" <| Test.expect (toRoman 2 === \"II\")"
   },
   {
-    "test_code": "romanNumerals.test.ex3 = let\n  Test.label \"3 is III\" <| Test.expect (toRoman 3 === \"III\")",
-    "name": "romanNumerals.test.ex3"
+    "name": "3 is III",
+    "test_code": "let\n  Test.label.deprecated \"3 is III\" <| Test.expect (toRoman 3 === \"III\")"
   },
   {
-    "test_code": "romanNumerals.test.ex4 = let\n  Test.label \"4 is IV\" <| Test.expect (toRoman 4 === \"IV\")",
-    "name": "romanNumerals.test.ex4"
+    "name": "4 is IV",
+    "test_code": "let\n  Test.label.deprecated \"4 is IV\" <| Test.expect (toRoman 4 === \"IV\")"
   },
   {
-    "test_code": "romanNumerals.test.ex5 = let\n  Test.label \"5 is V\" <| Test.expect (toRoman 5 === \"V\")",
-    "name": "romanNumerals.test.ex5"
+    "name": "5 is V",
+    "test_code": "let\n  Test.label.deprecated \"5 is V\" <| Test.expect (toRoman 5 === \"V\")"
   },
   {
-    "test_code": "romanNumerals.test.ex6 = let\n  Test.label \"6 is VI\" <| Test.expect (toRoman 6 === \"VI\")",
-    "name": "romanNumerals.test.ex6"
+    "name": "6 is VI",
+    "test_code": "let\n  Test.label.deprecated \"6 is VI\" <| Test.expect (toRoman 6 === \"VI\")"
   },
   {
-    "test_code": "romanNumerals.test.ex7 = let\n  Test.label \"9 is IX\" <| Test.expect (toRoman 9 === \"IX\")",
-    "name": "romanNumerals.test.ex7"
+    "name": "9 is IX",
+    "test_code": "let\n  Test.label.deprecated \"9 is IX\" <| Test.expect (toRoman 9 === \"IX\")"
   },
   {
-    "test_code": "romanNumerals.test.ex8 = let\n  Test.label \"27 is XXVII\" <| Test.expect (toRoman 27 === \"XXVII\")",
-    "name": "romanNumerals.test.ex8"
+    "name": "27 is XXVII",
+    "test_code": "let\n  Test.label.deprecated \"27 is XXVII\" <| Test.expect (toRoman 27 === \"XXVII\")"
   },
   {
-    "test_code": "romanNumerals.test.ex9 = let\n  Test.label \"48 is XLVIII\" <| Test.expect (toRoman 48 === \"XLVIII\")",
-    "name": "romanNumerals.test.ex9"
+    "name": "48 is XLVIII",
+    "test_code": "let\n  Test.label.deprecated \"48 is XLVIII\" <| Test.expect (toRoman 48 === \"XLVIII\")"
   },
   {
-    "test_code": "romanNumerals.test.ex10 = let\n  Test.label \"49 is XLIX\" <| Test.expect (toRoman 49 === \"XLIX\")",
-    "name": "romanNumerals.test.ex10"
+    "name": "49 is XLIX",
+    "test_code": "let\n  Test.label.deprecated \"49 is XLIX\" <| Test.expect (toRoman 49 === \"XLIX\")"
   },
   {
-    "test_code": "romanNumerals.test.ex11 = let\n  Test.label \"59 is LIX\" <| Test.expect (toRoman 59 === \"LIX\")",
-    "name": "romanNumerals.test.ex11"
+    "name": "59 is LIX",
+    "test_code": "let\n  Test.label.deprecated \"59 is LIX\" <| Test.expect (toRoman 59 === \"LIX\")"
   },
   {
-    "test_code": "romanNumerals.test.ex12 = let\n  Test.label \"93 is XCIII\" <| Test.expect (toRoman 93 === \"XCIII\")",
-    "name": "romanNumerals.test.ex12"
+    "name": "93 is XCIII",
+    "test_code": "let\n  Test.label.deprecated \"93 is XCIII\" <| Test.expect (toRoman 93 === \"XCIII\")"
   },
   {
-    "test_code": "romanNumerals.test.ex13 = let\n  Test.label \"141 is CXLI\" <| Test.expect (toRoman 141 === \"CXLI\")",
-    "name": "romanNumerals.test.ex13"
+    "name": "141 is CXLI",
+    "test_code": "let\n  Test.label.deprecated \"141 is CXLI\" <| Test.expect (toRoman 141 === \"CXLI\")"
   },
   {
-    "test_code": "romanNumerals.test.ex14 = let\n  Test.label \"163 is CLXIII\" <| Test.expect (toRoman 163 === \"CLXIII\")",
-    "name": "romanNumerals.test.ex14"
+    "name": "163 is CLXIII",
+    "test_code": "let\n  Test.label.deprecated \"163 is CLXIII\" <| Test.expect (toRoman 163 === \"CLXIII\")"
   },
   {
-    "test_code": "romanNumerals.test.ex15 = let\n  Test.label \"402 is CDII\" <| Test.expect (toRoman 402 === \"CDII\")",
-    "name": "romanNumerals.test.ex15"
+    "name": "402 is CDII",
+    "test_code": "let\n  Test.label.deprecated \"402 is CDII\" <| Test.expect (toRoman 402 === \"CDII\")"
   },
   {
-    "test_code": "romanNumerals.test.ex16 = let\n  Test.label \"575 is DLXXV\" <| Test.expect (toRoman 575 === \"DLXXV\")",
-    "name": "romanNumerals.test.ex16"
+    "name": "575 is DLXXV",
+    "test_code": "let\n  Test.label.deprecated \"575 is DLXXV\" <| Test.expect (toRoman 575 === \"DLXXV\")"
   },
   {
-    "test_code": "romanNumerals.test.ex17 = let\n  Test.label \"911 is CMXI\" <| Test.expect (toRoman 911 === \"CMXI\")",
-    "name": "romanNumerals.test.ex17"
+    "name": "911 is CMXI",
+    "test_code": "let\n  Test.label.deprecated \"911 is CMXI\" <| Test.expect (toRoman 911 === \"CMXI\")"
   },
   {
-    "test_code": "romanNumerals.test.ex18 = let\n  Test.label \"1024 is MXXIV\" <| Test.expect (toRoman 1024 === \"MXXIV\")",
-    "name": "romanNumerals.test.ex18"
+    "name": "1024 is MXXIV",
+    "test_code": "let\n  Test.label.deprecated \"1024 is MXXIV\" <| Test.expect (toRoman 1024 === \"MXXIV\")"
   },
   {
-    "test_code": "romanNumerals.test.ex19 = let\n  Test.label \"3000 is MMM\" <| Test.expect (toRoman 3000 === \"MMM\")",
-    "name": "romanNumerals.test.ex19"
+    "name": "3000 is MMM",
+    "test_code": "let\n  Test.label.deprecated \"3000 is MMM\" <| Test.expect (toRoman 3000 === \"MMM\")"
   },
   {
-    "test_code": "romanNumerals.test.ex20 = let\n  Test.label \"16 is XVI\" <| Test.expect (toRoman 16 === \"XVI\")",
-    "name": "romanNumerals.test.ex20"
+    "name": "16 is XVI",
+    "test_code": "let\n  Test.label.deprecated \"16 is XVI\" <| Test.expect (toRoman 16 === \"XVI\")"
   },
   {
-    "test_code": "romanNumerals.test.ex21 = let\n  Test.label \"66 is LXVI\" <| Test.expect (toRoman 66 === \"LXVI\")",
-    "name": "romanNumerals.test.ex21"
+    "name": "66 is LXVI",
+    "test_code": "let\n  Test.label.deprecated \"66 is LXVI\" <| Test.expect (toRoman 66 === \"LXVI\")"
   },
   {
-    "test_code": "romanNumerals.test.ex22 = let\n  Test.label \"166 is CLXVI\" <| Test.expect (toRoman 166 === \"CLXVI\")",
-    "name": "romanNumerals.test.ex22"
+    "name": "166 is CLXVI",
+    "test_code": "let\n  Test.label.deprecated \"166 is CLXVI\" <| Test.expect (toRoman 166 === \"CLXVI\")"
   },
   {
-    "test_code": "romanNumerals.test.ex23 = let\n  Test.label \"666 is DCLXVI\" <| Test.expect (toRoman 666 === \"DCLXVI\")",
-    "name": "romanNumerals.test.ex23"
+    "name": "666 is DCLXVI",
+    "test_code": "let\n  Test.label.deprecated \"666 is DCLXVI\" <| Test.expect (toRoman 666 === \"DCLXVI\")"
   },
   {
-    "test_code": "romanNumerals.test.ex24 = let\n  Test.label \"1666 is MDCLXVI\" <| Test.expect (toRoman 1666 === \"MDCLXVI\")",
-    "name": "romanNumerals.test.ex24"
+    "name": "1666 is MDCLXVI",
+    "test_code": "let\n  Test.label.deprecated \"1666 is MDCLXVI\" <| Test.expect (toRoman 1666 === \"MDCLXVI\")"
   },
   {
-    "test_code": "romanNumerals.test.ex25 = let\n  Test.label \"3001 is MMMI\" <| Test.expect (toRoman 3001 === \"MMMI\")",
-    "name": "romanNumerals.test.ex25"
+    "name": "3001 is MMMI",
+    "test_code": "let\n  Test.label.deprecated \"3001 is MMMI\" <| Test.expect (toRoman 3001 === \"MMMI\")"
   },
   {
-    "test_code": "romanNumerals.test.ex26 = let\n  Test.label \"3999 is MMMCMXCIX\" <| Test.expect (toRoman 3999 === \"MMMCMXCIX\")",
-    "name": "romanNumerals.test.ex26"
+    "name": "3999 is MMMCMXCIX",
+    "test_code": "let\n  Test.label.deprecated \"3999 is MMMCMXCIX\" <| Test.expect (toRoman 3999 === \"MMMCMXCIX\")"
   }
 ]

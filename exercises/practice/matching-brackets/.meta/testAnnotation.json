@@ -1,78 +1,78 @@
 [
   {
-    "test_code": "matchingBrackets.test.ex1 = let\n\tTest.label \"paired square brackets\" <| Test.expect (isPaired \"[]\" === true)",
-    "name": "matchingBrackets.test.ex1"
+    "name": "paired square brackets",
+    "test_code": "let\n  Test.label.deprecated \"paired square brackets\" <| Test.expect (isPaired \"[]\" === true)"
   },
   {
-    "test_code": "matchingBrackets.test.ex2 = let\n\tTest.label \"empty string\" <| Test.expect (isPaired \"\" === true)",
-    "name": "matchingBrackets.test.ex2"
+    "name": "empty string",
+    "test_code": "let\n  Test.label.deprecated \"empty string\" <| Test.expect (isPaired \"\" === true)"
   },
   {
-    "test_code": "matchingBrackets.test.ex3 = let\n\tTest.label \"unpaired brackets\" <| Test.expect (isPaired \"[[\" === false)",
-    "name": "matchingBrackets.test.ex3"
+    "name": "unpaired brackets",
+    "test_code": "let\n  Test.label.deprecated \"unpaired brackets\" <| Test.expect (isPaired \"[[\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex4 = let\n\tTest.label \"wrong ordered brackets\" <| Test.expect (isPaired \"}{\" === false)",
-    "name": "matchingBrackets.test.ex4"
+    "name": "wrong ordered brackets",
+    "test_code": "let\n  Test.label.deprecated \"wrong ordered brackets\" <| Test.expect (isPaired \"}{\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex5 = let\n\tTest.label \"wrong closing bracket\" <| Test.expect (isPaired \"{]\" === false)",
-    "name": "matchingBrackets.test.ex5"
+    "name": "wrong closing bracket",
+    "test_code": "let\n  Test.label.deprecated \"wrong closing bracket\" <| Test.expect (isPaired \"{]\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex6 = let\n\tTest.label \"paired with whitespace\" <| Test.expect (isPaired \"{ }\" === true)",
-    "name": "matchingBrackets.test.ex6"
+    "name": "paired with whitespace",
+    "test_code": "let\n  Test.label.deprecated \"paired with whitespace\" <| Test.expect (isPaired \"{ }\" === true)"
   },
   {
-    "test_code": "matchingBrackets.test.ex7 = let\n\tTest.label \"partially paired brackets\" <| Test.expect (isPaired \"{[])\" === false)",
-    "name": "matchingBrackets.test.ex7"
+    "name": "partially paired brackets",
+    "test_code": "let\n  Test.label.deprecated \"partially paired brackets\" <| Test.expect (isPaired \"{[])\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex8 = let\n\tTest.label \"simple nested brackets\" <| Test.expect (isPaired \"{[]}\" === true)",
-    "name": "matchingBrackets.test.ex8"
+    "name": "simple nested brackets",
+    "test_code": "let\n  Test.label.deprecated \"simple nested brackets\" <| Test.expect (isPaired \"{[]}\" === true)"
   },
   {
-    "test_code": "matchingBrackets.test.ex9 = let\n\tTest.label \"several paired brackets\" <| Test.expect (isPaired \"{}[]\" === true)",
-    "name": "matchingBrackets.test.ex9"
+    "name": "several paired brackets",
+    "test_code": "let\n  Test.label.deprecated \"several paired brackets\" <| Test.expect (isPaired \"{}[]\" === true)"
   },
   {
-    "test_code": "matchingBrackets.test.ex10 = let\n\tTest.label \"paired and nested brackets\" <| Test.expect (isPaired \"([{}({}[])])\" === true)",
-    "name": "matchingBrackets.test.ex10"
+    "name": "paired and nested brackets",
+    "test_code": "let\n  Test.label.deprecated \"paired and nested brackets\" <| Test.expect (isPaired \"([{}({}[])])\" === true)"
   },
   {
-    "test_code": "matchingBrackets.test.ex11 = let\n\tTest.label \"unopened closing brackets\" <| Test.expect (isPaired \"{[)][]}\" === false)",
-    "name": "matchingBrackets.test.ex11"
+    "name": "unopened closing brackets",
+    "test_code": "let\n  Test.label.deprecated \"unopened closing brackets\" <| Test.expect (isPaired \"{[)][]}\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex12 = let\n\tTest.label \"unpaired and nested brackets\" <| Test.expect (isPaired \"([{])\" === false)",
-    "name": "matchingBrackets.test.ex12"
+    "name": "unpaired and nested brackets",
+    "test_code": "let\n  Test.label.deprecated \"unpaired and nested brackets\" <| Test.expect (isPaired \"([{])\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex13 = let\n\tTest.label \"paired and wrong nested brackets\" <| Test.expect (isPaired \"[({]})\" === false)",
-    "name": "matchingBrackets.test.ex13"
+    "name": "paired and wrong nested brackets",
+    "test_code": "let\n  Test.label.deprecated \"paired and wrong nested brackets\" <| Test.expect (isPaired \"[({]})\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex14 = let\n\tTest.label \"paired and incomplete brackets\" <| Test.expect (isPaired \"{}[\" === false)",
-    "name": "matchingBrackets.test.ex14"
+    "name": "paired and incomplete brackets",
+    "test_code": "let\n  Test.label.deprecated \"paired and incomplete brackets\" <| Test.expect (isPaired \"{}[\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex15 = let\n\tTest.label \"too many closing brackets\" <| Test.expect (isPaired \"[]]\" === false)",
-    "name": "matchingBrackets.test.ex15"
+    "name": "too many closing brackets",
+    "test_code": "let\n  Test.label.deprecated \"too many closing brackets\" <| Test.expect (isPaired \"[]]\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex16 = let\n\tTest.label \"early unexpected brackets\" <| Test.expect (isPaired \")()\" === false)",
-    "name": "matchingBrackets.test.ex16"
+    "name": "early unexpected brackets",
+    "test_code": "let\n  Test.label.deprecated \"early unexpected brackets\" <| Test.expect (isPaired \")()\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex17 = let\n\tTest.label \"early mismatched brackets\" <| Test.expect (isPaired \"{)()\" === false)",
-    "name": "matchingBrackets.test.ex17"
+    "name": "early mismatched brackets",
+    "test_code": "let\n  Test.label.deprecated \"early mismatched brackets\" <| Test.expect (isPaired \"{)()\" === false)"
   },
   {
-    "test_code": "matchingBrackets.test.ex18 = let\n\tTest.label \"math expression\" <| Test.expect (isPaired \"(((185 + 223.85) * 15) - 543)/2\" === true)",
-    "name": "matchingBrackets.test.ex18"
+    "name": "math expression",
+    "test_code": "let\n  Test.label.deprecated \"math expression\" <| Test.expect (isPaired \"(((185 + 223.85) * 15) - 543)/2\" === true)"
   },
   {
-    "test_code": "matchingBrackets.test.ex19 = let\n\tTest.label \"complex latex expression\" <| Test.expect (isPaired \"\\\\left(\\\\begin{array}{cc} \\\\frac{1}{3} & x\\\\\\\\ \\\\mathrm{e}^{x} &... x^2 \\\\end{array}\\\\right)\" === true)",
-    "name": "matchingBrackets.test.ex19"
+    "name": "complex latex expression",
+    "test_code": "let\n  Test.label.deprecated \"complex latex expression\" <| Test.expect (isPaired \"\\\\left(\\\\begin{array}{cc} \\\\frac{1}{3} & x\\\\\\\\ \\\\mathrm{e}^{x} &... x^2 \\\\end{array}\\\\right)\" === true)"
   }
 ]

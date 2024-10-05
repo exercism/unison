@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./lasagna.u
-.> add
-.> load ./lasagna.test.u
-.> add
-.> move.term lasagna.tests tests
+scratch/main> load ./lasagna.u
+scratch/main> add
+scratch/main> load ./lasagna.test.u
+scratch/main> add
+scratch/main> move.term lasagna.tests tests
 ```

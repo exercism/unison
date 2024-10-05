@@ -1,81 +1,81 @@
 anagram.findAnagrams.tests.ex1 = let
   actual = findAnagrams "diaper" ["hello", "world", "zombies", "pants"]
-  Test.label "no matches" <| Test.expect (actual === [])
+  Test.label.deprecated "no matches" <| Test.expect (actual === [])
 
 anagram.findAnagrams.tests.ex2 = let
   actual = findAnagrams "solemn" ["lemons","cherry","melons"]
   expected = ["lemons","melons"]
-  Test.label "detects two anagrams" <| Test.expect (actual === expected)
+  Test.label.deprecated "detects two anagrams" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex3 = let
   actual = findAnagrams "good" ["dog","goody"]
   expected = []
-  Test.label "does not detect anagram subsets" <| Test.expect (actual === expected)
+  Test.label.deprecated "does not detect anagram subsets" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex4 = let
   actual = findAnagrams "listen" ["enlists","google","inlets","banana"]
   expected = ["inlets"]
-  Test.label "detects anagram" <| Test.expect (actual === expected)
+  Test.label.deprecated "detects anagram" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex5 = let
   actual = findAnagrams "allergy" ["gallery","ballerina","regally","clergy","largely","leading"]
   expected = ["gallery","regally","largely"]
-  Test.label "detects three anagrams" <| Test.expect (actual === expected)
+  Test.label.deprecated "detects three anagrams" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex6 = let
   actual = findAnagrams "nose" ["Eons","ONES"]
   expected = ["Eons","ONES"]
-  Test.label "detects multiple anagrams with different case" <| Test.expect (actual === expected)
+  Test.label.deprecated "detects multiple anagrams with different case" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex7 = let
   actual = findAnagrams "mass" ["last"]
   expected = []
-  Test.label "does not detect non-anagrams with identical checksum" <| Test.expect (actual === expected)
+  Test.label.deprecated "does not detect non-anagrams with identical checksum" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex8 = let
   actual = findAnagrams "Orchestra" ["cashregister","Carthorse","radishes"]
   expected = ["Carthorse"]
-  Test.label "detects anagrams case-insensitively" <| Test.expect (actual === expected)
+  Test.label.deprecated "detects anagrams case-insensitively" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex9 = let
   actual = findAnagrams "Orchestra" ["cashregister","carthorse","radishes"]
   expected = ["carthorse"]
-  Test.label "detects anagrams using case-insensitive subject" <| Test.expect (actual === expected)
+  Test.label.deprecated "detects anagrams using case-insensitive subject" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex10 = let
   actual = findAnagrams "orchestra" ["cashregister","Carthorse","radishes"]
   expected = ["Carthorse"]
-  Test.label "detects anagrams using case-insensitive possible matches" <| Test.expect (actual === expected)
+  Test.label.deprecated "detects anagrams using case-insensitive possible matches" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex11 = let
   actual = findAnagrams "go" ["go Go GO"]
   expected = []
-  Test.label "does not detect an anagram if the original word is repeated" <| Test.expect (actual === expected)
+  Test.label.deprecated "does not detect an anagram if the original word is repeated" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex12 = let
   actual = findAnagrams "tapper" ["patter"]
   expected = []
-  Test.label "anagrams must use all letters exactly once" <| Test.expect (actual === expected)
+  Test.label.deprecated "anagrams must use all letters exactly once" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex13 = let
   actual = findAnagrams "BANANA" ["BANANA"]
   expected = []
-  Test.label "words are not anagrams of themselves" <| Test.expect (actual === expected)
+  Test.label.deprecated "words are not anagrams of themselves" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex14 = let
   actual = findAnagrams "BANANA" ["Banana"]
   expected = []
-  Test.label "words are not anagrams of themselves even if letter case is partially different" <| Test.expect (actual === expected)
+  Test.label.deprecated "words are not anagrams of themselves even if letter case is partially different" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex15 = let
   actual = findAnagrams "BANANA" ["banana"]
   expected = []
-  Test.label "words are not anagrams of themselves even if letter case is completely different" <| Test.expect (actual === expected)
+  Test.label.deprecated "words are not anagrams of themselves even if letter case is completely different" <| Test.expect (actual === expected)
 
 anagram.findAnagrams.tests.ex16 = let
   actual = findAnagrams "LISTEN" ["LISTEN","Silent" ]
   expected = ["Silent"]
-  Test.label "words other than themselves can be anagrams" <| Test.expect (actual === expected)
+  Test.label.deprecated "words other than themselves can be anagrams" <| Test.expect (actual === expected)
 
 test> anagram.tests = runAll [
   anagram.findAnagrams.tests.ex1,

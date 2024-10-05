@@ -1,22 +1,22 @@
 [
   {
-    "test_code": "nucleotideCount.test.ex1 = let\n\tTest.label \"empty strand\" <| Test.expect (nucleotideCounts \"\" === (Some [(\"A\",0),(\"C\",0),(\"G\",0),(\"T\",0)]))",
-    "name": "nucleotideCount.test.ex1"
+    "name": "empty strand",
+    "test_code": "let\n  Test.label.deprecated \"empty strand\" <| Test.expect (toSortedList (nucleotideCounts \"\") === (Some [(\"A\",0),(\"C\",0),(\"G\",0),(\"T\",0)]))"
   },
   {
-    "test_code": "nucleotideCount.test.ex2 = let\n\tTest.label \"can count one nucleotide in single-character input\" <| Test.expect (nucleotideCounts \"G\" === (Some [(\"A\",0),(\"C\",0),(\"G\",1),(\"T\",0)]))",
-    "name": "nucleotideCount.test.ex2"
+    "name": "can count one nucleotide in single-character input",
+    "test_code": "let\n  Test.label.deprecated \"can count one nucleotide in single-character input\" <| Test.expect (toSortedList (nucleotideCounts \"G\") === (Some [(\"A\",0),(\"C\",0),(\"G\",1),(\"T\",0)]))"
   },
   {
-    "test_code": "nucleotideCount.test.ex3 = let\n\tTest.label \"strand with repeated nucleotide\" <| Test.expect (nucleotideCounts \"GGGGGGG\" === (Some [(\"A\",0),(\"C\",0),(\"G\",7),(\"T\",0)]))",
-    "name": "nucleotideCount.test.ex3"
+    "name": "strand with repeated nucleotide",
+    "test_code": "let\n  Test.label.deprecated \"strand with repeated nucleotide\" <| Test.expect (toSortedList (nucleotideCounts \"GGGGGGG\") === (Some [(\"A\",0),(\"C\",0),(\"G\",7),(\"T\",0)]))"
   },
   {
-    "test_code": "nucleotideCount.test.ex4 = let\n\tTest.label \"strand with multiple nucleotides\" <| Test.expect (nucleotideCounts \"AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC\" === (Some [(\"A\",20),(\"C\",12),(\"G\",17),(\"T\",21)]))",
-    "name": "nucleotideCount.test.ex4"
+    "name": "strand with multiple nucleotides",
+    "test_code": "let\n  Test.label.deprecated \"strand with multiple nucleotides\" <| Test.expect (toSortedList (nucleotideCounts \"AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC\") === (Some [(\"A\",20),(\"C\",12),(\"G\",17),(\"T\",21)]))"
   },
   {
-    "test_code": "nucleotideCount.test.ex5 = let\n\tTest.label \"strand with invalid nucleotides\" <| Test.expect (nucleotideCounts \"AGXXACT\" === None)",
-    "name": "nucleotideCount.test.ex5"
+    "name": "strand with invalid nucleotides",
+    "test_code": "let\n  Test.label.deprecated \"strand with invalid nucleotides\" <| Test.expect (toSortedList (nucleotideCounts \"AGXXACT\") === None)"
   }
 ]

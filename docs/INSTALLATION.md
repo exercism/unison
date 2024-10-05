@@ -2,7 +2,7 @@
 
 ## Installation Options
 
-The current Unison release is available for Mac OS X, 64-bit Linux, and Windows users! We hope that if you are trying out Unison you'll come talk to us in the Exercism forum or in the [Unison language slack](http://unison-lang.org/slack). Come ask questions, and report issues you might encounter! We want you to have a welcoming and positive experience when getting started! 😊
+The current Unison release is available for Mac OS X, 64-bit Linux, and Windows users! We hope that if you are trying out Unison you'll come talk to us in the Exercism forum or in the [Unison Discord](https://unison-lang.org/discord). Come ask questions, and report issues you might encounter! We want you to have a welcoming and positive experience when getting started! 😊
 
 Unison can be downloaded with [homebrew](https://brew.sh/), [Nix](https://github.com/ceedubs/unison-nix/#usage), or directly via packaged binaries. All of these download options are described in the [Installation instructions page of our website](https://www.unison-lang.org/learn/quickstart/#installation-options). Once you have the UCM installed, head back here!
 

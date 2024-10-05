@@ -1,9 +1,9 @@
 # Testing transcript for minesweeper exercise
 
 ```ucm
-.> load ./minesweeper.u
-.> add
-.> load ./minesweeper.test.u
-.> add
-.> move.term minesweeper.tests tests
+scratch/main> load ./minesweeper.u
+scratch/main> add
+scratch/main> load ./minesweeper.test.u
+scratch/main> add
+scratch/main> move.term minesweeper.tests tests
 ```

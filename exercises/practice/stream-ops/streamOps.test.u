@@ -3,13 +3,13 @@ stream.test.ex1 = let
   go =
     s = MyStream.fromList expected
     !(MyStream.toList s)
-  Test.label "to and from list" <| Test.expect (go === expected )
+  Test.label.deprecated "to and from list" <| Test.expect (go === expected )
 
 stream.test.ex2 = let
   go =
     s = MyStream.fromList List.empty
     !(MyStream.toList s)
-  Test.label "to and from list with empty list" <| Test.expect (go === List.empty )
+  Test.label.deprecated "to and from list with empty list" <| Test.expect (go === List.empty )
 
 stream.test.ex3 = let
   expected = [1,2,3]
@@ -18,7 +18,7 @@ stream.test.ex3 = let
       MyStream.emit a
       a
     ) expected
-  Test.label "toListWithResult returns list and result" <| Test.expect (!(MyStream.toListWithResult go) === (expected, expected))
+  Test.label.deprecated "toListWithResult returns list and result" <| Test.expect (!(MyStream.toListWithResult go) === (expected, expected))
 
 stream.test.ex4 = let
   expected = [1,2,3]
@@ -27,26 +27,26 @@ stream.test.ex4 = let
       MyStream.emit (a Nat.+ acc)
       a
     ) 0 expected
-  Test.label "ignore returns only the result, not the materialized stream" <| Test.expect ((MyStream.ignore go) === 3 )
+  Test.label.deprecated "ignore returns only the result, not the materialized stream" <| Test.expect ((MyStream.ignore go) === 3 )
 
 stream.test.ex5 = let
   go = '(List.map MyStream.emit [])
-  Test.label "ignore handles empty stream" <| Test.expect ((MyStream.ignore go) === [] )
+  Test.label.deprecated "ignore handles empty stream" <| Test.expect ((MyStream.ignore go) === [] )
 
 stream.test.ex6 = let
   expected = [1,2,3,4]
   go = MyStream.fromList expected |> MyStream.filter isEven
-  Test.label "filters stream" <| Test.expect (!(MyStream.toList go) === [2,4] )
+  Test.label.deprecated "filters stream" <| Test.expect (!(MyStream.toList go) === [2,4] )
 
 stream.test.ex7 = let
   expected = [1,2,3,4]
   go = MyStream.fromList expected |> MyStream.map increment
-  Test.label "maps over stream" <| Test.expect (!(MyStream.toList go) === [2,3,4,5] )
+  Test.label.deprecated "maps over stream" <| Test.expect (!(MyStream.toList go) === [2,3,4,5] )
 
 stream.test.ex8 = let
   expected = [1,2,3]
   go = MyStream.fromList expected |> MyStream.flatMap (elem -> !(MyStream.fromList (List.fill 2 elem)))
-  Test.label "flatMaps over stream" <| Test.expect (!(MyStream.toList go) === [1,1,2,2,3,3] )
+  Test.label.deprecated "flatMaps over stream" <| Test.expect (!(MyStream.toList go) === [1,1,2,2,3,3] )
 
 test> stream.tests = runAll [
   stream.test.ex1,

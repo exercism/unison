@@ -46,11 +46,11 @@ checkBalance = cases
   [] -> Stack.isEmpty
   head +: tail -> match bracketType head with
     Open ->
-      push head
+      Stack.push head
       checkBalance tail
     Close ->
       checkCloses = closes head
-      pop
+      Stack.pop
       checkCloses && (checkBalance tail)
     Other ->
       checkBalance tail

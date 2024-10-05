@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./scaleGenerator.u
-.> add
-.> load ./scaleGenerator.test.u
-.> add
-.> move.term scaleGenerator.tests tests
+scratch/main> load ./scaleGenerator.u
+scratch/main> add
+scratch/main> load ./scaleGenerator.test.u
+scratch/main> add
+scratch/main> move.term scaleGenerator.tests tests
 ```

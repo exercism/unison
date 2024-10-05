@@ -1,9 +1,9 @@
 # Testing transcript for luhn exercise
 
 ```ucm
-.> load ./luhn.u
-.> add
-.> load ./luhn.test.u
-.> add
-.> move.term luhn.tests tests
+scratch/main> load ./luhn.u
+scratch/main> add
+scratch/main> load ./luhn.test.u
+scratch/main> add
+scratch/main> move.term luhn.tests tests
 ```

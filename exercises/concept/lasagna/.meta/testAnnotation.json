@@ -1,14 +1,14 @@
 [
   {
     "name": "lasagna.test.ex1",
-    "test_code": "lasagna.test.ex1 = test.expect (expectedMinutesInOven === 40)"
+    "test_code": "let\n  Test.expect (expectedMinutesInOven === 40)"
   },
   {
     "name": "lasagna.test.ex2",
-    "test_code": "lasagna.test.ex2 = test.expect (preparationTimeInMinutes 5 === 10)"
+    "test_code": "let\n  Test.expect (preparationTimeInMinutes 5 === 10)"
   },
   {
     "name": "lasagna.test.ex3",
-    "test_code": "lasagna.test.ex3 = test.expect (elapsedTimeInMinutes 3 20 === 26)"
+    "test_code": "let\n  Test.expect (elapsedTimeInMinutes 3 20 === 26)"
   }
 ]
