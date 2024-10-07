@@ -2,7 +2,7 @@ structural ability MyStream a where emit : a -> {MyStream a} ()
 
 MyStream.fromList : [a] -> '{MyStream a} ()
 MyStream.fromList list = 'let
-  List.foreach list MyStream.emit
+  ignore (List.map MyStream.emit list)
 
 MyStream.toList : '{g, MyStream a} r -> '{g} [a]
 MyStream.toList streamFunction = 'let
@@ -48,6 +48,6 @@ MyStream.flatMap f streamFunction = 'let
   go = cases
       { r }                -> r
       {MyStream.emit a -> resume} ->
-        base.ignore (f a)
+        ignore (f a)
         handle resume () with go
   handle !streamFunction with go

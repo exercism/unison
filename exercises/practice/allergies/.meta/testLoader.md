@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./allergies.u
-.> add
-.> load ./allergies.test.u
-.> add
-.> move.term allergies.tests tests
+scratch/main> load ./allergies.u
+scratch/main> add
+scratch/main> load ./allergies.test.u
+scratch/main> add
+scratch/main> move.term allergies.tests tests
 ```

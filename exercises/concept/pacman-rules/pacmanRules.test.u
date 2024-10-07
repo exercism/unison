@@ -1,38 +1,38 @@
 pacmanRules.test.ex1 = let
-  Test.label "eatGhost, ghost gets eaten" <| expect (eatGhost true true)
+  Test.label.deprecated "eatGhost, ghost gets eaten" <| expect (eatGhost true true)
 
 pacmanRules.test.ex2 = let
-  Test.label "eatGhost, ghost does not get eaten because no power pellet active" <| expect (eatGhost false true === false)
+  Test.label.deprecated "eatGhost, ghost does not get eaten because no power pellet active" <| expect (eatGhost false true === false)
 
 pacmanRules.test.ex3 = let
-  Test.label "eatGhost, ghost does not get eaten because not touching ghost" <| expect (eatGhost true false === false)
+  Test.label.deprecated "eatGhost, ghost does not get eaten because not touching ghost" <| expect (eatGhost true false === false)
 
 pacmanRules.test.ex4 = let
-  Test.label "score, score when eating dot" <| expect (score false true)
+  Test.label.deprecated "score, score when eating dot" <| expect (score false true)
 
 pacmanRules.test.ex5 = let
-  Test.label "score, score when eating power pellet" <| expect (score true false)
+  Test.label.deprecated "score, score when eating power pellet" <| expect (score true false)
 
 pacmanRules.test.ex6 = let
-  Test.label "score, no score when nothing eaten" <| expect (score false false === false )
+  Test.label.deprecated "score, no score when nothing eaten" <| expect (score false false === false )
 
 pacmanRules.test.ex7 = let
-  Test.label "lose if touching a ghost without a power pellet active" <| expect (lose false true)
+  Test.label.deprecated "lose if touching a ghost without a power pellet active" <| expect (lose false true)
 
 pacmanRules.test.ex8 = let
-  Test.label "don't lose if touching a ghost with a power pellet active" <| expect (lose true true === false)
+  Test.label.deprecated "don't lose if touching a ghost with a power pellet active" <| expect (lose true true === false)
 
 pacmanRules.test.ex9 = let
-  Test.label "don't lose if not touching a ghost" <| expect (lose true false === false)
+  Test.label.deprecated "don't lose if not touching a ghost" <| expect (lose true false === false)
 
 pacmanRules.test.ex10 = let
-  Test.label "win if all dots eaten" <| expect (win true false false)
+  Test.label.deprecated "win if all dots eaten" <| expect (win true false false)
 
 pacmanRules.test.ex11 = let
-  Test.label "don't win if all dots eaten, but touching a ghost" <| expect (win true false true === false)
+  Test.label.deprecated "don't win if all dots eaten, but touching a ghost" <| expect (win true false true === false)
 
 pacmanRules.test.ex12 = let
-  Test.label "win if all dots eaten and touching a ghost with a power pellet active" <| expect (win true true true)
+  Test.label.deprecated "win if all dots eaten and touching a ghost with a power pellet active" <| expect (win true true true)
 
 test> pacmanRules.tests = runAll [
   pacmanRules.test.ex1,

@@ -1,38 +1,38 @@
 [
   {
-    "test_code": "spaceAge.test.ex1 = let\n\tTest.label \"age on Earth\" <| Test.expect (age \"Earth\" 1000000000 +- (Some 31.69))",
-    "name": "spaceAge.test.ex1"
+    "name": "age on Earth",
+    "test_code": "let\n  Test.label.deprecated \"age on Earth\" <| Test.expect (age \"Earth\" 1000000000 +- (Some 31.69))"
   },
   {
-    "test_code": "spaceAge.test.ex2 = let\n\tTest.label \"age on Mercury\" <| Test.expect (age \"Mercury\" 2134835688 +- (Some 280.88))",
-    "name": "spaceAge.test.ex2"
+    "name": "age on Mercury",
+    "test_code": "let\n  Test.label.deprecated \"age on Mercury\" <| Test.expect (age \"Mercury\" 2134835688 +- (Some 280.88))"
   },
   {
-    "test_code": "spaceAge.test.ex3 = let\n\tTest.label \"age on Venus\" <| Test.expect (age \"Venus\" 189839836 +- (Some 9.78))",
-    "name": "spaceAge.test.ex3"
+    "name": "age on Venus",
+    "test_code": "let\n  Test.label.deprecated \"age on Venus\" <| Test.expect (age \"Venus\" 189839836 +- (Some 9.78))"
   },
   {
-    "test_code": "spaceAge.test.ex4 = let\n\tTest.label \"age on Mars\" <| Test.expect (age \"Mars\" 2129871239 +- (Some 35.88))",
-    "name": "spaceAge.test.ex4"
+    "name": "age on Mars",
+    "test_code": "let\n  Test.label.deprecated \"age on Mars\" <| Test.expect (age \"Mars\" 2129871239 +- (Some 35.88))"
   },
   {
-    "test_code": "spaceAge.test.ex5 = let\n\tTest.label \"age on Jupiter\" <| Test.expect (age \"Jupiter\" 901876382 +- (Some 2.41))",
-    "name": "spaceAge.test.ex5"
+    "name": "age on Jupiter",
+    "test_code": "let\n  Test.label.deprecated \"age on Jupiter\" <| Test.expect (age \"Jupiter\" 901876382 +- (Some 2.41))"
   },
   {
-    "test_code": "spaceAge.test.ex6 = let\n\tTest.label \"age on Saturn\" <| Test.expect (age \"Saturn\" 2000000000 +- (Some 2.15))",
-    "name": "spaceAge.test.ex6"
+    "name": "age on Saturn",
+    "test_code": "let\n  Test.label.deprecated \"age on Saturn\" <| Test.expect (age \"Saturn\" 2000000000 +- (Some 2.15))"
   },
   {
-    "test_code": "spaceAge.test.ex7 = let\n\tTest.label \"age on Uranus\" <| Test.expect (age \"Uranus\" 1210123456 +- (Some 0.46))",
-    "name": "spaceAge.test.ex7"
+    "name": "age on Uranus",
+    "test_code": "let\n  Test.label.deprecated \"age on Uranus\" <| Test.expect (age \"Uranus\" 1210123456 +- (Some 0.46))"
   },
   {
-    "test_code": "spaceAge.test.ex8 = let\n\tTest.label \"age on Neptune\" <| Test.expect (age \"Neptune\" 1821023456 +- (Some 0.35))",
-    "name": "spaceAge.test.ex8"
+    "name": "age on Neptune",
+    "test_code": "let\n  Test.label.deprecated \"age on Neptune\" <| Test.expect (age \"Neptune\" 1821023456 +- (Some 0.35))"
   },
   {
-    "test_code": "spaceAge.test.ex9 = let\n\tTest.label \"invalid planet causes error\" <| Test.expect (age \"Sun\" 680804807 +- None)",
-    "name": "spaceAge.test.ex9"
+    "name": "invalid planet causes error",
+    "test_code": "let\n  Test.label.deprecated \"invalid planet causes error\" <| Test.expect (age \"Sun\" 680804807 +- None)"
   }
 ]

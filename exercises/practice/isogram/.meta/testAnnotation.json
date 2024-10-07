@@ -1,58 +1,58 @@
 [
   {
-    "test_code": "isogram.test.ex1 = let\n  Test.label \"Empty string\" <| Test.expect (isIsogram \"\" === true)",
-    "name": "isogram.test.ex1"
+    "name": "Empty string",
+    "test_code": "let\n  Test.label.deprecated \"Empty string\" <| Test.expect (isIsogram \"\" === true)"
   },
   {
-    "test_code": "isogram.test.ex2 = let\n  Test.label \"Isogram with only lower case characters\" <| Test.expect (isIsogram \"isogram\" === true)",
-    "name": "isogram.test.ex2"
+    "name": "Isogram with only lower case characters",
+    "test_code": "let\n  Test.label.deprecated \"Isogram with only lower case characters\" <| Test.expect (isIsogram \"isogram\" === true)"
   },
   {
-    "test_code": "isogram.test.ex3 = let\n  Test.label \"Word with one duplicated character\" <| Test.expect (isIsogram \"eleven\" === false)",
-    "name": "isogram.test.ex3"
+    "name": "Word with one duplicated character",
+    "test_code": "let\n  Test.label.deprecated \"Word with one duplicated character\" <| Test.expect (isIsogram \"eleven\" === false)"
   },
   {
-    "test_code": "isogram.test.ex4 = let\n  Test.label \"Word with one duplicated character from the end of the alphabet\" <| Test.expect (isIsogram \"zzyzx\" === false)",
-    "name": "isogram.test.ex4"
+    "name": "Word with one duplicated character from the end of the alphabet",
+    "test_code": "let\n  Test.label.deprecated \"Word with one duplicated character from the end of the alphabet\" <| Test.expect (isIsogram \"zzyzx\" === false)"
   },
   {
-    "test_code": "isogram.test.ex5 = let\n  Test.label \"Longest reported english isogram\" <| Test.expect (isIsogram \"subdermatoglyphic\" === true)",
-    "name": "isogram.test.ex5"
+    "name": "Longest reported english isogram",
+    "test_code": "let\n  Test.label.deprecated \"Longest reported english isogram\" <| Test.expect (isIsogram \"subdermatoglyphic\" === true)"
   },
   {
-    "test_code": "isogram.test.ex6 = let\n  Test.label \"Word with duplicated character in mixed case\" <| Test.expect (isIsogram \"Alphabet\" === false)",
-    "name": "isogram.test.ex6"
+    "name": "Word with duplicated character in mixed case",
+    "test_code": "let\n  Test.label.deprecated \"Word with duplicated character in mixed case\" <| Test.expect (isIsogram \"Alphabet\" === false)"
   },
   {
-    "test_code": "isogram.test.ex7 = let\n  Test.label \"Word with duplicated character in mixed case, lowercase first\" <| Test.expect (isIsogram \"alphAbet\" === false)",
-    "name": "isogram.test.ex7"
+    "name": "Word with duplicated character in mixed case, lowercase first",
+    "test_code": "let\n  Test.label.deprecated \"Word with duplicated character in mixed case, lowercase first\" <| Test.expect (isIsogram \"alphAbet\" === false)"
   },
   {
-    "test_code": "isogram.test.ex8 = let\n  Test.label \"Hypothetical isogrammic word with hyphen\" <| Test.expect (isIsogram \"thumbscrew-japingly\" === true)",
-    "name": "isogram.test.ex8"
+    "name": "Hypothetical isogrammic word with hyphen",
+    "test_code": "let\n  Test.label.deprecated \"Hypothetical isogrammic word with hyphen\" <| Test.expect (isIsogram \"thumbscrew-japingly\" === true)"
   },
   {
-    "test_code": "isogram.test.ex9 = let\n  Test.label \"Hypothetical word with duplicated character following hyphen\" <| Test.expect (isIsogram \"thumbscrew-jappingly\" === false)",
-    "name": "isogram.test.ex9"
+    "name": "Hypothetical word with duplicated character following hyphen",
+    "test_code": "let\n  Test.label.deprecated \"Hypothetical word with duplicated character following hyphen\" <| Test.expect (isIsogram \"thumbscrew-jappingly\" === false)"
   },
   {
-    "test_code": "isogram.test.ex10 = let\n  Test.label \"Isogram with duplicated hyphen\" <| Test.expect (isIsogram \"six-year-old\" === true)",
-    "name": "isogram.test.ex10"
+    "name": "Isogram with duplicated hyphen",
+    "test_code": "let\n  Test.label.deprecated \"Isogram with duplicated hyphen\" <| Test.expect (isIsogram \"six-year-old\" === true)"
   },
   {
-    "test_code": "isogram.test.ex11 = let\n  Test.label \"Made-up name that is an isogram\" <| Test.expect (isIsogram \"Emily Jung Schwartzkopf\" === true)",
-    "name": "isogram.test.ex11"
+    "name": "Made-up name that is an isogram",
+    "test_code": "let\n  Test.label.deprecated \"Made-up name that is an isogram\" <| Test.expect (isIsogram \"Emily Jung Schwartzkopf\" === true)"
   },
   {
-    "test_code": "isogram.test.ex12 = let\n  Test.label \"Duplicated character in the middle\" <| Test.expect (isIsogram \"accentor\" === false)",
-    "name": "isogram.test.ex12"
+    "name": "Duplicated character in the middle",
+    "test_code": "let\n  Test.label.deprecated \"Duplicated character in the middle\" <| Test.expect (isIsogram \"accentor\" === false)"
   },
   {
-    "test_code": "isogram.test.ex13 = let\n  Test.label \"Same first and last characters\" <| Test.expect (isIsogram \"angola\" === false)",
-    "name": "isogram.test.ex13"
+    "name": "Same first and last characters",
+    "test_code": "let\n  Test.label.deprecated \"Same first and last characters\" <| Test.expect (isIsogram \"angola\" === false)"
   },
   {
-    "test_code": "isogram.test.ex14 = let\n  Test.label \"Word with duplicated character and with two hyphens\" <| Test.expect (isIsogram \"up-to-date\" === false)",
-    "name": "isogram.test.ex14"
+    "name": "Word with duplicated character and with two hyphens",
+    "test_code": "let\n  Test.label.deprecated \"Word with duplicated character and with two hyphens\" <| Test.expect (isIsogram \"up-to-date\" === false)"
   }
 ]

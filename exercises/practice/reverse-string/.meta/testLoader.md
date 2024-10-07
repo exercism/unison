@@ -1,9 +1,9 @@
 # Testing transcript for reverse-string exercise
 
 ```ucm
-.> load ./reverseString.u
-.> add
-.> load ./reverseString.test.u
-.> add
-.> move.term reverseString.tests tests
+scratch/main> load ./reverseString.u
+scratch/main> add
+scratch/main> load ./reverseString.test.u
+scratch/main> add
+scratch/main> move.term reverseString.tests tests
 ```

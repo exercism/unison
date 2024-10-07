@@ -4,19 +4,19 @@ nucleotideCount.toSortedList input =
   Optional.map go input
 
 nucleotideCount.test.ex1 = let
-  Test.label "empty strand" <| Test.expect (toSortedList (nucleotideCounts "") === (Some [("A",0),("C",0),("G",0),("T",0)]))
+  Test.label.deprecated "empty strand" <| Test.expect (toSortedList (nucleotideCounts "") === (Some [("A",0),("C",0),("G",0),("T",0)]))
 
 nucleotideCount.test.ex2 = let
-  Test.label "can count one nucleotide in single-character input" <| Test.expect (toSortedList (nucleotideCounts "G") === (Some [("A",0),("C",0),("G",1),("T",0)]))
+  Test.label.deprecated "can count one nucleotide in single-character input" <| Test.expect (toSortedList (nucleotideCounts "G") === (Some [("A",0),("C",0),("G",1),("T",0)]))
 
 nucleotideCount.test.ex3 = let
-  Test.label "strand with repeated nucleotide" <| Test.expect (toSortedList (nucleotideCounts "GGGGGGG") === (Some [("A",0),("C",0),("G",7),("T",0)]))
+  Test.label.deprecated "strand with repeated nucleotide" <| Test.expect (toSortedList (nucleotideCounts "GGGGGGG") === (Some [("A",0),("C",0),("G",7),("T",0)]))
 
 nucleotideCount.test.ex4 = let
-  Test.label "strand with multiple nucleotides" <| Test.expect (toSortedList (nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC") === (Some [("A",20),("C",12),("G",17),("T",21)]))
+  Test.label.deprecated "strand with multiple nucleotides" <| Test.expect (toSortedList (nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC") === (Some [("A",20),("C",12),("G",17),("T",21)]))
 
 nucleotideCount.test.ex5 = let
-  Test.label "strand with invalid nucleotides" <| Test.expect (toSortedList (nucleotideCounts "AGXXACT") === None)
+  Test.label.deprecated "strand with invalid nucleotides" <| Test.expect (toSortedList (nucleotideCounts "AGXXACT") === None)
 
 test> nucleotideCount.tests = runAll [
   nucleotideCount.test.ex1,

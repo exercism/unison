@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./sublist.u
-.> add
-.> load ./sublist.test.u
-.> add
-.> move.term sublist.tests tests
+scratch/main> load ./sublist.u
+scratch/main> add
+scratch/main> load ./sublist.test.u
+scratch/main> add
+scratch/main> move.term sublist.tests tests
 ```

@@ -14,6 +14,10 @@ The UCM will show the results of evaluating the expression upon saving the file.
 
 For a more in-depth Exercism workflow, here's a [walk-through video][walk-through-vid] of implementing and testing an Exercism problem.
 
+```exercism/caution
+The walk-through video shows workflow for the older version of Unison. See new workflow [here](https://exercism.org/docs/tracks/unison/tests) with new project workflow.
+```
+
 ## Codebase organization
 
 A Unison codebase is organized by "namespaces." Namespaces function a bit like directories in a file system, except instead of containing files, they contain your Unison types and functions. Namespace paths are separated by dots, `.`. For example, we can refer to the `Text` namespace in the `base` namespace with `base.Text`.

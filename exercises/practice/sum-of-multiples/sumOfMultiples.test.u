@@ -1,50 +1,50 @@
 sumOfMultiples.test.t1 =
-  Test.label "no multiples within limit" <| expect ((sumOfMultiples [3,5] 1) === 0)
+  Test.label.deprecated "no multiples within limit" <| expect ((sumOfMultiples [3,5] 1) === 0)
 
 sumOfMultiples.test.t2 =
-  Test.label "one factor has multiples within limit" <| expect ((sumOfMultiples [3,5] 4) === 3)
+  Test.label.deprecated "one factor has multiples within limit" <| expect ((sumOfMultiples [3,5] 4) === 3)
 
 sumOfMultiples.test.t3 =
-  Test.label "more than one multiple within limit" <| expect ((sumOfMultiples [3] 7) === 9)
+  Test.label.deprecated "more than one multiple within limit" <| expect ((sumOfMultiples [3] 7) === 9)
 
 sumOfMultiples.test.t4 =
-  Test.label "more than one factor with multiples within limit" <| expect ((sumOfMultiples [3,5] 10) === 23)
+  Test.label.deprecated "more than one factor with multiples within limit" <| expect ((sumOfMultiples [3,5] 10) === 23)
 
 sumOfMultiples.test.t5 =
-  Test.label "each multiple is only counted once" <| expect ((sumOfMultiples [3,5] 100) === 2318)
+  Test.label.deprecated "each multiple is only counted once" <| expect ((sumOfMultiples [3,5] 100) === 2318)
 
 sumOfMultiples.test.t6 =
-  Test.label "a much larger limit" <| expect ((sumOfMultiples [3,5] 1000) === 233168)
+  Test.label.deprecated "a much larger limit" <| expect ((sumOfMultiples [3,5] 1000) === 233168)
 
 sumOfMultiples.test.t7 =
-  Test.label "three factors" <| expect ((sumOfMultiples [7, 13, 17] 20) === 51)
+  Test.label.deprecated "three factors" <| expect ((sumOfMultiples [7, 13, 17] 20) === 51)
 
 sumOfMultiples.test.t8 =
-  Test.label "factors not relatively prime" <| expect ((sumOfMultiples [4, 6] 15) === 30)
+  Test.label.deprecated "factors not relatively prime" <| expect ((sumOfMultiples [4, 6] 15) === 30)
 
 sumOfMultiples.test.t9 =
-  Test.label "some pairs of factors relatively prime and some not" <| expect ((sumOfMultiples [5, 6, 8] 150) === 4419)
+  Test.label.deprecated "some pairs of factors relatively prime and some not" <| expect ((sumOfMultiples [5, 6, 8] 150) === 4419)
 
 sumOfMultiples.test.t10 =
-  Test.label "one factor is a multiple of another" <| expect ((sumOfMultiples [5, 25] 51) === 275)
+  Test.label.deprecated "one factor is a multiple of another" <| expect ((sumOfMultiples [5, 25] 51) === 275)
 
 sumOfMultiples.test.t11 =
-  Test.label "much larger factors" <| expect ((sumOfMultiples [43, 47] 10000) === 2203160)
+  Test.label.deprecated "much larger factors" <| expect ((sumOfMultiples [43, 47] 10000) === 2203160)
 
 sumOfMultiples.test.t12 =
-  Test.label "all numbers are multiples of 1" <| expect ((sumOfMultiples [1] 100) === 4950)
+  Test.label.deprecated "all numbers are multiples of 1" <| expect ((sumOfMultiples [1] 100) === 4950)
 
 sumOfMultiples.test.t13 =
-  Test.label "no factors means an empty sum" <| expect ((sumOfMultiples [] 1000) === 0)
+  Test.label.deprecated "no factors means an empty sum" <| expect ((sumOfMultiples [] 1000) === 0)
 
 sumOfMultiples.test.t14 =
-  Test.label "the only multiple of 0 is 0" <| expect ((sumOfMultiples [0] 1) === 0)
+  Test.label.deprecated "the only multiple of 0 is 0" <| expect ((sumOfMultiples [0] 1) === 0)
 
 sumOfMultiples.test.t15 =
-  Test.label "the factor 0 does not affect the sum of multiples of other factors" <| expect ((sumOfMultiples [3, 0] 4) === 3)
+  Test.label.deprecated "the factor 0 does not affect the sum of multiples of other factors" <| expect ((sumOfMultiples [3, 0] 4) === 3)
 
 sumOfMultiples.test.t16 =
-  Test.label "solutions using include-exclude must extend to cardinality greater than 3" <|
+  Test.label.deprecated "solutions using include-exclude must extend to cardinality greater than 3" <|
     expect ((sumOfMultiples [2, 3, 5, 7, 11] 10000) === 39614537)
 
 test> sumOfMultiples.tests = runAll [

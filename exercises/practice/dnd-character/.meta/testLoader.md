@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./dndCharacter.u
-.> add
-.> load ./dndCharacter.test.u
-.> add
-.> move.term dndCharacter.tests tests
+scratch/main> load ./dndCharacter.u
+scratch/main> add
+scratch/main> load ./dndCharacter.test.u
+scratch/main> add
+scratch/main> move.term dndCharacter.tests tests
 ```

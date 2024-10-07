@@ -1,46 +1,46 @@
 [
   {
-    "test_code": "change.test.ex1 = let\n\tTest.label \"change for 1 cent\" <| Test.expect (findFewestCoins [1,5,10,25], 1 === Some [1])",
-    "name": "change.test.ex1"
+    "name": "change for 1 cent",
+    "test_code": "let\n  Test.label.deprecated \"change for 1 cent\" <| Test.expect (findFewestCoins [1,5,10,25] 1 === Some [1])"
   },
   {
-    "test_code": "change.test.ex2 = let\n\tTest.label \"single coin change\" <| Test.expect (findFewestCoins [1,5,10,25,100], 25 === Some [25])",
-    "name": "change.test.ex2"
+    "name": "single coin change",
+    "test_code": "let\n  Test.label.deprecated \"single coin change\" <| Test.expect (findFewestCoins [1,5,10,25,100] 25 === Some [25])"
   },
   {
-    "test_code": "change.test.ex3 = let\n\tTest.label \"multiple coin change\" <| Test.expect (findFewestCoins [1,5,10,25,100], 15 === Some [5,10])",
-    "name": "change.test.ex3"
+    "name": "multiple coin change",
+    "test_code": "let\n  Test.label.deprecated \"multiple coin change\" <| Test.expect (findFewestCoins [1,5,10,25,100] 15 === Some [5,10])"
   },
   {
-    "test_code": "change.test.ex4 = let\n\tTest.label \"change with Lilliputian Coins\" <| Test.expect (findFewestCoins [1,4,15,20,50], 23 === Some [4,4,15])",
-    "name": "change.test.ex4"
+    "name": "change with Lilliputian Coins",
+    "test_code": "let\n  Test.label.deprecated \"change with Lilliputian Coins\" <| Test.expect (findFewestCoins [1,4,15,20,50] 23 === Some [4,4,15])"
   },
   {
-    "test_code": "change.test.ex5 = let\n\tTest.label \"change with Lower Elbonia Coins\" <| Test.expect (findFewestCoins [1,5,10,21,25], 63 === Some [21,21,21])",
-    "name": "change.test.ex5"
+    "name": "change with Lower Elbonia Coins",
+    "test_code": "let\n  Test.label.deprecated \"change with Lower Elbonia Coins\" <| Test.expect (findFewestCoins [1,5,10,21,25] 63 === Some [21,21,21])"
   },
   {
-    "test_code": "change.test.ex6 = let\n\tTest.label \"large target values\" <| Test.expect (findFewestCoins [1,2,5,10,20,50,100], 999 === Some [2,2,5,20,20,50,100,100,100,100,100,100,100,100,100])",
-    "name": "change.test.ex6"
+    "name": "large target values",
+    "test_code": "let\n  Test.label.deprecated \"large target values\" <| Test.expect (findFewestCoins [1,2,5,10,20,50,100] 999 === Some [2,2,5,20,20,50,100,100,100,100,100,100,100,100,100])"
   },
   {
-    "test_code": "change.test.ex7 = let\n\tTest.label \"possible change without unit coins available\" <| Test.expect (findFewestCoins [2,5,10,20,50], 21 === Some [2,2,2,5,10])",
-    "name": "change.test.ex7"
+    "name": "possible change without unit coins available",
+    "test_code": "let\n  Test.label.deprecated \"possible change without unit coins available\" <| Test.expect (findFewestCoins [2,5,10,20,50] 21 === Some [2,2,2,5,10])"
   },
   {
-    "test_code": "change.test.ex8 = let\n\tTest.label \"another possible change without unit coins available\" <| Test.expect (findFewestCoins [4,5], 27 === Some [4,4,4,5,5,5])",
-    "name": "change.test.ex8"
+    "name": "another possible change without unit coins available",
+    "test_code": "let\n  Test.label.deprecated \"another possible change without unit coins available\" <| Test.expect (findFewestCoins [4,5] 27 === Some [4,4,4,5,5,5])"
   },
   {
-    "test_code": "change.test.ex9 = let\n\tTest.label \"no coins make 0 change\" <| Test.expect (findFewestCoins [1,5,10,21,25], 0 === Some [])",
-    "name": "change.test.ex9"
+    "name": "no coins make 0 change",
+    "test_code": "let\n  Test.label.deprecated \"no coins make 0 change\" <| Test.expect (findFewestCoins [1,5,10,21,25] 0 === Some [])"
   },
   {
-    "test_code": "change.test.ex10 = let\n\tTest.label \"error testing for change smaller than the smallest of coins\" <| Test.expect (findFewestCoins [5,10], 3 === None)",
-    "name": "change.test.ex10"
+    "name": "error testing for change smaller than the smallest of coins",
+    "test_code": "let\n  Test.label.deprecated \"error testing for change smaller than the smallest of coins\" <| Test.expect (findFewestCoins [5,10] 3 === None)"
   },
   {
-    "test_code": "change.test.ex11 = let\n\tTest.label \"error if no combination can add up to target\" <| Test.expect (findFewestCoins [5,10], 94 === None)",
-    "name": "change.test.ex11"
+    "name": "error if no combination can add up to target",
+    "test_code": "let\n  Test.label.deprecated \"error if no combination can add up to target\" <| Test.expect (findFewestCoins [5,10] 94 === None)"
   }
 ]

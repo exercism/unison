@@ -1,9 +1,9 @@
 # Testing transcript for binary-search exercise
 
 ```ucm
-.> load ./binarySearch.u
-.> add
-.> load ./binarySearch.test.u
-.> add
-.> move.term binarySearch.tests tests
+scratch/main> load ./binarySearch.u
+scratch/main> add
+scratch/main> load ./binarySearch.test.u
+scratch/main> add
+scratch/main> move.term binarySearch.tests tests
 ```

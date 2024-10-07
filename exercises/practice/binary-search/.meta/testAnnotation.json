@@ -1,46 +1,46 @@
 [
   {
-    "name": "binarySearch.find.tests.ex1",
-    "test_code": "expect (Some +0 === binarySearch.find (Array.fromList [6]) 6)\n    |> Test.label \"finds a value in an array with one element\""
+    "name": "finds a value in an array with one element",
+    "test_code": "expect (Some +0 === binarySearch.find (Array.fromList [6]) 6)\n    |> Test.label.deprecated \"finds a value in an array with one element\""
   },
   {
-    "name": "binarySearch.find.tests.ex2",
-    "test_code": "expect (Some +3 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 6)\n    |> Test.label \"finds a value in the middle of an array\""
+    "name": "finds a value in the middle of an array",
+    "test_code": "expect (Some +3 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 6)\n    |> Test.label.deprecated \"finds a value in the middle of an array\""
   },
   {
-    "name": "binarySearch.find.tests.ex3",
-    "test_code": "expect (Some +0 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 1)\n    |> Test.label \"finds a value at the beginning of an array\""
+    "name": "finds a value at the beginning of an array",
+    "test_code": "expect (Some +0 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 1)\n    |> Test.label.deprecated \"finds a value at the beginning of an array\""
   },
   {
-    "name": "binarySearch.find.tests.ex4",
-    "test_code": "expect (Some +6 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 11)\n    |> Test.label \"finds a value at the end of an array\""
+    "name": "finds a value at the end of an array",
+    "test_code": "expect (Some +6 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 11)\n    |> Test.label.deprecated \"finds a value at the end of an array\""
   },
   {
-    "name": "binarySearch.find.tests.ex5",
-    "test_code": "expect (Some +9 === binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634]) 144)\n    |> Test.label \"finds a value in an array of odd length\""
+    "name": "finds a value in an array of odd length",
+    "test_code": "expect (Some +9 === binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634]) 144)\n    |> Test.label.deprecated \"finds a value in an array of odd length\""
   },
   {
-    "name": "binarySearch.find.tests.ex6",
-    "test_code": "expect (Some +5 === binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]) 21)\n    |> Test.label \"finds a value in an array of even length\""
+    "name": "finds a value in an array of even length",
+    "test_code": "expect (Some +5 === binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]) 21)\n    |> Test.label.deprecated \"finds a value in an array of even length\""
   },
   {
-    "name": "binarySearch.find.tests.ex7",
-    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 7)\n    |> Test.label \"identifies that a value is not included in the array\""
+    "name": "identifies that a value is not included in the array",
+    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 7)\n    |> Test.label.deprecated \"identifies that a value is not included in the array\""
   },
   {
-    "name": "binarySearch.find.tests.ex8",
-    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 0)\n    |> Test.label \"a value smaller than the array's smallest value is not found\""
+    "name": "a value smaller than the array's smallest value is not found",
+    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 0)\n    |> Test.label.deprecated \"a value smaller than the array's smallest value is not found\""
   },
   {
-    "name": "binarySearch.find.tests.ex9",
-    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 13)\n    |> Test.label \"a value larger than the array's largest value is not found\""
+    "name": "a value larger than the array's largest value is not found",
+    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 13)\n    |> Test.label.deprecated \"a value larger than the array's largest value is not found\""
   },
   {
-    "name": "binarySearch.find.tests.ex10",
-    "test_code": "expect (None === binarySearch.find (Array.fromList []) 1)\n    |> Test.label \"nothing is found in an empty array\""
+    "name": "nothing is found in an empty array",
+    "test_code": "expect (None === binarySearch.find (Array.fromList []) 1)\n    |> Test.label.deprecated \"nothing is found in an empty array\""
   },
   {
-    "name": "binarySearch.find.tests.ex11",
-    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 2]) 0)\n    |> Test.label \"nothing is found when the left and right bounds cross\""
+    "name": "nothing is found when the left and right bounds cross",
+    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 2]) 0)\n    |> Test.label.deprecated \"nothing is found when the left and right bounds cross\""
   }
 ]

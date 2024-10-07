@@ -4,13 +4,13 @@
 
 * [The Unison language documentation](https://www.unison-lang.org/learn/fundamentals/values-and-functions/terms/) is a great place to learn core Unison concepts
 * [Unison Share](https://share.unison-lang.org/) is the repository where we host public libraries and code
-* You can always ask questions in [the Unison slack](http://unison-lang.org/slack)
+* You can always ask questions in [the Unison Discord](https://unison-lang.org/discord)
 * [The Unison Blog](https://www.unison-lang.org/blog/) contains language updates and special topics
 * An article about using [Unison's Remote ability to implement a Spark-like library](https://www.unison-lang.org/articles/distributed-datasets/)
 
 ## Videos
 
-* [YOW! Lambda Jam 2021](https://www.youtube.com/watch?v=DF6zt0Q-pz4), by Rúnar Bjarnason
+* [YOW! Lambda Jam 2021 - Part 1](https://www.youtube.com/watch?v=Adu75GJ0w1o), and [Part 2](https://www.youtube.com/watch?v=gy44CTCce0o), by Rúnar Bjarnason
 * [Scale By the Bay 2019](https://www.youtube.com/watch?v=IvENPX0MAZ4), by Paul Chiusano
   * This is a 32 minute talk that briefly covers the core ideas of Unison and talks about Unison's approach to refactoring.
 * [Strange Loop 2019](https://www.youtube.com/watch?v=gCWtkvDQ2ZI), by Paul Chiusano

@@ -1,9 +1,9 @@
 # Testing transcript for the exercise
 
 ```ucm
-.> load ./zebraPuzzle.u
-.> add
-.> load ./zebraPuzzle.test.u
-.> add
-.> move.term zebraPuzzle.tests tests
+scratch/main> load ./zebraPuzzle.u
+scratch/main> add
+scratch/main> load ./zebraPuzzle.test.u
+scratch/main> add
+scratch/main> move.term zebraPuzzle.tests tests
 ```

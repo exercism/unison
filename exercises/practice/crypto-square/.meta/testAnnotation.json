@@ -1,30 +1,30 @@
 [
   {
-    "test_code": "cryptoSquare.test.ex1 = let\n\tTest.label \"empty plaintext results in an empty ciphertext\" <| Test.expect (ciphertext \"\" === \"\")",
-    "name": "cryptoSquare.test.ex1"
+    "name": "empty plaintext results in an empty ciphertext",
+    "test_code": "let\n  Test.label.deprecated \"empty plaintext results in an empty ciphertext\" <| Test.expect (ciphertext \"\" === \"\")"
   },
   {
-    "test_code": "cryptoSquare.test.ex2 = let\n\tTest.label \"Lowercase\" <| Test.expect (ciphertext \"A\" === \"a\")",
-    "name": "cryptoSquare.test.ex2"
+    "name": "Lowercase",
+    "test_code": "let\n  Test.label.deprecated \"Lowercase\" <| Test.expect (ciphertext \"A\" === \"a\")"
   },
   {
-    "test_code": "cryptoSquare.test.ex3 = let\n\tTest.label \"Remove spaces\" <| Test.expect (ciphertext \"  b \" === \"b\")",
-    "name": "cryptoSquare.test.ex3"
+    "name": "Remove spaces",
+    "test_code": "let\n  Test.label.deprecated \"Remove spaces\" <| Test.expect (ciphertext \"  b \" === \"b\")"
   },
   {
-    "test_code": "cryptoSquare.test.ex4 = let\n\tTest.label \"Remove punctuation\" <| Test.expect (ciphertext \"@1,%!\" === \"1\")",
-    "name": "cryptoSquare.test.ex4"
+    "name": "Remove punctuation",
+    "test_code": "let\n  Test.label.deprecated \"Remove punctuation\" <| Test.expect (ciphertext \"@1,%!\" === \"1\")"
   },
   {
-    "test_code": "cryptoSquare.test.ex5 = let\n\tTest.label \"9 character plaintext results in 3 chunks of 3 characters\" <| Test.expect (ciphertext \"This is fun!\" === \"tsf hiu isn\")",
-    "name": "cryptoSquare.test.ex5"
+    "name": "9 character plaintext results in 3 chunks of 3 characters",
+    "test_code": "let\n  Test.label.deprecated \"9 character plaintext results in 3 chunks of 3 characters\" <| Test.expect (ciphertext \"This is fun!\" === \"tsf hiu isn\")"
   },
   {
-    "test_code": "cryptoSquare.test.ex6 = let\n\tTest.label \"8 character plaintext results in 3 chunks, the last one with a trailing space\" <| Test.expect (ciphertext \"Chill out.\" === \"clu hlt io \")",
-    "name": "cryptoSquare.test.ex6"
+    "name": "8 character plaintext results in 3 chunks, the last one with a trailing space",
+    "test_code": "let\n  Test.label.deprecated \"8 character plaintext results in 3 chunks, the last one with a trailing space\" <| Test.expect (ciphertext \"Chill out.\" === \"clu hlt io \")"
   },
   {
-    "test_code": "cryptoSquare.test.ex7 = let\n\tTest.label \"54 character plaintext results in 7 chunks, the last two with trailing spaces\" <| Test.expect (ciphertext \"If man was meant to stay on the ground, god would have given us roots.\" === \"imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau \")",
-    "name": "cryptoSquare.test.ex7"
+    "name": "54 character plaintext results in 7 chunks, the last two with trailing spaces",
+    "test_code": "let\n  Test.label.deprecated \"54 character plaintext results in 7 chunks, the last two with trailing spaces\" <| Test.expect (ciphertext \"If man was meant to stay on the ground, god would have given us roots.\" === \"imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau \")"
   }
 ]

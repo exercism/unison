@@ -1,56 +1,56 @@
 sublist.test.ex1 = let
-  Test.label "empty lists" <| Test.expect (sublist [] [] === Equal)
+  Test.label.deprecated "empty lists" <| Test.expect (sublist [] [] === Equal)
 
 sublist.test.ex2 = let
-  Test.label "empty list within non empty list" <| Test.expect (sublist [] [1,2,3] === Sublist)
+  Test.label.deprecated "empty list within non empty list" <| Test.expect (sublist [] [1,2,3] === Sublist)
 
 sublist.test.ex3 = let
-  Test.label "non empty list contains empty list" <| Test.expect (sublist [1,2,3] [] === Superlist)
+  Test.label.deprecated "non empty list contains empty list" <| Test.expect (sublist [1,2,3] [] === Superlist)
 
 sublist.test.ex4 = let
-  Test.label "list equals itself" <| Test.expect (sublist [1,2,3] [1,2,3] === Equal)
+  Test.label.deprecated "list equals itself" <| Test.expect (sublist [1,2,3] [1,2,3] === Equal)
 
 sublist.test.ex5 = let
-  Test.label "different lists" <| Test.expect (sublist [1,2,3] [2,3,4] === Unequal)
+  Test.label.deprecated "different lists" <| Test.expect (sublist [1,2,3] [2,3,4] === Unequal)
 
 sublist.test.ex6 = let
-  Test.label "false start" <| Test.expect (sublist [1,2,5] [0,1,2,3,1,2,5,6] === Sublist)
+  Test.label.deprecated "false start" <| Test.expect (sublist [1,2,5] [0,1,2,3,1,2,5,6] === Sublist)
 
 sublist.test.ex7 = let
-  Test.label "consecutive" <| Test.expect (sublist [1,1,2] [0,1,1,1,2,1,2] === Sublist)
+  Test.label.deprecated "consecutive" <| Test.expect (sublist [1,1,2] [0,1,1,1,2,1,2] === Sublist)
 
 sublist.test.ex8 = let
-  Test.label "sublist at start" <| Test.expect (sublist [0,1,2] [0,1,2,3,4,5] === Sublist)
+  Test.label.deprecated "sublist at start" <| Test.expect (sublist [0,1,2] [0,1,2,3,4,5] === Sublist)
 
 sublist.test.ex9 = let
-  Test.label "sublist in middle" <| Test.expect (sublist [2,3,4] [0,1,2,3,4,5] === Sublist)
+  Test.label.deprecated "sublist in middle" <| Test.expect (sublist [2,3,4] [0,1,2,3,4,5] === Sublist)
 
 sublist.test.ex10 = let
-  Test.label "sublist at end" <| Test.expect (sublist [3,4,5] [0,1,2,3,4,5] === Sublist)
+  Test.label.deprecated "sublist at end" <| Test.expect (sublist [3,4,5] [0,1,2,3,4,5] === Sublist)
 
 sublist.test.ex11 = let
-  Test.label "at start of superlist" <| Test.expect (sublist [0,1,2,3,4,5] [0,1,2] === Superlist)
+  Test.label.deprecated "at start of superlist" <| Test.expect (sublist [0,1,2,3,4,5] [0,1,2] === Superlist)
 
 sublist.test.ex12 = let
-  Test.label "in middle of superlist" <| Test.expect (sublist [0,1,2,3,4,5] [2,3] === Superlist)
+  Test.label.deprecated "in middle of superlist" <| Test.expect (sublist [0,1,2,3,4,5] [2,3] === Superlist)
 
 sublist.test.ex13 = let
-  Test.label "at end of superlist" <| Test.expect (sublist [0,1,2,3,4,5] [3,4,5] === Superlist)
+  Test.label.deprecated "at end of superlist" <| Test.expect (sublist [0,1,2,3,4,5] [3,4,5] === Superlist)
 
 sublist.test.ex14 = let
-  Test.label "first list missing element from second list" <| Test.expect (sublist [1,3] [1,2,3] === Unequal)
+  Test.label.deprecated "first list missing element from second list" <| Test.expect (sublist [1,3] [1,2,3] === Unequal)
 
 sublist.test.ex15 = let
-  Test.label "second list missing element from first list" <| Test.expect (sublist [1,2,3] [1,3] === Unequal)
+  Test.label.deprecated "second list missing element from first list" <| Test.expect (sublist [1,2,3] [1,3] === Unequal)
 
 sublist.test.ex16 = let
-  Test.label "first list missing additional digits from second list" <| Test.expect (sublist [1,2] [1,22] === Unequal)
+  Test.label.deprecated "first list missing additional digits from second list" <| Test.expect (sublist [1,2] [1,22] === Unequal)
 
 sublist.test.ex17 = let
-  Test.label "order matters to a list" <| Test.expect (sublist [1,2,3] [3,2,1] === Unequal)
+  Test.label.deprecated "order matters to a list" <| Test.expect (sublist [1,2,3] [3,2,1] === Unequal)
 
 sublist.test.ex18 = let
-  Test.label "same digits but different numbers" <| Test.expect (sublist [1,0,1] [10,1] === Unequal)
+  Test.label.deprecated "same digits but different numbers" <| Test.expect (sublist [1,0,1] [10,1] === Unequal)
 
 test> sublist.tests = runAll [
   sublist.test.ex1,

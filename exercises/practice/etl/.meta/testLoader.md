@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./etl.u
-.> add
-.> load ./etl.test.u
-.> add
-.> move.term etl.tests tests
+scratch/main> load ./etl.u
+scratch/main> add
+scratch/main> load ./etl.test.u
+scratch/main> add
+scratch/main> move.term etl.tests tests
 ```

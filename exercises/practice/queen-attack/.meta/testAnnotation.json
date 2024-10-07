@@ -1,46 +1,46 @@
 [
   {
-    "test_code": "queenAttack.test.ex1 = let\n\tTest.label \"queen with a valid position\" <| Test.expect (toOptional! '(create (2,2)) === Some (2,2))",
-    "name": "queenAttack.test.ex1"
+    "name": "queen with a valid position",
+    "test_code": "let\n  Test.label.deprecated \"queen with a valid position\" <| Test.expect (toOptional! '(create (2,2)) === Some (2,2))"
   },
   {
-    "test_code": "queenAttack.test.ex2 = let\n\tTest.label \"queen must have row on board\" <| Test.expect (toOptional! '(create (4,8)) === None)",
-    "name": "queenAttack.test.ex2"
+    "name": "queen must have row on board",
+    "test_code": "let\n  Test.label.deprecated \"queen must have row on board\" <| Test.expect (toOptional! '(create (8,4)) === None)"
   },
   {
-    "test_code": "queenAttack.test.ex3 = let\n\tTest.label \"queen must have column on board\" <| Test.expect (toOptional! '(create (4,8)) === None)",
-    "name": "queenAttack.test.ex3"
+    "name": "queen must have column on board",
+    "test_code": "let\n  Test.label.deprecated \"queen must have column on board\" <| Test.expect (toOptional! '(create (4,8)) === None)"
   },
   {
-    "test_code": "queenAttack.test.ex4 = let\n\tTest.label \"cannot attack\" <| Test.expect (toOptional! '(canAttack (2,4) (6,6)) === Some false)",
-    "name": "queenAttack.test.ex4"
+    "name": "cannot attack",
+    "test_code": "let\n  Test.label.deprecated \"cannot attack\" <| Test.expect (toOptional! '(canAttack (2,4) (6,6)) === Some false)"
   },
   {
-    "test_code": "queenAttack.test.ex5 = let\n\tTest.label \"can attack on same row\" <| Test.expect (toOptional! '(canAttack (2,4) (2,6)) === Some true)",
-    "name": "queenAttack.test.ex5"
+    "name": "can attack on same row",
+    "test_code": "let\n  Test.label.deprecated \"can attack on same row\" <| Test.expect (toOptional! '(canAttack (2,4) (2,6)) === Some true)"
   },
   {
-    "test_code": "queenAttack.test.ex6 = let\n\tTest.label \"can attack on same column\" <| Test.expect (toOptional! '(canAttack (4,5) (2,5)) === Some true)",
-    "name": "queenAttack.test.ex6"
+    "name": "can attack on same column",
+    "test_code": "let\n  Test.label.deprecated \"can attack on same column\" <| Test.expect (toOptional! '(canAttack (4,5) (2,5)) === Some true)"
   },
   {
-    "test_code": "queenAttack.test.ex7 = let\n\tTest.label \"can attack on first diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (0,4)) === Some true)",
-    "name": "queenAttack.test.ex7"
+    "name": "can attack on first diagonal",
+    "test_code": "let\n  Test.label.deprecated \"can attack on first diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (0,4)) === Some true)"
   },
   {
-    "test_code": "queenAttack.test.ex8 = let\n\tTest.label \"can attack on second diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (3,1)) === Some true)",
-    "name": "queenAttack.test.ex8"
+    "name": "can attack on second diagonal",
+    "test_code": "let\n  Test.label.deprecated \"can attack on second diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (3,1)) === Some true)"
   },
   {
-    "test_code": "queenAttack.test.ex9 = let\n\tTest.label \"can attack on third diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (1,1)) === Some true)",
-    "name": "queenAttack.test.ex9"
+    "name": "can attack on third diagonal",
+    "test_code": "let\n  Test.label.deprecated \"can attack on third diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (1,1)) === Some true)"
   },
   {
-    "test_code": "queenAttack.test.ex10 = let\n\tTest.label \"can attack on fourth diagonal\" <| Test.expect (toOptional! '(canAttack (1,7) (0,6)) === Some true)",
-    "name": "queenAttack.test.ex10"
+    "name": "can attack on fourth diagonal",
+    "test_code": "let\n  Test.label.deprecated \"can attack on fourth diagonal\" <| Test.expect (toOptional! '(canAttack (1,7) (0,6)) === Some true)"
   },
   {
-    "test_code": "queenAttack.test.ex11 = let\n\tTest.label \"cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal\" <| Test.expect (toOptional! '(canAttack (4,1) (2,5)) === Some false)",
-    "name": "queenAttack.test.ex11"
+    "name": "cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal",
+    "test_code": "let\n  Test.label.deprecated \"cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal\" <| Test.expect (toOptional! '(canAttack (4,1) (2,5)) === Some false)"
   }
 ]

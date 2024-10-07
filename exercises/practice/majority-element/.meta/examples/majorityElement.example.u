@@ -1,6 +1,6 @@
 unique type majorityElement.Color = Red | Orange | Yellow | Green | Blue | Purple
 
-majorityElement.majorityFinder : [Color] -> Optional Color
+majorityElement.majorityFinder : [majorityElement.Color] -> Optional majorityElement.Color
 majorityElement.majorityFinder colors =
   res _ = List.map (c -> !(update c)) colors
   (Counter colorTup, r) = MyStore.runWith (Counter None) res

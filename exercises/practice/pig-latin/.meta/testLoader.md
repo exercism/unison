@@ -1,9 +1,9 @@
 # Testing transcript for pig-latin exercise
 
 ```ucm
-.> load ./pigLatin.u
-.> add
-.> load ./pigLatin.test.u
-.> add
-.> move.term pigLatin.tests tests
+scratch/main> load ./pigLatin.u
+scratch/main> add
+scratch/main> load ./pigLatin.test.u
+scratch/main> add
+scratch/main> move.term pigLatin.tests tests
 ```

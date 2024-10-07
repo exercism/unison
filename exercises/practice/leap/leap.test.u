@@ -1,29 +1,29 @@
 leap.test.t1 =
-  Test.label "leap should be false when year is not divisible by 4" (Test.expect ((leap 2015) === false))
+  Test.label.deprecated "leap should be false when year is not divisible by 4" (Test.expect ((leap 2015) === false))
 
 leap.test.t2 =
-  Test.label "leap should be false when year is divisible by 2 not divisible by 4" (Test.expect ((leap 1970) === false))
+  Test.label.deprecated "leap should be false when year is divisible by 2 not divisible by 4" (Test.expect ((leap 1970) === false))
 
 leap.test.t3 =
-  Test.label "leap should be true when year is divisible by 4" (Test.expect ((leap 1964) === true))
+  Test.label.deprecated "leap should be true when year is divisible by 4" (Test.expect ((leap 1964) === true))
 
 leap.test.t4 =
-  Test.label "leap should be true when year divisible by 4, not divisible by 100" (Test.expect ((leap 1996)=== true))
+  Test.label.deprecated "leap should be true when year divisible by 4, not divisible by 100" (Test.expect ((leap 1996)=== true))
 
 leap.test.t5 =
-  Test.label "leap should be true when year divisible by 4 and 5" (Test.expect ((leap 1960)=== true))
+  Test.label.deprecated "leap should be true when year divisible by 4 and 5" (Test.expect ((leap 1960)=== true))
 
 leap.test.t6 =
-  Test.label "leap should be false when year divisible by 100, not divisible by 400" (Test.expect ((leap 2100)=== false))
+  Test.label.deprecated "leap should be false when year divisible by 100, not divisible by 400" (Test.expect ((leap 2100)=== false))
 
 leap.test.t7 =
-  Test.label "leap should be true when year divisible by 400 and 100" (Test.expect ((leap 2000) === true))
+  Test.label.deprecated "leap should be true when year divisible by 400 and 100" (Test.expect ((leap 2000) === true))
 
 leap.test.t8 =
-  Test.label "leap should be false when year divisible by 4 and 100" (Test.expect ((leap 1900) === false))
+  Test.label.deprecated "leap should be false when year divisible by 4 and 100" (Test.expect ((leap 1900) === false))
 
 leap.test.t9 =
-  Test.label "leap should be false when year divisible by 200, not divisble by 400" (Test.expect ((leap 1800) === false))
+  Test.label.deprecated "leap should be false when year divisible by 200, not divisble by 400" (Test.expect ((leap 1800) === false))
 
 
 test> leap.tests =

@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./bowling.u
-.> add
-.> load ./bowling.test.u
-.> add
-.> move.term bowling.tests tests
+scratch/main> load ./bowling.u
+scratch/main> add
+scratch/main> load ./bowling.test.u
+scratch/main> add
+scratch/main> move.term bowling.tests tests
 ```

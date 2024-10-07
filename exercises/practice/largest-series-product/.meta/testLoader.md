@@ -1,9 +1,9 @@
 # Testing transcript for largest-series-product exercise
 
 ```ucm
-.> load ./largestSeriesProduct.u
-.> add
-.> load ./largestSeriesProduct.test.u
-.> add
-.> move.term largestSeriesProduct.tests tests
+scratch/main> load ./largestSeriesProduct.u
+scratch/main> add
+scratch/main> load ./largestSeriesProduct.test.u
+scratch/main> add
+scratch/main> move.term largestSeriesProduct.tests tests
 ```

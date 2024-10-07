@@ -1,38 +1,38 @@
 [
   {
-    "test_code": "differenceOfSquares.test.ex1 = let\n  Test.label \"Square of sum 1\" <| Test.expect (squareOfSum 1 === 1)",
-    "name": "differenceOfSquares.test.ex1"
+    "name": "Square of sum 1",
+    "test_code": "let\n  Test.label.deprecated \"Square of sum 1\" <| Test.expect (squareOfSum 1 === 1)"
   },
   {
-    "test_code": "differenceOfSquares.test.ex2 = let\n  Test.label \"Square of sum 5\" <| Test.expect (squareOfSum 5 === 225)",
-    "name": "differenceOfSquares.test.ex2"
+    "name": "Square of sum 5",
+    "test_code": "let\n  Test.label.deprecated \"Square of sum 5\" <| Test.expect (squareOfSum 5 === 225)"
   },
   {
-    "test_code": "differenceOfSquares.test.ex3 = let\n  Test.label \"Square of sum 100\" <| Test.expect (squareOfSum 100 === 25502500)",
-    "name": "differenceOfSquares.test.ex3"
+    "name": "Square of sum 100",
+    "test_code": "let\n  Test.label.deprecated \"Square of sum 100\" <| Test.expect (squareOfSum 100 === 25502500)"
   },
   {
-    "test_code": "differenceOfSquares.test.ex4 = let\n  Test.label \"Sum of squares 1\" <| Test.expect (sumOfSquares 1 === 1)",
-    "name": "differenceOfSquares.test.ex4"
+    "name": "Sum of squares 1",
+    "test_code": "let\n  Test.label.deprecated \"Sum of squares 1\" <| Test.expect (sumOfSquares 1 === 1)"
   },
   {
-    "test_code": "differenceOfSquares.test.ex5 = let\n  Test.label \"Sum of squares 5\" <| Test.expect (sumOfSquares 5 === 55)",
-    "name": "differenceOfSquares.test.ex5"
+    "name": "Sum of squares 5",
+    "test_code": "let\n  Test.label.deprecated \"Sum of squares 5\" <| Test.expect (sumOfSquares 5 === 55)"
   },
   {
-    "test_code": "differenceOfSquares.test.ex6 = let\n  Test.label \"Sum of squares 100\" <| Test.expect (sumOfSquares 100 === 338350)",
-    "name": "differenceOfSquares.test.ex6"
+    "name": "Sum of squares 100",
+    "test_code": "let\n  Test.label.deprecated \"Sum of squares 100\" <| Test.expect (sumOfSquares 100 === 338350)"
   },
   {
-    "test_code": "differenceOfSquares.test.ex7 = let\n  Test.label \"Difference of squares 1\" <| Test.expect (difference 1 === 0)",
-    "name": "differenceOfSquares.test.ex7"
+    "name": "Difference of squares 1",
+    "test_code": "let\n  Test.label.deprecated \"Difference of squares 1\" <| Test.expect (difference 1 === 0)"
   },
   {
-    "test_code": "differenceOfSquares.test.ex8 = let\n  Test.label \"Difference of squares 5\" <| Test.expect (difference 5 === 170)",
-    "name": "differenceOfSquares.test.ex8"
+    "name": "Difference of squares 5",
+    "test_code": "let\n  Test.label.deprecated \"Difference of squares 5\" <| Test.expect (difference 5 === 170)"
   },
   {
-    "test_code": "differenceOfSquares.test.ex9 = let\n  Test.label \"Difference of squares 100\" <| Test.expect (difference 100 === 25164150)",
-    "name": "differenceOfSquares.test.ex9"
+    "name": "Difference of squares 100",
+    "test_code": "let\n  Test.label.deprecated \"Difference of squares 100\" <| Test.expect (difference 100 === 25164150)"
   }
 ]

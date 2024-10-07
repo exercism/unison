@@ -3,20 +3,21 @@ use List ++
 use LinkedList toList fromList new nil cons tail
 
 linkedL.test.ex1 =
-  label "isNil applied to nil should be true" <| expect (isNil nil && (not (isNil (new 1))))
+  Test.label.deprecated "isNil applied to nil should be true" <| expect (isNil nil && (not (isNil (new 1))))
 
 linkedL.test.ex2 =
-  label "calling cons with nil is the same as calling new" <| expect (cons 1 nil === new 1)
+  Test.label.deprecated "calling cons with nil is the same as calling new" <| expect (cons 1 nil === new 1)
 
 linkedL.test.ex3 _ =
+  use test.deprecated.gen listOf nat
   listNats = !(listOf nat)
   linkedList = fromList listNats
-  label "toList and fromList should be symmetrical" <| expect (toList linkedList === listNats)
+  Test.label.deprecated "toList and fromList should be symmetrical" <| expect (toList linkedList === listNats)
 
 linkedL.test.ex4 =
   consTest = head (new 1) === Some 1
   nilTest = head nil === None
-  label "head should return optional element" <| expect (consTest && nilTest)
+  Test.label.deprecated "head should return optional element" <| expect (consTest && nilTest)
 
 linkedL.test.ex5=
   l1 = new 1
@@ -24,16 +25,17 @@ linkedL.test.ex5=
   manyTest = tail l2 === l1
   consTest = tail l1 === nil
   nilTest = head nil === None
-  label "tail should drop the first element" <| expect (consTest && nilTest && manyTest)
+  Test.label.deprecated "tail should drop the first element" <| expect (consTest && nilTest && manyTest)
 
 linkedL.test.ex6 _ =
+  use test.deprecated.gen listOf nat
   listNats = !(listOf nat)
   linkedList = fromList listNats
-  label "reversing a list twice should be original list" <| expect (reverseLinkedList linkedList |> reverseLinkedList === linkedList)
+  Test.label.deprecated "reversing a list twice should be original list" <| expect (reverseLinkedList linkedList |> reverseLinkedList === linkedList)
 
 linkedL.test.ex7 =
   nilTest = isNil nil
   consTest = not <| isNil (new 1)
-  label "isNil should return appropriate boolean" <| expect (nilTest && consTest)
+  Test.label.deprecated "isNil should return appropriate boolean" <| expect (nilTest && consTest)
 
 test> linkedL.tests = Test.run ex1 ++ Test.run ex2 ++ (runs 10 ex3) ++ Test.run ex4 ++ Test.run ex5 ++ (runs 10 ex6) ++ Test.run ex7

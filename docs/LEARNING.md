@@ -8,4 +8,4 @@ For reference material, the [Unison language reference](https://www.unison-lang.
 
 You may want to familiarize yourself with [Unison Share](https://share.unison-lang.org/), Unison's repository for public libraries and projects. The documentation for the standard library, [`base`](https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest), contains helpful usage information.
 
-👋 If you're ever stuck, we're happy to help. The #beginner-friendly channel in [the official Unison slack](http://unison-lang.org/slack) is filled with friendly people.
+👋 If you're ever stuck, we're happy to help. The #beginner-friendly channel in [the official Unison Discord server](https://unison-lang.org/discord) is filled with friendly people.

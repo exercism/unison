@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./rna.u
-.> add
-.> load ./rna.test.u
-.> add
-.> move.term rna.tests tests
+scratch/main> load ./rna.u
+scratch/main> add
+scratch/main> load ./rna.test.u
+scratch/main> add
+scratch/main> move.term rna.tests tests
 ```

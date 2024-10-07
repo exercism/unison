@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./zipper.u
-.> add
-.> load ./zipper.test.u
-.> add
-.> move.term zipper.tests tests
+scratch/main> load ./zipper.u
+scratch/main> add
+scratch/main> load ./zipper.test.u
+scratch/main> add
+scratch/main> move.term zipper.tests tests
 ```

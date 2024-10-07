@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./collatz.u
-.> add
-.> load ./collatz.test.u
-.> add
-.> move.term collatzConjecture.tests tests
+scratch/main> load ./collatz.u
+scratch/main> add
+scratch/main> load ./collatz.test.u
+scratch/main> add
+scratch/main> move.term collatzConjecture.tests tests
 ```

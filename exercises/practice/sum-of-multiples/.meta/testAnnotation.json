@@ -1,66 +1,66 @@
 [
   {
-    "name": "sumOfMultiples.test.t1",
-    "test_code": "Test.label \"no multiples within limit\" <| expect ((sumOfMultiples [3,5] 1) === 0)"
+    "name": "no multiples within limit",
+    "test_code": "Test.label.deprecated \"no multiples within limit\" <| expect ((sumOfMultiples [3,5] 1) === 0)"
   },
   {
-    "name": "sumOfMultiples.test.t2",
-    "test_code": "Test.label \"one factor has multiples within limit\" <| expect ((sumOfMultiples [3,5] 4) === 3)"
+    "name": "one factor has multiples within limit",
+    "test_code": "Test.label.deprecated \"one factor has multiples within limit\" <| expect ((sumOfMultiples [3,5] 4) === 3)"
   },
   {
-    "name": "sumOfMultiples.test.t3",
-    "test_code": "Test.label \"more than one multiple within limit\" <| expect ((sumOfMultiples [3] 7) === 9)"
+    "name": "more than one multiple within limit",
+    "test_code": "Test.label.deprecated \"more than one multiple within limit\" <| expect ((sumOfMultiples [3] 7) === 9)"
   },
   {
-    "name": "sumOfMultiples.test.t4",
-    "test_code": "Test.label \"more than one factor with multiples within limit\" <| expect ((sumOfMultiples [3,5] 10) === 23)"
+    "name": "more than one factor with multiples within limit",
+    "test_code": "Test.label.deprecated \"more than one factor with multiples within limit\" <| expect ((sumOfMultiples [3,5] 10) === 23)"
   },
   {
-    "name": "sumOfMultiples.test.t5",
-    "test_code": "Test.label \"each multiple is only counted once\" <| expect ((sumOfMultiples [3,5] 100) === 2318)"
+    "name": "each multiple is only counted once",
+    "test_code": "Test.label.deprecated \"each multiple is only counted once\" <| expect ((sumOfMultiples [3,5] 100) === 2318)"
   },
   {
-    "name": "sumOfMultiples.test.t6",
-    "test_code": "Test.label \"a much larger limit\" <| expect ((sumOfMultiples [3,5] 1000) === 233168)"
+    "name": "a much larger limit",
+    "test_code": "Test.label.deprecated \"a much larger limit\" <| expect ((sumOfMultiples [3,5] 1000) === 233168)"
   },
   {
-    "name": "sumOfMultiples.test.t7",
-    "test_code": "Test.label \"three factors\" <| expect ((sumOfMultiples [7, 13, 17] 20) === 51)"
+    "name": "three factors",
+    "test_code": "Test.label.deprecated \"three factors\" <| expect ((sumOfMultiples [7, 13, 17] 20) === 51)"
   },
   {
-    "name": "sumOfMultiples.test.t8",
-    "test_code": "Test.label \"factors not relatively prime\" <| expect ((sumOfMultiples [4, 6] 15) === 30)"
+    "name": "factors not relatively prime",
+    "test_code": "Test.label.deprecated \"factors not relatively prime\" <| expect ((sumOfMultiples [4, 6] 15) === 30)"
   },
   {
-    "name": "sumOfMultiples.test.t9",
-    "test_code": "Test.label \"some pairs of factors relatively prime and some not\" <| expect ((sumOfMultiples [5, 6, 8] 150) === 4419)"
+    "name": "some pairs of factors relatively prime and some not",
+    "test_code": "Test.label.deprecated \"some pairs of factors relatively prime and some not\" <| expect ((sumOfMultiples [5, 6, 8] 150) === 4419)"
   },
   {
-    "name": "sumOfMultiples.test.t10",
-    "test_code": "Test.label \"one factor is a multiple of another\" <| expect ((sumOfMultiples [5, 25] 51) === 275)"
+    "name": "one factor is a multiple of another",
+    "test_code": "Test.label.deprecated \"one factor is a multiple of another\" <| expect ((sumOfMultiples [5, 25] 51) === 275)"
   },
   {
-    "name": "sumOfMultiples.test.t11",
-    "test_code": "Test.label \"much larger factors\" <| expect ((sumOfMultiples [43, 47] 10000) === 2203160)"
+    "name": "much larger factors",
+    "test_code": "Test.label.deprecated \"much larger factors\" <| expect ((sumOfMultiples [43, 47] 10000) === 2203160)"
   },
   {
-    "name": "sumOfMultiples.test.t12",
-    "test_code": "Test.label \"all numbers are multiples of 1\" <| expect ((sumOfMultiples [1] 100) === 4950)"
+    "name": "all numbers are multiples of 1",
+    "test_code": "Test.label.deprecated \"all numbers are multiples of 1\" <| expect ((sumOfMultiples [1] 100) === 4950)"
   },
   {
-    "name": "sumOfMultiples.test.t13",
-    "test_code": "Test.label \"no factors means an empty sum\" <| expect ((sumOfMultiples [] 1000) === 0)"
+    "name": "no factors means an empty sum",
+    "test_code": "Test.label.deprecated \"no factors means an empty sum\" <| expect ((sumOfMultiples [] 1000) === 0)"
   },
   {
-    "name": "sumOfMultiples.test.t14",
-    "test_code": "Test.label \"the only multiple of 0 is 0\" <| expect ((sumOfMultiples [0] 1) === 0)"
+    "name": "the only multiple of 0 is 0",
+    "test_code": "Test.label.deprecated \"the only multiple of 0 is 0\" <| expect ((sumOfMultiples [0] 1) === 0)"
   },
   {
-    "name": "sumOfMultiples.test.t15",
-    "test_code": "Test.label \"the factor 0 does not affect the sum of multiples of other factors\" <| expect ((sumOfMultiples [3, 0] 4) === 3)"
+    "name": "the factor 0 does not affect the sum of multiples of other factors",
+    "test_code": "Test.label.deprecated \"the factor 0 does not affect the sum of multiples of other factors\" <| expect ((sumOfMultiples [3, 0] 4) === 3)"
   },
   {
-    "name": "sumOfMultiples.test.t16",
-    "test_code": "Test.label \"solutions using include-exclude must extend to cardinality greater than 3\" <| \nexpect ((sumOfMultiples [2, 3, 5, 7, 11] 10000) === 39614537)"
+    "name": "solutions using include-exclude must extend to cardinality greater than 3",
+    "test_code": "Test.label.deprecated \"solutions using include-exclude must extend to cardinality greater than 3\" <|\n    expect ((sumOfMultiples [2, 3, 5, 7, 11] 10000) === 39614537)"
   }
 ]

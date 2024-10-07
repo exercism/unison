@@ -1,65 +1,65 @@
 bowling.test.ex1 = let
-  Test.label "should be able to score a game with all zeros" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (0))
+  Test.label.deprecated "should be able to score a game with all zeros" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (0))
 
 bowling.test.ex2 = let
-  Test.label "should be able to score a game with no strikes or spares" <| Test.expect (score [3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6] === Right (90))
+  Test.label.deprecated "should be able to score a game with no strikes or spares" <| Test.expect (score [3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6] === Right (90))
 
 bowling.test.ex3 = let
-  Test.label "a spare followed by zeros is worth ten points" <| Test.expect (score [6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (10))
+  Test.label.deprecated "a spare followed by zeros is worth ten points" <| Test.expect (score [6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (10))
 
 bowling.test.ex4 = let
-  Test.label "points scored in the roll after a spare are counted twice" <| Test.expect (score [6,4,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (16))
+  Test.label.deprecated "points scored in the roll after a spare are counted twice" <| Test.expect (score [6,4,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (16))
 
 bowling.test.ex5 = let
-  Test.label "consecutive spares each get a one roll bonus" <| Test.expect (score [5,5,3,7,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (31))
+  Test.label.deprecated "consecutive spares each get a one roll bonus" <| Test.expect (score [5,5,3,7,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (31))
 
 bowling.test.ex6 = let
-  Test.label "a spare in the last frame gets a one roll bonus that is counted once" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3,7] === Right (17))
+  Test.label.deprecated "a spare in the last frame gets a one roll bonus that is counted once" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3,7] === Right (17))
 
 bowling.test.ex7 = let
-  Test.label "a strike earns ten points in a frame with a single roll" <| Test.expect (score [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (10))
+  Test.label.deprecated "a strike earns ten points in a frame with a single roll" <| Test.expect (score [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (10))
 
 bowling.test.ex8 = let
-  Test.label "points scored in the two rolls after a strike are counted twice as a bonus" <| Test.expect (score [10,5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (26))
+  Test.label.deprecated "points scored in the two rolls after a strike are counted twice as a bonus" <| Test.expect (score [10,5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (26))
 
 bowling.test.ex9 = let
-  Test.label "consecutive strikes each get the two roll bonus" <| Test.expect (score [10,10,10,5,3,0,0,0,0,0,0,0,0,0,0,0,0] === Right (81))
+  Test.label.deprecated "consecutive strikes each get the two roll bonus" <| Test.expect (score [10,10,10,5,3,0,0,0,0,0,0,0,0,0,0,0,0] === Right (81))
 
 bowling.test.ex10 = let
-  Test.label "a strike in the last frame gets a two roll bonus that is counted once" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,7,1] === Right (18))
+  Test.label.deprecated "a strike in the last frame gets a two roll bonus that is counted once" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,7,1] === Right (18))
 
 bowling.test.ex11 = let
-  Test.label "rolling a spare with the two roll bonus does not get a bonus roll" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,7,3] === Right (20))
+  Test.label.deprecated "rolling a spare with the two roll bonus does not get a bonus roll" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,7,3] === Right (20))
 
 bowling.test.ex12 = let
-  Test.label "strikes with the two roll bonus do not get bonus rolls" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10] === Right (30))
+  Test.label.deprecated "strikes with the two roll bonus do not get bonus rolls" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10] === Right (30))
 
 bowling.test.ex13 = let
-  Test.label "last two strikes followed by only last bonus with non strike points" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,0,1] === Right (31))
+  Test.label.deprecated "last two strikes followed by only last bonus with non strike points" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,0,1] === Right (31))
 
 bowling.test.ex14 = let
-  Test.label "a strike with the one roll bonus after a spare in the last frame does not get a bonus" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3,10] === Right (20))
+  Test.label.deprecated "a strike with the one roll bonus after a spare in the last frame does not get a bonus" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3,10] === Right (20))
 
 bowling.test.ex15 = let
-  Test.label "all strikes is a perfect game" <| Test.expect (score [10,10,10,10,10,10,10,10,10,10,10,10] === Right (300))
+  Test.label.deprecated "all strikes is a perfect game" <| Test.expect (score [10,10,10,10,10,10,10,10,10,10,10,10] === Right (300))
 
 bowling.test.ex16 =
-  Test.label "two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,6] === Right (26))
+  Test.label.deprecated "two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,6] === Right (26))
 
 bowling.test.ex17 = let
-  Test.label "an unstarted game cannot be scored" <| Test.expect (score [] === Left ( Error "Score cannot be taken until the end of the game"))
+  Test.label.deprecated "an unstarted game cannot be scored" <| Test.expect (score [] === Left ( Error "Score cannot be taken until the end of the game"))
 
 bowling.test.ex18 = let
-  Test.label "an incomplete game cannot be scored" <| Test.expect (score [0,0] === Left ( Error "Score cannot be taken until the end of the game"))
+  Test.label.deprecated "an incomplete game cannot be scored" <| Test.expect (score [0,0] === Left ( Error "Score cannot be taken until the end of the game"))
 
 bowling.test.ex19 = let
-  Test.label "bonus rolls for a strike in the last frame must be rolled before score can be calculated" <| Test.expect ( score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10] === Left ( Error "Score cannot be taken until the end of the game"))
+  Test.label.deprecated "bonus rolls for a strike in the last frame must be rolled before score can be calculated" <| Test.expect ( score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10] === Left ( Error "Score cannot be taken until the end of the game"))
 
 bowling.test.ex20 = let
-  Test.label "both bonus rolls for a strike in the last frame must be rolled before score can be calculated" <| Test.expect ( score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10] === Left ( Error "Score cannot be taken until the end of the game"))
+  Test.label.deprecated "both bonus rolls for a strike in the last frame must be rolled before score can be calculated" <| Test.expect ( score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10] === Left ( Error "Score cannot be taken until the end of the game"))
 
 bowling.test.ex21 = let
-  Test.label "bonus roll for a spare in the last frame must be rolled before score can be calculated" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3] === Left ( Error "Score cannot be taken until the end of the game"))
+  Test.label.deprecated "bonus roll for a spare in the last frame must be rolled before score can be calculated" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3] === Left ( Error "Score cannot be taken until the end of the game"))
 
 test> bowling.tests = runAll [
   bowling.test.ex1,

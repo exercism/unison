@@ -1,20 +1,20 @@
 reverseString.test.ex1 = let
-  Test.label "An empty string" <| Test.expect (reverseString.reverse "" === "")
+  Test.label.deprecated "An empty string" <| Test.expect (reverseString.reverse "" === "")
 
 reverseString.test.ex2 = let
-  Test.label "A word" <| Test.expect (reverseString.reverse "robot" === "tobor")
+  Test.label.deprecated "A word" <| Test.expect (reverseString.reverse "robot" === "tobor")
 
 reverseString.test.ex3 = let
-  Test.label "A capitalized word" <| Test.expect (reverseString.reverse "Ramen" === "nemaR")
+  Test.label.deprecated "A capitalized word" <| Test.expect (reverseString.reverse "Ramen" === "nemaR")
 
 reverseString.test.ex4 = let
-  Test.label "A sentence with punctuation" <| Test.expect (reverseString.reverse "I'm hungry!" === "!yrgnuh m'I")
+  Test.label.deprecated "A sentence with punctuation" <| Test.expect (reverseString.reverse "I'm hungry!" === "!yrgnuh m'I")
 
 reverseString.test.ex5 = let
-  Test.label "A palindrome" <| Test.expect (reverseString.reverse "racecar" === "racecar")
+  Test.label.deprecated "A palindrome" <| Test.expect (reverseString.reverse "racecar" === "racecar")
 
 reverseString.test.ex6 = let
-  Test.label "An even-sized word" <| Test.expect (reverseString.reverse "drawer" === "reward")
+  Test.label.deprecated "An even-sized word" <| Test.expect (reverseString.reverse "drawer" === "reward")
 
 test> reverseString.tests = runAll [
   reverseString.test.ex1,

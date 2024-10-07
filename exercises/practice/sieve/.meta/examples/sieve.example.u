@@ -14,13 +14,13 @@ sieve.getPrimes max = do
     if (Set.contains possible primes) then
       squared = possible * possible
       toRemove = rangeBy (possible + 1) max possible
-      List.foreach toRemove removeN
+      ignore (List.map removeN toRemove)
     else ()
 
   go =
-    sqrtUpper = Float.sqrt(toFloat max) |> base.Float.unsafeToInt |> truncate0
+    sqrtUpper = Float.sqrt(toFloat max) |> Float.unsafeToInt |> truncate0
     possible = List.rangeClosed 2 sqrtUpper
-    List.foreach possible primes'
+    ignore (List.map primes' possible)
   go
 
   Store.get

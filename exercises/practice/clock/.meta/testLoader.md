@@ -1,9 +1,9 @@
 # Testing transcript
 
 ```ucm
-.> load ./clock.u
-.> add
-.> load ./clock.test.u
-.> add
-.> move.term clock.tests tests
+scratch/main> load ./clock.u
+scratch/main> add
+scratch/main> load ./clock.test.u
+scratch/main> add
+scratch/main> move.term clock.tests tests
 ```

@@ -1,9 +1,9 @@
 # Testing transcript for isogram exercise
 
 ```ucm
-.> load ./isogram.u
-.> add
-.> load ./isogram.test.u
-.> add
-.> move.term isogram.tests tests
+scratch/main> load ./isogram.u
+scratch/main> add
+scratch/main> load ./isogram.test.u
+scratch/main> add
+scratch/main> move.term isogram.tests tests
 ```
