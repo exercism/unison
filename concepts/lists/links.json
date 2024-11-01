@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.unison-lang.org/learn/fundamentals/values-and-functions/common-collection-types/#lists",
+    "description": "Lists and other common collection types in Unison"
+  },
+  {
+    "url": "https://www.unison-lang.org/learn/fundamentals/control-flow/pattern-matching2/#pattern-matching-on",
+    "description": "List pattern matching"
+  },
+  {
+    "url": "https://share.unison-lang.org/@unison/code/latest/namespaces/public/base/latest/;/types/data/List",
+    "description": "List documentation from the standard library"
+  },
+  {
+    "url": "https://www.unison-lang.org/learn/fundamentals/control-flow/looping/",
+    "description": "Tips for using recursion using a List example"
+  }
+]
