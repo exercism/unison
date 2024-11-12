@@ -1,40 +1,100 @@
-pacmanRules.test.ex1 = let
-  Test.label.deprecated "eatGhost, ghost gets eaten" <| expect (eatGhost true true)
+pacmanRules.test.ex1 = verify do
+  labeled "eatGhost, ghost gets eaten" do
+    expected = true
+    actual = eatGhost true true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex2 = let
-  Test.label.deprecated "eatGhost, ghost does not get eaten because no power pellet active" <| expect (eatGhost false true === false)
+pacmanRules.test.ex2 = verify do
+  labeled "eatGhost, ghost does not get eaten because no power pellet active" do
+    expected = false
+    actual = eatGhost false true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex3 = let
-  Test.label.deprecated "eatGhost, ghost does not get eaten because not touching ghost" <| expect (eatGhost true false === false)
+pacmanRules.test.ex3 = verify do
+  labeled "eatGhost, ghost does not get eaten because not touching ghost" do
+    expected = false
+    actual = eatGhost true false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex4 = let
-  Test.label.deprecated "score, score when eating dot" <| expect (score false true)
+pacmanRules.test.ex4 = verify do
+  labeled "score, score when eating dot" do
+    expected = true
+    actual = score false true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex5 = let
-  Test.label.deprecated "score, score when eating power pellet" <| expect (score true false)
+pacmanRules.test.ex5 = verify do
+  labeled "score, score when eating power pellet" do
+    expected = true
+    actual = score true false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex6 = let
-  Test.label.deprecated "score, no score when nothing eaten" <| expect (score false false === false )
+pacmanRules.test.ex6 = verify do
+  labeled "score, no score when nothing eaten" do
+    expected = false
+    actual = score false false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex7 = let
-  Test.label.deprecated "lose if touching a ghost without a power pellet active" <| expect (lose false true)
+pacmanRules.test.ex7 = verify do
+  labeled "lose if touching a ghost without a power pellet active" do
+    expected = true
+    actual = lose false true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex8 = let
-  Test.label.deprecated "don't lose if touching a ghost with a power pellet active" <| expect (lose true true === false)
+pacmanRules.test.ex8 = verify do
+  labeled "don't lose if touching a ghost with a power pellet active" do
+    expected = false
+    actual = lose true true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex9 = let
-  Test.label.deprecated "don't lose if not touching a ghost" <| expect (lose true false === false)
+pacmanRules.test.ex9 = verify do
+  labeled "don't lose if not touching a ghost" do
+    expected = false
+    actual = lose true false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex10 = let
-  Test.label.deprecated "win if all dots eaten" <| expect (win true false false)
+pacmanRules.test.ex10 = verify do
+  labeled "win if all dots eaten" do
+    expected = true
+    actual = win true false false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex11 = let
-  Test.label.deprecated "don't win if all dots eaten, but touching a ghost" <| expect (win true false true === false)
+pacmanRules.test.ex11 = verify do
+  labeled "don't win if all dots eaten, but touching a ghost" do
+    expected = false
+    actual = win true false true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pacmanRules.test.ex12 = let
-  Test.label.deprecated "win if all dots eaten and touching a ghost with a power pellet active" <| expect (win true true true)
+pacmanRules.test.ex12 = verify do
+  labeled "win if all dots eaten and touching a ghost with a power pellet active" do
+    expected = true
+    actual = win true true true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> pacmanRules.tests = runAll [
+test> pacmanRules.tests = join [
   pacmanRules.test.ex1,
   pacmanRules.test.ex2,
   pacmanRules.test.ex3,

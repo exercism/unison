@@ -1,14 +1,14 @@
 [
   {
-    "name": "lasagna.test.ex1",
-    "test_code": "let\n  Test.expect (expectedMinutesInOven === 40)"
+    "name": "expected minutes in oven",
+    "test_code": "verify do\n  labeled \"expected minutes in oven\" do\n    expected = 40\n    label \"expected\" expected\n    label \"actual\" expectedMinutesInOven\n    ensureEqual expected expectedMinutesInOven"
   },
   {
-    "name": "lasagna.test.ex2",
-    "test_code": "let\n  Test.expect (preparationTimeInMinutes 5 === 10)"
+    "name": "preparation time in minutes",
+    "test_code": "verify do\n  labeled \"preparation time in minutes\" do\n    expected = 10\n    actual = preparationTimeInMinutes 5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
-    "name": "lasagna.test.ex3",
-    "test_code": "let\n  Test.expect (elapsedTimeInMinutes 3 20 === 26)"
+    "name": "elapsed time in minutes",
+    "test_code": "verify do\n  labeled \"elapsed time in minutes\" do\n    expected = 26\n    actual = elapsedTimeInMinutes 3 20\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]
