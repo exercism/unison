@@ -1,86 +1,192 @@
-allYourBase.test.ex1 = let
-  Test.label.deprecated "single bit one to decimal" <| Test.expect (rebase +2 [+1] +10 === Some [+1])
+allYourBase.test.ex1 = verify do
+  labeled "single bit one to decimal" do
+    expected = Some [+1]
+    actual = rebase +2 [+1] +10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex2 = let
-  Test.label.deprecated "binary to single decimal" <| Test.expect (rebase +2 [+1,+0,+1] +10 === Some [+5])
+allYourBase.test.ex2 = verify do
+  labeled "binary to single decimal" do
+    expected = Some [+5]
+    actual = rebase +2 [+1,+0,+1] +10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex3 = let
-  Test.label.deprecated "single decimal to binary" <| Test.expect (rebase +10 [+5] +2 === Some [+1,+0,+1])
+allYourBase.test.ex3 = verify do
+  labeled "single decimal to binary" do
+    expected = Some [+1,+0,+1]
+    actual = rebase +10 [+5] +2
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex4 = let
-  Test.label.deprecated "binary to multiple decimal" <| Test.expect (rebase +2 [+1,+0,+1,+0,+1,+0] +10 === Some [+4,+2])
+allYourBase.test.ex4 = verify do
+  labeled "binary to multiple decimal" do
+    expected = Some [+4,+2]
+    actual = rebase +2 [+1,+0,+1,+0,+1,+0] +10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex5 = let
-  Test.label.deprecated "decimal to binary" <| Test.expect (rebase +10 [+4,+2] +2 === Some [+1,+0,+1,+0,+1,+0])
+allYourBase.test.ex5 = verify do
+  labeled "decimal to binary" do
+    expected = Some [+1,+0,+1,+0,+1,+0]
+    actual = rebase +10 [+4,+2] +2
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex6 = let
-  Test.label.deprecated "trinary to hexadecimal" <| Test.expect (rebase +3 [+1,+1,+2,+0] +16 === Some [+2,+10])
+allYourBase.test.ex6 = verify do
+  labeled "trinary to hexadecimal" do
+    expected = Some [+2,+10]
+    actual = rebase +3 [+1,+1,+2,+0] +16
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex7 = let
-  Test.label.deprecated "hexadecimal to trinary" <| Test.expect (rebase +16 [+2,+10] +3 === Some [+1,+1,+2,+0])
+allYourBase.test.ex7 = verify do
+  labeled "hexadecimal to trinary" do
+    expected = Some [+1,+1,+2,+0]
+    actual = rebase +16 [+2,+10] +3
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex8 = let
-  Test.label.deprecated "15-bit integer" <| Test.expect (rebase +97 [+3,+46,+60] +73 === Some [+6,+10,+45])
+allYourBase.test.ex8 = verify do
+  labeled "15-bit integer" do
+    expected = Some [+6,+10,+45]
+    actual = rebase +97 [+3,+46,+60] +73
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex9 = let
-  Test.label.deprecated "empty list" <| Test.expect (rebase +2 [] +10 === Some [+0])
+allYourBase.test.ex9 = verify do
+  labeled "empty list" do
+    expected = Some [+0]
+    actual = rebase +2 [] +10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex10 = let
-  Test.label.deprecated "single zero" <| Test.expect (rebase +10 [+0] +2 === Some [+0])
+allYourBase.test.ex10 = verify do
+  labeled "single zero" do
+    expected = Some [+0]
+    actual = rebase +10 [+0] +2
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex11 = let
-  Test.label.deprecated "multiple zeros" <| Test.expect (rebase +10 [+0,+0,+0] +2 === Some [+0])
+allYourBase.test.ex11 = verify do
+  labeled "multiple zeros" do
+    expected = Some [+0]
+    actual = rebase +10 [+0,+0,+0] +2
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex12 = let
-  Test.label.deprecated "leading zeros" <| Test.expect (rebase +7 [+0,+6,+0] +10 === Some [+4,+2])
+allYourBase.test.ex12 = verify do
+  labeled "leading zeros" do
+    expected = Some [+4,+2]
+    actual = rebase +7 [+0,+6,+0] +10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex13 = let
-  Test.label.deprecated "input base is one" <| Test.expect (rebase +1 [+0] +10 === None)
+allYourBase.test.ex13 = verify do
+  labeled "input base is one" do
+    expected = None
+    actual = rebase +1 [+0] +10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex14 = let
-  Test.label.deprecated "input base is zero" <| Test.expect (rebase +0 [] +10 === None)
+allYourBase.test.ex14 = verify do
+  labeled "input base is zero" do
+    expected = None
+    actual = rebase +0 [] +10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex15 = let
-  Test.label.deprecated "input base is negative" <| Test.expect (rebase -2 [+1] +10 === None)
+allYourBase.test.ex15 = verify do
+  labeled "input base is negative" do
+    expected = None
+    actual = rebase -2 [+1] +10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex16 = let
-  Test.label.deprecated "negative digit" <| Test.expect (rebase +2 [+1,-1,+1,+0,+1,+0] +10 === None)
+allYourBase.test.ex16 = verify do
+  labeled "negative digit" do
+    expected = None
+    actual = rebase +2 [+1,-1,+1,+0,+1,+0] +10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex17 = let
-  Test.label.deprecated "invalid positive digit" <| Test.expect (rebase +2 [+1,+2,+1,+0,+1,+0] +10 === None)
+allYourBase.test.ex17 = verify do
+  labeled "invalid positive digit" do
+    expected = None
+    actual = rebase +2 [+1,+2,+1,+0,+1,+0] +10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex18 = let
-  Test.label.deprecated "output base is one" <| Test.expect (rebase +2 [+1,+0,+1,+0,+1,+0] +1 === None)
+allYourBase.test.ex18 = verify do
+  labeled "output base is one" do
+    expected = None
+    actual = rebase +2 [+1,+0,+1,+0,+1,+0] +1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex19 = let
-  Test.label.deprecated "output base is zero" <| Test.expect (rebase +10 [+7] +0 === None)
+allYourBase.test.ex19 = verify do
+  labeled "output base is zero" do
+    expected = None
+    actual = rebase +10 [+7] +0
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex20 = let
-  Test.label.deprecated "output base is negative" <| Test.expect (rebase +2 [+1] -7 === None)
+allYourBase.test.ex20 = verify do
+  labeled "output base is negative" do
+    expected = None
+    actual = rebase +2 [+1] -7
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allYourBase.test.ex21 = let
-  Test.label.deprecated "both bases are negative" <| Test.expect (rebase -2 [+1] -7 === None)
+allYourBase.test.ex21 = verify do
+  labeled "both bases are negative" do
+    expected = None
+    actual = rebase -2 [+1] -7
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> allYourBase.tests = runAll [
-  allYourBase.test.ex1,
-  allYourBase.test.ex2,
-  allYourBase.test.ex3,
-  allYourBase.test.ex4,
-  allYourBase.test.ex5,
-  allYourBase.test.ex6,
-  allYourBase.test.ex7,
-  allYourBase.test.ex8,
-  allYourBase.test.ex9,
-  allYourBase.test.ex10,
-  allYourBase.test.ex11,
-  allYourBase.test.ex12,
-  allYourBase.test.ex13,
-  allYourBase.test.ex14,
-  allYourBase.test.ex15,
-  allYourBase.test.ex16,
-  allYourBase.test.ex17,
-  allYourBase.test.ex18,
-  allYourBase.test.ex19,
-  allYourBase.test.ex20,
-  allYourBase.test.ex21
-]
+test> allYourBase.tests =
+  join [
+    allYourBase.test.ex1,
+    allYourBase.test.ex2,
+    allYourBase.test.ex3,
+    allYourBase.test.ex4,
+    allYourBase.test.ex5,
+    allYourBase.test.ex6,
+    allYourBase.test.ex7,
+    allYourBase.test.ex8,
+    allYourBase.test.ex9,
+    allYourBase.test.ex10,
+    allYourBase.test.ex11,
+    allYourBase.test.ex12,
+    allYourBase.test.ex13,
+    allYourBase.test.ex14,
+    allYourBase.test.ex15,
+    allYourBase.test.ex16,
+    allYourBase.test.ex17,
+    allYourBase.test.ex18,
+    allYourBase.test.ex19,
+    allYourBase.test.ex20,
+    allYourBase.test.ex21
+  ]

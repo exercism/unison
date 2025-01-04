@@ -1,86 +1,86 @@
 [
   {
     "name": "single bit one to decimal",
-    "test_code": "let\n  Test.label.deprecated \"single bit one to decimal\" <| Test.expect (rebase +2 [+1] +10 === Some [+1])"
+    "test_code": "verify do\n  labeled \"single bit one to decimal\" do\n    expected = Some [+1]\n    actual = rebase +2 [+1] +10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "binary to single decimal",
-    "test_code": "let\n  Test.label.deprecated \"binary to single decimal\" <| Test.expect (rebase +2 [+1,+0,+1] +10 === Some [+5])"
+    "test_code": "verify do\n  labeled \"binary to single decimal\" do\n    expected = Some [+5]\n    actual = rebase +2 [+1,+0,+1] +10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "single decimal to binary",
-    "test_code": "let\n  Test.label.deprecated \"single decimal to binary\" <| Test.expect (rebase +10 [+5] +2 === Some [+1,+0,+1])"
+    "test_code": "verify do\n  labeled \"single decimal to binary\" do\n    expected = Some [+1,+0,+1]\n    actual = rebase +10 [+5] +2\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "binary to multiple decimal",
-    "test_code": "let\n  Test.label.deprecated \"binary to multiple decimal\" <| Test.expect (rebase +2 [+1,+0,+1,+0,+1,+0] +10 === Some [+4,+2])"
+    "test_code": "verify do\n  labeled \"binary to multiple decimal\" do\n    expected = Some [+4,+2]\n    actual = rebase +2 [+1,+0,+1,+0,+1,+0] +10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "decimal to binary",
-    "test_code": "let\n  Test.label.deprecated \"decimal to binary\" <| Test.expect (rebase +10 [+4,+2] +2 === Some [+1,+0,+1,+0,+1,+0])"
+    "test_code": "verify do\n  labeled \"decimal to binary\" do\n    expected = Some [+1,+0,+1,+0,+1,+0]\n    actual = rebase +10 [+4,+2] +2\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "trinary to hexadecimal",
-    "test_code": "let\n  Test.label.deprecated \"trinary to hexadecimal\" <| Test.expect (rebase +3 [+1,+1,+2,+0] +16 === Some [+2,+10])"
+    "test_code": "verify do\n  labeled \"trinary to hexadecimal\" do\n    expected = Some [+2,+10]\n    actual = rebase +3 [+1,+1,+2,+0] +16\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "hexadecimal to trinary",
-    "test_code": "let\n  Test.label.deprecated \"hexadecimal to trinary\" <| Test.expect (rebase +16 [+2,+10] +3 === Some [+1,+1,+2,+0])"
+    "test_code": "verify do\n  labeled \"hexadecimal to trinary\" do\n    expected = Some [+1,+1,+2,+0]\n    actual = rebase +16 [+2,+10] +3\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "15-bit integer",
-    "test_code": "let\n  Test.label.deprecated \"15-bit integer\" <| Test.expect (rebase +97 [+3,+46,+60] +73 === Some [+6,+10,+45])"
+    "test_code": "verify do\n  labeled \"15-bit integer\" do\n    expected = Some [+6,+10,+45]\n    actual = rebase +97 [+3,+46,+60] +73\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "empty list",
-    "test_code": "let\n  Test.label.deprecated \"empty list\" <| Test.expect (rebase +2 [] +10 === Some [+0])"
+    "test_code": "verify do\n  labeled \"empty list\" do\n    expected = Some [+0]\n    actual = rebase +2 [] +10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "single zero",
-    "test_code": "let\n  Test.label.deprecated \"single zero\" <| Test.expect (rebase +10 [+0] +2 === Some [+0])"
+    "test_code": "verify do\n  labeled \"single zero\" do\n    expected = Some [+0]\n    actual = rebase +10 [+0] +2\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "multiple zeros",
-    "test_code": "let\n  Test.label.deprecated \"multiple zeros\" <| Test.expect (rebase +10 [+0,+0,+0] +2 === Some [+0])"
+    "test_code": "verify do\n  labeled \"multiple zeros\" do\n    expected = Some [+0]\n    actual = rebase +10 [+0,+0,+0] +2\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "leading zeros",
-    "test_code": "let\n  Test.label.deprecated \"leading zeros\" <| Test.expect (rebase +7 [+0,+6,+0] +10 === Some [+4,+2])"
+    "test_code": "verify do\n  labeled \"leading zeros\" do\n    expected = Some [+4,+2]\n    actual = rebase +7 [+0,+6,+0] +10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "input base is one",
-    "test_code": "let\n  Test.label.deprecated \"input base is one\" <| Test.expect (rebase +1 [+0] +10 === None)"
+    "test_code": "verify do\n  labeled \"input base is one\" do\n    expected = None\n    actual = rebase +1 [+0] +10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "input base is zero",
-    "test_code": "let\n  Test.label.deprecated \"input base is zero\" <| Test.expect (rebase +0 [] +10 === None)"
+    "test_code": "verify do\n  labeled \"input base is zero\" do\n    expected = None\n    actual = rebase +0 [] +10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "input base is negative",
-    "test_code": "let\n  Test.label.deprecated \"input base is negative\" <| Test.expect (rebase -2 [+1] +10 === None)"
+    "test_code": "verify do\n  labeled \"input base is negative\" do\n    expected = None\n    actual = rebase -2 [+1] +10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "negative digit",
-    "test_code": "let\n  Test.label.deprecated \"negative digit\" <| Test.expect (rebase +2 [+1,-1,+1,+0,+1,+0] +10 === None)"
+    "test_code": "verify do\n  labeled \"negative digit\" do\n    expected = None\n    actual = rebase +2 [+1,-1,+1,+0,+1,+0] +10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "invalid positive digit",
-    "test_code": "let\n  Test.label.deprecated \"invalid positive digit\" <| Test.expect (rebase +2 [+1,+2,+1,+0,+1,+0] +10 === None)"
+    "test_code": "verify do\n  labeled \"invalid positive digit\" do\n    expected = None\n    actual = rebase +2 [+1,+2,+1,+0,+1,+0] +10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "output base is one",
-    "test_code": "let\n  Test.label.deprecated \"output base is one\" <| Test.expect (rebase +2 [+1,+0,+1,+0,+1,+0] +1 === None)"
+    "test_code": "verify do\n  labeled \"output base is one\" do\n    expected = None\n    actual = rebase +2 [+1,+0,+1,+0,+1,+0] +1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "output base is zero",
-    "test_code": "let\n  Test.label.deprecated \"output base is zero\" <| Test.expect (rebase +10 [+7] +0 === None)"
+    "test_code": "verify do\n  labeled \"output base is zero\" do\n    expected = None\n    actual = rebase +10 [+7] +0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "output base is negative",
-    "test_code": "let\n  Test.label.deprecated \"output base is negative\" <| Test.expect (rebase +2 [+1] -7 === None)"
+    "test_code": "verify do\n  labeled \"output base is negative\" do\n    expected = None\n    actual = rebase +2 [+1] -7\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "both bases are negative",
-    "test_code": "let\n  Test.label.deprecated \"both bases are negative\" <| Test.expect (rebase -2 [+1] -7 === None)"
+    "test_code": "verify do\n  labeled \"both bases are negative\" do\n    expected = None\n    actual = rebase -2 [+1] -7\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]
