@@ -1,50 +1,50 @@
 [
   {
     "name": "eatGhost, ghost gets eaten",
-    "test_code": "let\n  Test.label.deprecated \"eatGhost, ghost gets eaten\" <| expect (eatGhost true true)"
+    "test_code": "verify do\n  labeled \"eatGhost, ghost gets eaten\" do\n    expected = true\n    actual = eatGhost true true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "eatGhost, ghost does not get eaten because no power pellet active",
-    "test_code": "let\n  Test.label.deprecated \"eatGhost, ghost does not get eaten because no power pellet active\" <| expect (eatGhost false true === false)"
+    "test_code": "verify do\n  labeled \"eatGhost, ghost does not get eaten because no power pellet active\" do\n    expected = false\n    actual = eatGhost false true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "eatGhost, ghost does not get eaten because not touching ghost",
-    "test_code": "let\n  Test.label.deprecated \"eatGhost, ghost does not get eaten because not touching ghost\" <| expect (eatGhost true false === false)"
+    "test_code": "verify do\n  labeled \"eatGhost, ghost does not get eaten because not touching ghost\" do\n    expected = false\n    actual = eatGhost true false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "score, score when eating dot",
-    "test_code": "let\n  Test.label.deprecated \"score, score when eating dot\" <| expect (score false true)"
+    "test_code": "verify do\n  labeled \"score, score when eating dot\" do\n    expected = true\n    actual = score false true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "score, score when eating power pellet",
-    "test_code": "let\n  Test.label.deprecated \"score, score when eating power pellet\" <| expect (score true false)"
+    "test_code": "verify do\n  labeled \"score, score when eating power pellet\" do\n    expected = true\n    actual = score true false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "score, no score when nothing eaten",
-    "test_code": "let\n  Test.label.deprecated \"score, no score when nothing eaten\" <| expect (score false false === false )"
+    "test_code": "verify do\n  labeled \"score, no score when nothing eaten\" do\n    expected = false\n    actual = score false false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "lose if touching a ghost without a power pellet active",
-    "test_code": "let\n  Test.label.deprecated \"lose if touching a ghost without a power pellet active\" <| expect (lose false true)"
+    "test_code": "verify do\n  labeled \"lose if touching a ghost without a power pellet active\" do\n    expected = true\n    actual = lose false true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "don't lose if touching a ghost with a power pellet active",
-    "test_code": "let\n  Test.label.deprecated \"don't lose if touching a ghost with a power pellet active\" <| expect (lose true true === false)"
+    "test_code": "verify do\n  labeled \"don't lose if touching a ghost with a power pellet active\" do\n    expected = false\n    actual = lose true true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "don't lose if not touching a ghost",
-    "test_code": "let\n  Test.label.deprecated \"don't lose if not touching a ghost\" <| expect (lose true false === false)"
+    "test_code": "verify do\n  labeled \"don't lose if not touching a ghost\" do\n    expected = false\n    actual = lose true false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "win if all dots eaten",
-    "test_code": "let\n  Test.label.deprecated \"win if all dots eaten\" <| expect (win true false false)"
+    "test_code": "verify do\n  labeled \"win if all dots eaten\" do\n    expected = true\n    actual = win true false false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "don't win if all dots eaten, but touching a ghost",
-    "test_code": "let\n  Test.label.deprecated \"don't win if all dots eaten, but touching a ghost\" <| expect (win true false true === false)"
+    "test_code": "verify do\n  labeled \"don't win if all dots eaten, but touching a ghost\" do\n    expected = false\n    actual = win true false true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "win if all dots eaten and touching a ghost with a power pellet active",
-    "test_code": "let\n  Test.label.deprecated \"win if all dots eaten and touching a ghost with a power pellet active\" <| expect (win true true true)"
+    "test_code": "verify do\n  labeled \"win if all dots eaten and touching a ghost with a power pellet active\" do\n    expected = true\n    actual = win true true true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

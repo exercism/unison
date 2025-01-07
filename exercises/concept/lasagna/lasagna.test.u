@@ -1,13 +1,27 @@
-lasagna.test.ex1 = let
-  Test.expect (expectedMinutesInOven === 40)
+lasagna.test.ex1 = verify do
+  labeled "expected minutes in oven" do
+    expected = 40
+    label "expected" expected
+    label "actual" expectedMinutesInOven
+    ensureEqual expected expectedMinutesInOven
 
-lasagna.test.ex2 = let
-  Test.expect (preparationTimeInMinutes 5 === 10)
+lasagna.test.ex2 = verify do
+  labeled "preparation time in minutes" do
+    expected = 10
+    actual = preparationTimeInMinutes 5
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-lasagna.test.ex3 = let
-  Test.expect (elapsedTimeInMinutes 3 20 === 26)
+lasagna.test.ex3 = verify do
+  labeled "elapsed time in minutes" do
+    expected = 26
+    actual = elapsedTimeInMinutes 3 20
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> lasagna.tests = runAll [
+test> lasagna.tests = join [
   lasagna.test.ex1,
   lasagna.test.ex2,
   lasagna.test.ex3
