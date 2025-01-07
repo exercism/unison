@@ -1,34 +1,79 @@
 use base.test.Test
 
-acronym.test.basic =
- Test.expect (abbreviate "Portable Network Graphics" === "PNG")
+acronym.test.basic = verify do
+  labeled "basic" do
+    expected = "PNG"
+    actual = abbreviate "Portable Network Graphics"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual actual expected
 
-acronym.test.lowercaseWords =
-  Test.expect (abbreviate "Ruby on Rails" === "ROR")
+acronym.test.lowercaseWords = verify do
+  labeled "lowercase words" do
+    expected = "ROR"
+    actual = abbreviate "Ruby on Rails"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual actual expected
 
-acronym.test.punctuation =
-  Test.expect (abbreviate "First In, First Out" === "FIFO")
+acronym.test.punctuation = verify do
+  labeled "punctuation" do
+    expected = "FIFO"
+    actual = abbreviate "First In, First Out"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual actual expected
 
-acronym.test.allCapsWord =
-  Test.expect (abbreviate "GNU Image Manipulation Program" === "GIMP")
+acronym.test.allCapsWord = verify do
+  labeled "all caps word" do
+    expected = "GIMP"
+    actual = abbreviate "GNU Image Manipulation Program"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual actual expected
 
-acronym.test.punctuationWithoutWhitespace =
-  Test.expect (abbreviate "Complementary metal-oxide semiconductor" === "CMOS")
+acronym.test.punctuationWithoutWhitespace = verify do
+  labeled "punctuation without whitespace" do
+    expected = "CMOS"
+    actual = abbreviate "Complementary metal-oxide semiconductor"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual actual expected
 
-acronym.test.veryLongAbbreviation =
-  Test.expect (abbreviate "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me" === "ROTFLSHTMDCOALM")
+acronym.test.veryLongAbbreviation = verify do
+  labeled "very long abbreviation" do
+    expected = "ROTFLSHTMDCOALM"
+    actual = abbreviate "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual actual expected
 
-acronym.test.consecutiveDelimiters =
-  Test.expect (abbreviate "Something - I made up from thin air" === "SIMUFTA")
+acronym.test.consecutiveDelimiters = verify do
+  labeled "consecutive delimiters" do
+    expected = "SIMUFTA"
+    actual = abbreviate "Something - I made up from thin air"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual actual expected
 
-acronym.test.apostrophes =
-  Test.expect (abbreviate "Halley's Comet" === "HC")
+acronym.test.apostrophes = verify do
+  labeled "apostrophes" do
+    expected = "HC"
+    actual = abbreviate "Halley's Comet"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual actual expected
 
-acronym.test.underscoreEmphasis =
-  Test.expect (abbreviate "The Road _Not_ Taken" === "TRNT")
+acronym.test.underscoreEmphasis = verify do
+  labeled "underscore emphasis" do
+    expected = "TRNT"
+    actual = abbreviate "The Road _Not_ Taken"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual actual expected
 
 test> acronym.tests =
-  runAll [
+  join [
     acronym.test.basic,
     acronym.test.lowercaseWords,
     acronym.test.punctuation,
