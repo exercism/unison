@@ -1,202 +1,202 @@
 [
   {
     "name": "not allergic to anything",
-    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"eggs\" 0 === false)"
+    "test_code": "verify do\n  labeled \"not allergic to anything\" do\n    expected = false\n    actual = allergicTo \"eggs\" 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic only to eggs",
-    "test_code": "let\n  Test.label.deprecated \"allergic only to eggs\" <| Test.expect (allergicTo \"eggs\" 1 === true)"
+    "test_code": "verify do\n  labeled \"allergic only to eggs\" do\n    expected = true\n    actual = allergicTo \"eggs\" 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to eggs and something else",
-    "test_code": "let\n  Test.label.deprecated \"allergic to eggs and something else\" <| Test.expect (allergicTo \"eggs\" 3 === true)"
+    "test_code": "verify do\n  labeled \"allergic to eggs and something else\" do\n    expected = true\n    actual = allergicTo \"eggs\" 3\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to something, but not eggs",
-    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not eggs\" <| Test.expect (allergicTo \"eggs\" 2 === false)"
+    "test_code": "verify do\n  labeled \"allergic to something, but not eggs\" do\n    expected = false\n    actual = allergicTo \"eggs\" 2\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to everything",
-    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"eggs\" 255 === true)"
+    "test_code": "verify do\n  labeled \"allergic to everything\" do\n    expected = true\n    actual = allergicTo \"eggs\" 255\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "not allergic to anything",
-    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"peanuts\" 0 === false)"
+    "test_code": "verify do\n  labeled \"not allergic to anything\" do\n    expected = false\n    actual = allergicTo \"peanuts\" 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic only to peanuts",
-    "test_code": "let\n  Test.label.deprecated \"allergic only to peanuts\" <| Test.expect (allergicTo \"peanuts\" 2 === true)"
+    "test_code": "verify do\n  labeled \"allergic only to peanuts\" do\n    expected = true\n    actual = allergicTo \"peanuts\" 2\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to peanuts and something else",
-    "test_code": "let\n  Test.label.deprecated \"allergic to peanuts and something else\" <| Test.expect (allergicTo \"peanuts\" 7 === true)"
+    "test_code": "verify do\n  labeled \"allergic to peanuts and something else\" do\n    expected = true\n    actual = allergicTo \"peanuts\" 7\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to something, but not peanuts",
-    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not peanuts\" <| Test.expect (allergicTo \"peanuts\" 5 === false)"
+    "test_code": "verify do\n  labeled \"allergic to something, but not peanuts\" do\n    expected = false\n    actual = allergicTo \"peanuts\" 5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to everything",
-    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"peanuts\" 255 === true)"
+    "test_code": "verify do\n  labeled \"allergic to everything\" do\n    expected = true\n    actual = allergicTo \"peanuts\" 255\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "not allergic to anything",
-    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"shellfish\" 0 === false)"
+    "test_code": "verify do\n  labeled \"not allergic to anything\" do\n    expected = false\n    actual = allergicTo \"shellfish\" 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic only to shellfish",
-    "test_code": "let\n  Test.label.deprecated \"allergic only to shellfish\" <| Test.expect (allergicTo \"shellfish\" 4 === true)"
+    "test_code": "verify do\n  labeled \"allergic only to shellfish\" do\n    expected = true\n    actual = allergicTo \"shellfish\" 4\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to shellfish and something else",
-    "test_code": "let\n  Test.label.deprecated \"allergic to shellfish and something else\" <| Test.expect (allergicTo \"shellfish\" 14 === true)"
+    "test_code": "verify do\n  labeled \"allergic to shellfish and something else\" do\n    expected = true\n    actual = allergicTo \"shellfish\" 14\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to something, but not shellfish",
-    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not shellfish\" <| Test.expect (allergicTo \"shellfish\" 10 === false)"
+    "test_code": "verify do\n  labeled \"allergic to something, but not shellfish\" do\n    expected = false\n    actual = allergicTo \"shellfish\" 10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to everything",
-    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"shellfish\" 255 === true)"
+    "test_code": "verify do\n  labeled \"allergic to everything\" do\n    expected = true\n    actual = allergicTo \"shellfish\" 255\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "not allergic to anything",
-    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"strawberries\" 0 === false)"
+    "test_code": "verify do\n  labeled \"not allergic to anything\" do\n    expected = false\n    actual = allergicTo \"strawberries\" 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic only to strawberries",
-    "test_code": "let\n  Test.label.deprecated \"allergic only to strawberries\" <| Test.expect (allergicTo \"strawberries\" 8 === true)"
+    "test_code": "verify do\n  labeled \"allergic only to strawberries\" do\n    expected = true\n    actual = allergicTo \"strawberries\" 8\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to strawberries and something else",
-    "test_code": "let\n  Test.label.deprecated \"allergic to strawberries and something else\" <| Test.expect (allergicTo \"strawberries\" 28 === true)"
+    "test_code": "verify do\n  labeled \"allergic to strawberries and something else\" do\n    expected = true\n    actual = allergicTo \"strawberries\" 28\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to something, but not strawberries",
-    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not strawberries\" <| Test.expect (allergicTo \"strawberries\" 20 === false)"
+    "test_code": "verify do\n  labeled \"allergic to something, but not strawberries\" do\n    expected = false\n    actual = allergicTo \"strawberries\" 20\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to everything",
-    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"strawberries\" 255 === true)"
+    "test_code": "verify do\n  labeled \"allergic to everything\" do\n    expected = true\n    actual = allergicTo \"strawberries\" 255\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "not allergic to anything",
-    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"tomatoes\" 0 === false)"
+    "test_code": "verify do\n  labeled \"not allergic to anything\" do\n    expected = false\n    actual = allergicTo \"tomatoes\" 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic only to tomatoes",
-    "test_code": "let\n  Test.label.deprecated \"allergic only to tomatoes\" <| Test.expect (allergicTo \"tomatoes\" 16 === true)"
+    "test_code": "verify do\n  labeled \"allergic only to tomatoes\" do\n    expected = true\n    actual = allergicTo \"tomatoes\" 16\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to tomatoes and something else",
-    "test_code": "let\n  Test.label.deprecated \"allergic to tomatoes and something else\" <| Test.expect (allergicTo \"tomatoes\" 56 === true)"
+    "test_code": "verify do\n  labeled \"allergic to tomatoes and something else\" do\n    expected = true\n    actual = allergicTo \"tomatoes\" 56\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to something, but not tomatoes",
-    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not tomatoes\" <| Test.expect (allergicTo \"tomatoes\" 40 === false)"
+    "test_code": "verify do\n  labeled \"allergic to something, but not tomatoes\" do\n    expected = false\n    actual = allergicTo \"tomatoes\" 40\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to everything",
-    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"tomatoes\" 255 === true)"
+    "test_code": "verify do\n  labeled \"allergic to everything\" do\n    expected = true\n    actual = allergicTo \"tomatoes\" 255\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "not allergic to anything",
-    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"chocolate\" 0 === false)"
+    "test_code": "verify do\n  labeled \"not allergic to anything\" do\n    expected = allergicTo \"chocolate\" 0\n    actual = false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic only to chocolate",
-    "test_code": "let\n  Test.label.deprecated \"allergic only to chocolate\" <| Test.expect (allergicTo \"chocolate\" 32 === true)"
+    "test_code": "verify do\n  labeled \"allergic only to chocolate\" do\n    expected = allergicTo \"chocolate\" 32\n    actual = true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to chocolate and something else",
-    "test_code": "let\n  Test.label.deprecated \"allergic to chocolate and something else\" <| Test.expect (allergicTo \"chocolate\" 112 === true)"
+    "test_code": "verify do\n  labeled \"allergic to chocolate and something else\" do\n    expected = allergicTo \"chocolate\" 112\n    actual = true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to something, but not chocolate",
-    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not chocolate\" <| Test.expect (allergicTo \"chocolate\" 80 === false)"
+    "test_code": "verify do\n  labeled \"allergic to something, but not chocolate\" do\n    expected = allergicTo \"chocolate\" 80\n    actual = false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to everything",
-    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"chocolate\" 255 === true)"
+    "test_code": "verify do\n  labeled \"allergic to everything\" do\n    expected = allergicTo \"chocolate\" 255\n    actual = true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "not allergic to anything",
-    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"pollen\" 0 === false)"
+    "test_code": "verify do\n  labeled \"not allergic to anything\" do\n    expected = allergicTo \"pollen\" 0\n    actual = false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic only to pollen",
-    "test_code": "let\n  Test.label.deprecated \"allergic only to pollen\" <| Test.expect (allergicTo \"pollen\" 64 === true)"
+    "test_code": "verify do\n  labeled \"allergic only to pollen\" do\n    expected = allergicTo \"pollen\" 64\n    actual = true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to pollen and something else",
-    "test_code": "let\n  Test.label.deprecated \"allergic to pollen and something else\" <| Test.expect (allergicTo \"pollen\" 224 === true)"
+    "test_code": "verify do\n  labeled \"allergic to pollen and something else\" do\n    expected = allergicTo \"pollen\" 224\n    actual = true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to something, but not pollen",
-    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not pollen\" <| Test.expect (allergicTo \"pollen\" 160 === false)"
+    "test_code": "verify do\n  labeled \"allergic to something, but not pollen\" do\n    expected = allergicTo \"pollen\" 160\n    actual = false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to everything",
-    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"pollen\" 255 === true)"
+    "test_code": "verify do\n  labeled \"allergic to everything\" do\n    expected = allergicTo \"pollen\" 255\n    actual = true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "not allergic to anything",
-    "test_code": "let\n  Test.label.deprecated \"not allergic to anything\" <| Test.expect (allergicTo \"cats\" 0 === false)"
+    "test_code": "verify do\n  labeled \"not allergic to anything\" do\n    expected = allergicTo \"cats\" 0\n    actual = false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic only to cats",
-    "test_code": "let\n  Test.label.deprecated \"allergic only to cats\" <| Test.expect (allergicTo \"cats\" 128 === true)"
+    "test_code": "verify do\n  labeled \"allergic only to cats\" do\n    expected = allergicTo \"cats\" 128\n    actual = true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to cats and something else",
-    "test_code": "let\n  Test.label.deprecated \"allergic to cats and something else\" <| Test.expect (allergicTo \"cats\" 192 === true)"
+    "test_code": "verify do\n  labeled \"allergic to cats and something else\" do\n    expected = allergicTo \"cats\" 192\n    actual = true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to something, but not cats",
-    "test_code": "let\n  Test.label.deprecated \"allergic to something, but not cats\" <| Test.expect (allergicTo \"cats\" 64 === false)"
+    "test_code": "verify do\n  labeled \"allergic to something, but not cats\" do\n    expected = allergicTo \"cats\" 64\n    actual = false\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "allergic to everything",
-    "test_code": "let\n  Test.label.deprecated \"allergic to everything\" <| Test.expect (allergicTo \"cats\" 255 === true)"
+    "test_code": "verify do\n  labeled \"allergic to everything\" do\n    expected = allergicTo \"cats\" 255\n    actual = true\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "no allergies",
-    "test_code": "let\n  Test.label.deprecated \"no allergies\" <| Test.expect (list 0 === [])"
+    "test_code": "verify do\n  labeled \"no allergies\" do\n    expected = list 0\n    actual = []\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "just eggs",
-    "test_code": "let\n  Test.label.deprecated \"just eggs\" <| Test.expect (list 1 === [\"eggs\"])"
+    "test_code": "verify do\n  labeled \"just eggs\" do\n    expected = list 1\n    actual = [\"eggs\"]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "just peanuts",
-    "test_code": "let\n  Test.label.deprecated \"just peanuts\" <| Test.expect (list 2 === [\"peanuts\"])"
+    "test_code": "verify do\n  labeled \"just peanuts\" do\n    expected = list 2\n    actual = [\"peanuts\"]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "just strawberries",
-    "test_code": "let\n  Test.label.deprecated \"just strawberries\" <| Test.expect (list 8 === [\"strawberries\"])"
+    "test_code": "verify do\n  labeled \"just strawberries\" do\n    expected = list 8\n    actual = [\"strawberries\"]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "eggs and peanuts",
-    "test_code": "let\n  Test.label.deprecated \"eggs and peanuts\" <| Test.expect (toSorted (list 3) === toSorted [\"eggs\",\"peanuts\"])"
+    "test_code": "verify do\n  labeled \"eggs and peanuts\" do\n    expected = toSorted (list 3)\n    actual = toSorted [\"eggs\",\"peanuts\"]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "more than eggs but not peanuts",
-    "test_code": "let\n  Test.label.deprecated \"more than eggs but not peanuts\" <| Test.expect (toSorted (list 5) === toSorted [\"eggs\",\"shellfish\"])"
+    "test_code": "verify do\n  labeled \"more than eggs but not peanuts\" do\n    expected = toSorted (list 5)\n    actual = toSorted [\"eggs\",\"shellfish\"]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "lots of stuff",
-    "test_code": "let\n  Test.label.deprecated \"lots of stuff\" <| Test.expect (toSorted (list 248) === toSorted [\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"])"
+    "test_code": "verify do\n  labeled \"lots of stuff\" do\n    expected = toSorted (list 248)\n    actual = toSorted [\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "everything",
-    "test_code": "let\n  Test.label.deprecated \"everything\" <| Test.expect (toSorted (list 255) === toSorted [\"eggs\",\"peanuts\",\"shellfish\",\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"])"
+    "test_code": "verify do\n  labeled \"everything\" do\n    expected = toSorted (list 255)\n    actual = toSorted [\"eggs\",\"peanuts\",\"shellfish\",\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "no allergen score parts",
-    "test_code": "let\n  Test.label.deprecated \"no allergen score parts\" <| Test.expect (toSorted (list 509) === toSorted [\"eggs\",\"shellfish\",\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"])"
+    "test_code": "verify do\n  labeled \"no allergen score parts\" do\n    expected = toSorted (list 509)\n    actual = toSorted [\"eggs\",\"shellfish\",\"strawberries\",\"tomatoes\",\"chocolate\",\"pollen\",\"cats\"]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "no allergen score parts without highest valid score",
-    "test_code": "let\n  Test.label.deprecated \"no allergen score parts without highest valid score\" <| Test.expect (list 257 === [\"eggs\"])"
+    "test_code": "verify do\n  labeled \"no allergen score parts without highest valid score\" do\n    expected = list 257\n    actual = [\"eggs\"]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

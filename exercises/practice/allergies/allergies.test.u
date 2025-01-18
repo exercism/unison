@@ -1,157 +1,407 @@
-allergies.toSorted : [a] -> [a]
-allergies.toSorted xs = List.sortBy id xs
+allergies.helpers.toSorted : [a] -> [a]
+allergies.helpers.toSorted xs = List.sortBy id xs
 
-allergies.test.ex1 = let
-  Test.label.deprecated "not allergic to anything" <| Test.expect (allergicTo "eggs" 0 === false)
+allergies.test.ex1 = verify do
+  labeled "not allergic to anything" do
+    expected = false
+    actual = allergicTo "eggs" 0
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex2 = let
-  Test.label.deprecated "allergic only to eggs" <| Test.expect (allergicTo "eggs" 1 === true)
+allergies.test.ex2 = verify do
+  labeled "allergic only to eggs" do
+    expected = true
+    actual = allergicTo "eggs" 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex3 = let
-  Test.label.deprecated "allergic to eggs and something else" <| Test.expect (allergicTo "eggs" 3 === true)
+allergies.test.ex3 = verify do
+  labeled "allergic to eggs and something else" do
+    expected = true
+    actual = allergicTo "eggs" 3
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex4 = let
-  Test.label.deprecated "allergic to something, but not eggs" <| Test.expect (allergicTo "eggs" 2 === false)
+allergies.test.ex4 = verify do
+  labeled "allergic to something, but not eggs" do
+    expected = false
+    actual = allergicTo "eggs" 2
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex5 = let
-  Test.label.deprecated "allergic to everything" <| Test.expect (allergicTo "eggs" 255 === true)
+allergies.test.ex5 = verify do
+  labeled "allergic to everything" do
+    expected = true
+    actual = allergicTo "eggs" 255
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex6 = let
-  Test.label.deprecated "not allergic to anything" <| Test.expect (allergicTo "peanuts" 0 === false)
+allergies.test.ex6 = verify do
+  labeled "not allergic to anything" do
+    expected = false
+    actual = allergicTo "peanuts" 0
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex7 = let
-  Test.label.deprecated "allergic only to peanuts" <| Test.expect (allergicTo "peanuts" 2 === true)
+allergies.test.ex7 = verify do
+  labeled "allergic only to peanuts" do
+    expected = true
+    actual = allergicTo "peanuts" 2
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex8 = let
-  Test.label.deprecated "allergic to peanuts and something else" <| Test.expect (allergicTo "peanuts" 7 === true)
+allergies.test.ex8 = verify do
+  labeled "allergic to peanuts and something else" do
+    expected = true
+    actual = allergicTo "peanuts" 7
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex9 = let
-  Test.label.deprecated "allergic to something, but not peanuts" <| Test.expect (allergicTo "peanuts" 5 === false)
+allergies.test.ex9 = verify do
+  labeled "allergic to something, but not peanuts" do
+    expected = false
+    actual = allergicTo "peanuts" 5
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex10 = let
-  Test.label.deprecated "allergic to everything" <| Test.expect (allergicTo "peanuts" 255 === true)
+allergies.test.ex10 = verify do
+  labeled "allergic to everything" do
+    expected = true
+    actual = allergicTo "peanuts" 255
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex11 = let
-  Test.label.deprecated "not allergic to anything" <| Test.expect (allergicTo "shellfish" 0 === false)
+allergies.test.ex11 = verify do
+  labeled "not allergic to anything" do
+    expected = false
+    actual = allergicTo "shellfish" 0
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex12 = let
-  Test.label.deprecated "allergic only to shellfish" <| Test.expect (allergicTo "shellfish" 4 === true)
+allergies.test.ex12 = verify do
+  labeled "allergic only to shellfish" do
+    expected = true
+    actual = allergicTo "shellfish" 4
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex13 = let
-  Test.label.deprecated "allergic to shellfish and something else" <| Test.expect (allergicTo "shellfish" 14 === true)
+allergies.test.ex13 = verify do
+  labeled "allergic to shellfish and something else" do
+    expected = true
+    actual = allergicTo "shellfish" 14
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex14 = let
-  Test.label.deprecated "allergic to something, but not shellfish" <| Test.expect (allergicTo "shellfish" 10 === false)
+allergies.test.ex14 = verify do
+  labeled "allergic to something, but not shellfish" do
+    expected = false
+    actual = allergicTo "shellfish" 10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex15 = let
-  Test.label.deprecated "allergic to everything" <| Test.expect (allergicTo "shellfish" 255 === true)
+allergies.test.ex15 = verify do
+  labeled "allergic to everything" do
+    expected = true
+    actual = allergicTo "shellfish" 255
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex16 = let
-  Test.label.deprecated "not allergic to anything" <| Test.expect (allergicTo "strawberries" 0 === false)
+allergies.test.ex16 = verify do
+  labeled "not allergic to anything" do
+    expected = false
+    actual = allergicTo "strawberries" 0
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex17 = let
-  Test.label.deprecated "allergic only to strawberries" <| Test.expect (allergicTo "strawberries" 8 === true)
+allergies.test.ex17 = verify do
+  labeled "allergic only to strawberries" do
+    expected = true
+    actual = allergicTo "strawberries" 8
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex18 = let
-  Test.label.deprecated "allergic to strawberries and something else" <| Test.expect (allergicTo "strawberries" 28 === true)
+allergies.test.ex18 = verify do
+  labeled "allergic to strawberries and something else" do
+    expected = true
+    actual = allergicTo "strawberries" 28
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex19 = let
-  Test.label.deprecated "allergic to something, but not strawberries" <| Test.expect (allergicTo "strawberries" 20 === false)
+allergies.test.ex19 = verify do
+  labeled "allergic to something, but not strawberries" do
+    expected = false
+    actual = allergicTo "strawberries" 20
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex20 = let
-  Test.label.deprecated "allergic to everything" <| Test.expect (allergicTo "strawberries" 255 === true)
+allergies.test.ex20 = verify do
+  labeled "allergic to everything" do
+    expected = true
+    actual = allergicTo "strawberries" 255
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex21 = let
-  Test.label.deprecated "not allergic to anything" <| Test.expect (allergicTo "tomatoes" 0 === false)
+allergies.test.ex21 = verify do
+  labeled "not allergic to anything" do
+    expected = false
+    actual = allergicTo "tomatoes" 0
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex22 = let
-  Test.label.deprecated "allergic only to tomatoes" <| Test.expect (allergicTo "tomatoes" 16 === true)
+allergies.test.ex22 = verify do
+  labeled "allergic only to tomatoes" do
+    expected = true
+    actual = allergicTo "tomatoes" 16
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex23 = let
-  Test.label.deprecated "allergic to tomatoes and something else" <| Test.expect (allergicTo "tomatoes" 56 === true)
+allergies.test.ex23 = verify do
+  labeled "allergic to tomatoes and something else" do
+    expected = true
+    actual = allergicTo "tomatoes" 56
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex24 = let
-  Test.label.deprecated "allergic to something, but not tomatoes" <| Test.expect (allergicTo "tomatoes" 40 === false)
+allergies.test.ex24 = verify do
+  labeled "allergic to something, but not tomatoes" do
+    expected = false
+    actual = allergicTo "tomatoes" 40
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex25 = let
-  Test.label.deprecated "allergic to everything" <| Test.expect (allergicTo "tomatoes" 255 === true)
+allergies.test.ex25 = verify do
+  labeled "allergic to everything" do
+    expected = true
+    actual = allergicTo "tomatoes" 255
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex26 = let
-  Test.label.deprecated "not allergic to anything" <| Test.expect (allergicTo "chocolate" 0 === false)
+allergies.test.ex26 = verify do
+  labeled "not allergic to anything" do
+    expected = allergicTo "chocolate" 0
+    actual = false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex27 = let
-  Test.label.deprecated "allergic only to chocolate" <| Test.expect (allergicTo "chocolate" 32 === true)
+allergies.test.ex27 = verify do
+  labeled "allergic only to chocolate" do
+    expected = allergicTo "chocolate" 32
+    actual = true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex28 = let
-  Test.label.deprecated "allergic to chocolate and something else" <| Test.expect (allergicTo "chocolate" 112 === true)
+allergies.test.ex28 = verify do
+  labeled "allergic to chocolate and something else" do
+    expected = allergicTo "chocolate" 112
+    actual = true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex29 = let
-  Test.label.deprecated "allergic to something, but not chocolate" <| Test.expect (allergicTo "chocolate" 80 === false)
+allergies.test.ex29 = verify do
+  labeled "allergic to something, but not chocolate" do
+    expected = allergicTo "chocolate" 80
+    actual = false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex30 = let
-  Test.label.deprecated "allergic to everything" <| Test.expect (allergicTo "chocolate" 255 === true)
+allergies.test.ex30 = verify do
+  labeled "allergic to everything" do
+    expected = allergicTo "chocolate" 255
+    actual = true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex31 = let
-  Test.label.deprecated "not allergic to anything" <| Test.expect (allergicTo "pollen" 0 === false)
+allergies.test.ex31 = verify do
+  labeled "not allergic to anything" do
+    expected = allergicTo "pollen" 0
+    actual = false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex32 = let
-  Test.label.deprecated "allergic only to pollen" <| Test.expect (allergicTo "pollen" 64 === true)
+allergies.test.ex32 = verify do
+  labeled "allergic only to pollen" do
+    expected = allergicTo "pollen" 64
+    actual = true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex33 = let
-  Test.label.deprecated "allergic to pollen and something else" <| Test.expect (allergicTo "pollen" 224 === true)
+allergies.test.ex33 = verify do
+  labeled "allergic to pollen and something else" do
+    expected = allergicTo "pollen" 224
+    actual = true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex34 = let
-  Test.label.deprecated "allergic to something, but not pollen" <| Test.expect (allergicTo "pollen" 160 === false)
+allergies.test.ex34 = verify do
+  labeled "allergic to something, but not pollen" do
+    expected = allergicTo "pollen" 160
+    actual = false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex35 = let
-  Test.label.deprecated "allergic to everything" <| Test.expect (allergicTo "pollen" 255 === true)
+allergies.test.ex35 = verify do
+  labeled "allergic to everything" do
+    expected = allergicTo "pollen" 255
+    actual = true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex36 = let
-  Test.label.deprecated "not allergic to anything" <| Test.expect (allergicTo "cats" 0 === false)
+allergies.test.ex36 = verify do
+  labeled "not allergic to anything" do
+    expected = allergicTo "cats" 0
+    actual = false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex37 = let
-  Test.label.deprecated "allergic only to cats" <| Test.expect (allergicTo "cats" 128 === true)
+allergies.test.ex37 = verify do
+  labeled "allergic only to cats" do
+    expected = allergicTo "cats" 128
+    actual = true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex38 = let
-  Test.label.deprecated "allergic to cats and something else" <| Test.expect (allergicTo "cats" 192 === true)
+allergies.test.ex38 = verify do
+  labeled "allergic to cats and something else" do
+    expected = allergicTo "cats" 192
+    actual = true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex39 = let
-  Test.label.deprecated "allergic to something, but not cats" <| Test.expect (allergicTo "cats" 64 === false)
+allergies.test.ex39 = verify do
+  labeled "allergic to something, but not cats" do
+    expected = allergicTo "cats" 64
+    actual = false
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex40 = let
-  Test.label.deprecated "allergic to everything" <| Test.expect (allergicTo "cats" 255 === true)
+allergies.test.ex40 = verify do
+  labeled "allergic to everything" do
+    expected = allergicTo "cats" 255
+    actual = true
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex41 = let
-  Test.label.deprecated "no allergies" <| Test.expect (list 0 === [])
+allergies.test.ex41 = verify do
+  labeled "no allergies" do
+    expected = list 0
+    actual = []
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex42 = let
-  Test.label.deprecated "just eggs" <| Test.expect (list 1 === ["eggs"])
+allergies.test.ex42 = verify do
+  labeled "just eggs" do
+    expected = list 1
+    actual = ["eggs"]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex43 = let
-  Test.label.deprecated "just peanuts" <| Test.expect (list 2 === ["peanuts"])
+allergies.test.ex43 = verify do
+  labeled "just peanuts" do
+    expected = list 2
+    actual = ["peanuts"]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex44 = let
-  Test.label.deprecated "just strawberries" <| Test.expect (list 8 === ["strawberries"])
+allergies.test.ex44 = verify do
+  labeled "just strawberries" do
+    expected = list 8
+    actual = ["strawberries"]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex45 = let
-  Test.label.deprecated "eggs and peanuts" <| Test.expect (toSorted (list 3) === toSorted ["eggs","peanuts"])
+allergies.test.ex45 = verify do
+  labeled "eggs and peanuts" do
+    expected = toSorted (list 3)
+    actual = toSorted ["eggs","peanuts"]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex46 = let
-  Test.label.deprecated "more than eggs but not peanuts" <| Test.expect (toSorted (list 5) === toSorted ["eggs","shellfish"])
+allergies.test.ex46 = verify do
+  labeled "more than eggs but not peanuts" do
+    expected = toSorted (list 5)
+    actual = toSorted ["eggs","shellfish"]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex47 = let
-  Test.label.deprecated "lots of stuff" <| Test.expect (toSorted (list 248) === toSorted ["strawberries","tomatoes","chocolate","pollen","cats"])
+allergies.test.ex47 = verify do
+  labeled "lots of stuff" do
+    expected = toSorted (list 248)
+    actual = toSorted ["strawberries","tomatoes","chocolate","pollen","cats"]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex48 = let
-  Test.label.deprecated "everything" <| Test.expect (toSorted (list 255) === toSorted ["eggs","peanuts","shellfish","strawberries","tomatoes","chocolate","pollen","cats"])
+allergies.test.ex48 = verify do
+  labeled "everything" do
+    expected = toSorted (list 255)
+    actual = toSorted ["eggs","peanuts","shellfish","strawberries","tomatoes","chocolate","pollen","cats"]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex49 = let
-  Test.label.deprecated "no allergen score parts" <| Test.expect (toSorted (list 509) === toSorted ["eggs","shellfish","strawberries","tomatoes","chocolate","pollen","cats"])
+allergies.test.ex49 = verify do
+  labeled "no allergen score parts" do
+    expected = toSorted (list 509)
+    actual = toSorted ["eggs","shellfish","strawberries","tomatoes","chocolate","pollen","cats"]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-allergies.test.ex50 = let
-  Test.label.deprecated "no allergen score parts without highest valid score" <| Test.expect (list 257 === ["eggs"])
+allergies.test.ex50 = verify do
+  labeled "no allergen score parts without highest valid score" do
+    expected = list 257
+    actual = ["eggs"]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> allergies.tests = runAll [
+test> allergies.tests = join [
   allergies.test.ex1,
   allergies.test.ex2,
   allergies.test.ex3,
