@@ -1,46 +1,46 @@
 [
   {
     "name": "finds a value in an array with one element",
-    "test_code": "expect (Some +0 === binarySearch.find (Array.fromList [6]) 6)\n    |> Test.label.deprecated \"finds a value in an array with one element\""
+    "test_code": "verify do\n  labeled \"finds a value in an array with one element\" do\n    expected = Some +0\n    actual = binarySearch.find (Array.fromList [6]) 6\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "finds a value in the middle of an array",
-    "test_code": "expect (Some +3 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 6)\n    |> Test.label.deprecated \"finds a value in the middle of an array\""
+    "test_code": "verify do\n  labeled \"finds a value in the middle of an array\" do\n    expected = Some +3\n    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 6\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "finds a value at the beginning of an array",
-    "test_code": "expect (Some +0 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 1)\n    |> Test.label.deprecated \"finds a value at the beginning of an array\""
+    "test_code": "verify do\n  labeled \"finds a value at the beginning of an array\" do\n    expected = Some +0\n    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "finds a value at the end of an array",
-    "test_code": "expect (Some +6 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 11)\n    |> Test.label.deprecated \"finds a value at the end of an array\""
+    "test_code": "verify do\n  labeled \"finds a value at the end of an array\" do\n    expected = Some +6\n    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 11\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "finds a value in an array of odd length",
-    "test_code": "expect (Some +9 === binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634]) 144)\n    |> Test.label.deprecated \"finds a value in an array of odd length\""
+    "test_code": "verify do\n  labeled \"finds a value in an array of odd length\" do\n    expected = Some +9\n    actual = binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634]) 144\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "finds a value in an array of even length",
-    "test_code": "expect (Some +5 === binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]) 21)\n    |> Test.label.deprecated \"finds a value in an array of even length\""
+    "test_code": "verify do\n  labeled \"finds a value in an array of even length\" do\n    expected = Some +5\n    actual = binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]) 21\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "identifies that a value is not included in the array",
-    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 7)\n    |> Test.label.deprecated \"identifies that a value is not included in the array\""
+    "test_code": "verify do\n  labeled \"identifies that a value is not included in the array\" do\n    expected = None\n    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 7\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a value smaller than the array's smallest value is not found",
-    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 0)\n    |> Test.label.deprecated \"a value smaller than the array's smallest value is not found\""
+    "test_code": "verify do\n  labeled \"a value smaller than the array's smallest value is not found\" do\n    expected = None\n    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a value larger than the array's largest value is not found",
-    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 13)\n    |> Test.label.deprecated \"a value larger than the array's largest value is not found\""
+    "test_code": "verify do\n  labeled \"a value larger than the array's largest value is not found\" do\n    expected = None\n    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 13\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "nothing is found in an empty array",
-    "test_code": "expect (None === binarySearch.find (Array.fromList []) 1)\n    |> Test.label.deprecated \"nothing is found in an empty array\""
+    "test_code": "verify do\n  labeled \"nothing is found in an empty array\" do\n    expected = None\n    actual = binarySearch.find (Array.fromList []) 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "nothing is found when the left and right bounds cross",
-    "test_code": "expect (None === binarySearch.find (Array.fromList [1, 2]) 0)\n    |> Test.label.deprecated \"nothing is found when the left and right bounds cross\""
+    "test_code": "verify do\n  labeled \"nothing is found when the left and right bounds cross\" do\n    expected = None\n    actual = binarySearch.find (Array.fromList [1, 2]) 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

@@ -1,46 +1,46 @@
 [
   {
     "name": "change for 1 cent",
-    "test_code": "let\n  Test.label.deprecated \"change for 1 cent\" <| Test.expect (findFewestCoins [1,5,10,25] 1 === Some [1])"
+    "test_code": "verify do\n  labeled \"change for 1 cent\" do\n    expected = Some [1]\n    actual = findFewestCoins [1,5,10,25] 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "single coin change",
-    "test_code": "let\n  Test.label.deprecated \"single coin change\" <| Test.expect (findFewestCoins [1,5,10,25,100] 25 === Some [25])"
+    "test_code": "verify do\n  labeled \"single coin change\" do\n    expected = Some [25]\n    actual = findFewestCoins [1,5,10,25,100] 25\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "multiple coin change",
-    "test_code": "let\n  Test.label.deprecated \"multiple coin change\" <| Test.expect (findFewestCoins [1,5,10,25,100] 15 === Some [5,10])"
+    "test_code": "verify do\n  labeled \"multiple coin change\" do\n    expected = Some [5,10]\n    actual = findFewestCoins [1,5,10,25,100] 15\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "change with Lilliputian Coins",
-    "test_code": "let\n  Test.label.deprecated \"change with Lilliputian Coins\" <| Test.expect (findFewestCoins [1,4,15,20,50] 23 === Some [4,4,15])"
+    "test_code": "verify do\n  labeled \"change with Lilliputian Coins\" do\n    expected = Some [4,4,15]\n    actual = findFewestCoins [1,4,15,20,50] 23\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "change with Lower Elbonia Coins",
-    "test_code": "let\n  Test.label.deprecated \"change with Lower Elbonia Coins\" <| Test.expect (findFewestCoins [1,5,10,21,25] 63 === Some [21,21,21])"
+    "test_code": "verify do\n  labeled \"change with Lower Elbonia Coins\" do\n    expected = Some [21,21,21]\n    actual = findFewestCoins [1,5,10,21,25] 63\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "large target values",
-    "test_code": "let\n  Test.label.deprecated \"large target values\" <| Test.expect (findFewestCoins [1,2,5,10,20,50,100] 999 === Some [2,2,5,20,20,50,100,100,100,100,100,100,100,100,100])"
+    "test_code": "verify do\n  labeled \"large target values\" do\n    expected = Some [2,2,5,20,20,50,100,100,100,100,100,100,100,100,100]\n    actual = findFewestCoins [1,2,5,10,20,50,100] 999\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "possible change without unit coins available",
-    "test_code": "let\n  Test.label.deprecated \"possible change without unit coins available\" <| Test.expect (findFewestCoins [2,5,10,20,50] 21 === Some [2,2,2,5,10])"
+    "test_code": "verify do\n  labeled \"possible change without unit coins available\" do\n    expected = Some [2,2,2,5,10]\n    actual = findFewestCoins [2,5,10,20,50] 21\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "another possible change without unit coins available",
-    "test_code": "let\n  Test.label.deprecated \"another possible change without unit coins available\" <| Test.expect (findFewestCoins [4,5] 27 === Some [4,4,4,5,5,5])"
+    "test_code": "verify do\n  labeled \"another possible change without unit coins available\" do\n    expected = Some [4,4,4,5,5,5]\n    actual = findFewestCoins [4,5] 27\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "no coins make 0 change",
-    "test_code": "let\n  Test.label.deprecated \"no coins make 0 change\" <| Test.expect (findFewestCoins [1,5,10,21,25] 0 === Some [])"
+    "test_code": "verify do\n  labeled \"no coins make 0 change\" do\n    expected = Some []\n    actual = findFewestCoins [1,5,10,21,25] 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "error testing for change smaller than the smallest of coins",
-    "test_code": "let\n  Test.label.deprecated \"error testing for change smaller than the smallest of coins\" <| Test.expect (findFewestCoins [5,10] 3 === None)"
+    "test_code": "verify do\n  labeled \"error testing for change smaller than the smallest of coins\" do\n    expected = None\n    actual = findFewestCoins [5,10] 3\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "error if no combination can add up to target",
-    "test_code": "let\n  Test.label.deprecated \"error if no combination can add up to target\" <| Test.expect (findFewestCoins [5,10] 94 === None)"
+    "test_code": "verify do\n  labeled \"error if no combination can add up to target\" do\n    expected = None\n    actual = findFewestCoins [5,10] 94\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

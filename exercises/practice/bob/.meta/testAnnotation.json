@@ -1,102 +1,102 @@
 [
   {
     "name": "Stating something",
-    "test_code": "let\n  Test.label.deprecated \"Stating something\" <| Test.expect (response \"Tom-ay-to, tom-aaaah-to.\" === \"Whatever.\")"
+    "test_code": "verify do\n  labeled \"Stating something\" do\n    expected = \"Whatever.\"\n    actual = response \"Tom-ay-to, tom-aaaah-to.\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Shouting",
-    "test_code": "let\n  Test.label.deprecated \"Shouting\" <| Test.expect (response \"WATCH OUT!\" === \"Whoa, chill out!\")"
+    "test_code": "verify do\n  labeled \"Shouting\" do\n    expected = \"Whoa, chill out!\"\n    actual = response \"WATCH OUT!\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Shouting gibberish",
-    "test_code": "let\n  Test.label.deprecated \"Shouting gibberish\" <| Test.expect (response \"FCECDFCAAB\" === \"Whoa, chill out!\")"
+    "test_code": "verify do\n  labeled \"Shouting gibberish\" do\n    expected = \"Whoa, chill out!\"\n    actual = response \"FCECDFCAAB\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Asking a question",
-    "test_code": "let\n  Test.label.deprecated \"Asking a question\" <| Test.expect (response \"Does this cryogenic chamber make me look fat?\" === \"Sure.\")"
+    "test_code": "verify do\n  labeled \"Asking a question\" do\n    expected = \"Sure.\"\n    actual = response \"Does this cryogenic chamber make me look fat?\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Asking a numeric question",
-    "test_code": "let\n  Test.label.deprecated \"Asking a numeric question\" <| Test.expect (response \"You are, what, like 15?\" === \"Sure.\")"
+    "test_code": "verify do\n  labeled \"Asking a numeric question\" do\n    expected = \"Sure.\"\n    actual = response \"You are, what, like 15?\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Asking gibberish",
-    "test_code": "let\n  Test.label.deprecated \"Asking gibberish\" <| Test.expect (response \"fffbbcbeab?\" === \"Sure.\")"
+    "test_code": "verify do\n  labeled \"Asking gibberish\" do\n    expected = \"Sure.\"\n    actual = response \"fffbbcbeab?\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Talking forcefully",
-    "test_code": "let\n  Test.label.deprecated \"Talking forcefully\" <| Test.expect (response \"Hi there!\" === \"Whatever.\")"
+    "test_code": "verify do\n  labeled \"Talking forcefully\" do\n    expected = \"Whatever.\"\n    actual = response \"Hi there!\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Using acronyms in regular speech",
-    "test_code": "let\n  Test.label.deprecated \"Using acronyms in regular speech\" <| Test.expect (response \"It's OK if you don't want to go work for NASA.\" === \"Whatever.\")"
+    "test_code": "verify do\n  labeled \"Using acronyms in regular speech\" do\n    expected = \"Whatever.\"\n    actual = response \"It's OK if you don't want to go work for NASA.\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Forceful question",
-    "test_code": "let\n  Test.label.deprecated \"Forceful question\" <| Test.expect (response \"WHAT'S GOING ON?\" === \"Calm down, I know what I'm doing!\")"
+    "test_code": "verify do\n  labeled \"Forceful question\" do\n    expected = \"Calm down, I know what I'm doing!\"\n    actual = response \"WHAT'S GOING ON?\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Shouting numbers",
-    "test_code": "let\n  Test.label.deprecated \"Shouting numbers\" <| Test.expect (response \"1, 2, 3 GO!\" === \"Whoa, chill out!\")"
+    "test_code": "verify do\n  labeled \"Shouting numbers\" do\n    expected = \"Whoa, chill out!\"\n    actual = response \"1, 2, 3 GO!\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "No letters",
-    "test_code": "let\n  Test.label.deprecated \"No letters\" <| Test.expect (response \"1, 2, 3\" === \"Whatever.\")"
+    "test_code": "verify do\n  labeled \"No letters\" do\n    expected = \"Whatever.\"\n    actual = response \"1, 2, 3\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Question with no letters",
-    "test_code": "let\n  Test.label.deprecated \"Question with no letters\" <| Test.expect (response \"4?\" === \"Sure.\")"
+    "test_code": "verify do\n  labeled \"Question with no letters\" do\n    expected = \"Sure.\"\n    actual = response \"4?\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Shouting with special characters",
-    "test_code": "let\n  Test.label.deprecated \"Shouting with special characters\" <| Test.expect (response \"ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!\" === \"Whoa, chill out!\")"
+    "test_code": "verify do\n  labeled \"Shouting with special characters\" do\n    expected = \"Whoa, chill out!\"\n    actual = response \"ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Shouting with no exclamation mark",
-    "test_code": "let\n  Test.label.deprecated \"Shouting with no exclamation mark\" <| Test.expect (response \"I HATE THE DENTIST\" === \"Whoa, chill out!\")"
+    "test_code": "verify do\n  labeled \"Shouting with no exclamation mark\" do\n    expected = \"Whoa, chill out!\"\n    actual = response \"I HATE THE DENTIST\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Statement containing question mark",
-    "test_code": "let\n  Test.label.deprecated \"Statement containing question mark\" <| Test.expect (response \"Ending with ? means a question.\" === \"Whatever.\")"
+    "test_code": "verify do\n  labeled \"Statement containing question mark\" do\n    expected = \"Whatever.\"\n    actual = response \"Ending with ? means a question.\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Non-letters with question",
-    "test_code": "let\n  Test.label.deprecated \"Non-letters with question\" <| Test.expect (response \":) ?\" === \"Sure.\")"
+    "test_code": "verify do\n  labeled \"Non-letters with question\" do\n    expected = \"Sure.\"\n    actual = response \":) ?\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Prattling on",
-    "test_code": "let\n  Test.label.deprecated \"Prattling on\" <| Test.expect (response \"Wait! Hang on. Are you going to be OK?\" === \"Sure.\")"
+    "test_code": "verify do\n  labeled \"Prattling on\" do\n    expected = \"Sure.\"\n    actual = response \"Wait! Hang on. Are you going to be OK?\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Silence",
-    "test_code": "let\n  Test.label.deprecated \"Silence\" <| Test.expect (response \"\" === \"Fine. Be that way!\")"
+    "test_code": "verify do\n  labeled \"Silence\" do\n    expected = \"Fine. Be that way!\"\n    actual = response \"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Prolonged silence",
-    "test_code": "let\n  Test.label.deprecated \"Prolonged silence\" <| Test.expect (response \"          \" === \"Fine. Be that way!\")"
+    "test_code": "verify do\n  labeled \"Prolonged silence\" do\n    expected = \"Fine. Be that way!\"\n    actual = response \"          \"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Alternate silence",
-    "test_code": "let\n  Test.label.deprecated \"Alternate silence\" <| Test.expect (response \"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\" === \"Fine. Be that way!\")"
+    "test_code": "verify do\n  labeled \"Alternate silence\" do\n    expected = \"Fine. Be that way!\"\n    actual = response \"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Multiple line question",
-    "test_code": "let\n  Test.label.deprecated \"Multiple line question\" <| Test.expect (response \"\\nDoes this cryogenic chamber make me look fat?\\nNo.\" === \"Whatever.\")"
+    "test_code": "verify do\n  labeled \"Multiple line question\" do\n    expected = \"Whatever.\"\n    actual = response \"\\nDoes this cryogenic chamber make me look fat?\\nNo.\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Starting with whitespace",
-    "test_code": "let\n  Test.label.deprecated \"Starting with whitespace\" <| Test.expect (response \"         hmmmmmmm...\" === \"Whatever.\")"
+    "test_code": "verify do\n  labeled \"Starting with whitespace\" do\n    expected = \"Whatever.\"\n    actual = response \"         hmmmmmmm...\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Ending with whitespace",
-    "test_code": "let\n  Test.label.deprecated \"Ending with whitespace\" <| Test.expect (response \"Okay if like my  spacebar  quite a bit?   \" === \"Sure.\")"
+    "test_code": "verify do\n  labeled \"Ending with whitespace\" do\n    expected = \"Sure.\"\n    actual = response \"Okay if like my  spacebar  quite a bit?   \"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Other whitespace",
-    "test_code": "let\n  Test.label.deprecated \"Other whitespace\" <| Test.expect (response \"\\n\\r \\t\" === \"Fine. Be that way!\")"
+    "test_code": "verify do\n  labeled \"Other whitespace\" do\n    expected = \"Fine. Be that way!\"\n    actual = response \"\\n\\r \\t\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Non-question ending with whitespace",
-    "test_code": "let\n  Test.label.deprecated \"Non-question ending with whitespace\" <| Test.expect (response \"This is a statement ending with whitespace      \" === \"Whatever.\")"
+    "test_code": "verify do\n  labeled \"Non-question ending with whitespace\" do\n    expected = \"Whatever.\"\n    actual = response \"This is a statement ending with whitespace      \"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

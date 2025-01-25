@@ -1,86 +1,86 @@
 [
   {
     "name": "should be able to score a game with all zeros",
-    "test_code": "let\n  Test.label.deprecated \"should be able to score a game with all zeros\" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (0))"
+    "test_code": "verify do\n  labeled \"should be able to score a game with all zeros\" do\n    expected = Right (0)\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "should be able to score a game with no strikes or spares",
-    "test_code": "let\n  Test.label.deprecated \"should be able to score a game with no strikes or spares\" <| Test.expect (score [3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6] === Right (90))"
+    "test_code": "verify do\n  labeled \"should be able to score a game with no strikes or spares\" do\n    expected = Right (90)\n    actual = score [3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a spare followed by zeros is worth ten points",
-    "test_code": "let\n  Test.label.deprecated \"a spare followed by zeros is worth ten points\" <| Test.expect (score [6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (10))"
+    "test_code": "verify do\n  labeled \"a spare followed by zeros is worth ten points\" do\n    expected = Right (10)\n    actual = score [6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "points scored in the roll after a spare are counted twice",
-    "test_code": "let\n  Test.label.deprecated \"points scored in the roll after a spare are counted twice\" <| Test.expect (score [6,4,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (16))"
+    "test_code": "verify do\n  labeled \"points scored in the roll after a spare are counted twice\" do\n    expected = Right (16)\n    actual = score [6,4,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "consecutive spares each get a one roll bonus",
-    "test_code": "let\n  Test.label.deprecated \"consecutive spares each get a one roll bonus\" <| Test.expect (score [5,5,3,7,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (31))"
+    "test_code": "verify do\n  labeled \"consecutive spares each get a one roll bonus\" do\n    expected = Right (31)\n    actual = score [5,5,3,7,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a spare in the last frame gets a one roll bonus that is counted once",
-    "test_code": "let\n  Test.label.deprecated \"a spare in the last frame gets a one roll bonus that is counted once\" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3,7] === Right (17))"
+    "test_code": "verify do\n  labeled \"a spare in the last frame gets a one roll bonus that is counted once\" do\n    expected = Right (17)\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3,7]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a strike earns ten points in a frame with a single roll",
-    "test_code": "let\n  Test.label.deprecated \"a strike earns ten points in a frame with a single roll\" <| Test.expect (score [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (10))"
+    "test_code": "verify do\n  labeled \"a strike earns ten points in a frame with a single roll\" do\n    expected = Right (10)\n    actual = score [10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "points scored in the two rolls after a strike are counted twice as a bonus",
-    "test_code": "let\n  Test.label.deprecated \"points scored in the two rolls after a strike are counted twice as a bonus\" <| Test.expect (score [10,5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] === Right (26))"
+    "test_code": "verify do\n  labeled \"points scored in the two rolls after a strike are counted twice as a bonus\" do\n    expected = Right (26)\n    actual = score [10,5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "consecutive strikes each get the two roll bonus",
-    "test_code": "let\n  Test.label.deprecated \"consecutive strikes each get the two roll bonus\" <| Test.expect (score [10,10,10,5,3,0,0,0,0,0,0,0,0,0,0,0,0] === Right (81))"
+    "test_code": "verify do\n  labeled \"consecutive strikes each get the two roll bonus\" do\n    expected = Right (81)\n    actual = score [10,10,10,5,3,0,0,0,0,0,0,0,0,0,0,0,0]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a strike in the last frame gets a two roll bonus that is counted once",
-    "test_code": "let\n  Test.label.deprecated \"a strike in the last frame gets a two roll bonus that is counted once\" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,7,1] === Right (18))"
+    "test_code": "verify do\n  labeled \"a strike in the last frame gets a two roll bonus that is counted once\" do\n    expected = Right (18)\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,7,1]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "rolling a spare with the two roll bonus does not get a bonus roll",
-    "test_code": "let\n  Test.label.deprecated \"rolling a spare with the two roll bonus does not get a bonus roll\" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,7,3] === Right (20))"
+    "test_code": "verify do\n  labeled \"rolling a spare with the two roll bonus does not get a bonus roll\" do\n    expected = Right (20)\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,7,3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "strikes with the two roll bonus do not get bonus rolls",
-    "test_code": "let\n  Test.label.deprecated \"strikes with the two roll bonus do not get bonus rolls\" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10] === Right (30))"
+    "test_code": "verify do\n  labeled \"strikes with the two roll bonus do not get bonus rolls\" do\n    expected = Right (30)\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "last two strikes followed by only last bonus with non strike points",
-    "test_code": "let\n  Test.label.deprecated \"last two strikes followed by only last bonus with non strike points\" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,0,1] === Right (31))"
+    "test_code": "verify do\n  labeled \"last two strikes followed by only last bonus with non strike points\" do\n    expected = Right (31)\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,0,1]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a strike with the one roll bonus after a spare in the last frame does not get a bonus",
-    "test_code": "let\n  Test.label.deprecated \"a strike with the one roll bonus after a spare in the last frame does not get a bonus\" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3,10] === Right (20))"
+    "test_code": "verify do\n  labeled \"a strike with the one roll bonus after a spare in the last frame does not get a bonus\" do\n    expected = Right (20)\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3,10]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "all strikes is a perfect game",
-    "test_code": "let\n  Test.label.deprecated \"all strikes is a perfect game\" <| Test.expect (score [10,10,10,10,10,10,10,10,10,10,10,10] === Right (300))"
+    "test_code": "verify do\n  labeled \"all strikes is a perfect game\" do\n    expected = Right (300)\n    actual = score [10,10,10,10,10,10,10,10,10,10,10,10]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike",
-    "test_code": "Test.label.deprecated \"two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike\" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,6] === Right (26))"
+    "test_code": "verify do\n  labeled \"two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike\" do\n    expected = Right (26)\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,6]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "an unstarted game cannot be scored",
-    "test_code": "let\n  Test.label.deprecated \"an unstarted game cannot be scored\" <| Test.expect (score [] === Left ( Error \"Score cannot be taken until the end of the game\"))"
+    "test_code": "verify do\n  labeled \"an unstarted game cannot be scored\" do\n    expected = Left ( Error \"Score cannot be taken until the end of the game\")\n    actual = score []\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "an incomplete game cannot be scored",
-    "test_code": "let\n  Test.label.deprecated \"an incomplete game cannot be scored\" <| Test.expect (score [0,0] === Left ( Error \"Score cannot be taken until the end of the game\"))"
+    "test_code": "verify do\n  labeled \"an incomplete game cannot be scored\" do\n    expected = Left ( Error \"Score cannot be taken until the end of the game\")\n    actual = score [0,0]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "bonus rolls for a strike in the last frame must be rolled before score can be calculated",
-    "test_code": "let\n  Test.label.deprecated \"bonus rolls for a strike in the last frame must be rolled before score can be calculated\" <| Test.expect ( score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10] === Left ( Error \"Score cannot be taken until the end of the game\"))"
+    "test_code": "verify do\n  labeled \"bonus rolls for a strike in the last frame must be rolled before score can be calculated\" do\n    expected = Left ( Error \"Score cannot be taken until the end of the game\")\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "both bonus rolls for a strike in the last frame must be rolled before score can be calculated",
-    "test_code": "let\n  Test.label.deprecated \"both bonus rolls for a strike in the last frame must be rolled before score can be calculated\" <| Test.expect ( score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10] === Left ( Error \"Score cannot be taken until the end of the game\"))"
+    "test_code": "verify do\n  labeled \"both bonus rolls for a strike in the last frame must be rolled before score can be calculated\" do\n    expected = Left ( Error \"Score cannot be taken until the end of the game\")\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "bonus roll for a spare in the last frame must be rolled before score can be calculated",
-    "test_code": "let\n  Test.label.deprecated \"bonus roll for a spare in the last frame must be rolled before score can be calculated\" <| Test.expect (score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3] === Left ( Error \"Score cannot be taken until the end of the game\"))"
+    "test_code": "verify do\n  labeled \"bonus roll for a spare in the last frame must be rolled before score can be calculated\" do\n    expected = Left ( Error \"Score cannot be taken until the end of the game\")\n    actual = score [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

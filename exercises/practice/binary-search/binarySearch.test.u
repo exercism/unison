@@ -1,50 +1,92 @@
-use data Array
+binarySearch.find.tests.ex1 = verify do
+  labeled "finds a value in an array with one element" do
+    expected = Some +0
+    actual = binarySearch.find (Array.fromList [6]) 6
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex1 =
-  expect (Some +0 === binarySearch.find (Array.fromList [6]) 6)
-    |> Test.label.deprecated "finds a value in an array with one element"
+binarySearch.find.tests.ex2 = verify do
+  labeled "finds a value in the middle of an array" do
+    expected = Some +3
+    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 6
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex2 =
-  expect (Some +3 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 6)
-    |> Test.label.deprecated "finds a value in the middle of an array"
+binarySearch.find.tests.ex3 = verify do
+  labeled "finds a value at the beginning of an array" do
+    expected = Some +0
+    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex3 =
-  expect (Some +0 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 1)
-    |> Test.label.deprecated "finds a value at the beginning of an array"
+binarySearch.find.tests.ex4 = verify do
+  labeled "finds a value at the end of an array" do
+    expected = Some +6
+    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 11
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex4 =
-  expect (Some +6 === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 11)
-    |> Test.label.deprecated "finds a value at the end of an array"
+binarySearch.find.tests.ex5 = verify do
+  labeled "finds a value in an array of odd length" do
+    expected = Some +9
+    actual = binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634]) 144
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex5 =
-  expect (Some +9 === binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634]) 144)
-    |> Test.label.deprecated "finds a value in an array of odd length"
+binarySearch.find.tests.ex6 = verify do
+  labeled "finds a value in an array of even length" do
+    expected = Some +5
+    actual = binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]) 21
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex6 =
-  expect (Some +5 === binarySearch.find (Array.fromList [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]) 21)
-    |> Test.label.deprecated "finds a value in an array of even length"
+binarySearch.find.tests.ex7 = verify do
+  labeled "identifies that a value is not included in the array" do
+    expected = None
+    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 7
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex7 =
-  expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 7)
-    |> Test.label.deprecated "identifies that a value is not included in the array"
+binarySearch.find.tests.ex8 = verify do
+  labeled "a value smaller than the array's smallest value is not found" do
+    expected = None
+    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 0
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex8 =
-  expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 0)
-    |> Test.label.deprecated "a value smaller than the array's smallest value is not found"
+binarySearch.find.tests.ex9 = verify do
+  labeled "a value larger than the array's largest value is not found" do
+    expected = None
+    actual = binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 13
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex9 =
-  expect (None === binarySearch.find (Array.fromList [1, 3, 4, 6, 8, 9, 11]) 13)
-    |> Test.label.deprecated "a value larger than the array's largest value is not found"
+binarySearch.find.tests.ex10 = verify do
+  labeled "nothing is found in an empty array" do
+    expected = None
+    actual = binarySearch.find (Array.fromList []) 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex10 =
-  expect (None === binarySearch.find (Array.fromList []) 1)
-    |> Test.label.deprecated "nothing is found in an empty array"
+binarySearch.find.tests.ex11 = verify do
+  labeled "nothing is found when the left and right bounds cross" do
+    expected = None
+    actual = binarySearch.find (Array.fromList [1, 2]) 0
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-binarySearch.find.tests.ex11 =
-  expect (None === binarySearch.find (Array.fromList [1, 2]) 0)
-    |> Test.label.deprecated "nothing is found when the left and right bounds cross"
-
-test> binarySearch.tests = runAll [
+test> binarySearch.tests = join [
   binarySearch.find.tests.ex1,
   binarySearch.find.tests.ex2,
   binarySearch.find.tests.ex3,

@@ -1,79 +1,204 @@
-bob.test.ex1 = let
-  Test.label.deprecated "Stating something" <| Test.expect (response "Tom-ay-to, tom-aaaah-to." === "Whatever.")
+bob.test.ex1 = verify do
+  labeled "Stating something" do
+    expected = "Whatever."
+    actual = response "Tom-ay-to, tom-aaaah-to."
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex2 = let
-  Test.label.deprecated "Shouting" <| Test.expect (response "WATCH OUT!" === "Whoa, chill out!")
+bob.test.ex2 = verify do
+  labeled "Shouting" do
+    expected = "Whoa, chill out!"
+    actual = response "WATCH OUT!"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex3 = let
-  Test.label.deprecated "Shouting gibberish" <| Test.expect (response "FCECDFCAAB" === "Whoa, chill out!")
+bob.test.ex3 = verify do
+  labeled "Shouting gibberish" do
+    expected = "Whoa, chill out!"
+    actual = response "FCECDFCAAB"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex4 = let
-  Test.label.deprecated "Asking a question" <| Test.expect (response "Does this cryogenic chamber make me look fat?" === "Sure.")
+bob.test.ex4 = verify do
+  labeled "Asking a question" do
+    expected = "Sure."
+    actual = response "Does this cryogenic chamber make me look fat?"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex5 = let
-  Test.label.deprecated "Asking a numeric question" <| Test.expect (response "You are, what, like 15?" === "Sure.")
+bob.test.ex5 = verify do
+  labeled "Asking a numeric question" do
+    expected = "Sure."
+    actual = response "You are, what, like 15?"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex6 = let
-  Test.label.deprecated "Asking gibberish" <| Test.expect (response "fffbbcbeab?" === "Sure.")
+bob.test.ex6 = verify do
+  labeled "Asking gibberish" do
+    expected = "Sure."
+    actual = response "fffbbcbeab?"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex7 = let
-  Test.label.deprecated "Talking forcefully" <| Test.expect (response "Hi there!" === "Whatever.")
+bob.test.ex7 = verify do
+  labeled "Talking forcefully" do
+    expected = "Whatever."
+    actual = response "Hi there!"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex8 = let
-  Test.label.deprecated "Using acronyms in regular speech" <| Test.expect (response "It's OK if you don't want to go work for NASA." === "Whatever.")
+bob.test.ex8 = verify do
+  labeled "Using acronyms in regular speech" do
+    expected = "Whatever."
+    actual = response "It's OK if you don't want to go work for NASA."
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex9 = let
-  Test.label.deprecated "Forceful question" <| Test.expect (response "WHAT'S GOING ON?" === "Calm down, I know what I'm doing!")
+bob.test.ex9 = verify do
+  labeled "Forceful question" do
+    expected = "Calm down, I know what I'm doing!"
+    actual = response "WHAT'S GOING ON?"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex10 = let
-  Test.label.deprecated "Shouting numbers" <| Test.expect (response "1, 2, 3 GO!" === "Whoa, chill out!")
+bob.test.ex10 = verify do
+  labeled "Shouting numbers" do
+    expected = "Whoa, chill out!"
+    actual = response "1, 2, 3 GO!"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex11 = let
-  Test.label.deprecated "No letters" <| Test.expect (response "1, 2, 3" === "Whatever.")
+bob.test.ex11 = verify do
+  labeled "No letters" do
+    expected = "Whatever."
+    actual = response "1, 2, 3"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex12 = let
-  Test.label.deprecated "Question with no letters" <| Test.expect (response "4?" === "Sure.")
+bob.test.ex12 = verify do
+  labeled "Question with no letters" do
+    expected = "Sure."
+    actual = response "4?"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex13 = let
-  Test.label.deprecated "Shouting with special characters" <| Test.expect (response "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!" === "Whoa, chill out!")
+bob.test.ex13 = verify do
+  labeled "Shouting with special characters" do
+    expected = "Whoa, chill out!"
+    actual = response "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex14 = let
-  Test.label.deprecated "Shouting with no exclamation mark" <| Test.expect (response "I HATE THE DENTIST" === "Whoa, chill out!")
+bob.test.ex14 = verify do
+  labeled "Shouting with no exclamation mark" do
+    expected = "Whoa, chill out!"
+    actual = response "I HATE THE DENTIST"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex15 = let
-  Test.label.deprecated "Statement containing question mark" <| Test.expect (response "Ending with ? means a question." === "Whatever.")
+bob.test.ex15 = verify do
+  labeled "Statement containing question mark" do
+    expected = "Whatever."
+    actual = response "Ending with ? means a question."
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex16 = let
-  Test.label.deprecated "Non-letters with question" <| Test.expect (response ":) ?" === "Sure.")
+bob.test.ex16 = verify do
+  labeled "Non-letters with question" do
+    expected = "Sure."
+    actual = response ":) ?"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex17 = let
-  Test.label.deprecated "Prattling on" <| Test.expect (response "Wait! Hang on. Are you going to be OK?" === "Sure.")
+bob.test.ex17 = verify do
+  labeled "Prattling on" do
+    expected = "Sure."
+    actual = response "Wait! Hang on. Are you going to be OK?"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex18 = let
-  Test.label.deprecated "Silence" <| Test.expect (response "" === "Fine. Be that way!")
+bob.test.ex18 = verify do
+  labeled "Silence" do
+    expected = "Fine. Be that way!"
+    actual = response ""
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex19 = let
-  Test.label.deprecated "Prolonged silence" <| Test.expect (response "          " === "Fine. Be that way!")
+bob.test.ex19 = verify do
+  labeled "Prolonged silence" do
+    expected = "Fine. Be that way!"
+    actual = response "          "
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex20 = let
-  Test.label.deprecated "Alternate silence" <| Test.expect (response "\t\t\t\t\t\t\t\t\t\t" === "Fine. Be that way!")
+bob.test.ex20 = verify do
+  labeled "Alternate silence" do
+    expected = "Fine. Be that way!"
+    actual = response "\t\t\t\t\t\t\t\t\t\t"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex21 = let
-  Test.label.deprecated "Multiple line question" <| Test.expect (response "\nDoes this cryogenic chamber make me look fat?\nNo." === "Whatever.")
+bob.test.ex21 = verify do
+  labeled "Multiple line question" do
+    expected = "Whatever."
+    actual = response "\nDoes this cryogenic chamber make me look fat?\nNo."
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex22 = let
-  Test.label.deprecated "Starting with whitespace" <| Test.expect (response "         hmmmmmmm..." === "Whatever.")
+bob.test.ex22 = verify do
+  labeled "Starting with whitespace" do
+    expected = "Whatever."
+    actual = response "         hmmmmmmm..."
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex23 = let
-  Test.label.deprecated "Ending with whitespace" <| Test.expect (response "Okay if like my  spacebar  quite a bit?   " === "Sure.")
+bob.test.ex23 = verify do
+  labeled "Ending with whitespace" do
+    expected = "Sure."
+    actual = response "Okay if like my  spacebar  quite a bit?   "
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex24 = let
-  Test.label.deprecated "Other whitespace" <| Test.expect (response "\n\r \t" === "Fine. Be that way!")
+bob.test.ex24 = verify do
+  labeled "Other whitespace" do
+    expected = "Fine. Be that way!"
+    actual = response "\n\r \t"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-bob.test.ex25 = let
-  Test.label.deprecated "Non-question ending with whitespace" <| Test.expect (response "This is a statement ending with whitespace      " === "Whatever.")
+bob.test.ex25 = verify do
+  labeled "Non-question ending with whitespace" do
+    expected = "Whatever."
+    actual = response "This is a statement ending with whitespace      "
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> bob.tests = runAll [
+test> bob.tests = join [
   bob.test.ex1,
   bob.test.ex2,
   bob.test.ex3,
