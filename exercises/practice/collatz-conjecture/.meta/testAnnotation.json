@@ -1,22 +1,22 @@
 [
   {
     "name": "zero steps for one",
-    "test_code": "let\n  Test.label.deprecated \"zero steps for one\" <| Test.expect (steps 1 === Some 0)"
+    "test_code": "verify do\n  labeled \"zero steps for one\" do\n    expected = Some 0\n    actual = steps 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "divide if even",
-    "test_code": "let\n  Test.label.deprecated \"divide if even\" <| Test.expect (steps 16 === Some 4)"
+    "test_code": "verify do\n  labeled \"divide if even\" do\n    expected = Some 4\n    actual = steps 16\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "even and odd steps",
-    "test_code": "let\n  Test.label.deprecated \"even and odd steps\" <| Test.expect (steps 12 === Some 9)"
+    "test_code": "verify do\n  labeled \"even and odd steps\" do\n    expected = Some 9\n    actual = steps 12\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "large number of even and odd steps",
-    "test_code": "let\n  Test.label.deprecated \"large number of even and odd steps\" <| Test.expect (steps 1000000 === Some 152)"
+    "test_code": "verify do\n  labeled \"large number of even and odd steps\" do\n    expected = Some 152\n    actual = steps 1000000\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "zero is an error",
-    "test_code": "let\n  Test.label.deprecated \"zero is an error\" <| Test.expect (steps 0 === None)"
+    "test_code": "verify do\n  labeled \"zero is an error\" do\n    expected = None\n    actual = steps 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

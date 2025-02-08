@@ -1,74 +1,74 @@
 [
   {
     "name": "computes the modifier for 18 to be 4",
-    "test_code": "input = 18\n  expected = +4\n  Test.label.deprecated \"computes the modifier for 18 to be 4\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 18 to be 4\" do\n    expected = +4\n    actual = modifier 18\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 17 to be 3",
-    "test_code": "input = 17\n  expected = +3\n  Test.label.deprecated \"computes the modifier for 17 to be 3\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 17 to be 3\" do\n    expected = +3\n    actual = modifier 17\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 16 to be 3",
-    "test_code": "input = 16\n  expected = +3\n  Test.label.deprecated \"computes the modifier for 16 to be 3\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 16 to be 3\" do\n    expected = +3\n    actual = modifier 16\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 15 to be 2",
-    "test_code": "input = 15\n  expected = +2\n  Test.label.deprecated \"computes the modifier for 15 to be 2\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 15 to be 2\" do\n    expected = +2\n    actual = modifier 15\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 14 to be 2",
-    "test_code": "input = 14\n  expected = +2\n  Test.label.deprecated \"computes the modifier for 14 to be 2\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 14 to be 2\" do\n    expected = +2\n    actual = modifier 14\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 13 to be 1",
-    "test_code": "input = 13\n  expected = +1\n  Test.label.deprecated \"computes the modifier for 13 to be 1\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 13 to be 1\" do\n    expected = +1\n    actual = modifier 13\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 12 to be 1",
-    "test_code": "input = 12\n  expected = +1\n  Test.label.deprecated \"computes the modifier for 12 to be 1\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 12 to be 1\" do\n    expected = +1\n    actual = modifier 12\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 11 to be 0",
-    "test_code": "input = 11\n  expected = +0\n  Test.label.deprecated \"computes the modifier for 11 to be 0\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 11 to be 0\" do\n    expected = +0\n    actual = modifier 11\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 10 to be 0",
-    "test_code": "input = 10\n  expected = +0\n  Test.label.deprecated \"computes the modifier for 10 to be 0\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 10 to be 0\" do\n    expected = +0\n    actual = modifier 10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 9 to be -1",
-    "test_code": "input = 9\n  expected = -1\n  Test.label.deprecated \"computes the modifier for 9 to be -1\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 9 to be -1\" do\n    expected = -1\n    actual = modifier 9\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 8 to be -1",
-    "test_code": "input = 8\n  expected = -1\n  Test.label.deprecated \"computes the modifier for 8 to be -1\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 8 to be -1\" do\n    expected = -1\n    actual = modifier 8\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 7 to be -2",
-    "test_code": "input = 7\n  expected = -2\n  Test.label.deprecated \"computes the modifier for 7 to be -2\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 7 to be -2\" do\n    expected = -2\n    actual = modifier 7\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 6 to be -2",
-    "test_code": "input = 6\n  expected = -2\n  Test.label.deprecated \"computes the modifier for 6 to be -2\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 6 to be -2\" do\n    expected = -2\n    actual = modifier 6\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 5 to be -3",
-    "test_code": "input = 5\n  expected = -3\n  Test.label.deprecated \"computes the modifier for 5 to be -3\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 5 to be -3\" do\n    expected = -3\n    actual = modifier 5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 4 to be -3",
-    "test_code": "input = 4\n  expected = -3\n  Test.label.deprecated \"computes the modifier for 4 to be -3\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 4 to be -3\" do\n    expected = -3\n    actual = modifier 4\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "computes the modifier for 3 to be -4",
-    "test_code": "input = 3\n  expected = -4\n  Test.label.deprecated \"computes the modifier for 3 to be -4\" <| expect (expected == modifier input)"
+    "test_code": "verify do\n  labeled \"computes the modifier for 3 to be -4\" do\n    expected = -4\n    actual = modifier 3\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "generates value within range",
-    "test_code": "do\n  use test.deprecated.gen nat\n  seed = !nat\n  calculatedAbility = Random.lcg seed ability_\n  Test.label.deprecated \"generates value within range\" <| expect (Nat.inRange 3 19 calculatedAbility)"
+    "test_code": "verify do\n  labeled \"generates value within range\" do\n    Each.repeat 10\n    calculatedAbility = !ability_\n    label \"calculated ability\" calculatedAbility\n    ensure (Nat.inRange 3 19 calculatedAbility)"
   },
   {
     "name": "generates valid character",
-    "test_code": "do\n  use test.deprecated.gen nat\n  seed = !nat\n  (Character strength dexterity constitution intelligence wisdom charisma hitpoints) = Random.lcg seed character\n  expectedHitpoints = Int.abs (+10 Int.+ modifier constitution)\n  expect ((Nat.inRange 3 19 strength) && (Nat.inRange 3 19 dexterity) && (Nat.inRange 3 19 constitution) && (Nat.inRange 3 19 intelligence) && (Nat.inRange 3 19 wisdom) && (Nat.inRange 3 19 charisma) && (hitpoints == expectedHitpoints)\n  ) |> Test.label.deprecated \"generates valid character\""
+    "test_code": "verify do\n  generateErrorMessage attributeName value =\n    use Nat toText\n    attributeName ++\n    \" has the wrong value. Generated value: \" ++\n    toText value\n  labeled \"generates valid character\" do\n    Each.repeat 10\n    (Character strength dexterity constitution intelligence wisdom charisma hitpoints) = !character\n    expectedHitpoints = Int.abs (+10 Int.+ modifier constitution)\n    ensureWith (generateErrorMessage \"Strength\" strength) (Nat.inRange 3 19 strength)\n    ensureWith (generateErrorMessage \"Dexterity\" dexterity) (Nat.inRange 3 19 dexterity)\n    ensureWith (generateErrorMessage \"Constitution\" constitution) (Nat.inRange 3 19 constitution)\n    ensureWith (generateErrorMessage \"Intelligence\" intelligence) (Nat.inRange 3 19 intelligence)\n    ensureWith (generateErrorMessage \"Wisdom\" wisdom) (Nat.inRange 3 19 wisdom)\n    ensureWith (generateErrorMessage \"Charisma\" charisma) (Nat.inRange 3 19 charisma)\n    ensureWith (generateErrorMessage \"Hitpoints\" hitpoints) (hitpoints == expectedHitpoints)"
   }
 ]

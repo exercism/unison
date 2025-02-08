@@ -1,30 +1,30 @@
 [
   {
     "name": "empty plaintext results in an empty ciphertext",
-    "test_code": "let\n  Test.label.deprecated \"empty plaintext results in an empty ciphertext\" <| Test.expect (ciphertext \"\" === \"\")"
+    "test_code": "verify do\n  labeled \"empty plaintext results in an empty ciphertext\" do\n    expected = \"\"\n    actual = ciphertext \"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Lowercase",
-    "test_code": "let\n  Test.label.deprecated \"Lowercase\" <| Test.expect (ciphertext \"A\" === \"a\")"
+    "test_code": "verify do\n  labeled \"Lowercase\" do\n    expected = \"a\"\n    actual = ciphertext \"A\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Remove spaces",
-    "test_code": "let\n  Test.label.deprecated \"Remove spaces\" <| Test.expect (ciphertext \"  b \" === \"b\")"
+    "test_code": "verify do\n  labeled \"Remove spaces\" do\n    expected = \"b\"\n    actual = ciphertext \"  b \"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Remove punctuation",
-    "test_code": "let\n  Test.label.deprecated \"Remove punctuation\" <| Test.expect (ciphertext \"@1,%!\" === \"1\")"
+    "test_code": "verify do\n  labeled \"Remove punctuation\" do\n    expected = \"1\"\n    actual = ciphertext \"@1,%!\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "9 character plaintext results in 3 chunks of 3 characters",
-    "test_code": "let\n  Test.label.deprecated \"9 character plaintext results in 3 chunks of 3 characters\" <| Test.expect (ciphertext \"This is fun!\" === \"tsf hiu isn\")"
+    "test_code": "verify do\n  labeled \"9 character plaintext results in 3 chunks of 3 characters\" do\n    expected = \"tsf hiu isn\"\n    actual = ciphertext \"This is fun!\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "8 character plaintext results in 3 chunks, the last one with a trailing space",
-    "test_code": "let\n  Test.label.deprecated \"8 character plaintext results in 3 chunks, the last one with a trailing space\" <| Test.expect (ciphertext \"Chill out.\" === \"clu hlt io \")"
+    "test_code": "verify do\n  labeled \"8 character plaintext results in 3 chunks, the last one with a trailing space\" do\n    expected = \"clu hlt io \"\n    actual = ciphertext \"Chill out.\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "54 character plaintext results in 7 chunks, the last two with trailing spaces",
-    "test_code": "let\n  Test.label.deprecated \"54 character plaintext results in 7 chunks, the last two with trailing spaces\" <| Test.expect (ciphertext \"If man was meant to stay on the ground, god would have given us roots.\" === \"imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau \")"
+    "test_code": "verify do\n  labeled \"54 character plaintext results in 7 chunks, the last two with trailing spaces\" do\n    expected = \"imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau \"\n    actual = ciphertext \"If man was meant to stay on the ground, god would have given us roots.\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

@@ -1,38 +1,38 @@
 [
   {
     "name": "Square of sum 1",
-    "test_code": "let\n  Test.label.deprecated \"Square of sum 1\" <| Test.expect (squareOfSum 1 === 1)"
+    "test_code": "verify do\n  labeled \"Square of sum 1\" do\n    expected = 1\n    actual = squareOfSum 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Square of sum 5",
-    "test_code": "let\n  Test.label.deprecated \"Square of sum 5\" <| Test.expect (squareOfSum 5 === 225)"
+    "test_code": "verify do\n  labeled \"Square of sum 5\" do\n    expected = 225\n    actual = squareOfSum 5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Square of sum 100",
-    "test_code": "let\n  Test.label.deprecated \"Square of sum 100\" <| Test.expect (squareOfSum 100 === 25502500)"
+    "test_code": "verify do\n  labeled \"Square of sum 100\" do\n    expected = 25502500\n    actual = squareOfSum 100\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Sum of squares 1",
-    "test_code": "let\n  Test.label.deprecated \"Sum of squares 1\" <| Test.expect (sumOfSquares 1 === 1)"
+    "test_code": "verify do\n  labeled \"Sum of squares 1\" do\n    expected = 1\n    actual = sumOfSquares 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Sum of squares 5",
-    "test_code": "let\n  Test.label.deprecated \"Sum of squares 5\" <| Test.expect (sumOfSquares 5 === 55)"
+    "test_code": "verify do\n  labeled \"Sum of squares 5\" do\n    expected = 55\n    actual = sumOfSquares 5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Sum of squares 100",
-    "test_code": "let\n  Test.label.deprecated \"Sum of squares 100\" <| Test.expect (sumOfSquares 100 === 338350)"
+    "test_code": "verify do\n  labeled \"Sum of squares 100\" do\n    expected = 338350\n    actual = sumOfSquares 100\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Difference of squares 1",
-    "test_code": "let\n  Test.label.deprecated \"Difference of squares 1\" <| Test.expect (difference 1 === 0)"
+    "test_code": "verify do\n  labeled \"Difference of squares 1\" do\n    expected = 0\n    actual = difference 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Difference of squares 5",
-    "test_code": "let\n  Test.label.deprecated \"Difference of squares 5\" <| Test.expect (difference 5 === 170)"
+    "test_code": "verify do\n  labeled \"Difference of squares 5\" do\n    expected = 170\n    actual = difference 5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Difference of squares 100",
-    "test_code": "let\n  Test.label.deprecated \"Difference of squares 100\" <| Test.expect (difference 100 === 25164150)"
+    "test_code": "verify do\n  labeled \"Difference of squares 100\" do\n    expected = 25164150\n    actual = difference 100\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

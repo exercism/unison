@@ -1,54 +1,54 @@
 [
   {
     "name": "Missed target",
-    "test_code": "let\n  Test.label.deprecated \"Missed target\" <| Test.expect (score -9.0 9.0 === 0)"
+    "test_code": "verify do\n  labeled \"Missed target\" do\n    expected = 0\n    actual = score -9.0 9.0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "On the outer circle",
-    "test_code": "let\n  Test.label.deprecated \"On the outer circle\" <| Test.expect (score 0.0 10.0 === 1)"
+    "test_code": "verify do\n  labeled \"On the outer circle\" do\n    expected = 1\n    actual = score 0.0 10.0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "On the middle circle",
-    "test_code": "let\n  Test.label.deprecated \"On the middle circle\" <| Test.expect (score -5.0 0.0 === 5)"
+    "test_code": "verify do\n  labeled \"On the middle circle\" do\n    expected = 5\n    actual = score -5.0 0.0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "On the inner circle",
-    "test_code": "let\n  Test.label.deprecated \"On the inner circle\" <| Test.expect (score 0.0 -1.0 === 10)"
+    "test_code": "verify do\n  labeled \"On the inner circle\" do\n    expected = 10\n    actual = score 0.0 -1.0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Exactly on centre",
-    "test_code": "let\n  Test.label.deprecated \"Exactly on centre\" <| Test.expect (score 0.0 0.0 === 10)"
+    "test_code": "verify do\n  labeled \"Exactly on centre\" do\n    expected = 10\n    actual = score 0.0 0.0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Near the centre",
-    "test_code": "let\n  Test.label.deprecated \"Near the centre\" <| Test.expect (score -0.1 -0.1 === 10)"
+    "test_code": "verify do\n  labeled \"Near the centre\" do\n    expected = 10\n    actual = score -0.1 -0.1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Just within the inner circle",
-    "test_code": "let\n  Test.label.deprecated \"Just within the inner circle\" <| Test.expect (score 0.7 0.7 === 10)"
+    "test_code": "verify do\n  labeled \"Just within the inner circle\" do\n    expected = 10\n    actual = score 0.7 0.7\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Just outside the inner circle",
-    "test_code": "let\n  Test.label.deprecated \"Just outside the inner circle\" <| Test.expect (score 0.8 -0.8 === 5)"
+    "test_code": "verify do\n  labeled \"Just outside the inner circle\" do\n    expected = 5\n    actual = score 0.8 -0.8\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Just within the middle circle",
-    "test_code": "let\n  Test.label.deprecated \"Just within the middle circle\" <| Test.expect (score -3.5 3.5 === 5)"
+    "test_code": "verify do\n  labeled \"Just within the middle circle\" do\n    expected = 5\n    actual = score -3.5 3.5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Just outside the middle circle",
-    "test_code": "let\n  Test.label.deprecated \"Just outside the middle circle\" <| Test.expect (score -3.6 -3.6 === 1)"
+    "test_code": "verify do\n  labeled \"Just outside the middle circle\" do\n    expected = 1\n    actual = score -3.6 -3.6\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Just within the outer circle",
-    "test_code": "let\n  Test.label.deprecated \"Just within the outer circle\" <| Test.expect (score -7.0 7.0 === 1)"
+    "test_code": "verify do\n  labeled \"Just within the outer circle\" do\n    expected = 1\n    actual = score -7.0 7.0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Just outside the outer circle",
-    "test_code": "let\n  Test.label.deprecated \"Just outside the outer circle\" <| Test.expect (score 7.1 -7.1 === 0)"
+    "test_code": "verify do\n  labeled \"Just outside the outer circle\" do\n    expected = 0\n    actual = score 7.1 -7.1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Asymmetric position between the inner and middle circles",
-    "test_code": "let\n  Test.label.deprecated \"Asymmetric position between the inner and middle circles\" <| Test.expect (score 0.5 -4.0 === 5)"
+    "test_code": "verify do\n  labeled \"Asymmetric position between the inner and middle circles\" do\n    expected = 5\n    actual = score 0.5 -4.0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]
