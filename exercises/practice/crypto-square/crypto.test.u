@@ -1,25 +1,60 @@
-cryptoSquare.test.ex1 = let
-  Test.label.deprecated "empty plaintext results in an empty ciphertext" <| Test.expect (ciphertext "" === "")
+cryptoSquare.test.ex1 = verify do
+  labeled "empty plaintext results in an empty ciphertext" do
+    expected = ""
+    actual = ciphertext ""
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-cryptoSquare.test.ex2 = let
-  Test.label.deprecated "Lowercase" <| Test.expect (ciphertext "A" === "a")
+cryptoSquare.test.ex2 = verify do
+  labeled "Lowercase" do
+    expected = "a"
+    actual = ciphertext "A"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-cryptoSquare.test.ex3 = let
-  Test.label.deprecated "Remove spaces" <| Test.expect (ciphertext "  b " === "b")
+cryptoSquare.test.ex3 = verify do
+  labeled "Remove spaces" do
+    expected = "b"
+    actual = ciphertext "  b "
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-cryptoSquare.test.ex4 = let
-  Test.label.deprecated "Remove punctuation" <| Test.expect (ciphertext "@1,%!" === "1")
+cryptoSquare.test.ex4 = verify do
+  labeled "Remove punctuation" do
+    expected = "1"
+    actual = ciphertext "@1,%!"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-cryptoSquare.test.ex5 = let
-  Test.label.deprecated "9 character plaintext results in 3 chunks of 3 characters" <| Test.expect (ciphertext "This is fun!" === "tsf hiu isn")
+cryptoSquare.test.ex5 = verify do
+  labeled "9 character plaintext results in 3 chunks of 3 characters" do
+    expected = "tsf hiu isn"
+    actual = ciphertext "This is fun!"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-cryptoSquare.test.ex6 = let
-  Test.label.deprecated "8 character plaintext results in 3 chunks, the last one with a trailing space" <| Test.expect (ciphertext "Chill out." === "clu hlt io ")
+cryptoSquare.test.ex6 = verify do
+  labeled "8 character plaintext results in 3 chunks, the last one with a trailing space" do
+    expected = "clu hlt io "
+    actual = ciphertext "Chill out."
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-cryptoSquare.test.ex7 = let
-  Test.label.deprecated "54 character plaintext results in 7 chunks, the last two with trailing spaces" <| Test.expect (ciphertext "If man was meant to stay on the ground, god would have given us roots." === "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ")
+cryptoSquare.test.ex7 = verify do
+  labeled "54 character plaintext results in 7 chunks, the last two with trailing spaces" do
+    expected = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
+    actual = ciphertext "If man was meant to stay on the ground, god would have given us roots."
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> cryptoSquare.tests = runAll [
+test> cryptoSquare.tests = join [
   cryptoSquare.test.ex1,
   cryptoSquare.test.ex2,
   cryptoSquare.test.ex3,

@@ -1,31 +1,76 @@
-differenceOfSquares.test.ex1 = let
-  Test.label.deprecated "Square of sum 1" <| Test.expect (squareOfSum 1 === 1)
+differenceOfSquares.test.ex1 = verify do
+  labeled "Square of sum 1" do
+    expected = 1
+    actual = squareOfSum 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-differenceOfSquares.test.ex2 = let
-  Test.label.deprecated "Square of sum 5" <| Test.expect (squareOfSum 5 === 225)
+differenceOfSquares.test.ex2 = verify do
+  labeled "Square of sum 5" do
+    expected = 225
+    actual = squareOfSum 5
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-differenceOfSquares.test.ex3 = let
-  Test.label.deprecated "Square of sum 100" <| Test.expect (squareOfSum 100 === 25502500)
+differenceOfSquares.test.ex3 = verify do
+  labeled "Square of sum 100" do
+    expected = 25502500
+    actual = squareOfSum 100
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-differenceOfSquares.test.ex4 = let
-  Test.label.deprecated "Sum of squares 1" <| Test.expect (sumOfSquares 1 === 1)
+differenceOfSquares.test.ex4 = verify do
+  labeled "Sum of squares 1" do
+    expected = 1
+    actual = sumOfSquares 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-differenceOfSquares.test.ex5 = let
-  Test.label.deprecated "Sum of squares 5" <| Test.expect (sumOfSquares 5 === 55)
+differenceOfSquares.test.ex5 = verify do
+  labeled "Sum of squares 5" do
+    expected = 55
+    actual = sumOfSquares 5
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-differenceOfSquares.test.ex6 = let
-  Test.label.deprecated "Sum of squares 100" <| Test.expect (sumOfSquares 100 === 338350)
+differenceOfSquares.test.ex6 = verify do
+  labeled "Sum of squares 100" do
+    expected = 338350
+    actual = sumOfSquares 100
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-differenceOfSquares.test.ex7 = let
-  Test.label.deprecated "Difference of squares 1" <| Test.expect (difference 1 === 0)
+differenceOfSquares.test.ex7 = verify do
+  labeled "Difference of squares 1" do
+    expected = 0
+    actual = difference 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-differenceOfSquares.test.ex8 = let
-  Test.label.deprecated "Difference of squares 5" <| Test.expect (difference 5 === 170)
+differenceOfSquares.test.ex8 = verify do
+  labeled "Difference of squares 5" do
+    expected = 170
+    actual = difference 5
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-differenceOfSquares.test.ex9 = let
-  Test.label.deprecated "Difference of squares 100" <| Test.expect (difference 100 === 25164150)
+differenceOfSquares.test.ex9 = verify do
+  labeled "Difference of squares 100" do
+    expected = 25164150
+    actual = difference 100
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> differenceOfSquares.tests = runAll [
+test> differenceOfSquares.tests = join [
   differenceOfSquares.test.ex1,
   differenceOfSquares.test.ex2,
   differenceOfSquares.test.ex3,

@@ -1,117 +1,173 @@
-use base.test.gen
+dndCharacter.modifier.test.ex1 = verify do
+  labeled "computes the modifier for 18 to be 4" do
+    expected = +4
+    actual = modifier 18
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex1 =
-  input = 18
-  expected = +4
-  Test.label.deprecated "computes the modifier for 18 to be 4" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex2 = verify do
+  labeled "computes the modifier for 17 to be 3" do
+    expected = +3
+    actual = modifier 17
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex2 =
-  input = 17
-  expected = +3
-  Test.label.deprecated "computes the modifier for 17 to be 3" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex3 = verify do
+  labeled "computes the modifier for 16 to be 3" do
+    expected = +3
+    actual = modifier 16
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex3 =
-  input = 16
-  expected = +3
-  Test.label.deprecated "computes the modifier for 16 to be 3" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex4 = verify do
+  labeled "computes the modifier for 15 to be 2" do
+    expected = +2
+    actual = modifier 15
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex4 =
-  input = 15
-  expected = +2
-  Test.label.deprecated "computes the modifier for 15 to be 2" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex5 = verify do
+  labeled "computes the modifier for 14 to be 2" do
+    expected = +2
+    actual = modifier 14
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex5 =
-  input = 14
-  expected = +2
-  Test.label.deprecated "computes the modifier for 14 to be 2" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex6 = verify do
+  labeled "computes the modifier for 13 to be 1" do
+    expected = +1
+    actual = modifier 13
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex6 =
-  input = 13
-  expected = +1
-  Test.label.deprecated "computes the modifier for 13 to be 1" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex7 = verify do
+  labeled "computes the modifier for 12 to be 1" do
+    expected = +1
+    actual = modifier 12
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex7 =
-  input = 12
-  expected = +1
-  Test.label.deprecated "computes the modifier for 12 to be 1" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex8 = verify do
+  labeled "computes the modifier for 11 to be 0" do
+    expected = +0
+    actual = modifier 11
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex8 =
-  input = 11
-  expected = +0
-  Test.label.deprecated "computes the modifier for 11 to be 0" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex9 = verify do
+  labeled "computes the modifier for 10 to be 0" do
+    expected = +0
+    actual = modifier 10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex9 =
-  input = 10
-  expected = +0
-  Test.label.deprecated "computes the modifier for 10 to be 0" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex10 = verify do
+  labeled "computes the modifier for 9 to be -1" do
+    expected = -1
+    actual = modifier 9
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex10 =
-  input = 9
-  expected = -1
-  Test.label.deprecated "computes the modifier for 9 to be -1" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex11 = verify do
+  labeled "computes the modifier for 8 to be -1" do
+    expected = -1
+    actual = modifier 8
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex11 =
-  input = 8
-  expected = -1
-  Test.label.deprecated "computes the modifier for 8 to be -1" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex12 = verify do
+  labeled "computes the modifier for 7 to be -2" do
+    expected = -2
+    actual = modifier 7
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex12 =
-  input = 7
-  expected = -2
-  Test.label.deprecated "computes the modifier for 7 to be -2" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex13 = verify do
+  labeled "computes the modifier for 6 to be -2" do
+    expected = -2
+    actual = modifier 6
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex13 =
-  input = 6
-  expected = -2
-  Test.label.deprecated "computes the modifier for 6 to be -2" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex14 = verify do
+  labeled "computes the modifier for 5 to be -3" do
+    expected = -3
+    actual = modifier 5
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex14 =
-  input = 5
-  expected = -3
-  Test.label.deprecated "computes the modifier for 5 to be -3" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex15 = verify do
+  labeled "computes the modifier for 4 to be -3" do
+    expected = -3
+    actual = modifier 4
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex15 =
-  input = 4
-  expected = -3
-  Test.label.deprecated "computes the modifier for 4 to be -3" <| expect (expected == modifier input)
+dndCharacter.modifier.test.ex16 = verify do
+  labeled "computes the modifier for 3 to be -4" do
+    expected = -4
+    actual = modifier 3
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-dndCharacter.test.testModifier.ex16 =
-  input = 3
-  expected = -4
-  Test.label.deprecated "computes the modifier for 3 to be -4" <| expect (expected == modifier input)
+dndCharacter.ability_.test = verify do
+  labeled "generates value within range" do
+    Each.repeat 10
+    calculatedAbility = !ability_
+    label "calculated ability" calculatedAbility
+    ensure (Nat.inRange 3 19 calculatedAbility)
 
-
-dndCharacter.test.testAbility = do
-  use test.deprecated.gen nat
-  seed = !nat
-  calculatedAbility = Random.lcg seed ability_
-  Test.label.deprecated "generates value within range" <| expect (Nat.inRange 3 19 calculatedAbility)
-
-dndCharacter.test.testCharacter = do
-  use test.deprecated.gen nat
-  seed = !nat
-  (Character strength dexterity constitution intelligence wisdom charisma hitpoints) = Random.lcg seed character
-  expectedHitpoints = Int.abs (+10 Int.+ modifier constitution)
-  expect ((Nat.inRange 3 19 strength) && (Nat.inRange 3 19 dexterity) && (Nat.inRange 3 19 constitution) && (Nat.inRange 3 19 intelligence) && (Nat.inRange 3 19 wisdom) && (Nat.inRange 3 19 charisma) && (hitpoints == expectedHitpoints)
-  ) |> Test.label.deprecated "generates valid character"
+dndCharacter.character.test = verify do
+  generateErrorMessage attributeName value =
+    use Nat toText
+    attributeName ++
+    " has the wrong value. Generated value: " ++
+    toText value
+  labeled "generates valid character" do
+    Each.repeat 10
+    (Character strength dexterity constitution intelligence wisdom charisma hitpoints) = !character
+    expectedHitpoints = Int.abs (+10 Int.+ modifier constitution)
+    ensureWith (generateErrorMessage "Strength" strength) (Nat.inRange 3 19 strength)
+    ensureWith (generateErrorMessage "Dexterity" dexterity) (Nat.inRange 3 19 dexterity)
+    ensureWith (generateErrorMessage "Constitution" constitution) (Nat.inRange 3 19 constitution)
+    ensureWith (generateErrorMessage "Intelligence" intelligence) (Nat.inRange 3 19 intelligence)
+    ensureWith (generateErrorMessage "Wisdom" wisdom) (Nat.inRange 3 19 wisdom)
+    ensureWith (generateErrorMessage "Charisma" charisma) (Nat.inRange 3 19 charisma)
+    ensureWith (generateErrorMessage "Hitpoints" hitpoints) (hitpoints == expectedHitpoints)
 
 test> dndCharacter.tests =
-  [ runs 10 dndCharacter.test.testAbility
-  , runs 10 dndCharacter.test.testCharacter
-  , Test.run dndCharacter.test.testModifier.ex1
-  , Test.run dndCharacter.test.testModifier.ex2
-  , Test.run dndCharacter.test.testModifier.ex3
-  , Test.run dndCharacter.test.testModifier.ex4
-  , Test.run dndCharacter.test.testModifier.ex5
-  , Test.run dndCharacter.test.testModifier.ex6
-  , Test.run dndCharacter.test.testModifier.ex7
-  , Test.run dndCharacter.test.testModifier.ex8
-  , Test.run dndCharacter.test.testModifier.ex9
-  , Test.run dndCharacter.test.testModifier.ex10
-  , Test.run dndCharacter.test.testModifier.ex11
-  , Test.run dndCharacter.test.testModifier.ex12
-  , Test.run dndCharacter.test.testModifier.ex13
-  , Test.run dndCharacter.test.testModifier.ex14
-  , Test.run dndCharacter.test.testModifier.ex15
-  , Test.run dndCharacter.test.testModifier.ex16
-  ] |> List.join
+  [ dndCharacter.ability_.test
+  , dndCharacter.character.test
+  , dndCharacter.modifier.test.ex1
+  , dndCharacter.modifier.test.ex2
+  , dndCharacter.modifier.test.ex3
+  , dndCharacter.modifier.test.ex4
+  , dndCharacter.modifier.test.ex5
+  , dndCharacter.modifier.test.ex6
+  , dndCharacter.modifier.test.ex7
+  , dndCharacter.modifier.test.ex8
+  , dndCharacter.modifier.test.ex9
+  , dndCharacter.modifier.test.ex10
+  , dndCharacter.modifier.test.ex11
+  , dndCharacter.modifier.test.ex12
+  , dndCharacter.modifier.test.ex13
+  , dndCharacter.modifier.test.ex14
+  , dndCharacter.modifier.test.ex15
+  , dndCharacter.modifier.test.ex16
+  ] |> join

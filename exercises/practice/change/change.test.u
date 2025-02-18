@@ -1,37 +1,92 @@
-change.test.ex1 = let
-  Test.label.deprecated "change for 1 cent" <| Test.expect (findFewestCoins [1,5,10,25] 1 === Some [1])
+change.test.ex1 = verify do
+  labeled "change for 1 cent" do
+    expected = Some [1]
+    actual = findFewestCoins [1,5,10,25] 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-change.test.ex2 = let
-  Test.label.deprecated "single coin change" <| Test.expect (findFewestCoins [1,5,10,25,100] 25 === Some [25])
+change.test.ex2 = verify do
+  labeled "single coin change" do
+    expected = Some [25]
+    actual = findFewestCoins [1,5,10,25,100] 25
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-change.test.ex3 = let
-  Test.label.deprecated "multiple coin change" <| Test.expect (findFewestCoins [1,5,10,25,100] 15 === Some [5,10])
+change.test.ex3 = verify do
+  labeled "multiple coin change" do
+    expected = Some [5,10]
+    actual = findFewestCoins [1,5,10,25,100] 15
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-change.test.ex4 = let
-  Test.label.deprecated "change with Lilliputian Coins" <| Test.expect (findFewestCoins [1,4,15,20,50] 23 === Some [4,4,15])
+change.test.ex4 = verify do
+  labeled "change with Lilliputian Coins" do
+    expected = Some [4,4,15]
+    actual = findFewestCoins [1,4,15,20,50] 23
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-change.test.ex5 = let
-  Test.label.deprecated "change with Lower Elbonia Coins" <| Test.expect (findFewestCoins [1,5,10,21,25] 63 === Some [21,21,21])
+change.test.ex5 = verify do
+  labeled "change with Lower Elbonia Coins" do
+    expected = Some [21,21,21]
+    actual = findFewestCoins [1,5,10,21,25] 63
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-change.test.ex6 = let
-  Test.label.deprecated "large target values" <| Test.expect (findFewestCoins [1,2,5,10,20,50,100] 999 === Some [2,2,5,20,20,50,100,100,100,100,100,100,100,100,100])
+change.test.ex6 = verify do
+  labeled "large target values" do
+    expected = Some [2,2,5,20,20,50,100,100,100,100,100,100,100,100,100]
+    actual = findFewestCoins [1,2,5,10,20,50,100] 999
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-change.test.ex7 = let
-  Test.label.deprecated "possible change without unit coins available" <| Test.expect (findFewestCoins [2,5,10,20,50] 21 === Some [2,2,2,5,10])
+change.test.ex7 = verify do
+  labeled "possible change without unit coins available" do
+    expected = Some [2,2,2,5,10]
+    actual = findFewestCoins [2,5,10,20,50] 21
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-change.test.ex8 = let
-  Test.label.deprecated "another possible change without unit coins available" <| Test.expect (findFewestCoins [4,5] 27 === Some [4,4,4,5,5,5])
+change.test.ex8 = verify do
+  labeled "another possible change without unit coins available" do
+    expected = Some [4,4,4,5,5,5]
+    actual = findFewestCoins [4,5] 27
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-change.test.ex9 = let
-  Test.label.deprecated "no coins make 0 change" <| Test.expect (findFewestCoins [1,5,10,21,25] 0 === Some [])
+change.test.ex9 = verify do
+  labeled "no coins make 0 change" do
+    expected = Some []
+    actual = findFewestCoins [1,5,10,21,25] 0
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-change.test.ex10 = let
-  Test.label.deprecated "error testing for change smaller than the smallest of coins" <| Test.expect (findFewestCoins [5,10] 3 === None)
+change.test.ex10 = verify do
+  labeled "error testing for change smaller than the smallest of coins" do
+    expected = None
+    actual = findFewestCoins [5,10] 3
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-change.test.ex11 = let
-  Test.label.deprecated "error if no combination can add up to target" <| Test.expect (findFewestCoins [5,10] 94 === None)
+change.test.ex11 = verify do
+  labeled "error if no combination can add up to target" do
+    expected = None
+    actual = findFewestCoins [5,10] 94
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> change.tests = runAll [
+test> change.tests = join [
   change.test.ex1,
   change.test.ex2,
   change.test.ex3,
@@ -44,4 +99,3 @@ test> change.tests = runAll [
   change.test.ex10,
   change.test.ex11
 ]
-
