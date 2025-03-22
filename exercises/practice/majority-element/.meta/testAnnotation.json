@@ -1,26 +1,26 @@
 [
   {
     "name": "should find the simple majority in a list",
-    "test_code": "let\n  Test.label.deprecated \"should find the simple majority in a list\" <| Test.expect (majorityFinder [Red, Blue, Red, Red, Yellow] === (Some Red))"
+    "test_code": "verify do\n  labeled \"should find the simple majority in a list\" do\n    expected = Some Red\n    actual = majorityFinder [Red, Blue, Red, Red, Yellow]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "should not return value if no majority exists",
-    "test_code": "let\n  Test.label.deprecated \"should not return value if no majority exists\" <| Test.expect (majorityFinder [Red, Blue, Green, Yellow] === None)"
+    "test_code": "verify do\n  labeled \"should not return value if no majority exists\" do\n    expected = None\n    actual = majorityFinder [Red, Blue, Green, Yellow]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "should not return value if most common element is exactly n/2",
-    "test_code": "let\n  Test.label.deprecated \"should not return value if most common element is exactly n/2\" <| Test.expect (majorityFinder [Red, Blue, Red, Green, Red, Yellow] === None)"
+    "test_code": "verify do\n  labeled \"should not return value if most common element is exactly n/2\" do\n    expected = None\n    actual = majorityFinder [Red, Blue, Red, Green, Red, Yellow]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "should not return value if 50/50 split",
-    "test_code": "let\n  Test.label.deprecated \"should not return value if 50/50 split\" <| Test.expect (majorityFinder [Red, Red, Blue, Blue, Red, Blue] === None)"
+    "test_code": "verify do\n  labeled \"should not return value if 50/50 split\" do\n    expected = None\n    actual = majorityFinder [Red, Red, Blue, Blue, Red, Blue]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "should handle empty list case",
-    "test_code": "let\n  Test.label.deprecated \"should handle empty list case\" <| Test.expect (majorityFinder [] === None)"
+    "test_code": "verify do\n  labeled \"should handle empty list case\" do\n    expected = None\n    actual = majorityFinder []\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
-    "name": "majorityElement.test.ex6 _",
-    "test_code": "let\n  all =  [Red, Orange, Yellow, Green, Blue]\n  selection = !(gen.oneOf all)\n  fillN = !(gen.natIn 0 (List.size all))\n  mostCommonElems = List.fill fillN selection\n  testList = all List.++ mostCommonElems\n  -- fill + 1 because the element exists in the original list one time\n  expected = if ((fillN + 1) > ((List.size testList) / 2) ) then Some selection else None"
+    "name": "should handle wide distribution of inputs",
+    "test_code": "verify do\n  labeled \"should handle wide distribution of inputs\" do\n    Each.repeat 20\n    all = [Red, Orange, Yellow, Green, Blue]\n    selection = Random.oneOf all\n    fillN = Random.natIn 0 (List.size all)\n    mostCommonElems = List.fill fillN selection\n    testList = all List.++ mostCommonElems\n    expected = if (fillN + 1) > ((List.size testList) / 2) then\n                 Some selection\n               else\n                 None\n    actual = majorityFinder testList\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

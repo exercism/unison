@@ -1,6 +1,6 @@
 [
   {
-    "name": "hello.test",
-    "test_code": "expected = \"Hello, World!\"\n  Test.expect (hello === expected)\ntest> hello.tests = runAll [hello.test]"
+    "name": "should return 'Hello, World!'",
+    "test_code": "verify do\n  labeled \"should return 'Hello, World!'\" do\n    expected = \"Hello, World!\"\n    actual = hello\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

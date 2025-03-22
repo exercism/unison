@@ -1,18 +1,18 @@
 [
   {
-    "name": "Single letter",
-    "test_code": "let  \n  lettersByScore = [(1, [?A])] |> Map.fromList\n  expected = [(?a, 1)] |> Map.fromList\n  Test.label.deprecated \"Single letter\" <| Test.expect (transform lettersByScore === expected)"
+    "name": "single letter",
+    "test_code": "verify do\n  labeled \"single letter\" do\n    expected = [(?a, 1)] |> Map.fromList\n    lettersByScore = [(1, [?A])] |> Map.fromList\n    actual = transform lettersByScore\n    label \"expected\" (expected |> Map.toList)\n    label \"actual\" (actual |> Map.toList)\n    ensureEqual expected actual"
   },
   {
-    "name": "Single score with multiple letters",
-    "test_code": "let\n  lettersByScore = [(1, [?A, ?E, ?I, ?O, ?U])] |> Map.fromList\n  expected = \n    [ (?a, 1),\n      (?e, 1),\n      (?i, 1),\n      (?o, 1),\n      (?u, 1) ] |> Map.fromList\n  Test.label.deprecated \"Single score with multiple letters\" <| Test.expect (transform lettersByScore === expected)"
+    "name": "single score with multiple letters",
+    "test_code": "verify do\n  labeled \"single score with multiple letters\" do\n    expected = \n      [ (?a, 1),\n        (?e, 1),\n        (?i, 1),\n        (?o, 1),\n        (?u, 1) ] |> Map.fromList\n    lettersByScore = [(1, [?A, ?E, ?I, ?O, ?U])] |> Map.fromList\n    actual = transform lettersByScore\n    label \"expected\" (expected |> Map.toList)\n    label \"actual\" (actual |> Map.toList)\n    ensureEqual expected actual"
   },
   {
-    "name": "Multiple scores with multiple letters",
-    "test_code": "let  \n  lettersByScore = \n    [ (1, [?A, ?E]),\n      (2, [?D, ?G]) ] |> Map.fromList\n  expected = \n    [ (?a, 1),\n      (?d, 2),\n      (?e, 1),\n      (?g, 2) ] |> Map.fromList\n  Test.label.deprecated \"Multiple scores with multiple letters\" <| Test.expect (transform lettersByScore === expected)"
+    "name": "multiple scores with multiple letters",
+    "test_code": "verify do\n  labeled \"multiple scores with multiple letters\" do\n    expected = \n      [ (?a, 1),\n        (?d, 2),\n        (?e, 1),\n        (?g, 2) ] |> Map.fromList\n    lettersByScore = \n      [ (1, [?A, ?E]),\n        (2, [?D, ?G]) ] |> Map.fromList\n    actual = transform lettersByScore\n    label \"expected\" (expected |> Map.toList)\n    label \"actual\" (actual |> Map.toList)\n    ensureEqual expected actual"
   },
   {
-    "name": "Multiple scores with differing numbers of letters",
-    "test_code": "let\n  lettersByScore = \n    [ (1, [?A, ?E, ?I, ?O, ?U, ?L, ?N, ?R, ?S, ?T]),\n      (2, [?D, ?G]),\n      (3, [?B, ?C, ?M, ?P]),\n      (4, [?F, ?H, ?V, ?W, ?Y]),\n      (5, [?K]),\n      (8, [?J, ?X]),\n      (10, [?Q, ?Z]) ] |> Map.fromList\n  expected = \n    [ (?a, 1),\n      (?b, 3),\n      (?c, 3),\n      (?d, 2),\n      (?e, 1),\n      (?f, 4),\n      (?g, 2),\n      (?h, 4),\n      (?i, 1),\n      (?j, 8),\n      (?k, 5),\n      (?l, 1),\n      (?m, 3),\n      (?n, 1),\n      (?o, 1),\n      (?p, 3),\n      (?q, 10),\n      (?r, 1),\n      (?s, 1),\n      (?t, 1),\n      (?u, 1),\n      (?v, 4),\n      (?w, 4),\n      (?x, 8),\n      (?y, 4),\n      (?z, 10) ] |> Map.fromList\n  Test.label.deprecated \"Multiple scores with differing numbers of letters\" <| Test.expect (transform lettersByScore == expected)"
+    "name": "multiple scores with differing numbers of letters",
+    "test_code": "verify do\n  labeled \"multiple scores with differing numbers of letters\" do\n    expected = \n      [ (?a, 1),\n        (?b, 3),\n        (?c, 3),\n        (?d, 2),\n        (?e, 1),\n        (?f, 4),\n        (?g, 2),\n        (?h, 4),\n        (?i, 1),\n        (?j, 8),\n        (?k, 5),\n        (?l, 1),\n        (?m, 3),\n        (?n, 1),\n        (?o, 1),\n        (?p, 3),\n        (?q, 10),\n        (?r, 1),\n        (?s, 1),\n        (?t, 1),\n        (?u, 1),\n        (?v, 4),\n        (?w, 4),\n        (?x, 8),\n        (?y, 4),\n        (?z, 10) ] |> Map.fromList\n    lettersByScore = \n      [ (1, [?A, ?E, ?I, ?O, ?U, ?L, ?N, ?R, ?S, ?T]),\n        (2, [?D, ?G]),\n        (3, [?B, ?C, ?M, ?P]),\n        (4, [?F, ?H, ?V, ?W, ?Y]),\n        (5, [?K]),\n        (8, [?J, ?X]),\n        (10, [?Q, ?Z]) ] |> Map.fromList\n    actual = transform lettersByScore\n    label \"expected\" (expected |> Map.toList)\n    label \"actual\" (actual |> Map.toList)\n    ensureEqual expected actual"
   }
 ]

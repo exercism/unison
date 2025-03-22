@@ -1,90 +1,90 @@
 [
   {
     "name": "single digit strings can not be valid",
-    "test_code": "expect (false == luhn.isValid \"1\")\n    |> Test.label.deprecated \"single digit strings can not be valid\""
+    "test_code": "verify do\n  labeled \"single digit strings can not be valid\" do\n    expected = false\n    actual = luhn.isValid \"1\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a single zero is invalid",
-    "test_code": "expect (false == luhn.isValid \"0\")\n    |> Test.label.deprecated \"a single zero is invalid\""
+    "test_code": "verify do\n  labeled \"a single zero is invalid\" do\n    expected = false\n    actual = luhn.isValid \"0\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a simple valid SIN that remains valid if reversed",
-    "test_code": "expect (true == luhn.isValid \"059\")\n    |> Test.label.deprecated \"a simple valid SIN that remains valid if reversed\""
+    "test_code": "verify do\n  labeled \"a simple valid SIN that remains valid if reversed\" do\n    expected = true\n    actual = luhn.isValid \"059\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a simple valid SIN that becomes invalid if reversed",
-    "test_code": "expect (true == luhn.isValid \"59\")\n    |> Test.label.deprecated \"a simple valid SIN that becomes invalid if reversed\""
+    "test_code": "verify do\n  labeled \"a simple valid SIN that becomes invalid if reversed\" do\n    expected = true\n    actual = luhn.isValid \"59\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a valid Canadian SIN",
-    "test_code": "expect (true == luhn.isValid \"055 444 285\")\n    |> Test.label.deprecated \"a valid Canadian SIN\""
+    "test_code": "verify do\n  labeled \"a valid Canadian SIN\" do\n    expected = true\n    actual = luhn.isValid \"055 444 285\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "invalid Canadian SIN",
-    "test_code": "expect (false == luhn.isValid \"055 444 286\")\n    |> Test.label.deprecated \"invalid Canadian SIN\""
+    "test_code": "verify do\n  labeled \"invalid Canadian SIN\" do\n    expected = false\n    actual = luhn.isValid \"055 444 286\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "invalid credit card",
-    "test_code": "expect (false == luhn.isValid \"8273 1232 7352 0569\")\n    |> Test.label.deprecated \"invalid credit card\""
+    "test_code": "verify do\n  labeled \"invalid credit card\" do\n    expected = false\n    actual = luhn.isValid \"8273 1232 7352 0569\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "invalid long number with an even remainder",
-    "test_code": "expect (false == luhn.isValid \"1 2345 6789 1234 5678 9012\")\n    |> Test.label.deprecated \"invalid long number with an even remainder\""
+    "test_code": "verify do\n  labeled \"invalid long number with an even remainder\" do\n    expected = false\n    actual = luhn.isValid \"1 2345 6789 1234 5678 9012\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "invalid long number with a remainder divisible by 5",
-    "test_code": "expect (false == luhn.isValid \"1 2345 6789 1234 5678 9013\")\n    |> Test.label.deprecated \"invalid long number with a remainder divisible by 5\""
+    "test_code": "verify do\n  labeled \"invalid long number with a remainder divisible by 5\" do\n    expected = false\n    actual = luhn.isValid \"1 2345 6789 1234 5678 9013\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "valid number with an even number of digits",
-    "test_code": "expect (true == luhn.isValid \"095 245 88\")\n    |> Test.label.deprecated \"valid number with an even number of digits\""
+    "test_code": "verify do\n  labeled \"valid number with an even number of digits\" do\n    expected = true\n    actual = luhn.isValid \"095 245 88\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "valid number with an odd number of spaces",
-    "test_code": "expect (true == luhn.isValid \"234 567 891 234\")\n    |> Test.label.deprecated \"valid number with an odd number of spaces\""
+    "test_code": "verify do\n  labeled \"valid number with an odd number of spaces\" do\n    expected = true\n    actual = luhn.isValid \"234 567 891 234\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "valid strings with a non-digit added at the end become invalid",
-    "test_code": "expect (false == luhn.isValid \"059a\")\n    |> Test.label.deprecated \"valid strings with a non-digit added at the end become invalid\""
+    "test_code": "verify do\n  labeled \"valid strings with a non-digit added at the end become invalid\" do\n    expected = false\n    actual = luhn.isValid \"059a\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "valid strings with punctuation included become invalid",
-    "test_code": "expect (false == luhn.isValid \"055-444-285\")\n    |> Test.label.deprecated \"valid strings with punctuation included become invalid\""
+    "test_code": "verify do\n  labeled \"valid strings with punctuation included become invalid\" do\n    expected = false\n    actual = luhn.isValid \"055-444-285\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "valid strings with symbols included become invalid",
-    "test_code": "expect (false == luhn.isValid \"055# 444$ 285\")\n    |> Test.label.deprecated \"valid strings with symbols included become invalid\""
+    "test_code": "verify do\n  labeled \"valid strings with symbols included become invalid\" do\n    expected = false\n    actual = luhn.isValid \"055# 444$ 285\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "single zero with space is invalid",
-    "test_code": "expect (false == luhn.isValid \" 0\")\n    |> Test.label.deprecated \"single zero with space is invalid\""
+    "test_code": "verify do\n  labeled \"single zero with space is invalid\" do\n    expected = false\n    actual = luhn.isValid \" 0\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "more than a single zero is valid",
-    "test_code": "expect (true == luhn.isValid \"0000 0\")\n    |> Test.label.deprecated \"more than a single zero is valid\""
+    "test_code": "verify do\n  labeled \"more than a single zero is valid\" do\n    expected = true\n    actual = luhn.isValid \"0000 0\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "input digit 9 is correctly converted to output digit 9",
-    "test_code": "expect (true == luhn.isValid \"091\")\n    |> Test.label.deprecated \"input digit 9 is correctly converted to output digit 9\""
+    "test_code": "verify do\n  labeled \"input digit 9 is correctly converted to output digit 9\" do\n    expected = true\n    actual = luhn.isValid \"091\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "very long input is valid",
-    "test_code": "expect (true == luhn.isValid \"9999999999 9999999999 9999999999 9999999999\")\n    |> Test.label.deprecated \"very long input is valid\""
+    "test_code": "verify do\n  labeled \"very long input is valid\" do\n    expected = true\n    actual = luhn.isValid \"9999999999 9999999999 9999999999 9999999999\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "valid luhn with an odd number of digits and non zero first digit",
-    "test_code": "expect (true == luhn.isValid \"109\")\n    |> Test.label.deprecated \"valid luhn with an odd number of digits and non zero first digit\""
+    "test_code": "verify do\n  labeled \"valid luhn with an odd number of digits and non zero first digit\" do\n    expected = true\n    actual = luhn.isValid \"109\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "using ascii value for non-doubled non-digit isn't allowed",
-    "test_code": "expect (false == luhn.isValid \"055b 444 285\")\n    |> Test.label.deprecated \"using ascii value for non-doubled non-digit isn't allowed\""
+    "test_code": "verify do\n  labeled \"using ascii value for non-doubled non-digit isn't allowed\" do\n    expected = false\n    actual = luhn.isValid \"055b 444 285\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "using ascii value for doubled non-digit isn't allowed",
-    "test_code": "expect (false == luhn.isValid \":9\")\n    |> Test.label.deprecated \"using ascii value for doubled non-digit isn't allowed\""
+    "test_code": "verify do\n  labeled \"using ascii value for doubled non-digit isn't allowed\" do\n    expected = false\n    actual = luhn.isValid \":9\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed",
-    "test_code": "expect (false == luhn.isValid \"59%59\")\n    |> Test.label.deprecated \"non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed\""
+    "test_code": "verify do\n  labeled \"non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed\" do\n    expected = false\n    actual = luhn.isValid \"59%59\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

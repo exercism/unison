@@ -1,79 +1,154 @@
-largestSeriesProduct.test.ex1 = let
-  digits = "29"
-  span = +2
-  Test.label.deprecated "Finds the largest product if span equals length" <| Test.expect (largestProduct digits span === Some 18)
+largestSeriesProduct.test.ex1 = verify do
+  labeled "Finds the largest product if span equals length" do
+    digits = "29"
+    span = +2
+    expected = Some 18
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex2 = let
-  digits = "0123456789"
-  span = +2
-  Test.label.deprecated "Can find the largest product of 2 with numbers in order" <| Test.expect (largestProduct digits span === Some 72)
+largestSeriesProduct.test.ex2 = verify do
+  labeled "Can find the largest product of 2 with numbers in order" do
+    digits = "0123456789"
+    span = +2
+    expected = Some 72
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex3 = let
-  digits = "576802143"
-  span = +2
-  Test.label.deprecated "Can find the largest product of 2" <| Test.expect (largestProduct digits span === Some 48)
+largestSeriesProduct.test.ex3 = verify do
+  labeled "Can find the largest product of 2" do
+    digits = "576802143"
+    span = +2
+    expected = Some 48
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex4 = let
-  digits = "0123456789"
-  span = +3
-  Test.label.deprecated "Can find the largest product of 3 with numbers in order" <| Test.expect (largestProduct digits span === Some 504)
+largestSeriesProduct.test.ex4 = verify do
+  labeled "Can find the largest product of 3 with numbers in order" do
+    digits = "0123456789"
+    span = +3
+    expected = Some 504
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex5 = let
-  digits = "1027839564"
-  span = +3
-  Test.label.deprecated "Can find the largest product of 3" <| Test.expect (largestProduct digits span === Some 270)
+largestSeriesProduct.test.ex5 = verify do
+  labeled "Can find the largest product of 3" do
+    digits = "1027839564"
+    span = +3
+    expected = Some 270
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex6 = let
-  digits = "0123456789"
-  span = +5
-  Test.label.deprecated "Can find the largest product of 5 with numbers in order" <| Test.expect (largestProduct digits span === Some 15120)
+largestSeriesProduct.test.ex6 = verify do
+  labeled "Can find the largest product of 5 with numbers in order" do
+    digits = "0123456789"
+    span = +5
+    expected = Some 15120
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex7 = let
-  digits = "73167176531330624919225119674426574742355349194934"
-  span = +6
-  Test.label.deprecated "Can get the largest product of a big number" <| Test.expect (largestProduct digits span === Some 23520)
+largestSeriesProduct.test.ex7 = verify do
+  labeled "Can get the largest product of a big number" do
+    digits = "73167176531330624919225119674426574742355349194934"
+    span = +6
+    expected = Some 23520
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex8 = let
-  digits = "0000"
-  span = +2
-  Test.label.deprecated "Reports zero if the only digits are zero" <| Test.expect (largestProduct digits span === Some 0)
+largestSeriesProduct.test.ex8 = verify do
+  labeled "Reports zero if the only digits are zero" do
+    digits = "0000"
+    span = +2
+    expected = Some 0
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex9 = let
-  digits = "99099"
-  span = +3
-  Test.label.deprecated "Reports zero if all spans include zero" <| Test.expect (largestProduct digits span === Some 0)
+largestSeriesProduct.test.ex9 = verify do
+  labeled "Reports zero if all spans include zero" do
+    digits = "99099"
+    span = +3
+    expected = Some 0
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex10 = let
-  digits = "123"
-  span = +4
-  Test.label.deprecated "Rejects span longer than string length" <| Test.expect (largestProduct digits span === None)
+largestSeriesProduct.test.ex10 = verify do
+  labeled "Rejects span longer than string length" do
+    digits = "123"
+    span = +4
+    expected = None
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex11 = let
-  digits = ""
-  span = +0
-  Test.label.deprecated "Reports 1 for empty string and empty product (0 span)" <| Test.expect (largestProduct digits span === Some 1)
+largestSeriesProduct.test.ex11 = verify do
+  labeled "Reports 1 for empty string and empty product (0 span)" do
+    digits = ""
+    span = +0
+    expected = Some 1
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex12 = let
-  digits = "123"
-  span = +0
-  Test.label.deprecated "Reports 1 for nonempty string and empty product (0 span)" <| Test.expect (largestProduct digits span === Some 1)
+largestSeriesProduct.test.ex12 = verify do
+  labeled "Reports 1 for nonempty string and empty product (0 span)" do
+    digits = "123"
+    span = +0
+    expected = Some 1
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex13 = let
-  digits = ""
-  span = +1
-  Test.label.deprecated "Rejects empty string and nonzero span" <| Test.expect (largestProduct digits span === None)
+largestSeriesProduct.test.ex13 = verify do
+  labeled "Rejects empty string and nonzero span" do
+    digits = ""
+    span = +1
+    expected = None
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex14 = let
-  digits = "1234a5"
-  span = +2
-  Test.label.deprecated "Rejects invalid character in digits" <| Test.expect (largestProduct digits span === None)
+largestSeriesProduct.test.ex14 = verify do
+  labeled "Rejects invalid character in digits" do
+    digits = "1234a5"
+    span = +2
+    expected = None
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-largestSeriesProduct.test.ex15 = let
-  digits = "12345"
-  span = -1
-  Test.label.deprecated "Rejects negative span" <| Test.expect (largestProduct digits span === None)
+largestSeriesProduct.test.ex15 = verify do
+  labeled "Rejects negative span" do
+    digits = "12345"
+    span = -1
+    expected = None
+    actual = largestProduct digits span
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> largestSeriesProduct.tests = runAll [
+test> largestSeriesProduct.tests = join [
 	largestSeriesProduct.test.ex1,
 	largestSeriesProduct.test.ex2,
 	largestSeriesProduct.test.ex3,

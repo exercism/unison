@@ -1,46 +1,116 @@
-isogram.test.ex1 = let
-  Test.label.deprecated "Empty string" <| Test.expect (isIsogram "" === true)
+isogram.test.ex1 = verify do
+  labeled "Empty string" do
+    expected = true
+    actual = isIsogram ""
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex2 = let
-  Test.label.deprecated "Isogram with only lower case characters" <| Test.expect (isIsogram "isogram" === true)
+isogram.test.ex2 = verify do
+  labeled "Isogram with only lower case characters" do
+    expected = true
+    actual = isIsogram "isogram"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex3 = let
-  Test.label.deprecated "Word with one duplicated character" <| Test.expect (isIsogram "eleven" === false)
+isogram.test.ex3 = verify do
+  labeled "Word with one duplicated character" do
+    expected = false
+    actual = isIsogram "eleven"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex4 = let
-  Test.label.deprecated "Word with one duplicated character from the end of the alphabet" <| Test.expect (isIsogram "zzyzx" === false)
+isogram.test.ex4 = verify do
+  labeled "Word with one duplicated character from the end of the alphabet" do
+    expected = false
+    actual = isIsogram "zzyzx"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex5 = let
-  Test.label.deprecated "Longest reported english isogram" <| Test.expect (isIsogram "subdermatoglyphic" === true)
+isogram.test.ex5 = verify do
+  labeled "Longest reported english isogram" do
+    expected = true
+    actual = isIsogram "subdermatoglyphic"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex6 = let
-  Test.label.deprecated "Word with duplicated character in mixed case" <| Test.expect (isIsogram "Alphabet" === false)
+isogram.test.ex6 = verify do
+  labeled "Word with duplicated character in mixed case" do
+    expected = false
+    actual = isIsogram "Alphabet"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex7 = let
-  Test.label.deprecated "Word with duplicated character in mixed case, lowercase first" <| Test.expect (isIsogram "alphAbet" === false)
+isogram.test.ex7 = verify do
+  labeled "Word with duplicated character in mixed case, lowercase first" do
+    expected = false
+    actual = isIsogram "alphAbet"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex8 = let
-  Test.label.deprecated "Hypothetical isogrammic word with hyphen" <| Test.expect (isIsogram "thumbscrew-japingly" === true)
+isogram.test.ex8 = verify do
+  labeled "Hypothetical isogrammic word with hyphen" do
+    expected = true
+    actual = isIsogram "thumbscrew-japingly"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex9 = let
-  Test.label.deprecated "Hypothetical word with duplicated character following hyphen" <| Test.expect (isIsogram "thumbscrew-jappingly" === false)
+isogram.test.ex9 = verify do
+  labeled "Hypothetical word with duplicated character following hyphen" do
+    expected = false
+    actual = isIsogram "thumbscrew-jappingly"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex10 = let
-  Test.label.deprecated "Isogram with duplicated hyphen" <| Test.expect (isIsogram "six-year-old" === true)
+isogram.test.ex10 = verify do
+  labeled "Isogram with duplicated hyphen" do
+    expected = true
+    actual = isIsogram "six-year-old"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex11 = let
-  Test.label.deprecated "Made-up name that is an isogram" <| Test.expect (isIsogram "Emily Jung Schwartzkopf" === true)
+isogram.test.ex11 = verify do
+  labeled "Made-up name that is an isogram" do
+    expected = true
+    actual = isIsogram "Emily Jung Schwartzkopf"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex12 = let
-  Test.label.deprecated "Duplicated character in the middle" <| Test.expect (isIsogram "accentor" === false)
+isogram.test.ex12 = verify do
+  labeled "Duplicated character in the middle" do
+    expected = false
+    actual = isIsogram "accentor"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex13 = let
-  Test.label.deprecated "Same first and last characters" <| Test.expect (isIsogram "angola" === false)
+isogram.test.ex13 = verify do
+  labeled "Same first and last characters" do
+    expected = false
+    actual = isIsogram "angola"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-isogram.test.ex14 = let
-  Test.label.deprecated "Word with duplicated character and with two hyphens" <| Test.expect (isIsogram "up-to-date" === false)
+isogram.test.ex14 = verify do
+  labeled "Word with duplicated character and with two hyphens" do
+    expected = false
+    actual = isIsogram "up-to-date"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> isogram.tests = runAll [
+test> isogram.tests = join [
   isogram.test.ex1,
   isogram.test.ex2,
   isogram.test.ex3,

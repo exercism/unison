@@ -1,92 +1,180 @@
-luhn.isValid.tests.ex1 =
-  expect (false == luhn.isValid "1")
-    |> Test.label.deprecated "single digit strings can not be valid"
+luhn.isValid.tests.ex1 = verify do
+  labeled "single digit strings can not be valid" do
+    expected = false
+    actual = luhn.isValid "1"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex2 =
-  expect (false == luhn.isValid "0")
-    |> Test.label.deprecated "a single zero is invalid"
+luhn.isValid.tests.ex2 = verify do
+  labeled "a single zero is invalid" do
+    expected = false
+    actual = luhn.isValid "0"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex3 =
-  expect (true == luhn.isValid "059")
-    |> Test.label.deprecated "a simple valid SIN that remains valid if reversed"
+luhn.isValid.tests.ex3 = verify do
+  labeled "a simple valid SIN that remains valid if reversed" do
+    expected = true
+    actual = luhn.isValid "059"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex4 =
-  expect (true == luhn.isValid "59")
-    |> Test.label.deprecated "a simple valid SIN that becomes invalid if reversed"
+luhn.isValid.tests.ex4 = verify do
+  labeled "a simple valid SIN that becomes invalid if reversed" do
+    expected = true
+    actual = luhn.isValid "59"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex5 =
-  expect (true == luhn.isValid "055 444 285")
-    |> Test.label.deprecated "a valid Canadian SIN"
+luhn.isValid.tests.ex5 = verify do
+  labeled "a valid Canadian SIN" do
+    expected = true
+    actual = luhn.isValid "055 444 285"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex6 =
-  expect (false == luhn.isValid "055 444 286")
-    |> Test.label.deprecated "invalid Canadian SIN"
+luhn.isValid.tests.ex6 = verify do
+  labeled "invalid Canadian SIN" do
+    expected = false
+    actual = luhn.isValid "055 444 286"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex7 =
-  expect (false == luhn.isValid "8273 1232 7352 0569")
-    |> Test.label.deprecated "invalid credit card"
+luhn.isValid.tests.ex7 = verify do
+  labeled "invalid credit card" do
+    expected = false
+    actual = luhn.isValid "8273 1232 7352 0569"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex8 =
-  expect (false == luhn.isValid "1 2345 6789 1234 5678 9012")
-    |> Test.label.deprecated "invalid long number with an even remainder"
+luhn.isValid.tests.ex8 = verify do
+  labeled "invalid long number with an even remainder" do
+    expected = false
+    actual = luhn.isValid "1 2345 6789 1234 5678 9012"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex9 =
-  expect (false == luhn.isValid "1 2345 6789 1234 5678 9013")
-    |> Test.label.deprecated "invalid long number with a remainder divisible by 5"
+luhn.isValid.tests.ex9 = verify do
+  labeled "invalid long number with a remainder divisible by 5" do
+    expected = false
+    actual = luhn.isValid "1 2345 6789 1234 5678 9013"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex10 =
-  expect (true == luhn.isValid "095 245 88")
-    |> Test.label.deprecated "valid number with an even number of digits"
+luhn.isValid.tests.ex10 = verify do
+  labeled "valid number with an even number of digits" do
+    expected = true
+    actual = luhn.isValid "095 245 88"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex11 =
-  expect (true == luhn.isValid "234 567 891 234")
-    |> Test.label.deprecated "valid number with an odd number of spaces"
+luhn.isValid.tests.ex11 = verify do
+  labeled "valid number with an odd number of spaces" do
+    expected = true
+    actual = luhn.isValid "234 567 891 234"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex12 =
-  expect (false == luhn.isValid "059a")
-    |> Test.label.deprecated "valid strings with a non-digit added at the end become invalid"
+luhn.isValid.tests.ex12 = verify do
+  labeled "valid strings with a non-digit added at the end become invalid" do
+    expected = false
+    actual = luhn.isValid "059a"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex13 =
-  expect (false == luhn.isValid "055-444-285")
-    |> Test.label.deprecated "valid strings with punctuation included become invalid"
+luhn.isValid.tests.ex13 = verify do
+  labeled "valid strings with punctuation included become invalid" do
+    expected = false
+    actual = luhn.isValid "055-444-285"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex14 =
-  expect (false == luhn.isValid "055# 444$ 285")
-    |> Test.label.deprecated "valid strings with symbols included become invalid"
+luhn.isValid.tests.ex14 = verify do
+  labeled "valid strings with symbols included become invalid" do
+    expected = false
+    actual = luhn.isValid "055# 444$ 285"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex15 =
-  expect (false == luhn.isValid " 0")
-    |> Test.label.deprecated "single zero with space is invalid"
+luhn.isValid.tests.ex15 = verify do
+  labeled "single zero with space is invalid" do
+    expected = false
+    actual = luhn.isValid " 0"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex16 =
-  expect (true == luhn.isValid "0000 0")
-    |> Test.label.deprecated "more than a single zero is valid"
+luhn.isValid.tests.ex16 = verify do
+  labeled "more than a single zero is valid" do
+    expected = true
+    actual = luhn.isValid "0000 0"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex17 =
-  expect (true == luhn.isValid "091")
-    |> Test.label.deprecated "input digit 9 is correctly converted to output digit 9"
+luhn.isValid.tests.ex17 = verify do
+  labeled "input digit 9 is correctly converted to output digit 9" do
+    expected = true
+    actual = luhn.isValid "091"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex18 =
-  expect (true == luhn.isValid "9999999999 9999999999 9999999999 9999999999")
-    |> Test.label.deprecated "very long input is valid"
+luhn.isValid.tests.ex18 = verify do
+  labeled "very long input is valid" do
+    expected = true
+    actual = luhn.isValid "9999999999 9999999999 9999999999 9999999999"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex19 =
-  expect (true == luhn.isValid "109")
-    |> Test.label.deprecated "valid luhn with an odd number of digits and non zero first digit"
+luhn.isValid.tests.ex19 = verify do
+  labeled "valid luhn with an odd number of digits and non zero first digit" do
+    expected = true
+    actual = luhn.isValid "109"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex20 =
-  expect (false == luhn.isValid "055b 444 285")
-    |> Test.label.deprecated "using ascii value for non-doubled non-digit isn't allowed"
+luhn.isValid.tests.ex20 = verify do
+  labeled "using ascii value for non-doubled non-digit isn't allowed" do
+    expected = false
+    actual = luhn.isValid "055b 444 285"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex21 =
-  expect (false == luhn.isValid ":9")
-    |> Test.label.deprecated "using ascii value for doubled non-digit isn't allowed"
+luhn.isValid.tests.ex21 = verify do
+  labeled "using ascii value for doubled non-digit isn't allowed" do
+    expected = false
+    actual = luhn.isValid ":9"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-luhn.isValid.tests.ex22 =
-  expect (false == luhn.isValid "59%59")
-    |> Test.label.deprecated "non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed"
+luhn.isValid.tests.ex22 = verify do
+  labeled "non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed" do
+    expected = false
+    actual = luhn.isValid "59%59"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> luhn.tests = runAll [
+test> luhn.tests = join [
   luhn.isValid.tests.ex1,
   luhn.isValid.tests.ex2,
   luhn.isValid.tests.ex3,
