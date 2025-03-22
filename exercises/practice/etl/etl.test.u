@@ -76,7 +76,7 @@ etl.test.ex4 = verify do
     actual = transform lettersByScore
     label "expected" (expected |> Map.toList)
     label "actual" (actual |> Map.toList)
-    ensureEqual expected actual
+    ensure (expected == actual)
 
 test> etl.tests = join [
   etl.test.ex1,
