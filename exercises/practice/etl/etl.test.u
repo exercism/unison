@@ -37,6 +37,8 @@ etl.test.ex3 = verify do
     ensureEqual expected actual
 
 etl.test.ex4 = verify do
+  use Map ==
+
   labeled "multiple scores with differing numbers of letters" do
     expected =
       [ (?a, 1),
@@ -74,9 +76,13 @@ etl.test.ex4 = verify do
         (8, [?J, ?X]),
         (10, [?Q, ?Z]) ] |> Map.fromList
     actual = transform lettersByScore
-    label "expected" (expected |> Map.toList)
-    label "actual" (actual |> Map.toList)
-    ensure (expected == actual)
+    ensuringWith
+      "Mappings are not equal"
+      (
+        ("expected:", expected |> Map.toList),
+        ("actual:", actual |> Map.toList)
+      )
+      (_ -> expected == actual)
 
 test> etl.tests = join [
   etl.test.ex1,
