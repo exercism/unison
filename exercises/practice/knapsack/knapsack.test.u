@@ -1,25 +1,60 @@
-knapsack.test.ex1 = let
-	Test.label.deprecated "No items" <| Test.expect (maximumValue 100 [] === 0)
+knapsack.test.ex1 = verify do
+  labeled "No items" do
+    expected = 0
+    actual = maximumValue 100 []
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-knapsack.test.ex2 = let
-	Test.label.deprecated "One item - too heavy" <| Test.expect (maximumValue 10 [(100, 1)] === 0)
+knapsack.test.ex2 = verify do
+  labeled "One item - too heavy" do
+    expected = 0
+    actual = maximumValue 10 [(100, 1)]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-knapsack.test.ex3 = let
-	Test.label.deprecated "Five items - cannot be greedy by weight" <| Test.expect (maximumValue 10 [(2, 5), (2, 5), (2, 5), (2, 5), (10, 21)] === 21)
+knapsack.test.ex3 = verify do
+  labeled "Five items - cannot be greedy by weight" do
+    expected = 21
+    actual = maximumValue 10 [(2, 5), (2, 5), (2, 5), (2, 5), (10, 21)]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-knapsack.test.ex4 = let
-	Test.label.deprecated "Five items - cannot be greedy by value" <| Test.expect (maximumValue 10 [(2, 20), (2, 20), (2, 20), (2, 20), (10, 50)] === 80)
+knapsack.test.ex4 = verify do
+  labeled "Five items - cannot be greedy by value" do
+    expected = 80
+    actual = maximumValue 10 [(2, 20), (2, 20), (2, 20), (2, 20), (10, 50)]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-knapsack.test.ex5 = let
-	Test.label.deprecated "Example knapsack" <| Test.expect (maximumValue 10 [(5, 10), (4, 40), (6, 30), (4, 50)] === 90)
+knapsack.test.ex5 = verify do
+  labeled "Example knapsack" do
+    expected = 90
+    actual = maximumValue 10 [(5, 10), (4, 40), (6, 30), (4, 50)]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-knapsack.test.ex6 = let
-	Test.label.deprecated "Eight items" <| Test.expect (maximumValue 104 [(25, 350), (35, 400), (45, 450), (5, 20), (25, 70), (3, 8), (2, 5), (2, 5)] === 900)
+knapsack.test.ex6 = verify do
+  labeled "Eight items" do
+    expected = 900
+    actual = maximumValue 104 [(25, 350), (35, 400), (45, 450), (5, 20), (25, 70), (3, 8), (2, 5), (2, 5)]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-knapsack.test.ex7 = let
-	Test.label.deprecated "Fifteen items" <| Test.expect (maximumValue 750 [(70, 135), (73, 139), (77, 149), (80, 150), (82, 156), (87, 163), (90, 173), (94, 184), (98, 192), (106, 201), (110, 210), (113, 214), (115, 221), (118, 229), (120, 240)] === 1458)
+knapsack.test.ex7 = verify do
+  labeled "Fifteen items" do
+    expected = 1458
+    actual = maximumValue 750 [(70, 135), (73, 139), (77, 149), (80, 150), (82, 156), (87, 163), (90, 173), (94, 184), (98, 192), (106, 201), (110, 210), (113, 214), (115, 221), (118, 229), (120, 240)]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> knapsack.tests = runAll [
+test> knapsack.tests = join [
 	knapsack.test.ex1,
 	knapsack.test.ex2,
 	knapsack.test.ex3,

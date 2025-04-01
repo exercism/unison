@@ -1,38 +1,38 @@
 [
   {
     "name": "leap should be false when year is not divisible by 4",
-    "test_code": "Test.label.deprecated \"leap should be false when year is not divisible by 4\" (Test.expect ((leap 2015) === false))"
+    "test_code": "verify do\n  labeled \"leap should be false when year is not divisible by 4\" do\n    expected = false\n    actual = leap 2015\n    ensureEqual expected actual"
   },
   {
     "name": "leap should be false when year is divisible by 2 not divisible by 4",
-    "test_code": "Test.label.deprecated \"leap should be false when year is divisible by 2 not divisible by 4\" (Test.expect ((leap 1970) === false))"
+    "test_code": "verify do\n  labeled \"leap should be false when year is divisible by 2 not divisible by 4\" do\n    expected = false\n    actual = leap 1970\n    ensureEqual expected actual"
   },
   {
     "name": "leap should be true when year is divisible by 4",
-    "test_code": "Test.label.deprecated \"leap should be true when year is divisible by 4\" (Test.expect ((leap 1964) === true))"
+    "test_code": "verify do\n  labeled \"leap should be true when year is divisible by 4\" do\n    expected = true\n    actual = leap 1964\n    ensureEqual expected actual"
   },
   {
     "name": "leap should be true when year divisible by 4, not divisible by 100",
-    "test_code": "Test.label.deprecated \"leap should be true when year divisible by 4, not divisible by 100\" (Test.expect ((leap 1996)=== true))"
+    "test_code": "verify do\n  labeled \"leap should be true when year divisible by 4, not divisible by 100\" do\n    expected = true\n    actual = leap 1996\n    ensureEqual expected actual"
   },
   {
     "name": "leap should be true when year divisible by 4 and 5",
-    "test_code": "Test.label.deprecated \"leap should be true when year divisible by 4 and 5\" (Test.expect ((leap 1960)=== true))"
+    "test_code": "verify do\n  labeled \"leap should be true when year divisible by 4 and 5\" do\n    expected = true\n    actual = leap 1960\n    ensureEqual expected actual"
   },
   {
     "name": "leap should be false when year divisible by 100, not divisible by 400",
-    "test_code": "Test.label.deprecated \"leap should be false when year divisible by 100, not divisible by 400\" (Test.expect ((leap 2100)=== false))"
+    "test_code": "verify do\n  labeled \"leap should be false when year divisible by 100, not divisible by 400\" do\n    expected = false\n    actual = leap 2100\n    ensureEqual expected actual"
   },
   {
     "name": "leap should be true when year divisible by 400 and 100",
-    "test_code": "Test.label.deprecated \"leap should be true when year divisible by 400 and 100\" (Test.expect ((leap 2000) === true))"
+    "test_code": "verify do\n  labeled \"leap should be true when year divisible by 400 and 100\" do\n    expected = true\n    actual = leap 2000\n    ensureEqual expected actual"
   },
   {
     "name": "leap should be false when year divisible by 4 and 100",
-    "test_code": "Test.label.deprecated \"leap should be false when year divisible by 4 and 100\" (Test.expect ((leap 1900) === false))"
+    "test_code": "verify do\n  labeled \"leap should be false when year divisible by 4 and 100\" do\n    expected = false\n    actual = leap 1900\n    ensureEqual expected actual"
   },
   {
     "name": "leap should be false when year divisible by 200, not divisble by 400",
-    "test_code": "Test.label.deprecated \"leap should be false when year divisible by 200, not divisble by 400\" (Test.expect ((leap 1800) === false))"
+    "test_code": "verify do\n  labeled \"leap should be false when year divisible by 200, not divisble by 400\" do\n    expected = false\n    actual = leap 1800\n    ensureEqual expected actual"
   }
 ]

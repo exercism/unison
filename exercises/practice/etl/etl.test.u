@@ -1,68 +1,90 @@
-etl.test.ex1 = let  
-  lettersByScore = [(1, [?A])] |> Map.fromList
-  expected = [(?a, 1)] |> Map.fromList
-  Test.label.deprecated "Single letter" <| Test.expect (transform lettersByScore === expected)
+etl.test.ex1 = verify do
+  labeled "single letter" do
+    expected = [(?a, 1)] |> Map.fromList
+    lettersByScore = [(1, [?A])] |> Map.fromList
+    actual = transform lettersByScore
+    label "expected" (expected |> Map.toList)
+    label "actual" (actual |> Map.toList)
+    ensureEqual expected actual
 
-etl.test.ex2 = let
-  lettersByScore = [(1, [?A, ?E, ?I, ?O, ?U])] |> Map.fromList
-  expected = 
-    [ (?a, 1),
-      (?e, 1),
-      (?i, 1),
-      (?o, 1),
-      (?u, 1) ] |> Map.fromList
-  Test.label.deprecated "Single score with multiple letters" <| Test.expect (transform lettersByScore === expected)
+etl.test.ex2 = verify do
+  labeled "single score with multiple letters" do
+    expected =
+      [ (?a, 1),
+        (?e, 1),
+        (?i, 1),
+        (?o, 1),
+        (?u, 1) ] |> Map.fromList
+    lettersByScore = [(1, [?A, ?E, ?I, ?O, ?U])] |> Map.fromList
+    actual = transform lettersByScore
+    label "expected" (expected |> Map.toList)
+    label "actual" (actual |> Map.toList)
+    ensureEqual expected actual
 
-etl.test.ex3 = let  
-  lettersByScore = 
-    [ (1, [?A, ?E]),
-      (2, [?D, ?G]) ] |> Map.fromList
-  expected = 
-    [ (?a, 1),
-      (?d, 2),
-      (?e, 1),
-      (?g, 2) ] |> Map.fromList
-  Test.label.deprecated "Multiple scores with multiple letters" <| Test.expect (transform lettersByScore === expected)
+etl.test.ex3 = verify do
+  labeled "multiple scores with multiple letters" do
+    expected =
+      [ (?a, 1),
+        (?d, 2),
+        (?e, 1),
+        (?g, 2) ] |> Map.fromList
+    lettersByScore =
+      [ (1, [?A, ?E]),
+        (2, [?D, ?G]) ] |> Map.fromList
+    actual = transform lettersByScore
+    label "expected" (expected |> Map.toList)
+    label "actual" (actual |> Map.toList)
+    ensureEqual expected actual
 
-etl.test.ex4 = let
-  lettersByScore = 
-    [ (1, [?A, ?E, ?I, ?O, ?U, ?L, ?N, ?R, ?S, ?T]),
-      (2, [?D, ?G]),
-      (3, [?B, ?C, ?M, ?P]),
-      (4, [?F, ?H, ?V, ?W, ?Y]),
-      (5, [?K]),
-      (8, [?J, ?X]),
-      (10, [?Q, ?Z]) ] |> Map.fromList
-  expected = 
-    [ (?a, 1),
-      (?b, 3),
-      (?c, 3),
-      (?d, 2),
-      (?e, 1),
-      (?f, 4),
-      (?g, 2),
-      (?h, 4),
-      (?i, 1),
-      (?j, 8),
-      (?k, 5),
-      (?l, 1),
-      (?m, 3),
-      (?n, 1),
-      (?o, 1),
-      (?p, 3),
-      (?q, 10),
-      (?r, 1),
-      (?s, 1),
-      (?t, 1),
-      (?u, 1),
-      (?v, 4),
-      (?w, 4),
-      (?x, 8),
-      (?y, 4),
-      (?z, 10) ] |> Map.fromList
-  Test.label.deprecated "Multiple scores with differing numbers of letters" <| Test.expect (transform lettersByScore == expected)
+etl.test.ex4 = verify do
+  use Map ==
 
-test> etl.tests = runAll [
+  labeled "multiple scores with differing numbers of letters" do
+    expected =
+      [ (?a, 1),
+        (?b, 3),
+        (?c, 3),
+        (?d, 2),
+        (?e, 1),
+        (?f, 4),
+        (?g, 2),
+        (?h, 4),
+        (?i, 1),
+        (?j, 8),
+        (?k, 5),
+        (?l, 1),
+        (?m, 3),
+        (?n, 1),
+        (?o, 1),
+        (?p, 3),
+        (?q, 10),
+        (?r, 1),
+        (?s, 1),
+        (?t, 1),
+        (?u, 1),
+        (?v, 4),
+        (?w, 4),
+        (?x, 8),
+        (?y, 4),
+        (?z, 10) ] |> Map.fromList
+    lettersByScore =
+      [ (1, [?A, ?E, ?I, ?O, ?U, ?L, ?N, ?R, ?S, ?T]),
+        (2, [?D, ?G]),
+        (3, [?B, ?C, ?M, ?P]),
+        (4, [?F, ?H, ?V, ?W, ?Y]),
+        (5, [?K]),
+        (8, [?J, ?X]),
+        (10, [?Q, ?Z]) ] |> Map.fromList
+    actual = transform lettersByScore
+    ensuringWith
+      "Mappings are not equal"
+      (
+        ("expected:", expected |> Map.toList),
+        ("actual:", actual |> Map.toList)
+      )
+      (_ -> expected == actual)
+
+test> etl.tests = join [
   etl.test.ex1,
   etl.test.ex2,
   etl.test.ex3,

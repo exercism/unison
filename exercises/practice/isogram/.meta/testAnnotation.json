@@ -1,58 +1,58 @@
 [
   {
     "name": "Empty string",
-    "test_code": "let\n  Test.label.deprecated \"Empty string\" <| Test.expect (isIsogram \"\" === true)"
+    "test_code": "verify do\n  labeled \"Empty string\" do\n    expected = true\n    actual = isIsogram \"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Isogram with only lower case characters",
-    "test_code": "let\n  Test.label.deprecated \"Isogram with only lower case characters\" <| Test.expect (isIsogram \"isogram\" === true)"
+    "test_code": "verify do\n  labeled \"Isogram with only lower case characters\" do\n    expected = true\n    actual = isIsogram \"isogram\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Word with one duplicated character",
-    "test_code": "let\n  Test.label.deprecated \"Word with one duplicated character\" <| Test.expect (isIsogram \"eleven\" === false)"
+    "test_code": "verify do\n  labeled \"Word with one duplicated character\" do\n    expected = false\n    actual = isIsogram \"eleven\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Word with one duplicated character from the end of the alphabet",
-    "test_code": "let\n  Test.label.deprecated \"Word with one duplicated character from the end of the alphabet\" <| Test.expect (isIsogram \"zzyzx\" === false)"
+    "test_code": "verify do\n  labeled \"Word with one duplicated character from the end of the alphabet\" do\n    expected = false\n    actual = isIsogram \"zzyzx\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Longest reported english isogram",
-    "test_code": "let\n  Test.label.deprecated \"Longest reported english isogram\" <| Test.expect (isIsogram \"subdermatoglyphic\" === true)"
+    "test_code": "verify do\n  labeled \"Longest reported english isogram\" do\n    expected = true\n    actual = isIsogram \"subdermatoglyphic\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Word with duplicated character in mixed case",
-    "test_code": "let\n  Test.label.deprecated \"Word with duplicated character in mixed case\" <| Test.expect (isIsogram \"Alphabet\" === false)"
+    "test_code": "verify do\n  labeled \"Word with duplicated character in mixed case\" do\n    expected = false\n    actual = isIsogram \"Alphabet\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Word with duplicated character in mixed case, lowercase first",
-    "test_code": "let\n  Test.label.deprecated \"Word with duplicated character in mixed case, lowercase first\" <| Test.expect (isIsogram \"alphAbet\" === false)"
+    "test_code": "verify do\n  labeled \"Word with duplicated character in mixed case, lowercase first\" do\n    expected = false\n    actual = isIsogram \"alphAbet\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Hypothetical isogrammic word with hyphen",
-    "test_code": "let\n  Test.label.deprecated \"Hypothetical isogrammic word with hyphen\" <| Test.expect (isIsogram \"thumbscrew-japingly\" === true)"
+    "test_code": "verify do\n  labeled \"Hypothetical isogrammic word with hyphen\" do\n    expected = true\n    actual = isIsogram \"thumbscrew-japingly\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Hypothetical word with duplicated character following hyphen",
-    "test_code": "let\n  Test.label.deprecated \"Hypothetical word with duplicated character following hyphen\" <| Test.expect (isIsogram \"thumbscrew-jappingly\" === false)"
+    "test_code": "verify do\n  labeled \"Hypothetical word with duplicated character following hyphen\" do\n    expected = false\n    actual = isIsogram \"thumbscrew-jappingly\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Isogram with duplicated hyphen",
-    "test_code": "let\n  Test.label.deprecated \"Isogram with duplicated hyphen\" <| Test.expect (isIsogram \"six-year-old\" === true)"
+    "test_code": "verify do\n  labeled \"Isogram with duplicated hyphen\" do\n    expected = true\n    actual = isIsogram \"six-year-old\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Made-up name that is an isogram",
-    "test_code": "let\n  Test.label.deprecated \"Made-up name that is an isogram\" <| Test.expect (isIsogram \"Emily Jung Schwartzkopf\" === true)"
+    "test_code": "verify do\n  labeled \"Made-up name that is an isogram\" do\n    expected = true\n    actual = isIsogram \"Emily Jung Schwartzkopf\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Duplicated character in the middle",
-    "test_code": "let\n  Test.label.deprecated \"Duplicated character in the middle\" <| Test.expect (isIsogram \"accentor\" === false)"
+    "test_code": "verify do\n  labeled \"Duplicated character in the middle\" do\n    expected = false\n    actual = isIsogram \"accentor\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Same first and last characters",
-    "test_code": "let\n  Test.label.deprecated \"Same first and last characters\" <| Test.expect (isIsogram \"angola\" === false)"
+    "test_code": "verify do\n  labeled \"Same first and last characters\" do\n    expected = false\n    actual = isIsogram \"angola\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Word with duplicated character and with two hyphens",
-    "test_code": "let\n  Test.label.deprecated \"Word with duplicated character and with two hyphens\" <| Test.expect (isIsogram \"up-to-date\" === false)"
+    "test_code": "verify do\n  labeled \"Word with duplicated character and with two hyphens\" do\n    expected = false\n    actual = isIsogram \"up-to-date\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

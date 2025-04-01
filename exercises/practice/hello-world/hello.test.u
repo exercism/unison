@@ -1,6 +1,9 @@
-use Universal
+hello.test = verify do
+  labeled "should return 'Hello, World!'" do
+    expected = "Hello, World!"
+    actual = hello
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-hello.test =
-  expected = "Hello, World!"
-  Test.expect (hello === expected)
-test> hello.tests = runAll [hello.test]
+test> hello.tests = hello.test

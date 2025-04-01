@@ -1,62 +1,62 @@
 [
   {
     "name": "Finds the largest product if span equals length",
-    "test_code": "let\n  digits = \"29\"\n  span = +2\n  Test.label.deprecated \"Finds the largest product if span equals length\" <| Test.expect (largestProduct digits span === Some 18)"
+    "test_code": "verify do\n  labeled \"Finds the largest product if span equals length\" do\n    digits = \"29\"\n    span = +2\n    expected = Some 18\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Can find the largest product of 2 with numbers in order",
-    "test_code": "let\n  digits = \"0123456789\"\n  span = +2\n  Test.label.deprecated \"Can find the largest product of 2 with numbers in order\" <| Test.expect (largestProduct digits span === Some 72)"
+    "test_code": "verify do\n  labeled \"Can find the largest product of 2 with numbers in order\" do\n    digits = \"0123456789\"\n    span = +2\n    expected = Some 72\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Can find the largest product of 2",
-    "test_code": "let\n  digits = \"576802143\"\n  span = +2\n  Test.label.deprecated \"Can find the largest product of 2\" <| Test.expect (largestProduct digits span === Some 48)"
+    "test_code": "verify do\n  labeled \"Can find the largest product of 2\" do\n    digits = \"576802143\"\n    span = +2\n    expected = Some 48\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Can find the largest product of 3 with numbers in order",
-    "test_code": "let\n  digits = \"0123456789\"\n  span = +3\n  Test.label.deprecated \"Can find the largest product of 3 with numbers in order\" <| Test.expect (largestProduct digits span === Some 504)"
+    "test_code": "verify do\n  labeled \"Can find the largest product of 3 with numbers in order\" do\n    digits = \"0123456789\"\n    span = +3\n    expected = Some 504\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Can find the largest product of 3",
-    "test_code": "let\n  digits = \"1027839564\"\n  span = +3\n  Test.label.deprecated \"Can find the largest product of 3\" <| Test.expect (largestProduct digits span === Some 270)"
+    "test_code": "verify do\n  labeled \"Can find the largest product of 3\" do\n    digits = \"1027839564\"\n    span = +3\n    expected = Some 270\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Can find the largest product of 5 with numbers in order",
-    "test_code": "let\n  digits = \"0123456789\"\n  span = +5\n  Test.label.deprecated \"Can find the largest product of 5 with numbers in order\" <| Test.expect (largestProduct digits span === Some 15120)"
+    "test_code": "verify do\n  labeled \"Can find the largest product of 5 with numbers in order\" do\n    digits = \"0123456789\"\n    span = +5\n    expected = Some 15120\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Can get the largest product of a big number",
-    "test_code": "let\n  digits = \"73167176531330624919225119674426574742355349194934\"\n  span = +6\n  Test.label.deprecated \"Can get the largest product of a big number\" <| Test.expect (largestProduct digits span === Some 23520)"
+    "test_code": "verify do\n  labeled \"Can get the largest product of a big number\" do\n    digits = \"73167176531330624919225119674426574742355349194934\"\n    span = +6\n    expected = Some 23520\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Reports zero if the only digits are zero",
-    "test_code": "let\n  digits = \"0000\"\n  span = +2\n  Test.label.deprecated \"Reports zero if the only digits are zero\" <| Test.expect (largestProduct digits span === Some 0)"
+    "test_code": "verify do\n  labeled \"Reports zero if the only digits are zero\" do\n    digits = \"0000\"\n    span = +2\n    expected = Some 0\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Reports zero if all spans include zero",
-    "test_code": "let\n  digits = \"99099\"\n  span = +3\n  Test.label.deprecated \"Reports zero if all spans include zero\" <| Test.expect (largestProduct digits span === Some 0)"
+    "test_code": "verify do\n  labeled \"Reports zero if all spans include zero\" do\n    digits = \"99099\"\n    span = +3\n    expected = Some 0\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Rejects span longer than string length",
-    "test_code": "let\n  digits = \"123\"\n  span = +4\n  Test.label.deprecated \"Rejects span longer than string length\" <| Test.expect (largestProduct digits span === None)"
+    "test_code": "verify do\n  labeled \"Rejects span longer than string length\" do\n    digits = \"123\"\n    span = +4\n    expected = None\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Reports 1 for empty string and empty product (0 span)",
-    "test_code": "let\n  digits = \"\"\n  span = +0\n  Test.label.deprecated \"Reports 1 for empty string and empty product (0 span)\" <| Test.expect (largestProduct digits span === Some 1)"
+    "test_code": "verify do\n  labeled \"Reports 1 for empty string and empty product (0 span)\" do\n    digits = \"\"\n    span = +0\n    expected = Some 1\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Reports 1 for nonempty string and empty product (0 span)",
-    "test_code": "let\n  digits = \"123\"\n  span = +0\n  Test.label.deprecated \"Reports 1 for nonempty string and empty product (0 span)\" <| Test.expect (largestProduct digits span === Some 1)"
+    "test_code": "verify do\n  labeled \"Reports 1 for nonempty string and empty product (0 span)\" do\n    digits = \"123\"\n    span = +0\n    expected = Some 1\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Rejects empty string and nonzero span",
-    "test_code": "let\n  digits = \"\"\n  span = +1\n  Test.label.deprecated \"Rejects empty string and nonzero span\" <| Test.expect (largestProduct digits span === None)"
+    "test_code": "verify do\n  labeled \"Rejects empty string and nonzero span\" do\n    digits = \"\"\n    span = +1\n    expected = None\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Rejects invalid character in digits",
-    "test_code": "let\n  digits = \"1234a5\"\n  span = +2\n  Test.label.deprecated \"Rejects invalid character in digits\" <| Test.expect (largestProduct digits span === None)"
+    "test_code": "verify do\n  labeled \"Rejects invalid character in digits\" do\n    digits = \"1234a5\"\n    span = +2\n    expected = None\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Rejects negative span",
-    "test_code": "let\n  digits = \"12345\"\n  span = -1\n  Test.label.deprecated \"Rejects negative span\" <| Test.expect (largestProduct digits span === None)"
+    "test_code": "verify do\n  labeled \"Rejects negative span\" do\n    digits = \"12345\"\n    span = -1\n    expected = None\n    actual = largestProduct digits span\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]
