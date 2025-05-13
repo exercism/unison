@@ -205,7 +205,8 @@
         "uuid": "d83fd7ee-2eff-41d5-8a7c-e3893a969150",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4
+        "difficulty": 4,
+        "status": "deprecated"
       },
       {
         "slug": "sieve",
