@@ -1,50 +1,50 @@
 [
   {
     "name": "run should not change tree",
-    "test_code": "let\n  testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch 3 None None))\n  Test.label.deprecated \"run should not change tree\" <| Test.expect ( Zipper.runWithTree testTree '(id) |> at2 === testTree)"
+    "test_code": "verify do\n  labeled \"run should not change tree\" do\n    testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch 3 None None))\n    treeAfterRun = Zipper.runWithTree testTree '(id) |> at2\n    ensureEqual treeAfterRun testTree"
   },
   {
     "name": "can focus left",
-    "test_code": "let\n  value = 2\n  testTree = Branch 1 (Some (Branch value None None)) (Some (Branch 3 None None))\n  nav _ =\n    Zipper.left\n    Zipper.focus\n  Test.label.deprecated \"can focus left\" <| Test.expect ( Zipper.run testTree nav  === value)"
+    "test_code": "verify do\n  labeled \"can focus left\" do\n    expected = 2\n    testTree = Branch 1 (Some (Branch expected None None)) (Some (Branch 3 None None))\n    nav _ =\n     Zipper.left\n     Zipper.focus\n    actual = Zipper.run testTree nav\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can focus right",
-    "test_code": "let\n  value = 3\n  testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch value None None))\n  nav _ =\n    Zipper.right\n    Zipper.focus\n  Test.label.deprecated \"can focus right\" <| Test.expect ( Zipper.run testTree nav  === value)"
+    "test_code": "verify do\n  labeled \"can focus right\" do\n    expected = 3\n    testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch expected None None))\n    nav _ =\n      Zipper.right\n      Zipper.focus\n    actual = Zipper.run testTree nav\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can move twice right",
-    "test_code": "let\n  value = 4\n  testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch 3 None  (Some (Branch value None None))))\n  nav _ =\n    Zipper.right\n    Zipper.right\n    Zipper.focus\n  Test.label.deprecated \"can move twice right\" <| Test.expect ( Zipper.run testTree nav === value)"
+    "test_code": "verify do\n  labeled \"can move twice right\" do\n    expected = 4\n    testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch 3 None  (Some (Branch expected None None))))\n    nav _ =\n      Zipper.right\n      Zipper.right\n      Zipper.focus\n    actual = Zipper.run testTree nav\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can move twice left",
-    "test_code": "let\n  value = 4\n  testTree = Branch 1 (Some (Branch 3 (Some (Branch value None None)) None )) (Some (Branch 2 None None))\n  nav _ =\n    Zipper.left\n    Zipper.left\n    Zipper.focus\n  Test.label.deprecated \"can move twice left\" <| Test.expect ( Zipper.run testTree nav  === value)"
+    "test_code": "verify do\n  labeled \"can move twice left\" do\n    expected = 4\n    testTree = Branch 1 (Some (Branch 3 (Some (Branch expected None None)) None )) (Some (Branch 2 None None))\n    nav _ =\n      Zipper.left\n      Zipper.left\n      Zipper.focus\n    actual = Zipper.run testTree nav\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can move left and right",
-    "test_code": "let\n  value = 4\n  testTree = Branch 1 (Some (Branch 3 None (Some (Branch value None None)))) (Some (Branch 2 None None))\n  nav _ =\n    Zipper.left\n    Zipper.right\n    Zipper.focus\n  Test.label.deprecated \"can move left and right\" <| Test.expect ( Zipper.run testTree nav  === value)"
+    "test_code": "verify do\n  labeled \"can move left and right\" do\n    expected = 4\n    testTree = Branch 1 (Some (Branch 3 None (Some (Branch expected None None)))) (Some (Branch 2 None None))\n    nav _ =\n      Zipper.left\n      Zipper.right\n      Zipper.focus\n    actual = Zipper.run testTree nav\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can move left, set value, and up",
-    "test_code": "let\n  value = 1\n  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\n  newLeft = 200\n  expectedTree = Branch value (Some (Branch newLeft None None)) (Some (Branch 3 None None))\n  nav _ =\n    Zipper.left\n    Zipper.setValue newLeft\n    Zipper.up\n    Zipper.focus\n  Test.label.deprecated \"can move left, set value, and up\" <| Test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))"
+    "test_code": "verify do\n  labeled \"can move left, set value, and up\" do\n    expectedValue = 1\n    testTree = Branch expectedValue (Some (Branch 2 None None)) (Some (Branch 3 None None))\n    newLeft = 200\n    expectedTree = Branch expectedValue (Some (Branch newLeft None None)) (Some (Branch 3 None None))\n    nav _ =\n      Zipper.left\n      Zipper.setValue newLeft\n      Zipper.up\n      Zipper.focus\n    actual = Zipper.runWithTree testTree nav\n    ensureEqual (expectedValue, expectedTree) actual"
   },
   {
     "name": "can move right, set value, and up",
-    "test_code": "let\n  value = 1\n  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\n  newRight = 300\n  expectedTree = Branch value (Some (Branch 2 None None)) (Some (Branch newRight None None))\n  nav _ =\n    Zipper.right\n    Zipper.setValue newRight\n    Zipper.up\n    Zipper.focus\n  Test.label.deprecated \"can move right, set value, and up\" <| Test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))"
+    "test_code": "verify do\n  labeled \"can move right, set value, and up\" do\n    expectedValue = 1\n    testTree = Branch expectedValue (Some (Branch 2 None None)) (Some (Branch 3 None None))\n    newRight = 300\n    expectedTree = Branch expectedValue (Some (Branch 2 None None)) (Some (Branch newRight None None))\n    nav _ =\n      Zipper.right\n      Zipper.setValue newRight\n      Zipper.up\n      Zipper.focus\n    actual = Zipper.runWithTree testTree nav\n    ensureEqual (expectedValue, expectedTree) actual"
   },
   {
     "name": "can move left, set left tree, and up",
-    "test_code": "let\n  value = 1\n  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\n  newLeft = 200\n  expectedTree = Branch value (Some (Branch 2 (Some testTree) None)) (Some (Branch 3 None None))\n  nav _ =\n    Zipper.left\n    Zipper.setLeft testTree\n    Zipper.up\n    Zipper.focus\n  Test.label.deprecated \"can move left, set left tree, and up\" <| Test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))"
+    "test_code": "verify do\n  labeled \"can move left, set left tree, and up\" do\n    expectedValue = 1\n    testTree = Branch expectedValue (Some (Branch 2 None None)) (Some (Branch 3 None None))\n    newLeft = 200\n    expectedTree = Branch expectedValue (Some (Branch 2 (Some testTree) None)) (Some (Branch 3 None None))\n    nav _ =\n      Zipper.left\n      Zipper.setLeft testTree\n      Zipper.up\n      Zipper.focus\n    actual = Zipper.runWithTree testTree nav\n    ensureEqual (expectedValue, expectedTree) actual"
   },
   {
     "name": "can move right, set right tree, and up",
-    "test_code": "let\n  value = 1\n  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\n  newRight = 300\n  expectedTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None (Some testTree)))\n  nav _ =\n    Zipper.right\n    Zipper.setRight testTree\n    Zipper.up\n    Zipper.focus\n  Test.label.deprecated \"can move right, set right tree, and up\" <| Test.expect ( Zipper.runWithTree testTree nav === (value, expectedTree))"
+    "test_code": "verify do\n  labeled \"can move right, set right tree, and up\" do\n    expectedValue = 1\n    testTree = Branch expectedValue (Some (Branch 2 None None)) (Some (Branch 3 None None))\n    newRight = 300\n    expectedTree = Branch expectedValue (Some (Branch 2 None None)) (Some (Branch 3 None (Some testTree)))\n    nav _ =\n      Zipper.right\n      Zipper.setRight testTree\n      Zipper.up\n      Zipper.focus\n    actual = Zipper.runWithTree testTree nav\n    ensureEqual (expectedValue, expectedTree) actual"
   },
   {
     "name": "returns self when no more rights",
-    "test_code": "let\n  value = 3\n  testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch value None None))\n  nav _ =\n    Zipper.right\n    Zipper.right\n    Zipper.right\n    Zipper.focus\n  Test.label.deprecated \"returns self when no more rights\" <| Test.expect ( Zipper.run testTree nav === value)"
+    "test_code": "verify do\n  labeled \"returns self when no more rights\" do\n    expected = 3\n    testTree = Branch 1 (Some (Branch 2 None None)) (Some (Branch expected None None))\n    nav _ =\n      Zipper.right\n      Zipper.right\n      Zipper.right\n      Zipper.focus\n    actual = Zipper.run testTree nav\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "returns self when no more parents",
-    "test_code": "let\n  value = 1\n  testTree = Branch value (Some (Branch 2 None None)) (Some (Branch 3 None None))\n  nav _ =\n    Zipper.right\n    Zipper.up\n    Zipper.up\n    Zipper.focus\n  Test.label.deprecated \"returns self when no more parents\" <| Test.expect ( Zipper.run testTree nav === value)"
+    "test_code": "verify do\n  labeled \"returns self when no more parents\" do\n    expected = 1\n    testTree = Branch expected (Some (Branch 2 None None)) (Some (Branch 3 None None))\n    nav _ =\n      Zipper.right\n      Zipper.up\n      Zipper.up\n      Zipper.focus\n    actual = Zipper.run testTree nav\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

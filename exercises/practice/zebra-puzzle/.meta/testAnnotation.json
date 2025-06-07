@@ -1,10 +1,10 @@
 [
   {
     "name": "resident who drinks water",
-    "test_code": "let\n  Test.label.deprecated \"resident who drinks water\" <| Test.expect (drinksWater === \"Norwegian\")"
+    "test_code": "verify do\n  labeled \"resident who drinks water\" do\n    expected = \"Norwegian\"\n    actual = drinksWater\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "resident who owns zebra",
-    "test_code": "let\n  Test.label.deprecated \"resident who owns zebra\" <| Test.expect (ownsZebra === \"Japanese\")"
+    "test_code": "verify do\n  labeled \"resident who owns zebra\" do\n    expected = \"Japanese\"\n    actual = ownsZebra\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

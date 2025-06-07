@@ -1,66 +1,66 @@
 [
   {
     "name": "no multiples within limit",
-    "test_code": "Test.label.deprecated \"no multiples within limit\" <| expect ((sumOfMultiples [3,5] 1) === 0)"
+    "test_code": "verify do\n  labeled \"no multiples within limit\" do\n    expected = 0\n    actual = sumOfMultiples [3,5] 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "one factor has multiples within limit",
-    "test_code": "Test.label.deprecated \"one factor has multiples within limit\" <| expect ((sumOfMultiples [3,5] 4) === 3)"
+    "test_code": "verify do\n  labeled \"one factor has multiples within limit\" do\n    expected = 3\n    actual = sumOfMultiples [3,5] 4\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "more than one multiple within limit",
-    "test_code": "Test.label.deprecated \"more than one multiple within limit\" <| expect ((sumOfMultiples [3] 7) === 9)"
+    "test_code": "verify do\n  labeled \"more than one multiple within limit\" do\n    expected = 9\n    actual = sumOfMultiples [3] 7\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "more than one factor with multiples within limit",
-    "test_code": "Test.label.deprecated \"more than one factor with multiples within limit\" <| expect ((sumOfMultiples [3,5] 10) === 23)"
+    "test_code": "verify do\n  labeled \"more than one factor with multiples within limit\" do\n    expected = 23\n    actual = sumOfMultiples [3,5] 10\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "each multiple is only counted once",
-    "test_code": "Test.label.deprecated \"each multiple is only counted once\" <| expect ((sumOfMultiples [3,5] 100) === 2318)"
+    "test_code": "verify do\n  labeled \"each multiple is only counted once\" do\n    expected = 2318\n    actual = sumOfMultiples [3,5] 100\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a much larger limit",
-    "test_code": "Test.label.deprecated \"a much larger limit\" <| expect ((sumOfMultiples [3,5] 1000) === 233168)"
+    "test_code": "verify do\n  labeled \"a much larger limit\" do\n    expected = 233168\n    actual = sumOfMultiples [3,5] 1000\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "three factors",
-    "test_code": "Test.label.deprecated \"three factors\" <| expect ((sumOfMultiples [7, 13, 17] 20) === 51)"
+    "test_code": "verify do\n  labeled \"three factors\" do\n    expected = 51\n    actual = sumOfMultiples [7, 13, 17] 20\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "factors not relatively prime",
-    "test_code": "Test.label.deprecated \"factors not relatively prime\" <| expect ((sumOfMultiples [4, 6] 15) === 30)"
+    "test_code": "verify do\n  labeled \"factors not relatively prime\" do\n    expected = 30\n    actual = sumOfMultiples [4, 6] 15\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "some pairs of factors relatively prime and some not",
-    "test_code": "Test.label.deprecated \"some pairs of factors relatively prime and some not\" <| expect ((sumOfMultiples [5, 6, 8] 150) === 4419)"
+    "test_code": "verify do\n  labeled \"some pairs of factors relatively prime and some not\" do\n    expected = 4419\n    actual = sumOfMultiples [5, 6, 8] 150\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "one factor is a multiple of another",
-    "test_code": "Test.label.deprecated \"one factor is a multiple of another\" <| expect ((sumOfMultiples [5, 25] 51) === 275)"
+    "test_code": "verify do\n  labeled \"one factor is a multiple of another\" do\n    expected = 275\n    actual = sumOfMultiples [5, 25] 51\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "much larger factors",
-    "test_code": "Test.label.deprecated \"much larger factors\" <| expect ((sumOfMultiples [43, 47] 10000) === 2203160)"
+    "test_code": "verify do\n  labeled \"much larger factors\" do\n    expected = 2203160\n    actual = sumOfMultiples [43, 47] 10000\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "all numbers are multiples of 1",
-    "test_code": "Test.label.deprecated \"all numbers are multiples of 1\" <| expect ((sumOfMultiples [1] 100) === 4950)"
+    "test_code": "verify do\n  labeled \"all numbers are multiples of 1\" do\n    expected = 4950\n    actual = sumOfMultiples [1] 100\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "no factors means an empty sum",
-    "test_code": "Test.label.deprecated \"no factors means an empty sum\" <| expect ((sumOfMultiples [] 1000) === 0)"
+    "test_code": "verify do\n  labeled \"no factors means an empty sum\" do\n    expected = 0\n    actual = sumOfMultiples [] 1000\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "the only multiple of 0 is 0",
-    "test_code": "Test.label.deprecated \"the only multiple of 0 is 0\" <| expect ((sumOfMultiples [0] 1) === 0)"
+    "test_code": "verify do\n  labeled \"the only multiple of 0 is 0\" do\n    expected = 0\n    actual = sumOfMultiples [0] 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "the factor 0 does not affect the sum of multiples of other factors",
-    "test_code": "Test.label.deprecated \"the factor 0 does not affect the sum of multiples of other factors\" <| expect ((sumOfMultiples [3, 0] 4) === 3)"
+    "test_code": "verify do\n  labeled \"the factor 0 does not affect the sum of multiples of other factors\" do\n    expected = 3\n    actual = sumOfMultiples [3, 0] 4\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "solutions using include-exclude must extend to cardinality greater than 3",
-    "test_code": "Test.label.deprecated \"solutions using include-exclude must extend to cardinality greater than 3\" <|\n    expect ((sumOfMultiples [2, 3, 5, 7, 11] 10000) === 39614537)"
+    "test_code": "verify do\n  labeled \"solutions using include-exclude must extend to cardinality greater than 3\" do\n    expected = 39614537\n    actual = sumOfMultiples [2, 3, 5, 7, 11] 10000\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

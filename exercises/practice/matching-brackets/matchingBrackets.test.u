@@ -1,61 +1,156 @@
-matchingBrackets.test.ex1 = let
-  Test.label.deprecated "paired square brackets" <| Test.expect (isPaired "[]" === true)
+matchingBrackets.test.ex1 = verify do
+  labeled "paired square brackets" do
+    expected = true
+    actual = isPaired "[]"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex2 = let
-  Test.label.deprecated "empty string" <| Test.expect (isPaired "" === true)
+matchingBrackets.test.ex2 = verify do
+  labeled "empty string" do
+    expected = true
+    actual = isPaired ""
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex3 = let
-  Test.label.deprecated "unpaired brackets" <| Test.expect (isPaired "[[" === false)
+matchingBrackets.test.ex3 = verify do
+  labeled "unpaired brackets" do
+    expected = false
+    actual = isPaired "[["
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex4 = let
-  Test.label.deprecated "wrong ordered brackets" <| Test.expect (isPaired "}{" === false)
+matchingBrackets.test.ex4 = verify do
+  labeled "wrong ordered brackets" do
+    expected = false
+    actual = isPaired "}{"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex5 = let
-  Test.label.deprecated "wrong closing bracket" <| Test.expect (isPaired "{]" === false)
+matchingBrackets.test.ex5 = verify do
+  labeled "wrong closing bracket" do
+    expected = false
+    actual = isPaired "{]"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex6 = let
-  Test.label.deprecated "paired with whitespace" <| Test.expect (isPaired "{ }" === true)
+matchingBrackets.test.ex6 = verify do
+  labeled "paired with whitespace" do
+    expected = true
+    actual = isPaired "{ }"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex7 = let
-  Test.label.deprecated "partially paired brackets" <| Test.expect (isPaired "{[])" === false)
+matchingBrackets.test.ex7 = verify do
+  labeled "partially paired brackets" do
+    expected = false
+    actual = isPaired "{[])"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex8 = let
-  Test.label.deprecated "simple nested brackets" <| Test.expect (isPaired "{[]}" === true)
+matchingBrackets.test.ex8 = verify do
+  labeled "simple nested brackets" do
+    expected = true
+    actual = isPaired "{[]}"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex9 = let
-  Test.label.deprecated "several paired brackets" <| Test.expect (isPaired "{}[]" === true)
+matchingBrackets.test.ex9 = verify do
+  labeled "several paired brackets" do
+    expected = true
+    actual = isPaired "{}[]"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex10 = let
-  Test.label.deprecated "paired and nested brackets" <| Test.expect (isPaired "([{}({}[])])" === true)
+matchingBrackets.test.ex10 = verify do
+  labeled "paired and nested brackets" do
+    expected = true
+    actual = isPaired "([{}({}[])])"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex11 = let
-  Test.label.deprecated "unopened closing brackets" <| Test.expect (isPaired "{[)][]}" === false)
+matchingBrackets.test.ex11 = verify do
+  labeled "unopened closing brackets" do
+    expected = false
+    actual = isPaired "{[)][]}"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex12 = let
-  Test.label.deprecated "unpaired and nested brackets" <| Test.expect (isPaired "([{])" === false)
+matchingBrackets.test.ex12 = verify do
+  labeled "unpaired and nested brackets" do
+    expected = false
+    actual = isPaired "([{])"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex13 = let
-  Test.label.deprecated "paired and wrong nested brackets" <| Test.expect (isPaired "[({]})" === false)
+matchingBrackets.test.ex13 = verify do
+  labeled "paired and wrong nested brackets" do
+    expected = false
+    actual = isPaired "[({]})"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex14 = let
-  Test.label.deprecated "paired and incomplete brackets" <| Test.expect (isPaired "{}[" === false)
+matchingBrackets.test.ex14 = verify do
+  labeled "paired and incomplete brackets" do
+    expected = false
+    actual = isPaired "{}["
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex15 = let
-  Test.label.deprecated "too many closing brackets" <| Test.expect (isPaired "[]]" === false)
+matchingBrackets.test.ex15 = verify do
+  labeled "too many closing brackets" do
+    expected = false
+    actual = isPaired "[]]"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex16 = let
-  Test.label.deprecated "early unexpected brackets" <| Test.expect (isPaired ")()" === false)
+matchingBrackets.test.ex16 = verify do
+  labeled "early unexpected brackets" do
+    expected = false
+    actual = isPaired ")()"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex17 = let
-  Test.label.deprecated "early mismatched brackets" <| Test.expect (isPaired "{)()" === false)
+matchingBrackets.test.ex17 = verify do
+  labeled "early mismatched brackets" do
+    expected = false
+    actual = isPaired "{)()"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex18 = let
-  Test.label.deprecated "math expression" <| Test.expect (isPaired "(((185 + 223.85) * 15) - 543)/2" === true)
+matchingBrackets.test.ex18 = verify do
+  labeled "math expression" do
+    expected = true
+    actual = isPaired "(((185 + 223.85) * 15) - 543)/2"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-matchingBrackets.test.ex19 = let
-  Test.label.deprecated "complex latex expression" <| Test.expect (isPaired "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)" === true)
+matchingBrackets.test.ex19 = verify do
+  labeled "complex latex expression" do
+    expected = true
+    actual = isPaired "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> matchingBrackets.tests = runAll [
+test> matchingBrackets.tests = join [
   matchingBrackets.test.ex1,
   matchingBrackets.test.ex2,
   matchingBrackets.test.ex3,

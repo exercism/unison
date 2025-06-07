@@ -1,78 +1,78 @@
 [
   {
     "name": "paired square brackets",
-    "test_code": "let\n  Test.label.deprecated \"paired square brackets\" <| Test.expect (isPaired \"[]\" === true)"
+    "test_code": "verify do\n  labeled \"paired square brackets\" do\n    expected = true\n    actual = isPaired \"[]\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "empty string",
-    "test_code": "let\n  Test.label.deprecated \"empty string\" <| Test.expect (isPaired \"\" === true)"
+    "test_code": "verify do\n  labeled \"empty string\" do\n    expected = true\n    actual = isPaired \"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "unpaired brackets",
-    "test_code": "let\n  Test.label.deprecated \"unpaired brackets\" <| Test.expect (isPaired \"[[\" === false)"
+    "test_code": "verify do\n  labeled \"unpaired brackets\" do\n    expected = false\n    actual = isPaired \"[[\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "wrong ordered brackets",
-    "test_code": "let\n  Test.label.deprecated \"wrong ordered brackets\" <| Test.expect (isPaired \"}{\" === false)"
+    "test_code": "verify do\n  labeled \"wrong ordered brackets\" do\n    expected = false\n    actual = isPaired \"}{\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "wrong closing bracket",
-    "test_code": "let\n  Test.label.deprecated \"wrong closing bracket\" <| Test.expect (isPaired \"{]\" === false)"
+    "test_code": "verify do\n  labeled \"wrong closing bracket\" do\n    expected = false\n    actual = isPaired \"{]\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "paired with whitespace",
-    "test_code": "let\n  Test.label.deprecated \"paired with whitespace\" <| Test.expect (isPaired \"{ }\" === true)"
+    "test_code": "verify do\n  labeled \"paired with whitespace\" do\n    expected = true\n    actual = isPaired \"{ }\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "partially paired brackets",
-    "test_code": "let\n  Test.label.deprecated \"partially paired brackets\" <| Test.expect (isPaired \"{[])\" === false)"
+    "test_code": "verify do\n  labeled \"partially paired brackets\" do\n    expected = false\n    actual = isPaired \"{[])\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "simple nested brackets",
-    "test_code": "let\n  Test.label.deprecated \"simple nested brackets\" <| Test.expect (isPaired \"{[]}\" === true)"
+    "test_code": "verify do\n  labeled \"simple nested brackets\" do\n    expected = true\n    actual = isPaired \"{[]}\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "several paired brackets",
-    "test_code": "let\n  Test.label.deprecated \"several paired brackets\" <| Test.expect (isPaired \"{}[]\" === true)"
+    "test_code": "verify do\n  labeled \"several paired brackets\" do\n    expected = true\n    actual = isPaired \"{}[]\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "paired and nested brackets",
-    "test_code": "let\n  Test.label.deprecated \"paired and nested brackets\" <| Test.expect (isPaired \"([{}({}[])])\" === true)"
+    "test_code": "verify do\n  labeled \"paired and nested brackets\" do\n    expected = true\n    actual = isPaired \"([{}({}[])])\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "unopened closing brackets",
-    "test_code": "let\n  Test.label.deprecated \"unopened closing brackets\" <| Test.expect (isPaired \"{[)][]}\" === false)"
+    "test_code": "verify do\n  labeled \"unopened closing brackets\" do\n    expected = false\n    actual = isPaired \"{[)][]}\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "unpaired and nested brackets",
-    "test_code": "let\n  Test.label.deprecated \"unpaired and nested brackets\" <| Test.expect (isPaired \"([{])\" === false)"
+    "test_code": "verify do\n  labeled \"unpaired and nested brackets\" do\n    expected = false\n    actual = isPaired \"([{])\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "paired and wrong nested brackets",
-    "test_code": "let\n  Test.label.deprecated \"paired and wrong nested brackets\" <| Test.expect (isPaired \"[({]})\" === false)"
+    "test_code": "verify do\n  labeled \"paired and wrong nested brackets\" do\n    expected = false\n    actual = isPaired \"[({]})\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "paired and incomplete brackets",
-    "test_code": "let\n  Test.label.deprecated \"paired and incomplete brackets\" <| Test.expect (isPaired \"{}[\" === false)"
+    "test_code": "verify do\n  labeled \"paired and incomplete brackets\" do\n    expected = false\n    actual = isPaired \"{}[\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "too many closing brackets",
-    "test_code": "let\n  Test.label.deprecated \"too many closing brackets\" <| Test.expect (isPaired \"[]]\" === false)"
+    "test_code": "verify do\n  labeled \"too many closing brackets\" do\n    expected = false\n    actual = isPaired \"[]]\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "early unexpected brackets",
-    "test_code": "let\n  Test.label.deprecated \"early unexpected brackets\" <| Test.expect (isPaired \")()\" === false)"
+    "test_code": "verify do\n  labeled \"early unexpected brackets\" do\n    expected = false\n    actual = isPaired \")()\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "early mismatched brackets",
-    "test_code": "let\n  Test.label.deprecated \"early mismatched brackets\" <| Test.expect (isPaired \"{)()\" === false)"
+    "test_code": "verify do\n  labeled \"early mismatched brackets\" do\n    expected = false\n    actual = isPaired \"{)()\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "math expression",
-    "test_code": "let\n  Test.label.deprecated \"math expression\" <| Test.expect (isPaired \"(((185 + 223.85) * 15) - 543)/2\" === true)"
+    "test_code": "verify do\n  labeled \"math expression\" do\n    expected = true\n    actual = isPaired \"(((185 + 223.85) * 15) - 543)/2\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "complex latex expression",
-    "test_code": "let\n  Test.label.deprecated \"complex latex expression\" <| Test.expect (isPaired \"\\\\left(\\\\begin{array}{cc} \\\\frac{1}{3} & x\\\\\\\\ \\\\mathrm{e}^{x} &... x^2 \\\\end{array}\\\\right)\" === true)"
+    "test_code": "verify do\n  labeled \"complex latex expression\" do\n    expected = true\n    actual = isPaired \"\\\\left(\\\\begin{array}{cc} \\\\frac{1}{3} & x\\\\\\\\ \\\\mathrm{e}^{x} &... x^2 \\\\end{array}\\\\right)\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

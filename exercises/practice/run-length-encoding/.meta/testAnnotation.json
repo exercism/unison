@@ -1,54 +1,54 @@
 [
   {
     "name": "run-length encode a string, empty string",
-    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, empty string\" <| Test.expect ((encode \"\") === \"\")"
+    "test_code": "verify do\n  labeled \"run-length encode a string, empty string\" do\n    expected = \"\"\n    actual = encode \"\")\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length encode a string, single characters only are encoded without count",
-    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, single characters only are encoded without count\" <| Test.expect (encode \"XYZ\" === \"XYZ\")"
+    "test_code": "verify do\n  labeled \"run-length encode a string, single characters only are encoded without count\" do\n    expected = \"XYZ\"\n    actual = encode \"XYZ\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length encode a string, string with no single characters",
-    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, string with no single characters\" <| Test.expect (encode \"AABBBCCCC\" === \"2A3B4C\")"
+    "test_code": "verify do\n  labeled \"run-length encode a string, string with no single characters\" do\n    expected = \"2A3B4C\"\n    actual = encode \"AABBBCCCC\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length encode a string, single characters mixed with repeated characters",
-    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, single characters mixed with repeated characters\" <| Test.expect (encode \"WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB\" === \"12WB12W3B24WB\")"
+    "test_code": "verify do\n  labeled \"run-length encode a string, single characters mixed with repeated characters\" do\n    expected = \"12WB12W3B24WB\"\n    actual = encode \"WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length encode a string, multiple whitespace mixed in string",
-    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, multiple whitespace mixed in string\" <| Test.expect (encode \"  hsqq qww  \" === \"2 hs2q q2w2 \")"
+    "test_code": "verify do\n  labeled \"run-length encode a string, multiple whitespace mixed in string\" do\n    expected = \"2 hs2q q2w2 \"\n    actual = encode \"  hsqq qww  \"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length encode a string, lowercase characters",
-    "test_code": "let\n  Test.label.deprecated \"run-length encode a string, lowercase characters\" <| Test.expect (encode \"aabbbcccc\" === \"2a3b4c\")"
+    "test_code": "verify do\n  labeled \"run-length encode a string, lowercase characters\" do\n    expected = \"2a3b4c\"\n    actual = encode \"aabbbcccc\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length decode a string, empty string",
-    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, empty string\" <| Test.expect (decode \"\" === \"\")"
+    "test_code": "verify do\n  labeled \"run-length decode a string, empty string\" do\n    expected = \"\"\n    actual = decode \"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length decode a string, single characters only",
-    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, single characters only\" <| Test.expect (decode \"XYZ\" === \"XYZ\")"
+    "test_code": "verify do\n  labeled \"run-length decode a string, single characters only\" do\n    expected = \"XYZ\"\n    actual = decode \"XYZ\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length decode a string, string with no single characters",
-    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, string with no single characters\" <| Test.expect (decode \"2A3B4C\" === \"AABBBCCCC\")"
+    "test_code": "verify do\n  labeled \"run-length decode a string, string with no single characters\" do\n    expected = \"AABBBCCCC\"\n    actual = decode \"2A3B4C\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length decode a string, single characters with repeated characters",
-    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, single characters with repeated characters\" <| Test.expect (decode \"12WB12W3B24WB\" === \"WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB\")"
+    "test_code": "verify do\n  labeled \"run-length decode a string, single characters with repeated characters\" do\n    expected = \"WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB\"\n    actual = decode \"12WB12W3B24WB\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length decode a string, multiple whitespace mixed in string",
-    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, multiple whitespace mixed in string\" <| Test.expect (decode \"2 hs2q q2w2 \" === \"  hsqq qww  \")"
+    "test_code": "verify do\n  labeled \"run-length decode a string, multiple whitespace mixed in string\" do\n    expected = \"  hsqq qww  \"\n    actual = decode \"2 hs2q q2w2 \"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "run-length decode a string, lowercase string",
-    "test_code": "let\n  Test.label.deprecated \"run-length decode a string, lowercase string\" <| Test.expect (decode \"2a3b4c\" === \"aabbbcccc\")"
+    "test_code": "verify do\n  labeled \"run-length decode a string, lowercase string\" do\n    expected = \"aabbbcccc\"\n    actual = decode \"2a3b4c\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "encode and then decode, encode followed by decode gives original string",
-    "test_code": "let\n  Test.label.deprecated \"encode and then decode, encode followed by decode gives original string\" <| Test.expect (consistency \"zzz ZZ  zZ\" === \"zzz ZZ  zZ\")"
+    "test_code": "verify do\n  labeled \"encode and then decode, encode followed by decode gives original string\" do\n    expected = \"zzz ZZ  zZ\"\n    actual = consistency \"zzz ZZ  zZ\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

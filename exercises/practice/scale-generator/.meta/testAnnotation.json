@@ -1,130 +1,130 @@
 [
   {
     "name": "Chromatic scales, Chromatic scale with sharps",
-    "test_code": "let\n  Test.label.deprecated \"Chromatic scales, Chromatic scale with sharps\" <| Test.expect (chromatic \"C\" === [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"A#\",\"B\"])"
+    "test_code": "verify do\n  labeled \"Chromatic scales, Chromatic scale with sharps\" do\n    expected = [\"C\",\"C#\",\"D\",\"D#\",\"E\",\"F\",\"F#\",\"G\",\"G#\",\"A\",\"A#\",\"B\"]\n    actual = chromatic \"C\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Chromatic scales, Chromatic scale with flats",
-    "test_code": "let\n  Test.label.deprecated \"Chromatic scales, Chromatic scale with flats\" <| Test.expect (chromatic \"F\" === [\"F\",\"Gb\",\"G\",\"Ab\",\"A\",\"Bb\",\"B\",\"C\",\"Db\",\"D\",\"Eb\",\"E\"])"
+    "test_code": "verify do\n  labeled \"Chromatic scales, Chromatic scale with flats\" do\n    expected = [\"F\",\"Gb\",\"G\",\"Ab\",\"A\",\"Bb\",\"B\",\"C\",\"Db\",\"D\",\"Eb\",\"E\"]\n    actual = chromatic \"F\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Simple major scale",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Simple major scale\" <| Test.expect (interval \"C\" \"MMmMMMm\" === [\"C\",\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Simple major scale\" do\n    expected = [\"C\",\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\"]\n    actual = interval \"C\" \"MMmMMMm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Major scale with sharps",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Major scale with sharps\" <| Test.expect (interval \"G\" \"MMmMMMm\" === [\"G\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F#\",\"G\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Major scale with sharps\" do\n    expected = [\"G\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F#\",\"G\"]\n    actual = interval \"G\" \"MMmMMMm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Major scale with flats",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Major scale with flats\" <| Test.expect (interval \"F\" \"MMmMMMm\" === [\"F\",\"G\",\"A\",\"Bb\",\"C\",\"D\",\"E\",\"F\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Major scale with flats\" do\n    expected = [\"F\",\"G\",\"A\",\"Bb\",\"C\",\"D\",\"E\",\"F\"]\n    actual = interval \"F\" \"MMmMMMm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Minor scale with sharps",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Minor scale with sharps\" <| Test.expect (interval \"f#\" \"MmMMmMM\" === [\"F#\",\"G#\",\"A\",\"B\",\"C#\",\"D\",\"E\",\"F#\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Minor scale with sharps\" do\n    expected = [\"F#\",\"G#\",\"A\",\"B\",\"C#\",\"D\",\"E\",\"F#\"]\n    actual = interval \"f#\" \"MmMMmMM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Minor scale with flats",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Minor scale with flats\" <| Test.expect (interval \"bb\" \"MmMMmMM\" === [\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"Gb\",\"Ab\",\"Bb\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Minor scale with flats\" do\n    expected = [\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"Gb\",\"Ab\",\"Bb\"]\n    actual = interval \"bb\" \"MmMMmMM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Dorian mode",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Dorian mode\" <| Test.expect (interval \"d\" \"MmMMMmM\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Dorian mode\" do\n    expected = [\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\"]\n    actual = interval \"d\" \"MmMMMmM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Mixolydian mode",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Mixolydian mode\" <| Test.expect (interval \"Eb\" \"MMmMMmM\" === [\"Eb\",\"F\",\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Mixolydian mode\" do\n    expected = [\"Eb\",\"F\",\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\"]\n    actual = interval \"Eb\" \"MMmMMmM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Lydian mode",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Lydian mode\" <| Test.expect (interval \"a\" \"MMMmMMm\" === [\"A\",\"B\",\"C#\",\"D#\",\"E\",\"F#\",\"G#\",\"A\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Lydian mode\" do\n    expected = [\"A\",\"B\",\"C#\",\"D#\",\"E\",\"F#\",\"G#\",\"A\"]\n    actual = interval \"a\" \"MMMmMMm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Phrygian mode",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Phrygian mode\" <| Test.expect (interval \"e\" \"mMMMmMM\" === [\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\",\"E\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Phrygian mode\" do\n    expected = [\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\",\"E\"]\n    actual = interval \"e\" \"mMMMmMM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Locrian mode",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Locrian mode\" <| Test.expect (interval \"g\" \"mMMmMMM\" === [\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"G\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Locrian mode\" do\n    expected = [\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"G\"]\n    actual = interval \"g\" \"mMMmMMM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Harmonic minor",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Harmonic minor\" <| Test.expect (interval \"d\" \"MmMMmAm\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"Bb\",\"Db\",\"D\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Harmonic minor\" do\n    expected = [\"D\",\"E\",\"F\",\"G\",\"A\",\"Bb\",\"Db\",\"D\"]\n    actual = interval \"d\" \"MmMMmAm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Octatonic",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Octatonic\" <| Test.expect (interval \"C\" \"MmMmMmMm\" === [\"C\",\"D\",\"D#\",\"F\",\"F#\",\"G#\",\"A\",\"B\",\"C\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Octatonic\" do\n    expected = [\"C\",\"D\",\"D#\",\"F\",\"F#\",\"G#\",\"A\",\"B\",\"C\"]\n    actual = interval \"C\" \"MmMmMmMm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Hexatonic",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Hexatonic\" <| Test.expect (interval \"Db\" \"MMMMMM\" === [\"Db\",\"Eb\",\"F\",\"G\",\"A\",\"B\",\"Db\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Hexatonic\" do\n    expected = [\"Db\",\"Eb\",\"F\",\"G\",\"A\",\"B\",\"Db\"]\n    actual = interval \"Db\" \"MMMMMM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Pentatonic",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Pentatonic\" <| Test.expect (interval \"A\" \"MMAMA\" === [\"A\",\"B\",\"C#\",\"E\",\"F#\",\"A\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Pentatonic\" do\n    expected = [\"A\",\"B\",\"C#\",\"E\",\"F#\",\"A\"]\n    actual = interval \"A\" \"MMAMA\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Enigmatic",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Enigmatic\" <| Test.expect (interval \"G\" \"mAMMMmm\" === [\"G\",\"G#\",\"B\",\"C#\",\"D#\",\"F\",\"F#\",\"G\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Enigmatic\" do\n    expected = [\"G\",\"G#\",\"B\",\"C#\",\"D#\",\"F\",\"F#\",\"G\"]\n    actual = interval \"G\" \"mAMMMmm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Simple major scale",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Simple major scale\" <| Test.expect (interval \"C\" \"MMmMMMm\" === [\"C\",\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Simple major scale\" do\n    expected = [\"C\",\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\"]\n    actual = interval \"C\" \"MMmMMMm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Major scale with sharps",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Major scale with sharps\" <| Test.expect (interval \"G\" \"MMmMMMm\" === [\"G\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F#\",\"G\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Major scale with sharps\" do\n    expected = [\"G\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F#\",\"G\"]\n    actual = interval \"G\" \"MMmMMMm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Major scale with flats",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Major scale with flats\" <| Test.expect (interval \"F\" \"MMmMMMm\" === [\"F\",\"G\",\"A\",\"Bb\",\"C\",\"D\",\"E\",\"F\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Major scale with flats\" do\n    expected = [\"F\",\"G\",\"A\",\"Bb\",\"C\",\"D\",\"E\",\"F\"]\n    actual = interval \"F\" \"MMmMMMm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Minor scale with sharps",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Minor scale with sharps\" <| Test.expect (interval \"f#\" \"MmMMmMM\" === [\"F#\",\"G#\",\"A\",\"B\",\"C#\",\"D\",\"E\",\"F#\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Minor scale with sharps\" do\n    expected = [\"F#\",\"G#\",\"A\",\"B\",\"C#\",\"D\",\"E\",\"F#\"]\n    actual = interval \"f#\" \"MmMMmMM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Minor scale with flats",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Minor scale with flats\" <| Test.expect (interval \"bb\" \"MmMMmMM\" === [\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"Gb\",\"Ab\",\"Bb\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Minor scale with flats\" do\n    expected = [\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"Gb\",\"Ab\",\"Bb\"]\n    actual = interval \"bb\" \"MmMMmMM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Dorian mode",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Dorian mode\" <| Test.expect (interval \"d\" \"MmMMMmM\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Dorian mode\" do\n    expected = [\"D\",\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\"]\n    actual = interval \"d\" \"MmMMMmM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Mixolydian mode",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Mixolydian mode\" <| Test.expect (interval \"Eb\" \"MMmMMmM\" === [\"Eb\",\"F\",\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Mixolydian mode\" do\n    expected = [\"Eb\",\"F\",\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\"]\n    actual = interval \"Eb\" \"MMmMMmM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Lydian mode",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Lydian mode\" <| Test.expect (interval \"a\" \"MMMmMMm\" === [\"A\",\"B\",\"C#\",\"D#\",\"E\",\"F#\",\"G#\",\"A\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Lydian mode\" do\n    expected = [\"A\",\"B\",\"C#\",\"D#\",\"E\",\"F#\",\"G#\",\"A\"]\n    actual = interval \"a\" \"MMMmMMm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Phrygian mode",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Phrygian mode\" <| Test.expect (interval \"e\" \"mMMMmMM\" === [\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\",\"E\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Phrygian mode\" do\n    expected = [\"E\",\"F\",\"G\",\"A\",\"B\",\"C\",\"D\",\"E\"]\n    actual = interval \"e\" \"mMMMmMM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Locrian mode",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Locrian mode\" <| Test.expect (interval \"g\" \"mMMmMMM\" === [\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"G\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Locrian mode\" do\n    expected = [\"G\",\"Ab\",\"Bb\",\"C\",\"Db\",\"Eb\",\"F\",\"G\"]\n    actual = interval \"g\" \"mMMmMMM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Harmonic minor",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Harmonic minor\" <| Test.expect (interval \"d\" \"MmMMmAm\" === [\"D\",\"E\",\"F\",\"G\",\"A\",\"Bb\",\"Db\",\"D\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Harmonic minor\" do\n    expected = [\"D\",\"E\",\"F\",\"G\",\"A\",\"Bb\",\"Db\",\"D\"]\n    actual = interval \"d\" \"MmMMmAm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Octatonic",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Octatonic\" <| Test.expect (interval \"C\" \"MmMmMmMm\" === [\"C\",\"D\",\"D#\",\"F\",\"F#\",\"G#\",\"A\",\"B\",\"C\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Octatonic\" do\n    expected = [\"C\",\"D\",\"D#\",\"F\",\"F#\",\"G#\",\"A\",\"B\",\"C\"]\n    actual = interval \"C\" \"MmMmMmMm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Hexatonic",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Hexatonic\" <| Test.expect (interval \"Db\" \"MMMMMM\" === [\"Db\",\"Eb\",\"F\",\"G\",\"A\",\"B\",\"Db\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Hexatonic\" do\n    expected = [\"Db\",\"Eb\",\"F\",\"G\",\"A\",\"B\",\"Db\"]\n    actual = interval \"Db\" \"MMMMMM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Pentatonic",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Pentatonic\" <| Test.expect (interval \"A\" \"MMAMA\" === [\"A\",\"B\",\"C#\",\"E\",\"F#\",\"A\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Pentatonic\" do\n    expected = [\"A\",\"B\",\"C#\",\"E\",\"F#\",\"A\"]\n    actual = interval \"A\" \"MMAMA\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Scales with specified intervals, Enigmatic",
-    "test_code": "let\n  Test.label.deprecated \"Scales with specified intervals, Enigmatic\" <| Test.expect (interval \"G\" \"mAMMMmm\" === [\"G\",\"G#\",\"B\",\"C#\",\"D#\",\"F\",\"F#\",\"G\"])"
+    "test_code": "verify do\n  labeled \"Scales with specified intervals, Enigmatic\" do\n    expected = [\"G\",\"G#\",\"B\",\"C#\",\"D#\",\"F\",\"F#\",\"G\"]\n    actual = interval \"G\" \"mAMMMmm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

@@ -1,50 +1,50 @@
 [
   {
     "name": "no rows",
-    "test_code": "expected = []\n  input = []\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"no rows\""
+    "test_code": "verify do\n  labeled \"no rows\" do\n    expected = []\n    actual = minesweeper.annotate []\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "no columns",
-    "test_code": "expected = [\"\"]\n  input = [\"\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"no columns\""
+    "test_code": "verify do\n  labeled \"no columns\" do\n    expected = [\"\"]\n    actual = minesweeper.annotate [\"\"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "no mines",
-    "test_code": "expected = [\"   \", \"   \", \"   \"]\n  input = [\"   \", \"   \", \"   \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"no mines\""
+    "test_code": "verify do\n  labeled \"no mines\" do\n    expected = [\"   \", \"   \", \"   \"]\n    actual = minesweeper.annotate [\"   \", \"   \", \"   \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "minefield with only mines",
-    "test_code": "expected = [\"***\", \"***\", \"***\"]\n  input = [\"***\", \"***\", \"***\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"minefield with only mines\""
+    "test_code": "verify do\n  labeled \"minefield with only mines\" do\n    expected = [\"***\", \"***\", \"***\"]\n    actual = minesweeper.annotate [\"***\", \"***\", \"***\"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "mine surrounded by spaces",
-    "test_code": "expected = [\"111\", \"1*1\", \"111\"]\n  input = [\"   \", \" * \", \"   \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"mine surrounded by spaces\""
+    "test_code": "verify do\n  labeled \"mine surrounded by spaces\" do\n    expected = [\"111\", \"1*1\", \"111\"]\n    actual = minesweeper.annotate [\"   \", \" * \", \"   \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "space surrounded by mines",
-    "test_code": "expected = [\"***\", \"*8*\", \"***\"]\n  input = [\"***\", \"* *\", \"***\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"space surrounded by mines\""
+    "test_code": "verify do\n  labeled \"space surrounded by mines\" do\n    expected = [\"***\", \"*8*\", \"***\"]\n    actual = minesweeper.annotate [\"***\", \"* *\", \"***\"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "horizontal line",
-    "test_code": "expected = [\"1*2*1\"]\n  input = [\" * * \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"horizontal line\""
+    "test_code": "verify do\n  labeled \"horizontal line\" do\n    expected = [\"1*2*1\"]\n    actual = minesweeper.annotate [\" * * \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "horizontal line, mines at edges",
-    "test_code": "expected = [\"*1 1*\"]\n  input = [\"*   *\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"horizontal line, mines at edges\""
+    "test_code": "verify do\n  labeled \"horizontal line, mines at edges\" do\n    expected = [\"*1 1*\"]\n    actual = minesweeper.annotate [\"*   *\"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "vertical line",
-    "test_code": "expected = [\"1\", \"*\", \"2\", \"*\", \"1\"]\n  input = [\" \", \"*\", \" \", \"*\", \" \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"vertical line\""
+    "test_code": "verify do\n  labeled \"vertical line\" do\n    expected = [\"1\", \"*\", \"2\", \"*\", \"1\"]\n    actual = minesweeper.annotate [\" \", \"*\", \" \", \"*\", \" \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "vertical line, mines at edges",
-    "test_code": "expected = [\"*\", \"1\", \" \", \"1\", \"*\"]\n  input = [\"*\", \" \", \" \", \" \", \"*\"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"vertical line, mines at edges\""
+    "test_code": "verify do\n  labeled \"vertical line, mines at edges\" do\n    expected = [\"*\", \"1\", \" \", \"1\", \"*\"]\n    actual = minesweeper.annotate [\"*\", \" \", \" \", \" \", \"*\"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "cross",
-    "test_code": "expected = [\" 2*2 \", \"25*52\", \"*****\", \"25*52\", \" 2*2 \"]\n  input = [\"  *  \", \"  *  \", \"*****\", \"  *  \", \"  *  \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"cross\""
+    "test_code": "verify do\n  labeled \"cross\" do\n    expected = [\" 2*2 \", \"25*52\", \"*****\", \"25*52\", \" 2*2 \"]\n    actual = minesweeper.annotate [\"  *  \", \"  *  \", \"*****\", \"  *  \", \"  *  \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   },
   {
     "name": "large minefield",
-    "test_code": "expected = [\"1*22*1\", \"12*322\", \" 123*2\", \"112*4*\", \"1*22*2\", \"111111\"]\n  input = [\" *  * \", \"  *   \", \"    * \", \"   * *\", \" *  * \", \"      \"]\n  expected === minesweeper.annotate input\n    |> expect\n    |> Test.label.deprecated \"large minefield\""
+    "test_code": "verify do\n  labeled \"large minefield\" do\n    expected = [\"1*22*1\", \"12*322\", \" 123*2\", \"112*4*\", \"1*22*2\", \"111111\"]\n    actual = minesweeper.annotate [\" *  * \", \"  *   \", \"    * \", \"   * *\", \" *  * \", \"      \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
   }
 ]

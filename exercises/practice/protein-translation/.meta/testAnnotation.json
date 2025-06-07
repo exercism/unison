@@ -1,106 +1,106 @@
 [
   {
     "name": "Empty RNA sequence results in no proteins",
-    "test_code": "let\n  Test.label.deprecated \"Empty RNA sequence results in no proteins\" <| Test.expect (proteins \"\" === [])"
+    "test_code": "verify do\n  labeled \"Empty RNA sequence results in no proteins\" do\n    expected = []\n    actual = proteins \"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Methionine RNA sequence",
-    "test_code": "let\n  Test.label.deprecated \"Methionine RNA sequence\" <| Test.expect (proteins \"AUG\" === [\"Methionine\"])"
+    "test_code": "verify do\n  labeled \"Methionine RNA sequence\" do\n    expected = [\"Methionine\"]\n    actual = proteins \"AUG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Phenylalanine RNA sequence 1",
-    "test_code": "let\n  Test.label.deprecated \"Phenylalanine RNA sequence 1\" <| Test.expect (proteins \"UUU\" === [\"Phenylalanine\"])"
+    "test_code": "verify do\n  labeled \"Phenylalanine RNA sequence 1\" do\n    expected = [\"Phenylalanine\"]\n    actual = proteins \"UUU\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Phenylalanine RNA sequence 2",
-    "test_code": "let\n  Test.label.deprecated \"Phenylalanine RNA sequence 2\" <| Test.expect (proteins \"UUC\" === [\"Phenylalanine\"])"
+    "test_code": "verify do\n  labeled \"Phenylalanine RNA sequence 2\" do\n    expected = [\"Phenylalanine\"]\n    actual = proteins \"UUC\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Leucine RNA sequence 1",
-    "test_code": "let\n  Test.label.deprecated \"Leucine RNA sequence 1\" <| Test.expect (proteins \"UUA\" === [\"Leucine\"])"
+    "test_code": "verify do\n  labeled \"Leucine RNA sequence 1\" do\n    expected = [\"Leucine\"]\n    actual = proteins \"UUA\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Leucine RNA sequence 2",
-    "test_code": "let\n  Test.label.deprecated \"Leucine RNA sequence 2\" <| Test.expect (proteins \"UUG\" === [\"Leucine\"])"
+    "test_code": "verify do\n  labeled \"Leucine RNA sequence 2\" do\n    expected = [\"Leucine\"]\n    actual = proteins \"UUG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Serine RNA sequence 1",
-    "test_code": "let\n  Test.label.deprecated \"Serine RNA sequence 1\" <| Test.expect (proteins \"UCU\" === [\"Serine\"])"
+    "test_code": "verify do\n  labeled \"Serine RNA sequence 1\" do\n    expected = [\"Serine\"]\n    actual = proteins \"UCU\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Serine RNA sequence 2",
-    "test_code": "let\n  Test.label.deprecated \"Serine RNA sequence 2\" <| Test.expect (proteins \"UCC\" === [\"Serine\"])"
+    "test_code": "verify do\n  labeled \"Serine RNA sequence 2\" do\n    expected = [\"Serine\"]\n    actual = proteins \"UCC\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Serine RNA sequence 3",
-    "test_code": "let\n  Test.label.deprecated \"Serine RNA sequence 3\" <| Test.expect (proteins \"UCA\" === [\"Serine\"])"
+    "test_code": "verify do\n  labeled \"Serine RNA sequence 3\" do\n    expected = [\"Serine\"]\n    actual = proteins \"UCA\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Serine RNA sequence 4",
-    "test_code": "let\n  Test.label.deprecated \"Serine RNA sequence 4\" <| Test.expect (proteins \"UCG\" === [\"Serine\"])"
+    "test_code": "verify do\n  labeled \"Serine RNA sequence 4\" do\n    expected = [\"Serine\"]\n    actual = proteins \"UCG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Tyrosine RNA sequence 1",
-    "test_code": "let\n  Test.label.deprecated \"Tyrosine RNA sequence 1\" <| Test.expect (proteins \"UAU\" === [\"Tyrosine\"])"
+    "test_code": "verify do\n  labeled \"Tyrosine RNA sequence 1\" do\n    expected = [\"Tyrosine\"]\n    actual = proteins \"UAU\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Tyrosine RNA sequence 2",
-    "test_code": "let\n  Test.label.deprecated \"Tyrosine RNA sequence 2\" <| Test.expect (proteins \"UAC\" === [\"Tyrosine\"])"
+    "test_code": "verify do\n  labeled \"Tyrosine RNA sequence 2\" do\n    expected = [\"Tyrosine\"]\n    actual = proteins \"UAC\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Cysteine RNA sequence 1",
-    "test_code": "let\n  Test.label.deprecated \"Cysteine RNA sequence 1\" <| Test.expect (proteins \"UGU\" === [\"Cysteine\"])"
+    "test_code": "verify do\n  labeled \"Cysteine RNA sequence 1\" do\n    expected = [\"Cysteine\"]\n    actual = proteins \"UGU\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Cysteine RNA sequence 2",
-    "test_code": "let\n  Test.label.deprecated \"Cysteine RNA sequence 2\" <| Test.expect (proteins \"UGC\" === [\"Cysteine\"])"
+    "test_code": "verify do\n  labeled \"Cysteine RNA sequence 2\" do\n    expected = [\"Cysteine\"]\n    actual = proteins \"UGC\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Tryptophan RNA sequence",
-    "test_code": "let\n  Test.label.deprecated \"Tryptophan RNA sequence\" <| Test.expect (proteins \"UGG\" === [\"Tryptophan\"])"
+    "test_code": "verify do\n  labeled \"Tryptophan RNA sequence\" do\n    expected = [\"Tryptophan\"]\n    actual = proteins \"UGG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "STOP codon RNA sequence 1",
-    "test_code": "let\n  Test.label.deprecated \"STOP codon RNA sequence 1\" <| Test.expect (proteins \"UAA\" === [])"
+    "test_code": "verify do\n  labeled \"STOP codon RNA sequence 1\" do\n    expected = []\n    actual = proteins \"UAA\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "STOP codon RNA sequence 2",
-    "test_code": "let\n  Test.label.deprecated \"STOP codon RNA sequence 2\" <| Test.expect (proteins \"UAG\" === [])"
+    "test_code": "verify do\n  labeled \"STOP codon RNA sequence 2\" do\n    expected = []\n    actual = proteins \"UAG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "STOP codon RNA sequence 3",
-    "test_code": "let\n  Test.label.deprecated \"STOP codon RNA sequence 3\" <| Test.expect (proteins \"UGA\" === [])"
+    "test_code": "verify do\n  labeled \"STOP codon RNA sequence 3\" do\n    expected = []\n    actual = proteins \"UGA\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Sequence of two protein codons translates into proteins",
-    "test_code": "let\n  Test.label.deprecated \"Sequence of two protein codons translates into proteins\" <| Test.expect (proteins \"UUUUUU\" === [\"Phenylalanine\", \"Phenylalanine\"])"
+    "test_code": "verify do\n  labeled \"Sequence of two protein codons translates into proteins\" do\n    expected = [\"Phenylalanine\", \"Phenylalanine\"]\n    actual = proteins \"UUUUUU\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Sequence of two different protein codons translates into proteins",
-    "test_code": "let\n  Test.label.deprecated \"Sequence of two different protein codons translates into proteins\" <| Test.expect (proteins \"UUAUUG\" === [\"Leucine\", \"Leucine\"])"
+    "test_code": "verify do\n  labeled \"Sequence of two different protein codons translates into proteins\" do\n    expected = [\"Leucine\", \"Leucine\"]\n    actual = proteins \"UUAUUG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Translate RNA strand into correct protein list",
-    "test_code": "let\n  Test.label.deprecated \"Translate RNA strand into correct protein list\" <| Test.expect (proteins \"AUGUUUUGG\" === [\"Methionine\", \"Phenylalanine\", \"Tryptophan\"])"
+    "test_code": "verify do\n  labeled \"Translate RNA strand into correct protein list\" do\n    expected = [\"Methionine\", \"Phenylalanine\", \"Tryptophan\"]\n    actual = proteins \"AUGUUUUGG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Translation stops if STOP codon at beginning of sequence",
-    "test_code": "let\n  Test.label.deprecated \"Translation stops if STOP codon at beginning of sequence\" <| Test.expect (proteins \"UAGUGG\" === [])"
+    "test_code": "verify do\n  labeled \"Translation stops if STOP codon at beginning of sequence\" do\n    expected = []\n    actual = proteins \"UAGUGG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Translation stops if STOP codon at end of two-codon sequence",
-    "test_code": "let\n  Test.label.deprecated \"Translation stops if STOP codon at end of two-codon sequence\" <| Test.expect (proteins \"UGGUAG\" === [\"Tryptophan\"])"
+    "test_code": "verify do\n  labeled \"Translation stops if STOP codon at end of two-codon sequence\" do\n    expected = [\"Tryptophan\"]\n    actual = proteins \"UGGUAG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Translation stops if STOP codon at end of three-codon sequence",
-    "test_code": "let\n  Test.label.deprecated \"Translation stops if STOP codon at end of three-codon sequence\" <| Test.expect (proteins \"AUGUUUUAA\" === [\"Methionine\", \"Phenylalanine\"])"
+    "test_code": "verify do\n  labeled \"Translation stops if STOP codon at end of three-codon sequence\" do\n    expected = [\"Methionine\", \"Phenylalanine\"]\n    actual = proteins \"AUGUUUUAA\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Translation stops if STOP codon in middle of three-codon sequence",
-    "test_code": "let\n  Test.label.deprecated \"Translation stops if STOP codon in middle of three-codon sequence\" <| Test.expect (proteins \"UGGUAGUGG\" === [\"Tryptophan\"])"
+    "test_code": "verify do\n  labeled \"Translation stops if STOP codon in middle of three-codon sequence\" do\n    expected = [\"Tryptophan\"]\n    actual = proteins \"UGGUAGUGG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Translation stops if STOP codon in middle of six-codon sequence",
-    "test_code": "let\n  Test.label.deprecated \"Translation stops if STOP codon in middle of six-codon sequence\" <| Test.expect (proteins \"UGGUGUUAUUAAUGGUUU\" === [\"Tryptophan\", \"Cysteine\", \"Tyrosine\"])"
+    "test_code": "verify do\n  labeled \"Translation stops if STOP codon in middle of six-codon sequence\" do\n    expected = [\"Tryptophan\", \"Cysteine\", \"Tyrosine\"]\n    actual = proteins \"UGGUGUUAUUAAUGGUUU\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

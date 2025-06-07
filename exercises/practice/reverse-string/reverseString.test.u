@@ -1,22 +1,52 @@
-reverseString.test.ex1 = let
-  Test.label.deprecated "An empty string" <| Test.expect (reverseString.reverse "" === "")
+reverseString.test.ex1 = verify do
+  labeled "An empty string" do
+    expected = ""
+    actual = reverseString.reverse ""
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-reverseString.test.ex2 = let
-  Test.label.deprecated "A word" <| Test.expect (reverseString.reverse "robot" === "tobor")
+reverseString.test.ex2 = verify do
+  labeled "A word" do
+    expected = "tobor"
+    actual = reverseString.reverse "robot"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-reverseString.test.ex3 = let
-  Test.label.deprecated "A capitalized word" <| Test.expect (reverseString.reverse "Ramen" === "nemaR")
+reverseString.test.ex3 = verify do
+  labeled "A capitalized word" do
+    expected = "nemaR"
+    actual = reverseString.reverse "Ramen"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-reverseString.test.ex4 = let
-  Test.label.deprecated "A sentence with punctuation" <| Test.expect (reverseString.reverse "I'm hungry!" === "!yrgnuh m'I")
+reverseString.test.ex4 = verify do
+  labeled "A sentence with punctuation" do
+    expected = "!yrgnuh m'I"
+    actual = reverseString.reverse "I'm hungry!"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-reverseString.test.ex5 = let
-  Test.label.deprecated "A palindrome" <| Test.expect (reverseString.reverse "racecar" === "racecar")
+reverseString.test.ex5 = verify do
+  labeled "A palindrome" do
+    expected = "racecar"
+    actual = reverseString.reverse "racecar"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-reverseString.test.ex6 = let
-  Test.label.deprecated "An even-sized word" <| Test.expect (reverseString.reverse "drawer" === "reward")
+reverseString.test.ex6 = verify do
+  labeled "An even-sized word" do
+    expected = "reward"
+    actual = reverseString.reverse "drawer"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> reverseString.tests = runAll [
+test> reverseString.tests = join [
   reverseString.test.ex1,
   reverseString.test.ex2,
   reverseString.test.ex3,

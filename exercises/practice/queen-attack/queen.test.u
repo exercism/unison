@@ -1,37 +1,92 @@
-queenAttack.test.ex1 = let
-  Test.label.deprecated "queen with a valid position" <| Test.expect (toOptional! '(create (2,2)) === Some (2,2))
+queenAttack.test.ex1 = verify do
+  labeled "queen with a valid position" do
+    expected = Some (2,2)
+    actual = toOptional! '(create (2,2))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-queenAttack.test.ex2 = let
-  Test.label.deprecated "queen must have row on board" <| Test.expect (toOptional! '(create (8,4)) === None)
+queenAttack.test.ex2 = verify do
+  labeled "queen must have row on board" do
+    expected = None
+    actual = toOptional! '(create (8,4))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-queenAttack.test.ex3 = let
-  Test.label.deprecated "queen must have column on board" <| Test.expect (toOptional! '(create (4,8)) === None)
+queenAttack.test.ex3 = verify do
+  labeled "queen must have column on board" do
+    expected = None
+    actual = toOptional! '(create (4,8))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-queenAttack.test.ex4 = let
-  Test.label.deprecated "cannot attack" <| Test.expect (toOptional! '(canAttack (2,4) (6,6)) === Some false)
+queenAttack.test.ex4 = verify do
+  labeled "cannot attack" do
+    expected = Some false
+    actual = toOptional! '(canAttack (2,4) (6,6))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-queenAttack.test.ex5 = let
-  Test.label.deprecated "can attack on same row" <| Test.expect (toOptional! '(canAttack (2,4) (2,6)) === Some true)
+queenAttack.test.ex5 = verify do
+  labeled "can attack on same row" do
+    expected = Some true
+    actual = toOptional! '(canAttack (2,4) (2,6))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-queenAttack.test.ex6 = let
-  Test.label.deprecated "can attack on same column" <| Test.expect (toOptional! '(canAttack (4,5) (2,5)) === Some true)
+queenAttack.test.ex6 = verify do
+  labeled "can attack on same column" do
+    expected = Some true
+    actual = toOptional! '(canAttack (4,5) (2,5))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-queenAttack.test.ex7 = let
-  Test.label.deprecated "can attack on first diagonal" <| Test.expect (toOptional! '(canAttack (2,2) (0,4)) === Some true)
+queenAttack.test.ex7 = verify do
+  labeled "can attack on first diagonal" do
+    expected = Some true
+    actual = toOptional! '(canAttack (2,2) (0,4))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-queenAttack.test.ex8 = let
-  Test.label.deprecated "can attack on second diagonal" <| Test.expect (toOptional! '(canAttack (2,2) (3,1)) === Some true)
+queenAttack.test.ex8 = verify do
+  labeled "can attack on second diagonal" do
+    expected = Some true
+    actual = toOptional! '(canAttack (2,2) (3,1))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-queenAttack.test.ex9 = let
-  Test.label.deprecated "can attack on third diagonal" <| Test.expect (toOptional! '(canAttack (2,2) (1,1)) === Some true)
+queenAttack.test.ex9 = verify do
+  labeled "can attack on third diagonal" do
+    expected = Some true
+    actual = toOptional! '(canAttack (2,2) (1,1))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-queenAttack.test.ex10 = let
-  Test.label.deprecated "can attack on fourth diagonal" <| Test.expect (toOptional! '(canAttack (1,7) (0,6)) === Some true)
+queenAttack.test.ex10 = verify do
+  labeled "can attack on fourth diagonal" do
+    expected = Some true
+    actual = toOptional! '(canAttack (1,7) (0,6))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-queenAttack.test.ex11 = let
-  Test.label.deprecated "cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal" <| Test.expect (toOptional! '(canAttack (4,1) (2,5)) === Some false)
+queenAttack.test.ex11 = verify do
+  labeled "cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal" do
+    expected = Some false
+    actual = toOptional! '(canAttack (4,1) (2,5))
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> queenAttack.tests = runAll [
+test> queenAttack.tests = join [
   queenAttack.test.ex1,
   queenAttack.test.ex2,
   queenAttack.test.ex3,

@@ -1,10 +1,20 @@
-zebraPuzzle.test.ex1 = let
-  Test.label.deprecated "resident who drinks water" <| Test.expect (drinksWater === "Norwegian")
+zebraPuzzle.test.ex1 = verify do
+  labeled "resident who drinks water" do
+    expected = "Norwegian"
+    actual = drinksWater
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-zebraPuzzle.test.ex2 = let
-  Test.label.deprecated "resident who owns zebra" <| Test.expect (ownsZebra === "Japanese")
+zebraPuzzle.test.ex2 = verify do
+  labeled "resident who owns zebra" do
+    expected = "Japanese"
+    actual = ownsZebra
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> zebraPuzzle.tests = runAll[
+test> zebraPuzzle.tests = join [
   zebraPuzzle.test.ex1,
   zebraPuzzle.test.ex2
 ]

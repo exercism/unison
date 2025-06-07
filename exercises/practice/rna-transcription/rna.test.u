@@ -1,25 +1,60 @@
-rna.test.t1 =
-  Test.label.deprecated "Empty RNA sequence should be empty string" <| Test.expect ((toRNA "") === (Some ""))
+rna.test.t1 = verify do
+  labeled "Empty RNA sequence should be empty string" do
+    expected = Some ""
+    actual = toRNA ""
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rna.test.t2 =
-  Test.label.deprecated "RNA complement of cytosine should be guanine" <| Test.expect ((toRNA "C") === (Some "G"))
+rna.test.t2 = verify do
+  labeled "RNA complement of cytosine should be guanine" do
+    expected = Some "G"
+    actual = toRNA "C"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rna.test.t3 =
-  Test.label.deprecated "RNA complement of guanine should be cytosine" <| Test.expect ((toRNA "G") === (Some "C"))
+rna.test.t3 = verify do
+  labeled "RNA complement of guanine should be cytosine" do
+    expected = Some "C"
+    actual = toRNA "G"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rna.test.t4 =
-  Test.label.deprecated "RNA complement of thymine should be adenine" <| Test.expect ((toRNA "T") === (Some "A"))
+rna.test.t4 = verify do
+  labeled "RNA complement of thymine should be adenine" do
+    expected = Some "A"
+    actual = toRNA "T"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rna.test.t5 =
-  Test.label.deprecated "RNA complement of adenine should be uracil" <| Test.expect ((toRNA "A") === (Some "U"))
+rna.test.t5 = verify do
+  labeled "RNA complement of adenine should be uracil" do
+    expected = Some "U"
+    actual = toRNA "A"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rna.test.t6 =
-  Test.label.deprecated "RNA complement" <| Test.expect (((toRNA "ACGTGGTCTTAA") === (Some "UGCACCAGAAUU")))
+rna.test.t6 = verify do
+  labeled "RNA complement" do
+    expected = Some "UGCACCAGAAUU"
+    actual = toRNA "ACGTGGTCTTAA"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rna.test.t7 =
-  Test.label.deprecated "RNA complement should handle invalid DNA input" <| Test.expect ((toRNA "ACGTXXXCTTAA") === (None))
+rna.test.t7 = verify do
+  labeled "RNA complement should handle invalid DNA input" do
+    expected = None
+    actual = toRNA "ACGTXXXCTTAA"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> rna.tests = runAll [
+test> rna.tests = join [
   rna.test.t1,
   rna.test.t2,
   rna.test.t3,

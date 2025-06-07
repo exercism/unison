@@ -1,22 +1,22 @@
 [
   {
     "name": "empty strand",
-    "test_code": "let\n  Test.label.deprecated \"empty strand\" <| Test.expect (toSortedList (nucleotideCounts \"\") === (Some [(\"A\",0),(\"C\",0),(\"G\",0),(\"T\",0)]))"
+    "test_code": "verify do\n  labeled \"empty strand\" do\n    expected = Some [(\"A\",0),(\"C\",0),(\"G\",0),(\"T\",0)]\n    actual = toSortedList (nucleotideCounts \"\")\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can count one nucleotide in single-character input",
-    "test_code": "let\n  Test.label.deprecated \"can count one nucleotide in single-character input\" <| Test.expect (toSortedList (nucleotideCounts \"G\") === (Some [(\"A\",0),(\"C\",0),(\"G\",1),(\"T\",0)]))"
+    "test_code": "verify do\n  labeled \"can count one nucleotide in single-character input\" do\n    expected = Some [(\"A\",0),(\"C\",0),(\"G\",1),(\"T\",0)]\n    actual = toSortedList (nucleotideCounts \"G\")\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "strand with repeated nucleotide",
-    "test_code": "let\n  Test.label.deprecated \"strand with repeated nucleotide\" <| Test.expect (toSortedList (nucleotideCounts \"GGGGGGG\") === (Some [(\"A\",0),(\"C\",0),(\"G\",7),(\"T\",0)]))"
+    "test_code": "verify do\n  labeled \"strand with repeated nucleotide\" do\n    expected = Some [(\"A\",0),(\"C\",0),(\"G\",7),(\"T\",0)]\n    actual = toSortedList (nucleotideCounts \"GGGGGGG\")\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "strand with multiple nucleotides",
-    "test_code": "let\n  Test.label.deprecated \"strand with multiple nucleotides\" <| Test.expect (toSortedList (nucleotideCounts \"AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC\") === (Some [(\"A\",20),(\"C\",12),(\"G\",17),(\"T\",21)]))"
+    "test_code": "verify do\n  labeled \"strand with multiple nucleotides\" do\n    expected = Some [(\"A\",20),(\"C\",12),(\"G\",17),(\"T\",21)]\n    actual = toSortedList (nucleotideCounts \"AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC\")\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "strand with invalid nucleotides",
-    "test_code": "let\n  Test.label.deprecated \"strand with invalid nucleotides\" <| Test.expect (toSortedList (nucleotideCounts \"AGXXACT\") === None)"
+    "test_code": "verify do\n  labeled \"strand with invalid nucleotides\" do\n    expected = None\n    actual = toSortedList (nucleotideCounts \"AGXXACT\")\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

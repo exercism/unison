@@ -1,54 +1,91 @@
-stream.test.ex1 = let
-  expected = [1,2,3]
-  go =
-    s = MyStream.fromList expected
-    !(MyStream.toList s)
-  Test.label.deprecated "to and from list" <| Test.expect (go === expected )
+stream.test.ex1 = verify do
+  labeled "to and from list" do
+    expected = [1,2,3]
+    actual =
+      s = MyStream.fromList expected
+      !(MyStream.toList s)
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-stream.test.ex2 = let
-  go =
-    s = MyStream.fromList List.empty
-    !(MyStream.toList s)
-  Test.label.deprecated "to and from list with empty list" <| Test.expect (go === List.empty )
+stream.test.ex2 = verify do
+  labeled "to and from list with empty list" do
+    expected = List.empty
+    actual =
+      s = MyStream.fromList List.empty
+      !(MyStream.toList s)
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-stream.test.ex3 = let
-  expected = [1,2,3]
-  go = 'let
-    List.map (a -> let
-      MyStream.emit a
-      a
-    ) expected
-  Test.label.deprecated "toListWithResult returns list and result" <| Test.expect (!(MyStream.toListWithResult go) === (expected, expected))
+stream.test.ex3 = verify do
+  labeled "toListWithResult returns list and result" do
+    inputList = [1,2,3]
+    go = 'let
+      List.map (a -> let
+        MyStream.emit a
+        a
+      ) inputList
+    expected = (inputList, inputList)
+    actual = !(MyStream.toListWithResult go)
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-stream.test.ex4 = let
-  expected = [1,2,3]
-  go = 'let
-    List.foldLeft (acc a -> let
-      MyStream.emit (a Nat.+ acc)
-      a
-    ) 0 expected
-  Test.label.deprecated "ignore returns only the result, not the materialized stream" <| Test.expect ((MyStream.ignore go) === 3 )
+stream.test.ex4 = verify do
+  labeled "ignore returns only the result, not the materialized stream" do
+    inputList = [1,2,3]
+    go = 'let
+      List.foldLeft (acc a -> let
+        MyStream.emit (a Nat.+ acc)
+        a
+      ) 0 inputList
+    expected = 3
+    actual = MyStream.ignore go
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-stream.test.ex5 = let
-  go = '(List.map MyStream.emit [])
-  Test.label.deprecated "ignore handles empty stream" <| Test.expect ((MyStream.ignore go) === [] )
+stream.test.ex5 = verify do
+  labeled "ignore handles empty stream" do
+    go = '(List.map MyStream.emit [])
+    expected = []
+    actual = MyStream.ignore go
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-stream.test.ex6 = let
-  expected = [1,2,3,4]
-  go = MyStream.fromList expected |> MyStream.filter isEven
-  Test.label.deprecated "filters stream" <| Test.expect (!(MyStream.toList go) === [2,4] )
+stream.test.ex6 = verify do
+  labeled "filters stream" do
+    inputList = [1,2,3,4]
+    go = MyStream.fromList inputList |> MyStream.filter isEven
+    expected = [2, 4]
+    actual = !(MyStream.toList go)
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-stream.test.ex7 = let
-  expected = [1,2,3,4]
-  go = MyStream.fromList expected |> MyStream.map increment
-  Test.label.deprecated "maps over stream" <| Test.expect (!(MyStream.toList go) === [2,3,4,5] )
+stream.test.ex7 = verify do
+  labeled "maps over stream" do
+    inputList = [1,2,3,4]
+    go = MyStream.fromList inputList |> MyStream.map increment
+    expected = [2,3,4,5]
+    actual = !(MyStream.toList go)
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-stream.test.ex8 = let
-  expected = [1,2,3]
-  go = MyStream.fromList expected |> MyStream.flatMap (elem -> !(MyStream.fromList (List.fill 2 elem)))
-  Test.label.deprecated "flatMaps over stream" <| Test.expect (!(MyStream.toList go) === [1,1,2,2,3,3] )
+stream.test.ex8 = verify do
+  labeled "flatMaps over stream" do
+    inputList = [1,2,3]
+    go = MyStream.fromList inputList |> MyStream.flatMap (elem -> !(MyStream.fromList (List.fill 2 elem)))
+    expected = [1,1,2,2,3,3]
+    actual = !(MyStream.toList go)
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> stream.tests = runAll [
+test> stream.tests = join [
   stream.test.ex1,
   stream.test.ex2,
   stream.test.ex3,

@@ -1,106 +1,106 @@
 [
   {
     "name": "1 is I",
-    "test_code": "let\n  Test.label.deprecated \"1 is I\" <| Test.expect (toRoman 1 === \"I\")"
+    "test_code": "verify do\n  labeled \"1 is I\" do\n    expected = \"I\"\n    actual = toRoman 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "2 is II",
-    "test_code": "let\n  Test.label.deprecated \"2 is II\" <| Test.expect (toRoman 2 === \"II\")"
+    "test_code": "verify do\n  labeled \"2 is II\" do\n    expected = \"II\"\n    actual = toRoman 2\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "3 is III",
-    "test_code": "let\n  Test.label.deprecated \"3 is III\" <| Test.expect (toRoman 3 === \"III\")"
+    "test_code": "verify do\n  labeled \"3 is III\" do\n    expected = \"III\"\n    actual = toRoman 3\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "4 is IV",
-    "test_code": "let\n  Test.label.deprecated \"4 is IV\" <| Test.expect (toRoman 4 === \"IV\")"
+    "test_code": "verify do\n  labeled \"4 is IV\" do\n    expected = \"IV\"\n    actual = toRoman 4\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "5 is V",
-    "test_code": "let\n  Test.label.deprecated \"5 is V\" <| Test.expect (toRoman 5 === \"V\")"
+    "test_code": "verify do\n  labeled \"5 is V\" do\n    expected = \"V\"\n    actual = toRoman 5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "6 is VI",
-    "test_code": "let\n  Test.label.deprecated \"6 is VI\" <| Test.expect (toRoman 6 === \"VI\")"
+    "test_code": "verify do\n  labeled \"6 is VI\" do\n    expected = \"VI\"\n    actual = toRoman 6\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "9 is IX",
-    "test_code": "let\n  Test.label.deprecated \"9 is IX\" <| Test.expect (toRoman 9 === \"IX\")"
+    "test_code": "verify do\n  labeled \"9 is IX\" do\n    expected = \"IX\"\n    actual = toRoman 9\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "27 is XXVII",
-    "test_code": "let\n  Test.label.deprecated \"27 is XXVII\" <| Test.expect (toRoman 27 === \"XXVII\")"
+    "test_code": "verify do\n  labeled \"27 is XXVII\" do\n    expected = \"XXVII\"\n    actual = toRoman 27\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "48 is XLVIII",
-    "test_code": "let\n  Test.label.deprecated \"48 is XLVIII\" <| Test.expect (toRoman 48 === \"XLVIII\")"
+    "test_code": "verify do\n  labeled \"48 is XLVIII\" do\n    expected = \"XLVIII\"\n    actual = toRoman 48\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "49 is XLIX",
-    "test_code": "let\n  Test.label.deprecated \"49 is XLIX\" <| Test.expect (toRoman 49 === \"XLIX\")"
+    "test_code": "verify do\n  labeled \"49 is XLIX\" do\n    expected = \"XLIX\"\n    actual = toRoman 49\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "59 is LIX",
-    "test_code": "let\n  Test.label.deprecated \"59 is LIX\" <| Test.expect (toRoman 59 === \"LIX\")"
+    "test_code": "verify do\n  labeled \"59 is LIX\" do\n    expected = \"LIX\"\n    actual = toRoman 59\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "93 is XCIII",
-    "test_code": "let\n  Test.label.deprecated \"93 is XCIII\" <| Test.expect (toRoman 93 === \"XCIII\")"
+    "test_code": "verify do\n  labeled \"93 is XCIII\" do\n    expected = \"XCIII\"\n    actual = toRoman 93\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "141 is CXLI",
-    "test_code": "let\n  Test.label.deprecated \"141 is CXLI\" <| Test.expect (toRoman 141 === \"CXLI\")"
+    "test_code": "verify do\n  labeled \"141 is CXLI\" do\n    expected = \"CXLI\"\n    actual = toRoman 141\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "163 is CLXIII",
-    "test_code": "let\n  Test.label.deprecated \"163 is CLXIII\" <| Test.expect (toRoman 163 === \"CLXIII\")"
+    "test_code": "verify do\n  labeled \"163 is CLXIII\" do\n    expected = \"CLXIII\"\n    actual = toRoman 163\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "402 is CDII",
-    "test_code": "let\n  Test.label.deprecated \"402 is CDII\" <| Test.expect (toRoman 402 === \"CDII\")"
+    "test_code": "verify do\n  labeled \"402 is CDII\" do\n    expected = \"CDII\"\n    actual = toRoman 402\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "575 is DLXXV",
-    "test_code": "let\n  Test.label.deprecated \"575 is DLXXV\" <| Test.expect (toRoman 575 === \"DLXXV\")"
+    "test_code": "verify do\n  labeled \"575 is DLXXV\" do\n    expected = \"DLXXV\"\n    actual = toRoman 575\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "911 is CMXI",
-    "test_code": "let\n  Test.label.deprecated \"911 is CMXI\" <| Test.expect (toRoman 911 === \"CMXI\")"
+    "test_code": "verify do\n  labeled \"911 is CMXI\" do\n    expected = \"CMXI\"\n    actual = toRoman 911\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "1024 is MXXIV",
-    "test_code": "let\n  Test.label.deprecated \"1024 is MXXIV\" <| Test.expect (toRoman 1024 === \"MXXIV\")"
+    "test_code": "verify do\n  labeled \"1024 is MXXIV\" do\n    expected = \"MXXIV\"\n    actual = toRoman 1024\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "3000 is MMM",
-    "test_code": "let\n  Test.label.deprecated \"3000 is MMM\" <| Test.expect (toRoman 3000 === \"MMM\")"
+    "test_code": "verify do\n  labeled \"3000 is MMM\" do\n    expected = \"MMM\"\n    actual = toRoman 3000\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "16 is XVI",
-    "test_code": "let\n  Test.label.deprecated \"16 is XVI\" <| Test.expect (toRoman 16 === \"XVI\")"
+    "test_code": "verify do\n  labeled \"16 is XVI\" do\n    expected = \"XVI\"\n    actual = toRoman 16\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "66 is LXVI",
-    "test_code": "let\n  Test.label.deprecated \"66 is LXVI\" <| Test.expect (toRoman 66 === \"LXVI\")"
+    "test_code": "verify do\n  labeled \"66 is LXVI\" do\n    expected = \"LXVI\"\n    actual = toRoman 66\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "166 is CLXVI",
-    "test_code": "let\n  Test.label.deprecated \"166 is CLXVI\" <| Test.expect (toRoman 166 === \"CLXVI\")"
+    "test_code": "verify do\n  labeled \"166 is CLXVI\" do\n    expected = \"CLXVI\"\n    actual = toRoman 166\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "666 is DCLXVI",
-    "test_code": "let\n  Test.label.deprecated \"666 is DCLXVI\" <| Test.expect (toRoman 666 === \"DCLXVI\")"
+    "test_code": "verify do\n  labeled \"666 is DCLXVI\" do\n    expected = \"DCLXVI\"\n    actual = toRoman 666\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "1666 is MDCLXVI",
-    "test_code": "let\n  Test.label.deprecated \"1666 is MDCLXVI\" <| Test.expect (toRoman 1666 === \"MDCLXVI\")"
+    "test_code": "verify do\n  labeled \"1666 is MDCLXVI\" do\n    expected = \"MDCLXVI\"\n    actual = toRoman 1666\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "3001 is MMMI",
-    "test_code": "let\n  Test.label.deprecated \"3001 is MMMI\" <| Test.expect (toRoman 3001 === \"MMMI\")"
+    "test_code": "verify do\n  labeled \"3001 is MMMI\" do\n    expected = \"MMMI\"\n    actual = toRoman 3001\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "3999 is MMMCMXCIX",
-    "test_code": "let\n  Test.label.deprecated \"3999 is MMMCMXCIX\" <| Test.expect (toRoman 3999 === \"MMMCMXCIX\")"
+    "test_code": "verify do\n  labeled \"3999 is MMMCMXCIX\" do\n    expected = \"MMMCMXCIX\"\n    actual = toRoman 3999\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

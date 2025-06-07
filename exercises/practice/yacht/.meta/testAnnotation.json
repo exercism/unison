@@ -1,118 +1,118 @@
 [
   {
     "name": "Yacht",
-    "test_code": "expect (50 == yacht.yacht Yacht [5, 5, 5, 5, 5])\n    |> Test.label.deprecated \"Yacht\""
+    "test_code": "verify do\n  labeled \"Yacht\" do\n    expected = 50\n    actual = yacht.yacht Yacht [5, 5, 5, 5, 5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Not Yacht",
-    "test_code": "expect (0 == yacht.yacht Yacht [1, 3, 3, 2, 5])\n    |> Test.label.deprecated \"Not Yacht\""
+    "test_code": "verify do\n  labeled \"Not Yacht\" do\n    expected = 0\n    actual = yacht.yacht Yacht [1, 3, 3, 2, 5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Ones",
-    "test_code": "expect (3 == yacht.yacht Ones [1, 1, 1, 3, 5])\n    |> Test.label.deprecated \"Ones\""
+    "test_code": "verify do\n  labeled \"Ones\" do\n    expected = 3\n    actual = yacht.yacht Ones [1, 1, 1, 3, 5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Ones, out of order",
-    "test_code": "expect (3 == yacht.yacht Ones [3, 1, 1, 5, 1])\n    |> Test.label.deprecated \"Ones, out of order\""
+    "test_code": "verify do\n  labeled \"Ones, out of order\" do\n    expected = 3\n    actual = yacht.yacht Ones [3, 1, 1, 5, 1]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "No ones",
-    "test_code": "expect (0 == yacht.yacht Ones [4, 3, 6, 5, 5])\n    |> Test.label.deprecated \"No ones\""
+    "test_code": "verify do\n  labeled \"No ones\" do\n    expected = 0\n    actual = yacht.yacht Ones [4, 3, 6, 5, 5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Twos",
-    "test_code": "expect (2 == yacht.yacht Twos [2, 3, 4, 5, 6])\n    |> Test.label.deprecated \"Twos\""
+    "test_code": "verify do\n  labeled \"Twos\" do\n    expected = 2\n    actual = yacht.yacht Twos [2, 3, 4, 5, 6]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Fours",
-    "test_code": "expect (8 == yacht.yacht Fours [1, 4, 1, 4, 1])\n    |> Test.label.deprecated \"Fours\""
+    "test_code": "verify do\n  labeled \"Fours\" do\n    expected = 8\n    actual = yacht.yacht Fours [1, 4, 1, 4, 1]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Yacht counted as threes",
-    "test_code": "expect (15 == yacht.yacht Threes [3, 3, 3, 3, 3])\n    |> Test.label.deprecated \"Yacht counted as threes\""
+    "test_code": "verify do\n  labeled \"Yacht counted as threes\" do\n    expected = 15\n    actual = yacht.yacht Threes [3, 3, 3, 3, 3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Yacht of 3s counted as fives",
-    "test_code": "expect (0 == yacht.yacht Fives [3, 3, 3, 3, 3])\n    |> Test.label.deprecated \"Yacht of 3s counted as fives\""
+    "test_code": "verify do\n  labeled \"Yacht of 3s counted as fives\" do\n    expected = 0\n    actual = yacht.yacht Fives [3, 3, 3, 3, 3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Fives",
-    "test_code": "expect (10 == yacht.yacht Fives [1, 5, 3, 5, 3])\n    |> Test.label.deprecated \"Fives\""
+    "test_code": "verify do\n  labeled \"Fives\" do\n    expected = 10\n    actual = yacht.yacht Fives [1, 5, 3, 5, 3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Sixes",
-    "test_code": "expect (6 == yacht.yacht Sixes [2, 3, 4, 5, 6])\n    |> Test.label.deprecated \"Sixes\""
+    "test_code": "verify do\n  labeled \"Sixes\" do\n    expected = 6\n    actual = yacht.yacht Sixes [2, 3, 4, 5, 6]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Full house two small, three big",
-    "test_code": "expect (16 == yacht.yacht FullHouse [2, 2, 4, 4, 4])\n    |> Test.label.deprecated \"Full house two small, three big\""
+    "test_code": "verify do\n  labeled \"Full house two small, three big\" do\n    expected = 16\n    actual = yacht.yacht FullHouse [2, 2, 4, 4, 4]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Full house three small, two big",
-    "test_code": "expect (19 == yacht.yacht FullHouse [5, 3, 3, 5, 3])\n    |> Test.label.deprecated \"Full house three small, two big\""
+    "test_code": "verify do\n  labeled \"Full house three small, two big\" do\n    expected = 19\n    actual = yacht.yacht FullHouse [5, 3, 3, 5, 3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Two pair is not a full house",
-    "test_code": "expect (0 == yacht.yacht FullHouse [2, 2, 4, 4, 5])\n    |> Test.label.deprecated \"Two pair is not a full house\""
+    "test_code": "verify do\n  labeled \"Two pair is not a full house\" do\n    expected = 0\n    actual = yacht.yacht FullHouse [2, 2, 4, 4, 5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Four of a kind is not a full house",
-    "test_code": "expect (0 == yacht.yacht FullHouse [1, 4, 4, 4, 4])\n    |> Test.label.deprecated \"Four of a kind is not a full house\""
+    "test_code": "verify do\n  labeled \"Four of a kind is not a full house\" do\n    expected = 0\n    actual = yacht.yacht FullHouse [1, 4, 4, 4, 4]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Yacht is not a full house",
-    "test_code": "expect (0 == yacht.yacht FullHouse [2, 2, 2, 2, 2])\n    |> Test.label.deprecated \"Yacht is not a full house\""
+    "test_code": "verify do\n  labeled \"Yacht is not a full house\" do\n    expected = 0\n    actual = yacht.yacht FullHouse [2, 2, 2, 2, 2]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Four of a Kind",
-    "test_code": "expect (24 == yacht.yacht FourOfAKind [6, 6, 4, 6, 6])\n    |> Test.label.deprecated \"Four of a Kind\""
+    "test_code": "verify do\n  labeled \"Four of a Kind\" do\n    expected = 24\n    actual = yacht.yacht FourOfAKind [6, 6, 4, 6, 6]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Yacht can be scored as Four of a Kind",
-    "test_code": "expect (12 == yacht.yacht FourOfAKind [3, 3, 3, 3, 3])\n    |> Test.label.deprecated \"Yacht can be scored as Four of a Kind\""
+    "test_code": "verify do\n  labeled \"Yacht can be scored as Four of a Kind\" do\n    expected = 12\n    actual = yacht.yacht FourOfAKind [3, 3, 3, 3, 3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Full house is not Four of a Kind",
-    "test_code": "expect (0 == yacht.yacht FourOfAKind [3, 3, 3, 5, 5])\n    |> Test.label.deprecated \"Full house is not Four of a Kind\""
+    "test_code": "verify do\n  labeled \"Full house is not Four of a Kind\" do\n    expected = 0\n    actual = yacht.yacht FourOfAKind [3, 3, 3, 5, 5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Little Straight",
-    "test_code": "expect (30 == yacht.yacht LittleStraight [3, 5, 4, 1, 2])\n    |> Test.label.deprecated \"Little Straight\""
+    "test_code": "verify do\n  labeled \"Little Straight\" do\n    expected = 30\n    actual = yacht.yacht LittleStraight [3, 5, 4, 1, 2]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Little Straight as Big Straight",
-    "test_code": "expect (0 == yacht.yacht BigStraight [1, 2, 3, 4, 5])\n    |> Test.label.deprecated \"Little Straight as Big Straight\""
+    "test_code": "verify do\n  labeled \"Little Straight as Big Straight\" do\n    expected = 0\n    actual = yacht.yacht BigStraight [1, 2, 3, 4, 5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Four in order but not a little straight",
-    "test_code": "expect (0 == yacht.yacht LittleStraight [1, 1, 2, 3, 4])\n    |> Test.label.deprecated \"Four in order but not a little straight\""
+    "test_code": "verify do\n  labeled \"Four in order but not a little straight\" do\n    expected = 0\n    actual = yacht.yacht LittleStraight [1, 1, 2, 3, 4]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "No pairs but not a little straight",
-    "test_code": "expect (0 == yacht.yacht LittleStraight [1, 2, 3, 4, 6])\n    |> Test.label.deprecated \"No pairs but not a little straight\""
+    "test_code": "verify do\n  labeled \"No pairs but not a little straight\" do\n    expected = 0\n    actual = yacht.yacht LittleStraight [1, 2, 3, 4, 6]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Minimum is 1, maximum is 5, but not a little straight",
-    "test_code": "expect (0 == yacht.yacht LittleStraight [1, 1, 3, 4, 5])\n    |> Test.label.deprecated \"Minimum is 1, maximum is 5, but not a little straight\""
+    "test_code": "verify do\n  labeled \"Minimum is 1, maximum is 5, but not a little straight\" do\n    expected = 0\n    actual = yacht.yacht LittleStraight [1, 1, 3, 4, 5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Big Straight",
-    "test_code": "expect (30 == yacht.yacht BigStraight [4, 6, 2, 5, 3])\n    |> Test.label.deprecated \"Big Straight\""
+    "test_code": "verify do\n  labeled \"Big Straight\" do\n    expected = 30\n    actual = yacht.yacht BigStraight [4, 6, 2, 5, 3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Big Straight as little straight",
-    "test_code": "expect (0 == yacht.yacht LittleStraight [6, 5, 4, 3, 2])\n    |> Test.label.deprecated \"Big Straight as little straight\""
+    "test_code": "verify do\n  labeled \"Big Straight as little straight\" do\n    expected = 0\n    actual = yacht.yacht LittleStraight [6, 5, 4, 3, 2]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "No pairs but not a big straight",
-    "test_code": "expect (0 == yacht.yacht BigStraight [6, 5, 4, 3, 1])\n    |> Test.label.deprecated \"No pairs but not a big straight\""
+    "test_code": "verify do\n  labeled \"No pairs but not a big straight\" do\n    expected = 0\n    actual = yacht.yacht BigStraight [6, 5, 4, 3, 1]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Choice",
-    "test_code": "expect (23 == yacht.yacht Choice [3, 3, 5, 6, 6])\n    |> Test.label.deprecated \"Choice\""
+    "test_code": "verify do\n  labeled \"Choice\" do\n    expected = 23\n    actual = yacht.yacht Choice [3, 3, 5, 6, 6]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Yacht as choice",
-    "test_code": "expect (10 == yacht.yacht Choice [2, 2, 2, 2, 2])\n    |> Test.label.deprecated \"Yacht as choice\""
+    "test_code": "verify do\n  labeled \"Yacht as choice\" do\n    expected = 10\n    actual = yacht.yacht Choice [2, 2, 2, 2, 2]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

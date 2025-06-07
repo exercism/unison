@@ -1,82 +1,212 @@
-proteinTranslation.test.ex1 = let
-  Test.label.deprecated "Empty RNA sequence results in no proteins" <| Test.expect (proteins "" === [])
+proteinTranslation.test.ex1 = verify do
+  labeled "Empty RNA sequence results in no proteins" do
+    expected = []
+    actual = proteins ""
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex2 = let
-  Test.label.deprecated "Methionine RNA sequence" <| Test.expect (proteins "AUG" === ["Methionine"])
+proteinTranslation.test.ex2 = verify do
+  labeled "Methionine RNA sequence" do
+    expected = ["Methionine"]
+    actual = proteins "AUG"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex3 = let
-  Test.label.deprecated "Phenylalanine RNA sequence 1" <| Test.expect (proteins "UUU" === ["Phenylalanine"])
+proteinTranslation.test.ex3 = verify do
+  labeled "Phenylalanine RNA sequence 1" do
+    expected = ["Phenylalanine"]
+    actual = proteins "UUU"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex4 = let
-  Test.label.deprecated "Phenylalanine RNA sequence 2" <| Test.expect (proteins "UUC" === ["Phenylalanine"])
+proteinTranslation.test.ex4 = verify do
+  labeled "Phenylalanine RNA sequence 2" do
+    expected = ["Phenylalanine"]
+    actual = proteins "UUC"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex5 = let
-  Test.label.deprecated "Leucine RNA sequence 1" <| Test.expect (proteins "UUA" === ["Leucine"])
+proteinTranslation.test.ex5 = verify do
+  labeled "Leucine RNA sequence 1" do
+    expected = ["Leucine"]
+    actual = proteins "UUA"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex6 = let
-  Test.label.deprecated "Leucine RNA sequence 2" <| Test.expect (proteins "UUG" === ["Leucine"])
+proteinTranslation.test.ex6 = verify do
+  labeled "Leucine RNA sequence 2" do
+    expected = ["Leucine"]
+    actual = proteins "UUG"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex7 = let
-  Test.label.deprecated "Serine RNA sequence 1" <| Test.expect (proteins "UCU" === ["Serine"])
+proteinTranslation.test.ex7 = verify do
+  labeled "Serine RNA sequence 1" do
+    expected = ["Serine"]
+    actual = proteins "UCU"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex8 = let
-  Test.label.deprecated "Serine RNA sequence 2" <| Test.expect (proteins "UCC" === ["Serine"])
+proteinTranslation.test.ex8 = verify do
+  labeled "Serine RNA sequence 2" do
+    expected = ["Serine"]
+    actual = proteins "UCC"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex9 = let
-  Test.label.deprecated "Serine RNA sequence 3" <| Test.expect (proteins "UCA" === ["Serine"])
+proteinTranslation.test.ex9 = verify do
+  labeled "Serine RNA sequence 3" do
+    expected = ["Serine"]
+    actual = proteins "UCA"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex10 = let
-  Test.label.deprecated "Serine RNA sequence 4" <| Test.expect (proteins "UCG" === ["Serine"])
+proteinTranslation.test.ex10 = verify do
+  labeled "Serine RNA sequence 4" do
+    expected = ["Serine"]
+    actual = proteins "UCG"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex11 = let
-  Test.label.deprecated "Tyrosine RNA sequence 1" <| Test.expect (proteins "UAU" === ["Tyrosine"])
+proteinTranslation.test.ex11 = verify do
+  labeled "Tyrosine RNA sequence 1" do
+    expected = ["Tyrosine"]
+    actual = proteins "UAU"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex12 = let
-  Test.label.deprecated "Tyrosine RNA sequence 2" <| Test.expect (proteins "UAC" === ["Tyrosine"])
+proteinTranslation.test.ex12 = verify do
+  labeled "Tyrosine RNA sequence 2" do
+    expected = ["Tyrosine"]
+    actual = proteins "UAC"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex13 = let
-  Test.label.deprecated "Cysteine RNA sequence 1" <| Test.expect (proteins "UGU" === ["Cysteine"])
+proteinTranslation.test.ex13 = verify do
+  labeled "Cysteine RNA sequence 1" do
+    expected = ["Cysteine"]
+    actual = proteins "UGU"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex14 = let
-  Test.label.deprecated "Cysteine RNA sequence 2" <| Test.expect (proteins "UGC" === ["Cysteine"])
+proteinTranslation.test.ex14 = verify do
+  labeled "Cysteine RNA sequence 2" do
+    expected = ["Cysteine"]
+    actual = proteins "UGC"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex15 = let
-  Test.label.deprecated "Tryptophan RNA sequence" <| Test.expect (proteins "UGG" === ["Tryptophan"])
+proteinTranslation.test.ex15 = verify do
+  labeled "Tryptophan RNA sequence" do
+    expected = ["Tryptophan"]
+    actual = proteins "UGG"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex16 = let
-  Test.label.deprecated "STOP codon RNA sequence 1" <| Test.expect (proteins "UAA" === [])
+proteinTranslation.test.ex16 = verify do
+  labeled "STOP codon RNA sequence 1" do
+    expected = []
+    actual = proteins "UAA"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex17 = let
-  Test.label.deprecated "STOP codon RNA sequence 2" <| Test.expect (proteins "UAG" === [])
+proteinTranslation.test.ex17 = verify do
+  labeled "STOP codon RNA sequence 2" do
+    expected = []
+    actual = proteins "UAG"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex18 = let
-  Test.label.deprecated "STOP codon RNA sequence 3" <| Test.expect (proteins "UGA" === [])
+proteinTranslation.test.ex18 = verify do
+  labeled "STOP codon RNA sequence 3" do
+    expected = []
+    actual = proteins "UGA"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex19 = let
-  Test.label.deprecated "Sequence of two protein codons translates into proteins" <| Test.expect (proteins "UUUUUU" === ["Phenylalanine", "Phenylalanine"])
+proteinTranslation.test.ex19 = verify do
+  labeled "Sequence of two protein codons translates into proteins" do
+    expected = ["Phenylalanine", "Phenylalanine"]
+    actual = proteins "UUUUUU"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex20 = let
-  Test.label.deprecated "Sequence of two different protein codons translates into proteins" <| Test.expect (proteins "UUAUUG" === ["Leucine", "Leucine"])
+proteinTranslation.test.ex20 = verify do
+  labeled "Sequence of two different protein codons translates into proteins" do
+    expected = ["Leucine", "Leucine"]
+    actual = proteins "UUAUUG"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex21 = let
-  Test.label.deprecated "Translate RNA strand into correct protein list" <| Test.expect (proteins "AUGUUUUGG" === ["Methionine", "Phenylalanine", "Tryptophan"])
+proteinTranslation.test.ex21 = verify do
+  labeled "Translate RNA strand into correct protein list" do
+    expected = ["Methionine", "Phenylalanine", "Tryptophan"]
+    actual = proteins "AUGUUUUGG"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex22 = let
-  Test.label.deprecated "Translation stops if STOP codon at beginning of sequence" <| Test.expect (proteins "UAGUGG" === [])
+proteinTranslation.test.ex22 = verify do
+  labeled "Translation stops if STOP codon at beginning of sequence" do
+    expected = []
+    actual = proteins "UAGUGG"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex23 = let
-  Test.label.deprecated "Translation stops if STOP codon at end of two-codon sequence" <| Test.expect (proteins "UGGUAG" === ["Tryptophan"])
+proteinTranslation.test.ex23 = verify do
+  labeled "Translation stops if STOP codon at end of two-codon sequence" do
+    expected = ["Tryptophan"]
+    actual = proteins "UGGUAG"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex24 = let
-  Test.label.deprecated "Translation stops if STOP codon at end of three-codon sequence" <| Test.expect (proteins "AUGUUUUAA" === ["Methionine", "Phenylalanine"])
+proteinTranslation.test.ex24 = verify do
+  labeled "Translation stops if STOP codon at end of three-codon sequence" do
+    expected = ["Methionine", "Phenylalanine"]
+    actual = proteins "AUGUUUUAA"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex25 = let
-  Test.label.deprecated "Translation stops if STOP codon in middle of three-codon sequence" <| Test.expect (proteins "UGGUAGUGG" === ["Tryptophan"])
+proteinTranslation.test.ex25 = verify do
+  labeled "Translation stops if STOP codon in middle of three-codon sequence" do
+    expected = ["Tryptophan"]
+    actual = proteins "UGGUAGUGG"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-proteinTranslation.test.ex26 = let
-  Test.label.deprecated "Translation stops if STOP codon in middle of six-codon sequence" <| Test.expect (proteins "UGGUGUUAUUAAUGGUUU" === ["Tryptophan", "Cysteine", "Tyrosine"])
+proteinTranslation.test.ex26 = verify do
+  labeled "Translation stops if STOP codon in middle of six-codon sequence" do
+    expected = ["Tryptophan", "Cysteine", "Tyrosine"]
+    actual = proteins "UGGUGUUAUUAAUGGUUU"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> proteinTranslation.tests = runAll [
+test> proteinTranslation.tests = join [
   proteinTranslation.test.ex1,
   proteinTranslation.test.ex2,
   proteinTranslation.test.ex3,

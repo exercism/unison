@@ -1,46 +1,46 @@
 [
   {
     "name": "wink for 1",
-    "test_code": "expect ([Wink] === secretHandshake.commands 1)\n    |> Test.label.deprecated \"wink for 1\""
+    "test_code": "verify do\n  labeled \"wink for 1\" do\n    expected = [Wink]\n    actual = secretHandshake.commands 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "double blink for 10",
-    "test_code": "expect ([DoubleBlink] === secretHandshake.commands 2)\n    |> Test.label.deprecated \"double blink for 10\""
+    "test_code": "verify do\n  labeled \"double blink for 10\" do\n    expected = [DoubleBlink]\n    actual = secretHandshake.commands 2\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "close your eyes for 100",
-    "test_code": "expect ([CloseYourEyes] === secretHandshake.commands 4)\n    |> Test.label.deprecated \"close your eyes for 100\""
+    "test_code": "verify do\n  labeled \"close your eyes for 100\" do\n    expected = [CloseYourEyes]\n    actual = secretHandshake.commands 4\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "jump for 1000",
-    "test_code": "expect ([Jump] === secretHandshake.commands 8)\n    |> Test.label.deprecated \"jump for 1000\""
+    "test_code": "verify do\n  labeled \"jump for 1000\" do\n    expected = [Jump]\n    actual = secretHandshake.commands 8\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "combine two actions",
-    "test_code": "expect ([Wink, DoubleBlink] === secretHandshake.commands 3)\n    |> Test.label.deprecated \"combine two actions\""
+    "test_code": "verify do\n  labeled \"combine two actions\" do\n    expected = [Wink, DoubleBlink]\n    actual = secretHandshake.commands 3\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "reverse two actions",
-    "test_code": "expect ([DoubleBlink, Wink] === secretHandshake.commands 19)\n    |> Test.label.deprecated \"reverse two actions\""
+    "test_code": "verify do\n  labeled \"reverse two actions\" do\n    expected = [DoubleBlink, Wink]\n    actual = secretHandshake.commands 19\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "reversing one action gives the same action",
-    "test_code": "expect ([Jump] === secretHandshake.commands 24)\n    |> Test.label.deprecated \"reversing one action gives the same action\""
+    "test_code": "verify do\n  labeled \"reversing one action gives the same action\" do\n    expected = [Jump]\n    actual = secretHandshake.commands 24\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "reversing no actions still gives no actions",
-    "test_code": "expect ([] === secretHandshake.commands 16)\n    |> Test.label.deprecated \"reversing no actions still gives no actions\""
+    "test_code": "verify do\n  labeled \"reversing no actions still gives no actions\" do\n    expected = []\n    actual = secretHandshake.commands 16\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "all possible actions",
-    "test_code": "expect ([Wink, DoubleBlink, CloseYourEyes, Jump] === secretHandshake.commands 15)\n    |> Test.label.deprecated \"all possible actions\""
+    "test_code": "verify do\n  labeled \"all possible actions\" do\n    expected = [Wink, DoubleBlink, CloseYourEyes, Jump]\n    actual = secretHandshake.commands 15\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "reverse all possible actions",
-    "test_code": "expect ([Jump, CloseYourEyes, DoubleBlink, Wink] === secretHandshake.commands 31)\n    |> Test.label.deprecated \"reverse all possible actions\""
+    "test_code": "verify do\n  labeled \"reverse all possible actions\" do\n    expected = [Jump, CloseYourEyes, DoubleBlink, Wink]\n    actual = secretHandshake.commands 31\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "do nothing for zero",
-    "test_code": "expect ([] === secretHandshake.commands 0)\n    |> Test.label.deprecated \"do nothing for zero\""
+    "test_code": "verify do\n  labeled \"do nothing for zero\" do\n    expected = []\n    actual = secretHandshake.commands 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

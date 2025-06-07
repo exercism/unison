@@ -1,46 +1,111 @@
-runLengthEncoding.test.ex1 = let
-  Test.label.deprecated "run-length encode a string, empty string" <| Test.expect ((encode "") === "")
-
-runLengthEncoding.test.ex2 = let
-  Test.label.deprecated "run-length encode a string, single characters only are encoded without count" <| Test.expect (encode "XYZ" === "XYZ")
-
-runLengthEncoding.test.ex3 = let
-  Test.label.deprecated "run-length encode a string, string with no single characters" <| Test.expect (encode "AABBBCCCC" === "2A3B4C")
-
-runLengthEncoding.test.ex4 = let
-  Test.label.deprecated "run-length encode a string, single characters mixed with repeated characters" <| Test.expect (encode "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB" === "12WB12W3B24WB")
-
-runLengthEncoding.test.ex5 = let
-  Test.label.deprecated "run-length encode a string, multiple whitespace mixed in string" <| Test.expect (encode "  hsqq qww  " === "2 hs2q q2w2 ")
-
-runLengthEncoding.test.ex6 = let
-  Test.label.deprecated "run-length encode a string, lowercase characters" <| Test.expect (encode "aabbbcccc" === "2a3b4c")
-
-runLengthEncoding.test.ex7 = let
-  Test.label.deprecated "run-length decode a string, empty string" <| Test.expect (decode "" === "")
-
-runLengthEncoding.test.ex8 = let
-  Test.label.deprecated "run-length decode a string, single characters only" <| Test.expect (decode "XYZ" === "XYZ")
-
-runLengthEncoding.test.ex9 = let
-  Test.label.deprecated "run-length decode a string, string with no single characters" <| Test.expect (decode "2A3B4C" === "AABBBCCCC")
-
-runLengthEncoding.test.ex10 = let
-  Test.label.deprecated "run-length decode a string, single characters with repeated characters" <| Test.expect (decode "12WB12W3B24WB" === "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB")
-
-runLengthEncoding.test.ex11 = let
-  Test.label.deprecated "run-length decode a string, multiple whitespace mixed in string" <| Test.expect (decode "2 hs2q q2w2 " === "  hsqq qww  ")
-
-runLengthEncoding.test.ex12 = let
-  Test.label.deprecated "run-length decode a string, lowercase string" <| Test.expect (decode "2a3b4c" === "aabbbcccc")
-
 runLengthEncoding.consistency : Text -> Text
 runLengthEncoding.consistency = encode >> decode
 
-runLengthEncoding.test.ex13 = let
-  Test.label.deprecated "encode and then decode, encode followed by decode gives original string" <| Test.expect (consistency "zzz ZZ  zZ" === "zzz ZZ  zZ")
+runLengthEncoding.test.ex1 = verify do
+  labeled "run-length encode a string, empty string" do
+    expected = ""
+    actual = encode ""
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> runLengthEncoding.tests = runAll [
+runLengthEncoding.test.ex2 = verify do
+  labeled "run-length encode a string, single characters only are encoded without count" do
+    expected = "XYZ"
+    actual = encode "XYZ"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex3 = verify do
+  labeled "run-length encode a string, string with no single characters" do
+    expected = "2A3B4C"
+    actual = encode "AABBBCCCC"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex4 = verify do
+  labeled "run-length encode a string, single characters mixed with repeated characters" do
+    expected = "12WB12W3B24WB"
+    actual = encode "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex5 = verify do
+  labeled "run-length encode a string, multiple whitespace mixed in string" do
+    expected = "2 hs2q q2w2 "
+    actual = encode "  hsqq qww  "
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex6 = verify do
+  labeled "run-length encode a string, lowercase characters" do
+    expected = "2a3b4c"
+    actual = encode "aabbbcccc"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex7 = verify do
+  labeled "run-length decode a string, empty string" do
+    expected = ""
+    actual = decode ""
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex8 = verify do
+  labeled "run-length decode a string, single characters only" do
+    expected = "XYZ"
+    actual = decode "XYZ"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex9 = verify do
+  labeled "run-length decode a string, string with no single characters" do
+    expected = "AABBBCCCC"
+    actual = decode "2A3B4C"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex10 = verify do
+  labeled "run-length decode a string, single characters with repeated characters" do
+    expected = "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
+    actual = decode "12WB12W3B24WB"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex11 = verify do
+  labeled "run-length decode a string, multiple whitespace mixed in string" do
+    expected = "  hsqq qww  "
+    actual = decode "2 hs2q q2w2 "
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex12 = verify do
+  labeled "run-length decode a string, lowercase string" do
+    expected = "aabbbcccc"
+    actual = decode "2a3b4c"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+runLengthEncoding.test.ex13 = verify do
+  labeled "encode and then decode, encode followed by decode gives original string" do
+    expected = "zzz ZZ  zZ"
+    actual = consistency "zzz ZZ  zZ"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+test> runLengthEncoding.tests = join [
   runLengthEncoding.test.ex1,
   runLengthEncoding.test.ex2,
   runLengthEncoding.test.ex3,
