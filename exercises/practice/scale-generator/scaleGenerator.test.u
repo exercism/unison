@@ -1,100 +1,260 @@
-scaleGenerator.test.ex1 = let
-  Test.label.deprecated "Chromatic scales, Chromatic scale with sharps" <| Test.expect (chromatic "C" === ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"])
+scaleGenerator.test.ex1 = verify do
+  labeled "Chromatic scales, Chromatic scale with sharps" do
+    expected = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"]
+    actual = chromatic "C"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex2 = let
-  Test.label.deprecated "Chromatic scales, Chromatic scale with flats" <| Test.expect (chromatic "F" === ["F","Gb","G","Ab","A","Bb","B","C","Db","D","Eb","E"])
+scaleGenerator.test.ex2 = verify do
+  labeled "Chromatic scales, Chromatic scale with flats" do
+    expected = ["F","Gb","G","Ab","A","Bb","B","C","Db","D","Eb","E"]
+    actual = chromatic "F"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex3 = let
-  Test.label.deprecated "Scales with specified intervals, Simple major scale" <| Test.expect (interval "C" "MMmMMMm" === ["C","D","E","F","G","A","B","C"])
+scaleGenerator.test.ex3 = verify do
+  labeled "Scales with specified intervals, Simple major scale" do
+    expected = ["C","D","E","F","G","A","B","C"]
+    actual = interval "C" "MMmMMMm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex4 = let
-  Test.label.deprecated "Scales with specified intervals, Major scale with sharps" <| Test.expect (interval "G" "MMmMMMm" === ["G","A","B","C","D","E","F#","G"])
+scaleGenerator.test.ex4 = verify do
+  labeled "Scales with specified intervals, Major scale with sharps" do
+    expected = ["G","A","B","C","D","E","F#","G"]
+    actual = interval "G" "MMmMMMm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex5 = let
-  Test.label.deprecated "Scales with specified intervals, Major scale with flats" <| Test.expect (interval "F" "MMmMMMm" === ["F","G","A","Bb","C","D","E","F"])
+scaleGenerator.test.ex5 = verify do
+  labeled "Scales with specified intervals, Major scale with flats" do
+    expected = ["F","G","A","Bb","C","D","E","F"]
+    actual = interval "F" "MMmMMMm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex6 = let
-  Test.label.deprecated "Scales with specified intervals, Minor scale with sharps" <| Test.expect (interval "f#" "MmMMmMM" === ["F#","G#","A","B","C#","D","E","F#"])
+scaleGenerator.test.ex6 = verify do
+  labeled "Scales with specified intervals, Minor scale with sharps" do
+    expected = ["F#","G#","A","B","C#","D","E","F#"]
+    actual = interval "f#" "MmMMmMM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex7 = let
-  Test.label.deprecated "Scales with specified intervals, Minor scale with flats" <| Test.expect (interval "bb" "MmMMmMM" === ["Bb","C","Db","Eb","F","Gb","Ab","Bb"])
+scaleGenerator.test.ex7 = verify do
+  labeled "Scales with specified intervals, Minor scale with flats" do
+    expected = ["Bb","C","Db","Eb","F","Gb","Ab","Bb"]
+    actual = interval "bb" "MmMMmMM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex8 = let
-  Test.label.deprecated "Scales with specified intervals, Dorian mode" <| Test.expect (interval "d" "MmMMMmM" === ["D","E","F","G","A","B","C","D"])
+scaleGenerator.test.ex8 = verify do
+  labeled "Scales with specified intervals, Dorian mode" do
+    expected = ["D","E","F","G","A","B","C","D"]
+    actual = interval "d" "MmMMMmM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex9 = let
-  Test.label.deprecated "Scales with specified intervals, Mixolydian mode" <| Test.expect (interval "Eb" "MMmMMmM" === ["Eb","F","G","Ab","Bb","C","Db","Eb"])
+scaleGenerator.test.ex9 = verify do
+  labeled "Scales with specified intervals, Mixolydian mode" do
+    expected = ["Eb","F","G","Ab","Bb","C","Db","Eb"]
+    actual = interval "Eb" "MMmMMmM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex10 = let
-  Test.label.deprecated "Scales with specified intervals, Lydian mode" <| Test.expect (interval "a" "MMMmMMm" === ["A","B","C#","D#","E","F#","G#","A"])
+scaleGenerator.test.ex10 = verify do
+  labeled "Scales with specified intervals, Lydian mode" do
+    expected = ["A","B","C#","D#","E","F#","G#","A"]
+    actual = interval "a" "MMMmMMm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex11 = let
-  Test.label.deprecated "Scales with specified intervals, Phrygian mode" <| Test.expect (interval "e" "mMMMmMM" === ["E","F","G","A","B","C","D","E"])
+scaleGenerator.test.ex11 = verify do
+  labeled "Scales with specified intervals, Phrygian mode" do
+    expected = ["E","F","G","A","B","C","D","E"]
+    actual = interval "e" "mMMMmMM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex12 = let
-  Test.label.deprecated "Scales with specified intervals, Locrian mode" <| Test.expect (interval "g" "mMMmMMM" === ["G","Ab","Bb","C","Db","Eb","F","G"])
+scaleGenerator.test.ex12 = verify do
+  labeled "Scales with specified intervals, Locrian mode" do
+    expected = ["G","Ab","Bb","C","Db","Eb","F","G"]
+    actual = interval "g" "mMMmMMM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex13 = let
-  Test.label.deprecated "Scales with specified intervals, Harmonic minor" <| Test.expect (interval "d" "MmMMmAm" === ["D","E","F","G","A","Bb","Db","D"])
+scaleGenerator.test.ex13 = verify do
+  labeled "Scales with specified intervals, Harmonic minor" do
+    expected = ["D","E","F","G","A","Bb","Db","D"]
+    actual = interval "d" "MmMMmAm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex14 = let
-  Test.label.deprecated "Scales with specified intervals, Octatonic" <| Test.expect (interval "C" "MmMmMmMm" === ["C","D","D#","F","F#","G#","A","B","C"])
+scaleGenerator.test.ex14 = verify do
+  labeled "Scales with specified intervals, Octatonic" do
+    expected = ["C","D","D#","F","F#","G#","A","B","C"]
+    actual = interval "C" "MmMmMmMm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex15 = let
-  Test.label.deprecated "Scales with specified intervals, Hexatonic" <| Test.expect (interval "Db" "MMMMMM" === ["Db","Eb","F","G","A","B","Db"])
+scaleGenerator.test.ex15 = verify do
+  labeled "Scales with specified intervals, Hexatonic" do
+    expected = ["Db","Eb","F","G","A","B","Db"]
+    actual = interval "Db" "MMMMMM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex16 = let
-  Test.label.deprecated "Scales with specified intervals, Pentatonic" <| Test.expect (interval "A" "MMAMA" === ["A","B","C#","E","F#","A"])
+scaleGenerator.test.ex16 = verify do
+  labeled "Scales with specified intervals, Pentatonic" do
+    expected = ["A","B","C#","E","F#","A"]
+    actual = interval "A" "MMAMA"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex17 = let
-  Test.label.deprecated "Scales with specified intervals, Enigmatic" <| Test.expect (interval "G" "mAMMMmm" === ["G","G#","B","C#","D#","F","F#","G"])
+scaleGenerator.test.ex17 = verify do
+  labeled "Scales with specified intervals, Enigmatic" do
+    expected = ["G","G#","B","C#","D#","F","F#","G"]
+    actual = interval "G" "mAMMMmm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex18 = let
-  Test.label.deprecated "Scales with specified intervals, Simple major scale" <| Test.expect (interval "C" "MMmMMMm" === ["C","D","E","F","G","A","B","C"])
+scaleGenerator.test.ex18 = verify do
+  labeled "Scales with specified intervals, Simple major scale" do
+    expected = ["C","D","E","F","G","A","B","C"]
+    actual = interval "C" "MMmMMMm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex19 = let
-  Test.label.deprecated "Scales with specified intervals, Major scale with sharps" <| Test.expect (interval "G" "MMmMMMm" === ["G","A","B","C","D","E","F#","G"])
+scaleGenerator.test.ex19 = verify do
+  labeled "Scales with specified intervals, Major scale with sharps" do
+    expected = ["G","A","B","C","D","E","F#","G"]
+    actual = interval "G" "MMmMMMm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex20 = let
-  Test.label.deprecated "Scales with specified intervals, Major scale with flats" <| Test.expect (interval "F" "MMmMMMm" === ["F","G","A","Bb","C","D","E","F"])
+scaleGenerator.test.ex20 = verify do
+  labeled "Scales with specified intervals, Major scale with flats" do
+    expected = ["F","G","A","Bb","C","D","E","F"]
+    actual = interval "F" "MMmMMMm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex21 = let
-  Test.label.deprecated "Scales with specified intervals, Minor scale with sharps" <| Test.expect (interval "f#" "MmMMmMM" === ["F#","G#","A","B","C#","D","E","F#"])
+scaleGenerator.test.ex21 = verify do
+  labeled "Scales with specified intervals, Minor scale with sharps" do
+    expected = ["F#","G#","A","B","C#","D","E","F#"]
+    actual = interval "f#" "MmMMmMM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex22 = let
-  Test.label.deprecated "Scales with specified intervals, Minor scale with flats" <| Test.expect (interval "bb" "MmMMmMM" === ["Bb","C","Db","Eb","F","Gb","Ab","Bb"])
+scaleGenerator.test.ex22 = verify do
+  labeled "Scales with specified intervals, Minor scale with flats" do
+    expected = ["Bb","C","Db","Eb","F","Gb","Ab","Bb"]
+    actual = interval "bb" "MmMMmMM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex23 = let
-  Test.label.deprecated "Scales with specified intervals, Dorian mode" <| Test.expect (interval "d" "MmMMMmM" === ["D","E","F","G","A","B","C","D"])
+scaleGenerator.test.ex23 = verify do
+  labeled "Scales with specified intervals, Dorian mode" do
+    expected = ["D","E","F","G","A","B","C","D"]
+    actual = interval "d" "MmMMMmM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex24 = let
-  Test.label.deprecated "Scales with specified intervals, Mixolydian mode" <| Test.expect (interval "Eb" "MMmMMmM" === ["Eb","F","G","Ab","Bb","C","Db","Eb"])
+scaleGenerator.test.ex24 = verify do
+  labeled "Scales with specified intervals, Mixolydian mode" do
+    expected = ["Eb","F","G","Ab","Bb","C","Db","Eb"]
+    actual = interval "Eb" "MMmMMmM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex25 = let
-  Test.label.deprecated "Scales with specified intervals, Lydian mode" <| Test.expect (interval "a" "MMMmMMm" === ["A","B","C#","D#","E","F#","G#","A"])
+scaleGenerator.test.ex25 = verify do
+  labeled "Scales with specified intervals, Lydian mode" do
+    expected = ["A","B","C#","D#","E","F#","G#","A"]
+    actual = interval "a" "MMMmMMm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex26 = let
-  Test.label.deprecated "Scales with specified intervals, Phrygian mode" <| Test.expect (interval "e" "mMMMmMM" === ["E","F","G","A","B","C","D","E"])
+scaleGenerator.test.ex26 = verify do
+  labeled "Scales with specified intervals, Phrygian mode" do
+    expected = ["E","F","G","A","B","C","D","E"]
+    actual = interval "e" "mMMMmMM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex27 = let
-  Test.label.deprecated "Scales with specified intervals, Locrian mode" <| Test.expect (interval "g" "mMMmMMM" === ["G","Ab","Bb","C","Db","Eb","F","G"])
+scaleGenerator.test.ex27 = verify do
+  labeled "Scales with specified intervals, Locrian mode" do
+    expected = ["G","Ab","Bb","C","Db","Eb","F","G"]
+    actual = interval "g" "mMMmMMM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex28 = let
-  Test.label.deprecated "Scales with specified intervals, Harmonic minor" <| Test.expect (interval "d" "MmMMmAm" === ["D","E","F","G","A","Bb","Db","D"])
+scaleGenerator.test.ex28 = verify do
+  labeled "Scales with specified intervals, Harmonic minor" do
+    expected = ["D","E","F","G","A","Bb","Db","D"]
+    actual = interval "d" "MmMMmAm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex29 = let
-  Test.label.deprecated "Scales with specified intervals, Octatonic" <| Test.expect (interval "C" "MmMmMmMm" === ["C","D","D#","F","F#","G#","A","B","C"])
+scaleGenerator.test.ex29 = verify do
+  labeled "Scales with specified intervals, Octatonic" do
+    expected = ["C","D","D#","F","F#","G#","A","B","C"]
+    actual = interval "C" "MmMmMmMm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex30 = let
-  Test.label.deprecated "Scales with specified intervals, Hexatonic" <| Test.expect (interval "Db" "MMMMMM" === ["Db","Eb","F","G","A","B","Db"])
+scaleGenerator.test.ex30 = verify do
+  labeled "Scales with specified intervals, Hexatonic" do
+    expected = ["Db","Eb","F","G","A","B","Db"]
+    actual = interval "Db" "MMMMMM"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex31 = let
-  Test.label.deprecated "Scales with specified intervals, Pentatonic" <| Test.expect (interval "A" "MMAMA" === ["A","B","C#","E","F#","A"])
+scaleGenerator.test.ex31 = verify do
+  labeled "Scales with specified intervals, Pentatonic" do
+    expected = ["A","B","C#","E","F#","A"]
+    actual = interval "A" "MMAMA"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-scaleGenerator.test.ex32 = let
-  Test.label.deprecated "Scales with specified intervals, Enigmatic" <| Test.expect (interval "G" "mAMMMmm" === ["G","G#","B","C#","D#","F","F#","G"])
+scaleGenerator.test.ex32 = verify do
+  labeled "Scales with specified intervals, Enigmatic" do
+    expected = ["G","G#","B","C#","D#","F","F#","G"]
+    actual = interval "G" "mAMMMmm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> scaleGenerator.tests = runAll [
+test> scaleGenerator.tests = join [
   scaleGenerator.test.ex1,
   scaleGenerator.test.ex2,
   scaleGenerator.test.ex3,

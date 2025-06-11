@@ -3,22 +3,47 @@ nucleotideCount.toSortedList input =
   go map = Map.toList map |> List.sortBy (cases (text, val) -> text)
   Optional.map go input
 
-nucleotideCount.test.ex1 = let
-  Test.label.deprecated "empty strand" <| Test.expect (toSortedList (nucleotideCounts "") === (Some [("A",0),("C",0),("G",0),("T",0)]))
+nucleotideCount.test.ex1 = verify do
+  labeled "empty strand" do
+    expected = Some [("A",0),("C",0),("G",0),("T",0)]
+    actual = toSortedList (nucleotideCounts "")
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-nucleotideCount.test.ex2 = let
-  Test.label.deprecated "can count one nucleotide in single-character input" <| Test.expect (toSortedList (nucleotideCounts "G") === (Some [("A",0),("C",0),("G",1),("T",0)]))
+nucleotideCount.test.ex2 = verify do
+  labeled "can count one nucleotide in single-character input" do
+    expected = Some [("A",0),("C",0),("G",1),("T",0)]
+    actual = toSortedList (nucleotideCounts "G")
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-nucleotideCount.test.ex3 = let
-  Test.label.deprecated "strand with repeated nucleotide" <| Test.expect (toSortedList (nucleotideCounts "GGGGGGG") === (Some [("A",0),("C",0),("G",7),("T",0)]))
+nucleotideCount.test.ex3 = verify do
+  labeled "strand with repeated nucleotide" do
+    expected = Some [("A",0),("C",0),("G",7),("T",0)]
+    actual = toSortedList (nucleotideCounts "GGGGGGG")
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-nucleotideCount.test.ex4 = let
-  Test.label.deprecated "strand with multiple nucleotides" <| Test.expect (toSortedList (nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC") === (Some [("A",20),("C",12),("G",17),("T",21)]))
+nucleotideCount.test.ex4 = verify do
+  labeled "strand with multiple nucleotides" do
+    expected = Some [("A",20),("C",12),("G",17),("T",21)]
+    actual = toSortedList (nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-nucleotideCount.test.ex5 = let
-  Test.label.deprecated "strand with invalid nucleotides" <| Test.expect (toSortedList (nucleotideCounts "AGXXACT") === None)
+nucleotideCount.test.ex5 = verify do
+  labeled "strand with invalid nucleotides" do
+    expected = None
+    actual = toSortedList (nucleotideCounts "AGXXACT")
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> nucleotideCount.tests = runAll [
+test> nucleotideCount.tests = join [
   nucleotideCount.test.ex1,
   nucleotideCount.test.ex2,
   nucleotideCount.test.ex3,

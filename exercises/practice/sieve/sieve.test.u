@@ -1,19 +1,44 @@
-sieve.test.ex1 = let
-  Test.label.deprecated "no primes under two" <| Test.expect (primes 1 === [])
+sieve.test.ex1 = verify do
+  labeled "no primes under two" do
+    expected = []
+    actual = primes 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-sieve.test.ex2 = let
-  Test.label.deprecated "find first prime" <| Test.expect (primes 2 === [2])
+sieve.test.ex2 = verify do
+  labeled "find first prime" do
+    expected = [2]
+    actual = primes 2
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-sieve.test.ex3 = let
-  Test.label.deprecated "find primes up to 10" <| Test.expect (primes 10 === [2,3,5,7])
+sieve.test.ex3 = verify do
+  labeled "find primes up to 10" do
+    expected = [2,3,5,7]
+    actual = primes 10
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-sieve.test.ex4 = let
-  Test.label.deprecated "limit is prime" <| Test.expect (primes 13 === [2,3,5,7,11,13])
+sieve.test.ex4 = verify do
+  labeled "limit is prime" do
+    expected = [2,3,5,7,11,13]
+    actual = primes 13
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-sieve.test.ex5 = let
-  Test.label.deprecated "find primes up to 1000" <| Test.expect (primes 1000 === [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199,211,223,227,229,233,239,241,251,257,263,269,271,277,281,283,293,307,311,313,317,331,337,347,349,353,359,367,373,379,383,389,397,401,409,419,421,431,433,439,443,449,457,461,463,467,479,487,491,499,503,509,521,523,541,547,557,563,569,571,577,587,593,599,601,607,613,617,619,631,641,643,647,653,659,661,673,677,683,691,701,709,719,727,733,739,743,751,757,761,769,773,787,797,809,811,821,823,827,829,839,853,857,859,863,877,881,883,887,907,911,919,929,937,941,947,953,967,971,977,983,991,997])
+sieve.test.ex5 = verify do
+  labeled "find primes up to 1000" do
+    expected = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199,211,223,227,229,233,239,241,251,257,263,269,271,277,281,283,293,307,311,313,317,331,337,347,349,353,359,367,373,379,383,389,397,401,409,419,421,431,433,439,443,449,457,461,463,467,479,487,491,499,503,509,521,523,541,547,557,563,569,571,577,587,593,599,601,607,613,617,619,631,641,643,647,653,659,661,673,677,683,691,701,709,719,727,733,739,743,751,757,761,769,773,787,797,809,811,821,823,827,829,839,853,857,859,863,877,881,883,887,907,911,919,929,937,941,947,953,967,971,977,983,991,997]
+    actual = primes 1000
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> sieve.tests = runAll [
+test> sieve.tests = join [
   sieve.test.ex1,
   sieve.test.ex2,
   sieve.test.ex3,

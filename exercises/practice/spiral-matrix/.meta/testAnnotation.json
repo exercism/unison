@@ -1,26 +1,26 @@
 [
   {
     "name": "empty spiral",
-    "test_code": "let\n  Test.label.deprecated \"empty spiral\" <| Test.expect (spiralMatrix 0 === [])"
+    "test_code": "verify do\n  labeled \"empty spiral\" do\n    expected = []\n    actual = spiralMatrix 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "trivial spiral",
-    "test_code": "let\n  Test.label.deprecated \"trivial spiral\" <| Test.expect (spiralMatrix 1 === [[1]])"
+    "test_code": "verify do\n  labeled \"trivial spiral\" do\n    expected = [[1]]\n    actual = spiralMatrix 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "spiral of size 2",
-    "test_code": "let\n  Test.label.deprecated \"spiral of size 2\" <| Test.expect (spiralMatrix 2 === [[1,2],[4,3]])"
+    "test_code": "verify do\n  labeled \"spiral of size 2\" do\n    expected = [[1,2],[4,3]]\n    actual = spiralMatrix 2\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "spiral of size 3",
-    "test_code": "let\n  Test.label.deprecated \"spiral of size 3\" <| Test.expect (spiralMatrix 3 === [[1,2,3],[8,9,4],[7,6,5]])"
+    "test_code": "verify do\n  labeled \"spiral of size 3\" do\n    expected = [[1,2,3],[8,9,4],[7,6,5]]\n    actual = spiralMatrix 3\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "spiral of size 4",
-    "test_code": "let\n  Test.label.deprecated \"spiral of size 4\" <| Test.expect (spiralMatrix 4 === [[1,2,3,4],[12,13,14,5],[11,16,15,6],[10,9,8,7]])"
+    "test_code": "verify do\n  labeled \"spiral of size 4\" do\n    expected = [[1,2,3,4],[12,13,14,5],[11,16,15,6],[10,9,8,7]]\n    actual = spiralMatrix 4\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "spiral of size 5",
-    "test_code": "let\n  Test.label.deprecated \"spiral of size 5\" <| Test.expect (spiralMatrix 5 === [[1,2,3,4,5],[16,17,18,19,6],[15,24,25,20,7],[14,23,22,21,8],[13,12,11,10,9]])"
+    "test_code": "verify do\n  labeled \"spiral of size 5\" do\n    expected = [[1,2,3,4,5],[16,17,18,19,6],[15,24,25,20,7],[14,23,22,21,8],[13,12,11,10,9]]\n    actual = spiralMatrix 5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

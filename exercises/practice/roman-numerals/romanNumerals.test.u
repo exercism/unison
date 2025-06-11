@@ -1,82 +1,212 @@
-romanNumerals.test.ex1 = let
-  Test.label.deprecated "1 is I" <| Test.expect (toRoman 1 === "I")
+romanNumerals.test.ex1 = verify do
+  labeled "1 is I" do
+    expected = "I"
+    actual = toRoman 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex2 = let
-  Test.label.deprecated "2 is II" <| Test.expect (toRoman 2 === "II")
+romanNumerals.test.ex2 = verify do
+  labeled "2 is II" do
+    expected = "II"
+    actual = toRoman 2
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex3 = let
-  Test.label.deprecated "3 is III" <| Test.expect (toRoman 3 === "III")
+romanNumerals.test.ex3 = verify do
+  labeled "3 is III" do
+    expected = "III"
+    actual = toRoman 3
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex4 = let
-  Test.label.deprecated "4 is IV" <| Test.expect (toRoman 4 === "IV")
+romanNumerals.test.ex4 = verify do
+  labeled "4 is IV" do
+    expected = "IV"
+    actual = toRoman 4
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex5 = let
-  Test.label.deprecated "5 is V" <| Test.expect (toRoman 5 === "V")
+romanNumerals.test.ex5 = verify do
+  labeled "5 is V" do
+    expected = "V"
+    actual = toRoman 5
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex6 = let
-  Test.label.deprecated "6 is VI" <| Test.expect (toRoman 6 === "VI")
+romanNumerals.test.ex6 = verify do
+  labeled "6 is VI" do
+    expected = "VI"
+    actual = toRoman 6
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex7 = let
-  Test.label.deprecated "9 is IX" <| Test.expect (toRoman 9 === "IX")
+romanNumerals.test.ex7 = verify do
+  labeled "9 is IX" do
+    expected = "IX"
+    actual = toRoman 9
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex8 = let
-  Test.label.deprecated "27 is XXVII" <| Test.expect (toRoman 27 === "XXVII")
+romanNumerals.test.ex8 = verify do
+  labeled "27 is XXVII" do
+    expected = "XXVII"
+    actual = toRoman 27
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex9 = let
-  Test.label.deprecated "48 is XLVIII" <| Test.expect (toRoman 48 === "XLVIII")
+romanNumerals.test.ex9 = verify do
+  labeled "48 is XLVIII" do
+    expected = "XLVIII"
+    actual = toRoman 48
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex10 = let
-  Test.label.deprecated "49 is XLIX" <| Test.expect (toRoman 49 === "XLIX")
+romanNumerals.test.ex10 = verify do
+  labeled "49 is XLIX" do
+    expected = "XLIX"
+    actual = toRoman 49
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex11 = let
-  Test.label.deprecated "59 is LIX" <| Test.expect (toRoman 59 === "LIX")
+romanNumerals.test.ex11 = verify do
+  labeled "59 is LIX" do
+    expected = "LIX"
+    actual = toRoman 59
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex12 = let
-  Test.label.deprecated "93 is XCIII" <| Test.expect (toRoman 93 === "XCIII")
+romanNumerals.test.ex12 = verify do
+  labeled "93 is XCIII" do
+    expected = "XCIII"
+    actual = toRoman 93
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex13 = let
-  Test.label.deprecated "141 is CXLI" <| Test.expect (toRoman 141 === "CXLI")
+romanNumerals.test.ex13 = verify do
+  labeled "141 is CXLI" do
+    expected = "CXLI"
+    actual = toRoman 141
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex14 = let
-  Test.label.deprecated "163 is CLXIII" <| Test.expect (toRoman 163 === "CLXIII")
+romanNumerals.test.ex14 = verify do
+  labeled "163 is CLXIII" do
+    expected = "CLXIII"
+    actual = toRoman 163
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex15 = let
-  Test.label.deprecated "402 is CDII" <| Test.expect (toRoman 402 === "CDII")
+romanNumerals.test.ex15 = verify do
+  labeled "402 is CDII" do
+    expected = "CDII"
+    actual = toRoman 402
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex16 = let
-  Test.label.deprecated "575 is DLXXV" <| Test.expect (toRoman 575 === "DLXXV")
+romanNumerals.test.ex16 = verify do
+  labeled "575 is DLXXV" do
+    expected = "DLXXV"
+    actual = toRoman 575
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex17 = let
-  Test.label.deprecated "911 is CMXI" <| Test.expect (toRoman 911 === "CMXI")
+romanNumerals.test.ex17 = verify do
+  labeled "911 is CMXI" do
+    expected = "CMXI"
+    actual = toRoman 911
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex18 = let
-  Test.label.deprecated "1024 is MXXIV" <| Test.expect (toRoman 1024 === "MXXIV")
+romanNumerals.test.ex18 = verify do
+  labeled "1024 is MXXIV" do
+    expected = "MXXIV"
+    actual = toRoman 1024
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex19 = let
-  Test.label.deprecated "3000 is MMM" <| Test.expect (toRoman 3000 === "MMM")
+romanNumerals.test.ex19 = verify do
+  labeled "3000 is MMM" do
+    expected = "MMM"
+    actual = toRoman 3000
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex20 = let
-  Test.label.deprecated "16 is XVI" <| Test.expect (toRoman 16 === "XVI")
+romanNumerals.test.ex20 = verify do
+  labeled "16 is XVI" do
+    expected = "XVI"
+    actual = toRoman 16
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex21 = let
-  Test.label.deprecated "66 is LXVI" <| Test.expect (toRoman 66 === "LXVI")
+romanNumerals.test.ex21 = verify do
+  labeled "66 is LXVI" do
+    expected = "LXVI"
+    actual = toRoman 66
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex22 = let
-  Test.label.deprecated "166 is CLXVI" <| Test.expect (toRoman 166 === "CLXVI")
+romanNumerals.test.ex22 = verify do
+  labeled "166 is CLXVI" do
+    expected = "CLXVI"
+    actual = toRoman 166
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex23 = let
-  Test.label.deprecated "666 is DCLXVI" <| Test.expect (toRoman 666 === "DCLXVI")
+romanNumerals.test.ex23 = verify do
+  labeled "666 is DCLXVI" do
+    expected = "DCLXVI"
+    actual = toRoman 666
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex24 = let
-  Test.label.deprecated "1666 is MDCLXVI" <| Test.expect (toRoman 1666 === "MDCLXVI")
+romanNumerals.test.ex24 = verify do
+  labeled "1666 is MDCLXVI" do
+    expected = "MDCLXVI"
+    actual = toRoman 1666
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex25 = let
-  Test.label.deprecated "3001 is MMMI" <| Test.expect (toRoman 3001 === "MMMI")
+romanNumerals.test.ex25 = verify do
+  labeled "3001 is MMMI" do
+    expected = "MMMI"
+    actual = toRoman 3001
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-romanNumerals.test.ex26 = let
-  Test.label.deprecated "3999 is MMMCMXCIX" <| Test.expect (toRoman 3999 === "MMMCMXCIX")
+romanNumerals.test.ex26 = verify do
+  labeled "3999 is MMMCMXCIX" do
+    expected = "MMMCMXCIX"
+    actual = toRoman 3999
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> romanNumerals.tests = runAll [
+test> romanNumerals.tests = join [
   romanNumerals.test.ex1,
   romanNumerals.test.ex2,
   romanNumerals.test.ex3,
@@ -101,6 +231,6 @@ test> romanNumerals.tests = runAll [
   romanNumerals.test.ex22,
   romanNumerals.test.ex23,
   romanNumerals.test.ex24,
-  romanNumerals.test.ex26,
-  romanNumerals.test.ex25
+  romanNumerals.test.ex25,
+  romanNumerals.test.ex26
 ]

@@ -1,120 +1,236 @@
-yacht.yacht.tests.ex1 =
-  expect (50 == yacht.yacht Yacht [5, 5, 5, 5, 5])
-    |> Test.label.deprecated "Yacht"
+yacht.yacht.tests.ex1 = verify do
+  labeled "Yacht" do
+    expected = 50
+    actual = yacht.yacht Yacht [5, 5, 5, 5, 5]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex2 =
-  expect (0 == yacht.yacht Yacht [1, 3, 3, 2, 5])
-    |> Test.label.deprecated "Not Yacht"
+yacht.yacht.tests.ex2 = verify do
+  labeled "Not Yacht" do
+    expected = 0
+    actual = yacht.yacht Yacht [1, 3, 3, 2, 5]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex3 =
-  expect (3 == yacht.yacht Ones [1, 1, 1, 3, 5])
-    |> Test.label.deprecated "Ones"
+yacht.yacht.tests.ex3 = verify do
+  labeled "Ones" do
+    expected = 3
+    actual = yacht.yacht Ones [1, 1, 1, 3, 5]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex4 =
-  expect (3 == yacht.yacht Ones [3, 1, 1, 5, 1])
-    |> Test.label.deprecated "Ones, out of order"
+yacht.yacht.tests.ex4 = verify do
+  labeled "Ones, out of order" do
+    expected = 3
+    actual = yacht.yacht Ones [3, 1, 1, 5, 1]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex5 =
-  expect (0 == yacht.yacht Ones [4, 3, 6, 5, 5])
-    |> Test.label.deprecated "No ones"
+yacht.yacht.tests.ex5 = verify do
+  labeled "No ones" do
+    expected = 0
+    actual = yacht.yacht Ones [4, 3, 6, 5, 5]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex6 =
-  expect (2 == yacht.yacht Twos [2, 3, 4, 5, 6])
-    |> Test.label.deprecated "Twos"
+yacht.yacht.tests.ex6 = verify do
+  labeled "Twos" do
+    expected = 2
+    actual = yacht.yacht Twos [2, 3, 4, 5, 6]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex7 =
-  expect (8 == yacht.yacht Fours [1, 4, 1, 4, 1])
-    |> Test.label.deprecated "Fours"
+yacht.yacht.tests.ex7 = verify do
+  labeled "Fours" do
+    expected = 8
+    actual = yacht.yacht Fours [1, 4, 1, 4, 1]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex8 =
-  expect (15 == yacht.yacht Threes [3, 3, 3, 3, 3])
-    |> Test.label.deprecated "Yacht counted as threes"
+yacht.yacht.tests.ex8 = verify do
+  labeled "Yacht counted as threes" do
+    expected = 15
+    actual = yacht.yacht Threes [3, 3, 3, 3, 3]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex9 =
-  expect (0 == yacht.yacht Fives [3, 3, 3, 3, 3])
-    |> Test.label.deprecated "Yacht of 3s counted as fives"
+yacht.yacht.tests.ex9 = verify do
+  labeled "Yacht of 3s counted as fives" do
+    expected = 0
+    actual = yacht.yacht Fives [3, 3, 3, 3, 3]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex10 =
-  expect (10 == yacht.yacht Fives [1, 5, 3, 5, 3])
-    |> Test.label.deprecated "Fives"
+yacht.yacht.tests.ex10 = verify do
+  labeled "Fives" do
+    expected = 10
+    actual = yacht.yacht Fives [1, 5, 3, 5, 3]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex11 =
-  expect (6 == yacht.yacht Sixes [2, 3, 4, 5, 6])
-    |> Test.label.deprecated "Sixes"
+yacht.yacht.tests.ex11 = verify do
+  labeled "Sixes" do
+    expected = 6
+    actual = yacht.yacht Sixes [2, 3, 4, 5, 6]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex12 =
-  expect (16 == yacht.yacht FullHouse [2, 2, 4, 4, 4])
-    |> Test.label.deprecated "Full house two small, three big"
+yacht.yacht.tests.ex12 = verify do
+  labeled "Full house two small, three big" do
+    expected = 16
+    actual = yacht.yacht FullHouse [2, 2, 4, 4, 4]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex13 =
-  expect (19 == yacht.yacht FullHouse [5, 3, 3, 5, 3])
-    |> Test.label.deprecated "Full house three small, two big"
+yacht.yacht.tests.ex13 = verify do
+  labeled "Full house three small, two big" do
+    expected = 19
+    actual = yacht.yacht FullHouse [5, 3, 3, 5, 3]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex14 =
-  expect (0 == yacht.yacht FullHouse [2, 2, 4, 4, 5])
-    |> Test.label.deprecated "Two pair is not a full house"
+yacht.yacht.tests.ex14 = verify do
+  labeled "Two pair is not a full house" do
+    expected = 0
+    actual = yacht.yacht FullHouse [2, 2, 4, 4, 5]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex15 =
-  expect (0 == yacht.yacht FullHouse [1, 4, 4, 4, 4])
-    |> Test.label.deprecated "Four of a kind is not a full house"
+yacht.yacht.tests.ex15 = verify do
+  labeled "Four of a kind is not a full house" do
+    expected = 0
+    actual = yacht.yacht FullHouse [1, 4, 4, 4, 4]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex16 =
-  expect (0 == yacht.yacht FullHouse [2, 2, 2, 2, 2])
-    |> Test.label.deprecated "Yacht is not a full house"
+yacht.yacht.tests.ex16 = verify do
+  labeled "Yacht is not a full house" do
+    expected = 0
+    actual = yacht.yacht FullHouse [2, 2, 2, 2, 2]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex17 =
-  expect (24 == yacht.yacht FourOfAKind [6, 6, 4, 6, 6])
-    |> Test.label.deprecated "Four of a Kind"
+yacht.yacht.tests.ex17 = verify do
+  labeled "Four of a Kind" do
+    expected = 24
+    actual = yacht.yacht FourOfAKind [6, 6, 4, 6, 6]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex18 =
-  expect (12 == yacht.yacht FourOfAKind [3, 3, 3, 3, 3])
-    |> Test.label.deprecated "Yacht can be scored as Four of a Kind"
+yacht.yacht.tests.ex18 = verify do
+  labeled "Yacht can be scored as Four of a Kind" do
+    expected = 12
+    actual = yacht.yacht FourOfAKind [3, 3, 3, 3, 3]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex19 =
-  expect (0 == yacht.yacht FourOfAKind [3, 3, 3, 5, 5])
-    |> Test.label.deprecated "Full house is not Four of a Kind"
+yacht.yacht.tests.ex19 = verify do
+  labeled "Full house is not Four of a Kind" do
+    expected = 0
+    actual = yacht.yacht FourOfAKind [3, 3, 3, 5, 5]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex20 =
-  expect (30 == yacht.yacht LittleStraight [3, 5, 4, 1, 2])
-    |> Test.label.deprecated "Little Straight"
+yacht.yacht.tests.ex20 = verify do
+  labeled "Little Straight" do
+    expected = 30
+    actual = yacht.yacht LittleStraight [3, 5, 4, 1, 2]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex21 =
-  expect (0 == yacht.yacht BigStraight [1, 2, 3, 4, 5])
-    |> Test.label.deprecated "Little Straight as Big Straight"
+yacht.yacht.tests.ex21 = verify do
+  labeled "Little Straight as Big Straight" do
+    expected = 0
+    actual = yacht.yacht BigStraight [1, 2, 3, 4, 5]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex22 =
-  expect (0 == yacht.yacht LittleStraight [1, 1, 2, 3, 4])
-    |> Test.label.deprecated "Four in order but not a little straight"
+yacht.yacht.tests.ex22 = verify do
+  labeled "Four in order but not a little straight" do
+    expected = 0
+    actual = yacht.yacht LittleStraight [1, 1, 2, 3, 4]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex23 =
-  expect (0 == yacht.yacht LittleStraight [1, 2, 3, 4, 6])
-    |> Test.label.deprecated "No pairs but not a little straight"
+yacht.yacht.tests.ex23 = verify do
+  labeled "No pairs but not a little straight" do
+    expected = 0
+    actual = yacht.yacht LittleStraight [1, 2, 3, 4, 6]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex24 =
-  expect (0 == yacht.yacht LittleStraight [1, 1, 3, 4, 5])
-    |> Test.label.deprecated "Minimum is 1, maximum is 5, but not a little straight"
+yacht.yacht.tests.ex24 = verify do
+  labeled "Minimum is 1, maximum is 5, but not a little straight" do
+    expected = 0
+    actual = yacht.yacht LittleStraight [1, 1, 3, 4, 5]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex25 =
-  expect (30 == yacht.yacht BigStraight [4, 6, 2, 5, 3])
-    |> Test.label.deprecated "Big Straight"
+yacht.yacht.tests.ex25 = verify do
+  labeled "Big Straight" do
+    expected = 30
+    actual = yacht.yacht BigStraight [4, 6, 2, 5, 3]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex26 =
-  expect (0 == yacht.yacht LittleStraight [6, 5, 4, 3, 2])
-    |> Test.label.deprecated "Big Straight as little straight"
+yacht.yacht.tests.ex26 = verify do
+  labeled "Big Straight as little straight" do
+    expected = 0
+    actual = yacht.yacht LittleStraight [6, 5, 4, 3, 2]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex27 =
-  expect (0 == yacht.yacht BigStraight [6, 5, 4, 3, 1])
-    |> Test.label.deprecated "No pairs but not a big straight"
+yacht.yacht.tests.ex27 = verify do
+  labeled "No pairs but not a big straight" do
+    expected = 0
+    actual = yacht.yacht BigStraight [6, 5, 4, 3, 1]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex28 =
-  expect (23 == yacht.yacht Choice [3, 3, 5, 6, 6])
-    |> Test.label.deprecated "Choice"
+yacht.yacht.tests.ex28 = verify do
+  labeled "Choice" do
+    expected = 23
+    actual = yacht.yacht Choice [3, 3, 5, 6, 6]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-yacht.yacht.tests.ex29 =
-  expect (10 == yacht.yacht Choice [2, 2, 2, 2, 2])
-    |> Test.label.deprecated "Yacht as choice"
+yacht.yacht.tests.ex29 = verify do
+  labeled "Yacht as choice" do
+    expected = 10
+    actual = yacht.yacht Choice [2, 2, 2, 2, 2]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> yacht.tests = runAll [
+test> yacht.tests = join [
   yacht.yacht.tests.ex1,
   yacht.yacht.tests.ex2,
   yacht.yacht.tests.ex3,

@@ -1,42 +1,42 @@
 [
   {
     "name": "empty sentence",
-    "test_code": "expect (false == isPangram \"\")\n    |> Test.label.deprecated \"empty sentence\""
+    "test_code": "verify do\n  labeled \"empty sentence\" do\n    expected = false\n    actual = isPangram \"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "perfect lower case",
-    "test_code": "expect (true == isPangram \"abcdefghijklmnopqrstuvwxyz\")\n    |> Test.label.deprecated \"perfect lower case\""
+    "test_code": "verify do\n  labeled \"perfect lower case\" do\n    expected = true\n    actual = isPangram \"abcdefghijklmnopqrstuvwxyz\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "only lower case",
-    "test_code": "expect (true == isPangram \"the quick brown fox jumps over the lazy dog\")\n    |> Test.label.deprecated \"only lower case\""
+    "test_code": "verify do\n  labeled \"only lower case\" do\n    expected = true\n    actual = isPangram \"the quick brown fox jumps over the lazy dog\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "missing the letter 'x'",
-    "test_code": "expect (false == isPangram \"a quick movement of the enemy will jeopardize five gunboats\")\n    |> Test.label.deprecated \"missing the letter 'x'\""
+    "test_code": "verify do\n  labeled \"missing the letter 'x'\" do\n    expected = false\n    actual = isPangram \"a quick movement of the enemy will jeopardize five gunboats\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "missing the letter 'h'",
-    "test_code": "expect (false == isPangram \"five boxing wizards jump quickly at it\")\n    |> Test.label.deprecated \"missing the letter 'h'\""
+    "test_code": "verify do\n  labeled \"missing the letter 'h'\" do\n    expected = false\n    actual = isPangram \"five boxing wizards jump quickly at it\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "with underscores",
-    "test_code": "expect (true == isPangram \"the_quick_brown_fox_jumps_over_the_lazy_dog\")\n    |> Test.label.deprecated \"with underscores\""
+    "test_code": "verify do\n  labeled \"with underscores\" do\n    expected = true\n    actual = isPangram \"the_quick_brown_fox_jumps_over_the_lazy_dog\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "with numbers",
-    "test_code": "expect (true == isPangram \"the 1 quick brown fox jumps over the 2 lazy dogs\")\n    |> Test.label.deprecated \"with numbers\""
+    "test_code": "verify do\n  labeled \"with numbers\" do\n    expected = true\n    actual = isPangram \"the 1 quick brown fox jumps over the 2 lazy dogs\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "missing letters replaced by numbers",
-    "test_code": "expect (false == isPangram \"7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog\")\n    |> Test.label.deprecated \"missing letters replaced by numbers\""
+    "test_code": "verify do\n  labeled \"missing letters replaced by numbers\" do\n    expected = false\n    actual = isPangram \"7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "mixed case and punctuation",
-    "test_code": "expect (true == isPangram \"\\\"Five quacking Zephyrs jolt my wax bed.\\\"\")\n    |> Test.label.deprecated \"mixed case and punctuation\""
+    "test_code": "verify do\n  labeled \"mixed case and punctuation\" do\n    expected = true\n    actual = isPangram \"\\\"Five quacking Zephyrs jolt my wax bed.\\\"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "a-m and A-M are 26 different characters but not a pangram",
-    "test_code": "expect (false == isPangram \"abcdefghijklm ABCDEFGHIJKLM\")\n    |> Test.label.deprecated \"a-m and A-M are 26 different characters but not a pangram\""
+    "test_code": "verify do\n  labeled \"a-m and A-M are 26 different characters but not a pangram\" do\n    expected = false\n    actual = isPangram \"abcdefghijklm ABCDEFGHIJKLM\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

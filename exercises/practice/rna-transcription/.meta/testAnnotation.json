@@ -1,30 +1,30 @@
 [
   {
     "name": "Empty RNA sequence should be empty string",
-    "test_code": "Test.label.deprecated \"Empty RNA sequence should be empty string\" <| Test.expect ((toRNA \"\") === (Some \"\"))"
+    "test_code": "verify do\n  labeled \"Empty RNA sequence should be empty string\" do\n    expected = Some \"\"\n    actual = toRNA \"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "RNA complement of cytosine should be guanine",
-    "test_code": "Test.label.deprecated \"RNA complement of cytosine should be guanine\" <| Test.expect ((toRNA \"C\") === (Some \"G\"))"
+    "test_code": "verify do\n  labeled \"RNA complement of cytosine should be guanine\" do\n    expected = Some \"G\"\n    actual = toRNA \"C\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "RNA complement of guanine should be cytosine",
-    "test_code": "Test.label.deprecated \"RNA complement of guanine should be cytosine\" <| Test.expect ((toRNA \"G\") === (Some \"C\"))"
+    "test_code": "verify do\n  labeled \"RNA complement of guanine should be cytosine\" do\n    expected = Some \"C\"\n    actual = toRNA \"G\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "RNA complement of thymine should be adenine",
-    "test_code": "Test.label.deprecated \"RNA complement of thymine should be adenine\" <| Test.expect ((toRNA \"T\") === (Some \"A\"))"
+    "test_code": "verify do\n  labeled \"RNA complement of thymine should be adenine\" do\n    expected = Some \"A\"\n    actual = toRNA \"T\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "RNA complement of adenine should be uracil",
-    "test_code": "Test.label.deprecated \"RNA complement of adenine should be uracil\" <| Test.expect ((toRNA \"A\") === (Some \"U\"))"
+    "test_code": "verify do\n  labeled \"RNA complement of adenine should be uracil\" do\n    expected = Some \"U\"\n    actual = toRNA \"A\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "RNA complement",
-    "test_code": "Test.label.deprecated \"RNA complement\" <| Test.expect (((toRNA \"ACGTGGTCTTAA\") === (Some \"UGCACCAGAAUU\")))"
+    "test_code": "verify do\n  labeled \"RNA complement\" do\n    expected = Some \"UGCACCAGAAUU\"\n    actual = toRNA \"ACGTGGTCTTAA\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "RNA complement should handle invalid DNA input",
-    "test_code": "Test.label.deprecated \"RNA complement should handle invalid DNA input\" <| Test.expect ((toRNA \"ACGTXXXCTTAA\") === (None))"
+    "test_code": "verify do\n  labeled \"RNA complement should handle invalid DNA input\" do\n    expected = None\n    actual = toRNA \"ACGTXXXCTTAA\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

@@ -1,42 +1,42 @@
 [
   {
     "name": "rotate a by 0, same output as input",
-    "test_code": "let\n  Test.label.deprecated \"rotate a by 0, same output as input\" <| Test.expect (rotate \"a\" 0 === \"a\")"
+    "test_code": "verify do\n  labeled \"rotate a by 0, same output as input\" do\n    expected = \"a\"\n    actual = rotate \"a\" 0\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "rotate a by 1",
-    "test_code": "let\n  Test.label.deprecated \"rotate a by 1\" <| Test.expect (rotate \"a\" 1 === \"b\")"
+    "test_code": "verify do\n  labeled \"rotate a by 1\" do\n    expected = \"b\"\n    actual = rotate \"a\" 1\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "rotate a by 26, same output as input",
-    "test_code": "let\n  Test.label.deprecated \"rotate a by 26, same output as input\" <| Test.expect (rotate \"a\" 26 === \"a\")"
+    "test_code": "verify do\n  labeled \"rotate a by 26, same output as input\" do\n    expected = \"a\"\n    actual = rotate \"a\" 26\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "rotate m by 13",
-    "test_code": "let\n  Test.label.deprecated \"rotate m by 13\" <| Test.expect (rotate \"m\" 13 === \"z\")"
+    "test_code": "verify do\n  labeled \"rotate m by 13\" do\n    expected = \"z\"\n    actual = rotate \"m\" 13\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "rotate n by 13 with wrap around alphabet",
-    "test_code": "let\n  Test.label.deprecated \"rotate n by 13 with wrap around alphabet\" <| Test.expect (rotate \"n\" 13 === \"a\")"
+    "test_code": "verify do\n  labeled \"rotate n by 13 with wrap around alphabet\" do\n    expected = \"a\"\n    actual = rotate \"n\" 13\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "rotate capital letters",
-    "test_code": "let\n  Test.label.deprecated \"rotate capital letters\" <| Test.expect (rotate \"OMG\" 5 === \"TRL\")"
+    "test_code": "verify do\n  labeled \"rotate capital letters\" do\n    expected = \"TRL\"\n    actual = rotate \"OMG\" 5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "rotate spaces",
-    "test_code": "let\n  Test.label.deprecated \"rotate spaces\" <| Test.expect (rotate \"O M G\" 5 === \"T R L\")"
+    "test_code": "verify do\n  labeled \"rotate spaces\" do\n    expected = \"T R L\"\n    actual = rotate \"O M G\" 5\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "rotate numbers",
-    "test_code": "let\n  Test.label.deprecated \"rotate numbers\" <| Test.expect (rotate \"Testing 1 2 3 testing\" 4 === \"Xiwxmrk 1 2 3 xiwxmrk\")"
+    "test_code": "verify do\n  labeled \"rotate numbers\" do\n    expected = \"Xiwxmrk 1 2 3 xiwxmrk\"\n    actual = rotate \"Testing 1 2 3 testing\" 4\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "rotate punctuation",
-    "test_code": "let\n  Test.label.deprecated \"rotate punctuation\" <| Test.expect (rotate \"Let's eat, Grandma!\" 21 === \"Gzo'n zvo, Bmviyhv!\")"
+    "test_code": "verify do\n  labeled \"rotate punctuation\" do\n    expected = \"Gzo'n zvo, Bmviyhv!\"\n    actual = rotate \"Let's eat, Grandma!\" 21\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "rotate all letters",
-    "test_code": "let\n  Test.label.deprecated \"rotate all letters\" <| Test.expect (rotate \"The quick brown fox jumps over the lazy dog.\" 13 === \"Gur dhvpx oebja sbk whzcf bire gur ynml qbt.\")"
+    "test_code": "verify do\n  labeled \"rotate all letters\" do\n    expected = \"Gur dhvpx oebja sbk whzcf bire gur ynml qbt.\"\n    actual = rotate \"The quick brown fox jumps over the lazy dog.\" 13\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

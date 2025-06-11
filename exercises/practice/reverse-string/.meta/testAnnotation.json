@@ -1,26 +1,26 @@
 [
   {
     "name": "An empty string",
-    "test_code": "let\n  Test.label.deprecated \"An empty string\" <| Test.expect (reverseString.reverse \"\" === \"\")"
+    "test_code": "verify do\n  labeled \"An empty string\" do\n    expected = \"\"\n    actual = reverseString.reverse \"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "A word",
-    "test_code": "let\n  Test.label.deprecated \"A word\" <| Test.expect (reverseString.reverse \"robot\" === \"tobor\")"
+    "test_code": "verify do\n  labeled \"A word\" do\n    expected = \"tobor\"\n    actual = reverseString.reverse \"robot\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "A capitalized word",
-    "test_code": "let\n  Test.label.deprecated \"A capitalized word\" <| Test.expect (reverseString.reverse \"Ramen\" === \"nemaR\")"
+    "test_code": "verify do\n  labeled \"A capitalized word\" do\n    expected = \"nemaR\"\n    actual = reverseString.reverse \"Ramen\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "A sentence with punctuation",
-    "test_code": "let\n  Test.label.deprecated \"A sentence with punctuation\" <| Test.expect (reverseString.reverse \"I'm hungry!\" === \"!yrgnuh m'I\")"
+    "test_code": "verify do\n  labeled \"A sentence with punctuation\" do\n    expected = \"!yrgnuh m'I\"\n    actual = reverseString.reverse \"I'm hungry!\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "A palindrome",
-    "test_code": "let\n  Test.label.deprecated \"A palindrome\" <| Test.expect (reverseString.reverse \"racecar\" === \"racecar\")"
+    "test_code": "verify do\n  labeled \"A palindrome\" do\n    expected = \"racecar\"\n    actual = reverseString.reverse \"racecar\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "An even-sized word",
-    "test_code": "let\n  Test.label.deprecated \"An even-sized word\" <| Test.expect (reverseString.reverse \"drawer\" === \"reward\")"
+    "test_code": "verify do\n  labeled \"An even-sized word\" do\n    expected = \"reward\"\n    actual = reverseString.reverse \"drawer\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

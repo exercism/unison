@@ -1,34 +1,34 @@
 [
   {
     "name": "to and from list",
-    "test_code": "let\n  expected = [1,2,3]\n  go =\n    s = MyStream.fromList expected\n    !(MyStream.toList s)\n  Test.label.deprecated \"to and from list\" <| Test.expect (go === expected )"
+    "test_code": "verify do\n  labeled \"to and from list\" do\n    expected = [1,2,3]\n    actual =\n      s = MyStream.fromList expected\n      !(MyStream.toList s)\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "to and from list with empty list",
-    "test_code": "let\n  go =\n    s = MyStream.fromList List.empty\n    !(MyStream.toList s)\n  Test.label.deprecated \"to and from list with empty list\" <| Test.expect (go === List.empty )"
+    "test_code": "verify do\n  labeled \"to and from list with empty list\" do\n    expected = List.empty\n    actual =\n      s = MyStream.fromList List.empty\n      !(MyStream.toList s)\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "toListWithResult returns list and result",
-    "test_code": "let\n  expected = [1,2,3]\n  go = 'let\n    List.map (a -> let\n      MyStream.emit a\n      a\n    ) expected\n  Test.label.deprecated \"toListWithResult returns list and result\" <| Test.expect (!(MyStream.toListWithResult go) === (expected, expected))"
+    "test_code": "verify do\n  labeled \"toListWithResult returns list and result\" do\n    inputList = [1,2,3]\n    go = 'let\n      List.map (a -> let\n        MyStream.emit a\n        a\n      ) inputList\n    expected = (inputList, inputList)\n    actual = !(MyStream.toListWithResult go)\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "ignore returns only the result, not the materialized stream",
-    "test_code": "let\n  expected = [1,2,3]\n  go = 'let\n    List.foldLeft (acc a -> let\n      MyStream.emit (a Nat.+ acc)\n      a\n    ) 0 expected\n  Test.label.deprecated \"ignore returns only the result, not the materialized stream\" <| Test.expect ((MyStream.ignore go) === 3 )"
+    "test_code": "verify do\n  labeled \"ignore returns only the result, not the materialized stream\" do\n    inputList = [1,2,3]\n    go = 'let\n      List.foldLeft (acc a -> let\n        MyStream.emit (a Nat.+ acc)\n        a\n      ) 0 inputList\n    expected = 3\n    actual = MyStream.ignore go\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "ignore handles empty stream",
-    "test_code": "let\n  go = '(List.map MyStream.emit [])\n  Test.label.deprecated \"ignore handles empty stream\" <| Test.expect ((MyStream.ignore go) === [] )"
+    "test_code": "verify do\n  labeled \"ignore handles empty stream\" do\n    go = '(List.map MyStream.emit [])\n    expected = []\n    actual = MyStream.ignore go\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "filters stream",
-    "test_code": "let\n  expected = [1,2,3,4]\n  go = MyStream.fromList expected |> MyStream.filter isEven\n  Test.label.deprecated \"filters stream\" <| Test.expect (!(MyStream.toList go) === [2,4] )"
+    "test_code": "verify do\n  labeled \"filters stream\" do\n    inputList = [1,2,3,4]\n    go = MyStream.fromList inputList |> MyStream.filter isEven\n    expected = [2, 4]\n    actual = !(MyStream.toList go)\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "maps over stream",
-    "test_code": "let\n  expected = [1,2,3,4]\n  go = MyStream.fromList expected |> MyStream.map increment\n  Test.label.deprecated \"maps over stream\" <| Test.expect (!(MyStream.toList go) === [2,3,4,5] )"
+    "test_code": "verify do\n  labeled \"maps over stream\" do\n    inputList = [1,2,3,4]\n    go = MyStream.fromList inputList |> MyStream.map increment\n    expected = [2,3,4,5]\n    actual = !(MyStream.toList go)\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "flatMaps over stream",
-    "test_code": "let\n  expected = [1,2,3]\n  go = MyStream.fromList expected |> MyStream.flatMap (elem -> !(MyStream.fromList (List.fill 2 elem)))\n  Test.label.deprecated \"flatMaps over stream\" <| Test.expect (!(MyStream.toList go) === [1,1,2,2,3,3] )"
+    "test_code": "verify do\n  labeled \"flatMaps over stream\" do\n    inputList = [1,2,3]\n    go = MyStream.fromList inputList |> MyStream.flatMap (elem -> !(MyStream.fromList (List.fill 2 elem)))\n    expected = [1,1,2,2,3,3]\n    actual = !(MyStream.toList go)\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

@@ -1,4 +1,4 @@
-structural ability MyStream a where emit : a -> {MyStream a} ()
+ability MyStream a where emit : a -> {MyStream a} ()
 
 MyStream.fromList : [a] -> '{MyStream a} ()
 MyStream.fromList list = 'let

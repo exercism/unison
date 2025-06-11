@@ -1,34 +1,84 @@
-rotationalCipher.test.ex1 = let
-  Test.label.deprecated "rotate a by 0, same output as input" <| Test.expect (rotate "a" 0 === "a")
+rotationalCipher.test.ex1 = verify do
+  labeled "rotate a by 0, same output as input" do
+    expected = "a"
+    actual = rotate "a" 0
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rotationalCipher.test.ex2 = let
-  Test.label.deprecated "rotate a by 1" <| Test.expect (rotate "a" 1 === "b")
+rotationalCipher.test.ex2 = verify do
+  labeled "rotate a by 1" do
+    expected = "b"
+    actual = rotate "a" 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rotationalCipher.test.ex3 = let
-  Test.label.deprecated "rotate a by 26, same output as input" <| Test.expect (rotate "a" 26 === "a")
+rotationalCipher.test.ex3 = verify do
+  labeled "rotate a by 26, same output as input" do
+    expected = "a"
+    actual = rotate "a" 26
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rotationalCipher.test.ex4 = let
-  Test.label.deprecated "rotate m by 13" <| Test.expect (rotate "m" 13 === "z")
+rotationalCipher.test.ex4 = verify do
+  labeled "rotate m by 13" do
+    expected = "z"
+    actual = rotate "m" 13
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rotationalCipher.test.ex5 = let
-  Test.label.deprecated "rotate n by 13 with wrap around alphabet" <| Test.expect (rotate "n" 13 === "a")
+rotationalCipher.test.ex5 = verify do
+  labeled "rotate n by 13 with wrap around alphabet" do
+    expected = "a"
+    actual = rotate "n" 13
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rotationalCipher.test.ex6 = let
-  Test.label.deprecated "rotate capital letters" <| Test.expect (rotate "OMG" 5 === "TRL")
+rotationalCipher.test.ex6 = verify do
+  labeled "rotate capital letters" do
+    expected = "TRL"
+    actual = rotate "OMG" 5
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rotationalCipher.test.ex7 = let
-  Test.label.deprecated "rotate spaces" <| Test.expect (rotate "O M G" 5 === "T R L")
+rotationalCipher.test.ex7 = verify do
+  labeled "rotate spaces" do
+    expected = "T R L"
+    actual = rotate "O M G" 5
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rotationalCipher.test.ex8 = let
-  Test.label.deprecated "rotate numbers" <| Test.expect (rotate "Testing 1 2 3 testing" 4 === "Xiwxmrk 1 2 3 xiwxmrk")
+rotationalCipher.test.ex8 = verify do
+  labeled "rotate numbers" do
+    expected = "Xiwxmrk 1 2 3 xiwxmrk"
+    actual = rotate "Testing 1 2 3 testing" 4
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rotationalCipher.test.ex9 = let
-  Test.label.deprecated "rotate punctuation" <| Test.expect (rotate "Let's eat, Grandma!" 21 === "Gzo'n zvo, Bmviyhv!")
+rotationalCipher.test.ex9 = verify do
+  labeled "rotate punctuation" do
+    expected = "Gzo'n zvo, Bmviyhv!"
+    actual = rotate "Let's eat, Grandma!" 21
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-rotationalCipher.test.ex10 = let
-  Test.label.deprecated "rotate all letters" <| Test.expect (rotate "The quick brown fox jumps over the lazy dog." 13 === "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.")
+rotationalCipher.test.ex10 = verify do
+  labeled "rotate all letters" do
+    expected = "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
+    actual = rotate "The quick brown fox jumps over the lazy dog." 13
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> rotationalCipher.tests = runAll [
+test> rotationalCipher.tests = join [
   rotationalCipher.test.ex1,
   rotationalCipher.test.ex2,
   rotationalCipher.test.ex3,

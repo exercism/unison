@@ -1,41 +1,67 @@
-use base.test.gen
+use Random listOf nat natIn
 use List ++
 use LinkedList toList fromList new nil cons tail
 
-linkedL.test.ex1 =
-  Test.label.deprecated "isNil applied to nil should be true" <| expect (isNil nil && (not (isNil (new 1))))
+linkedL.test.ex1 = verify do
+  labeled "isNil should return appropriate boolean" do
+    expected = true
+    nilTest = isNil nil
+    notNilTest = isNil (new 1)
+    actual = nilTest && (not notNilTest)
+    label "isNil applied to nil" nilTest
+    label "isNil applied to not nil" notNilTest
+    ensureEqual expected actual
 
-linkedL.test.ex2 =
-  Test.label.deprecated "calling cons with nil is the same as calling new" <| expect (cons 1 nil === new 1)
+linkedL.test.ex2 = verify do
+  labeled "calling cons with nil is the same as calling new" do
+    expected = new 1
+    actual = cons 1 nil
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-linkedL.test.ex3 _ =
-  use test.deprecated.gen listOf nat
-  listNats = !(listOf nat)
-  linkedList = fromList listNats
-  Test.label.deprecated "toList and fromList should be symmetrical" <| expect (toList linkedList === listNats)
+linkedL.test.ex3 = verify do
+  labeled "toList and fromList should be symmetrical" do
+    Each.repeat 10
+    expected = listOf nat (do natIn 1 10)
+    actual = fromList expected |> toList
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-linkedL.test.ex4 =
-  consTest = head (new 1) === Some 1
-  nilTest = head nil === None
-  Test.label.deprecated "head should return optional element" <| expect (consTest && nilTest)
+linkedL.test.ex4 = verify do
+  labeled "head should return optional element" do
+    consTest = head (new 1) === Some 1
+    nilTest = head nil === None
+    label "head applied to nil" nilTest
+    label "head applied to not nil" consTest
+    ensureEqual true (consTest && nilTest)
 
-linkedL.test.ex5=
-  l1 = new 1
-  l2 = cons 2 l1
-  manyTest = tail l2 === l1
-  consTest = tail l1 === nil
-  nilTest = head nil === None
-  Test.label.deprecated "tail should drop the first element" <| expect (consTest && nilTest && manyTest)
+linkedL.test.ex5 = verify do
+  labeled "tail should drop the first element" do
+    l1 = new 1
+    l2 = cons 2 l1
+    manyTest = tail l2 === l1
+    consTest = tail l1 === nil
+    label "tail applied to the list with 2 and 1" manyTest
+    label "tail applied to the list with one entry" consTest
+    ensureEqual true (manyTest && consTest)
 
-linkedL.test.ex6 _ =
-  use test.deprecated.gen listOf nat
-  listNats = !(listOf nat)
-  linkedList = fromList listNats
-  Test.label.deprecated "reversing a list twice should be original list" <| expect (reverseLinkedList linkedList |> reverseLinkedList === linkedList)
+linkedL.test.ex6 = verify do
+  labeled "reversing a list twice should be original list" do
+    Each.repeat 10
+    listNats = listOf nat (do natIn 1 10)
+    linkedList = fromList listNats
+    reversedTwiceLinkedList = reverseLinkedList linkedList |> reverseLinkedList
+    label "original linked list" (toList linkedList)
+    label "reversed twice linked list" (toList reversedTwiceLinkedList)
+    ensure (linkedList === reversedTwiceLinkedList)
 
-linkedL.test.ex7 =
-  nilTest = isNil nil
-  consTest = not <| isNil (new 1)
-  Test.label.deprecated "isNil should return appropriate boolean" <| expect (nilTest && consTest)
-
-test> linkedL.tests = Test.run ex1 ++ Test.run ex2 ++ (runs 10 ex3) ++ Test.run ex4 ++ Test.run ex5 ++ (runs 10 ex6) ++ Test.run ex7
+test> linkedL.tests = join [
+  linkedL.test.ex1,
+  linkedL.test.ex2,
+  linkedL.test.ex3,
+  linkedL.test.ex4,
+  linkedL.test.ex5,
+  linkedL.test.ex6,
+]

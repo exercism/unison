@@ -1,92 +1,180 @@
-pigLatin.translate.tests.ex1 =
-  expect ("appleay" == pigLatin.translate "apple")
-    |> Test.label.deprecated "ay is added to words that start with vowels - word beginning with a"
+pigLatin.translate.tests.ex1 = verify do
+  labeled "ay is added to words that start with vowels - word beginning with a" do
+    expected = "appleay"
+    actual = pigLatin.translate "apple"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex2 =
-  expect ("earay" == pigLatin.translate "ear")
-    |> Test.label.deprecated "ay is added to words that start with vowels - word beginning with e"
+pigLatin.translate.tests.ex2 = verify do
+  labeled "ay is added to words that start with vowels - word beginning with e" do
+    expected = "earay"
+    actual = pigLatin.translate "ear"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex3 =
-  expect ("iglooay" == pigLatin.translate "igloo")
-    |> Test.label.deprecated "ay is added to words that start with vowels - word beginning with i"
+pigLatin.translate.tests.ex3 = verify do
+  labeled "ay is added to words that start with vowels - word beginning with i" do
+    expected = "iglooay"
+    actual = pigLatin.translate "igloo"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex4 =
-  expect ("objectay" == pigLatin.translate "object")
-    |> Test.label.deprecated "ay is added to words that start with vowels - word beginning with o"
+pigLatin.translate.tests.ex4 = verify do
+  labeled "ay is added to words that start with vowels - word beginning with o" do
+    expected = "objectay"
+    actual = pigLatin.translate "object"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex5 =
-  expect ("underay" == pigLatin.translate "under")
-    |> Test.label.deprecated "ay is added to words that start with vowels - word beginning with u"
+pigLatin.translate.tests.ex5 = verify do
+  labeled "ay is added to words that start with vowels - word beginning with u" do
+    expected = "underay"
+    actual = pigLatin.translate "under"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex6 =
-  expect ("equalay" == pigLatin.translate "equal")
-    |> Test.label.deprecated "ay is added to words that start with vowels - word beginning with a vowel and followed by a qu"
+pigLatin.translate.tests.ex6 = verify do
+  labeled "ay is added to words that start with vowels - word beginning with a vowel and followed by a qu" do
+    expected = "equalay"
+    actual = pigLatin.translate "equal"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex7 =
-  expect ("igpay" == pigLatin.translate "pig")
-    |> Test.label.deprecated "first letter and ay are moved to the end of words that start with consonants - word beginning with p"
+pigLatin.translate.tests.ex7 = verify do
+  labeled "first letter and ay are moved to the end of words that start with consonants - word beginning with p" do
+    expected = "igpay"
+    actual = pigLatin.translate "pig"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex8 =
-  expect ("oalakay" == pigLatin.translate "koala")
-    |> Test.label.deprecated "first letter and ay are moved to the end of words that start with consonants - word beginning with k"
+pigLatin.translate.tests.ex8 = verify do
+  labeled "first letter and ay are moved to the end of words that start with consonants - word beginning with k" do
+    expected = "oalakay"
+    actual = pigLatin.translate "koala"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex9 =
-  expect ("enonxay" == pigLatin.translate "xenon")
-    |> Test.label.deprecated "first letter and ay are moved to the end of words that start with consonants - word beginning with x"
+pigLatin.translate.tests.ex9 = verify do
+  labeled "first letter and ay are moved to the end of words that start with consonants - word beginning with x" do
+    expected = "enonxay"
+    actual = pigLatin.translate "xenon"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex10 =
-  expect ("atqay" == pigLatin.translate "qat")
-    |> Test.label.deprecated "first letter and ay are moved to the end of words that start with consonants - word beginning with q without a following u"
+pigLatin.translate.tests.ex10 = verify do
+  labeled "first letter and ay are moved to the end of words that start with consonants - word beginning with q without a following u" do
+    expected = "atqay"
+    actual = pigLatin.translate "qat"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex11 =
-  expect ("airchay" == pigLatin.translate "chair")
-    |> Test.label.deprecated "some letter clusters are treated like a single consonant - word beginning with ch"
+pigLatin.translate.tests.ex11 = verify do
+  labeled "some letter clusters are treated like a single consonant - word beginning with ch" do
+    expected = "airchay"
+    actual = pigLatin.translate "chair"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex12 =
-  expect ("eenquay" == pigLatin.translate "queen")
-    |> Test.label.deprecated "some letter clusters are treated like a single consonant - word beginning with qu"
+pigLatin.translate.tests.ex12 = verify do
+  labeled "some letter clusters are treated like a single consonant - word beginning with qu" do
+    expected = "eenquay"
+    actual = pigLatin.translate "queen"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex13 =
-  expect ("aresquay" == pigLatin.translate "square")
-    |> Test.label.deprecated "some letter clusters are treated like a single consonant - word beginning with qu and a preceding consonant"
+pigLatin.translate.tests.ex13 = verify do
+  labeled "some letter clusters are treated like a single consonant - word beginning with qu and a preceding consonant" do
+    expected = "aresquay"
+    actual = pigLatin.translate "square"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex14 =
-  expect ("erapythay" == pigLatin.translate "therapy")
-    |> Test.label.deprecated "some letter clusters are treated like a single consonant - word beginning with th"
+pigLatin.translate.tests.ex14 = verify do
+  labeled "some letter clusters are treated like a single consonant - word beginning with th" do
+    expected = "erapythay"
+    actual = pigLatin.translate "therapy"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex15 =
-  expect ("ushthray" == pigLatin.translate "thrush")
-    |> Test.label.deprecated "some letter clusters are treated like a single consonant - word beginning with thr"
+pigLatin.translate.tests.ex15 = verify do
+  labeled "some letter clusters are treated like a single consonant - word beginning with thr" do
+    expected = "ushthray"
+    actual = pigLatin.translate "thrush"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex16 =
-  expect ("oolschay" == pigLatin.translate "school")
-    |> Test.label.deprecated "some letter clusters are treated like a single consonant - word beginning with sch"
+pigLatin.translate.tests.ex16 = verify do
+  labeled "some letter clusters are treated like a single consonant - word beginning with sch" do
+    expected = "oolschay"
+    actual = pigLatin.translate "school"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex17 =
-  expect ("yttriaay" == pigLatin.translate "yttria")
-    |> Test.label.deprecated "some letter clusters are treated like a single vowel - word beginning with yt"
+pigLatin.translate.tests.ex17 = verify do
+  labeled "some letter clusters are treated like a single vowel - word beginning with yt" do
+    expected = "yttriaay"
+    actual = pigLatin.translate "yttria"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex18 =
-  expect ("xrayay" == pigLatin.translate "xray")
-    |> Test.label.deprecated "some letter clusters are treated like a single vowel - word beginning with xr"
+pigLatin.translate.tests.ex18 = verify do
+  labeled "some letter clusters are treated like a single vowel - word beginning with xr" do
+    expected = "xrayay"
+    actual = pigLatin.translate "xray"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex19 =
-  expect ("ellowyay" == pigLatin.translate "yellow")
-    |> Test.label.deprecated "position of y in a word determines if it is a consonant or a vowel - y is treated like a consonant at the beginning of a word"
+pigLatin.translate.tests.ex19 = verify do
+  labeled "position of y in a word determines if it is a consonant or a vowel - y is treated like a consonant at the beginning of a word" do
+    expected = "ellowyay"
+    actual = pigLatin.translate "yellow"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex20 =
-  expect ("ythmrhay" == pigLatin.translate "rhythm")
-    |> Test.label.deprecated "position of y in a word determines if it is a consonant or a vowel - y is treated like a vowel at the end of a consonant cluster"
+pigLatin.translate.tests.ex20 = verify do
+  labeled "position of y in a word determines if it is a consonant or a vowel - y is treated like a vowel at the end of a consonant cluster" do
+    expected = "ythmrhay"
+    actual = pigLatin.translate "rhythm"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex21 =
-  expect ("ymay" == pigLatin.translate "my")
-    |> Test.label.deprecated "position of y in a word determines if it is a consonant or a vowel - y as second letter in two letter word"
+pigLatin.translate.tests.ex21 = verify do
+  labeled "position of y in a word determines if it is a consonant or a vowel - y as second letter in two letter word" do
+    expected = "ymay"
+    actual = pigLatin.translate "my"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-pigLatin.translate.tests.ex22 =
-  expect ("ickquay astfay unray" == pigLatin.translate "quick fast run")
-    |> Test.label.deprecated "phrases are translated - a whole phrase"
+pigLatin.translate.tests.ex22 = verify do
+  labeled "phrases are translated - a whole phrase" do
+    expected = "ickquay astfay unray"
+    actual = pigLatin.translate "quick fast run"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
 
-test> pigLatin.tests = runAll [
+test> pigLatin.tests = join [
   pigLatin.translate.tests.ex1,
   pigLatin.translate.tests.ex2,
   pigLatin.translate.tests.ex3,

@@ -1,90 +1,90 @@
 [
   {
     "name": "ay is added to words that start with vowels - word beginning with a",
-    "test_code": "expect (\"appleay\" == pigLatin.translate \"apple\")\n    |> Test.label.deprecated \"ay is added to words that start with vowels - word beginning with a\""
+    "test_code": "verify do\n  labeled \"ay is added to words that start with vowels - word beginning with a\" do\n    expected = \"appleay\"\n    actual = pigLatin.translate \"apple\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "ay is added to words that start with vowels - word beginning with e",
-    "test_code": "expect (\"earay\" == pigLatin.translate \"ear\")\n    |> Test.label.deprecated \"ay is added to words that start with vowels - word beginning with e\""
+    "test_code": "verify do\n  labeled \"ay is added to words that start with vowels - word beginning with e\" do\n    expected = \"earay\"\n    actual = pigLatin.translate \"ear\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "ay is added to words that start with vowels - word beginning with i",
-    "test_code": "expect (\"iglooay\" == pigLatin.translate \"igloo\")\n    |> Test.label.deprecated \"ay is added to words that start with vowels - word beginning with i\""
+    "test_code": "verify do\n  labeled \"ay is added to words that start with vowels - word beginning with i\" do\n    expected = \"iglooay\"\n    actual = pigLatin.translate \"igloo\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "ay is added to words that start with vowels - word beginning with o",
-    "test_code": "expect (\"objectay\" == pigLatin.translate \"object\")\n    |> Test.label.deprecated \"ay is added to words that start with vowels - word beginning with o\""
+    "test_code": "verify do\n  labeled \"ay is added to words that start with vowels - word beginning with o\" do\n    expected = \"objectay\"\n    actual = pigLatin.translate \"object\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "ay is added to words that start with vowels - word beginning with u",
-    "test_code": "expect (\"underay\" == pigLatin.translate \"under\")\n    |> Test.label.deprecated \"ay is added to words that start with vowels - word beginning with u\""
+    "test_code": "verify do\n  labeled \"ay is added to words that start with vowels - word beginning with u\" do\n    expected = \"underay\"\n    actual = pigLatin.translate \"under\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "ay is added to words that start with vowels - word beginning with a vowel and followed by a qu",
-    "test_code": "expect (\"equalay\" == pigLatin.translate \"equal\")\n    |> Test.label.deprecated \"ay is added to words that start with vowels - word beginning with a vowel and followed by a qu\""
+    "test_code": "verify do\n  labeled \"ay is added to words that start with vowels - word beginning with a vowel and followed by a qu\" do\n    expected = \"equalay\"\n    actual = pigLatin.translate \"equal\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "first letter and ay are moved to the end of words that start with consonants - word beginning with p",
-    "test_code": "expect (\"igpay\" == pigLatin.translate \"pig\")\n    |> Test.label.deprecated \"first letter and ay are moved to the end of words that start with consonants - word beginning with p\""
+    "test_code": "verify do\n  labeled \"first letter and ay are moved to the end of words that start with consonants - word beginning with p\" do\n    expected = \"igpay\"\n    actual = pigLatin.translate \"pig\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "first letter and ay are moved to the end of words that start with consonants - word beginning with k",
-    "test_code": "expect (\"oalakay\" == pigLatin.translate \"koala\")\n    |> Test.label.deprecated \"first letter and ay are moved to the end of words that start with consonants - word beginning with k\""
+    "test_code": "verify do\n  labeled \"first letter and ay are moved to the end of words that start with consonants - word beginning with k\" do\n    expected = \"oalakay\"\n    actual = pigLatin.translate \"koala\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "first letter and ay are moved to the end of words that start with consonants - word beginning with x",
-    "test_code": "expect (\"enonxay\" == pigLatin.translate \"xenon\")\n    |> Test.label.deprecated \"first letter and ay are moved to the end of words that start with consonants - word beginning with x\""
+    "test_code": "verify do\n  labeled \"first letter and ay are moved to the end of words that start with consonants - word beginning with x\" do\n    expected = \"enonxay\"\n    actual = pigLatin.translate \"xenon\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "first letter and ay are moved to the end of words that start with consonants - word beginning with q without a following u",
-    "test_code": "expect (\"atqay\" == pigLatin.translate \"qat\")\n    |> Test.label.deprecated \"first letter and ay are moved to the end of words that start with consonants - word beginning with q without a following u\""
+    "test_code": "verify do\n  labeled \"first letter and ay are moved to the end of words that start with consonants - word beginning with q without a following u\" do\n    expected = \"atqay\"\n    actual = pigLatin.translate \"qat\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "some letter clusters are treated like a single consonant - word beginning with ch",
-    "test_code": "expect (\"airchay\" == pigLatin.translate \"chair\")\n    |> Test.label.deprecated \"some letter clusters are treated like a single consonant - word beginning with ch\""
+    "test_code": "verify do\n  labeled \"some letter clusters are treated like a single consonant - word beginning with ch\" do\n    expected = \"airchay\"\n    actual = pigLatin.translate \"chair\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "some letter clusters are treated like a single consonant - word beginning with qu",
-    "test_code": "expect (\"eenquay\" == pigLatin.translate \"queen\")\n    |> Test.label.deprecated \"some letter clusters are treated like a single consonant - word beginning with qu\""
+    "test_code": "verify do\n  labeled \"some letter clusters are treated like a single consonant - word beginning with qu\" do\n    expected = \"eenquay\"\n    actual = pigLatin.translate \"queen\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "some letter clusters are treated like a single consonant - word beginning with qu and a preceding consonant",
-    "test_code": "expect (\"aresquay\" == pigLatin.translate \"square\")\n    |> Test.label.deprecated \"some letter clusters are treated like a single consonant - word beginning with qu and a preceding consonant\""
+    "test_code": "verify do\n  labeled \"some letter clusters are treated like a single consonant - word beginning with qu and a preceding consonant\" do\n    expected = \"aresquay\"\n    actual = pigLatin.translate \"square\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "some letter clusters are treated like a single consonant - word beginning with th",
-    "test_code": "expect (\"erapythay\" == pigLatin.translate \"therapy\")\n    |> Test.label.deprecated \"some letter clusters are treated like a single consonant - word beginning with th\""
+    "test_code": "verify do\n  labeled \"some letter clusters are treated like a single consonant - word beginning with th\" do\n    expected = \"erapythay\"\n    actual = pigLatin.translate \"therapy\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "some letter clusters are treated like a single consonant - word beginning with thr",
-    "test_code": "expect (\"ushthray\" == pigLatin.translate \"thrush\")\n    |> Test.label.deprecated \"some letter clusters are treated like a single consonant - word beginning with thr\""
+    "test_code": "verify do\n  labeled \"some letter clusters are treated like a single consonant - word beginning with thr\" do\n    expected = \"ushthray\"\n    actual = pigLatin.translate \"thrush\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "some letter clusters are treated like a single consonant - word beginning with sch",
-    "test_code": "expect (\"oolschay\" == pigLatin.translate \"school\")\n    |> Test.label.deprecated \"some letter clusters are treated like a single consonant - word beginning with sch\""
+    "test_code": "verify do\n  labeled \"some letter clusters are treated like a single consonant - word beginning with sch\" do\n    expected = \"oolschay\"\n    actual = pigLatin.translate \"school\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "some letter clusters are treated like a single vowel - word beginning with yt",
-    "test_code": "expect (\"yttriaay\" == pigLatin.translate \"yttria\")\n    |> Test.label.deprecated \"some letter clusters are treated like a single vowel - word beginning with yt\""
+    "test_code": "verify do\n  labeled \"some letter clusters are treated like a single vowel - word beginning with yt\" do\n    expected = \"yttriaay\"\n    actual = pigLatin.translate \"yttria\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "some letter clusters are treated like a single vowel - word beginning with xr",
-    "test_code": "expect (\"xrayay\" == pigLatin.translate \"xray\")\n    |> Test.label.deprecated \"some letter clusters are treated like a single vowel - word beginning with xr\""
+    "test_code": "verify do\n  labeled \"some letter clusters are treated like a single vowel - word beginning with xr\" do\n    expected = \"xrayay\"\n    actual = pigLatin.translate \"xray\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "position of y in a word determines if it is a consonant or a vowel - y is treated like a consonant at the beginning of a word",
-    "test_code": "expect (\"ellowyay\" == pigLatin.translate \"yellow\")\n    |> Test.label.deprecated \"position of y in a word determines if it is a consonant or a vowel - y is treated like a consonant at the beginning of a word\""
+    "test_code": "verify do\n  labeled \"position of y in a word determines if it is a consonant or a vowel - y is treated like a consonant at the beginning of a word\" do\n    expected = \"ellowyay\"\n    actual = pigLatin.translate \"yellow\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "position of y in a word determines if it is a consonant or a vowel - y is treated like a vowel at the end of a consonant cluster",
-    "test_code": "expect (\"ythmrhay\" == pigLatin.translate \"rhythm\")\n    |> Test.label.deprecated \"position of y in a word determines if it is a consonant or a vowel - y is treated like a vowel at the end of a consonant cluster\""
+    "test_code": "verify do\n  labeled \"position of y in a word determines if it is a consonant or a vowel - y is treated like a vowel at the end of a consonant cluster\" do\n    expected = \"ythmrhay\"\n    actual = pigLatin.translate \"rhythm\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "position of y in a word determines if it is a consonant or a vowel - y as second letter in two letter word",
-    "test_code": "expect (\"ymay\" == pigLatin.translate \"my\")\n    |> Test.label.deprecated \"position of y in a word determines if it is a consonant or a vowel - y as second letter in two letter word\""
+    "test_code": "verify do\n  labeled \"position of y in a word determines if it is a consonant or a vowel - y as second letter in two letter word\" do\n    expected = \"ymay\"\n    actual = pigLatin.translate \"my\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "phrases are translated - a whole phrase",
-    "test_code": "expect (\"ickquay astfay unray\" == pigLatin.translate \"quick fast run\")\n    |> Test.label.deprecated \"phrases are translated - a whole phrase\""
+    "test_code": "verify do\n  labeled \"phrases are translated - a whole phrase\" do\n    expected = \"ickquay astfay unray\"\n    actual = pigLatin.translate \"quick fast run\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

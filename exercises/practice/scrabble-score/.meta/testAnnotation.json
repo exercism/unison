@@ -1,46 +1,46 @@
 [
   {
     "name": "lowercase letter",
-    "test_code": "expect (1 == scrabbleScore.score \"a\")\n    |> Test.label.deprecated \"lowercase letter\""
+    "test_code": "verify do\n  labeled \"lowercase letter\" do\n    expected = 1\n    actual = scrabbleScore.score \"a\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "uppercase letter",
-    "test_code": "expect (1 == scrabbleScore.score \"A\")\n    |> Test.label.deprecated \"uppercase letter\""
+    "test_code": "verify do\n  labeled \"uppercase letter\" do\n    expected = 1\n    actual = scrabbleScore.score \"A\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "valuable letter",
-    "test_code": "expect (4 == scrabbleScore.score \"f\")\n    |> Test.label.deprecated \"valuable letter\""
+    "test_code": "verify do\n  labeled \"valuable letter\" do\n    expected = 4\n    actual = scrabbleScore.score \"f\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "short word",
-    "test_code": "expect (2 == scrabbleScore.score \"at\")\n    |> Test.label.deprecated \"short word\""
+    "test_code": "verify do\n  labeled \"short word\" do\n    expected = 2\n    actual = scrabbleScore.score \"at\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "short, valuable word",
-    "test_code": "expect (12 == scrabbleScore.score \"zoo\")\n    |> Test.label.deprecated \"short, valuable word\""
+    "test_code": "verify do\n  labeled \"short, valuable word\" do\n    expected = 12\n    actual = scrabbleScore.score \"zoo\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "medium word",
-    "test_code": "expect (6 == scrabbleScore.score \"street\")\n    |> Test.label.deprecated \"medium word\""
+    "test_code": "verify do\n  labeled \"medium word\" do\n    expected = 6\n    actual = scrabbleScore.score \"street\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "medium, valuable word",
-    "test_code": "expect (22 == scrabbleScore.score \"quirky\")\n    |> Test.label.deprecated \"medium, valuable word\""
+    "test_code": "verify do\n  labeled \"medium, valuable word\" do\n    expected = 22\n    actual = scrabbleScore.score \"quirky\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "long, mixed-case word",
-    "test_code": "expect (41 == scrabbleScore.score \"OxyphenButazone\")\n    |> Test.label.deprecated \"long, mixed-case word\""
+    "test_code": "verify do\n  labeled \"long, mixed-case word\" do\n    expected = 41\n    actual = scrabbleScore.score \"OxyphenButazone\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "english-like word",
-    "test_code": "expect (8 == scrabbleScore.score \"pinata\")\n    |> Test.label.deprecated \"english-like word\""
+    "test_code": "verify do\n  labeled \"english-like word\" do\n    expected = 8\n    actual = scrabbleScore.score \"pinata\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "empty input",
-    "test_code": "expect (0 == scrabbleScore.score \"\")\n    |> Test.label.deprecated \"empty input\""
+    "test_code": "verify do\n  labeled \"empty input\" do\n    expected = 0\n    actual = scrabbleScore.score \"\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "entire alphabet available",
-    "test_code": "expect (87 == scrabbleScore.score \"abcdefghijklmnopqrstuvwxyz\")\n    |> Test.label.deprecated \"entire alphabet available\""
+    "test_code": "verify do\n  labeled \"entire alphabet available\" do\n    expected = 87\n    actual = scrabbleScore.score \"abcdefghijklmnopqrstuvwxyz\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

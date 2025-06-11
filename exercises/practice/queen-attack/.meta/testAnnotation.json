@@ -1,46 +1,46 @@
 [
   {
     "name": "queen with a valid position",
-    "test_code": "let\n  Test.label.deprecated \"queen with a valid position\" <| Test.expect (toOptional! '(create (2,2)) === Some (2,2))"
+    "test_code": "verify do\n  labeled \"queen with a valid position\" do\n    expected = Some (2,2)\n    actual = toOptional! '(create (2,2))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "queen must have row on board",
-    "test_code": "let\n  Test.label.deprecated \"queen must have row on board\" <| Test.expect (toOptional! '(create (8,4)) === None)"
+    "test_code": "verify do\n  labeled \"queen must have row on board\" do\n    expected = None\n    actual = toOptional! '(create (8,4))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "queen must have column on board",
-    "test_code": "let\n  Test.label.deprecated \"queen must have column on board\" <| Test.expect (toOptional! '(create (4,8)) === None)"
+    "test_code": "verify do\n  labeled \"queen must have column on board\" do\n    expected = None\n    actual = toOptional! '(create (4,8))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "cannot attack",
-    "test_code": "let\n  Test.label.deprecated \"cannot attack\" <| Test.expect (toOptional! '(canAttack (2,4) (6,6)) === Some false)"
+    "test_code": "verify do\n  labeled \"cannot attack\" do\n    expected = Some false\n    actual = toOptional! '(canAttack (2,4) (6,6))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can attack on same row",
-    "test_code": "let\n  Test.label.deprecated \"can attack on same row\" <| Test.expect (toOptional! '(canAttack (2,4) (2,6)) === Some true)"
+    "test_code": "verify do\n  labeled \"can attack on same row\" do\n    expected = Some true\n    actual = toOptional! '(canAttack (2,4) (2,6))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can attack on same column",
-    "test_code": "let\n  Test.label.deprecated \"can attack on same column\" <| Test.expect (toOptional! '(canAttack (4,5) (2,5)) === Some true)"
+    "test_code": "verify do\n  labeled \"can attack on same column\" do\n    expected = Some true\n    actual = toOptional! '(canAttack (4,5) (2,5))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can attack on first diagonal",
-    "test_code": "let\n  Test.label.deprecated \"can attack on first diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (0,4)) === Some true)"
+    "test_code": "verify do\n  labeled \"can attack on first diagonal\" do\n    expected = Some true\n    actual = toOptional! '(canAttack (2,2) (0,4))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can attack on second diagonal",
-    "test_code": "let\n  Test.label.deprecated \"can attack on second diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (3,1)) === Some true)"
+    "test_code": "verify do\n  labeled \"can attack on second diagonal\" do\n    expected = Some true\n    actual = toOptional! '(canAttack (2,2) (3,1))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can attack on third diagonal",
-    "test_code": "let\n  Test.label.deprecated \"can attack on third diagonal\" <| Test.expect (toOptional! '(canAttack (2,2) (1,1)) === Some true)"
+    "test_code": "verify do\n  labeled \"can attack on third diagonal\" do\n    expected = Some true\n    actual = toOptional! '(canAttack (2,2) (1,1))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "can attack on fourth diagonal",
-    "test_code": "let\n  Test.label.deprecated \"can attack on fourth diagonal\" <| Test.expect (toOptional! '(canAttack (1,7) (0,6)) === Some true)"
+    "test_code": "verify do\n  labeled \"can attack on fourth diagonal\" do\n    expected = Some true\n    actual = toOptional! '(canAttack (1,7) (0,6))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal",
-    "test_code": "let\n  Test.label.deprecated \"cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal\" <| Test.expect (toOptional! '(canAttack (4,1) (2,5)) === Some false)"
+    "test_code": "verify do\n  labeled \"cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal\" do\n    expected = Some false\n    actual = toOptional! '(canAttack (4,1) (2,5))\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

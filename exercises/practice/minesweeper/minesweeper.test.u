@@ -1,88 +1,124 @@
-minesweeper.annotate.tests.ex1 =
-  expected = []
-  input = []
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "no rows"
+minesweeper.annotate.tests.ex1 = verify do
+  labeled "no rows" do
+    expected = []
+    actual = minesweeper.annotate []
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex2 =
-  expected = [""]
-  input = [""]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "no columns"
+minesweeper.annotate.tests.ex2 = verify do
+  labeled "no columns" do
+    expected = [""]
+    actual = minesweeper.annotate [""]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex3 =
-  expected = ["   ", "   ", "   "]
-  input = ["   ", "   ", "   "]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "no mines"
+minesweeper.annotate.tests.ex3 = verify do
+  labeled "no mines" do
+    expected = ["   ", "   ", "   "]
+    actual = minesweeper.annotate ["   ", "   ", "   "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex4 =
-  expected = ["***", "***", "***"]
-  input = ["***", "***", "***"]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "minefield with only mines"
+minesweeper.annotate.tests.ex4 = verify do
+  labeled "minefield with only mines" do
+    expected = ["***", "***", "***"]
+    actual = minesweeper.annotate ["***", "***", "***"]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex5 =
-  expected = ["111", "1*1", "111"]
-  input = ["   ", " * ", "   "]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "mine surrounded by spaces"
+minesweeper.annotate.tests.ex5 = verify do
+  labeled "mine surrounded by spaces" do
+    expected = ["111", "1*1", "111"]
+    actual = minesweeper.annotate ["   ", " * ", "   "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex6 =
-  expected = ["***", "*8*", "***"]
-  input = ["***", "* *", "***"]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "space surrounded by mines"
+minesweeper.annotate.tests.ex6 = verify do
+  labeled "space surrounded by mines" do
+    expected = ["***", "*8*", "***"]
+    actual = minesweeper.annotate ["***", "* *", "***"]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex7 =
-  expected = ["1*2*1"]
-  input = [" * * "]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "horizontal line"
+minesweeper.annotate.tests.ex7 = verify do
+  labeled "horizontal line" do
+    expected = ["1*2*1"]
+    actual = minesweeper.annotate [" * * "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex8 =
-  expected = ["*1 1*"]
-  input = ["*   *"]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "horizontal line, mines at edges"
+minesweeper.annotate.tests.ex8 = verify do
+  labeled "horizontal line, mines at edges" do
+    expected = ["*1 1*"]
+    actual = minesweeper.annotate ["*   *"]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex9 =
-  expected = ["1", "*", "2", "*", "1"]
-  input = [" ", "*", " ", "*", " "]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "vertical line"
+minesweeper.annotate.tests.ex9 = verify do
+  labeled "vertical line" do
+    expected = ["1", "*", "2", "*", "1"]
+    actual = minesweeper.annotate [" ", "*", " ", "*", " "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex10 =
-  expected = ["*", "1", " ", "1", "*"]
-  input = ["*", " ", " ", " ", "*"]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "vertical line, mines at edges"
+minesweeper.annotate.tests.ex10 = verify do
+  labeled "vertical line, mines at edges" do
+    expected = ["*", "1", " ", "1", "*"]
+    actual = minesweeper.annotate ["*", " ", " ", " ", "*"]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex11 =
-  expected = [" 2*2 ", "25*52", "*****", "25*52", " 2*2 "]
-  input = ["  *  ", "  *  ", "*****", "  *  ", "  *  "]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "cross"
+minesweeper.annotate.tests.ex11 = verify do
+  labeled "cross" do
+    expected = [" 2*2 ", "25*52", "*****", "25*52", " 2*2 "]
+    actual = minesweeper.annotate ["  *  ", "  *  ", "*****", "  *  ", "  *  "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-minesweeper.annotate.tests.ex12 =
-  expected = ["1*22*1", "12*322", " 123*2", "112*4*", "1*22*2", "111111"]
-  input = [" *  * ", "  *   ", "    * ", "   * *", " *  * ", "      "]
-  expected === minesweeper.annotate input
-    |> expect
-    |> Test.label.deprecated "large minefield"
+minesweeper.annotate.tests.ex12 = verify do
+  labeled "large minefield" do
+    expected = ["1*22*1", "12*322", " 123*2", "112*4*", "1*22*2", "111111"]
+    actual = minesweeper.annotate [" *  * ", "  *   ", "    * ", "   * *", " *  * ", "      "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
 
-test> minesweeper.tests = runAll [
+test> minesweeper.tests = join [
   minesweeper.annotate.tests.ex1,
   minesweeper.annotate.tests.ex2,
   minesweeper.annotate.tests.ex3,

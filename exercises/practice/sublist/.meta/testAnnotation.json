@@ -1,74 +1,74 @@
 [
   {
     "name": "empty lists",
-    "test_code": "let\n  Test.label.deprecated \"empty lists\" <| Test.expect (sublist [] [] === Equal)"
+    "test_code": "verify do\n  labeled \"empty lists\" do\n    expected = Equal\n    actual = sublist [] []\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "empty list within non empty list",
-    "test_code": "let\n  Test.label.deprecated \"empty list within non empty list\" <| Test.expect (sublist [] [1,2,3] === Sublist)"
+    "test_code": "verify do\n  labeled \"empty list within non empty list\" do\n    expected = Sublist\n    actual = sublist [] [1,2,3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "non empty list contains empty list",
-    "test_code": "let\n  Test.label.deprecated \"non empty list contains empty list\" <| Test.expect (sublist [1,2,3] [] === Superlist)"
+    "test_code": "verify do\n  labeled \"non empty list contains empty list\" do\n    expected = Superlist\n    actual = sublist [1,2,3] []\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "list equals itself",
-    "test_code": "let\n  Test.label.deprecated \"list equals itself\" <| Test.expect (sublist [1,2,3] [1,2,3] === Equal)"
+    "test_code": "verify do\n  labeled \"list equals itself\" do\n    expected = Equal\n    actual = sublist [1,2,3] [1,2,3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "different lists",
-    "test_code": "let\n  Test.label.deprecated \"different lists\" <| Test.expect (sublist [1,2,3] [2,3,4] === Unequal)"
+    "test_code": "verify do\n  labeled \"different lists\" do\n    expected = Unequal\n    actual = sublist [1,2,3] [2,3,4]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "false start",
-    "test_code": "let\n  Test.label.deprecated \"false start\" <| Test.expect (sublist [1,2,5] [0,1,2,3,1,2,5,6] === Sublist)"
+    "test_code": "verify do\n  labeled \"false start\" do\n    expected = Sublist\n    actual = sublist [1,2,5] [0,1,2,3,1,2,5,6]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "consecutive",
-    "test_code": "let\n  Test.label.deprecated \"consecutive\" <| Test.expect (sublist [1,1,2] [0,1,1,1,2,1,2] === Sublist)"
+    "test_code": "verify do\n  labeled \"consecutive\" do\n    expected = Sublist\n    actual = sublist [1,1,2] [0,1,1,1,2,1,2]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "sublist at start",
-    "test_code": "let\n  Test.label.deprecated \"sublist at start\" <| Test.expect (sublist [0,1,2] [0,1,2,3,4,5] === Sublist)"
+    "test_code": "verify do\n  labeled \"sublist at start\" do\n    expected = Sublist\n    actual = sublist [0,1,2] [0,1,2,3,4,5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "sublist in middle",
-    "test_code": "let\n  Test.label.deprecated \"sublist in middle\" <| Test.expect (sublist [2,3,4] [0,1,2,3,4,5] === Sublist)"
+    "test_code": "verify do\n  labeled \"sublist in middle\" do\n    expected = Sublist\n    actual = sublist [2,3,4] [0,1,2,3,4,5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "sublist at end",
-    "test_code": "let\n  Test.label.deprecated \"sublist at end\" <| Test.expect (sublist [3,4,5] [0,1,2,3,4,5] === Sublist)"
+    "test_code": "verify do\n  labeled \"sublist at end\" do\n    expected = Sublist\n    actual = sublist [3,4,5] [0,1,2,3,4,5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "at start of superlist",
-    "test_code": "let\n  Test.label.deprecated \"at start of superlist\" <| Test.expect (sublist [0,1,2,3,4,5] [0,1,2] === Superlist)"
+    "test_code": "verify do\n  labeled \"at start of superlist\" do\n    expected = Superlist\n    actual = sublist [0,1,2,3,4,5] [0,1,2]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "in middle of superlist",
-    "test_code": "let\n  Test.label.deprecated \"in middle of superlist\" <| Test.expect (sublist [0,1,2,3,4,5] [2,3] === Superlist)"
+    "test_code": "verify do\n  labeled \"in middle of superlist\" do\n    expected = Superlist\n    actual = sublist [0,1,2,3,4,5] [2,3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "at end of superlist",
-    "test_code": "let\n  Test.label.deprecated \"at end of superlist\" <| Test.expect (sublist [0,1,2,3,4,5] [3,4,5] === Superlist)"
+    "test_code": "verify do\n  labeled \"at end of superlist\" do\n    expected = Superlist\n    actual = sublist [0,1,2,3,4,5] [3,4,5]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "first list missing element from second list",
-    "test_code": "let\n  Test.label.deprecated \"first list missing element from second list\" <| Test.expect (sublist [1,3] [1,2,3] === Unequal)"
+    "test_code": "verify do\n  labeled \"first list missing element from second list\" do\n    expected = Unequal\n    actual = sublist [1,3] [1,2,3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "second list missing element from first list",
-    "test_code": "let\n  Test.label.deprecated \"second list missing element from first list\" <| Test.expect (sublist [1,2,3] [1,3] === Unequal)"
+    "test_code": "verify do\n  labeled \"second list missing element from first list\" do\n    expected = Unequal\n    actual = sublist [1,2,3] [1,3]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "first list missing additional digits from second list",
-    "test_code": "let\n  Test.label.deprecated \"first list missing additional digits from second list\" <| Test.expect (sublist [1,2] [1,22] === Unequal)"
+    "test_code": "verify do\n  labeled \"first list missing additional digits from second list\" do\n    expected = Unequal\n    actual = sublist [1,2] [1,22]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "order matters to a list",
-    "test_code": "let\n  Test.label.deprecated \"order matters to a list\" <| Test.expect (sublist [1,2,3] [3,2,1] === Unequal)"
+    "test_code": "verify do\n  labeled \"order matters to a list\" do\n    expected = Unequal\n    actual = sublist [1,2,3] [3,2,1]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "same digits but different numbers",
-    "test_code": "let\n  Test.label.deprecated \"same digits but different numbers\" <| Test.expect (sublist [1,0,1] [10,1] === Unequal)"
+    "test_code": "verify do\n  labeled \"same digits but different numbers\" do\n    expected = Unequal\n    actual = sublist [1,0,1] [10,1]\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]
