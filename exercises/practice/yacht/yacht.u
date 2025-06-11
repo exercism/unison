@@ -12,5 +12,5 @@ unique type yacht.Category
   | Choice
   | Yacht
 
-yacht.yacht : Categoty -> [Nat] -> Nat
+yacht.yacht : Category -> [Nat] -> Nat
 yacht.yacht = todo "implement yacht"
