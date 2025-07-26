@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "SimaDovakin"
+  ],
+  "files": {
+    "solution": [
+      "flowerField.u"
+    ],
+    "test": [
+      "flowerField.test.u"
+    ],
+    "example": [
+      ".meta/examples/flowerField.example.u"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}
