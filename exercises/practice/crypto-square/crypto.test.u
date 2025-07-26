@@ -47,9 +47,17 @@ cryptoSquare.test.ex6 = verify do
     ensureEqual expected actual
 
 cryptoSquare.test.ex7 = verify do
-  labeled "54 character plaintext results in 7 chunks, the last two with trailing spaces" do
+  labeled "54 character plaintext results in 8 chunks, the last two with trailing spaces" do
     expected = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
     actual = ciphertext "If man was meant to stay on the ground, god would have given us roots."
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+cryptoSquare.test.ex8 = verify do
+  labeled "normalization results in empty plaintext" do
+    expected = ""
+    actual = ciphertext "... --- ..."
     label "expected" expected
     label "actual" actual
     ensureEqual expected actual
@@ -61,5 +69,6 @@ test> cryptoSquare.tests = join [
   cryptoSquare.test.ex4,
   cryptoSquare.test.ex5,
   cryptoSquare.test.ex6,
-  cryptoSquare.test.ex7
+  cryptoSquare.test.ex7,
+  cryptoSquare.test.ex8
 ]

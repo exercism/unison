@@ -206,6 +206,14 @@ romanNumerals.test.ex26 = verify do
     label "actual" actual
     ensureEqual expected actual
 
+romanNumerals.test.ex27 = verify do
+  labeled "3888 is MMMDCCCLXXXVIII" do
+    expected = "MMMDCCCLXXXVIII"
+    actual = toRoman 3888
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
 test> romanNumerals.tests = join [
   romanNumerals.test.ex1,
   romanNumerals.test.ex2,
@@ -232,5 +240,6 @@ test> romanNumerals.tests = join [
   romanNumerals.test.ex23,
   romanNumerals.test.ex24,
   romanNumerals.test.ex25,
-  romanNumerals.test.ex26
+  romanNumerals.test.ex26,
+  romanNumerals.test.ex27
 ]

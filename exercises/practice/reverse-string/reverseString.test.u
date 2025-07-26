@@ -46,11 +46,20 @@ reverseString.test.ex6 = verify do
     label "actual" actual
     ensureEqual expected actual
 
+reverseString.test.ex7 = verify do
+  labeled "wide characters" do
+    expected = "猫子"
+    actual = reverseString.reverse "子猫"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
 test> reverseString.tests = join [
   reverseString.test.ex1,
   reverseString.test.ex2,
   reverseString.test.ex3,
   reverseString.test.ex4,
   reverseString.test.ex5,
-  reverseString.test.ex6
+  reverseString.test.ex6,
+  reverseString.test.ex7
 ]

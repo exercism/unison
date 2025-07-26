@@ -86,5 +86,9 @@
   {
     "name": "phrases are translated - a whole phrase",
     "test_code": "verify do\n  labeled \"phrases are translated - a whole phrase\" do\n    expected = \"ickquay astfay unray\"\n    actual = pigLatin.translate \"quick fast run\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
+  },
+  {
+    "name": "first letter and ay are moved to the end of words that start with consonants - word beginning with consonant and vowel containing qu",
+    "test_code": "verify do\n  labeled \"first letter and ay are moved to the end of words that start with consonants - word beginning with consonant and vowel containing qu\" do\n    expected = \"iquidlay\"\n    actual = pigLatin.translate \"liquid\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

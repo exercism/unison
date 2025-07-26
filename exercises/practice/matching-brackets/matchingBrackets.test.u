@@ -150,6 +150,14 @@ matchingBrackets.test.ex19 = verify do
     label "actual" actual
     ensureEqual expected actual
 
+matchingBrackets.test.ex20 = verify do
+  labeled "paired and wrong nested brackets but innermost are correct" do
+    expected = false
+    actual = isPaired "[({}])"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
 test> matchingBrackets.tests = join [
   matchingBrackets.test.ex1,
   matchingBrackets.test.ex2,
@@ -169,5 +177,6 @@ test> matchingBrackets.tests = join [
   matchingBrackets.test.ex16,
   matchingBrackets.test.ex17,
   matchingBrackets.test.ex18,
-  matchingBrackets.test.ex19
+  matchingBrackets.test.ex19,
+  matchingBrackets.test.ex20
 ]
