@@ -86,6 +86,14 @@ change.test.ex11 = verify do
     label "actual" actual
     ensureEqual expected actual
 
+change.test.ex12 = verify do
+  labeled "a greedy approach is not optimal" do
+    expected = Some [10, 10]
+    actual = findFewestCoins [1, 10, 11] 20
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
 test> change.tests = join [
   change.test.ex1,
   change.test.ex2,
@@ -97,5 +105,6 @@ test> change.tests = join [
   change.test.ex8,
   change.test.ex9,
   change.test.ex10,
-  change.test.ex11
+  change.test.ex11,
+  change.test.ex12
 ]

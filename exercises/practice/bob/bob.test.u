@@ -160,8 +160,8 @@ bob.test.ex20 = verify do
 
 bob.test.ex21 = verify do
   labeled "Multiple line question" do
-    expected = "Whatever."
-    actual = response "\nDoes this cryogenic chamber make me look fat?\nNo."
+    expected = "Sure."
+    actual = response "\nDoes this cryogenic chamber make\n me look fat?"
     label "expected" expected
     label "actual" actual
     ensureEqual expected actual

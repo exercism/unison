@@ -102,5 +102,9 @@
   {
     "name": "Translation stops if STOP codon in middle of six-codon sequence",
     "test_code": "verify do\n  labeled \"Translation stops if STOP codon in middle of six-codon sequence\" do\n    expected = [\"Tryptophan\", \"Cysteine\", \"Tyrosine\"]\n    actual = proteins \"UGGUGUUAUUAAUGGUUU\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
+  },
+  {
+    "name": "Sequence of two non-STOP codons does not translate to a STOP codon",
+    "test_code": "verify do\n  labeled \"Sequence of two non-STOP codons does not translate to a STOP codon\" do\n    expected = [\"Methionine\", \"Methionine\"]\n    actual = proteins \"AUGAUG\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]
