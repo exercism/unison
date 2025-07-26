@@ -1,0 +1,134 @@
+flowerField.annotate.tests.ex1 = verify do
+  labeled "no rows" do
+    expected = []
+    actual = flowerField.annotate []
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex2 = verify do
+  labeled "no columns" do
+    expected = [""]
+    actual = flowerField.annotate [""]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex3 = verify do
+  labeled "no flowers" do
+    expected = ["   ", "   ", "   "]
+    actual = flowerField.annotate ["   ", "   ", "   "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex4 = verify do
+  labeled "garden full of flowers" do
+    expected = ["***", "***", "***"]
+    actual = flowerField.annotate ["***", "***", "***"]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex5 = verify do
+  labeled "flower surrounded by spaces" do
+    expected = ["111", "1*1", "111"]
+    actual = flowerField.annotate ["   ", " * ", "   "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex6 = verify do
+  labeled "space surrounded by flowers" do
+    expected = ["***", "*8*", "***"]
+    actual = flowerField.annotate ["***", "* *", "***"]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex7 = verify do
+  labeled "horizontal line" do
+    expected = ["1*2*1"]
+    actual = flowerField.annotate [" * * "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex8 = verify do
+  labeled "horizontal line, flowers at edges" do
+    expected = ["*1 1*"]
+    actual = flowerField.annotate ["*   *"]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex9 = verify do
+  labeled "vertical line" do
+    expected = ["1", "*", "2", "*", "1"]
+    actual = flowerField.annotate [" ", "*", " ", "*", " "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex10 = verify do
+  labeled "vertical line, flowers at edges" do
+    expected = ["*", "1", " ", "1", "*"]
+    actual = flowerField.annotate ["*", " ", " ", " ", "*"]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex11 = verify do
+  labeled "cross" do
+    expected = [" 2*2 ", "25*52", "*****", "25*52", " 2*2 "]
+    actual = flowerField.annotate ["  *  ", "  *  ", "*****", "  *  ", "  *  "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+flowerField.annotate.tests.ex12 = verify do
+  labeled "large garden" do
+    expected = ["1*22*1", "12*322", " 123*2", "112*4*", "1*22*2", "111111"]
+    actual = flowerField.annotate [" *  * ", "  *   ", "    * ", "   * *", " *  * ", "      "]
+    label "expected" (expected |> join "
+")
+    label "actual" (actual |> join "
+")
+    ensureEqual expected actual
+
+test> flowerField.tests = join [
+  flowerField.annotate.tests.ex1,
+  flowerField.annotate.tests.ex2,
+  flowerField.annotate.tests.ex3,
+  flowerField.annotate.tests.ex4,
+  flowerField.annotate.tests.ex5,
+  flowerField.annotate.tests.ex6,
+  flowerField.annotate.tests.ex7,
+  flowerField.annotate.tests.ex8,
+  flowerField.annotate.tests.ex9,
+  flowerField.annotate.tests.ex10,
+  flowerField.annotate.tests.ex11,
+  flowerField.annotate.tests.ex12
+]

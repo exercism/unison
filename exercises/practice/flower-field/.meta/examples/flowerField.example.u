@@ -1,0 +1,87 @@
+flowerField.annotate : [Text] -> [Text]
+flowerField.annotate board =
+  boardHeight = size board |> toInt
+  boardWidth = List.head board |> Optional.getOrElse "" |> Text.size |> toInt
+  neighbours =
+    board
+      |> findBoardFlowers
+      |> map (coordinates -> getNeighbours coordinates boardWidth boardHeight)
+      |> join
+  coordinatesMap = createCoordinatesMap neighbours
+  annotateBoard board coordinatesMap
+
+flowerField.directions : [(Int, Int)]
+flowerField.directions =
+  use Int range
+  range -1 +2
+    |> map (n -> zip (fill 3 n) (range -1 +2))
+    |> join
+    |> filter (p -> (at1 p, at2 p) !== (+0, +0))
+
+flowerField.natToDigit : Nat -> Char
+flowerField.natToDigit = cases
+  n | (n >= 0) && (n <= 9) -> Char.fromNat (48 + n) |> Optional.getOrElse ?\s
+  _ -> ?\s
+
+flowerField.getNeighbours : (Int, Int) -> Int -> Int -> [(Int, Int)]
+flowerField.getNeighbours coordinates width height =
+  addCoordinates coords1 coords2 =
+    use Int +
+    (r1, c1) = coords1
+    (r2, c2) = coords2
+    (r1 + r2, c1 + c2)
+  isOnBoard w h coords =
+    (r, c) = coords
+    (r >= +0) && (r < h) && (c >= +0) && (c < w)
+  directions
+    |> map (addCoordinates coordinates)
+    |> filter (isOnBoard width height)
+
+flowerField.createCoordinatesMap : [(Int, Int)] -> Map (Int, Int) Nat
+flowerField.createCoordinatesMap coordinates =
+  incrementFrequency = cases
+    Some old -> Some (old + 1)
+    _ -> Some 1
+  coordinates
+    |> List.foldLeft (acc coord -> Map.alter incrementFrequency coord acc) Map.empty
+
+flowerField.findRowFlowers : Int -> Text -> [(Int, Int)]
+flowerField.findRowFlowers rowNumber row =
+  use Int range
+  isFlower = at2 >> (==) ?*
+  row
+    |> toCharList
+    |> zip (range +0 (size row |> toInt))
+    |> filter isFlower
+    |> map (p -> (rowNumber, at1 p))
+
+flowerField.findBoardFlowers : [Text] -> [(Int, Int)]
+flowerField.findBoardFlowers board =
+  use Int range
+  board
+    |> zip (range +0 (size board |> toInt))
+    |> map (uncurry findRowFlowers)
+    |> join
+
+flowerField.annotateRow : Int -> Text -> Map (Int, Int) Nat -> Text
+flowerField.annotateRow rowNumber row coordinatesMap =
+  use Int range
+  populateTile indexedTile =
+    (colNumber, value) = indexedTile
+    match value with
+      ?* -> value
+      _ -> match Map.get (rowNumber, colNumber) coordinatesMap with
+             Some val -> natToDigit val
+             None -> value
+  row
+    |> toCharList
+    |> zip (range +0 (size row |> toInt))
+    |> map populateTile
+    |> fromCharList
+
+flowerField.annotateBoard : [Text] -> Map (Int, Int) Nat -> [Text]
+flowerField.annotateBoard board coordinatesMap =
+  use Int range
+  board
+    |> zip (range +0 (size board |> toInt))
+    |> map (p -> (uncurry annotateRow p) coordinatesMap)

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "no rows",
+    "test_code": "verify do\n  labeled \"no rows\" do\n    expected = []\n    actual = flowerField.annotate []\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "no columns",
+    "test_code": "verify do\n  labeled \"no columns\" do\n    expected = [\"\"]\n    actual = flowerField.annotate [\"\"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "no flowers",
+    "test_code": "verify do\n  labeled \"no flowers\" do\n    expected = [\"   \", \"   \", \"   \"]\n    actual = flowerField.annotate [\"   \", \"   \", \"   \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "garden full of flowers",
+    "test_code": "verify do\n  labeled \"garden full of flowers\" do\n    expected = [\"***\", \"***\", \"***\"]\n    actual = flowerField.annotate [\"***\", \"***\", \"***\"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "flower surrounded by spaces",
+    "test_code": "verify do\n  labeled \"flower surrounded by spaces\" do\n    expected = [\"111\", \"1*1\", \"111\"]\n    actual = flowerField.annotate [\"   \", \" * \", \"   \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "space surrounded by flowers",
+    "test_code": "verify do\n  labeled \"space surrounded by flowers\" do\n    expected = [\"***\", \"*8*\", \"***\"]\n    actual = flowerField.annotate [\"***\", \"* *\", \"***\"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "horizontal line",
+    "test_code": "verify do\n  labeled \"horizontal line\" do\n    expected = [\"1*2*1\"]\n    actual = flowerField.annotate [\" * * \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "horizontal line, flowers at edges",
+    "test_code": "verify do\n  labeled \"horizontal line, flowers at edges\" do\n    expected = [\"*1 1*\"]\n    actual = flowerField.annotate [\"*   *\"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "vertical line",
+    "test_code": "verify do\n  labeled \"vertical line\" do\n    expected = [\"1\", \"*\", \"2\", \"*\", \"1\"]\n    actual = flowerField.annotate [\" \", \"*\", \" \", \"*\", \" \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "vertical line, flowers at edges",
+    "test_code": "verify do\n  labeled \"vertical line, flowers at edges\" do\n    expected = [\"*\", \"1\", \" \", \"1\", \"*\"]\n    actual = flowerField.annotate [\"*\", \" \", \" \", \" \", \"*\"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "cross",
+    "test_code": "verify do\n  labeled \"cross\" do\n    expected = [\" 2*2 \", \"25*52\", \"*****\", \"25*52\", \" 2*2 \"]\n    actual = flowerField.annotate [\"  *  \", \"  *  \", \"*****\", \"  *  \", \"  *  \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  },
+  {
+    "name": "large garden",
+    "test_code": "verify do\n  labeled \"large garden\" do\n    expected = [\"1*22*1\", \"12*322\", \" 123*2\", \"112*4*\", \"1*22*2\", \"111111\"]\n    actual = flowerField.annotate [\" *  * \", \"  *   \", \"    * \", \"   * *\", \" *  * \", \"      \"]\n    label \"expected\" (expected |> join \"\n\")\n    label \"actual\" (actual |> join \"\n\")\n    ensureEqual expected actual"
+  }
+]
