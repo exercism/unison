@@ -174,6 +174,14 @@ pigLatin.translate.tests.ex22 = verify do
     label "actual" actual
     ensureEqual expected actual
 
+pigLatin.translate.tests.ex23 = verify do
+  labeled "first letter and ay are moved to the end of words that start with consonants - word beginning with consonant and vowel containing qu" do
+    expected = "iquidlay"
+    actual = pigLatin.translate "liquid"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
 test> pigLatin.tests = join [
   pigLatin.translate.tests.ex1,
   pigLatin.translate.tests.ex2,
@@ -196,5 +204,6 @@ test> pigLatin.tests = join [
   pigLatin.translate.tests.ex19,
   pigLatin.translate.tests.ex20,
   pigLatin.translate.tests.ex21,
-  pigLatin.translate.tests.ex22
+  pigLatin.translate.tests.ex22,
+  pigLatin.translate.tests.ex23
 ]

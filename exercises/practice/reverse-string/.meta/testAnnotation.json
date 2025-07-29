@@ -22,5 +22,9 @@
   {
     "name": "An even-sized word",
     "test_code": "verify do\n  labeled \"An even-sized word\" do\n    expected = \"reward\"\n    actual = reverseString.reverse \"drawer\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
+  },
+  {
+    "name": "wide characters",
+    "test_code": "verify do\n  labeled \"wide characters\" do\n    expected = \"猫子\"\n    actual = reverseString.reverse \"子猫\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

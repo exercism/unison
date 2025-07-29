@@ -42,5 +42,9 @@
   {
     "name": "error if no combination can add up to target",
     "test_code": "verify do\n  labeled \"error if no combination can add up to target\" do\n    expected = None\n    actual = findFewestCoins [5,10] 94\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
+  },
+  {
+    "name": "a greedy approach is not optimal",
+    "test_code": "verify do\n  labeled \"a greedy approach is not optimal\" do\n    expected = Some [10, 10]\n    actual = findFewestCoins [1, 10, 11] 20\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

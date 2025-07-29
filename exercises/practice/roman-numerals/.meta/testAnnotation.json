@@ -102,5 +102,9 @@
   {
     "name": "3999 is MMMCMXCIX",
     "test_code": "verify do\n  labeled \"3999 is MMMCMXCIX\" do\n    expected = \"MMMCMXCIX\"\n    actual = toRoman 3999\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
+  },
+  {
+    "name": "3888 is MMMDCCCLXXXVIII",
+    "test_code": "verify do\n  labeled \"3888 is MMMDCCCLXXXVIII\" do\n    expected = \"MMMDCCCLXXXVIII\"\n    actual = toRoman 3888\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]

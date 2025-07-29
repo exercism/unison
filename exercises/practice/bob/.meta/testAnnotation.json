@@ -81,7 +81,7 @@
   },
   {
     "name": "Multiple line question",
-    "test_code": "verify do\n  labeled \"Multiple line question\" do\n    expected = \"Whatever.\"\n    actual = response \"\\nDoes this cryogenic chamber make me look fat?\\nNo.\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
+    "test_code": "verify do\n  labeled \"Multiple line question\" do\n    expected = \"Sure.\"\n    actual = response \"\\nDoes this cryogenic chamber make\\n me look fat?\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
     "name": "Starting with whitespace",

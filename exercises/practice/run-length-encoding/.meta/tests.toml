@@ -9,6 +9,9 @@
 # As user-added comments (using the # character) will be removed when this file
 # is regenerated, comments can be added via a `comment` key.
 
+[ad53b61b-6ffc-422f-81a6-61f7df92a231]
+description = "run-length encode a string -> empty string"
+
 [52012823-b7e6-4277-893c-5b96d42f82de]
 description = "run-length encode a string -> single characters only are encoded without count"
 

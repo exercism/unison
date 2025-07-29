@@ -24,7 +24,11 @@
     "test_code": "verify do\n  labeled \"8 character plaintext results in 3 chunks, the last one with a trailing space\" do\n    expected = \"clu hlt io \"\n    actual = ciphertext \"Chill out.\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   },
   {
-    "name": "54 character plaintext results in 7 chunks, the last two with trailing spaces",
-    "test_code": "verify do\n  labeled \"54 character plaintext results in 7 chunks, the last two with trailing spaces\" do\n    expected = \"imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau \"\n    actual = ciphertext \"If man was meant to stay on the ground, god would have given us roots.\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
+    "name": "54 character plaintext results in 8 chunks, the last two with trailing spaces",
+    "test_code": "verify do\n  labeled \"54 character plaintext results in 8 chunks, the last two with trailing spaces\" do\n    expected = \"imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau \"\n    actual = ciphertext \"If man was meant to stay on the ground, god would have given us roots.\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
+  },
+  {
+    "name": "normalization results in empty plaintext",
+    "test_code": "verify do\n  labeled \"normalization results in empty plaintext\" do\n    expected = \"\"\n    actual = ciphertext \"... --- ...\"\n    label \"expected\" expected\n    label \"actual\" actual\n    ensureEqual expected actual"
   }
 ]
