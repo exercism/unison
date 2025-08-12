@@ -52,6 +52,16 @@
         ],
         "prerequisites": [],
         "status": "wip"
+      },
+      {
+        "slug": "language-list",
+        "name": "Language List",
+        "uuid": "5ebdb25b-39a0-4cd8-9f73-04ec565ef15f",
+        "practices": [],
+        "prerequisites": [],
+        "concepts": ["lists"],
+        "difficulty": 2,
+        "status": "wip"
       }
     ],
     "practice": [
@@ -492,6 +502,11 @@
       "uuid": "24332ec2-07b2-49e5-aa58-4829d31dc44a",
       "slug": "basics",
       "name": "Basics"
+    },
+    {
+      "uuid": "44f2d0c1-73db-487a-a2d2-aea4fa7be73f",
+      "slug": "lists",
+      "name": "Lists"
     }
   ],
   "key_features": [
