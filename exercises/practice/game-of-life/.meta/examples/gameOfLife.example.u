@@ -1,7 +1,5 @@
 gameOfLife.directions : [(Int, Int)]
 gameOfLife.directions =
-  use base.Int range
-
   Each.toList do
     row = range -1 +2 |> each
     col = range -1 +2 |> each
