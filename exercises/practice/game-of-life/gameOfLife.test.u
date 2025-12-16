@@ -1,0 +1,140 @@
+gameOfLife.tick.tests.ex1 = verify do
+  labeled "empty matrix" do
+    expected = []
+    actual = tick []
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+gameOfLife.tick.tests.ex2 = verify do
+  labeled "live cells with zero live neighbors die" do
+    expected = [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ]
+    actual = tick [
+      [0, 0, 0],
+      [0, 1, 0],
+      [0, 0, 0]
+    ]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+gameOfLife.tick.tests.ex3 = verify do
+  labeled "live cells with only one live neighbor die" do
+    expected = [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ]
+    actual = tick [
+      [0, 0, 0],
+      [0, 1, 0],
+      [0, 1, 0]
+    ]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+gameOfLife.tick.tests.ex4 = verify do
+  labeled "live cells with two live neighbors stay alive" do
+    expected = [
+      [0, 0, 0],
+      [1, 0, 1],
+      [0, 0, 0]
+    ]
+    actual = tick [
+      [1, 0, 1],
+      [1, 0, 1],
+      [1, 0, 1]
+    ]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+gameOfLife.tick.tests.ex5 = verify do
+  labeled "live cells with three live neighbors stay alive" do
+    expected = [
+      [0, 0, 0],
+      [1, 0, 0],
+      [1, 1, 0]
+    ]
+    actual = tick [
+      [0, 1, 0],
+      [1, 0, 0],
+      [1, 1, 0]
+    ]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+gameOfLife.tick.tests.ex6 = verify do
+  labeled "dead cells with three live neighbors become alive" do
+    expected = [
+      [0, 0, 0],
+      [1, 1, 0],
+      [0, 0, 0]
+    ]
+    actual = tick [
+      [1, 1, 0],
+      [0, 0, 0],
+      [1, 0, 0]
+    ]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+gameOfLife.tick.tests.ex7 = verify do
+  labeled "live cells with four or more neighbors die" do
+    expected = [
+      [1, 0, 1],
+      [0, 0, 0],
+      [1, 0, 1]
+    ]
+    actual = tick [
+      [1, 1, 1],
+      [1, 1, 1],
+      [1, 1, 1]
+    ]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+gameOfLife.tick.tests.ex8 = verify do
+  labeled "bigger matrix" do
+    expected = [
+      [1, 1, 0, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 1, 1, 0],
+      [1, 0, 1, 1, 1, 1, 0, 1],
+      [1, 0, 0, 0, 0, 0, 0, 1],
+      [1, 1, 0, 0, 1, 0, 0, 1],
+      [1, 1, 0, 1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 1]
+    ]
+    actual = tick [
+      [1, 1, 0, 1, 1, 0, 0, 0],
+      [1, 0, 1, 1, 0, 0, 0, 0],
+      [1, 1, 1, 0, 0, 1, 1, 1],
+      [0, 0, 0, 0, 0, 1, 1, 0],
+      [1, 0, 0, 0, 1, 1, 0, 0],
+      [1, 1, 0, 0, 0, 1, 1, 1],
+      [0, 0, 1, 0, 1, 0, 0, 1],
+      [1, 0, 0, 0, 0, 0, 1, 1]
+    ]
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+test> gameOfLife.tests = join [
+  gameOfLife.tick.tests.ex1,
+  gameOfLife.tick.tests.ex2,
+  gameOfLife.tick.tests.ex3,
+  gameOfLife.tick.tests.ex4,
+  gameOfLife.tick.tests.ex5,
+  gameOfLife.tick.tests.ex6,
+  gameOfLife.tick.tests.ex7,
+  gameOfLife.tick.tests.ex8,
+]

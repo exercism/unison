@@ -1,0 +1,2 @@
+gameOfLife.tick : [[Nat]] -> [[Nat]]
+gameOfLife.tick matrix = todo "implement tick"
