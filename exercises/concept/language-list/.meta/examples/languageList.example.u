@@ -1,0 +1,26 @@
+languageList.new : [Text]
+languageList.new = []
+
+languageList.add : Text -> [Text] -> [Text]
+languageList.add input list = input +: list
+
+languageList.drop1 : [Text] -> [Text]
+languageList.drop1 = cases
+  head +: tail -> tail
+  [] -> []
+
+languageList.size : [Text] -> Nat
+languageList.size list =
+  go acc = cases
+    [] -> acc
+    h :+ t -> go (Nat.increment acc) t
+  go 0 list
+
+languageList.contains : Text -> [Text] -> Boolean
+languageList.contains input = cases
+  [] -> false
+  h +: t | h === input -> true
+  h +: t -> contains input t
+
+languageList.reverse : [Text] -> [Text]
+languageList.reverse list = List.foldLeft (b a -> a List.+: b ) [] list
