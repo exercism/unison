@@ -118,6 +118,14 @@ flowerField.annotate.tests.ex12 = verify do
 ")
     ensureEqual expected actual
 
+flowerField.annotate.tests.ex13 = verify do
+  labeled "multiple adjacent flowers" do
+    expected = ["1**1"]
+    actual = flowerField.annotate [" ** "]
+    label "expected" (expected |> join "\n")
+    label "actual" (actual |> join "\n")
+    ensureEqual expected actual
+
 test> flowerField.tests = join [
   flowerField.annotate.tests.ex1,
   flowerField.annotate.tests.ex2,
@@ -130,5 +138,6 @@ test> flowerField.tests = join [
   flowerField.annotate.tests.ex9,
   flowerField.annotate.tests.ex10,
   flowerField.annotate.tests.ex11,
-  flowerField.annotate.tests.ex12
+  flowerField.annotate.tests.ex12,
+  flowerField.annotate.tests.ex13
 ]
