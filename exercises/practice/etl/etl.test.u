@@ -5,7 +5,7 @@ etl.test.ex1 = verify do
     actual = transform lettersByScore
     label "expected" (expected |> Map.toList)
     label "actual" (actual |> Map.toList)
-    ensureEqual expected actual
+    ensureEqualWith (==) expected actual
 
 etl.test.ex2 = verify do
   labeled "single score with multiple letters" do
@@ -19,7 +19,7 @@ etl.test.ex2 = verify do
     actual = transform lettersByScore
     label "expected" (expected |> Map.toList)
     label "actual" (actual |> Map.toList)
-    ensureEqual expected actual
+    ensureEqualWith (==) expected actual
 
 etl.test.ex3 = verify do
   labeled "multiple scores with multiple letters" do
@@ -34,7 +34,7 @@ etl.test.ex3 = verify do
     actual = transform lettersByScore
     label "expected" (expected |> Map.toList)
     label "actual" (actual |> Map.toList)
-    ensureEqual expected actual
+    ensureEqualWith (==) expected actual
 
 etl.test.ex4 = verify do
   use Map ==
@@ -76,13 +76,9 @@ etl.test.ex4 = verify do
         (8, [?J, ?X]),
         (10, [?Q, ?Z]) ] |> Map.fromList
     actual = transform lettersByScore
-    ensuringWith
-      "Mappings are not equal"
-      (
-        ("expected:", expected |> Map.toList),
-        ("actual:", actual |> Map.toList)
-      )
-      (_ -> expected == actual)
+    label "expected" (expected |> Map.toList)
+    label "actual" (actual |> Map.toList)
+    ensureEqualWith (==) expected actual
 
 test> etl.tests = join [
   etl.test.ex1,
