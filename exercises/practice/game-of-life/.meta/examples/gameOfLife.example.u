@@ -1,0 +1,60 @@
+gameOfLife.directions : [(Int, Int)]
+gameOfLife.directions =
+  Each.toList do
+    row = range -1 +2 |> each
+    col = range -1 +2 |> each
+    (row, col) !== (+0, +0) |> guard
+    (row, col)
+
+gameOfLife.countAliveNeighbours : Nat -> Nat -> [[Nat]] -> Nat
+gameOfLife.countAliveNeighbours row col matrix =
+  rows = List.size matrix |> Nat.toInt
+  cols =
+    List.head matrix
+      |> Optional.getOrElse []
+      |> List.size
+      |> Nat.toInt
+  accumulateCells acc position =
+    (r, c) = position
+    if Int.inRange +0 rows r && Int.inRange +0 cols c then
+      matrix
+        |> List.at (Int.abs r)
+        |> Optional.getOrElse []
+        |> List.at (Int.abs c)
+        |> Optional.getOrElse 0
+        |> (+) acc
+    else
+      acc
+  positions =
+    List.map
+      (cases (dr, dc) -> (Nat.toInt row + dr, Nat.toInt col + dc))
+      directions
+  foldLeft
+    accumulateCells
+    0
+    positions
+
+gameOfLife.tick : [[Nat]] -> [[Nat]]
+gameOfLife.tick matrix =
+  Each.toList do
+    rows = List.size matrix
+    cols =
+      matrix
+        |> List.head
+        |> getOrElse []
+        |> List.size
+    row = Each.range 0 rows
+    Each.toList do
+      col = Each.range 0 cols
+
+      cell =
+        matrix
+          |> List.at row
+          |> getOrElse []
+          |> List.at col
+          |> getOrElse 0
+      aliveNeighboursCount = countAliveNeighbours row col matrix
+      match (cell, aliveNeighboursCount) with
+        (1, aliveNeighbours) | aliveNeighbours === 2 || aliveNeighbours === 3 -> 1
+        (0, 3) -> 1
+        _ -> 0
