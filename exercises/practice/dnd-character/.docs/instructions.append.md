@@ -1,4 +1,6 @@
-# Hints
+# Instructions append
+
+## Hints
 
 There are some important concepts that are necessary for this task:
 
