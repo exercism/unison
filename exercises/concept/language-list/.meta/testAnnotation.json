@@ -1,0 +1,50 @@
+[
+  {
+    "name": "languageList.test.ex1",
+    "test_code": "languageList.test.ex1 =\n\tTest.label \"languageList.new should return empty list\" <| Test.expect (languageList.new === [])"
+  },
+  {
+    "name": "languageList.test.ex2",
+    "test_code": "languageList.test.ex2 =\n\tTest.label \"languageList.add should prepend an element\" <| Test.expect (languageList.add  [\"Elm\"] === [\"Unison\", \"Elm\"])"
+  },
+  {
+    "name": "languageList.test.ex3",
+    "test_code": "languageList.test.ex3 =\n\tTest.label \"languageList.drop1 should drop first element\" <| Test.expect (languageList.drop1 [\"Elm\", \"Cobol\", \"Haskell\"] === [ \"Cobol\", \"Haskell\"])"
+  },
+  {
+    "name": "languageList.test.ex4",
+    "test_code": "languageList.test.ex4 =\n\tTest.label \"languageList.drop1 should return empty list\" <| Test.expect (languageList.drop1 [] === [])"
+  },
+  {
+    "name": "languageList.test.ex5",
+    "test_code": "languageList.test.ex5 =\n\tTest.label \"languageList.size should return size of list\" <| Test.expect (languageList.size [\"Elm\", \"Cobol\", \"Haskell\"] === 3)"
+  },
+  {
+    "name": "languageList.test.ex6",
+    "test_code": "languageList.test.ex6 =\n\tTest.label \"languageList.size should handle empty list\" <| Test.expect (languageList.size [] === 0)"
+  },
+  {
+    "name": "languageList.test.ex7",
+    "test_code": "languageList.test.ex7 =\n\tTest.label \"languageList.contains should return true if list contains element\" <| Test.expect (languageList.contains \"Unison\" [\"Scala\", \"Python\", \"Unison\"] === true)"
+  },
+  {
+    "name": "languageList.test.ex8",
+    "test_code": "languageList.test.ex8 =\n\tTest.label \"languageList.contains should return false if list does not contain element\" <| Test.expect (languageList.contains \"Unison\" [\"Scala\", \"Python\", \"Ruby\"] === false)"
+  },
+  {
+    "name": "languageList.test.ex9",
+    "test_code": "languageList.test.ex9 =\n\tTest.label \"languageList.contains should handle empty list\" <| Test.expect (languageList.contains \"Unison\" [] === false)"
+  },
+  {
+    "name": "languageList.test.ex10",
+    "test_code": "languageList.test.ex10 =\n\tTest.label \"languageList.reverse should reverse list\" <| Test.expect (languageList.reverse [\"Elm\", \"Unison\", \"Scala\", \"Clojure\"] === [\"Clojure\", \"Scala\", \"Unison\", \"Elm\"])"
+  },
+  {
+    "name": "languageList.test.ex11",
+    "test_code": "languageList.test.ex11 =\n\tTest.label \"languageList.reverse should handle list of one\" <| Test.expect (languageList.reverse [\"Unison\"] === [\"Unison\"])"
+  },
+  {
+    "name": "languageList.test.ex12",
+    "test_code": "languageList.test.ex12 =\n\tTest.label \"languageList.reverse should handle list of one\" <| Test.expect (languageList.reverse [] === [])"
+  }
+]

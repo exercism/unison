@@ -1,0 +1,50 @@
+languageList.test.ex1 =
+  Test.label "languageList.new should return empty list" <| Test.expect (languageList.new === [])
+
+languageList.test.ex2 =
+  Test.label "languageList.add should prepend an element" <| Test.expect (languageList.add "Unison" ["Elm"] === ["Unison", "Elm"])
+
+languageList.test.ex3 =
+  Test.label "languageList.drop1 should drop first element" <| Test.expect (languageList.drop1 ["Elm", "Cobol", "Haskell"] === [ "Cobol", "Haskell"])
+
+languageList.test.ex4 =
+  Test.label "languageList.drop1 should return empty list" <| Test.expect (languageList.drop1 [] === [])
+
+languageList.test.ex5 =
+  Test.label "languageList.size should return size of list" <| Test.expect (languageList.size ["Elm", "Cobol", "Haskell"] === 3)
+
+languageList.test.ex6 =
+  Test.label "languageList.size should handle empty list" <| Test.expect (languageList.size [] === 0)
+
+languageList.test.ex7 =
+  Test.label "languageList.contains should return true if list contains element" <| Test.expect (languageList.contains "Unison" ["Scala", "Python", "Unison"] === true)
+
+languageList.test.ex8 =
+  Test.label "languageList.contains should return false if list does not contain element" <| Test.expect (languageList.contains "Unison" ["Scala", "Python", "Ruby"] === false)
+
+languageList.test.ex9 =
+  Test.label "languageList.contains should handle empty list" <| Test.expect (languageList.contains "Unison" [] === false)
+
+languageList.test.ex10 =
+  Test.label "languageList.reverse should reverse list" <| Test.expect (languageList.reverse ["Elm", "Unison", "Scala", "Clojure"] === ["Clojure", "Scala", "Unison", "Elm"])
+
+languageList.test.ex11 =
+  Test.label "languageList.reverse should handle list of one" <| Test.expect (languageList.reverse ["Unison"] === ["Unison"])
+
+languageList.test.ex12 =
+  Test.label "languageList.reverse should handle list of one" <| Test.expect (languageList.reverse [] === [])
+
+test> languageList.tests = runAll [
+  languageList.test.ex1,
+  languageList.test.ex2,
+  languageList.test.ex3,
+  languageList.test.ex4,
+  languageList.test.ex5,
+  languageList.test.ex6,
+  languageList.test.ex7,
+  languageList.test.ex8,
+  languageList.test.ex9,
+  languageList.test.ex10,
+  languageList.test.ex11,
+  languageList.test.ex12
+]
