@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "rlmark"
+  ],
+  "files": {
+    "solution": [
+      "languageList.u"
+    ],
+    "test": [
+      "languageList.test.u"
+    ],
+    "exemplar": [
+      ".meta/examples/languageList.example.u"
+    ]
+  },
+  "forked_from": [
+    "elixir/language-list"
+  ],
+  "blurb": "Learn about lists by keeping track of the programing languages you're currently learning on Exercism."
+}
