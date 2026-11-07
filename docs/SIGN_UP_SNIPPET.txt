@@ -1,0 +1,12 @@
+mostCommonWord : Text -> Text
+mostCommonWord text =
+  step = cases
+    (counts, best), word ->
+      newCounts = Map.alter (n -> Some (Optional.getOrElse 0 n + 1)) word counts
+      count = Optional.getOrElse 0 (Map.get word newCounts)
+      if count > Optional.getOrElse 0 (Map.get best newCounts) then (newCounts, word)
+      else (newCounts, best)
+  words = Text.split ?\s (Text.toLowercase text)
+  (counts, best) = List.foldLeft step (Map.empty, "") words
+  total = Optional.getOrElse 0 (Map.get best counts)
+  "\"" ++ best ++ "\" appears " ++ Nat.toText total ++ " times"
